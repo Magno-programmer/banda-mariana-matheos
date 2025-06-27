@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,4 +101,39 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom Jazz Theme Styles */
+.jazz-gradient {
+  background: linear-gradient(180deg, #800000 0%, #000000 100%);
+}
+
+.jazz-gold {
+  color: #e3bd68;
+}
+
+.jazz-text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.art-deco-border {
+  border-image: linear-gradient(45deg, #e3bd68, #800000, #e3bd68) 1;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e3bd68;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a853;
 }
