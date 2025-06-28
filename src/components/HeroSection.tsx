@@ -1,7 +1,7 @@
 
 import React from 'react';
-import video from '@/assets/video/mini-clip.mp4'; // Placeholder for video
 import logo from '@/assets/images/Logo Mariana Matheos Jazz textura dourada fundo transparente.png'; // Placeholder for logo image
+import imagemDaBanda from '@/assets/images/imagem da banda.jpg'; // Placeholder for logo image
 import logoInvertida from '@/assets/images/Logo Mariana Matheos Jazz textura dourada fundo transparente invertida.png'; // Placeholder for logo image
 
 
@@ -18,14 +18,11 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 text-center animate-fade-in">
         {/* Logo Placeholder */}
         <div className="relative w-full h-screen overflow-hidden">
-          {/* Vídeo de fundo */}
-          <video
+          {/* imagem de fundo */}
+          <img
             className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
+            src={imagemDaBanda} // substitua pelo caminho correto da sua imagem de fundo
+            alt="Imagem de fundo da banda"
           />
 
           {/* Logo no canto superior esquerdo */}
