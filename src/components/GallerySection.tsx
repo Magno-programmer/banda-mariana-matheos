@@ -1,37 +1,36 @@
-
 import React from 'react';
-import imagemDaBanda from '@/assets/images/imagem da banda.jpg'; // Placeholder for band image
-import imagemDaBanda_3 from '@/assets/images/imagem da banda_3.jpg'; // Placeholder for band image
-import imagemDaCantora from '@/assets/images/imagem da cantora.jpg'; // Placeholder for band image
-import imagemDoBateirista from '@/assets/images/imagem do bateirista_2.jpg'; // Placeholder for drummer image
-import imagemDoBaixista from '@/assets/images/imagem do baixista.jpg'; // Placeholder for bassist image
-import imagemDoPianista from '@/assets/images/imagem do pianista.jpg'; // Placeholder for bassist image
+import bandaCompletaPalco from '@/assets/images/banda-completa-palco.jpg';
+import bandaGrupoFestival from '@/assets/images/banda-grupo-festival.jpg';
+import marianaCantandoHat from '@/assets/images/mariana-cantando-hat.jpg';
+import bateristaFestival from '@/assets/images/baterista-festival.jpg';
+import baixistaPerformance from '@/assets/images/baixista-performance.jpg';
+import pianistaPerformance from '@/assets/images/pianista-performance.jpg';
 
 const GallerySection = () => {
   const images = [
     {
-      src: imagemDaBanda, // Replace with the actual image path
-      alt: "Retrato da banda Em ação"
+      src: bandaCompletaPalco,
+      alt: "Banda completa no palco"
     },
     {
-      src: imagemDaCantora, // Replace with the actual image path
-      alt: "Retrato da cantora"
+      src: marianaCantandoHat,
+      alt: "Mariana cantando com chapéu"
     },
     {
-      src: imagemDoBateirista, // Replace with the actual image path
-      alt: "Retrato do baterista"
+      src: bateristaFestival,
+      alt: "Baterista em performance"
     },
     {
-      src: imagemDoPianista, // Replace with the actual image path
-      alt: "Retrato do pianista"
+      src: pianistaPerformance,
+      alt: "Pianista em performance"
     },
     {
-      src: imagemDoBaixista, // Replace with the actual image path
-      alt: "Retrato do baixista"
+      src: baixistaPerformance,
+      alt: "Baixista em performance"
     },
     {
-      src: imagemDaBanda_3, // Replace with the actual image path
-      alt: "Retrato da banda"
+      src: bandaGrupoFestival,
+      alt: "Grupo da banda em festival"
     }
   ];
 

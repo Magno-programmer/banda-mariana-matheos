@@ -1,9 +1,8 @@
 
 import React from 'react';
-import logo from '@/assets/images/Logo Mariana Matheos Jazz textura dourada fundo transparente.png'; // Placeholder for logo image
-import imagemDaBanda from '@/assets/images/imagem da banda.jpg'; // Placeholder for logo image
-import logoInvertida from '@/assets/images/Logo Mariana Matheos Jazz textura dourada fundo transparente invertida.png'; // Placeholder for logo image
-
+import logoGold from '@/assets/images/logo-mariana-matheos-gold.png';
+import bandaCompletaPalco from '@/assets/images/banda-completa-palco.jpg';
+import logoWhite from '@/assets/images/logo-mariana-matheos-white.png';
 
 const HeroSection = () => {
   return (
@@ -21,14 +20,14 @@ const HeroSection = () => {
           {/* imagem de fundo */}
           <img
             className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
-            src={imagemDaBanda} // substitua pelo caminho correto da sua imagem de fundo
+            src={bandaCompletaPalco}
             alt="Imagem de fundo da banda"
           />
 
           {/* Logo no canto superior esquerdo */}
           <div className="absolute top-4 left-4 z-20">
             <img
-              src={logoInvertida} // substitua pelo caminho da sua logo invertida
+              src={logoWhite}
               alt="Logo Mariana Matheos"
               className="w-20 h-20 object-contain"
             />
@@ -37,7 +36,7 @@ const HeroSection = () => {
           {/* Conteúdo central sobreposto */}
           <div className="relative md-6 z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4">
             <img
-              src={logo} // substitua pelo caminho correto da sua logo oficial
+              src={logoGold}
               alt="Logo Mariana Matheos"
               className="w-72 md:w-[350px] object-contain drop-shadow-lg"
             />
