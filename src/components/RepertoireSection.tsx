@@ -7,7 +7,7 @@ const RepertoireSection = () => {
     "Ella Fitzgerald", 
     "Etta James",
     "Amy Winehouse",
-    "Adele",
+    "Frank Sinatra",
     "Nina Simone"
   ];
 
@@ -73,7 +73,7 @@ const RepertoireSection = () => {
 
           {/* Musical genres */}
           <div className="flex flex-wrap justify-center gap-4 animate-fade-in">
-            {['Jazz', 'Soul', 'Blues', 'R&B', 'Swing', 'Bossa Nova'].map((genre, index) => (
+            {['Jazz', 'Soul', 'Blues', 'R&B', 'Swing'].map((genre, index) => (
               <span 
                 key={genre}
                 className="font-gatsby px-4 py-2 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 text-sm tracking-wider"

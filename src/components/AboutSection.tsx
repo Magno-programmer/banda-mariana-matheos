@@ -1,5 +1,6 @@
 
 import React from 'react';
+import marianaFoto from '@/assets/images/cantora.jpg'; // Placeholder for band photo
 
 const AboutSection = () => {
   return (
@@ -57,7 +58,7 @@ const AboutSection = () => {
                 <div className="absolute -inset-4 border-4 border-jazz-gold opacity-50 transform rotate-2"></div>
                 <div className="relative bg-gradient-to-br from-jazz-dark to-black h-96 flex items-center justify-center overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500&h=400&fit=crop" 
+                    src={marianaFoto} // Replace with the actual image path
                     alt="Mariana Matheos Jazz Band" 
                     className="w-full h-full object-cover filter sepia-[0.3] contrast-110"
                   />
