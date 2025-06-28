@@ -19,9 +19,14 @@ const HeroSection = () => {
         <div className="relative w-full h-screen overflow-hidden">
           {/* imagem de fundo */}
           <img
-            className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
             src={bandaCompletaPalco}
-            alt="Imagem de fundo da banda"
+            alt="Imagem de fundo"
+            className="hidden sm:block absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
+          />
+          <img
+            src={bandaCompletaPalco}
+            alt="Imagem de fundo mobile"
+            className="block sm:hidden absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
           />
 
           {/* Logo no canto superior esquerdo */}
