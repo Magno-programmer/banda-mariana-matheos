@@ -1,6 +1,6 @@
 
 import React from 'react';
-import marianaPerformanceRedHat from '@/assets/images/mariana-performance-red-hat.jpg';
+import marianaPerformanceRedHat from '@/assets/images/cantora.jpg';
 
 const AboutSection = () => {
   return (
