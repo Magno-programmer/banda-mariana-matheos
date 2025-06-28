@@ -94,7 +94,7 @@ const BookingSection = () => {
                 Entre em contato e vamos criar juntos uma apresentação memorável para seu evento.
               </p>
               <a 
-                href="https://wa.me/5511999999999?text=Olá, Mariana! Vi seu site e gostaria de contratar ou saber mais sobre a banda."
+                href="https://wa.me/5531997522127?text=Olá, Mariana! Vi seu site e gostaria de saber mais sobre o orçamento da banda."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block font-gatsby text-lg px-8 py-4 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 tracking-wider uppercase font-semibold"
