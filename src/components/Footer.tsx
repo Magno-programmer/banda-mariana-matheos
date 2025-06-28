@@ -34,11 +34,11 @@ const Footer = () => {
                   contato@marianamatheos.com.br
                 </a>
                 <a 
-                  href="tel:+5511999999999" 
+                  href="tel:+5531997522127" 
                   className="flex items-center justify-center font-gatsby text-gray-400 text-sm hover:text-jazz-gold transition-colors duration-300"
                 >
                   <Phone className="w-4 h-4 mr-2" />
-                  (11) 99999-9999
+                  (31) 99752-2127
                 </a>
               </div>
             </div>
@@ -48,7 +48,7 @@ const Footer = () => {
               <h4 className="font-glimmer text-lg jazz-gold mb-4">Redes Sociais</h4>
               <div className="flex justify-center md:justify-end space-x-4">
                 <a 
-                  href="https://instagram.com/marianamatheos" 
+                  href="https://instagram.com/marianamatheosoficial" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 border border-jazz-gold rounded-full flex items-center justify-center text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300"
@@ -56,7 +56,7 @@ const Footer = () => {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://youtube.com/@marianamatheos" 
+                  href="https://youtube.com/@marianamatheosoficial" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 border border-jazz-gold rounded-full flex items-center justify-center text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300"

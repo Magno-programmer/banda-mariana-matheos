@@ -1,31 +1,37 @@
 
 import React from 'react';
+import imagemDaBanda from '@/assets/images/imagem da banda.jpg'; // Placeholder for band image
+import imagemDaBanda_3 from '@/assets/images/imagem da banda_3.jpg'; // Placeholder for band image
+import imagemDaCantora from '@/assets/images/imagem da cantora.jpg'; // Placeholder for band image
+import imagemDoBateirista from '@/assets/images/imagem do bateirista_2.jpg'; // Placeholder for drummer image
+import imagemDoBaixista from '@/assets/images/imagem do baixista.jpg'; // Placeholder for bassist image
+import imagemDoPianista from '@/assets/images/imagem do pianista.jpg'; // Placeholder for bassist image
 
 const GallerySection = () => {
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
-      alt: "Performance ao vivo"
+      src: imagemDaBanda, // Replace with the actual image path
+      alt: "Retrato da banda Em ação"
     },
     {
-      src: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&h=300&fit=crop", 
-      alt: "Apresentação em evento"
+      src: imagemDaCantora, // Replace with the actual image path
+      alt: "Retrato da cantora"
     },
     {
-      src: "https://images.unsplash.com/photo-1471478331149-c72f17e33c73?w=400&h=300&fit=crop",
-      alt: "Momento íntimo da performance"
+      src: imagemDoBateirista, // Replace with the actual image path
+      alt: "Retrato do baterista"
     },
     {
-      src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=500&fit=crop",
+      src: imagemDoPianista, // Replace with the actual image path
+      alt: "Retrato do pianista"
+    },
+    {
+      src: imagemDoBaixista, // Replace with the actual image path
+      alt: "Retrato do baixista"
+    },
+    {
+      src: imagemDaBanda_3, // Replace with the actual image path
       alt: "Retrato da banda"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&h=500&fit=crop",
-      alt: "Detalhe dos instrumentos"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1471478331149-c72f17e33c73?w=400&h=300&fit=crop",
-      alt: "Atmosphere do evento"
     }
   ];
 

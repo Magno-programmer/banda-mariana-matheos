@@ -1,5 +1,9 @@
 
 import React from 'react';
+import video from '@/assets/video/mini-clip.mp4'; // Placeholder for video
+import logo from '@/assets/images/Logo Mariana Matheos Jazz textura dourada fundo transparente.png'; // Placeholder for logo image
+import logoInvertida from '@/assets/images/Logo Mariana Matheos Jazz textura dourada fundo transparente invertida.png'; // Placeholder for logo image
+
 
 const HeroSection = () => {
   return (
@@ -13,17 +17,39 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-6 text-center animate-fade-in">
         {/* Logo Placeholder */}
-        <div className="mb-8 animate-scale-in">
-          <div className="mx-auto w-80 h-32 bg-gradient-to-r from-jazz-gold to-yellow-300 rounded-lg flex items-center justify-center mb-6 shadow-2xl">
-            <span className="font-glimmer text-2xl font-bold text-black">
-              MARIANA MATHEOS
-            </span>
+        <div className="relative w-full h-screen overflow-hidden">
+          {/* Vídeo de fundo */}
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
+            src={video}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+
+          {/* Logo no canto superior esquerdo */}
+          <div className="absolute top-4 left-4 z-20">
+            <img
+              src={logoInvertida} // substitua pelo caminho da sua logo invertida
+              alt="Logo Mariana Matheos"
+              className="w-20 h-20 object-contain"
+            />
           </div>
-          <p className="text-jazz-gold font-gatsby text-lg tracking-wider">JAZZ BAND</p>
+
+          {/* Conteúdo central sobreposto */}
+          <div className="relative md-6 z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4">
+            <img
+              src={logo} // substitua pelo caminho correto da sua logo oficial
+              alt="Logo Mariana Matheos"
+              className="w-72 md:w-[350px] object-contain drop-shadow-lg"
+            />
+            <p className="text-4xl md:text-4xl font-glimmer font-bold">Mariana Matheos & Banda</p>
+          </div>
         </div>
 
         {/* Main Slogan */}
-        <h1 className="font-glimmer text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
+        <h1 className="font-glimmer mt-8 text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
           Uma experiência musical
         </h1>
         <h2 className="font-glimmer text-3xl md:text-5xl lg:text-6xl font-bold jazz-gold mb-8 jazz-text-shadow">
@@ -46,12 +72,6 @@ const HeroSection = () => {
         </a>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-jazz-gold rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-jazz-gold rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
     </section>
   );
 };
