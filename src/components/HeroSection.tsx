@@ -1,8 +1,8 @@
 
 import React from 'react';
-import logoGold from '@/assets/images/logo-mariana-matheos-gold.png';
-import bandaCompletaPalco from '@/assets/images/banda-completa-palco.jpg';
-import logoWhite from '@/assets/images/logo-mariana-matheos-white.png';
+import logoGold from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png';
+import bandaCompletaPalco from '@/assets/images/imagem-da-banda-3.jpg';
+import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
 
 const HeroSection = () => {
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
-import bandaCompletaPalco from '@/assets/images/banda-completa-palco.jpg';
-import bandaGrupoFestival from '@/assets/images/banda-grupo-festival.jpg';
-import marianaCantandoHat from '@/assets/images/mariana-cantando-hat.jpg';
-import bateristaFestival from '@/assets/images/baterista-festival.jpg';
-import baixistaPerformance from '@/assets/images/baixista-performance.jpg';
-import pianistaPerformance from '@/assets/images/pianista-performance.jpg';
+import bandaCompletaPalco from '@/assets/images/imagem-da-banda-3.jpg';
+import bandaGrupoFestival from '@/assets/images/imagem-da-banda.jpg';
+import marianaCantandoHat from '@/assets/images/imagem-da-cantora-2.jpg';
+import bateristaFestival from '@/assets/images/imagem-do-bateirista.jpg';
+import baixistaPerformance from '@/assets/images/imagem-do-baixista.jpg';
+import pianistaPerformance from '@/assets/images/imagem-do-pianista.jpg';
 
 const GallerySection = () => {
   const images = [
