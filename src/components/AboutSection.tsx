@@ -75,14 +75,20 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <div className="animate-scale-in group relative w-full max-w-md mx-auto">
+            <div className="animate-scale-in group relative w-full h-max-full max-w-md mx-auto">
               <div className="relative w-full h-[400px] flex items-center justify-center">
                 
                 {/* Moldura decorativa como imagem */}
                 <img
                   src={bordarArtDeco}
                   alt="Moldura Art Déco"
-                  className="absolute top-0 left-0 w-full h-full object-contain pointer-events-none z-30"
+                  className="hidden sm:block absolute top-0 left-0 w-full h-full object-contain pointer-events-none z-30"
+                />
+                {/* Moldura decorativa como imagem */}
+                <img
+                  src={bordarArtDeco}
+                  alt="Moldura Art Déco"
+                  className="block sm:hidden absolute -top-7 left-0 w-full h-full object-contain pointer-events-none z-30"
                 />
 
                 {/* Área clicável */}

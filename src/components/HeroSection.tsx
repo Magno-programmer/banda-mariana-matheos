@@ -10,13 +10,13 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen jazz-gradient flex flex-col items-center justify-center relative overflow-hidden">
       {/* Decorative Art Deco elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-jazz-gold rotate-45 animate-float"></div>
+      <div className="absolute opacity-10">
+        <div className="absolute top-20 left-0 w-32 h-32 border-2 border-jazz-gold rotate-45 animate-float"></div>
         <div className="absolute bottom-20 right-10 w-24 h-24 border-2 border-jazz-gold rotate-12 animate-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-20 w-16 h-16 border-2 border-jazz-gold rounded-full animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-0 w-16 h-16 border-2 border-jazz-gold rounded-full animate-float" style={{animationDelay: '2s'}}></div>
       </div>
 
-      <div className="container mx-auto px-6 text-center animate-fade-in">
+      <div className="container mx-auto px-0 text-center animate-fade-in">
         {/* Logo Placeholder */}
         <div className="relative w-full max-h-screen overflow-hidden">
           {/* imagem de fundo */}
@@ -69,7 +69,7 @@ const HeroSection = () => {
             </div>
 
         {/* CTA Button */}
-        <div className="relative w-[450px] h-[300px] mx-auto">
+        <div className="relative w-[100%] h-[300px] mx-auto">
           <img 
             src={bordabuttonArtDeco} 
             alt="Moldura decorativa do botão"
@@ -77,10 +77,17 @@ const HeroSection = () => {
           />
           <a
             href="#sobre"
-            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 h-[31%] w-[69%] mt-[38%] pt-[7%] text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
+            className="block sm:hidden absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 w-[68%] mt-[42%] h-[30%] pt-[4%] text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
           >
             Descubra Nossa História
-          </a>
+          </a>{/* Botão de rolagem suave para a seção "Sobre" versão mobile*/}
+          <a
+            href="#sobre"
+            className="hidden sm:block absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 mt-[17%] text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
+          >
+            Descubra Nossa História
+          </a> {/* Botão de rolagem suave para a seção "Sobre" versão desktop*/}
+
         </div>
       </div>
 
