@@ -1,38 +1,40 @@
-import React from 'react';
-import bandaCompletaPalco from '@/assets/images/imagem-da-banda-3.jpg';
-import bandaGrupoFestival from '@/assets/images/imagem-da-banda.jpg';
-import marianaCantandoHat from '@/assets/images/imagem-da-cantora-2.jpg';
-import bateristaFestival from '@/assets/images/imagem-do-bateirista.jpg';
-import baixistaPerformance from '@/assets/images/imagem-do-baixista.jpg';
-import pianistaPerformance from '@/assets/images/imagem-do-pianista.jpg';
+import React, {useState, useRef} from 'react';
 
 const GallerySection = () => {
-  const images = [
-    {
-      src: bandaCompletaPalco,
-      alt: "Banda completa no palco"
-    },
-    {
-      src: marianaCantandoHat,
-      alt: "Mariana cantando com chapéu"
-    },
-    {
-      src: bateristaFestival,
-      alt: "Baterista em performance"
-    },
-    {
-      src: pianistaPerformance,
-      alt: "Pianista em performance"
-    },
-    {
-      src: baixistaPerformance,
-      alt: "Baixista em performance"
-    },
-    {
-      src: bandaGrupoFestival,
-      alt: "Grupo da banda em festival"
+  const [images, setImages] = useState([
+    
+  ]);
+
+  const fileInputRef = useRef(null);
+
+  // const handleFileChange = (event) => {
+  //   const files = Array.from(event.target.files);
+  //   if(files.length === 0) {
+  //     return;
+  //   }
+  //   else{
+  //     const newImages = files.map(file => ({
+  //       src: URL.createObjectURL(file),
+  //       alt: file.name
+  //     }));
+  //     setImages(prevImages => [...prevImages, ...newImages]);
+  //   }
+  // };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const newImage = {
+        src: URL.createObjectURL(file),
+        alt: file.name,
+      };
+      setImages((prev) => [...prev, newImage]);
     }
-  ];
+  };
+
+  const handleRemoveImage = (index) => {
+    setImages(prevImages => prevImages.filter((_, i) => i !== index));
+  } // Function to remove an image from the gallery
 
   return (
     <section className="py-20 bg-black relative">
@@ -82,6 +84,14 @@ const GallerySection = () => {
                 {/* Hover effect */}
                 <div className="absolute inset-0 bg-jazz-gold bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                 
+                {/* Botão de remover (hover) */}
+                <button
+                  onClick={() => handleRemoveImage(index)}
+                  className="absolute top-2 right-2 z-20 bg-black/60 text-jazz-gold px-2 py-1 text-sm font-bold rounded opacity-0 group-hover:opacity-100 transition"
+                >
+                  Remover
+                </button>
+
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <p className="font-gatsby text-white text-sm">{image.alt}</p>
@@ -89,6 +99,21 @@ const GallerySection = () => {
               </div>
             </div>
           ))}
+
+          {/* File input for adding new images */}
+          <div 
+            className="relative flex items-center justify-center h-64 md:h-72 border-2 border-dashed border-jazz-gold text-jazz-gold cursor-pointer group hover:bg-jazz-gold/10 transition"
+            onClick={() => fileInputRef.current.click()}
+          >
+            <span className="text-2xl">+</span>
+            <input
+              type="file"
+              ref={fileInputRef}
+              accept="image/*"
+              onChange={handleFileChange}
+              className="hidden"
+            />
+          </div>
         </div>
 
         {/* Video placeholder */}
