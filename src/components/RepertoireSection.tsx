@@ -53,7 +53,7 @@ const RepertoireSection = () => {
             </div>
 
             <p className="font-gatsby text-lg text-gray-300 leading-relaxed mb-12">
-              Cada performance é adaptada com arranjos personalizados e estética cênica, criando um ambiente emocional, sofisticado e inesquecível.
+              Cada performance é realizada com arranjos fiéis e estética cênica trazendo a Era de Ouro até você, criando um ambiente emocional, sofisticado e inesquecível.
             </p>
 
             {/* Featured Quote */}
@@ -73,7 +73,7 @@ const RepertoireSection = () => {
 
           {/* Musical genres */}
           <div className="flex flex-wrap justify-center gap-4 animate-fade-in">
-            {['Jazz', 'Soul', 'Blues', 'R&B', 'Swing'].map((genre, index) => (
+            {['Jazz', 'Soul', 'Blues', 'R&B'].map((genre, index) => (
               <span 
                 key={genre}
                 className="font-gatsby px-4 py-2 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 text-sm tracking-wider"
