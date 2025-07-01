@@ -18,12 +18,12 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-6 text-center animate-fade-in">
         {/* Logo Placeholder */}
-        <div className="relative w-full h-screen overflow-hidden">
+        <div className="relative w-full max-h-screen overflow-hidden">
           {/* imagem de fundo */}
           <img
             src={bandaCompletaPalco} // Desktop version
             alt="Imagem de fundo"
-            className="hidden sm:block absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
+            className="hidden sm:block absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
           />
 
           {/* Logo no canto superior esquerdo */}
@@ -40,12 +40,12 @@ const HeroSection = () => {
             <img
               src={logoGold} // Desktop version
               alt="Logo Mariana Matheos"
-              className="hidden sm:block w-72 pt-32 mt-20 w-[350px] object-contain drop-shadow-lg"
+              className="hidden sm:block w-[30%] mt-[15%] pb-[15%] object-contain drop-shadow-lg"
             />
             <img
               src={logoGold} // Mobile version
               alt="Logo Mariana Matheos"
-              className="block sm:hidden mt-20 w-[350px] object-contain drop-shadow-lg"
+              className="block sm:hidden  object-contain drop-shadow-lg"
             />
             <p className="block sm:hidden text-4xl text-4xl font-glimmer font-bold">Mariana Matheos</p>
           </div>
