@@ -1,8 +1,28 @@
 
-import React from 'react';
-import marianaPerformanceRedHat from '@/assets/images/cantora.jpg';
+import React, {useRef, useState} from 'react';
+import bordarArtDeco from '@/assets/images/divisor-de-textos.png';
+import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
 const AboutSection = () => {
+  const [imagemUnica, setImagemUnica] = useState(null);
+
+  const singleInputRef = useRef(null);
+
+  const handleSingleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const newImage = {
+        src: URL.createObjectURL(file),
+        alt: file.name,
+      };
+      setImagemUnica(newImage);
+    }
+  };
+
+  const handleSingleImageRemove = () => {
+    setImagemUnica(null);
+  };
+  
   return (
     <section id="sobre" className="py-20 bg-black relative">
       {/* Background pattern */}
@@ -18,10 +38,14 @@ const AboutSection = () => {
             <h2 className="font-glimmer text-5xl md:text-6xl font-bold jazz-gold mb-4 jazz-text-shadow">
               Sobre a Banda
             </h2>
-            <div className="flex items-center justify-center">
-              <div className="h-px bg-jazz-gold w-20"></div>
-              <div className="mx-4 w-3 h-3 bg-jazz-gold rounded-full"></div>
-              <div className="h-px bg-jazz-gold w-20"></div>
+
+            {/* Divisor decorativo acima */}
+            <div className="w-full flex justify-center mb-4">
+              <img
+                src={lineArtDeco}
+                alt="Divisor Art Déco"
+                className="w-[30%] object-contain"
+              />
             </div>
           </div>
 
@@ -51,19 +75,59 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Image Placeholder */}
-            <div className="animate-scale-in">
-              <div className="relative">
-                {/* Art Deco frame */}
-                <div className="absolute -inset-4 border-4 border-jazz-gold opacity-50 transform rotate-2"></div>
-                <div className="relative bg-gradient-to-br from-jazz-dark to-black h-96 flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={marianaPerformanceRedHat}
-                    alt="Mariana Matheos Jazz Band" 
-                    className="w-full h-full object-cover filter sepia-[0.3] contrast-110"
-                  />
+            <div className="animate-scale-in group relative w-full max-w-md mx-auto">
+              <div className="relative w-full h-[400px] flex items-center justify-center">
+                
+                {/* Moldura decorativa como imagem */}
+                <img
+                  src={bordarArtDeco}
+                  alt="Moldura Art Déco"
+                  className="absolute top-0 left-0 w-full h-full object-contain pointer-events-none z-30"
+                />
+
+                {/* Área clicável */}
+                <div
+                  className="relative w-[93%] h-[73%] bg-gradient-to-br -inset-1 mt-3 from-jazz-dark to-black flex items-center justify-center overflow-hidden cursor-pointer z-20"
+                  onClick={() => {
+                    if (!imagemUnica) singleInputRef.current.click();
+                  }}
+                >
+                  {/* Se houver imagem */}
+                  {imagemUnica ? (
+                    <>
+                      <img
+                        src={imagemUnica.src}
+                        alt={imagemUnica.alt}
+                        className="w-full h-full object-cover filter sepia-[0.3] contrast-110"
+                      />
+                      {/* Botão remover */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSingleImageRemove();
+                        }}
+                        className="absolute top-2 right-2 z-30 bg-black/60 text-jazz-gold px-2 py-1 text-sm font-bold rounded opacity-0 group-hover:opacity-100 transition"
+                      >
+                        Remover
+                      </button>
+                    </>
+                  ) : (
+                    // Ícone de "+" quando não há imagem
+                    <span className="text-jazz-gold text-5xl select-none">＋</span>
+                  )}
+
+                  {/* Overlay escuro decorativo */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 </div>
+
+                {/* Input de arquivo (oculto) */}
+                <input
+                  type="file"
+                  accept="image/*"
+                  ref={singleInputRef}
+                  onChange={handleSingleImageChange}
+                  className="hidden"
+                />
               </div>
             </div>
           </div>
