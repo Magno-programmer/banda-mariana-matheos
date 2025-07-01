@@ -73,11 +73,11 @@ const HeroSection = () => {
           <img 
             src={bordabuttonArtDeco} 
             alt="Moldura decorativa do botão"
-            className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+            className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
           />
           <a
             href="#sobre"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 w-full mt-[5%] text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold"
+            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 h-[31%] w-[69%] mt-[38%] pt-[7%] text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
           >
             Descubra Nossa História
           </a>
