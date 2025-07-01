@@ -2,8 +2,9 @@
 import React from 'react';
 import logoGold from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png';
 import bandaCompletaPalco from '@/assets/images/imagem-da-banda-3.jpg';
-import bandaCompletaPalcoTeste from '@/assets/images/imagem-da-banda.jpg';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
+import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
+import bordabuttonArtDeco from '@/assets/images/divisor-de-botao.png';
 
 const HeroSection = () => {
   return (
@@ -58,20 +59,29 @@ const HeroSection = () => {
           sofisticada, atemporal e arrebatadora
         </h2>
 
-        {/* Decorative line */}
-        <div className="flex items-center justify-center mb-8">
-          <div className="h-px bg-jazz-gold w-16"></div>
-          <div className="mx-4 w-2 h-2 bg-jazz-gold rounded-full"></div>
-          <div className="h-px bg-jazz-gold w-16"></div>
-        </div>
+        {/* Divisor decorativo acima */}
+            <div className="w-full flex justify-center mb-4">
+              <img
+                src={lineArtDeco}
+                alt="Divisor Art Déco"
+                className="w-[30%] object-contain"
+              />
+            </div>
 
         {/* CTA Button */}
-        <a 
-          href="#sobre" 
-          className="inline-block font-gatsby text-lg px-8 py-4 border-2 border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold"
-        >
-          Descubra Nossa História
-        </a>
+        <div className="relative w-[450px] h-[300px] mx-auto">
+          <img 
+            src={bordabuttonArtDeco} 
+            alt="Moldura decorativa do botão"
+            className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+          />
+          <a
+            href="#sobre"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 w-full mt-[5%] text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold"
+          >
+            Descubra Nossa História
+          </a>
+        </div>
       </div>
 
     </section>
