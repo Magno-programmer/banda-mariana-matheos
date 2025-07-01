@@ -2,6 +2,7 @@
 import React from 'react';
 import logoGold from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png';
 import bandaCompletaPalco from '@/assets/images/imagem-da-banda-3.jpg';
+import bandaCompletaPalcoTeste from '@/assets/images/imagem-da-banda.jpg';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
 
 const HeroSection = () => {
@@ -19,14 +20,9 @@ const HeroSection = () => {
         <div className="relative w-full h-screen overflow-hidden">
           {/* imagem de fundo */}
           <img
-            src={bandaCompletaPalco}
+            src={bandaCompletaPalco} // Desktop version
             alt="Imagem de fundo"
             className="hidden sm:block absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
-          />
-          <img
-            src={bandaCompletaPalco}
-            alt="Imagem de fundo mobile"
-            className="block sm:hidden absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50"
           />
 
           {/* Logo no canto superior esquerdo */}
@@ -39,13 +35,18 @@ const HeroSection = () => {
           </div>
 
           {/* Conteúdo central sobreposto */}
-          <div className="relative md-6 z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4">
+          <div className="relative z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4 ">
             <img
-              src={logoGold}
+              src={logoGold} // Desktop version
               alt="Logo Mariana Matheos"
-              className="w-72 md:w-[350px] object-contain drop-shadow-lg"
+              className="hidden sm:block w-72 pt-32 mt-20 w-[350px] object-contain drop-shadow-lg"
             />
-            <p className="text-4xl md:text-4xl font-glimmer font-bold">Mariana Matheos & Banda</p>
+            <img
+              src={logoGold} // Mobile version
+              alt="Logo Mariana Matheos"
+              className="block sm:hidden mt-20 w-[350px] object-contain drop-shadow-lg"
+            />
+            <p className="block sm:hidden text-4xl text-4xl font-glimmer font-bold">Mariana Matheos</p>
           </div>
         </div>
 
