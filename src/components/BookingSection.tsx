@@ -53,7 +53,7 @@ const BookingSection = () => {
           <div className="text-center mb-12 animate-fade-in">
             <p className="font-gatsby text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
               Realizamos apresentações exclusivas para diversos tipos de eventos. 
-              Personalizamos repertório, figurino e clima musical para criar a atmosfera ideal para sua ocasião especial.
+              Temos o repertório, figurino e clima musical que te leva para atmosfera musical das décadas de 20 a 60.
             </p>
           </div>
 
@@ -64,7 +64,7 @@ const BookingSection = () => {
                 <span className="text-jazz-gold text-2xl">🎵</span>
               </div>
               <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Repertório Personalizado</h4>
-              <p className="font-gatsby text-gray-300 text-sm">Adaptamos as músicas ao seu evento</p>
+              <p className="font-gatsby text-gray-300 text-sm">Repertório com tema da Era de Ouro</p>
             </div>
 
             <div className="text-center">

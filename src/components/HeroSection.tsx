@@ -27,11 +27,11 @@ const HeroSection = () => {
           />
 
           {/* Logo no canto superior esquerdo */}
-          <div className="absolute top-4 left-4 z-20">
+          <div className="absolute top-4 left-4 z-50">
             <img
               src={logoWhite}
               alt="Logo Mariana Matheos"
-              className="w-20 h-20 object-contain"
+              className="w-20 h-20 object-contain fixed"
             />
           </div>
 
