@@ -21,9 +21,9 @@ const HeroSection = () => {
         <div className="relative w-full max-h-screen overflow-hidden">
           {/* imagem de fundo */}
           <img
-            src={bandaCompletaPalco} // Desktop version
+            src={bandaCompletaPalco}
             alt="Imagem de fundo"
-            className="hidden sm:block absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
+            className="absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
           />
 
           {/* Logo no canto superior esquerdo */}
@@ -38,16 +38,10 @@ const HeroSection = () => {
           {/* Conteúdo central sobreposto */}
           <div className="relative z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4 ">
             <img
-              src={logoGold} // Desktop version
+              src={logoGold}
               alt="Logo Mariana Matheos"
               className="hidden sm:block w-[30%] mt-[15%] pb-[15%] object-contain drop-shadow-lg"
             />
-            <img
-              src={logoGold} // Mobile version
-              alt="Logo Mariana Matheos"
-              className="block sm:hidden  object-contain drop-shadow-lg"
-            />
-            <p className="block sm:hidden text-4xl text-4xl font-glimmer font-bold">Mariana Matheos</p>
           </div>
         </div>
 
@@ -77,20 +71,13 @@ const HeroSection = () => {
           />
           <a
             href="#sobre"
-            className="block sm:hidden absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 w-[68%] mt-[42%] h-[30%] pt-[4%] text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
-          >
-            Descubra Nossa História
-          </a>{/* Botão de rolagem suave para a seção "Sobre" versão mobile*/}
-          <a
-            href="#sobre"
-            className="hidden sm:block absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 mt-[17%] text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
+            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 mt-[14%] h-[37%] w-[30%] pt-[3%] text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
           >
             Descubra Nossa História
           </a> {/* Botão de rolagem suave para a seção "Sobre" versão desktop*/}
 
         </div>
       </div>
-
     </section>
   );
 };

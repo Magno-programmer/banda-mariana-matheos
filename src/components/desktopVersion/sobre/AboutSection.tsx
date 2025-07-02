@@ -82,13 +82,7 @@ const AboutSection = () => {
                 <img
                   src={bordarArtDeco}
                   alt="Moldura Art Déco"
-                  className="hidden sm:block absolute top-0 left-0 w-full h-full object-contain pointer-events-none z-30"
-                />
-                {/* Moldura decorativa como imagem */}
-                <img
-                  src={bordarArtDeco}
-                  alt="Moldura Art Déco"
-                  className="block sm:hidden absolute -top-7 left-0 w-full h-full object-contain pointer-events-none z-30"
+                  className="absolute top-0 left-0 w-full h-full object-contain pointer-events-none z-30"
                 />
 
                 {/* Área clicável */}

@@ -7,20 +7,6 @@ const GallerySection = () => {
 
   const fileInputRef = useRef(null);
 
-  // const handleFileChange = (event) => {
-  //   const files = Array.from(event.target.files);
-  //   if(files.length === 0) {
-  //     return;
-  //   }
-  //   else{
-  //     const newImages = files.map(file => ({
-  //       src: URL.createObjectURL(file),
-  //       alt: file.name
-  //     }));
-  //     setImages(prevImages => [...prevImages, ...newImages]);
-  //   }
-  // };
-
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {

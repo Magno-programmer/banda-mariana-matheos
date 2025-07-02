@@ -1,13 +1,13 @@
 
 import React from 'react';
-import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import RepertoireSection from '@/components/RepertoireSection';
-import GallerySection from '@/components/GallerySection';
-import BookingSection from '@/components/BookingSection';
-import TestimonialSection from '@/components/TestimonialSection';
-import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import HeroSection from '@/components/desktopVersion/sessaoDoHeroi/HeroSection';
+import AboutSection from '@/components/desktopVersion/sobre/AboutSection';
+import RepertoireSection from '@/components/desktopVersion/repertorio/RepertoireSection';
+import GallerySection from '@/components/desktopVersion/galeria/GallerySection';
+import BookingSection from '@/components/desktopVersion/booking/BookingSection';
+import TestimonialSection from '@/components/desktopVersion/testimonial/TestimonialSection';
+import Footer from '@/components/desktopVersion/footer/Footer';
+import WhatsAppButton from '@/components/desktopVersion/whatsappbuttom/WhatsAppButton';
 
 const Index = () => {
   return (
