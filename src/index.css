@@ -110,21 +110,21 @@
 
 @font-face {
   font-family: 'glimmer of light';
-  src: url('/src/assets/fonts/glimmer of light.otf') format('opentype');
+  src: url('@/assets/fonts/glimmer of light.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GatsbyFLF-Bold';
-  src: url('/src/assets/fonts/GatsbyFLF-Bold.ttf') format('truetype');
+  src: url('@/assets/fonts/GatsbyFLF-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GatsbyFLF';
-  src: url('/src/assets/fonts/GatsbyFLF.ttf') format('truetype');
+  src: url('@/assets/fonts/GatsbyFLF.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
