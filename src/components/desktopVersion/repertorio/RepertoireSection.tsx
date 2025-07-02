@@ -1,5 +1,7 @@
 
 import React from 'react';
+import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
+import bordaComum from '@/assets/images/borda-comum-gold.png';
 
 const RepertoireSection = () => {
   const artists = [
@@ -26,33 +28,39 @@ const RepertoireSection = () => {
             <h2 className="font-glimmer text-5xl md:text-6xl font-bold text-white mb-4 jazz-text-shadow">
               Repertório & Estilo
             </h2>
-            <div className="flex items-center justify-center">
-              <div className="h-px bg-jazz-gold w-20"></div>
-              <div className="mx-4 w-3 h-3 bg-jazz-gold rounded-full"></div>
-              <div className="h-px bg-jazz-gold w-20"></div>
+            {/* Divisor decorativo acima */}
+            <div className="w-full flex justify-center mb-4">
+              <img
+                src={lineArtDeco}
+                alt="Divisor Art Déco"
+                className="w-[50%] object-contain"
+              />
             </div>
           </div>
 
           {/* Main Content */}
           <div className="text-center mb-12 animate-fade-in">
-            <p className="font-gatsby text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+            <p className="font-gatsby text-xl md:text-3xl text-gray-300 leading-relaxed mb-8">
               O repertório da banda é uma curadoria refinada de clássicos do <span className="jazz-gold font-semibold">Jazz, Soul, Blues e R&B</span> — com interpretações de artistas como:
             </p>
 
             {/* Artists Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+            <div
+            className="grid grid-cols-2 md:grid-cols-3 px-32 mb-12">
               {artists.map((artist, index) => (
                 <div 
                   key={artist}
-                  className="animate-scale-in p-4 border border-jazz-gold border-opacity-30 hover:border-opacity-100 transition-all duration-300 hover:bg-jazz-dark hover:bg-opacity-20"
-                  style={{animationDelay: `${index * 0.1}s`}}
+                  className="animate-scale-in bg-no-repeat bg-center bg-contain text-center flex items-center justify-center min-h-[170px] transition-all duration-300 hover:bg-jazz-dark hover:bg-opacity-30 border border-jazz-gold border-opacity-5 hover:border-opacity-10 p-4"
+                  style={{animationDelay: `${index * 0.1}s`,
+                  backgroundImage: `url(${bordaComum})`,
+                  }}
                 >
-                  <p className="font-gatsby text-lg jazz-gold font-semibold">{artist}</p>
+                  <p className="font-gatsby text-2xl jazz-gold font-semibold">{artist}</p>
                 </div>
               ))}
             </div>
 
-            <p className="font-gatsby text-lg text-gray-300 leading-relaxed mb-12">
+            <p className="font-gatsby text-2xl text-gray-50 leading-relaxed mb-12">
               Cada performance é realizada com arranjos fiéis e estética cênica trazendo a Era de Ouro até você, criando um ambiente emocional, sofisticado e inesquecível.
             </p>
 
@@ -65,7 +73,7 @@ const RepertoireSection = () => {
                   De Billie a Amy,
                 </p>
                 <p className="font-glimmer text-xl md:text-2xl text-white">
-                  da elegância vintage à emoção contemporânea
+                  da elegância vintage à emoÇão contemporânea
                 </p>
               </div>
             </div>
@@ -76,7 +84,7 @@ const RepertoireSection = () => {
             {['Jazz', 'Soul', 'Blues', 'R&B'].map((genre, index) => (
               <span 
                 key={genre}
-                className="font-gatsby px-4 py-2 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 text-sm tracking-wider"
+                className="font-gatsbybold px-7 py-2 border border-jazz-gold text-jazz-gold text-xl hover:bg-jazz-gold hover:text-black transition-all duration-300 text-sm tracking-wider"
                 style={{animationDelay: `${index * 0.1}s`}}
               >
                 {genre}
