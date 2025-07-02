@@ -14,10 +14,10 @@ const Footer = () => {
               <h3 className="font-glimmer text-2xl font-bold jazz-gold mb-4">
                 Mariana Matheos
               </h3>
-              <p className="font-gatsby text-gray-400 text-sm">
+              <p className="font-gatsbybold text-gray-400 text-sm">
                 Jazz Band
               </p>
-              <p className="font-gatsby text-gray-400 text-sm mt-2">
+              <p className="font-gatsbybold text-gray-400 text-sm mt-2">
                 Era de Ouro do Jazz (1920–1960)
               </p>
             </div>
@@ -28,14 +28,14 @@ const Footer = () => {
               <div className="space-y-2">
                 <a 
                   href="mailto:contato@marianamatheos.com.br" 
-                  className="flex items-center justify-center font-gatsby text-gray-400 text-sm hover:text-jazz-gold transition-colors duration-300"
+                  className="flex items-center justify-center font-gatsbybold text-gray-400 text-sm hover:text-jazz-gold transition-colors duration-300"
                 >
                   <Mail className="w-4 h-4 mr-2" />
                   contato@marianamatheos.com.br
                 </a>
                 <a 
                   href="tel:+5531997522127" 
-                  className="flex items-center justify-center font-gatsby text-gray-400 text-sm hover:text-jazz-gold transition-colors duration-300"
+                  className="flex items-center justify-center font-gatsbybold text-gray-400 text-sm hover:text-jazz-gold transition-colors duration-300"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   (31) 99752-2127
@@ -70,10 +70,10 @@ const Footer = () => {
           {/* Divider */}
           <div className="border-t border-jazz-gold border-opacity-20 pt-8">
             <div className="text-center">
-              <p className="font-gatsby text-gray-500 text-sm">
+              <p className="font-gatsbybold text-gray-500 text-sm">
                 © 2024 Mariana Matheos Jazz Band. Todos os direitos reservados.
               </p>
-              <p className="font-gatsby text-gray-500 text-xs mt-2">
+              <p className="font-gatsbybold text-gray-500 text-xs mt-2">
                 "Uma experiência musical sofisticada, atemporal e arrebatadora"
               </p>
             </div>
