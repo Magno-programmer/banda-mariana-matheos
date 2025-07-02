@@ -1,5 +1,6 @@
 
 import React from 'react';
+import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
 const BookingSection = () => {
   const events = [
@@ -21,15 +22,18 @@ const BookingSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="font-glimmer text-5xl md:text-6xl font-bold text-white mb-4 jazz-text-shadow">
+            <h2 className="font-glimmer text-6xl font-bold text-white mb-4 jazz-text-shadow">
               Agendamentos & Contratação
             </h2>
-            <div className="flex items-center justify-center mb-6">
-              <div className="h-px bg-jazz-gold w-20"></div>
-              <div className="mx-4 w-3 h-3 bg-jazz-gold rounded-full"></div>
-              <div className="h-px bg-jazz-gold w-20"></div>
+            {/* Divisor decorativo acima */}
+            <div className="w-full flex justify-center mb-4">
+              <img
+                src={lineArtDeco}
+                alt="Divisor Art Déco"
+                className="w-[50%] object-contain"
+              />
             </div>
-            <p className="font-gatsby text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-gatsbybold text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Deseja contratar a banda para um evento inesquecível?
             </p>
           </div>
@@ -44,14 +48,14 @@ const BookingSection = () => {
               >
                 <div className="text-4xl mb-4">{event.icon}</div>
                 <h3 className="font-glimmer text-xl jazz-gold font-bold mb-2">{event.title}</h3>
-                <p className="font-gatsby text-gray-300 text-sm">{event.description}</p>
+                <p className="font-gatsbybold text-gray-400 text-sm">{event.description}</p>
               </div>
             ))}
           </div>
 
           {/* Service Description */}
           <div className="text-center mb-12 animate-fade-in">
-            <p className="font-gatsby text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+            <p className="font-gatsbybold text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
               Realizamos apresentações exclusivas para diversos tipos de eventos. 
               Temos o repertório, figurino e clima musical que te leva para atmosfera musical das décadas de 20 a 60.
             </p>
@@ -64,7 +68,7 @@ const BookingSection = () => {
                 <span className="text-jazz-gold text-2xl">🎵</span>
               </div>
               <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Repertório Personalizado</h4>
-              <p className="font-gatsby text-gray-300 text-sm">Repertório com tema da Era de Ouro</p>
+              <p className="font-gatsbybold text-gray-400 text-sm">Repertório com tema da Era de Ouro</p>
             </div>
 
             <div className="text-center">
@@ -72,7 +76,7 @@ const BookingSection = () => {
                 <span className="text-jazz-gold text-2xl">👗</span>
               </div>
               <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Figurino Temático</h4>
-              <p className="font-gatsby text-gray-300 text-sm">Visual elegante e apropriado</p>
+              <p className="font-gatsbybold text-gray-400 text-sm">Visual elegante e apropriado</p>
             </div>
 
             <div className="text-center">
@@ -80,7 +84,7 @@ const BookingSection = () => {
                 <span className="text-jazz-gold text-2xl">🎭</span>
               </div>
               <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Presença Cênica</h4>
-              <p className="font-gatsby text-gray-300 text-sm">Performance completa e envolvente</p>
+              <p className="font-gatsbybold text-gray-400 text-sm">Performance completa e envolvente</p>
             </div>
           </div>
 
@@ -90,7 +94,7 @@ const BookingSection = () => {
               <h3 className="font-glimmer text-2xl jazz-gold font-bold mb-4">
                 Pronto para uma experiência musical única?
               </h3>
-              <p className="font-gatsby text-gray-300 mb-6">
+              <p className="font-gatsbybold text-gray-400 mb-6">
                 Entre em contato e vamos criar juntos uma apresentação memorável para seu evento.
               </p>
               <a 

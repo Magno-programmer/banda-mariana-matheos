@@ -50,7 +50,7 @@ const TestimonialSection = () => {
           </div>
 
           {/* Subtitle */}
-          <p className="font-gatsby text-lg text-gray-300 mt-8 italic">
+          <p className="font-gatsby text-lg text-gray-100 mt-8 italic">
             Uma experiência que permanece na alma muito depois da última nota
           </p>
         </div>
