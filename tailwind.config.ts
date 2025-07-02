@@ -71,8 +71,9 @@ export default {
 				}
 			},
 			fontFamily: {
-				'glimmer': ['Playfair Display', 'serif'],
-				'gatsby': ['Crimson Text', 'serif'],
+				'glimmer': ['glimmer of light', 'serif'],
+				'gatsbybold': ['GatsbyFLF-Bold', 'serif'],
+				'gatsby': ['GatsbyFLF', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
