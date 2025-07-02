@@ -27,7 +27,7 @@ const TestimonialSection = () => {
                   É memória.
                 </p>
                 <p className="font-glimmer text-3xl md:text-4xl jazz-gold font-bold">
-                  É presença.
+                  É presenÇa.
                 </p>
                 <p className="font-glimmer text-3xl md:text-4xl jazz-gold font-bold">
                   É sentimento.

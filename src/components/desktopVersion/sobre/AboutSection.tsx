@@ -24,7 +24,7 @@ const AboutSection = () => {
   };
   
   return (
-    <section id="sobre" className="py-20 bg-black relative">
+    <section id="sobre" className="py-20 jazz-gradient relative">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 right-10 text-9xl font-glimmer text-jazz-gold">♪</div>

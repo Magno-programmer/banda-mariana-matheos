@@ -1,12 +1,16 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import logoGold from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png';
-import bandaCompletaPalco from '@/assets/images/imagem-da-banda-3.jpg';
+import bandaCompletaPalco from '@/assets/images/imagem-da-banda.jpg';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import bordabuttonArtDeco from '@/assets/images/divisor-de-botao.png';
 
+
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="min-h-screen jazz-gradient flex flex-col items-center justify-center relative overflow-hidden">
       {/* Decorative Art Deco elements */}
@@ -69,12 +73,12 @@ const HeroSection = () => {
             alt="Moldura decorativa do botão"
             className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
           />
-          <a
-            href="#sobre"
-            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 mt-[9%] h-[39%] w-[20%] pt-7 text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
+          <button
+            onClick={() => navigate('/sobre')}
+            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 mt-[120px] h-[80px] w-[255px] pb-2 text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
           >
             Descubra Nossa História
-          </a> {/* Botão de rolagem suave para a seção "Sobre" versão desktop*/}
+          </button> {/* Botão de rolagem suave para a seção "Sobre" versão desktop*/}
 
         </div>
       </div>

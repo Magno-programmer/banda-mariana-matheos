@@ -19,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			backgroundImage: {
+				'jazz-gradient': 'linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(128,0,0,0.85))',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
