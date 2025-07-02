@@ -44,7 +44,7 @@ const AboutSection = () => {
               <img
                 src={lineArtDeco}
                 alt="Divisor Art Déco"
-                className="w-[30%] object-contain"
+                className="w-[50%] object-contain"
               />
             </div>
           </div>
@@ -53,15 +53,15 @@ const AboutSection = () => {
             {/* Text Content */}
             <div className="animate-fade-in">
               <div className="space-y-6 font-gatsby text-lg leading-relaxed text-gray-300">
-                <p className="text-xl text-white first-letter:text-4xl first-letter:font-glimmer first-letter:text-jazz-gold first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                <p className="text-2xl text-white first-letter:text-4xl first-letter:font-glimmer first-letter:text-jazz-gold first-letter:float-left first-letter:mr-2">
                   A banda <span className="jazz-gold font-semibold">Mariana Matheos</span> oferece muito mais do que música ao vivo — entrega uma experiência sensorial sofisticada, envolvente e memorável. Inspirada na Era de Ouro do Jazz (1920–1960), sua sonoridade reflete o requinte de um tempo em que a arte de tocar era também a arte de emocionar.
                 </p>
                 
-                <p>
+                <p className="text-2xl">
                   Sob a liderança da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, cuja voz combina elegância, carisma e intensidade emocional, o grupo apresenta performances sob medida para eventos que exigem <span className="jazz-gold font-semibold">excelência estética e sonora</span>.
                 </p>
                 
-                <p>
+                <p className="text-2xl font-bold">
                   Cada apresentação é um espetáculo completo — com figurinos planejados, repertório personalizado e presença cênica. É música viva, com alma, para eventos verdadeiramente especiais.
                 </p>
               </div>
@@ -71,7 +71,7 @@ const AboutSection = () => {
                 <p className="font-glimmer text-xl jazz-gold italic">
                   "A música é a linguagem universal da alma, e nós falamos fluentemente."
                 </p>
-                <p className="font-gatsby text-sm text-gray-400 mt-2">— Mariana Matheos</p>
+                <p className="font-gatsbybold text-sm text-gray-100 mt-2">— Mariana Matheos</p>
               </div>
             </div>
 
