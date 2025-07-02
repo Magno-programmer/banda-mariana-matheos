@@ -54,16 +54,16 @@ const HeroSection = () => {
         </h2>
 
         {/* Divisor decorativo acima */}
-            <div className="w-full flex justify-center mb-4">
-              <img
-                src={lineArtDeco}
-                alt="Divisor Art Déco"
-                className="w-[30%] object-contain"
-              />
-            </div>
+        <div className="w-full flex justify-center mb-4">
+          <img
+            src={lineArtDeco}
+            alt="Divisor Art Déco"
+            className="w-[50%] object-contain"
+          />
+        </div>
 
         {/* CTA Button */}
-        <div className="relative w-[100%] h-[300px] mx-auto">
+        <div className="relative w-[100%] h-[200px] mx-auto">
           <img 
             src={bordabuttonArtDeco} 
             alt="Moldura decorativa do botão"
@@ -71,7 +71,7 @@ const HeroSection = () => {
           />
           <a
             href="#sobre"
-            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 mt-[14%] h-[37%] w-[30%] pt-[3%] text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
+            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 mt-[9%] h-[39%] w-[20%] pt-7 text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
           >
             Descubra Nossa História
           </a> {/* Botão de rolagem suave para a seção "Sobre" versão desktop*/}
