@@ -5,7 +5,7 @@ import React from 'react';
 import HeroSection from '@/components/desktopVersion/Index/HeroSection';
 import TestimonialSection from '@/components/desktopVersion/Index/TestimonialSection';
 import Footer from '@/components/desktopVersion/commonPages/footer/Footer';
-import WhatsAppButton from '@/components/desktopVersion/commonPages/whatsappbuttom/WhatsAppButton';
+import WhatsAppButton from '@/components/globalComponents/WhatsAppButton';
 
 // Importing mobile components
 import HeroSectionMobile from '@/components/mobileVersion/Index/HeroSectionMobile';

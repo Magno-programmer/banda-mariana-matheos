@@ -10,7 +10,7 @@ import VideosPage from "./pages/VideosPage";
 import RepertoirePage from "./pages/RepertoirePage";
 import BookingPage from "./pages/BookingPage";
 import ContactPage from "./pages/ContactPage";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/globalComponents/ScrollToTop";
 
 const queryClient = new QueryClient();
 

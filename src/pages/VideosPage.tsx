@@ -3,7 +3,7 @@ import React from "react";
 // Importing desktop components
 import VideosSection from "@/components/desktopVersion/galeria/VideosSection";
 import Footer from "@/components/desktopVersion/commonPages/footer/Footer";
-import WhatsAppButton from "@/components/desktopVersion/commonPages/whatsappbuttom/WhatsAppButton";
+import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/desktopVersion/commonPages/header/Header";
 
 // Importing mobile components
