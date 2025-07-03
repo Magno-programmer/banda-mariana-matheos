@@ -9,6 +9,7 @@ import ImagePage from "./pages/ImagePage";
 import VideosPage from "./pages/VideosPage";
 import RepertoirePage from "./pages/RepertoirePage";
 import BookingPage from "./pages/BookingPage";
+import ContactPage from "./pages/ContactPage";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/videos" element={<VideosPage />} />
           <Route path="/repertorio" element={<RepertoirePage />} />
           <Route path="/agenda" element={<BookingPage />} />
+          <Route path="/contato" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

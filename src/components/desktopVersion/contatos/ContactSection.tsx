@@ -1,4 +1,4 @@
-import { MessageCircle, Mail, Instagram, MapPin } from 'lucide-react';
+import { MessageCircle, Instagram, MapPin } from 'lucide-react';
 import fundoBanda from '@/assets/images/imagem-da-banda.jpg'; // imagem de fundo da banda
 import { useNavigate } from 'react-router-dom';
 
@@ -6,15 +6,6 @@ const ContactSection = () => {
   const navigate = useNavigate();
 
   const whatsappLink = "https://wa.me/5531997522127?text=Olá,%20gostaria%20de%20entrar%20em%20contato%20com%20a%20banda%20Mariana%20Matheos.";
-  const emailLink = "mailto:marianamatheos@gmail.com";
-  const gmailLink =
-    "https://mail.google.com/mail/?" +
-    new URLSearchParams({
-      to: "marianamatheos@gmail.com",
-      su: "Contratação Banda Mariana Matheos",
-      body: "Olá! Gostaria de contratar a banda para um evento.",
-      tf: "cm",
-    });
 
   return (
     <section id="contato" className="py-20 bg-black relative">
@@ -41,7 +32,6 @@ const ContactSection = () => {
 
               <div className="space-y-6 font-gatsby text-gray-300">
                 <ContactItem icon={MessageCircle} label="WhatsApp" value="+55 (31) 9 9752-2127" />
-                <ContactItem icon={Mail} label="E-mail" value="marianamatheos@gmail.com" />
                 <ContactItem icon={MapPin} label="Atuação" value="Minas Gerais e região" />
                 <ContactItem icon={Instagram} label="Instagram" value="@marianamatheosoficial" />
               </div>
@@ -53,8 +43,6 @@ const ContactSection = () => {
 
               <div className="space-y-4">
                 <ActionButton href={whatsappLink} icon={MessageCircle} text="Falar no WhatsApp" />
-                <ActionButton href={emailLink} icon={Mail} text="Enviar E-mail" />
-                <ActionButton href={gmailLink} icon={Mail} text="Abrir no Gmail" />
 
                 <button
                   onClick={() => navigate('/')}
