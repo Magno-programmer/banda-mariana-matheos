@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
 import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
+const HeaderMobile = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -19,29 +19,39 @@ const Header = () => {
               alt="Mariana Matheos"
               className="w-12 h-12 object-contain"
             />
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-jazz-gold font-glimmer">Mariana Matheos</h1>
-              <p className="text-xs text-white tracking-widest">Jazz Band</p>
-            </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="flex space-x-6">
+          {/* Ações */}
+          <div className="flex items-center space-x-4">
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-jazz-gold"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {isMenuOpen && (
+          <nav className="fixed top-20 right-4 w-56 z-50 bg-black bg-opacity-95 border border-jazz-gold rounded-lg shadow-lg p-4 space-y-4">
             {['Inicio', 'Sobre', 'Repertorio', 'Videos', 'Fotos', 'Agenda', 'Contato'].map((item, i) => (
               <button
                 key={i}
-                onClick={() => navigate(`/${item.toLowerCase()}`)}
-                className="text-jazz-gold hover:text-white transition-colors font-gatsby tracking-wide"
+                onClick={() => {
+                  navigate(`/${item.toLowerCase()}`);
+                  setIsMenuOpen(false);
+                }}
+                className="block text-right text-jazz-gold hover:text-white transition-colors border-b border-jazz-gold/20 pb-2 font-gatsbybold"
               >
                 {item}
               </button>
             ))}
           </nav>
-
-        </div>
+        )}
       </div>
     </header>
   );
 };
 
-export default Header;
+export default HeaderMobile;

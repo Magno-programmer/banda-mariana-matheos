@@ -40,13 +40,13 @@ const RepertoireSection = () => {
 
           {/* Main Content */}
           <div className="text-center mb-12 animate-fade-in">
-            <p className="font-gatsby text-xl md:text-3xl text-gray-300 leading-relaxed mb-8">
+            <p className="font-gatsby text-3xl text-gray-50 leading-relaxed mb-8">
               O repertório da banda é uma curadoria refinada de clássicos do <span className="jazz-gold font-semibold">Jazz, Soul, Blues e R&B</span> — com interpretações de artistas como:
             </p>
 
             {/* Artists Grid */}
             <div
-            className="grid grid-cols-3 px-32 mb-12">
+            className="grid grid-cols-2 mb-12 gap-y-0">
               {artists.map((artist, index) => (
                 <div 
                   key={artist}
@@ -60,7 +60,7 @@ const RepertoireSection = () => {
               ))}
             </div>
 
-            <p className="font-gatsby text-2xl text-gray-50 leading-relaxed mb-12">
+            <p className="font-gatsby text-3xl text-gray-50 leading-relaxed mb-12">
               Cada performance é realizada com arranjos fiéis e estética cênica trazendo a Era de Ouro até você, criando um ambiente emocional, sofisticado e inesquecível.
             </p>
 

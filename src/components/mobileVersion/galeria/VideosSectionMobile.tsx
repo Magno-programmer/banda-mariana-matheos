@@ -49,14 +49,14 @@ const VideosSection = () => {
         <div className="max-w-3xl mx-auto animate-fade-in">
         <div className="text-center mb-8">
             <h3 className="font-glimmer text-3xl font-bold jazz-gold mb-4">Performance ao Vivo</h3>
-            <p className="font-gatsbybold text-gray-400 text-xl">Assista um trecho da apresentação</p>
+            <p className="font-gatsbybold text-gray-100 text-3xl">Assista um trecho da apresentação</p>
         </div>
 
         {/* Vídeo embed */}
-        <div className="relative bg-jazz-dark h-[450px] border border-jazz-dark border-opacity-50 flex items-center justify-center">
+        <div className="relative w-screen bg-jazz-dark border border-jazz-dark border-opacity-50 flex items-center justify-center">
             {videoOpen ? (
             <iframe
-                className="w-full h-full"
+                className="px-5 w-screen h-[300px]"
                 src={`${videoUrl}?autoplay=1`}
                 title="Vídeo da banda Mariana Matheos"
                 frameBorder="0"
@@ -69,11 +69,10 @@ const VideosSection = () => {
                 onClick={() => setVideoOpen(true)}
                 className="relative w-full h-full cursor-pointer group"
                 >
-                
                 <img
                     src={thumbnailUrl}
                     alt="Capa do vídeo"
-                    className="h-[450px] w-[700px] object-cover"
+                    className="h-full object-cover"
                 />
                 {/* Ícone play centralizado */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/60 transition">
@@ -89,35 +88,35 @@ const VideosSection = () => {
                     </svg>
                     </div>
                 </div>
-                </div>
+              </div>
             </div>
             )}
         </div>
 
-            {/* Campo para adicionar novo vídeo */}
-        <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {/* Campo para adicionar novo vídeo */}
+        <div className="mt-6 flex flex-col flex-row gap-4 justify-center items-center">
             <input
                 type="text"
                 value={newLink}
                 onChange={(e) => setNewLink(e.target.value)}
                 placeholder="Cole aqui o link do YouTube"
-                className="w-96 px-4 py-2 border border-jazz-gold bg-black text-white placeholder:text-gray-400 font-gatsbybold text-sm"
+                className="w-96 px-4 py-2 border border-jazz-gold bg-black text-white placeholder:text-gray-100 font-gatsbybold text-lg"
             />
             <button
                 onClick={handleAddVideo}
-                className="px-4 py-2 border border-jazz-gold text-jazz-gold font-gatsbybold hover:bg-jazz-gold hover:text-black transition z-20"
+                className="px-4 py-2 border border-jazz-gold text-jazz-gold font-gatsbybold text-2xl hover:bg-jazz-gold hover:text-black transition z-20"
             >
                 Adicionar vídeo
             </button>
             </div>
 
             {/* Lista de vídeos para assistir */}
-            <div className="mt-6 grid grid-cols-3 flex flex-wrap justify-center gap-4">
+            <div className="mt-6 flex flex-col justify-center gap-4 max-w-[370px] mx-auto">
             {videos.map((video, index) => (
                 <button
                 key={index}
                 onClick={() => handleVideoSelect(video.url)}
-                className="font-gatsbybold text-sm md:text-base px-4 py-2 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition z-20"
+                className="font-gatsbybold text-2xl px-2 py-2 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition z-20"
                 >
                 {video.title}
                 </button>
