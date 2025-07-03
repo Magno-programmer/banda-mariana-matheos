@@ -19,6 +19,10 @@ const HeaderMobile = () => {
               alt="Mariana Matheos"
               className="w-12 h-12 object-contain"
             />
+            <div>
+              <h1 className="text-xl font-bold text-jazz-gold font-glimmer">Mariana Matheos</h1>
+              <p className="text-xs text-white tracking-widest">Jazz Band</p>
+            </div>
           </div>
 
           {/* Ações */}
