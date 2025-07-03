@@ -1,11 +1,20 @@
 import React from "react";
+
+// Importing desktop components
 import AboutSection from "@/components/desktopVersion/sobre/AboutSection";
 import Footer from "@/components/desktopVersion/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/desktopVersion/commonPages/whatsappbuttom/WhatsAppButton";
 import Header from "@/components/desktopVersion/commonPages/header/Header";
+
+// Importing mobile components
 import AboutSectionMobile from "@/components/mobileVersion/sobre/AboutSectionMobile";
 import FooterMobile from "@/components/mobileVersion/commonPages/footer/FooterMobile";
 import HeaderMobile from "@/components/mobileVersion/commonPages/header/HeaderMobile";
+
+// Importing tablet components
+import AboutSectionTablet from "@/components/tabletVersion/sobre/AboutSectionTablet";
+import FooterTablet from "@/components/tabletVersion/commonPages/footer/FooterTablet";
+import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTablet";
 
 const AboutPage = () => {
   return (
@@ -15,6 +24,13 @@ const AboutPage = () => {
         <HeaderMobile />
         <AboutSectionMobile />
         <FooterMobile />
+        <WhatsAppButton />
+      </div>
+      {/* Tablet Version */}
+      <div className="hidden sm:block lg:hidden">
+        <HeaderTablet />
+        <AboutSectionTablet />
+        <FooterTablet />
         <WhatsAppButton />
       </div>
       {/* Desktop Version */}
