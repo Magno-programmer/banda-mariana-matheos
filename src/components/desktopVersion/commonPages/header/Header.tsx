@@ -21,7 +21,7 @@ const Header = () => {
             />
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-jazz-gold font-glimmer">Mariana Matheos</h1>
-              <p className="text-xs text-white tracking-widest">Jazz Band</p>
+              <p className="text-lg text-white tracking-widest">Jazz Band</p>
             </div>
           </div>
 
@@ -31,7 +31,7 @@ const Header = () => {
               <button
                 key={i}
                 onClick={() => navigate(`/${item.toLowerCase()}`)}
-                className="text-jazz-gold hover:text-white transition-colors font-gatsby tracking-wide"
+                className="text-jazz-gold hover:text-white transition-colors font-gatsbybold tracking-wide"
               >
                 {item}
               </button>

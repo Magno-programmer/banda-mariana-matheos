@@ -32,7 +32,7 @@ const ImageSection = () => {
       <div className="container mx-auto px-6 relative">
         {/* Section Title */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-glimmer text-5xl md:text-6xl font-bold jazz-gold mb-4 jazz-text-shadow">
+          <h2 className="font-glimmer text-7xl font-bold jazz-gold mb-4 jazz-text-shadow">
             Galeria
           </h2>
             {/* Divisor decorativo acima */}
@@ -43,13 +43,13 @@ const ImageSection = () => {
                 className="w-[50%] object-contain"
               />
             </div>
-          <p className="font-gatsbybold text-xl text-gray-400 max-w-2xl mx-auto">
-            Momentos especiais capturados durante nossas apresentações exclusivas
+          <p className="font-gatsbybold text-3xl text-gray-400 max-w-2xl mx-auto">
+            Momentos especiais capturados durante nossas apresentaÇões exclusivas
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
           {images.map((image, index) => (
             <div 
               key={index}
@@ -63,7 +63,7 @@ const ImageSection = () => {
                 <img 
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-64 md:h-72 object-cover filter sepia-[0.2] contrast-110 group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-72 object-cover filter sepia-[0.2] contrast-110 group-hover:scale-110 transition-transform duration-500"
                 />
                 
                 {/* Overlay */}

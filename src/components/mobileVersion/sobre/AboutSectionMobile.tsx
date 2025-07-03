@@ -58,11 +58,11 @@ const AboutSection = () => {
                 </p>
                 
                 <p className="text-3xl">
-                  Sob a liderança da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, cuja voz combina elegância, carisma e intensidade emocional, o grupo apresenta performances sob medida para eventos que exigem <span className="jazz-gold font-semibold">excelência estética e sonora</span>.
+                  Sob a lideranÇa da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, cuja voz combina elegância, carisma e intensidade emocional, o grupo apresenta performances sob medida para eventos que exigem <span className="jazz-gold font-semibold">excelência estética e sonora</span>.
                 </p>
                 
                 <p className="text-3xl font-bold">
-                  Cada apresentação é um espetáculo completo — com figurinos planejados, repertório personalizado e presença cênica. É música viva, com alma, para eventos verdadeiramente especiais.
+                  Cada apresentaÇão é um espetáculo completo — com figurinos planejados, repertório personalizado e presenÇa cênica. É música viva, com alma, para eventos verdadeiramente especiais.
                 </p>
               </div>
 

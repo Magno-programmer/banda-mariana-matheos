@@ -16,7 +16,7 @@ const VideosSection = () => {
 
   const thumbnailUrl = "https://img.youtube.com/vi/CO_yWe9z8S0/hqdefault.jpg"; // Default thumbnail URL
 
-  // Função para converter link do YouTube para formato embed
+  // FunÇão para converter link do YouTube para formato embed
   const convertToEmbed = (url) => {
     const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/);
     return match ? `https://www.youtube.com/embed/${match[1]}` : null;
@@ -49,7 +49,7 @@ const VideosSection = () => {
         <div className="max-w-3xl mx-auto animate-fade-in">
         <div className="text-center mb-8">
             <h3 className="font-glimmer text-5xl font-bold jazz-gold mb-4">Performance ao Vivo</h3>
-            <p className="font-gatsbybold text-gray-400 text-3xl">Assista um trecho da apresentação</p>
+            <p className="font-gatsbybold text-gray-400 text-3xl">Assista um trecho da apresentaÇão</p>
         </div>
 
         {/* Vídeo embed */}

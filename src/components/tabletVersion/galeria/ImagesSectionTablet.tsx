@@ -44,7 +44,7 @@ const ImageSection = () => {
               />
             </div>
           <p className="font-gatsbybold text-3xl text-gray-400 max-w-2xl mx-auto">
-            Momentos especiais capturados durante nossas apresentações exclusivas
+            Momentos especiais capturados durante nossas apresentaÇões exclusivas
           </p>
         </div>
 

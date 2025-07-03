@@ -17,9 +17,9 @@ const ContactSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-glimmer text-jazz-gold mb-4">Entre em Contato</h2>
+          <h2 className="text-6xl font-glimmer text-jazz-gold mb-4">Entre em Contato</h2>
           <div className="w-24 h-1 bg-jazz-gold mx-auto mb-4"></div>
-          <p className="text-lg text-gray-300 font-gatsby">
+          <p className="text-3xl text-gray-300 font-gatsbybold">
             Ficaremos felizes em tocar no seu evento
           </p>
         </div>
@@ -28,7 +28,7 @@ const ContactSection = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Informações de Contato */}
             <div className="bg-gradient-to-br from-black to-jazz-dark border border-jazz-gold rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">Informações</h3>
+              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">InformaÇões</h3>
 
               <div className="space-y-6 font-gatsby text-gray-300">
                 <ContactItem icon={MessageCircle} label="WhatsApp" value="+55 (31) 9 9752-2127" />
@@ -39,14 +39,14 @@ const ContactSection = () => {
 
             {/* Ações Rápidas */}
             <div className="bg-gradient-to-br from-black to-jazz-dark border border-jazz-gold rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">Ações Rápidas</h3>
+              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">AÇões Rápidas</h3>
 
               <div className="space-y-4">
                 <ActionButton href={whatsappLink} icon={MessageCircle} text="Falar no WhatsApp" />
 
                 <button
                   onClick={() => navigate('/')}
-                  className="w-full bg-transparent border border-jazz-gold text-jazz-gold font-gatsby py-3 rounded hover:bg-jazz-gold hover:text-black transition"
+                  className="w-full bg-transparent border border-jazz-gold text-2xl text-jazz-gold font-gatsbybold py-3 rounded hover:bg-jazz-gold hover:text-black transition"
                 >
                   Voltar ao Início
                 </button>
@@ -66,8 +66,8 @@ const ContactItem = ({ icon: Icon, label, value }) => (
       <Icon size={22} className="text-jazz-gold" />
     </div>
     <div>
-      <p className="text-sm font-bold text-jazz-gold">{label}</p>
-      <p className="text-sm break-words text-gray-300">{value}</p>
+      <p className="text-2xl font-gatsbybold font-bold text-jazz-gold">{label}</p>
+      <p className="text-2xl font-gatsbybold break-words text-gray-300">{value}</p>
     </div>
   </div>
 );
@@ -78,7 +78,7 @@ const ActionButton = ({ href, icon: Icon, text }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="w-full flex items-center justify-center space-x-3 border border-jazz-gold text-jazz-gold font-gatsby py-3 rounded hover:bg-jazz-gold hover:text-black transition"
+    className="w-full flex items-center justify-center text-2xl space-x-3 border border-jazz-gold text-jazz-gold font-gatsbybold py-3 rounded hover:bg-jazz-gold hover:text-black transition"
   >
     <Icon size={22} />
     <span>{text}</span>
