@@ -88,25 +88,68 @@ const BookingSection = () => {
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="text-center animate-scale-in">
-            <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50 max-w-2xl mx-auto">
-              <h3 className="font-glimmer text-2xl jazz-gold font-bold mb-4">
-                Pronto para uma experiência musical única?
-              </h3>
-              <p className="font-gatsbybold text-xl text-gray-400 mb-6">
-                Entre em contato e vamos criar juntos uma apresentação memorável para seu evento.
-              </p>
-              <a 
-                href="https://wa.me/5531997522127?text=Olá, Mariana! Vi seu site e gostaria de saber mais sobre o orçamento da banda."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block font-gatsby text-lg px-8 py-4 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 tracking-wider uppercase font-semibold"
-              >
-                Solicitar Orçamento
-              </a>
-            </div>
-          </div>
+        </div>
+      </div>
+      
+      {/* Agenda de Shows */}
+      <div className="mt-24 animate-fade-in">
+        <h3 className="font-glimmer text-6xl jazz-gold font-bold text-center mb-6">
+          Próximos Shows
+        </h3>
+        <div className="w-full flex justify-center mb-8">
+          <img
+            src={lineArtDeco}
+            alt="Divisor Art Déco"
+            className="w-[40%] object-contain"
+          />
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-full text-center font-gatsbybold text-2xl text-gray-200 border-separate border-spacing-y-4">
+            <thead>
+              <tr>
+                <th className="px-4 py-2 text-jazz-gold border-b border-jazz-gold">Data</th>
+                <th className="px-4 py-2 text-jazz-gold border-b border-jazz-gold">Dia</th>
+                <th className="px-4 py-2 text-jazz-gold border-b border-jazz-gold">Horário</th>
+                <th className="px-4 py-2 text-jazz-gold border-b border-jazz-gold">Local</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { date: "09/07", day: "Qua", time: "20:00", venue: "Chopperhead Garage" },
+                { date: "11/07", day: "Sex", time: "20:00", venue: "The Bulltique Vino Bar" },
+                { date: "08/08", day: "Sex", time: "20:00", venue: "The Bulltique Vino Bar" },
+                { date: "16/08", day: "Sáb", time: "19:30", venue: "Soul Jazz Burguer" },
+                { date: "12/09", day: "Sex", time: "20:00", venue: "The Bulltique Vino Bar" },
+              ].map((event, index) => (
+                <tr key={index} className="bg-black bg-opacity-30 backdrop-blur-lg border border-jazz-gold/20">
+                  <td className="px-4 py-3">{event.date}</td>
+                  <td className="px-4 py-3">{event.day}</td>
+                  <td className="px-4 py-3">{event.time}</td>
+                  <td className="px-4 py-3">{event.venue}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="text-center animate-scale-in mt-12">
+        <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50 max-w-2xl mx-auto">
+          <h3 className="font-glimmer text-2xl jazz-gold font-bold mb-4">
+            Pronto para uma experiência musical única?
+          </h3>
+          <p className="font-gatsbybold text-xl text-gray-400 mb-6">
+            Entre em contato e vamos criar juntos uma apresentação memorável para seu evento.
+          </p>
+          <a 
+            href="https://wa.me/5531997522127?text=Olá, Mariana! Vi seu site e gostaria de saber mais sobre o orçamento da banda."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block font-gatsby text-lg px-8 py-4 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 tracking-wider uppercase font-semibold"
+          >
+            Solicitar Orçamento
+          </a>
         </div>
       </div>
     </section>
