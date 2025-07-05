@@ -28,7 +28,7 @@ const ContactSection = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Informações de Contato */}
             <div className="bg-gradient-to-br from-black to-jazz-dark border border-jazz-gold rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">InformaÇões</h3>
+              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">Informações</h3>
 
               <div className="space-y-6 font-gatsby text-gray-300">
                 <ContactItem icon={MessageCircle} label="WhatsApp" value="+55 (31) 9 9752-2127" />
@@ -39,7 +39,7 @@ const ContactSection = () => {
 
             {/* Ações Rápidas */}
             <div className="bg-gradient-to-br from-black to-jazz-dark border border-jazz-gold rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">AÇões Rápidas</h3>
+              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">Ações Rápidas</h3>
 
               <div className="space-y-4">
                 <ActionButton href={whatsappLink} icon={MessageCircle} text="Falar no WhatsApp" />

@@ -6,31 +6,13 @@ const VideosSection = () => {
   
   const [videoUrl, setVideoUrl] = useState("https://www.youtube.com/embed/CO_yWe9z8S0");
   
-  const [videos, setVideos] = useState([
+  const [videos] = useState([
     { title: "All About That Bass - Postmodern Jukebox Cover (Matozinhos)", url: "https://www.youtube.com/embed/CO_yWe9z8S0" },
     { title: "Blue Moon - Billie Holiday (Festival Jazz & Blues)", url: "https://www.youtube.com/embed/h8z62Ae5a9Q" },
     { title: "Summertime (Festival Jazz & Blues)", url: "https://www.youtube.com/embed/3vUOFhwE134" },
   ]);
 
-  const [newLink, setNewLink] = useState("");
-
   const thumbnailUrl = "https://img.youtube.com/vi/CO_yWe9z8S0/hqdefault.jpg"; // Default thumbnail URL
-
-  // FunÇão para converter link do YouTube para formato embed
-  const convertToEmbed = (url) => {
-    const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/);
-    return match ? `https://www.youtube.com/embed/${match[1]}` : null;
-  };
-
-  const handleAddVideo = () => {
-    const embedUrl = convertToEmbed(newLink);
-    if (embedUrl) {
-      setVideos((prev) => [...prev, { title: `Vídeo ${prev.length + 1}`, url: embedUrl }]);
-      setNewLink("");
-    } else {
-      alert("Link inválido. Use um link do YouTube.");
-    }
-  };
 
   const handleVideoSelect = (url) => {
     setVideoUrl(url);
@@ -49,7 +31,7 @@ const VideosSection = () => {
         <div className="max-w-3xl mx-auto animate-fade-in">
         <div className="text-center mb-8">
             <h3 className="font-glimmer text-5xl font-bold jazz-gold mb-4">Performance ao Vivo</h3>
-            <p className="font-gatsbybold text-gray-400 text-2xl">Assista um trecho da apresentaÇão</p>
+            <p className="font-gatsbybold text-gray-400 text-2xl">Assista um trecho da apresentação</p>
         </div>
 
         {/* Vídeo embed */}
@@ -93,23 +75,6 @@ const VideosSection = () => {
             </div>
             )}
         </div>
-
-            {/* Campo para adicionar novo vídeo */}
-        <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <input
-                type="text"
-                value={newLink}
-                onChange={(e) => setNewLink(e.target.value)}
-                placeholder="Cole aqui o link do YouTube"
-                className="w-96 px-4 py-2 border border-jazz-gold bg-black text-white placeholder:text-gray-400 font-gatsbybold text-xl"
-            />
-            <button
-                onClick={handleAddVideo}
-                className="px-4 py-2 border border-jazz-gold text-jazz-gold font-gatsbybold text-xl hover:bg-jazz-gold hover:text-black transition z-20"
-            >
-                Adicionar vídeo
-            </button>
-            </div>
 
             {/* Lista de vídeos para assistir */}
             <div className="mt-6 grid grid-cols-3 flex flex-wrap justify-center gap-4">

@@ -25,7 +25,7 @@ const HeaderMobile = () => {
             </div>
           </div>
 
-          {/* AÇões */}
+          {/* Ações */}
           <div className="flex items-center space-x-4">
             {/* Mobile Menu Toggle */}
             <button

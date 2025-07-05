@@ -78,7 +78,7 @@ const HeroSection = () => {
             className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 mt-[120px] h-[80px] w-[255px] pb-2 text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
           >
             Descubra Nossa História
-          </button> {/* Botão de rolagem suave para a seÇão "Sobre" versão desktop*/}
+          </button> {/* Botão de rolagem suave para a seção "Sobre" versão desktop*/}
 
         </div>
       </div>

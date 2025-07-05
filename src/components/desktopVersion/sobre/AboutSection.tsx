@@ -4,7 +4,7 @@ import bordarArtDeco from '@/assets/images/divisor-de-textos.png';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
 const AboutSection = () => {
-  const [imagemUnica, setImagemUnica] = useState(null);
+  const [imagemUnica, setImagemUnica] = useState({src: '/images/cantora.png', alt: 'Cantora Mariana Matheos'});
 
   const singleInputRef = useRef(null);
 
@@ -58,11 +58,11 @@ const AboutSection = () => {
                 </p>
                 
                 <p className="text-2xl">
-                  Sob a lideranÇa da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, cuja voz combina elegância, carisma e intensidade emocional, o grupo apresenta performances sob medida para eventos que exigem <span className="jazz-gold font-semibold">excelência estética e sonora</span>.
+                  Sob a liderança da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, cuja voz combina elegância, carisma e intensidade emocional, o grupo apresenta performances sob medida para eventos que exigem <span className="jazz-gold font-semibold">excelência estética e sonora</span>.
                 </p>
                 
                 <p className="text-2xl font-bold">
-                  Cada apresentaÇão é um espetáculo completo — com figurinos planejados, repertório personalizado e presenÇa cênica. É música viva, com alma, para eventos verdadeiramente especiais.
+                  Cada apresentação é um espetáculo completo — com figurinos planejados, repertório personalizado e presença cênica. É música viva, com alma, para eventos verdadeiramente especiais.
                 </p>
               </div>
 
@@ -87,47 +87,18 @@ const AboutSection = () => {
 
                 {/* Área clicável */}
                 <div
-                  className="relative w-[93%] h-[73%] bg-gradient-to-br -inset-1 mt-3 from-jazz-dark to-black flex items-center justify-center overflow-hidden cursor-pointer z-20"
-                  onClick={() => {
-                    if (!imagemUnica) singleInputRef.current.click();
-                  }}
+                  className="relative w-[93%] h-[73%] bg-gradient-to-br -inset-1 mt-3 from-jazz-dark to-black flex items-center justify-center overflow-hidden z-20"
                 >
-                  {/* Se houver imagem */}
-                  {imagemUnica ? (
-                    <>
-                      <img
-                        src={imagemUnica.src}
-                        alt={imagemUnica.alt}
-                        className="w-full h-full object-cover filter sepia-[0.3] contrast-110"
-                      />
-                      {/* Botão remover */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleSingleImageRemove();
-                        }}
-                        className="absolute top-2 right-2 z-30 bg-black/60 text-jazz-gold px-2 py-1 text-sm font-bold rounded opacity-0 group-hover:opacity-100 transition"
-                      >
-                        Remover
-                      </button>
-                    </>
-                  ) : (
-                    // Ícone de "+" quando não há imagem
-                    <span className="text-jazz-gold text-5xl select-none">＋</span>
-                  )}
+                  <img
+                    src={imagemUnica.src}
+                    alt={imagemUnica.alt}
+                    className="w-full h-full object-cover filter sepia-[0.3] contrast-110"
+                  />
 
                   {/* Overlay escuro decorativo */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 </div>
 
-                {/* Input de arquivo (oculto) */}
-                <input
-                  type="file"
-                  accept="image/*"
-                  ref={singleInputRef}
-                  onChange={handleSingleImageChange}
-                  className="hidden"
-                />
               </div>
             </div>
           </div>

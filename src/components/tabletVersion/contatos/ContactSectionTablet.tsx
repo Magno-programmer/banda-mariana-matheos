@@ -26,20 +26,20 @@ const ContactSection = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* InformaÇões de Contato */}
+            {/* Informações de Contato */}
             <div className="bg-gradient-to-br from-black to-jazz-dark border border-jazz-gold rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">InformaÇões</h3>
+              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">Informações</h3>
 
               <div className="space-y-6 font-gatsby text-gray-300">
                 <ContactItem icon={MessageCircle} label="WhatsApp" value="+55 (31) 9 9752-2127" />
-                <ContactItem icon={MapPin} label="AtuaÇão" value="Minas Gerais e região" />
+                <ContactItem icon={MapPin} label="Atuação" value="Minas Gerais e região" />
                 <ContactItem icon={Instagram} label="Instagram" value="@marianamatheosoficial" />
               </div>
             </div>
 
-            {/* AÇões Rápidas */}
+            {/* Ações Rápidas */}
             <div className="bg-gradient-to-br from-black to-jazz-dark border border-jazz-gold rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">AÇões Rápidas</h3>
+              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">Ações Rápidas</h3>
 
               <div className="space-y-4">
                 <ActionButton href={whatsappLink} icon={MessageCircle} text="Falar no WhatsApp" />
@@ -72,7 +72,7 @@ const ContactItem = ({ icon: Icon, label, value }) => (
   </div>
 );
 
-// Componente para botões de aÇão
+// Componente para botões de ação
 const ActionButton = ({ href, icon: Icon, text }) => (
   <a
     href={href}

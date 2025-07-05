@@ -41,7 +41,7 @@ const RepertoireSection = () => {
           {/* Main Content */}
           <div className="text-center mb-12 animate-fade-in">
             <p className="font-gatsby text-3xl text-gray-50 leading-relaxed mb-8">
-              O repertório da banda é uma curadoria refinada de clássicos do <span className="jazz-gold font-semibold">Jazz, Soul, Blues e R&B</span> — com interpretaÇões de artistas como:
+              O repertório da banda é uma curadoria refinada de clássicos do <span className="jazz-gold font-semibold">Jazz, Soul, Blues e R&B</span> — com interpretações de artistas como:
             </p>
 
             {/* Artists Grid */}
@@ -73,7 +73,7 @@ const RepertoireSection = () => {
                   De Billie a Amy,
                 </p>
                 <p className="font-glimmer text-xl md:text-2xl text-white">
-                  da elegância vintage à emoÇão contemporânea
+                  da elegância vintage à emoção contemporânea
                 </p>
               </div>
             </div>

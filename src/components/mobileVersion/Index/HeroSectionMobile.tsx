@@ -78,7 +78,7 @@ const HeroSection = () => {
               hover:cursor-pointer transition-all duration-300 tracking-wider uppercase font-semibold z-20"
             >
               Descubra Nossa História
-            </button> {/* Botão de rolagem suave para a seÇão "Sobre" versão desktop*/}
+            </button> {/* Botão de rolagem suave para a seção "Sobre" versão desktop*/}
 
           </div>
         </div>

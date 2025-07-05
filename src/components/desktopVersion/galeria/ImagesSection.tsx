@@ -2,24 +2,28 @@ import React, {useState, useRef} from 'react';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
 const ImageSection = () => {
-  const [images, setImages] = useState([]);
-
-  const fileInputRef = useRef(null);
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const newImage = {
-        src: URL.createObjectURL(file),
-        alt: file.name,
-      };
-      setImages((prev) => [...prev, newImage]);
-    }
-  };
-
-  const handleRemoveImage = (index) => {
-    setImages(prevImages => prevImages.filter((_, i) => i !== index));
-  } // Function to remove an image from the gallery
+  const [images, setImages] = useState([
+  { 
+    src: '/images/cantora.png',
+    alt: 'Mariana Matheos - Cantora e Criadora da Banda'
+  },
+  { 
+    src: '/images/baixista.png',
+    alt: 'Tarcíso Junior - Baixista e Guitarrista da Banda'
+  },
+  { 
+    src: '/images/baterista.png',
+    alt: 'Rubens Kalil - Baterista da Banda'
+  },
+  { 
+    src: '/images/pianista.png',
+    alt: 'Carlos Nobre - Pianista da Banda'
+  },
+  { 
+    src: '/images/banda-blue-jazz-concurso.png',
+    alt: 'Banda Mariana Matheos no Festival de Jazz & Blues de Tiradentes 2025'
+  },
+]);
 
   return (
     <section className="py-20 jazz-gradient relative">
@@ -44,7 +48,7 @@ const ImageSection = () => {
               />
             </div>
           <p className="font-gatsbybold text-3xl text-gray-400 max-w-2xl mx-auto">
-            Momentos especiais capturados durante nossas apresentaÇões exclusivas
+            Momentos especiais capturados durante nossas apresentações exclusivas
           </p>
         </div>
 
@@ -71,37 +75,15 @@ const ImageSection = () => {
                 
                 {/* Hover effect */}
                 <div className="absolute inset-0 bg-jazz-gold bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
-                
-                {/* Botão de remover (hover) */}
-                <button
-                  onClick={() => handleRemoveImage(index)}
-                  className="absolute top-2 right-2 z-20 bg-black/60 text-jazz-gold px-2 py-1 text-sm font-bold rounded opacity-0 group-hover:opacity-100 transition"
-                >
-                  Remover
-                </button>
 
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="font-gatsby text-white text-sm">{image.alt}</p>
+                  <p className="font-gatsbybold text-white text-xl">{image.alt}</p>
                 </div>
               </div>
             </div>
           ))}
 
-          {/* File input for adding new images */}
-          <div 
-            className="relative flex items-center justify-center h-64 md:h-72 border-2 border-dashed border-jazz-gold text-jazz-gold cursor-pointer group hover:bg-jazz-gold/10 transition"
-            onClick={() => fileInputRef.current.click()}
-          >
-            <span className="text-2xl">+</span>
-            <input
-              type="file"
-              ref={fileInputRef}
-              accept="image/*"
-              onChange={handleFileChange}
-              className="hidden"
-            />
-          </div>
         </div>
       </div>
     </section>

@@ -83,7 +83,7 @@ const BookingSection = () => {
               <div className="w-16 h-16 border-2 border-jazz-gold rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-jazz-gold text-2xl">🎭</span>
               </div>
-              <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">PresenÇa Cênica</h4>
+              <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Presença Cênica</h4>
               <p className="font-gatsbybold text-gray-400 text-xl">Performance completa e envolvente</p>
             </div>
           </div>
