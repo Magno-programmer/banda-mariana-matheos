@@ -1,5 +1,6 @@
 
 import React from 'react';
+import StructuredData from '@/components/globalComponents/StructuredData';
 
 // Importing desktop components
 import HeroSection from '@/components/desktopVersion/Index/HeroSection';
@@ -19,6 +20,9 @@ import TestimonialSectionTablet from '@/components/tabletVersion/Index/Testimoni
 const Index = () => {
   return (
     <>
+      {/* Structured Data for SEO */}
+      <StructuredData />
+      
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeroSectionMobile />

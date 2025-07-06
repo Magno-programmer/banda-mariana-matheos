@@ -25,7 +25,7 @@ const HeroSection = () => {
           {/* imagem de fundo */}
           <img
             src={bandaCompletaPalco}
-            alt="Banda de jazz e soul Mariana Matheos em apresentação ao vivo"
+            alt="Banda de jazz soul blues R&B Mariana Matheos em apresentação ao vivo para eventos em Belo Horizonte"
             className="absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
           />
 
@@ -33,7 +33,7 @@ const HeroSection = () => {
           <div className="absolute top-4 left-4 z-50">
             <img
               src={logoWhite}
-              alt="Banda Mariana Matheos - Jazz, Soul, Blues e R&B"
+              alt="Logo Banda Mariana Matheos - Jazz Soul Blues R&B para casamentos corporativos BH"
               className="w-20 h-20 object-contain fixed"
             />
           </div>
@@ -42,43 +42,43 @@ const HeroSection = () => {
           <div className="relative z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4 ">
             <img
               src={logoGold}
-              alt="Banda de Jazz Mariana Matheos - Música ao vivo para eventos"
+              alt="Banda de Jazz Soul Blues R&B Mariana Matheos - Música ao vivo sofisticada para eventos especiais"
               className="hidden sm:block w-[30%] mt-[15%] pb-[15%] object-contain drop-shadow-lg"
             />
           </div>
         </div>
 
-        {/* Main Slogan - Otimizado para SEO */}
+        {/* Main SEO Optimized H1 for Tablet */}
         <h1 className="font-glimmer mt-8 text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
-          Banda de Jazz, Soul, Blues e R&B
+          Banda de Jazz Soul Blues R&B em Belo Horizonte
         </h1>
         <h2 className="font-glimmer text-3xl md:text-5xl lg:text-6xl font-bold jazz-gold mb-8 jazz-text-shadow">
-          Música ao vivo sofisticada para eventos especiais
+          Música ao Vivo para Casamentos Corporativos e Festas Especiais
         </h2>
 
         {/* Divisor decorativo acima */}
         <div className="w-full flex justify-center mb-4">
           <img
             src={lineArtDeco}
-            alt="Divisor decorativo Art Déco"
+            alt="Divisor decorativo Art Déco - Contratar banda de jazz para evento"
             className="w-[50%] object-contain"
           />
         </div>
 
-        {/* CTA Button - Otimizado */}
+        {/* SEO Optimized CTA Button */}
         <div className="relative w-[100%] h-[200px] mx-auto">
           <img 
             src={bordabuttonArtDeco} 
-            alt="Moldura decorativa do botão"
+            alt="Moldura decorativa do botão - Solicitar orçamento banda de jazz"
             className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
           />
           <button
             onClick={() => navigate('/sobre')}
             className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 mt-[120px] h-[80px] w-[255px] pb-2 text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0"
+            aria-label="Conhecer banda de jazz soul blues para eventos em Belo Horizonte"
           >
-            Conheça Nossa Banda de Jazz
+            Solicitar Orçamento Banda Jazz
           </button>
-
         </div>
       </div>
     </section>
