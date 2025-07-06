@@ -47,7 +47,7 @@ const StructuredData = () => {
         "genre": ["Jazz", "Soul", "Blues", "R&B"]
       },
       "description": `Apresentação ao vivo da banda de jazz, soul, blues e R&B Mariana Matheos no ${event.venue}. Música sofisticada da Era de Ouro do Jazz.`,
-      "image": "https://banda-mariana-matheos.lovable.app/images/banda-blue-jazz-concurso.png"
+      "image": "https://marianamatheos.com.br/images/banda-blue-jazz-concurso.png"
     }))
   };
 

@@ -1,4 +1,5 @@
 
+
 User-agent: *
 Allow: /
 
@@ -27,7 +28,8 @@ Disallow: *.ts
 Disallow: *.tsx
 
 # Sitemap
-Sitemap: https://banda-mariana-matheos.lovable.app/sitemap.xml
+Sitemap: https://marianamatheos.com.br/sitemap.xml
 
 # Crawl-delay para evitar sobrecarga
 Crawl-delay: 1
+
