@@ -7,7 +7,6 @@ import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import bordabuttonArtDeco from '@/assets/images/divisor-de-botao.png';
 
-
 const HeroSection = () => {
   const navigate = useNavigate();
 
@@ -26,7 +25,7 @@ const HeroSection = () => {
           {/* imagem de fundo */}
           <img
             src={bandaCompletaPalco}
-            alt="Imagem de fundo"
+            alt="Banda de jazz e soul Mariana Matheos em apresentação ao vivo"
             className="relative top-0 left-0 w-full object-cover z-0 opacity-50 fade-bottom"
           />
 
@@ -34,7 +33,7 @@ const HeroSection = () => {
           <div className="absolute top-2 left-4 z-50">
             <img
               src={logoWhite}
-              alt="Logo Mariana Matheos"
+              alt="Banda Mariana Matheos - Jazz, Soul, Blues e R&B"
               className="h-16 object-contain fixed"
             />
           </div>
@@ -43,29 +42,29 @@ const HeroSection = () => {
           <div className="absolute mt-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center h-full text-center text-jazz-gold ">
             <img
               src={logoGold}
-              alt="Logo Mariana Matheos"
+              alt="Banda de Jazz Mariana Matheos - Música ao vivo para eventos"
               className="w-32 h-32 object-contain drop-shadow-lg"
             />
           </div>
 
-          {/* Main Slogan */}
+          {/* Main Slogan - Otimizado para SEO */}
           <h1 className="font-glimmer mt-8 text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
-            Uma experiência musical
+            Banda de Jazz, Soul, Blues e R&B
           </h1>
           <h2 className="font-glimmer text-3xl md:text-5xl lg:text-6xl font-bold jazz-gold mb-8 jazz-text-shadow">
-            sofisticada, atemporal e arrebatadora
+            Música ao vivo sofisticada para eventos especiais
           </h2>
 
           {/* Divisor decorativo acima */}
           <div className="w-full flex justify-center mb-4">
             <img
               src={lineArtDeco}
-              alt="Divisor Art Déco"
+              alt="Divisor decorativo Art Déco"
               className="w-[80%] object-contain"
             />
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - Otimizado */}
           <div className="relative w-[100%] h-[200px] mx-auto">
             <img 
               src={bordabuttonArtDeco} 
@@ -77,8 +76,8 @@ const HeroSection = () => {
               className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg mt-[119px] h-[75px] w-[253px] text-jazz-gold hover:bg-jazz-gold hover:text-black 
               hover:cursor-pointer transition-all duration-300 tracking-wider uppercase font-semibold z-20"
             >
-              Descubra Nossa História
-            </button> {/* Botão de rolagem suave para a seção "Sobre" versão desktop*/}
+              Conheça Nossa Banda de Jazz
+            </button>
 
           </div>
         </div>

@@ -4,10 +4,10 @@ import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
 const BookingSection = () => {
   const events = [
-    { icon: '💍', title: 'Casamentos', description: 'Cerimônias e recepções inesquecíveis' },
-    { icon: '🏢', title: 'Eventos Corporativos', description: 'Networking e celebrações empresariais' },
-    { icon: '🥂', title: 'Celebrações Privadas', description: 'Aniversários e ocasiões especiais' },
-    { icon: '🎭', title: 'Locais Especializados', description: 'Restaurantes e casas de shows' }
+    { icon: '💍', title: 'Banda para Casamentos', description: 'Jazz e soul para cerimônias únicas' },
+    { icon: '🏢', title: 'Eventos Corporativos', description: 'Música ao vivo para empresas' },
+    { icon: '🥂', title: 'Celebrações Privadas', description: 'Aniversários com música sofisticada' },
+    { icon: '🎭', title: 'Restaurantes e Eventos', description: 'Shows em casas noturnas e eventos' }
   ];
 
   return (
@@ -20,25 +20,25 @@ const BookingSection = () => {
 
       <div className="container relative">
         <div className="">
-          {/* Section Title */}
+          {/* Section Title - Otimizado para SEO */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-glimmer text-4xl font-bold text-white mb-4 jazz-text-shadow">
-              Agendamentos & Contratação
+              Contratar Banda de Jazz para Eventos
             </h2>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt="Divisor Art Déco"
+                alt="Divisor Art Déco decorativo"
                 className="w-[70%] object-contain"
               />
             </div>
             <p className="font-gatsbybold text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Deseja contratar a banda para um evento inesquecível?
+              Contrate a banda de jazz Mariana Matheos para seu evento especial
             </p>
           </div>
 
-          {/* Events Grid */}
+          {/* Events Grid - Otimizado */}
           <div className="grid grid-cols-2 gap-4 mb-12">
             {events.map((event, index) => (
               <div 
@@ -53,53 +53,53 @@ const BookingSection = () => {
             ))}
           </div>
 
-          {/* Service Description */}
+          {/* Service Description - Otimizado para SEO */}
           <div className="text-center mb-12 animate-fade-in">
             <p className="font-gatsbybold text-gray-400 text-2xl leading-relaxed mx-auto">
-              Realizamos apresentações exclusivas para diversos tipos de eventos. 
-              Temos o repertório, figurino e clima musical que te leva para atmosfera musical das décadas de 20 a 60.
+              Nossa banda de jazz, soul, blues e R&B realiza apresentações exclusivas em Belo Horizonte e região. 
+              Oferecemos repertório personalizado, figurino temático da Era de Ouro e atmosfera musical única para seu evento especial.
             </p>
           </div>
 
-          {/* Features */}
+          {/* Features - Otimizadas para SEO */}
           <div className="grid grid-cols-2 gap-8 mb-16 animate-fade-in">
             <div className="text-center">
               <div className="w-16 h-16 border-2 border-jazz-gold rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-jazz-gold text-2xl">🎵</span>
               </div>
-              <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Repertório Personalizado</h4>
-              <p className="font-gatsbybold text-gray-400 text-xl">Repertório com tema da Era de Ouro</p>
+              <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Repertório de Jazz</h4>
+              <p className="font-gatsbybold text-gray-400 text-xl">Clássicos da Era de Ouro do Jazz</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 border-2 border-jazz-gold rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-jazz-gold text-2xl">👗</span>
               </div>
-              <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Figurino Temático</h4>
-              <p className="font-gatsbybold text-gray-400 text-xl">Visual elegante e apropriado</p>
+              <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Figurino Vintage</h4>
+              <p className="font-gatsbybold text-gray-400 text-xl">Visual elegante e temático</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 border-2 border-jazz-gold rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-jazz-gold text-2xl">🎭</span>
               </div>
-              <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Presença Cênica</h4>
-              <p className="font-gatsbybold text-gray-400 text-xl">Performance completa e envolvente</p>
+              <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Show Completo</h4>
+              <p className="font-gatsbybold text-gray-400 text-xl">Performance envolvente e sofisticada</p>
             </div>
           </div>
 
         </div>
       </div>
       
-      {/* Agenda de Shows */}
+      {/* Agenda de Shows - Otimizada para SEO */}
       <div className="mt-24 animate-fade-in">
         <h3 className="font-glimmer text-4xl jazz-gold font-bold text-center mb-6">
-          Próximos Shows
+          Shows da Banda de Jazz em BH
         </h3>
         <div className="w-full flex justify-center mb-8">
           <img
             src={lineArtDeco}
-            alt="Divisor Art Déco"
+            alt="Divisor Art Déco decorativo"
             className="w-[70%] object-contain"
           />
         </div>
@@ -133,22 +133,22 @@ const BookingSection = () => {
         </div>
       </div>
 
-      {/* CTA */}
+      {/* CTA - Otimizado para SEO */}
       <div className="text-center animate-scale-in mt-12">
         <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50 max-w-2xl mx-auto">
           <h3 className="font-glimmer text-2xl jazz-gold font-bold mb-4">
-            Pronto para uma experiência musical única?
+            Contrate Nossa Banda de Jazz para Seu Evento
           </h3>
           <p className="font-gatsbybold text-xl text-gray-400 mb-6">
-            Entre em contato e vamos criar juntos uma apresentação memorável para seu evento.
+            Solicite orçamento para banda de jazz, soul e blues. Música ao vivo sofisticada para casamentos e eventos em BH.
           </p>
           <a 
-            href="https://wa.me/5531997522127?text=Olá, Mariana! Vi seu site e gostaria de saber mais sobre o orçamento da banda."
+            href="https://wa.me/5531997522127?text=Olá, Mariana! Vi seu site e gostaria de contratar a banda de jazz para meu evento."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block font-gatsby text-lg px-8 py-4 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 tracking-wider uppercase font-semibold"
           >
-            Solicitar Orçamento
+            Contratar Banda de Jazz
           </a>
         </div>
       </div>
