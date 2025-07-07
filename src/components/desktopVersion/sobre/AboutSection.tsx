@@ -4,7 +4,7 @@ import bordarArtDeco from '@/assets/images/divisor-de-textos.png';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
 const AboutSection = () => {
-  const [imagemUnica, setImagemUnica] = useState({src: '/images/cantora.png', alt: 'Mariana Matheos - Vocalista da melhor banda de jazz soul blues R&B'});
+  const [imagemUnica, setImagemUnica] = useState({src: '/images/cantora.png', alt: 'Mariana Matheos - Vocalista especialista em jazz soul blues R&B'});
 
   const singleInputRef = useRef(null);
 
@@ -36,7 +36,7 @@ const AboutSection = () => {
           {/* Section Title - Otimizado para SEO */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-glimmer text-5xl md:text-6xl font-bold jazz-gold mb-4 jazz-text-shadow">
-              Sobre a Banda Mariana Matheos - Melhor Banda de Jazz Soul Blues R&B
+              Sobre a Banda Mariana Matheos - Jazz Soul Blues R&B
             </h2>
 
             {/* Divisor decorativo acima */}
@@ -54,15 +54,15 @@ const AboutSection = () => {
             <div className="animate-fade-in">
               <div className="space-y-6 font-gatsbybold text-lg leading-relaxed text-gray-300">
                 <p className="text-2xl text-white  first-letter:text-4xl first-letter:font-glimmer first-letter:text-jazz-gold first-letter:float-left first-letter:mr-2">
-                  A <span className="jazz-gold font-bold">banda Mariana Matheos</span> é considerada uma das <span className="jazz-gold font-bold">melhores bandas de jazz soul blues e R&B</span> em Minas Gerais. Especializada em <span className="jazz-gold font-bold">shows ao vivo</span> para casamentos, eventos corporativos e celebrações especiais, nossa <span className="jazz-gold font-bold">banda ao vivo</span> oferece uma experiência musical única que combina a elegância clássica do jazz com a energia contagiante do soul, blues e R&B.
+                  A <span className="jazz-gold font-bold">banda Mariana Matheos</span> é especializada em <span className="jazz-gold font-bold">jazz soul blues e R&B</span> em Minas Gerais. Nossa <span className="jazz-gold font-bold">banda ao vivo</span> oferece <span className="jazz-gold font-bold">shows personalizados</span> para casamentos, eventos corporativos e celebrações especiais, criando experiências musicais únicas que combinam a elegância clássica do jazz com a energia contagiante do soul, blues e R&B.
                 </p>
                 
                 <p className="text-2xl">
-                  Com a liderança carismática da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, nossa <span className="jazz-gold font-semibold">banda para evento</span> apresenta <span className="jazz-gold font-semibold">shows de jazz soul blues ao vivo</span> personalizados para cada ocasião. Somos reconhecidos como a <span className="jazz-gold font-semibold">melhor banda para casamento</span> pela nossa capacidade de criar atmosferas sofisticadas e envolventes através de repertório cuidadosamente selecionado, figurinos temáticos e presença cênica marcante.
+                  Com a liderança carismática da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, nossa <span className="jazz-gold font-semibold">banda para evento</span> apresenta <span className="jazz-gold font-semibold">shows de jazz soul blues ao vivo</span> personalizados para cada ocasião. Somos reconhecidos pela nossa capacidade de criar atmosferas sofisticadas e envolventes através de repertório cuidadosamente selecionado, figurinos temáticos e presença cênica marcante.
                 </p>
                 
                 <p className="text-2xl font-bold">
-                  Quando você contrata a <span className="jazz-gold">banda Mariana Matheos ao vivo</span>, está escolhendo uma das <span className="jazz-gold">melhores bandas</span> para transformar seu evento em uma experiência inesquecível. Nossos <span className="jazz-gold">shows de soul jazz blues e R&B ao vivo</span> são reconhecidos em toda Minas Gerais pela qualidade musical excepcional.
+                  Quando você contrata a <span className="jazz-gold">banda Mariana Matheos ao vivo</span>, está escolhendo profissionais experientes para transformar seu evento em uma experiência inesquecível. Nossos <span className="jazz-gold">shows de soul jazz blues e R&B ao vivo</span> são reconhecidos em toda Minas Gerais pela qualidade musical excepcional e dedicação artística.
                 </p>
               </div>
 

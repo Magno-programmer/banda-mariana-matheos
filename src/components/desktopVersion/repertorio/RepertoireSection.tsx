@@ -41,7 +41,7 @@ const RepertoireSection = () => {
           {/* Main Content */}
           <div className="text-center mb-12 animate-fade-in">
             <p className="font-gatsby text-xl md:text-3xl text-gray-300 leading-relaxed mb-8">
-              O repertório da <span className="jazz-gold font-semibold">banda Mariana Matheos</span> apresenta uma curadoria sofisticada dos maiores clássicos do <span className="jazz-gold font-semibold">jazz, soul, blues e R&B</span>. Nossos <span className="jazz-gold font-semibold">shows ao vivo</span> incluem interpretações magistrais de lendas como:
+              O repertório da <span className="jazz-gold font-semibold">banda Mariana Matheos</span> apresenta uma curadoria sofisticada dos maiores clássicos do <span className="jazz-gold font-semibold">jazz, soul, blues e R&B</span>. Nossos <span className="jazz-gold font-semibold">shows ao vivo</span> incluem interpretações especializadas de lendas como:
             </p>
 
             {/* Artists Grid */}
@@ -61,7 +61,7 @@ const RepertoireSection = () => {
             </div>
 
             <p className="font-gatsby text-2xl text-gray-50 leading-relaxed mb-12">
-              Cada <span className="jazz-gold font-semibold">show da banda Mariana Matheos</span> é uma experiência única, onde nossos <span className="jazz-gold font-semibold">shows de jazz soul blues ao vivo</span> transportam o público para a Era de Ouro da música. Como uma das <span className="jazz-gold font-semibold">melhores bandas ao vivo</span>, criamos ambientes sofisticados e emocionantes através de arranjos fiéis e presença cênica marcante.
+              Cada <span className="jazz-gold font-semibold">show da banda Mariana Matheos</span> é uma experiência única, onde nossos <span className="jazz-gold font-semibold">shows de jazz soul blues ao vivo</span> transportam o público para a Era de Ouro da música. Nossa <span className="jazz-gold font-semibold">banda ao vivo especializada</span> cria ambientes sofisticados e emocionantes através de arranjos fiéis e presença cênica marcante.
             </p>
 
             {/* Featured Quote */}

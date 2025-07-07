@@ -24,13 +24,13 @@ const TestimonialSection = () => {
               
               <div className="space-y-4">
                 <p className="font-glimmer text-3xl md:text-4xl jazz-gold font-bold">
-                  É uma experiência única.
+                  É uma experiência única de jazz soul blues e R&B.
                 </p>
                 <p className="font-glimmer text-3xl md:text-4xl jazz-gold font-bold">
-                  É presença marcante.
+                  É presença marcante em seu evento.
                 </p>
                 <p className="font-glimmer text-3xl md:text-4xl jazz-gold font-bold">
-                  É música que toca a alma.
+                  É música que toca a alma e permanece na memória.
                 </p>
               </div>
             </div>
@@ -51,7 +51,7 @@ const TestimonialSection = () => {
 
           {/* Subtitle */}
           <p className="font-gatsby text-3xl text-gray-100 mt-8 italic">
-            Uma experiência com a melhor banda ao vivo que permanece na memória muito depois da última nota
+            Uma experiência musical profissional que permanece na memória muito depois da última nota
           </p>
         </div>
       </div>

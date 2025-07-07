@@ -25,7 +25,7 @@ const HeroSection = () => {
           {/* imagem de fundo */}
           <img
             src={bandaCompletaPalco}
-            alt="Banda Mariana Matheos - Melhor banda de jazz soul blues e R&B ao vivo para casamentos e eventos em Minas Gerais"
+            alt="Banda Mariana Matheos - Especialistas em jazz soul blues e R&B ao vivo para casamentos e eventos em Minas Gerais"
             className="absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
           />
 
@@ -42,7 +42,7 @@ const HeroSection = () => {
           <div className="relative z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4 ">
             <img
               src={logoGold}
-              alt="Banda de Jazz Soul Blues R&B Mariana Matheos - Melhores bandas ao vivo para eventos e casamentos"
+              alt="Banda de Jazz Soul Blues R&B Mariana Matheos - Especialistas em shows ao vivo para eventos e casamentos"
               className="hidden sm:block w-[30%] mt-[15%] pb-[15%] object-contain drop-shadow-lg"
             />
           </div>
@@ -50,10 +50,10 @@ const HeroSection = () => {
 
         {/* Main SEO Optimized H1 */}
         <h1 className="font-glimmer mt-8 text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
-          Banda Mariana Matheos - Melhor Banda de Jazz Soul Blues R&B
+          Banda Mariana Matheos - Jazz Soul Blues R&B
         </h1>
         <h2 className="font-glimmer text-3xl md:text-5xl lg:text-6xl font-bold jazz-gold mb-8 jazz-text-shadow">
-          Show ao Vivo de Soul Jazz Blues e R&B para Casamentos e Eventos em Minas Gerais
+          Shows ao Vivo de Soul Jazz Blues e R&B para Casamentos e Eventos em Minas Gerais
         </h2>
 
         {/* Divisor decorativo acima */}
@@ -69,7 +69,7 @@ const HeroSection = () => {
         <div className="relative w-[100%] h-[200px] mx-auto">
           <img 
             src={bordabuttonArtDeco} 
-            alt="Moldura decorativa do botão - Contratar melhor banda ao vivo"
+            alt="Moldura decorativa do botão - Contratar banda ao vivo especializada"
             className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
           />
           <button
