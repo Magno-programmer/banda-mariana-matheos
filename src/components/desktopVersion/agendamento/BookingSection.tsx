@@ -4,10 +4,10 @@ import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
 const BookingSection = () => {
   const events = [
-    { icon: '💍', title: 'Casamentos', description: 'Cerimônias e recepções inesquecíveis' },
-    { icon: '🏢', title: 'Eventos Corporativos', description: 'Networking e celebrações empresariais' },
-    { icon: '🥂', title: 'Celebrações Privadas', description: 'Aniversários e ocasiões especiais' },
-    { icon: '🎭', title: 'Locais Especializados', description: 'Restaurantes e casas de shows' }
+    { icon: '💍', title: 'Bandas para Casamento', description: 'Melhor banda para casamento - cerimônias e recepções inesquecíveis' },
+    { icon: '🏢', title: 'Banda para Evento Corporativo', description: 'Shows ao vivo para networking e celebrações empresariais' },
+    { icon: '🥂', title: 'Banda ao Vivo para Festas', description: 'Shows de jazz soul blues para aniversários e ocasiões especiais' },
+    { icon: '🎭', title: 'Banda para Restaurante', description: 'Shows ao vivo em restaurantes e casas de shows' }
   ];
 
   return (
@@ -23,18 +23,18 @@ const BookingSection = () => {
           {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-glimmer text-6xl font-bold text-white mb-4 jazz-text-shadow">
-              Agendamentos & ContrataÇão
+              Contratar a Melhor Banda ao Vivo - Mariana Matheos
             </h2>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt="Divisor Art Déco"
+                alt="Divisor Art Déco - Banda para evento"
                 className="w-[50%] object-contain"
               />
             </div>
             <p className="font-gatsbybold text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Deseja contratar a banda para um evento inesquecível?
+              Procura uma banda para evento especial? Somos a melhor banda de jazz soul blues R&B para seu casamento ou celebração!
             </p>
           </div>
 
@@ -56,8 +56,7 @@ const BookingSection = () => {
           {/* Service Description */}
           <div className="text-center mb-12 animate-fade-in">
             <p className="font-gatsbybold text-gray-400 text-2xl leading-relaxed max-w-3xl mx-auto">
-              Realizamos apresentações exclusivas para diversos tipos de eventos. 
-              Temos o repertório, figurino e clima musical que te leva para atmosfera musical das décadas de 20 a 60.
+              Como uma das <span className="jazz-gold font-semibold">melhores bandas</span> de Minas Gerais, realizamos <span className="jazz-gold font-semibold">shows ao vivo</span> exclusivos. Nossa <span className="jazz-gold font-semibold">banda ao vivo</span> oferece repertório personalizado, figurino temático e a atmosfera musical perfeita das décadas douradas do jazz.
             </p>
           </div>
 
@@ -67,8 +66,8 @@ const BookingSection = () => {
               <div className="w-16 h-16 border-2 border-jazz-gold rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-jazz-gold text-2xl">🎵</span>
               </div>
-              <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Repertório Personalizado</h4>
-              <p className="font-gatsbybold text-gray-400 text-xl">Repertório com tema da Era de Ouro</p>
+              <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Shows Personalizados</h4>
+              <p className="font-gatsbybold text-gray-400 text-xl">Repertório de jazz soul blues R&B da Era de Ouro</p>
             </div>
 
             <div className="text-center">
@@ -76,7 +75,7 @@ const BookingSection = () => {
                 <span className="text-jazz-gold text-2xl">👗</span>
               </div>
               <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Figurino Temático</h4>
-              <p className="font-gatsbybold text-gray-400 text-xl">Visual elegante e apropriado</p>
+              <p className="font-gatsbybold text-gray-400 text-xl">Visual elegante para banda ao vivo</p>
             </div>
 
             <div className="text-center">
@@ -84,7 +83,7 @@ const BookingSection = () => {
                 <span className="text-jazz-gold text-2xl">🎭</span>
               </div>
               <h4 className="font-glimmer text-lg jazz-gold font-bold mb-2">Presença Cênica</h4>
-              <p className="font-gatsbybold text-gray-400 text-xl">Performance completa e envolvente</p>
+              <p className="font-gatsbybold text-gray-400 text-xl">Performance completa da melhor banda</p>
             </div>
           </div>
 
@@ -94,12 +93,12 @@ const BookingSection = () => {
       {/* Agenda de Shows */}
       <div className="mt-24 animate-fade-in">
         <h3 className="font-glimmer text-6xl jazz-gold font-bold text-center mb-6">
-          Próximos Shows
+          Próximos Shows da Banda Mariana Matheos
         </h3>
         <div className="w-full flex justify-center mb-8">
           <img
             src={lineArtDeco}
-            alt="Divisor Art Déco"
+            alt="Divisor Art Déco - Shows ao vivo"
             className="w-[40%] object-contain"
           />
         </div>
@@ -110,7 +109,7 @@ const BookingSection = () => {
                 <th className="px-4 py-2 text-jazz-gold border-b border-jazz-gold">Data</th>
                 <th className="px-4 py-2 text-jazz-gold border-b border-jazz-gold">Dia</th>
                 <th className="px-4 py-2 text-jazz-gold border-b border-jazz-gold">Horário</th>
-                <th className="px-4 py-2 text-jazz-gold border-b border-jazz-gold">Local</th>
+                <th className="px-4 py-2 text-jazz-gold border-b border-jazz-gold">Local do Show</th>
               </tr>
             </thead>
             <tbody>
@@ -137,18 +136,18 @@ const BookingSection = () => {
       <div className="text-center animate-scale-in mt-12">
         <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50 max-w-2xl mx-auto">
           <h3 className="font-glimmer text-3xl jazz-gold font-bold mb-4">
-            Pronto para uma experiência musical única?
+            Pronto para contratar a melhor banda ao vivo?
           </h3>
           <p className="font-gatsbybold text-gray-400 text-2xl mb-6">
-            Entre em contato e vamos criar juntos uma apresentação memorável para seu evento.
+            Entre em contato e vamos criar juntos um show ao vivo memorável para seu evento especial.
           </p>
           <a 
-            href="https://wa.me/5531997522127?text=Olá, Mariana! Vi seu site e gostaria de saber mais sobre o orçamento da banda."
+            href="https://wa.me/5531997522127?text=Olá, Mariana! Vi seu site e gostaria de contratar a banda para um show ao vivo."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block font-gatsby text-lg px-8 py-4 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 tracking-wider uppercase font-semibold"
           >
-            Solicitar Orçamento
+            Contratar Banda ao Vivo
           </a>
         </div>
       </div>
