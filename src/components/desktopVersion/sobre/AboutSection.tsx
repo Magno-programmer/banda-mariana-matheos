@@ -4,7 +4,7 @@ import bordarArtDeco from '@/assets/images/divisor-de-textos.png';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
 const AboutSection = () => {
-  const [imagemUnica, setImagemUnica] = useState({src: '/images/cantora.png', alt: 'Mariana Matheos - Vocalista especialista em jazz soul blues R&B'});
+  const [imagemUnica, setImagemUnica] = useState({src: '/images/cantora.png', alt: 'Cantora Mariana Matheos'});
 
   const singleInputRef = useRef(null);
 
@@ -33,45 +33,45 @@ const AboutSection = () => {
 
       <div className="container mx-auto px-6 relative">
         <div className="max-w-6xl mx-auto">
-          {/* Section Title - Otimizado para SEO */}
+          {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-glimmer text-5xl md:text-6xl font-bold jazz-gold mb-4 jazz-text-shadow">
-              Sobre a Banda Mariana Matheos - Jazz Soul Blues R&B
+              Sobre a Banda
             </h2>
 
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt="Divisor Art Déco decorativo - Banda para casamento"
+                alt="Divisor Art Déco"
                 className="w-[50%] object-contain"
               />
             </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content - Otimizado para SEO */}
+            {/* Text Content */}
             <div className="animate-fade-in">
               <div className="space-y-6 font-gatsbybold text-lg leading-relaxed text-gray-300">
                 <p className="text-2xl text-white  first-letter:text-4xl first-letter:font-glimmer first-letter:text-jazz-gold first-letter:float-left first-letter:mr-2">
-                  A <span className="jazz-gold font-bold">banda Mariana Matheos</span> é especializada em <span className="jazz-gold font-bold">jazz soul blues e R&B</span> em Minas Gerais. Nossa <span className="jazz-gold font-bold">banda ao vivo</span> oferece <span className="jazz-gold font-bold">shows personalizados</span> para casamentos, eventos corporativos e celebrações especiais, criando experiências musicais únicas que combinam a elegância clássica do jazz com a energia contagiante do soul, blues e R&B.
+                  A banda <span className="jazz-gold font-bold">Mariana Matheos</span> oferece muito mais do que música ao vivo — entrega uma experiência sensorial sofisticada, envolvente e memorável. Inspirada na Era de Ouro do Jazz (1920–1960), sua sonoridade reflete o requinte de um tempo em que a arte de tocar era também a arte de emocionar.
                 </p>
                 
                 <p className="text-2xl">
-                  Com a liderança carismática da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, nossa <span className="jazz-gold font-semibold">banda para evento</span> apresenta <span className="jazz-gold font-semibold">shows de jazz soul blues ao vivo</span> personalizados para cada ocasião. Somos reconhecidos pela nossa capacidade de criar atmosferas sofisticadas e envolventes através de repertório cuidadosamente selecionado, figurinos temáticos e presença cênica marcante.
+                  Sob a liderança da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, cuja voz combina elegância, carisma e intensidade emocional, o grupo apresenta performances sob medida para eventos que exigem <span className="jazz-gold font-semibold">excelência estética e sonora</span>.
                 </p>
                 
                 <p className="text-2xl font-bold">
-                  Quando você contrata a <span className="jazz-gold">banda Mariana Matheos ao vivo</span>, está escolhendo profissionais experientes para transformar seu evento em uma experiência inesquecível. Nossos <span className="jazz-gold">shows de soul jazz blues e R&B ao vivo</span> são reconhecidos em toda Minas Gerais pela qualidade musical excepcional e dedicação artística.
+                  Cada apresentação é um espetáculo completo — com figurinos planejados, repertório personalizado e presença cênica. É música viva, com alma, para eventos verdadeiramente especiais.
                 </p>
               </div>
 
               {/* Quote */}
               <div className="mt-8 p-6 border-l-4 border-jazz-gold bg-jazz-dark bg-opacity-20">
                 <p className="font-glimmer text-xl jazz-gold italic">
-                  "Nossa banda ao vivo é mais que música - é uma ponte entre épocas, conectando a sofisticação do jazz clássico com a energia contemporânea do soul, blues e R&B."
+                  "A música é a linguagem universal da alma, e nós falamos fluentemente."
                 </p>
-                <p className="font-gatsbybold text-xl text-gray-100 mt-2">— Mariana Matheos, Vocalista da Banda</p>
+                <p className="font-gatsbybold text-xl text-gray-100 mt-2">— Mariana Matheos</p>
               </div>
             </div>
 
@@ -81,7 +81,7 @@ const AboutSection = () => {
                 {/* Moldura decorativa como imagem */}
                 <img
                   src={bordarArtDeco}
-                  alt="Moldura Art Déco decorativa - Banda de jazz para evento"
+                  alt="Moldura Art Déco"
                   className="absolute top-0 left-0 w-full h-full object-contain pointer-events-none z-30"
                 />
 

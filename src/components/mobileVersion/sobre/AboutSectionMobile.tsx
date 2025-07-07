@@ -4,7 +4,7 @@ import bordarArtDeco from '@/assets/images/divisor-de-textos.png';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
 const AboutSection = () => {
-  const [imagemUnica] = useState({src: '/images/cantora.png', alt: 'Mariana Matheos - Vocalista da banda de jazz e soul'});
+  const [imagemUnica] = useState({src: '/images/cantora.png', alt: 'Cantora Mariana Matheos'});
 
   
   return (
@@ -17,45 +17,45 @@ const AboutSection = () => {
 
       <div className="container mx-auto px-6 relative">
         <div className="max-w-6xl mx-auto">
-          {/* Section Title - Otimizado para SEO */}
+          {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-glimmer text-5xl md:text-6xl font-bold jazz-gold mb-4 jazz-text-shadow">
-              Banda de Jazz e Soul para Eventos em BH
+              Sobre a Banda
             </h2>
 
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt="Divisor Art Déco decorativo"
+                alt="Divisor Art Déco"
                 className="w-[80%] object-contain"
               />
             </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content - Otimizado para SEO */}
+            {/* Text Content */}
             <div className="animate-fade-in">
               <div className="space-y-6 font-gatsby text-lg leading-relaxed text-gray-300">
                 <p className="text-3xl text-white first-letter:text-4xl first-letter:font-glimmer first-letter:text-jazz-gold first-letter:float-left first-letter:mr-2">
-                  A <span className="jazz-gold font-semibold">banda de jazz Mariana Matheos</span> oferece música ao vivo sofisticada para casamentos, eventos corporativos e celebrações especiais. Especializada em jazz, soul, blues e R&B, nossa banda entrega uma experiência musical única que combina a elegância da Era de Ouro do Jazz (1920–1960) com a emoção contemporânea.
+                  A banda <span className="jazz-gold font-semibold">Mariana Matheos</span> oferece muito mais do que música ao vivo — entrega uma experiência sensorial sofisticada, envolvente e memorável. Inspirada na Era de Ouro do Jazz (1920–1960), sua sonoridade reflete o requinte de um tempo em que a arte de tocar era também a arte de emocionar.
                 </p>
                 
                 <p className="text-3xl">
-                  Sob a liderança da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, nossa banda de música ao vivo apresenta performances personalizadas para eventos que exigem <span className="jazz-gold font-semibold">excelência musical e presença cênica</span>. Cada apresentação é cuidadosamente planejada com repertório sob medida, figurinos temáticos e arranjos únicos.
+                  Sob a liderança da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, cuja voz combina elegância, carisma e intensidade emocional, o grupo apresenta performances sob medida para eventos que exigem <span className="jazz-gold font-semibold">excelência estética e sonora</span>.
                 </p>
                 
                 <p className="text-3xl font-bold">
-                  Contrate nossa banda de jazz e soul para seu evento em Belo Horizonte e região. Oferecemos música ao vivo de alta qualidade para casamentos elegantes, eventos corporativos sofisticados e celebrações privadas memoráveis.
+                  Cada apresentação é um espetáculo completo — com figurinos planejados, repertório personalizado e presença cênica. É música viva, com alma, para eventos verdadeiramente especiais.
                 </p>
               </div>
 
               {/* Quote */}
               <div className="mt-8 p-6 border-l-4 border-jazz-gold bg-jazz-dark bg-opacity-20">
                 <p className="font-glimmer text-xl jazz-gold italic">
-                  "A música é a linguagem universal da alma, e nossa banda fala fluentemente jazz, soul e blues."
+                  "A música é a linguagem universal da alma, e nós falamos fluentemente."
                 </p>
-                <p className="font-gatsbybold text-sm text-gray-100 mt-2">— Mariana Matheos, Vocalista</p>
+                <p className="font-gatsbybold text-sm text-gray-100 mt-2">— Mariana Matheos</p>
               </div>
             </div>
 
@@ -65,7 +65,7 @@ const AboutSection = () => {
                 {/* Moldura decorativa como imagem */}
                 <img
                   src={bordarArtDeco}
-                  alt="Moldura Art Déco decorativa"
+                  alt="Moldura Art Déco"
                   className="absolute object-contain pointer-events-none z-30"
                 />
 

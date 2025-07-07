@@ -23,25 +23,25 @@ const RepertoireSection = () => {
 
       <div className="container mx-auto px-6 relative">
         <div className="max-w-5xl mx-auto">
-          {/* Section Title - Otimizado para SEO */}
+          {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-glimmer text-5xl md:text-6xl font-bold text-white mb-4 jazz-text-shadow">
-              Repertório Jazz, Soul, Blues e R&B
+              Repertório & Estilo
             </h2>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt="Divisor Art Déco decorativo"
+                alt="Divisor Art Déco"
                 className="w-[50%] object-contain"
               />
             </div>
           </div>
 
-          {/* Main Content - Otimizado para SEO */}
+          {/* Main Content */}
           <div className="text-center mb-12 animate-fade-in">
             <p className="font-gatsby text-3xl text-gray-50 leading-relaxed mb-8">
-              Nossa banda de jazz apresenta um repertório cuidadosamente selecionado de <span className="jazz-gold font-semibold">clássicos do Jazz, Soul, Blues e R&B</span> — com interpretações sofisticadas de grandes artistas como:
+              O repertório da banda é uma curadoria refinada de clássicos do <span className="jazz-gold font-semibold">Jazz, Soul, Blues e R&B</span> — com interpretações de artistas como:
             </p>
 
             {/* Artists Grid */}
@@ -61,7 +61,7 @@ const RepertoireSection = () => {
             </div>
 
             <p className="font-gatsby text-3xl text-gray-50 leading-relaxed mb-12">
-              Nossa banda de música ao vivo oferece arranjos fiéis da Era de Ouro do Jazz com estética cênica vintage, criando uma atmosfera musical sofisticada e inesquecível para seu evento especial.
+              Cada performance é realizada com arranjos fiéis e estética cênica trazendo a Era de Ouro até você, criando um ambiente emocional, sofisticado e inesquecível.
             </p>
 
             {/* Featured Quote */}
@@ -70,16 +70,16 @@ const RepertoireSection = () => {
               <div className="absolute -bottom-4 -right-4 text-6xl font-glimmer jazz-gold opacity-30">"</div>
               <div className="bg-black bg-opacity-40 p-8 md:p-12 border-2 border-jazz-gold border-opacity-50">
                 <p className="font-glimmer text-2xl md:text-3xl jazz-gold font-bold italic mb-4">
-                  De Billie Holiday a Amy Winehouse,
+                  De Billie a Amy,
                 </p>
                 <p className="font-glimmer text-xl md:text-2xl text-white">
-                  nossa banda conecta a elegância vintage com a emoção contemporânea
+                  da elegância vintage à emoção contemporânea
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Musical genres - Otimizados para SEO */}
+          {/* Musical genres */}
           <div className="flex flex-wrap justify-center gap-4 animate-fade-in">
             {['Jazz', 'Soul', 'Blues', 'R&B'].map((genre, index) => (
               <span 
@@ -87,7 +87,7 @@ const RepertoireSection = () => {
                 className="font-gatsbybold px-7 py-2 border border-jazz-gold text-jazz-gold text-xl hover:bg-jazz-gold hover:text-black transition-all duration-300 text-sm tracking-wider"
                 style={{animationDelay: `${index * 0.1}s`}}
               >
-                Banda de {genre}
+                {genre}
               </span>
             ))}
           </div>

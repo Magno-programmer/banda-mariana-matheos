@@ -1,4 +1,3 @@
-
 import React, {useState, useRef} from 'react';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
@@ -6,23 +5,23 @@ const ImageSection = () => {
   const [images, setImages] = useState([
     { 
       src: '/images/cantora.png',
-      alt: 'Mariana Matheos - Vocalista da banda de jazz e soul'
+      alt: 'Mariana Matheos - Cantora e Criadora da Banda'
     },
     { 
       src: '/images/baixista.png',
-      alt: 'Tarcíso Junior - Baixista da banda de jazz Mariana Matheos'
+      alt: 'Tarcíso Junior - Baixista e Guitarrista da Banda'
     },
     { 
       src: '/images/baterista.png',
-      alt: 'Rubens Kalil - Baterista da banda de música ao vivo'
+      alt: 'Rubens Kalil - Baterista da Banda'
     },
     { 
       src: '/images/pianista.png',
-      alt: 'Carlos Nobre - Pianista da banda de jazz e soul'
+      alt: 'Carlos Nobre - Pianista da Banda'
     },
     { 
       src: '/images/banda-blue-jazz-concurso.png',
-      alt: 'Banda de jazz Mariana Matheos no Festival de Jazz & Blues de Tiradentes'
+      alt: 'Banda Mariana Matheos no Festival de Jazz & Blues de Tiradentes 2025'
     },
   ]);
 
@@ -35,21 +34,21 @@ const ImageSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative">
-        {/* Section Title - Otimizado para SEO */}
+        {/* Section Title */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-glimmer text-5xl md:text-6xl font-bold jazz-gold mb-4 jazz-text-shadow">
-            Fotos da Banda de Jazz
+            Galeria
           </h2>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt="Divisor Art Déco decorativo"
+                alt="Divisor Art Déco"
                 className="w-[50%] object-contain"
               />
             </div>
           <p className="font-gatsbybold text-3xl text-gray-400 max-w-2xl mx-auto">
-            Galeria de fotos da banda de jazz e soul em apresentações ao vivo
+            Momentos especiais capturados durante nossas apresentações exclusivas
           </p>
         </div>
 
