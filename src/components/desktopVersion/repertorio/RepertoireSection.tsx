@@ -1,12 +1,9 @@
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import bordaComum from '@/assets/images/borda-comum-gold.png';
 
 const RepertoireSection = () => {
-  const navigate = useNavigate();
-  
   const artists = [
     "Billie Holiday",
     "Ella Fitzgerald", 
@@ -15,13 +12,6 @@ const RepertoireSection = () => {
     "Frank Sinatra",
     "Nina Simone"
   ];
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="py-20 jazz-gradient relative">
@@ -45,22 +35,6 @@ const RepertoireSection = () => {
                 alt="Divisor Art Déco"
                 className="w-[50%] object-contain"
               />
-            </div>
-          </div>
-
-          {/* Quick Navigation to Styles */}
-          <div className="text-center mb-12">
-            <p className="font-gatsby text-lg text-gray-300 mb-6">Navegue pelos estilos musicais:</p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {['Jazz', 'Soul', 'Blues', 'R&B'].map((genre) => (
-                <button
-                  key={genre}
-                  onClick={() => scrollToSection(genre.toLowerCase())}
-                  className="px-6 py-3 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 font-gatsby tracking-wide cursor-pointer"
-                >
-                  {genre}
-                </button>
-              ))}
             </div>
           </div>
 
@@ -91,7 +65,7 @@ const RepertoireSection = () => {
             </p>
 
             {/* Featured Quote */}
-            <div className="relative animate-scale-in mb-12">
+            <div className="relative animate-scale-in">
               <div className="absolute -top-4 -left-4 text-6xl font-glimmer jazz-gold opacity-30">"</div>
               <div className="absolute -bottom-4 -right-4 text-6xl font-glimmer jazz-gold opacity-30">"</div>
               <div className="bg-black bg-opacity-40 p-8 md:p-12 border-2 border-jazz-gold border-opacity-50">
@@ -102,70 +76,6 @@ const RepertoireSection = () => {
                   da elegância vintage à emoção contemporânea
                 </p>
               </div>
-            </div>
-          </div>
-
-          {/* Musical Styles Detailed Sections */}
-          <div className="space-y-16 mb-16">
-            {/* Jazz Section */}
-            <section id="jazz" className="animate-fade-in">
-              <h3 className="font-glimmer text-4xl jazz-gold font-bold mb-6 text-center">Jazz - A Sofisticação Musical</h3>
-              <p className="font-gatsby text-lg text-gray-300 leading-relaxed text-center max-w-4xl mx-auto">
-                O Jazz é nossa paixão principal. Com raízes no início do século XX, representa liberdade, improvisação e elegância. 
-                Interpretamos clássicos de Ella Fitzgerald, Louis Armstrong e Duke Ellington, criando uma atmosfera sofisticada 
-                perfeita para casamentos e eventos corporativos.
-              </p>
-            </section>
-
-            {/* Soul Section */}
-            <section id="soul" className="animate-fade-in">
-              <h3 className="font-glimmer text-4xl jazz-gold font-bold mb-6 text-center">Soul - A Emoção em Cada Nota</h3>
-              <p className="font-gatsby text-lg text-gray-300 leading-relaxed text-center max-w-4xl mx-auto">
-                O Soul traz a alma da música negra americana para seus eventos. Oferecemos interpretações emocionantes de 
-                Aretha Franklin, Otis Redding e Ray Charles. Ideal para criar momentos íntimos e tocantes em casamentos 
-                e celebrações especiais.
-              </p>
-            </section>
-
-            {/* Blues Section */}
-            <section id="blues" className="animate-fade-in">
-              <h3 className="font-glimmer text-4xl jazz-gold font-bold mb-6 text-center">Blues - A Expressão Autêntica</h3>
-              <p className="font-gatsby text-lg text-gray-300 leading-relaxed text-center max-w-4xl mx-auto">
-                O Blues é a raiz de toda música moderna. Apresentamos o melhor de B.B. King, Muddy Waters e Etta James, 
-                trazendo autenticidade e profundidade emocional para eventos que buscam uma experiência musical genuína e marcante.
-              </p>
-            </section>
-
-            {/* R&B Section */}
-            <section id="rnb" className="animate-fade-in">
-              <h3 className="font-glimmer text-4xl jazz-gold font-bold mb-6 text-center">R&B - Rhythm & Blues Contemporâneo</h3>
-              <p className="font-gatsby text-lg text-gray-300 leading-relaxed text-center max-w-4xl mx-auto">
-                O R&B moderno conecta tradição e contemporaneidade. Interpretamos Amy Winehouse, Adele, John Legend e Alicia Keys, 
-                oferecendo uma sonoridade atual e sofisticada. Perfeito para eventos que desejam música ao vivo elegante com um toque moderno.
-              </p>
-            </section>
-          </div>
-
-          {/* Internal Links for SEO */}
-          <div className="text-center mb-12 animate-fade-in">
-            <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50">
-              <p className="font-gatsby text-lg text-gray-300 mb-6">
-                Quer saber como adaptamos nosso repertório para diferentes eventos?{' '}
-                <button
-                  onClick={() => navigate('/estilos-musicais')}
-                  className="text-jazz-gold hover:text-yellow-400 underline transition-colors"
-                >
-                  Veja nossa página de estilos musicais
-                </button>
-                {' '}ou{' '}
-                <button
-                  onClick={() => navigate('/contato')}
-                  className="text-jazz-gold hover:text-yellow-400 underline transition-colors"
-                >
-                  entre em contato para um orçamento personalizado
-                </button>
-                .
-              </p>
             </div>
           </div>
 

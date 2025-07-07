@@ -48,16 +48,6 @@ const EstilosMusicaisSection = () => {
             <p className="font-gatsby text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Conheça os estilos musicais que fazem da Mariana Matheos Jazz Band a escolha perfeita para eventos sofisticados em Belo Horizonte e região. Cada gênero musical traz sua própria magia e atmosfera única.
             </p>
-
-            {/* Google Rating Highlight */}
-            <div className="flex items-center justify-center mt-6 p-4 bg-black bg-opacity-40 border border-jazz-gold border-opacity-30 max-w-md mx-auto">
-              <div className="flex text-jazz-gold text-2xl mr-3">
-                ⭐⭐⭐⭐⭐
-              </div>
-              <p className="font-gatsby text-lg text-jazz-gold">
-                Todas as avaliações no Google são 5 estrelas
-              </p>
-            </div>
           </div>
 
           {/* Estilos Grid */}
@@ -100,29 +90,10 @@ const EstilosMusicaisSection = () => {
             <h2 className="font-glimmer text-3xl jazz-gold font-bold mb-4">
               Era de Ouro do Jazz (1920-1960)
             </h2>
-            <p className="font-gatsby text-lg text-gray-300 leading-relaxed mb-6">
+            <p className="font-gatsby text-lg text-gray-300 leading-relaxed">
               Nossa banda especializa-se em recriar a magia da Era de Ouro do Jazz, período áureo que vai de 1920 a 1960. 
               Essa época marcou o nascimento dos grandes standards do jazz, soul e blues que ainda hoje emocionam plateias em 
               casamentos, eventos corporativos e celebrações especiais em Belo Horizonte e toda Minas Gerais.
-            </p>
-            
-            {/* Internal Links */}
-            <p className="font-gatsby text-lg text-gray-300">
-              Veja o que nossos clientes dizem em{' '}
-              <button
-                onClick={() => navigate('/faq')}
-                className="text-jazz-gold hover:text-yellow-400 underline transition-colors"
-              >
-                depoimentos reais na página de FAQ
-              </button>
-              {' '}ou{' '}
-              <button
-                onClick={() => navigate('/contato')}
-                className="text-jazz-gold hover:text-yellow-400 underline transition-colors"
-              >
-                entre em contato para solicitar um orçamento personalizado
-              </button>
-              .
             </p>
           </div>
 

@@ -1,12 +1,9 @@
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import bordaComum from '@/assets/images/borda-comum-gold.png';
 
 const RepertoireSection = () => {
-  const navigate = useNavigate();
-  
   const artists = [
     "Billie Holiday",
     "Ella Fitzgerald", 
@@ -15,13 +12,6 @@ const RepertoireSection = () => {
     "Frank Sinatra",
     "Nina Simone"
   ];
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section className="py-20 jazz-gradient relative">
@@ -45,22 +35,6 @@ const RepertoireSection = () => {
                 alt="Divisor Art Déco decorativo"
                 className="w-[50%] object-contain"
               />
-            </div>
-          </div>
-
-          {/* Quick Navigation to Styles - Mobile */}
-          <div className="text-center mb-8">
-            <p className="font-gatsby text-lg text-gray-300 mb-4">Navegue pelos estilos:</p>
-            <div className="grid grid-cols-2 gap-2 mb-6">
-              {['Jazz', 'Soul', 'Blues', 'R&B'].map((genre) => (
-                <button
-                  key={genre}
-                  onClick={() => scrollToSection(genre.toLowerCase())}
-                  className="px-4 py-2 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 font-gatsby text-sm cursor-pointer"
-                >
-                  {genre}
-                </button>
-              ))}
             </div>
           </div>
 
@@ -91,7 +65,7 @@ const RepertoireSection = () => {
             </p>
 
             {/* Featured Quote */}
-            <div className="relative animate-scale-in mb-12">
+            <div className="relative animate-scale-in">
               <div className="absolute -top-4 -left-4 text-6xl font-glimmer jazz-gold opacity-30">"</div>
               <div className="absolute -bottom-4 -right-4 text-6xl font-glimmer jazz-gold opacity-30">"</div>
               <div className="bg-black bg-opacity-40 p-8 md:p-12 border-2 border-jazz-gold border-opacity-50">
@@ -102,66 +76,6 @@ const RepertoireSection = () => {
                   nossa banda conecta a elegância vintage com a emoção contemporânea
                 </p>
               </div>
-            </div>
-          </div>
-
-          {/* Musical Styles Detailed Sections */}
-          <div className="space-y-12 mb-12">
-            {/* Jazz Section */}
-            <section id="jazz" className="animate-fade-in text-center">
-              <h3 className="font-glimmer text-3xl jazz-gold font-bold mb-4">Jazz - A Sofisticação Musical</h3>
-              <p className="font-gatsby text-lg text-gray-300 leading-relaxed">
-                O Jazz é nossa paixão principal. Interpretamos clássicos de Ella Fitzgerald, Louis Armstrong e Duke Ellington, 
-                criando uma atmosfera sofisticada perfeita para casamentos e eventos.
-              </p>
-            </section>
-
-            {/* Soul Section */}
-            <section id="soul" className="animate-fade-in text-center">
-              <h3 className="font-glimmer text-3xl jazz-gold font-bold mb-4">Soul - A Emoção em Cada Nota</h3>
-              <p className="font-gatsby text-lg text-gray-300 leading-relaxed">
-                O Soul traz interpretações emocionantes de Aretha Franklin, Otis Redding e Ray Charles. 
-                Ideal para criar momentos íntimos e tocantes em celebrações especiais.
-              </p>
-            </section>
-
-            {/* Blues Section */}
-            <section id="blues" className="animate-fade-in text-center">
-              <h3 className="font-glimmer text-3xl jazz-gold font-bold mb-4">Blues - A Expressão Autêntica</h3>
-              <p className="font-gatsby text-lg text-gray-300 leading-relaxed">
-                Apresentamos o melhor de B.B. King, Muddy Waters e Etta James, trazendo autenticidade 
-                e profundidade emocional para uma experiência musical genuína.
-              </p>
-            </section>
-
-            {/* R&B Section */}
-            <section id="rnb" className="animate-fade-in text-center">
-              <h3 className="font-glimmer text-3xl jazz-gold font-bold mb-4">R&B - Rhythm & Blues Contemporâneo</h3>
-              <p className="font-gatsby text-lg text-gray-300 leading-relaxed">
-                Interpretamos Amy Winehouse, Adele, John Legend e Alicia Keys, oferecendo sonoridade 
-                atual e sofisticada com um toque moderno.
-              </p>
-            </section>
-          </div>
-
-          {/* Internal Links for SEO */}
-          <div className="text-center mb-8 animate-fade-in">
-            <div className="bg-black bg-opacity-40 p-6 border-2 border-jazz-gold border-opacity-50">
-              <p className="font-gatsby text-lg text-gray-300 mb-4">
-                Quer saber como adaptamos nosso repertório para diferentes eventos?{' '}
-                <button
-                  onClick={() => navigate('/estilos-musicais')}
-                  className="text-jazz-gold hover:text-yellow-400 underline transition-colors"
-                >
-                  Veja nossa página de estilos musicais
-                </button>.
-              </p>
-              <button
-                onClick={() => navigate('/contato')}
-                className="px-6 py-3 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 font-gatsby tracking-wide font-semibold mt-4"
-              >
-                Solicitar Orçamento
-              </button>
             </div>
           </div>
 

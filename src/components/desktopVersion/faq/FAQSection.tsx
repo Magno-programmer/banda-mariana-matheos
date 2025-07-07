@@ -33,22 +33,6 @@ const FAQSection = () => {
     }
   ];
 
-  const googleReviews = [
-    { nome: "Geraldo Santana", texto: "Excelente cantora!! Vale a pena assistir o seu show!!" },
-    { nome: "Juciane Petenusso", texto: "Excelente cantora, uma voz maravilhosa e canta todo tipo de música... super animada e simpática" },
-    { nome: "Vanessa Guedes", texto: "Cantora sensacional! Deus abençoe nesta jornada... Emoção e carisma!" },
-    { nome: "Ana Carolina", texto: "Canta muitooooo. Adorei!!!! Irei mais vezes." },
-    { nome: "Luciana dos Santos", texto: "Sensação que estamos na década de 20 ~ 60, é algo tão único que não dá pra explicar, tem que assistir." },
-    { nome: "Sergio Roberto", texto: "Mariana é uma cantora excelente, super afinada, interage com o público." }
-  ];
-
-  const clientTestimonials = [
-    { nome: "Poliana, Soul Jazz Burguer", texto: "Foi muito bacana!!! Agradecemos mais uma vez a parceria!!" },
-    { nome: "Ana Luiza, Restaurante Le Pontes", texto: "A gente adorou a apresentação de vocês, queremos trazer vocês mais vezes. Muitíssimo obrigada!!" },
-    { nome: "Débora, The Bulltique Vino Bar", texto: "Foi tudo lindo e mágico! 😍 Ansiosa para nosso próximo encontro!!!!" },
-    { nome: "André Serra, Evento de Carros Antigos", texto: "Seu show foi fantástico! Marcou a história da nossa região. Sucesso total!" }
-  ];
-
   return (
     <section className="py-20 jazz-gradient relative">
       <div className="container mx-auto px-6 relative">
@@ -68,16 +52,6 @@ const FAQSection = () => {
             <p className="font-gatsby text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
               Tire suas dúvidas sobre contratar a banda de jazz, soul, blues e R&B para seu casamento ou evento em Belo Horizonte e Minas Gerais.
             </p>
-            
-            {/* Google Rating Highlight */}
-            <div className="flex items-center justify-center mt-6 p-4 bg-black bg-opacity-40 border border-jazz-gold border-opacity-30 max-w-md mx-auto">
-              <div className="flex text-jazz-gold text-2xl mr-3">
-                ⭐⭐⭐⭐⭐
-              </div>
-              <p className="font-gatsby text-lg text-jazz-gold">
-                Todas as avaliações no Google são 5 estrelas
-              </p>
-            </div>
           </div>
 
           {/* FAQ Items */}
@@ -100,75 +74,36 @@ const FAQSection = () => {
             ))}
           </div>
 
-          {/* Google Reviews Section */}
+          {/* Depoimentos Section */}
           <div className="mb-16 animate-fade-in">
             <h2 className="font-glimmer text-4xl jazz-gold font-bold text-center mb-8">
-              Avaliações no Google - 5 Estrelas
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {googleReviews.map((review, index) => (
-                <div 
-                  key={index}
-                  className="bg-black bg-opacity-40 p-6 border border-jazz-gold border-opacity-30 hover:border-opacity-50 transition-all duration-300"
-                  style={{animationDelay: `${index * 0.1}s`}}
-                >
-                  <div className="flex text-jazz-gold text-lg mb-3">
-                    ⭐⭐⭐⭐⭐
-                  </div>
-                  <blockquote className="font-gatsby text-gray-300 italic mb-4">
-                    "{review.texto}"
-                  </blockquote>
-                  <cite className="font-gatsbybold text-jazz-gold text-sm">
-                    — {review.nome}
-                  </cite>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Client Testimonials Section */}
-          <div className="mb-16 animate-fade-in">
-            <h2 className="font-glimmer text-4xl jazz-gold font-bold text-center mb-8">
-              O que dizem nossos contratantes
+              O que dizem sobre nossa banda de jazz
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              {clientTestimonials.map((testimonial, index) => (
-                <blockquote 
-                  key={index}
-                  className="bg-black bg-opacity-40 p-6 border-l-4 border-jazz-gold hover:bg-opacity-60 transition-all duration-300"
-                  style={{animationDelay: `${index * 0.1}s`}}
-                >
-                  <p className="font-gatsby text-lg text-gray-300 italic mb-4">
-                    "{testimonial.texto}"
-                  </p>
-                  <cite className="font-gatsbybold text-jazz-gold">— {testimonial.nome}</cite>
-                </blockquote>
-              ))}
+              <blockquote className="bg-black bg-opacity-40 p-6 border-l-4 border-jazz-gold">
+                <p className="font-gatsby text-lg text-gray-300 italic mb-4">
+                  "Contratei a Mariana Matheos para meu casamento e foi a melhor escolha. Banda de jazz maravilhosa!"
+                </p>
+                <cite className="font-gatsbybold text-jazz-gold">— Débora, The Bulltique Vino Bar</cite>
+              </blockquote>
+              
+              <blockquote className="bg-black bg-opacity-40 p-6 border-l-4 border-jazz-gold">
+                <p className="font-gatsby text-lg text-gray-300 italic mb-4">
+                  "A apresentação superou nossas expectativas. Música ao vivo de altíssima qualidade para nosso evento corporativo."
+                </p>
+                <cite className="font-gatsbybold text-jazz-gold">— Ana Luiza, Evento Corporativo</cite>
+              </blockquote>
             </div>
           </div>
 
-          {/* Internal Links Section */}
-          <div className="text-center mb-12 animate-fade-in">
+          {/* CTA Section */}
+          <div className="text-center animate-scale-in">
             <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50">
               <h2 className="font-glimmer text-3xl jazz-gold font-bold mb-4">
                 Ainda tem dúvidas?
               </h2>
               <p className="font-gatsby text-lg text-gray-300 mb-6">
-                Se ainda ficou com dúvidas ou deseja nos contratar,{' '}
-                <button
-                  onClick={() => navigate('/contato')}
-                  className="text-jazz-gold hover:text-yellow-400 underline transition-colors"
-                >
-                  vá para a página de contato
-                </button>
-                {' '}ou conheça mais sobre nossos{' '}
-                <button
-                  onClick={() => navigate('/estilos-musicais')}
-                  className="text-jazz-gold hover:text-yellow-400 underline transition-colors"
-                >
-                  estilos musicais
-                </button>
-                .
+                Entre em contato conosco pelo WhatsApp e tire todas as suas dúvidas sobre contratar nossa banda de jazz para seu evento especial.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
