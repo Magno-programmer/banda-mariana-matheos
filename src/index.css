@@ -1,9 +1,12 @@
-
-
-
+@import url('./App.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Scroll suave global */
+html {
+  scroll-behavior: smooth;
+}
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
@@ -164,5 +167,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #d4a853;
 }
-
-
