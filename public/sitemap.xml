@@ -63,4 +63,18 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://marianamatheos.com.br/estilos-musicais</loc>
+    <lastmod>2024-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/faq</loc>
+    <lastmod>2024-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

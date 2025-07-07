@@ -12,9 +12,11 @@ const Header = () => {
     { name: 'Início', path: '/inicio', title: 'Banda de Jazz Soul Blues R&B BH - Página Principal' },
     { name: 'Sobre', path: '/sobre', title: 'Sobre a Banda de Jazz Mariana Matheos - História e Membros' },
     { name: 'Repertório', path: '/repertorio', title: 'Repertório Jazz Soul Blues R&B - Lista de Músicas' },
+    { name: 'Estilos', path: '/estilos-musicais', title: 'Estilos Musicais - Jazz Soul Blues R&B da Banda' },
     { name: 'Vídeos', path: '/videos', title: 'Vídeos da Banda de Jazz - Apresentações ao Vivo' },
     { name: 'Fotos', path: '/fotos', title: 'Galeria de Fotos - Banda de Jazz em Eventos' },
     { name: 'Agenda', path: '/agenda', title: 'Agenda de Shows - Próximas Apresentações da Banda' },
+    { name: 'FAQ', path: '/faq', title: 'Perguntas Frequentes - Contratar Banda de Jazz' },
     { name: 'Contato', path: '/contato', title: 'Contratar Banda de Jazz - Orçamento e Contato' }
   ];
 

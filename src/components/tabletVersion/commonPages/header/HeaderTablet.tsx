@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
@@ -16,7 +17,7 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <img 
               src={logoWhite}
-              alt="Mariana Matheos"
+              alt="Mariana Matheos - Banda Jazz Soul Blues R&B"
               className="w-12 h-12 object-contain"
             />
             <div className="hidden sm:block">
@@ -39,7 +40,7 @@ const Header = () => {
 
         {isMenuOpen && (
           <nav className="fixed top-20 right-4 w-56 z-50 bg-black bg-opacity-95 border border-jazz-gold rounded-lg shadow-lg p-4 space-y-4">
-            {['Inicio', 'Sobre', 'Repertorio', 'Videos', 'Fotos', 'Agenda', 'Contato'].map((item, i) => (
+            {['Inicio', 'Sobre', 'Repertorio', 'Estilos-musicais', 'Videos', 'Fotos', 'Agenda', 'FAQ', 'Contato'].map((item, i) => (
               <button
                 key={i}
                 onClick={() => {
@@ -48,7 +49,7 @@ const Header = () => {
                 }}
                 className="block text-right text-jazz-gold hover:text-white transition-colors border-b border-jazz-gold/20 pb-2 font-gatsbybold"
               >
-                {item}
+                {item === 'Estilos-musicais' ? 'Estilos' : item}
               </button>
             ))}
           </nav>
