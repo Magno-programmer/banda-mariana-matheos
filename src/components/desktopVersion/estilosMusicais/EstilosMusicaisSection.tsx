@@ -1,124 +1,171 @@
 
 import React from 'react';
-import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import { useNavigate } from 'react-router-dom';
+import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
+import bordaComum from '@/assets/images/borda-comum-gold.png';
 
 const EstilosMusicaisSection = () => {
   const navigate = useNavigate();
 
-  const estilos = [
+  const musicStyles = [
     {
-      titulo: "Jazz - A Sofisticação Musical",
-      descricao: "O Jazz é nossa paixão principal. Com raízes no início do século XX, representa liberdade, improvisação e elegância. Nossa banda de jazz em Belo Horizonte interpreta clássicos de Ella Fitzgerald, Louis Armstrong e Duke Ellington, criando uma atmosfera sofisticada perfeita para casamentos e eventos corporativos em Minas Gerais.",
-      influencias: ["Ella Fitzgerald", "Louis Armstrong", "Duke Ellington", "Miles Davis"]
+      id: 'jazz',
+      name: 'Jazz',
+      description: 'O jazz é o alicerce do nosso repertório. Nascido no início do século XX nos Estados Unidos, o jazz combina elementos da música africana, blues e ragtime. Nossa interpretação traz os clássicos de Miles Davis, Duke Ellington e John Coltrane com arranjos sofisticados e improvisações elegantes.',
+      characteristics: ['Improvisação', 'Swing', 'Blue notes', 'Harmonia complexa'],
+      artists: ['Miles Davis', 'Duke Ellington', 'John Coltrane', 'Charlie Parker']
     },
     {
-      titulo: "Soul - A Emoção em Cada Nota",
-      descricao: "O Soul traz a alma da música negra americana para seus eventos. Nossa banda de soul em BH oferece interpretações emocionantes de Aretha Franklin, Otis Redding e Ray Charles. Ideal para criar momentos íntimos e tocantes em casamentos e celebrações especiais em Minas Gerais.",
-      influencias: ["Aretha Franklin", "Otis Redding", "Ray Charles", "Sam Cooke"]
+      id: 'soul',
+      name: 'Soul',
+      description: 'O soul music representa a expressão mais profunda da música negra americana. Combinando gospel, R&B e pop, criamos interpretações emocionantes que tocam a alma. Nossa vocalista entrega performances que ecoam a força de Aretha Franklin e a sensibilidade de Sam Cooke.',
+      characteristics: ['Vocal expressivo', 'Ritmo marcante', 'Groove intenso', 'Emoção autêntica'],
+      artists: ['Aretha Franklin', 'Sam Cooke', 'Otis Redding', 'Stevie Wonder']
     },
     {
-      titulo: "Blues - A Expressão Autêntica",
-      descricao: "O Blues é a raiz de toda música moderna. Nossa banda de blues apresenta o melhor de B.B. King, Muddy Waters e Etta James, trazendo autenticidade e profundidade emocional para eventos que buscam uma experiência musical genuína e marcante em Belo Horizonte.",
-      influencias: ["B.B. King", "Muddy Waters", "Etta James", "Howlin' Wolf"]
+      id: 'blues',
+      name: 'Blues',
+      description: 'O blues é a raiz de toda música popular moderna. Com sua estrutura de 12 compassos e progressões melancólicas, o blues conta histórias de vida, amor e superação. Nossa banda honra essa tradição com interpretações que respeitam os mestres B.B. King e Muddy Waters.',
+      characteristics: ['Estrutura 12 compassos', 'Blue notes', 'Call and response', 'Narrativa emocional'],
+      artists: ['B.B. King', 'Muddy Waters', 'Robert Johnson', 'Howlin\' Wolf']
     },
     {
-      titulo: "R&B - Rhythm & Blues Contemporâneo",
-      descricao: "O R&B moderno conecta tradição e contemporaneidade. Interpretamos Amy Winehouse, Adele, John Legend e Alicia Keys, oferecendo uma sonoridade atual e sofisticada. Perfeito para eventos que desejam música ao vivo elegante com um toque moderno em Minas Gerais.",
-      influencias: ["Amy Winehouse", "Adele", "John Legend", "Alicia Keys"]
+      id: 'rnb',
+      name: 'R&B',
+      description: 'O Rhythm & Blues moderno une a tradição do soul com elementos contemporâneos. Interpretamos clássicos e sucessos mais recentes com a sofisticação vocal de Amy Winehouse e a elegância atemporal de Alicia Keys, criando uma ponte entre passado e presente.',
+      characteristics: ['Groove marcante', 'Vocal melismático', 'Harmonias ricas', 'Produção refinada'],
+      artists: ['Amy Winehouse', 'Alicia Keys', 'John Legend', 'Adele']
     }
   ];
 
   return (
     <section className="py-20 jazz-gradient relative">
+      {/* Background elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-1/4 text-6xl font-glimmer text-jazz-gold rotate-12">🎵</div>
+        <div className="absolute bottom-20 right-1/4 text-8xl font-glimmer text-jazz-gold -rotate-12">🎶</div>
+      </div>
+
       <div className="container mx-auto px-6 relative">
         <div className="max-w-6xl mx-auto">
-          {/* SEO Optimized Title */}
+          {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="font-glimmer text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 jazz-text-shadow">
-              Estilos Musicais da Banda de Jazz Soul Blues R&B
+              Estilos Musicais - Jazz, Soul, Blues e R&B
             </h1>
             <div className="w-full flex justify-center mb-6">
               <img
                 src={lineArtDeco}
-                alt="Divisor decorativo - Estilos musicais da banda"
+                alt="Divisor decorativo - Estilos musicais"
                 className="w-[50%] object-contain"
               />
             </div>
-            <p className="font-gatsby text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Conheça os estilos musicais que fazem da Mariana Matheos Jazz Band a escolha perfeita para eventos sofisticados em Belo Horizonte e região. Cada gênero musical traz sua própria magia e atmosfera única.
+            <p className="font-gatsby text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
+              Conheça os estilos musicais que definem nossa identidade artística. Da sofisticação do jazz à emoção do soul, cada gênero é interpretado com excelência e autenticidade pela banda Mariana Matheos.
             </p>
           </div>
 
-          {/* Estilos Grid */}
-          <div className="grid gap-12 mb-16">
-            {estilos.map((estilo, index) => (
-              <div 
-                key={estilo.titulo}
-                className={`flex flex-col lg:flex-row items-center gap-8 animate-fade-in ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-                style={{animationDelay: `${index * 0.2}s`}}
+          {/* Quick Navigation */}
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            {musicStyles.map((style) => (
+              <a
+                key={style.id}
+                href={`#${style.id}`}
+                className="px-6 py-3 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 font-gatsby tracking-wide"
               >
-                <div className="flex-1">
-                  <h2 className="font-glimmer text-3xl lg:text-4xl jazz-gold font-bold mb-4">
-                    {estilo.titulo}
-                  </h2>
-                  <p className="font-gatsby text-lg text-gray-300 leading-relaxed mb-6">
-                    {estilo.descricao}
-                  </p>
-                  <div>
-                    <h3 className="font-glimmer text-xl jazz-gold font-semibold mb-3">
-                      Principais Influências:
-                    </h3>
+                {style.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Music Styles */}
+          <div className="space-y-20">
+            {musicStyles.map((style, index) => (
+              <section key={style.id} id={style.id} className="animate-fade-in">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                  {/* Text Content */}
+                  <div className={index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}>
+                    <h2 className="font-glimmer text-4xl jazz-gold font-bold mb-6">
+                      {style.name}
+                    </h2>
+                    <p className="font-gatsby text-lg text-gray-300 leading-relaxed mb-6">
+                      {style.description}
+                    </p>
+                    
+                    {/* Characteristics */}
+                    <h3 className="font-glimmer text-2xl text-white mb-4">Características:</h3>
+                    <ul className="grid grid-cols-2 gap-2 mb-6">
+                      {style.characteristics.map((char, charIndex) => (
+                        <li key={charIndex} className="font-gatsby text-gray-300 flex items-center">
+                          <span className="jazz-gold mr-2">•</span>
+                          {char}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Artists */}
+                    <h3 className="font-glimmer text-2xl text-white mb-4">Influências:</h3>
                     <div className="flex flex-wrap gap-2">
-                      {estilo.influencias.map((influencia) => (
-                        <span 
-                          key={influencia}
-                          className="px-3 py-1 bg-jazz-dark bg-opacity-40 border border-jazz-gold border-opacity-30 text-jazz-gold text-sm rounded"
+                      {style.artists.map((artist, artistIndex) => (
+                        <span
+                          key={artistIndex}
+                          className="px-3 py-1 bg-jazz-gold bg-opacity-20 text-jazz-gold text-sm border border-jazz-gold border-opacity-30"
                         >
-                          {influencia}
+                          {artist}
                         </span>
                       ))}
                     </div>
                   </div>
+
+                  {/* Visual Element */}
+                  <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'} flex justify-center`}>
+                    <div className="relative w-80 h-80">
+                      <img
+                        src={bordaComum}
+                        alt={`Moldura decorativa - ${style.name}`}
+                        className="absolute inset-0 w-full h-full object-contain"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="text-6xl font-glimmer jazz-gold mb-4">
+                            {style.id === 'jazz' && '🎺'}
+                            {style.id === 'soul' && '🎤'}
+                            {style.id === 'blues' && '🎸'}
+                            {style.id === 'rnb' && '🎹'}
+                          </div>
+                          <h3 className="font-glimmer text-3xl jazz-gold font-bold">
+                            {style.name}
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </section>
             ))}
           </div>
 
-          {/* Era de Ouro Section */}
-          <div className="text-center mb-12 animate-fade-in bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-30">
-            <h2 className="font-glimmer text-3xl jazz-gold font-bold mb-4">
-              Era de Ouro do Jazz (1920-1960)
-            </h2>
-            <p className="font-gatsby text-lg text-gray-300 leading-relaxed">
-              Nossa banda especializa-se em recriar a magia da Era de Ouro do Jazz, período áureo que vai de 1920 a 1960. 
-              Essa época marcou o nascimento dos grandes standards do jazz, soul e blues que ainda hoje emocionam plateias em 
-              casamentos, eventos corporativos e celebrações especiais em Belo Horizonte e toda Minas Gerais.
-            </p>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center animate-scale-in">
-            <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50 max-w-2xl mx-auto">
-              <h2 className="font-glimmer text-2xl jazz-gold font-bold mb-4">
-                Experimente a Magia dos Grandes Clássicos
+          {/* Internal Links for SEO */}
+          <div className="text-center mt-16 animate-fade-in">
+            <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50">
+              <h2 className="font-glimmer text-3xl jazz-gold font-bold mb-4">
+                Interessado em nossos estilos?
               </h2>
               <p className="font-gatsby text-lg text-gray-300 mb-6">
-                Cada estilo musical oferece uma experiência única. Nossa banda adapta o repertório ao seu evento, 
-                criando a atmosfera perfeita para momentos inesquecíveis.
+                Veja o que nossos clientes dizem em depoimentos reais sobre nossas apresentações.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
-                  onClick={() => navigate('/repertorio')}
-                  className="px-6 py-3 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 font-gatsby tracking-wide"
+                  onClick={() => navigate('/faq')}
+                  className="px-8 py-4 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 font-gatsby tracking-wide font-semibold"
                 >
-                  Ver Repertório Completo
+                  Ver Depoimentos
                 </button>
                 <button
                   onClick={() => navigate('/contato')}
-                  className="px-6 py-3 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 font-gatsby tracking-wide font-semibold"
+                  className="px-8 py-4 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 font-gatsby tracking-wide"
                 >
-                  Contratar Banda de Jazz Soul
+                  Entre em contato para orçamento personalizado
                 </button>
               </div>
             </div>

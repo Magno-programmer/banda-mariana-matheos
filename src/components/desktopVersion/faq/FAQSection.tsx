@@ -96,6 +96,19 @@ const FAQSection = () => {
             </div>
           </div>
 
+          {/* Internal Link for SEO */}
+          <div className="text-center mb-8 animate-fade-in">
+            <p className="font-gatsby text-xl text-gray-300 mb-4">
+              Se ainda ficou com dúvidas ou deseja nos contratar,
+            </p>
+            <button
+              onClick={() => navigate('/contato')}
+              className="font-gatsby text-xl jazz-gold hover:text-yellow-400 underline transition-colors duration-300"
+            >
+              vá para a página de contato
+            </button>
+          </div>
+
           {/* CTA Section */}
           <div className="text-center animate-scale-in">
             <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50">

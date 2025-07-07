@@ -64,6 +64,29 @@ const HeroSection = () => {
             />
           </div>
 
+          {/* Internal Links for SEO */}
+          <div className="mb-6 text-center">
+            <p className="font-gatsby text-lg text-gray-300 mb-4">
+              Conheça nosso repertório completo com jazz, soul, blues e R&B.
+            </p>
+            <button
+              onClick={() => navigate('/repertorio')}
+              className="font-gatsby text-lg jazz-gold hover:text-yellow-400 underline transition-colors duration-300 mb-4 block"
+            >
+              Ver Repertório Completo
+            </button>
+            
+            <p className="font-gatsby text-lg text-gray-300 mb-4">
+              Veja nossos próximos shows na Agenda de Apresentações.
+            </p>
+            <button
+              onClick={() => navigate('/agenda')}
+              className="font-gatsby text-lg jazz-gold hover:text-yellow-400 underline transition-colors duration-300"
+            >
+              Ver Agenda de Shows
+            </button>
+          </div>
+
           {/* SEO Optimized CTA Button */}
           <div className="relative w-[100%] h-[200px] mx-auto">
             <img 
