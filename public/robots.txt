@@ -1,9 +1,3 @@
-
-
-User-agent: *
-Allow: /
-
-# Permitir bots de busca específicos
 User-agent: Googlebot
 Allow: /
 
@@ -16,20 +10,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# Bloquear pastas técnicas
-Disallow: /admin/
-Disallow: /config/
-Disallow: /.git/
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /public/
-Disallow: *.json
-Disallow: *.ts
-Disallow: *.tsx
-
-# Sitemap
-Sitemap: https://marianamatheos.com.br/sitemap.xml
-
-# Crawl-delay para evitar sobrecarga
-Crawl-delay: 1
-
+User-agent: *
+Allow: /

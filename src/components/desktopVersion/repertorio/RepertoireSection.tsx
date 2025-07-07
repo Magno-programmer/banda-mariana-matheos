@@ -1,12 +1,9 @@
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import bordaComum from '@/assets/images/borda-comum-gold.png';
 
 const RepertoireSection = () => {
-  const navigate = useNavigate();
-  
   const artists = [
     "Billie Holiday",
     "Ella Fitzgerald", 
@@ -68,7 +65,7 @@ const RepertoireSection = () => {
             </p>
 
             {/* Featured Quote */}
-            <div className="relative animate-scale-in mb-12">
+            <div className="relative animate-scale-in">
               <div className="absolute -top-4 -left-4 text-6xl font-glimmer jazz-gold opacity-30">"</div>
               <div className="absolute -bottom-4 -right-4 text-6xl font-glimmer jazz-gold opacity-30">"</div>
               <div className="bg-black bg-opacity-40 p-8 md:p-12 border-2 border-jazz-gold border-opacity-50">
@@ -79,19 +76,6 @@ const RepertoireSection = () => {
                   da elegância vintage à emoção contemporânea
                 </p>
               </div>
-            </div>
-
-            {/* Internal Link for SEO */}
-            <div className="mb-8 animate-fade-in">
-              <p className="font-gatsby text-xl text-gray-300 mb-4">
-                Quer saber como adaptamos nosso repertório para diferentes eventos?
-              </p>
-              <button
-                onClick={() => navigate('/estilos-musicais')}
-                className="font-gatsby text-xl jazz-gold hover:text-yellow-400 underline transition-colors duration-300"
-              >
-                Veja nossa página de estilos musicais
-              </button>
             </div>
           </div>
 
