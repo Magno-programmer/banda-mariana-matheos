@@ -1,3 +1,4 @@
+
 import { MessageCircle, Instagram, MapPin } from 'lucide-react';
 import fundoBanda from '@/assets/images/imagem-da-banda.jpg'; // imagem de fundo da banda
 import { useNavigate } from 'react-router-dom';
