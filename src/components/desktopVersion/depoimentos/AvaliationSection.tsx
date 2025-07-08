@@ -43,7 +43,7 @@ const AvaliationSection = () => {
     <section className="py-20 jazz-gradient relative">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-20 text-8xl font-glimmer text-jazz-gold">🎵</div>
+        <div className="absolute top-1/4 left-12 text-8xl font-glimmer text-jazz-gold">🎵</div>
         <div className="absolute bottom-1/4 right-20 text-6xl font-glimmer text-jazz-gold">🎤</div>
       </div>
 
@@ -60,7 +60,7 @@ const AvaliationSection = () => {
               className="w-64 object-contain"
             />
           </div>
-          <p className="font-gatsbybold text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="font-gatsbybold text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed">
             Veja o que nossos clientes e o público falam sobre as apresentações ao vivo da nossa banda de jazz, soul, blues e R&B
           </p>
         </div>
@@ -76,7 +76,7 @@ const AvaliationSection = () => {
             <h2 className="font-glimmer text-2xl jazz-gold font-bold mb-2">
               Todas as avaliações da banda no Google são 5 estrelas
             </h2>
-            <p className="font-gatsbybold text-gray-400">
+            <p className="font-gatsbybold text-gray-100 text-xl">
               Nossa banda de jazz ao vivo tem 100% de aprovação no Google
             </p>
           </div>
@@ -95,7 +95,7 @@ const AvaliationSection = () => {
             />
           </div>
 
-          <Carousel className="w-full max-w-6xl mx-auto">
+          <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {googleReviews.map((review, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -103,10 +103,10 @@ const AvaliationSection = () => {
                     <Card className="bg-black bg-opacity-40 border-2 border-jazz-gold border-opacity-30 hover:border-opacity-100 transition-all duration-300 h-full">
                       <CardContent className="p-6 text-center h-full flex flex-col justify-between">
                         {renderStars()}
-                        <blockquote className="font-gatsbybold text-gray-200 text-lg leading-relaxed mb-4 flex-grow">
+                        <blockquote className="font-gatsbybold text-gray-200 text-xl leading-relaxed mb-4 flex-grow">
                           "{review.review}"
                         </blockquote>
-                        <cite className="font-glimmer text-jazz-gold font-bold text-xl">
+                        <cite className="font-glimmer text-jazz-gold font-bold text-2xl">
                           — {review.name}
                         </cite>
                       </CardContent>
@@ -133,7 +133,7 @@ const AvaliationSection = () => {
             />
           </div>
 
-          <Carousel className="w-full max-w-6xl mx-auto">
+          <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {clientReviews.map((review, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -141,14 +141,14 @@ const AvaliationSection = () => {
                     <Card className="bg-black bg-opacity-40 border-2 border-jazz-gold border-opacity-30 hover:border-opacity-100 transition-all duration-300 h-full">
                       <CardContent className="p-6 text-center h-full flex flex-col justify-between">
                         {renderStars()}
-                        <blockquote className="font-gatsbybold text-gray-200 text-lg leading-relaxed mb-4 flex-grow">
+                        <blockquote className="font-gatsbybold text-gray-100 text-xl leading-relaxed mb-4 flex-grow">
                           "{review.review}"
                         </blockquote>
                         <div className="text-center">
-                          <cite className="font-glimmer text-jazz-gold font-bold text-xl block">
+                          <cite className="font-glimmer text-jazz-gold font-bold text-2xl block">
                             — {review.name}
                           </cite>
-                          <span className="font-gatsbybold text-gray-400 text-sm">
+                          <span className="font-gatsbybold text-gray-400 text-xl">
                             {review.business}
                           </span>
                         </div>
@@ -169,7 +169,7 @@ const AvaliationSection = () => {
             <h3 className="font-glimmer text-3xl jazz-gold font-bold mb-4">
               Seja o próximo a contratar nossa banda de jazz ao vivo
             </h3>
-            <p className="font-gatsbybold text-xl text-gray-400 mb-6">
+            <p className="font-gatsbybold text-2xl text-gray-50 mb-6">
               Junte-se aos nossos clientes satisfeitos e garante uma apresentação inesquecível de jazz, soul, blues e R&B para seu evento
             </p>
             <a 

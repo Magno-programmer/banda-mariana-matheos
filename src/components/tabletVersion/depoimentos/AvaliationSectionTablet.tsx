@@ -86,7 +86,7 @@ const AvaliationSectionTablet = () => {
             />
           </div>
 
-          <Carousel className="w-full max-w-4xl mx-auto">
+          <Carousel className="w-full max-w-xl mx-auto">
             <CarouselContent>
               {googleReviews.map((review, index) => (
                 <CarouselItem key={index} className="md:basis-1/2">
@@ -124,7 +124,7 @@ const AvaliationSectionTablet = () => {
             />
           </div>
 
-          <Carousel className="w-full max-w-4xl mx-auto">
+          <Carousel className="w-full max-w-xl mx-auto">
             <CarouselContent>
               {clientReviews.map((review, index) => (
                 <CarouselItem key={index} className="md:basis-1/2">

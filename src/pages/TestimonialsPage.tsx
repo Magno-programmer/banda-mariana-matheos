@@ -4,48 +4,48 @@ import React from "react";
 import TestimonialsStructuredData from "@/components/globalComponents/estrutura/TestimonialsStructuredData";
 
 // Importing desktop components
-import AvaliationSection from "@/components/desktopVersion/depoimentos/AvaliationSection";
-
-// Importing tablet components
-import AvaliationSectionTablet from "@/components/tabletVersion/depoimentos/AvaliationSectionTablet";
-
-// Importing mobile components
-import AvaliationSectionMobile from "@/components/mobileVersion/depoimentos/AvaliationSectionMobile";
-
-// Importing common components
 import Header from "@/components/desktopVersion/commonPages/header/Header";
-import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTablet";
-import HeaderMobile from "@/components/mobileVersion/commonPages/header/HeaderMobile";
+import AvaliationSection from "@/components/desktopVersion/depoimentos/AvaliationSection";
 import Footer from "@/components/desktopVersion/commonPages/footer/Footer";
-import FooterTablet from "@/components/tabletVersion/commonPages/footer/FooterTablet";
-import FooterMobile from "@/components/mobileVersion/commonPages/footer/FooterMobile";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 
-// Importing hooks
-import { useIsMobile } from "@/hooks/use-mobile";
+// Importing tablet components
+import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTablet";
+import AvaliationSectionTablet from "@/components/tabletVersion/depoimentos/AvaliationSectionTablet";
+import FooterMobile from "@/components/mobileVersion/commonPages/footer/FooterMobile";
+
+// Importing mobile components
+import HeaderMobile from "@/components/mobileVersion/commonPages/header/HeaderMobile";
+import AvaliationSectionMobile from "@/components/mobileVersion/depoimentos/AvaliationSectionMobile";
+import FooterTablet from "@/components/tabletVersion/commonPages/footer/FooterTablet";
 
 const TestimonialsPage = () => {
-  const isMobile = useIsMobile();
-  const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
-
   return (
     <>
+      {/* Structured Data for SEO */}
       <TestimonialsStructuredData />
-      <div className="min-h-screen bg-black">
-        {/* Header responsive */}
-        {isMobile ? <HeaderMobile /> : isTablet ? <HeaderTablet /> : <Header />}
-        
-        {/* Main content */}
-        <main>
-          {isMobile ? <AvaliationSectionMobile /> : isTablet ? <AvaliationSectionTablet /> : <AvaliationSection />}
-        </main>
-
-        {/* Footer responsive */}
-        {isMobile ? <FooterMobile /> : isTablet ? <FooterTablet /> : <Footer />}
-        
-        {/* WhatsApp button */}
+      
+      {/* Mobile Version */}
+      <div className="block sm:hidden">
+        <HeaderMobile />
+        <AvaliationSectionMobile />
+        <FooterMobile />
         <WhatsAppButton />
-      </div>
+      </div>  
+      {/* Tablet Version */}
+      <div className="hidden sm:block lg:hidden"> 
+        <HeaderTablet />
+        <AvaliationSectionTablet />
+        <FooterTablet />
+        <WhatsAppButton />
+      </div> 
+      {/* Desktop Version */}
+      <div className="hidden lg:block">
+        <Header />
+        <AvaliationSection />
+        <Footer />
+        <WhatsAppButton />
+      </div>   
     </>
   );
 };
