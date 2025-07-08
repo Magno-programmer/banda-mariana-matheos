@@ -1,4 +1,5 @@
 import React from "react";
+import BookingStructuredData from "@/components/globalComponents/BookingStructuredData";
 
 // Importing desktop components
 import BookingSection from "@/components/desktopVersion/agendamento/BookingSection";
@@ -19,6 +20,9 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const BookingPage = () => {
   return (
     <>
+      {/* Structured Data for SEO */}
+      <BookingStructuredData />
+      
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeaderMobile />

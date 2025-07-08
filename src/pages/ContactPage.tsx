@@ -1,4 +1,6 @@
 import React from "react";
+// Importing structured data for SEO
+import ContactStructuredData from "@/components/globalComponents/ContactStructuredData";
 
 // Importing desktop components
 import ContactSection from "@/components/desktopVersion/contatos/ContactSection";
@@ -19,27 +21,30 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const ContactPage = () => {
   return (
     <>
-        {/* Mobile Version */}
-        <div className="block sm:hidden">
-            <HeaderMobile />
-            <ContactSectionMobile />
-            <FooterMobile />
-            <WhatsAppButton />
-        </div>
-        {/* Tablet Version */}
-        <div className="hidden sm:block lg:hidden">
-            <HeaderTablet />
-            <ContactSectionTablet />
-            <FooterTablet />
-            <WhatsAppButton />
-        </div>
-        {/* Desktop Version */}
-        <div className="hidden lg:block">
-            <Header />
-            <ContactSection />
-            <Footer />
-            <WhatsAppButton />
-        </div>
+      {/* Structured Data for SEO */}
+      <ContactStructuredData />
+      
+      {/* Mobile Version */}
+      <div className="block sm:hidden">
+          <HeaderMobile />
+          <ContactSectionMobile />
+          <FooterMobile />
+          <WhatsAppButton />
+      </div>
+      {/* Tablet Version */}
+      <div className="hidden sm:block lg:hidden">
+          <HeaderTablet />
+          <ContactSectionTablet />
+          <FooterTablet />
+          <WhatsAppButton />
+      </div>
+      {/* Desktop Version */}
+      <div className="hidden lg:block">
+          <Header />
+          <ContactSection />
+          <Footer />
+          <WhatsAppButton />
+      </div>
     </>
   );
 };

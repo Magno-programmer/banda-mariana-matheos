@@ -1,4 +1,6 @@
 import React from "react";
+// Importing structured data for SEO
+import AboutStructuredData from "@/components/globalComponents/AboutStructuredData";
 
 // Importing desktop components
 import AboutSection from "@/components/desktopVersion/sobre/AboutSection";
@@ -19,6 +21,9 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const AboutPage = () => {
   return (
     <>
+      {/* Structured Data for SEO */}
+      <AboutStructuredData />
+      
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeaderMobile />
