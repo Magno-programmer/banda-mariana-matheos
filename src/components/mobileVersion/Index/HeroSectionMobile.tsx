@@ -26,34 +26,25 @@ const HeroSection = () => {
           {/* imagem de fundo */}
           <img
             src={bandaCompletaPalco}
-            alt="Imagem de fundo"
+            alt="Banda Mariana Matheos em apresentação ao vivo do festival Jazz & Blues de Tiradentes em Nova Lima - MG"
             className="relative top-0 left-0 w-full object-cover z-0 opacity-50 fade-bottom"
           />
-
-          {/* Logo no canto superior esquerdo */}
-          <div className="absolute top-2 left-4 z-50">
-            <img
-              src={logoWhite}
-              alt="Logo Mariana Matheos"
-              className="h-16 object-contain fixed"
-            />
-          </div>
 
           {/* Conteúdo central sobreposto */}
           <div className="absolute mt-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center h-full text-center text-jazz-gold ">
             <img
               src={logoGold}
-              alt="Logo Mariana Matheos"
+              alt="logo da Banda de Jazz Mariana Matheos"
               className="w-32 h-32 object-contain drop-shadow-lg"
             />
           </div>
 
           {/* Main Slogan */}
-          <h1 className="font-glimmer mt-8 text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
-            Uma experiência musical
+          <h1 className="font-glimmer mt-8 text-4xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
+            Banda Mariana Matheos
           </h1>
-          <h2 className="font-glimmer text-3xl md:text-5xl lg:text-6xl font-bold jazz-gold mb-8 jazz-text-shadow">
-            sofisticada, atemporal e arrebatadora
+          <h2 className="font-glimmer text-2xl font-bold jazz-gold mb-8 jazz-text-shadow">
+            Uma experiência sofisticada, atemporal e arrebatadora
           </h2>
 
           {/* Divisor decorativo acima */}
@@ -77,7 +68,7 @@ const HeroSection = () => {
               className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg mt-[119px] h-[75px] w-[253px] text-jazz-gold hover:bg-jazz-gold hover:text-black 
               hover:cursor-pointer transition-all duration-300 tracking-wider uppercase font-semibold z-20"
             >
-              Descubra Nossa História
+              Conheça nossa Banda de jazz
             </button> {/* Botão de rolagem suave para a seção "Sobre" versão desktop*/}
 
           </div>
