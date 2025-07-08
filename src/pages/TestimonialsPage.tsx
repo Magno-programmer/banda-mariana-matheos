@@ -22,10 +22,10 @@ import FooterMobile from "@/components/mobileVersion/commonPages/footer/FooterMo
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 
 // Importing hooks
-import { useMobile } from "@/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const TestimonialsPage = () => {
-  const isMobile = useMobile();
+  const isMobile = useIsMobile();
   const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
 
   return (
