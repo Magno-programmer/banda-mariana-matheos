@@ -14,6 +14,7 @@ const HeaderMobile = () => {
     { name: 'Vídeos', path: '/videos', title: 'Vídeos da Banda de Jazz - Apresentações ao Vivo' },
     { name: 'Fotos', path: '/fotos', title: 'Galeria de Fotos - Banda de Jazz em Eventos' },
     { name: 'Agenda', path: '/agenda', title: 'Agenda de Shows - Próximas Apresentações da Banda' },
+    { name: 'Depoimentos', path: '/depoimentos', title: 'Depoimentos - Contratantes e ouvintes' },
     { name: 'FAQ', path: '/faq', title: 'Perguntas Frequentes - Banda Mariana Matheos' },
     { name: 'Contato', path: '/contato', title: 'Contratar Banda de Jazz - Contato' }
   ];
@@ -51,7 +52,7 @@ const HeaderMobile = () => {
           <nav
             role="navigation"
             aria-label="Menu principal mobile"
-            className="fixed top-20 right-4 w-60 z-50 bg-black bg-opacity-95 border border-jazz-gold rounded-lg shadow-lg p-4 space-y-4"
+            className="fixed top-20 right-4 w-60 max-h-[80vh] z-50 bg-black bg-opacity-95 border border-jazz-gold rounded-lg shadow-lg p-4 space-y-4 scrollbar-thin scrollbar-thumb-jazz-gold scrollbar-track-transparent overflow-y-auto"
           >
             {navigationItems.map((item) => (
               <button
