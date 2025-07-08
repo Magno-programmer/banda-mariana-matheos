@@ -1,6 +1,6 @@
 import React from "react";
 // Importing structured data for SEO
-import ContactStructuredData from "@/components/globalComponents/ContactStructuredData";
+import ContactStructuredData from "@/components/globalComponents/estrutura/ContactStructuredData";
 
 // Importing desktop components
 import ContactSection from "@/components/desktopVersion/contatos/ContactSection";

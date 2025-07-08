@@ -2,7 +2,7 @@
 import React from "react";
 
 // Importing structured data for SEO
-import FAQStructuredData from "@/components/globalComponents/FAQStructuredData";
+import FAQStructuredData from "@/components/globalComponents/estrutura/FAQStructuredData";
 
 // Importing desktop components
 import FAQSection from "@/components/desktopVersion/depoimentos/FAQSection";

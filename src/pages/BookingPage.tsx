@@ -1,5 +1,5 @@
 import React from "react";
-import BookingStructuredData from "@/components/globalComponents/BookingStructuredData";
+import BookingStructuredData from "@/components/globalComponents/estrutura/BookingStructuredData";
 
 // Importing desktop components
 import BookingSection from "@/components/desktopVersion/agendamento/BookingSection";

@@ -1,6 +1,6 @@
 import React from "react";
 // Importing structured data for SEO
-import RepertoireStructuredData from "@/components/globalComponents/RepertoireStructuredData";
+import RepertoireStructuredData from "@/components/globalComponents/estrutura/RepertoireStructuredData";
 
 // Importing desktop components
 import RepertoireSection from "@/components/desktopVersion/repertorio/RepertoireSection";

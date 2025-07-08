@@ -1,6 +1,6 @@
 import React from "react";
 // Importing structured data for SEO
-import AboutStructuredData from "@/components/globalComponents/AboutStructuredData";
+import AboutStructuredData from "@/components/globalComponents/estrutura/AboutStructuredData";
 
 // Importing desktop components
 import AboutSection from "@/components/desktopVersion/sobre/AboutSection";
