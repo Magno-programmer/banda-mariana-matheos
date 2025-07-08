@@ -4,7 +4,7 @@ const VideosSection = () => {
     
   const [videoOpen, setVideoOpen] = useState(false);
   
-  const [videoUrl, setVideoUrl] = useState("https://www.youtube.com/embed/CO_yWe9z8S0");
+  const [videoUrl, setVideoUrl] = useState("https://www.youtube.com/embed/3vUOFhwE134");
   
   const [videos] = useState([
     { title: "All About That Bass - Postmodern Jukebox Cover (Matozinhos)", url: "https://www.youtube.com/embed/CO_yWe9z8S0" },
@@ -12,7 +12,7 @@ const VideosSection = () => {
     { title: "Summertime (Festival Jazz & Blues)", url: "https://www.youtube.com/embed/3vUOFhwE134" },
   ]);
 
-  const thumbnailUrl = "https://img.youtube.com/vi/CO_yWe9z8S0/hqdefault.jpg"; // Default thumbnail URL
+  const thumbnailUrl = "https://img.youtube.com/vi/3vUOFhwE134/hqdefault.jpg"; // Default thumbnail URL
 
   const handleVideoSelect = (url) => {
     setVideoUrl(url);
