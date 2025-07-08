@@ -1,3 +1,4 @@
+# Permitir rastreamento para bots principais
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +11,15 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Todos os outros bots
 User-agent: *
 Allow: /
+
+# Bloquear caminhos que você sabe que estão expostos (se aplicável)
+Disallow: /admin/
+Disallow: /config/
+Disallow: /.git/
+
+# Sitemap atualizado
+Sitemap: https://marianamatheos.com.br/sitemap.xml
+Crawl-delay: 1
