@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,6 +12,7 @@ import RepertoirePage from "./pages/RepertoirePage";
 import BookingPage from "./pages/BookingPage";
 import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
+import TestimonialsPage from "./pages/TestimonialsPage";
 import ScrollToTop from "./components/globalComponents/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -31,6 +33,7 @@ const App = () => (
           <Route path="/repertorio" element={<RepertoirePage />} />
           <Route path="/agenda" element={<BookingPage />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/depoimentos" element={<TestimonialsPage />} />
           <Route path="/contato" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>
