@@ -1,4 +1,6 @@
 import React from "react";
+// Importing structured data for SEO
+import RepertoireStructuredData from "@/components/globalComponents/RepertoireStructuredData";
 
 // Importing desktop components
 import RepertoireSection from "@/components/desktopVersion/repertorio/RepertoireSection";
@@ -19,6 +21,9 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const RepertoirePage = () => {
   return (
     <>
+      {/* Structured Data for SEO */}
+      <RepertoireStructuredData />
+      
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeaderMobile />

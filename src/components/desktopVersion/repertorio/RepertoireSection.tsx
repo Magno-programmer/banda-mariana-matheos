@@ -59,7 +59,7 @@ const RepertoireSection = () => {
                 </div>
               ))}
             </div>
-
+              
             <p className="font-gatsby text-2xl text-gray-50 leading-relaxed mb-12">
               Cada performance é realizada com arranjos fiéis e estética cênica trazendo a Era de Ouro até você, criando um ambiente emocional, sofisticado e inesquecível.
             </p>
