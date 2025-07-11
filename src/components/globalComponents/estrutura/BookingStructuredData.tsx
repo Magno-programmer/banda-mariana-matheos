@@ -1,34 +1,47 @@
-
+// BookingStructuredData.tsx
 import React from 'react';
 
 const BookingStructuredData = () => {
   const events = [
     {
-      name: "Show de Jazz Soul no Chopperhead Garage",
+      name: "Show da Banda Mariana Matheos no Chopperhead Garage",
       startDate: "2025-07-09T20:00:00-03:00",
-      venue: "Chopperhead Garage",
-      address: "Belo Horizonte, MG"
+      endDate: "2025-07-09T22:00:00-03:00",
+      venue: "Chopperhead Garage"
     },
     {
-      name: "Apresentação Jazz Soul no The Bulltique Vino Bar",
+      name: "Show da Banda Mariana Matheos no The Bulltique Vino Bar",
       startDate: "2025-07-11T20:00:00-03:00",
-      venue: "The Bulltique Vino Bar",
-      address: "Belo Horizonte, MG"
+      endDate: "2025-07-11T22:00:00-03:00",
+      venue: "The Bulltique Vino Bar"
     },
     {
-      name: "Show ao Vivo no Soul Jazz Burguer",
+      name: "Show da Banda Mariana Matheos no The Bulltique Vino Bar",
+      startDate: "2025-08-08T20:00:00-03:00",
+      endDate: "2025-08-08T22:00:00-03:00",
+      venue: "The Bulltique Vino Bar"
+    },
+    {
+      name: "Show da Banda Mariana Matheos no Soul Jazz Burguer",
       startDate: "2025-08-16T19:30:00-03:00",
-      venue: "Soul Jazz Burguer",
-      address: "Belo Horizonte, MG"
+      endDate: "2025-08-16T21:30:00-03:00",
+      venue: "Soul Jazz Burguer"
+    },
+    {
+      name: "Show da Banda Mariana Matheos no The Bulltique Vino Bar",
+      startDate: "2025-09-12T20:00:00-03:00",
+      endDate: "2025-09-12T22:00:00-03:00",
+      venue: "The Bulltique Vino Bar"
     }
   ];
 
-  const eventsStructuredData = {
+  const structuredData = {
     "@context": "https://schema.org",
-    "@graph": events.map(event => ({
+    "@graph": events.map((event) => ({
       "@type": "Event",
       "name": event.name,
       "startDate": event.startDate,
+      "endDate": event.endDate,
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
@@ -41,12 +54,19 @@ const BookingStructuredData = () => {
           "addressCountry": "BR"
         }
       },
-      "performer": {
-        "@type": "MusicGroup",
-        "name": "Banda de Jazz, Soul, Blues e R&B Mariana Matheos",
-        "genre": ["Jazz", "Soul", "Blues", "R&B"]
+      "organizer": {
+        "@type": "Organization",
+        "name": "Banda Mariana Matheos",
+        "url": "https://marianamatheos.com.br"
       },
-      "description": `Apresentação ao vivo da banda de jazz, soul, blues e R&B Mariana Matheos no ${event.venue}. Música sofisticada da Era de Ouro do Jazz.`,
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "BRL",
+        "availability": "https://schema.org/InStock",
+        "url": "https://marianamatheos.com.br/agenda"
+      },
+      "description": `Apresentação ao vivo da banda de jazz, soul, blues e R&B Mariana Matheos no ${event.venue}.`,
       "image": "https://marianamatheos.com.br/images/banda-blue-jazz-concurso.png"
     }))
   };
@@ -55,7 +75,7 @@ const BookingStructuredData = () => {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(eventsStructuredData)
+        __html: JSON.stringify(structuredData)
       }}
     />
   );
