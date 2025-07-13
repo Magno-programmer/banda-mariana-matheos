@@ -8,7 +8,7 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      pergunta: "Quanto custa contratar a Banda Mariana Matheos para casamento ou evento?",
+      pergunta: "Quanto custa contratar a Mariana Matheos para casamento ou evento?",
       resposta: "O valor varia conforme o tipo de evento, local e estrutura técnica necessária. Solicite um orçamento sem compromisso!"
     },
     {
@@ -17,7 +17,7 @@ const FAQSection = () => {
     },
     {
       pergunta: "A banda faz apresentações em eventos corporativos e particulares?",
-      resposta: "Com certeza! A Banda Mariana Matheos já se apresentou em eventos empresariais, jantares elegantes, festivais, bares de vinho e casas de jazz. Adaptamos o repertório e o figurino conforme o clima do evento."
+      resposta: "Com certeza! A Mariana Matheos já se apresentou em eventos empresariais, jantares elegantes, festivais, bares de vinho e casas de jazz. Adaptamos o repertório e o figurino conforme o clima do evento."
     },
     {
       pergunta: "Quais estilos musicais fazem parte do repertório da banda?",
@@ -41,7 +41,7 @@ const FAQSection = () => {
     },
     {
       pergunta: "A banda possui boas recomendações?",
-      resposta: "Sim! A Banda Mariana Matheos tem avaliação 5,0 estrelas no Google e é muito elogiada por clientes de casamentos, bares, restaurantes e festivais. Visite o Google e Instagram da banda para conferir os depoimentos reais."
+      resposta: "Sim! A Mariana Matheos tem avaliação 5,0 estrelas no Google e é muito elogiada por clientes de casamentos, bares, restaurantes e festivais. Visite o Google e Instagram da banda para conferir os depoimentos reais."
     }
   ];
 

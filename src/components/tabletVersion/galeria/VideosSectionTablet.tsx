@@ -40,7 +40,7 @@ const VideosSection = () => {
             <iframe
                 className="w-full h-full"
                 src={`${videoUrl}?autoplay=1`}
-                title="Vídeo da banda Mariana Matheos"
+                title="Vídeo da Mariana Matheos"
                 frameBorder="0"
                 allow="autoplay; encrypted-media"
                 allowFullScreen

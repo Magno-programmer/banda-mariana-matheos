@@ -6,7 +6,7 @@ const HomeStructuredData = () => (
     __html: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Banda Mariana Matheos",
+      "name": "Mariana Matheos",
       "url": "https://marianamatheos.com.br/inicio",
       "logo": "https://marianamatheos.com.br/images/banda-blue-jazz-concurso.png",
       "sameAs": [

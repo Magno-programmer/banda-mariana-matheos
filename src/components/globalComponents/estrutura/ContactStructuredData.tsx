@@ -6,7 +6,7 @@ const ContactStructuredData = () => (
     __html: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Banda Mariana Matheos",
+      "name": "Mariana Matheos",
       "telephone": "+55-31-99752-2127",
       "email": "contato@marianamatheos.com.br",
       "address": {

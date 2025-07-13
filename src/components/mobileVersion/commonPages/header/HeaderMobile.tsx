@@ -15,7 +15,7 @@ const HeaderMobile = () => {
     { name: 'Fotos', path: '/fotos', title: 'Galeria de Fotos - Banda de Jazz em Eventos' },
     { name: 'Agenda', path: '/agenda', title: 'Agenda de Shows - Próximas Apresentações da Banda' },
     { name: 'Depoimentos', path: '/depoimentos', title: 'Depoimentos - Contratantes e ouvintes' },
-    { name: 'FAQ', path: '/faq', title: 'Perguntas Frequentes - Banda Mariana Matheos' },
+    { name: 'FAQ', path: '/faq', title: 'Perguntas Frequentes - Mariana Matheos' },
     { name: 'Contato', path: '/contato', title: 'Contratar Banda de Jazz - Contato' }
   ];
 

@@ -11,7 +11,7 @@ const FAQStructuredData = () => (
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Quanto custa contratar a Banda Mariana Matheos para casamento ou evento?",
+            "name": "Quanto custa contratar a Mariana Matheos para casamento ou evento?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "O valor varia conforme o tipo de evento, local e estrutura técnica necessária. Solicite um orçamento sem compromisso!"

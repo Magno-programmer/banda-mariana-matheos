@@ -4,31 +4,31 @@ import React from 'react';
 const BookingStructuredData = () => {
   const events = [
     {
-      name: "Show da Banda Mariana Matheos no Chopperhead Garage",
+      name: "Show da Mariana Matheos no Chopperhead Garage",
       startDate: "2025-07-09T20:00:00-03:00",
       endDate: "2025-07-09T22:00:00-03:00",
       venue: "Chopperhead Garage"
     },
     {
-      name: "Show da Banda Mariana Matheos no The Bulltique Vino Bar",
+      name: "Show da Mariana Matheos no The Bulltique Vino Bar",
       startDate: "2025-07-11T20:00:00-03:00",
       endDate: "2025-07-11T22:00:00-03:00",
       venue: "The Bulltique Vino Bar"
     },
     {
-      name: "Show da Banda Mariana Matheos no The Bulltique Vino Bar",
+      name: "Show da Mariana Matheos no The Bulltique Vino Bar",
       startDate: "2025-08-08T20:00:00-03:00",
       endDate: "2025-08-08T22:00:00-03:00",
       venue: "The Bulltique Vino Bar"
     },
     {
-      name: "Show da Banda Mariana Matheos no Soul Jazz Burguer",
+      name: "Show da Mariana Matheos no Soul Jazz Burguer",
       startDate: "2025-08-16T19:30:00-03:00",
       endDate: "2025-08-16T21:30:00-03:00",
       venue: "Soul Jazz Burguer"
     },
     {
-      name: "Show da Banda Mariana Matheos no The Bulltique Vino Bar",
+      name: "Show da Mariana Matheos no The Bulltique Vino Bar",
       startDate: "2025-09-12T20:00:00-03:00",
       endDate: "2025-09-12T22:00:00-03:00",
       venue: "The Bulltique Vino Bar"
@@ -56,7 +56,7 @@ const BookingStructuredData = () => {
       },
       "organizer": {
         "@type": "Organization",
-        "name": "Banda Mariana Matheos",
+        "name": "Mariana Matheos",
         "url": "https://marianamatheos.com.br"
       },
       "offers": {

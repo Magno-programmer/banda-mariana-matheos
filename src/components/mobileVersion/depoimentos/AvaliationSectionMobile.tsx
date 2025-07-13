@@ -44,7 +44,7 @@ const AvaliationSectionMobile = () => {
         {/* Page Header */}
         <div className="text-center mb-10 animate-fade-in">
           <h1 className="font-glimmer text-3xl font-bold text-white mb-4 jazz-text-shadow">
-            Depoimentos da Banda Mariana Matheos
+            Depoimentos Sobre Mariana Matheos
           </h1>
           <div className="w-full flex justify-center mb-4">
             <img

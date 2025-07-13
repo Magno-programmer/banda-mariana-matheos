@@ -26,7 +26,7 @@ const HeroSection = () => {
           {/* imagem de fundo */}
           <img
             src={bandaCompletaPalco}
-            alt="Banda Mariana Matheos em apresentação ao vivo do festival Jazz & Blues de Tiradentes em Nova Lima - MG"
+            alt="Mariana Matheos em apresentação ao vivo do festival Jazz & Blues de Tiradentes em Nova Lima - MG"
             className="relative top-0 left-0 w-full object-cover z-0 opacity-50 fade-bottom"
           />
 
@@ -41,7 +41,7 @@ const HeroSection = () => {
 
           {/* Main Slogan */}
           <h1 className="font-glimmer mt-8 text-4xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
-            Banda Mariana Matheos
+            Mariana Matheos
           </h1>
           <h2 className="font-glimmer text-2xl font-bold jazz-gold mb-8 jazz-text-shadow">
             Uma experiência sofisticada, atemporal e arrebatadora

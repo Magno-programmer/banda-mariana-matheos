@@ -6,7 +6,7 @@ const TestimonialsStructuredData = () => (
     __html: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Banda Mariana Matheos",
+      "name": "Mariana Matheos",
       "url": "https://marianamatheos.com.br/depoimentos",
       "sameAs": [
         "https://instagram.com/marianamatheosoficial",

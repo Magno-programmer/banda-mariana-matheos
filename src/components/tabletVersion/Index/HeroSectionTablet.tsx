@@ -42,7 +42,7 @@ const HeroSection = () => {
 
         {/* Main Slogan */}
         <h1 className="font-glimmer mt-8 text-6xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
-          Banda Mariana Matheos
+          Mariana Matheos
         </h1>
         <h2 className="font-glimmer text-4xl font-bold jazz-gold mb-8 jazz-text-shadow">
           Uma experiência musical sofisticada, atemporal e arrebatadora

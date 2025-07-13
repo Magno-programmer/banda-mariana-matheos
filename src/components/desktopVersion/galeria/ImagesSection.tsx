@@ -21,7 +21,7 @@ const ImageSection = () => {
   },
   { 
     src: '/images/banda-blue-jazz-concurso.png',
-    alt: 'Banda Mariana Matheos no Festival de Jazz & Blues de Tiradentes 2025'
+    alt: 'Mariana Matheos no Festival de Jazz & Blues de Tiradentes 2025'
   },
 ]);
 
