@@ -15,7 +15,7 @@ const Footer = () => {
                 Mariana Matheos
               </h3>
               <p className="font-gatsbybold text-gray-400 text-xl">
-                Jazz Band
+                Banda de jazz
               </p>
               <p className="font-gatsbybold text-gray-400 text-xl mt-2">
                 Era de Ouro do Jazz (1920–1960)
@@ -64,7 +64,7 @@ const Footer = () => {
           <div className="border-t border-jazz-gold border-opacity-20 pt-8">
             <div className="text-center">
               <p className="font-gatsbybold text-gray-500 text-xl">
-                © 2024 Mariana Matheos Jazz Band. Todos os direitos reservados.
+                © 2024 Mariana Matheos Banda de jazz. Todos os direitos reservados.
               </p>
               <p className="font-gatsbybold text-gray-500 text-xl mt-2">
                 "Uma experiência musical sofisticada, atemporal e arrebatadora"
