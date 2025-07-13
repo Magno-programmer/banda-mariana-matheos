@@ -67,7 +67,7 @@ const Footer = () => {
                 © 2024 Mariana Matheos Banda de jazz. Todos os direitos reservados.
               </p>
               <p className="font-gatsbybold text-gray-500 text-lg mt-2">
-                "Uma experiência musical sofisticada, atemporal e arrebatadora"
+                "Mariana Matheos, o vintage que te trará uma experiência musical sofisticada, atemporal e arrebatadora"
               </p>
             </div>
           </div>

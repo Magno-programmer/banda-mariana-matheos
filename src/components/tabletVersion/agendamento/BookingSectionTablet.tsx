@@ -34,7 +34,7 @@ const BookingSection = () => {
               />
             </div>
             <p className="font-gatsbybold text-3xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Deseja contratar a banda para um evento inesquecível?
+              Deseja contratar Mariana Matheos para um evento inesquecível?
             </p>
           </div>
 
@@ -115,8 +115,6 @@ const BookingSection = () => {
             </thead>
             <tbody>
               {[
-                { date: "09/07", day: "Qua", time: "20:00", venue: "Chopperhead Garage" },
-                { date: "11/07", day: "Sex", time: "20:00", venue: "The Bulltique Vino Bar" },
                 { date: "08/08", day: "Sex", time: "20:00", venue: "The Bulltique Vino Bar" },
                 { date: "16/08", day: "Sáb", time: "19:30", venue: "Soul Jazz Burguer" },
                 { date: "12/09", day: "Sex", time: "20:00", venue: "The Bulltique Vino Bar" },
@@ -137,7 +135,7 @@ const BookingSection = () => {
       <div className="text-center animate-scale-in mt-12">
         <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50 max-w-2xl mx-auto">
           <h3 className="font-glimmer text-2xl jazz-gold font-bold mb-4">
-            Pronto para uma experiência musical única?
+            Pronto para ter, com essa banda de jazz, uma experiência musical única?
           </h3>
           <p className="font-gatsbybold text-xl text-gray-400 mb-6">
             Entre em contato e vamos criar juntos uma apresentação memorável para seu evento.
