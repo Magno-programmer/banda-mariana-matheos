@@ -53,7 +53,7 @@ const FAQSection = () => {
           {/* SEO Optimized Title */}
           <div className="text-center mb-12 animate-fade-in">
             <h1 className="font-glimmer text-4xl md:text-5xl font-bold text-white mb-4 jazz-text-shadow">
-              Faq - Banda Jazz Soul Blues para Eventos
+              Faq - Banda Jazz Blues Soul para Eventos
             </h1>
             <div className="w-full flex justify-center mb-4">
               <img

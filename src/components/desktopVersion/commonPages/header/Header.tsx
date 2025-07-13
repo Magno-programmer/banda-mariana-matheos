@@ -9,9 +9,9 @@ const Header = () => {
   const navigate = useNavigate();
 
   const navigationItems = [
-    { name: 'Início', path: '/inicio', title: 'Banda de Jazz Soul Blues R&B BH - Página Principal' },
+    { name: 'Início', path: '/inicio', title: 'Banda de Jazz Blues Soul R&B BH - Página Principal' },
     { name: 'Sobre', path: '/sobre', title: 'Sobre a Banda de Jazz Mariana Matheos - História e Membros' },
-    { name: 'Repertório', path: '/repertorio', title: 'Repertório Jazz Soul Blues R&B - Lista de Músicas' },
+    { name: 'Repertório', path: '/repertorio', title: 'Repertório Jazz Blues Soul R&B - Lista de Músicas' },
     { name: 'Vídeos', path: '/videos', title: 'Vídeos da Banda de Jazz - Apresentações ao Vivo' },
     { name: 'Fotos', path: '/fotos', title: 'Galeria de Fotos - Banda de Jazz em Eventos' },
     { name: 'Agenda', path: '/agenda', title: 'Agenda de Shows - Próximas Apresentações da Banda' },
@@ -29,12 +29,12 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <img 
               src={logoWhite}
-              alt="Logo Mariana Matheos - Banda de Jazz Soul Blues R&B Belo Horizonte"
+              alt="Logo Mariana Matheos - Banda de Jazz Blues Soul R&B Belo Horizonte"
               className="w-12 h-12 object-contain"
             />
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-jazz-gold font-glimmer">Mariana Matheos</h1>
-              <p className="text-lg text-white tracking-widest">Jazz Soul Blues R&B Band</p>
+              <p className="text-lg text-white tracking-widest">Jazz Blues Soul R&B Band</p>
             </div>
           </div>
 
