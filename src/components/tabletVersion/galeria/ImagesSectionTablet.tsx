@@ -1,5 +1,4 @@
 import React, {useState, useRef} from 'react';
-import LazyImage from '@/components/globalComponents/LazyImage';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 
 const ImageSection = () => {
@@ -44,7 +43,7 @@ const ImageSection = () => {
           </h2>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
-              <LazyImage
+              <img
                 src={lineArtDeco}
                 alt="Divisor Art Déco"
                 className="w-[50%] object-contain"
@@ -67,7 +66,7 @@ const ImageSection = () => {
               <div className="absolute -inset-2 border-2 border-jazz-gold opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10"></div>
               
               <div className="relative overflow-hidden bg-jazz-dark">
-                <LazyImage 
+                <img 
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-64 md:h-72 object-cover filter sepia-[0.2] contrast-110 group-hover:scale-110 transition-transform duration-500"

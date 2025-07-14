@@ -17,13 +17,10 @@ const ContactSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-6xl font-glimmer text-jazz-gold mb-4">Entre em Contato Conosco</h2>
+          <h2 className="text-6xl font-glimmer text-jazz-gold mb-4">Entre em Contato</h2>
           <div className="w-24 h-1 bg-jazz-gold mx-auto mb-4"></div>
-          <h3 className="text-2xl text-gray-200 font-gatsbybold mb-4">
-            Contrate a Banda de Jazz Mariana Matheos
-          </h3>
-          <p className="text-xl text-gray-300 font-gatsby">
-            Solicite seu orçamento personalizado • Atendemos Minas Gerais e região • Música ao vivo profissional para eventos sofisticados
+          <p className="text-3xl text-gray-300 font-gatsbybold">
+            Ficaremos felizes em tocar no seu evento
           </p>
         </div>
 

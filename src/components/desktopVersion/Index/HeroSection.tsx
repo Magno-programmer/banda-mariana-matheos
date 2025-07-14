@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import LazyImage from '@/components/globalComponents/LazyImage';
 import logoGold from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png';
 import bandaCompletaPalco from '@/assets/images/imagem-da-banda.jpg';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
@@ -25,17 +24,17 @@ const HeroSection = () => {
         {/* Logo Placeholder */}
         <div className="relative w-full max-h-screen overflow-hidden">
           {/* imagem de fundo */}
-          <LazyImage
+          <img
             src={bandaCompletaPalco}
-            alt="Banda de Jazz Mariana Matheos em apresentação ao vivo - cantora profissional de jazz, soul e blues para eventos em Minas Gerais"
+            alt="Mariana Matheos em apresentação ao vivo do festival Jazz & Blues de Tiradentes em Nova Lima - MG"
             className="absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
           />
 
           {/* Conteúdo central sobreposto */}
           <div className="relative z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4 ">
-            <LazyImage
+            <img
               src={logoGold}
-              alt="Logo oficial da Banda de Jazz Mariana Matheos - música ao vivo para casamentos, eventos corporativos e festivais"
+              alt="Logo da Banda de Jazz Mariana Matheos"
               className="hidden sm:block w-[30%] mt-[15%] pb-[15%] object-contain drop-shadow-lg"
             />
           </div>
@@ -43,18 +42,15 @@ const HeroSection = () => {
 
         {/* Main Slogan */}
         <h1 className="font-glimmer mt-8 text-7xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
-          Mariana Matheos - Banda de Jazz
+          Mariana Matheos
         </h1>
-        <h2 className="font-glimmer text-4xl font-bold jazz-gold mb-4 jazz-text-shadow">
-          Música Jazz Ao Vivo para Eventos Sofisticados
+        <h2 className="font-glimmer text-5xl font-bold jazz-gold mb-8 jazz-text-shadow">
+          Uma experiência sofisticada, atemporal e arrebatadora
         </h2>
-        <h3 className="font-gatsby text-2xl text-gray-200 mb-8 leading-relaxed">
-          Casamentos • Eventos Corporativos • Festivais • Celebrações Especiais em Minas Gerais
-        </h3>
 
         {/* Divisor decorativo acima */}
         <div className="w-full flex justify-center mb-4">
-          <LazyImage
+          <img
             src={lineArtDeco}
             alt="Divisor Art Déco"
             className="w-[50%] object-contain"
@@ -63,7 +59,7 @@ const HeroSection = () => {
 
         {/* CTA Button */}
         <div className="relative w-[100%] h-[200px] mx-auto">
-          <LazyImage 
+          <img 
             src={bordabuttonArtDeco} 
             alt="Moldura decorativa do botão"
             className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
