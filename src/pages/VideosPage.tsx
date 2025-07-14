@@ -22,7 +22,7 @@ const VideosPage = () => {
     <>
       <SEOMetaTags 
         title="Vídeos - Mariana Matheos Jazz Band"
-        description="Assista aos vídeos das apresentações da Mariana Matheos Jazz Band. Conheça nosso repertório e qualidade musical em ação."
+        description="Vídeos das apresentações da Mariana Matheos Jazz Band. Conheça nosso repertório e qualidade musical em ação."
         keywords="vídeos, apresentações, repertório, jazz, música ao vivo, shows"
         canonicalUrl="/videos"
       />

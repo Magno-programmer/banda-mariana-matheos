@@ -26,7 +26,7 @@ const Index = () => {
     <>
       <SEOMetaTags 
         title="Mariana Matheos Jazz Band - Música ao Vivo para Eventos"
-        description="Banda de jazz brasileira especializada em música ao vivo para casamentos, eventos corporativos e shows. Repertório clássico e moderno com qualidade profissional."
+        description="Banda de jazz para casamentos e eventos corporativos. Repertório profissional de jazz, bossa nova e música brasileira. Qualidade garantida."
         keywords="banda de jazz, música ao vivo, casamentos, eventos corporativos, shows, repertório jazz, música brasileira"
         canonicalUrl="/"
       />

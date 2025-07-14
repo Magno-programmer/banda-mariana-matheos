@@ -24,7 +24,7 @@ const ContactPage = () => {
     <>
       <SEOMetaTags 
         title="Contato - Mariana Matheos Jazz Band"
-        description="Entre em contato com a Mariana Matheos Jazz Band para agendamentos e informações sobre shows e apresentações musicais."
+        description="Contato da Mariana Matheos Jazz Band para agendamentos e informações sobre shows e apresentações musicais."
         keywords="contato, telefone, whatsapp, email, agendamento, orçamento"
         canonicalUrl="/contato"
       />

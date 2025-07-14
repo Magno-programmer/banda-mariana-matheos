@@ -25,7 +25,7 @@ const TestimonialsPage = () => {
     <>
       <SEOMetaTags 
         title="Depoimentos - Mariana Matheos Jazz Band"
-        description="Confira as avaliações 5 estrelas no Google e depoimentos de clientes satisfeitos com os shows da Mariana Matheos Jazz Band."
+        description="Avaliações 5 estrelas no Google e depoimentos de clientes satisfeitos com os shows da Mariana Matheos Jazz Band."
         keywords="depoimentos, avaliações, reviews, google reviews, banda de jazz, música ao vivo"
         canonicalUrl="/depoimentos"
       />

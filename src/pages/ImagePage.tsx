@@ -22,7 +22,7 @@ const ImagePage = () => {
     <>
       <SEOMetaTags 
         title="Galeria de Fotos - Mariana Matheos Jazz Band"
-        description="Confira fotos das apresentações da Mariana Matheos Jazz Band em eventos, casamentos e shows. Veja a banda em ação!"
+        description="Fotos das apresentações da Mariana Matheos Jazz Band em eventos, casamentos e shows. Veja a banda em ação!"
         keywords="fotos, galeria, apresentações, shows, eventos, casamentos, banda de jazz"
         canonicalUrl="/fotos"
       />

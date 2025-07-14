@@ -26,7 +26,7 @@ const FAQPage = () => {
     <>
         <SEOMetaTags 
           title="FAQ - Perguntas Frequentes | Mariana Matheos Jazz Band"
-          description="Tire suas dúvidas sobre contratação, repertório, equipamentos e serviços da Mariana Matheos Jazz Band. Respostas às perguntas mais comuns."
+          description="Dúvidas sobre contratação, repertório e serviços da Mariana Matheos Jazz Band. Respostas às perguntas mais comuns dos clientes."
           keywords="FAQ, perguntas frequentes, dúvidas, contratação, repertório, equipamentos"
           canonicalUrl="/faq"
         />

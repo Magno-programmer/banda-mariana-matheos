@@ -33,7 +33,7 @@ const Header = () => {
               className="w-12 h-12 object-contain"
             />
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-jazz-gold font-glimmer">Mariana Matheos</h1>
+              <div className="text-xl font-bold text-jazz-gold font-glimmer">Mariana Matheos</div>
               <p className="text-lg text-white tracking-widest">Jazz Blues Soul R&B Band</p>
             </div>
           </div>

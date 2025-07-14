@@ -24,7 +24,7 @@ const AboutPage = () => {
     <>
       <SEOMetaTags 
         title="Sobre a Banda - Mariana Matheos Jazz Band"
-        description="Conheça a história da Mariana Matheos Jazz Band, formação musical especializada em jazz, bossa nova e música brasileira para eventos especiais."
+        description="História da Mariana Matheos Jazz Band, formação especializada em jazz, bossa nova e música brasileira para eventos especiais."
         keywords="sobre a banda, história, formação musical, jazz band, bossa nova, música brasileira"
         canonicalUrl="/sobre"
       />

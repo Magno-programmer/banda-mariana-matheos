@@ -24,7 +24,7 @@ const RepertoirePage = () => {
     <>
       <SEOMetaTags 
         title="Repertório - Mariana Matheos Jazz Band"
-        description="Conheça o repertório completo da Mariana Matheos Jazz Band: jazz clássico, bossa nova, blues, swing e música brasileira para todos os eventos."
+        description="Repertório completo da Mariana Matheos Jazz Band: jazz clássico, bossa nova, blues, swing e música brasileira para todos os eventos."
         keywords="repertório, jazz clássico, bossa nova, blues, swing, música brasileira, playlist"
         canonicalUrl="/repertorio"
       />
