@@ -36,7 +36,7 @@ const AboutSection = () => {
           {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-glimmer text-5xl md:text-6xl font-bold jazz-gold mb-4 jazz-text-shadow">
-              Sobre a Banda
+              Sobre a Banda de Jazz Mariana Matheos
             </h2>
 
             {/* Divisor decorativo acima */}
@@ -53,16 +53,36 @@ const AboutSection = () => {
             {/* Text Content */}
             <div className="animate-fade-in">
               <div className="space-y-6 font-gatsbybold text-lg leading-relaxed text-gray-300">
-                <p className="text-2xl text-white  first-letter:text-4xl first-letter:font-glimmer first-letter:text-jazz-gold first-letter:float-left first-letter:mr-2">
-                  A banda <span className="jazz-gold font-bold">Mariana Matheos</span> oferece muito mais do que música ao vivo — entrega uma experiência sensorial sofisticada, envolvente e memorável. Inspirada na Era de Ouro do Jazz (1920–1960), sua sonoridade reflete o requinte de um tempo em que a arte de tocar era também a arte de emocionar.
+                <h3 className="text-3xl font-glimmer jazz-gold mb-4">
+                  Experiência Musical Profissional Há Mais de Uma Década
+                </h3>
+                
+                <p className="text-2xl text-white first-letter:text-4xl first-letter:font-glimmer first-letter:text-jazz-gold first-letter:float-left first-letter:mr-2">
+                  A banda <span className="jazz-gold font-bold">Mariana Matheos</span> oferece muito mais do que música ao vivo — entrega uma experiência sensorial sofisticada, envolvente e memorável para eventos especiais. Inspirada na Era de Ouro do Jazz (1920–1960), nossa sonoridade reflete o requinte de um tempo em que a arte de tocar era também a arte de emocionar.
                 </p>
+                
+                <h4 className="text-2xl jazz-gold font-bold mt-6 mb-3">
+                  Por Que Escolher Nossa Banda de Jazz?
+                </h4>
                 
                 <p className="text-2xl">
-                  Sob a liderança da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, cuja voz combina elegância, carisma e intensidade emocional, o grupo apresenta performances sob medida para eventos que exigem <span className="jazz-gold font-semibold">excelência estética e sonora</span>.
+                  Sob a liderança da cantora <span className="jazz-gold font-semibold">Mariana Matheos</span>, cuja voz combina elegância técnica, carisma e intensidade emocional, nosso grupo apresenta performances sob medida para <span className="jazz-gold font-semibold">casamentos elegantes, eventos corporativos sofisticados e celebrações especiais</span> que exigem excelência estética e sonora.
                 </p>
                 
+                <h4 className="text-2xl jazz-gold font-bold mt-6 mb-3">
+                  O Que Oferecemos em Cada Apresentação
+                </h4>
+                
+                <ul className="text-xl space-y-2 list-disc list-inside">
+                  <li>Repertório personalizado de Jazz, Soul, Blues e R&B</li>
+                  <li>Figurinos temáticos da Era de Ouro do Jazz</li>
+                  <li>Presença cênica profissional e envolvente</li>
+                  <li>Equipamentos de som de alta qualidade</li>
+                  <li>Atendimento em Minas Gerais e região</li>
+                </ul>
+                
                 <p className="text-2xl font-bold">
-                  Cada apresentação é um espetáculo completo — com figurinos planejados, repertório personalizado e presença cênica. É música viva, com alma, para eventos verdadeiramente especiais.
+                  Cada apresentação é um espetáculo completo — música viva, com alma, para eventos verdadeiramente especiais e inesquecíveis.
                 </p>
               </div>
 
@@ -91,7 +111,7 @@ const AboutSection = () => {
                 >
                   <img
                     src={imagemUnica.src}
-                    alt={imagemUnica.alt}
+                    alt="Mariana Matheos - Cantora profissional de jazz, especialista em música ao vivo para casamentos e eventos elegantes"
                     className="w-full h-full object-cover filter sepia-[0.3] contrast-110"
                   />
 

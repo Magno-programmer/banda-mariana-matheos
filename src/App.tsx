@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
+import Breadcrumbs from "./components/globalComponents/Breadcrumbs";
 import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import ImagePage from "./pages/ImagePage";
@@ -26,6 +27,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
         <ScrollToTop />
+        <Breadcrumbs />
         <Routes>
           <Route path="*" element={<Navigate to="/" replace/>} />
           <Route path="/" element={<Index />} />

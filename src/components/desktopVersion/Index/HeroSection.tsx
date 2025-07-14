@@ -27,7 +27,7 @@ const HeroSection = () => {
           {/* imagem de fundo */}
           <LazyImage
             src={bandaCompletaPalco}
-            alt="Mariana Matheos em apresentação ao vivo do festival Jazz & Blues de Tiradentes em Nova Lima - MG"
+            alt="Banda de Jazz Mariana Matheos em apresentação ao vivo - cantora profissional de jazz, soul e blues para eventos em Minas Gerais"
             className="absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
           />
 
@@ -35,7 +35,7 @@ const HeroSection = () => {
           <div className="relative z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4 ">
             <LazyImage
               src={logoGold}
-              alt="Logo da Banda de Jazz Mariana Matheos"
+              alt="Logo oficial da Banda de Jazz Mariana Matheos - música ao vivo para casamentos, eventos corporativos e festivais"
               className="hidden sm:block w-[30%] mt-[15%] pb-[15%] object-contain drop-shadow-lg"
             />
           </div>
@@ -43,11 +43,14 @@ const HeroSection = () => {
 
         {/* Main Slogan */}
         <h1 className="font-glimmer mt-8 text-7xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
-          Mariana Matheos
+          Mariana Matheos - Banda de Jazz
         </h1>
-        <h2 className="font-glimmer text-5xl font-bold jazz-gold mb-8 jazz-text-shadow">
-          Uma experiência sofisticada, atemporal e arrebatadora
+        <h2 className="font-glimmer text-4xl font-bold jazz-gold mb-4 jazz-text-shadow">
+          Música Jazz Ao Vivo para Eventos Sofisticados
         </h2>
+        <h3 className="font-gatsby text-2xl text-gray-200 mb-8 leading-relaxed">
+          Casamentos • Eventos Corporativos • Festivais • Celebrações Especiais em Minas Gerais
+        </h3>
 
         {/* Divisor decorativo acima */}
         <div className="w-full flex justify-center mb-4">

@@ -26,13 +26,16 @@ const RepertoireSection = () => {
           {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="font-glimmer text-5xl md:text-6xl font-bold text-white mb-4 jazz-text-shadow">
-              Repertório & Estilo
+              Repertório Musical & Estilo
             </h2>
+            <h3 className="font-gatsby text-2xl text-gray-200 mb-6">
+              Jazz • Soul • Blues • R&B - Clássicos Atemporais para Seus Eventos
+            </h3>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt="Divisor Art Déco"
+                alt="Divisor decorativo Art Déco para seção de repertório musical"
                 className="w-[50%] object-contain"
               />
             </div>
@@ -40,8 +43,11 @@ const RepertoireSection = () => {
 
           {/* Main Content */}
           <div className="text-center mb-12 animate-fade-in">
-            <p className="font-gatsby text-xl md:text-3xl text-gray-300 leading-relaxed mb-8">
-              O repertório da banda é uma curadoria refinada de clássicos do <span className="jazz-gold font-semibold">Jazz, Soul, Blues e R&B</span> — com interpretações de artistas como:
+            <h4 className="font-glimmer text-3xl jazz-gold mb-4">
+              Repertório Cuidadosamente Selecionado
+            </h4>
+            <p className="font-gatsby text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+              Nossa seleção musical é uma curadoria refinada de clássicos eternos do <span className="jazz-gold font-semibold">Jazz, Soul, Blues e R&B</span>, incluindo interpretações magistrais de grandes artistas como:
             </p>
 
             {/* Artists Grid */}
@@ -60,9 +66,34 @@ const RepertoireSection = () => {
               ))}
             </div>
               
-            <p className="font-gatsby text-2xl text-gray-50 leading-relaxed mb-12">
-              Cada performance é realizada com arranjos fiéis e estética cênica trazendo a Era de Ouro até você, criando um ambiente emocional, sofisticado e inesquecível.
+            <h5 className="font-glimmer text-2xl jazz-gold mb-4">
+              Qualidade Musical Profissional
+            </h5>
+            <p className="font-gatsby text-xl text-gray-50 leading-relaxed mb-8">
+              Cada performance é realizada com arranjos musicais fiéis aos originais e estética cênica autêntica da Era de Ouro do Jazz, criando um ambiente emocional, sofisticado e verdadeiramente inesquecível para seus convidados.
             </p>
+            
+            <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
+              <div className="bg-jazz-dark bg-opacity-30 p-6 border border-jazz-gold border-opacity-30">
+                <h6 className="font-gatsbybold text-xl jazz-gold mb-3">Ideal Para:</h6>
+                <ul className="font-gatsby text-gray-200 space-y-2">
+                  <li>• Casamentos elegantes e sofisticados</li>
+                  <li>• Eventos corporativos de alto padrão</li>
+                  <li>• Aniversários e celebrações especiais</li>
+                  <li>• Recepções e coquetéis refinados</li>
+                </ul>
+              </div>
+              
+              <div className="bg-jazz-dark bg-opacity-30 p-6 border border-jazz-gold border-opacity-30">
+                <h6 className="font-gatsbybold text-xl jazz-gold mb-3">Nossos Diferenciais:</h6>
+                <ul className="font-gatsby text-gray-200 space-y-2">
+                  <li>• Repertório personalizado para seu evento</li>
+                  <li>• Figurinos temáticos autênticos</li>
+                  <li>• Equipamentos profissionais de som</li>
+                  <li>• Experiência comprovada em eventos</li>
+                </ul>
+              </div>
+            </div>
 
             {/* Featured Quote */}
             <div className="relative animate-scale-in">
