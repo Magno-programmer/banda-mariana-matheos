@@ -1,5 +1,6 @@
 
 import React from "react";
+import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 
 // Importing structured data for SEO
 import FAQStructuredData from "@/components/globalComponents/estrutura/FAQStructuredData";
@@ -23,6 +24,12 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const FAQPage = () => {
   return (
     <>
+        <SEOMetaTags 
+          title="FAQ - Perguntas Frequentes | Mariana Matheos Jazz Band"
+          description="Tire suas dúvidas sobre contratação, repertório, equipamentos e serviços da Mariana Matheos Jazz Band. Respostas às perguntas mais comuns."
+          keywords="FAQ, perguntas frequentes, dúvidas, contratação, repertório, equipamentos"
+          canonicalUrl="/faq"
+        />
         {/* Structured Data for SEO */}
         <FAQStructuredData />
 

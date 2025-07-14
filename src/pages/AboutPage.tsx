@@ -1,4 +1,5 @@
 import React from "react";
+import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 // Importing structured data for SEO
 import AboutStructuredData from "@/components/globalComponents/estrutura/AboutStructuredData";
 
@@ -21,6 +22,12 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const AboutPage = () => {
   return (
     <>
+      <SEOMetaTags 
+        title="Sobre a Banda - Mariana Matheos Jazz Band"
+        description="Conheça a história da Mariana Matheos Jazz Band, formação musical especializada em jazz, bossa nova e música brasileira para eventos especiais."
+        keywords="sobre a banda, história, formação musical, jazz band, bossa nova, música brasileira"
+        canonicalUrl="/sobre"
+      />
       {/* Structured Data for SEO */}
       <AboutStructuredData />
       

@@ -1,4 +1,5 @@
 import React from "react";
+import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 
 // Importing desktop components
 import VideosSection from "@/components/desktopVersion/galeria/VideosSection";
@@ -19,6 +20,12 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const VideosPage = () => {
   return (
     <>
+      <SEOMetaTags 
+        title="Vídeos - Mariana Matheos Jazz Band"
+        description="Assista aos vídeos das apresentações da Mariana Matheos Jazz Band. Conheça nosso repertório e qualidade musical em ação."
+        keywords="vídeos, apresentações, repertório, jazz, música ao vivo, shows"
+        canonicalUrl="/videos"
+      />
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeaderMobile />

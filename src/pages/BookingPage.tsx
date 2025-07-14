@@ -1,4 +1,5 @@
 import React from "react";
+import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 import BookingStructuredData from "@/components/globalComponents/estrutura/BookingStructuredData";
 
 // Importing desktop components
@@ -20,6 +21,12 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const BookingPage = () => {
   return (
     <>
+      <SEOMetaTags 
+        title="Agendamento - Mariana Matheos Jazz Band"
+        description="Agende sua apresentação com a Mariana Matheos Jazz Band. Música ao vivo para casamentos, eventos corporativos e shows especiais."
+        keywords="agendamento, contratar banda, shows, casamentos, eventos corporativos, música ao vivo"
+        canonicalUrl="/agenda"
+      />
       {/* Structured Data for SEO */}
       <BookingStructuredData />
       

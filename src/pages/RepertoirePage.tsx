@@ -1,4 +1,5 @@
 import React from "react";
+import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 // Importing structured data for SEO
 import RepertoireStructuredData from "@/components/globalComponents/estrutura/RepertoireStructuredData";
 
@@ -21,6 +22,12 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const RepertoirePage = () => {
   return (
     <>
+      <SEOMetaTags 
+        title="Repertório - Mariana Matheos Jazz Band"
+        description="Conheça o repertório completo da Mariana Matheos Jazz Band: jazz clássico, bossa nova, blues, swing e música brasileira para todos os eventos."
+        keywords="repertório, jazz clássico, bossa nova, blues, swing, música brasileira, playlist"
+        canonicalUrl="/repertorio"
+      />
       {/* Structured Data for SEO */}
       <RepertoireStructuredData />
       

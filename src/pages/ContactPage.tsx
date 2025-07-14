@@ -1,4 +1,5 @@
 import React from "react";
+import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 // Importing structured data for SEO
 import ContactStructuredData from "@/components/globalComponents/estrutura/ContactStructuredData";
 
@@ -21,6 +22,12 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const ContactPage = () => {
   return (
     <>
+      <SEOMetaTags 
+        title="Contato - Mariana Matheos Jazz Band"
+        description="Entre em contato com a Mariana Matheos Jazz Band para agendamentos e informações sobre shows e apresentações musicais."
+        keywords="contato, telefone, whatsapp, email, agendamento, orçamento"
+        canonicalUrl="/contato"
+      />
       {/* Structured Data for SEO */}
       <ContactStructuredData />
       

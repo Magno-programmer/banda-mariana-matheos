@@ -1,4 +1,5 @@
 import React from "react";
+import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 
 // Importing desktop components
 import ImageSection from "@/components/desktopVersion/galeria/ImagesSection";
@@ -19,6 +20,12 @@ import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTa
 const ImagePage = () => {
   return (
     <>
+      <SEOMetaTags 
+        title="Galeria de Fotos - Mariana Matheos Jazz Band"
+        description="Confira fotos das apresentações da Mariana Matheos Jazz Band em eventos, casamentos e shows. Veja a banda em ação!"
+        keywords="fotos, galeria, apresentações, shows, eventos, casamentos, banda de jazz"
+        canonicalUrl="/fotos"
+      />
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeaderMobile />

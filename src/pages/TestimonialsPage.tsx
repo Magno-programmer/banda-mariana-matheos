@@ -1,5 +1,6 @@
 
 import React from "react";
+import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 // Importing structured data for SEO
 import TestimonialsStructuredData from "@/components/globalComponents/estrutura/TestimonialsStructuredData";
 
@@ -22,6 +23,12 @@ import FooterTablet from "@/components/tabletVersion/commonPages/footer/FooterTa
 const TestimonialsPage = () => {
   return (
     <>
+      <SEOMetaTags 
+        title="Depoimentos - Mariana Matheos Jazz Band"
+        description="Confira as avaliações 5 estrelas no Google e depoimentos de clientes satisfeitos com os shows da Mariana Matheos Jazz Band."
+        keywords="depoimentos, avaliações, reviews, google reviews, banda de jazz, música ao vivo"
+        canonicalUrl="/depoimentos"
+      />
       {/* Structured Data for SEO */}
       <TestimonialsStructuredData />
       
