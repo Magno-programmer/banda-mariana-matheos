@@ -1,5 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
+import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
 
 // Importing desktop components
 import VideosSection from "@/components/desktopVersion/galeria/VideosSection";
@@ -26,6 +27,7 @@ const VideosPage = () => {
         keywords="vídeos, apresentações, repertório, jazz, música ao vivo, shows"
         canonicalUrl="/videos"
       />
+      <AdvancedRichSnippet />
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeaderMobile />

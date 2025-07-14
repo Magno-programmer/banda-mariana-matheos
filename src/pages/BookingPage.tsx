@@ -1,6 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-import BookingStructuredData from "@/components/globalComponents/estrutura/BookingStructuredData";
+import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
 
 // Importing desktop components
 import BookingSection from "@/components/desktopVersion/agendamento/BookingSection";
@@ -27,8 +27,7 @@ const BookingPage = () => {
         keywords="agendamento, contratar banda, shows, casamentos, eventos corporativos, música ao vivo"
         canonicalUrl="/agenda"
       />
-      {/* Structured Data for SEO */}
-      <BookingStructuredData />
+      <AdvancedRichSnippet />
       
       {/* Mobile Version */}
       <div className="block sm:hidden">

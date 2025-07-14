@@ -1,7 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-// Importing structured data for SEO
-import AboutStructuredData from "@/components/globalComponents/estrutura/AboutStructuredData";
+import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
 
 // Importing desktop components
 import AboutSection from "@/components/desktopVersion/sobre/AboutSection";
@@ -28,8 +27,7 @@ const AboutPage = () => {
         keywords="sobre a banda, história, formação musical, jazz band, bossa nova, música brasileira"
         canonicalUrl="/sobre"
       />
-      {/* Structured Data for SEO */}
-      <AboutStructuredData />
+      <AdvancedRichSnippet />
       
       {/* Mobile Version */}
       <div className="block sm:hidden">

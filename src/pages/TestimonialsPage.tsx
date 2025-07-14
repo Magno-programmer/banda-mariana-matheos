@@ -1,8 +1,7 @@
 
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-// Importing structured data for SEO
-import TestimonialsStructuredData from "@/components/globalComponents/estrutura/TestimonialsStructuredData";
+import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
 
 // Importing desktop components
 import Header from "@/components/desktopVersion/commonPages/header/Header";
@@ -29,8 +28,7 @@ const TestimonialsPage = () => {
         keywords="depoimentos, avaliações, reviews, google reviews, banda de jazz, música ao vivo"
         canonicalUrl="/depoimentos"
       />
-      {/* Structured Data for SEO */}
-      <TestimonialsStructuredData />
+      <AdvancedRichSnippet />
       
       {/* Mobile Version */}
       <div className="block sm:hidden">

@@ -1,7 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-// Importing structured data for SEO
-import ContactStructuredData from "@/components/globalComponents/estrutura/ContactStructuredData";
+import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
 
 // Importing desktop components
 import ContactSection from "@/components/desktopVersion/contatos/ContactSection";
@@ -28,8 +27,7 @@ const ContactPage = () => {
         keywords="contato, telefone, whatsapp, email, agendamento, orçamento"
         canonicalUrl="/contato"
       />
-      {/* Structured Data for SEO */}
-      <ContactStructuredData />
+      <AdvancedRichSnippet />
       
       {/* Mobile Version */}
       <div className="block sm:hidden">

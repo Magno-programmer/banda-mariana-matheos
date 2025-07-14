@@ -1,9 +1,7 @@
 
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-
-// Importing structured data for SEO
-import FAQStructuredData from "@/components/globalComponents/estrutura/FAQStructuredData";
+import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
 
 // Importing desktop components
 import FAQSection from "@/components/desktopVersion/depoimentos/FAQSection";
@@ -30,8 +28,7 @@ const FAQPage = () => {
           keywords="FAQ, perguntas frequentes, dúvidas, contratação, repertório, equipamentos"
           canonicalUrl="/faq"
         />
-        {/* Structured Data for SEO */}
-        <FAQStructuredData />
+        <AdvancedRichSnippet />
 
         {/* Mobile Version */}
         <div className="block sm:hidden">

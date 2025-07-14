@@ -1,7 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-// Importing structured data for SEO
-import RepertoireStructuredData from "@/components/globalComponents/estrutura/RepertoireStructuredData";
+import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
 
 // Importing desktop components
 import RepertoireSection from "@/components/desktopVersion/repertorio/RepertoireSection";
@@ -28,8 +27,7 @@ const RepertoirePage = () => {
         keywords="repertório, jazz clássico, bossa nova, blues, swing, música brasileira, playlist"
         canonicalUrl="/repertorio"
       />
-      {/* Structured Data for SEO */}
-      <RepertoireStructuredData />
+      <AdvancedRichSnippet />
       
       {/* Mobile Version */}
       <div className="block sm:hidden">
