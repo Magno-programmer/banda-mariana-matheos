@@ -114,6 +114,7 @@
   src: url('/glimmer-of-light.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -121,6 +122,7 @@
   src: url('/GatsbyFLF-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -128,6 +130,7 @@
   src: url('/GatsbyFLF.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 /* Custom Jazz Theme Styles */
