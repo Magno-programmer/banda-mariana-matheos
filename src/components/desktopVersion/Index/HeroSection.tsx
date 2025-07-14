@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import LazyImage from '@/components/globalComponents/LazyImage';
 import logoGold from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png';
 import bandaCompletaPalco from '@/assets/images/imagem-da-banda.jpg';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
@@ -24,7 +25,7 @@ const HeroSection = () => {
         {/* Logo Placeholder */}
         <div className="relative w-full max-h-screen overflow-hidden">
           {/* imagem de fundo */}
-          <img
+          <LazyImage
             src={bandaCompletaPalco}
             alt="Mariana Matheos em apresentação ao vivo do festival Jazz & Blues de Tiradentes em Nova Lima - MG"
             className="absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
@@ -32,7 +33,7 @@ const HeroSection = () => {
 
           {/* Conteúdo central sobreposto */}
           <div className="relative z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4 ">
-            <img
+            <LazyImage
               src={logoGold}
               alt="Logo da Banda de Jazz Mariana Matheos"
               className="hidden sm:block w-[30%] mt-[15%] pb-[15%] object-contain drop-shadow-lg"
@@ -50,7 +51,7 @@ const HeroSection = () => {
 
         {/* Divisor decorativo acima */}
         <div className="w-full flex justify-center mb-4">
-          <img
+          <LazyImage
             src={lineArtDeco}
             alt="Divisor Art Déco"
             className="w-[50%] object-contain"
@@ -59,7 +60,7 @@ const HeroSection = () => {
 
         {/* CTA Button */}
         <div className="relative w-[100%] h-[200px] mx-auto">
-          <img 
+          <LazyImage 
             src={bordabuttonArtDeco} 
             alt="Moldura decorativa do botão"
             className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
