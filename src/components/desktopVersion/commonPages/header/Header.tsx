@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
 import { useNavigate } from 'react-router-dom';
+import VoiceAccessibilityButton from '@/components/globalComponents/VoiceAccessibilityButton';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,6 +45,7 @@ const Header = () => {
             </button>
           </div>
 
+      
           {/* Desktop Navigation com links internos SEO */}
           <nav className="hidden lg:flex space-x-6" role="navigation" aria-label="Menu principal da banda">
             {navigationItems.map((item, index) => (
@@ -60,12 +62,14 @@ const Header = () => {
                     navigate(item.path);
                   }
                 }}
-              >
+                >
                 {item.name}
               </button>
             ))}
           </nav>
 
+          <VoiceAccessibilityButton />
+          
           {/* Mobile menu button for smaller screens */}
           <button
             className="lg:hidden text-jazz-gold hover:text-white focus:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded p-1"

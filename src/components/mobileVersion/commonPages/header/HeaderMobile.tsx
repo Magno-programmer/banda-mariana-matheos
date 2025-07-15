@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
 import { useNavigate } from 'react-router-dom';
+import VoiceAccessibilityButton from '@/components/globalComponents/VoiceAccessibilityButton';
 
 const HeaderMobile = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,6 +44,8 @@ const HeaderMobile = () => {
             </button>
           </div>
 
+          <VoiceAccessibilityButton />
+
           {/* Botão menu */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -54,7 +57,7 @@ const HeaderMobile = () => {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
+        
         {/* Navegação mobile */}
         {isMenuOpen && (
           <nav
