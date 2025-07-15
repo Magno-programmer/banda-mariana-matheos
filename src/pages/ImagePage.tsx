@@ -2,21 +2,10 @@ import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
 
-// Importing desktop components
-import ImageSection from "@/components/desktopVersion/galeria/ImagesSection";
-import Footer from "@/components/desktopVersion/commonPages/footer/Footer";
+// Importing unified responsive components
+import Header from "@/components/unified/layout/Header";
+import Footer from "@/components/unified/layout/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
-import Header from "@/components/desktopVersion/commonPages/header/Header"; 
-
-// Importing mobile components
-import ImageSectionMobile from "@/components/mobileVersion/galeria/ImagesSectionMobile";
-import FooterMobile from "@/components/mobileVersion/commonPages/footer/FooterMobile";
-import HeaderMobile from "@/components/mobileVersion/commonPages/header/HeaderMobile";
-
-// Importing tablet components
-import ImageSectionTablet from "@/components/tabletVersion/galeria/ImagesSectionTablet";
-import FooterTablet from "@/components/tabletVersion/commonPages/footer/FooterTablet";
-import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTablet";
 
 const ImagePage = () => {
   return (
@@ -28,27 +17,14 @@ const ImagePage = () => {
         canonicalUrl="/fotos"
       />
       <AdvancedRichSnippet />
-      {/* Mobile Version */}
-      <div className="block sm:hidden">
-        <HeaderMobile />
-        <ImageSectionMobile />
-        <FooterMobile />
-        <WhatsAppButton />
+      
+      {/* Unified Responsive Layout */}
+      <Header />
+      <div className="min-h-screen bg-black text-white">
+        <h1 className="text-4xl font-bold text-center py-20">Galeria de Fotos - Em Breve</h1>
       </div>
-      {/* Tablet Version */}
-      <div className="hidden sm:block lg:hidden">
-        <HeaderTablet />
-        <ImageSectionTablet />
-        <FooterTablet />
-        <WhatsAppButton />
-      </div>
-      {/* Desktop Version */}
-      <div className="hidden lg:block">
-        <Header />
-        <ImageSection />
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <Footer />
+      <WhatsAppButton />
     </>
   );
 };
