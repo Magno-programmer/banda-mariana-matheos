@@ -26,7 +26,7 @@ const AboutSection = () => {
   return (
     <section id="sobre" className="py-20 jazz-gradient relative">
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5" aria-hidden="true">
+      <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 right-10 text-9xl font-glimmer text-jazz-gold">♪</div>
         <div className="absolute bottom-10 left-10 text-7xl font-glimmer text-jazz-gold">♫</div>
       </div>
@@ -43,9 +43,8 @@ const AboutSection = () => {
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt=""
+                alt="Divisor Art Déco"
                 className="w-[50%] object-contain"
-                aria-hidden="true"
               />
             </div>
           </div>
@@ -68,14 +67,12 @@ const AboutSection = () => {
               </div>
 
               {/* Quote */}
-              <blockquote className="mt-8 p-6 border-l-4 border-jazz-gold bg-jazz-dark bg-opacity-20" role="quote">
+              <div className="mt-8 p-6 border-l-4 border-jazz-gold bg-jazz-dark bg-opacity-20">
                 <p className="font-glimmer text-xl jazz-gold italic">
-                  A música é a linguagem universal da alma, e nós falamos fluentemente.
+                  "A música é a linguagem universal da alma, e nós falamos fluentemente."
                 </p>
-                <cite className="font-gatsbybold text-xl text-gray-100 mt-2">
-                  — Mariana Matheos, Vocalista e Líder da Banda
-                </cite>
-              </blockquote>
+                <p className="font-gatsbybold text-xl text-gray-100 mt-2">— Mariana Matheos</p>
+              </div>
             </div>
 
             <div className="animate-scale-in group relative w-full h-max-full max-w-md mx-auto">
@@ -84,9 +81,8 @@ const AboutSection = () => {
                 {/* Moldura decorativa como imagem */}
                 <img
                   src={bordarArtDeco}
-                  alt=""
+                  alt="Moldura Art Déco"
                   className="absolute top-0 left-0 w-full h-full object-contain pointer-events-none z-30"
-                  aria-hidden="true"
                 />
 
                 {/* Área clicável */}

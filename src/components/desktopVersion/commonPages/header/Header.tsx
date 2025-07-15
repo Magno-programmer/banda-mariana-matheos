@@ -73,19 +73,16 @@ const Header = () => {
           {/* Mobile menu button for smaller screens */}
           <button
             className="lg:hidden text-jazz-gold hover:text-white focus:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded p-1"
-            aria-label={isMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
-            aria-expanded={isMenuOpen}
-            aria-controls="main-navigation"
+            aria-label="Abrir menu de navegação"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav
-            id="main-navigation"
             role="navigation"
             aria-label="Menu principal mobile"
             className="lg:hidden fixed top-20 right-4 w-60 max-h-[80vh] z-50 bg-black bg-opacity-95 border border-jazz-gold rounded-lg shadow-lg p-4 space-y-4 scrollbar-thin scrollbar-thumb-jazz-gold scrollbar-track-transparent overflow-y-auto"

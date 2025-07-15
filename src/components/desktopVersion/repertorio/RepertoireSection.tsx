@@ -16,7 +16,7 @@ const RepertoireSection = () => {
   return (
     <section className="py-20 jazz-gradient relative">
       {/* Background elements */}
-      <div className="absolute inset-0 opacity-5" aria-hidden="true">
+      <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-1/4 text-6xl font-glimmer text-jazz-gold rotate-12">🎵</div>
         <div className="absolute bottom-20 right-1/4 text-8xl font-glimmer text-jazz-gold -rotate-12">🎶</div>
       </div>
@@ -32,9 +32,8 @@ const RepertoireSection = () => {
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt=""
+                alt="Divisor Art Déco"
                 className="w-[50%] object-contain"
-                aria-hidden="true"
               />
             </div>
           </div>
@@ -46,32 +45,29 @@ const RepertoireSection = () => {
             </p>
 
             {/* Artists Grid */}
-            <section aria-labelledby="artists-heading">
-              <h3 id="artists-heading" className="sr-only">Principais Artistas do Repertório</h3>
-              <ul className="grid grid-cols-3 px-32 mb-12" role="list">
-                {artists.map((artist, index) => (
-                  <li 
-                    key={artist}
-                    className="animate-scale-in bg-no-repeat bg-center bg-contain text-center flex items-center justify-center min-h-[170px] transition-all duration-300 hover:bg-jazz-dark hover:bg-opacity-30 border border-jazz-gold border-opacity-5 hover:border-opacity-10 p-4"
-                    style={{animationDelay: `${index * 0.1}s`,
-                    backgroundImage: `url(${bordaComum})`,
-                    }}
-                    role="listitem"
-                  >
-                    <p className="font-gatsby text-2xl jazz-gold font-semibold">{artist}</p>
-                  </li>
-                ))}
-              </ul>
-            </section>
+            <div
+            className="grid grid-cols-3 px-32 mb-12">
+              {artists.map((artist, index) => (
+                <div 
+                  key={artist}
+                  className="animate-scale-in bg-no-repeat bg-center bg-contain text-center flex items-center justify-center min-h-[170px] transition-all duration-300 hover:bg-jazz-dark hover:bg-opacity-30 border border-jazz-gold border-opacity-5 hover:border-opacity-10 p-4"
+                  style={{animationDelay: `${index * 0.1}s`,
+                  backgroundImage: `url(${bordaComum})`,
+                  }}
+                >
+                  <p className="font-gatsby text-2xl jazz-gold font-semibold">{artist}</p>
+                </div>
+              ))}
+            </div>
               
             <p className="font-gatsby text-2xl text-gray-50 leading-relaxed mb-12">
               Cada performance é realizada com arranjos fiéis e estética cênica trazendo a Era de Ouro até você, criando um ambiente emocional, sofisticado e inesquecível.
             </p>
 
             {/* Featured Quote */}
-            <blockquote className="relative animate-scale-in" role="quote">
-              <div className="absolute -top-4 -left-4 text-6xl font-glimmer jazz-gold opacity-30" aria-hidden="true">"</div>
-              <div className="absolute -bottom-4 -right-4 text-6xl font-glimmer jazz-gold opacity-30" aria-hidden="true">"</div>
+            <div className="relative animate-scale-in">
+              <div className="absolute -top-4 -left-4 text-6xl font-glimmer jazz-gold opacity-30">"</div>
+              <div className="absolute -bottom-4 -right-4 text-6xl font-glimmer jazz-gold opacity-30">"</div>
               <div className="bg-black bg-opacity-40 p-8 md:p-12 border-2 border-jazz-gold border-opacity-50">
                 <p className="font-glimmer text-2xl md:text-3xl jazz-gold font-bold italic mb-4">
                   De Billie a Amy,
@@ -80,26 +76,21 @@ const RepertoireSection = () => {
                   da elegância vintage à emoção contemporânea
                 </p>
               </div>
-            </blockquote>
+            </div>
           </div>
 
           {/* Musical genres */}
-          <section aria-labelledby="genres-heading">
-            <h3 id="genres-heading" className="sr-only">Gêneros Musicais do Repertório</h3>
-            <div className="flex flex-wrap justify-center gap-4 animate-fade-in" role="list">
-              {['Jazz', 'Soul', 'Blues', 'R&B'].map((genre, index) => (
-                <span 
-                  key={genre}
-                  className="font-gatsbybold px-7 py-2 border border-jazz-gold text-jazz-gold text-xl hover:bg-jazz-gold hover:text-black transition-all duration-300 text-sm tracking-wider"
-                  style={{animationDelay: `${index * 0.1}s`}}
-                  role="listitem"
-                  aria-label={`Gênero musical: ${genre}`}
-                >
-                  {genre}
-                </span>
-              ))}
-            </div>
-          </section>
+          <div className="flex flex-wrap justify-center gap-4 animate-fade-in">
+            {['Jazz', 'Soul', 'Blues', 'R&B'].map((genre, index) => (
+              <span 
+                key={genre}
+                className="font-gatsbybold px-7 py-2 border border-jazz-gold text-jazz-gold text-xl hover:bg-jazz-gold hover:text-black transition-all duration-300 text-sm tracking-wider"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                {genre}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
