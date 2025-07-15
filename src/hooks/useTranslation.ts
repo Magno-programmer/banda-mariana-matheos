@@ -66,6 +66,7 @@ interface UseTranslationReturn {
   getLanguageNativeName: (langCode: string) => string;
   estimateTranslationTime: (text: string, targetLang: string) => number;
   optimizeForSpeech: (text: string, targetLang: string) => Promise<string>;
+  translateDOMElement: (element: Element, targetLang: string) => Promise<void>;
 }
 
 export const useTranslation = (options: UseTranslationOptions = {}): UseTranslationReturn => {
@@ -575,6 +576,18 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
       .trim();
   }, [translateText]);
 
+  const translateDOMElement = useCallback(async (element: Element, targetLang: string): Promise<void> => {
+    const textContent = (element as HTMLElement).textContent?.trim();
+    if (!textContent || textContent.length < 3) return;
+
+    try {
+      const translatedText = await translateText(textContent, targetLang, { priority: 'speed' });
+      (element as HTMLElement).textContent = translatedText;
+    } catch (error) {
+      console.warn('Failed to translate DOM element:', error);
+    }
+  }, [translateText]);
+
   const clearCache = useCallback(() => {
     setTranslationCache({});
     cacheKeysRef.current = [];
@@ -601,6 +614,7 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
     translateBatch,
     getLanguageNativeName,
     estimateTranslationTime,
-    optimizeForSpeech
+    optimizeForSpeech,
+    translateDOMElement
   };
 };

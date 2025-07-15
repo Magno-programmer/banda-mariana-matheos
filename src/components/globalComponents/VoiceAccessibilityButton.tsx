@@ -29,6 +29,9 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   const [autoTranslationEnabled, setAutoTranslationEnabled] = useState(autoTranslate);
   const [translationStatus, setTranslationStatus] = useState<'idle' | 'detecting' | 'translating' | 'ready'>('idle');
   const [selectedVoiceLanguage, setSelectedVoiceLanguage] = useState<string>('pt-BR');
+  const [pageTranslated, setPageTranslated] = useState(false);
+  const [originalPageContent, setOriginalPageContent] = useState<Map<Element, string>>(new Map());
+  const [showTranslatedContent, setShowTranslatedContent] = useState(false);
 
   const {
     speak, stop, pause, resume, skipToNext, skipToPrevious,
@@ -113,8 +116,9 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
     getSupportedLanguages,
     getTranslationMetrics,
     detectLanguage,
-    clearCache
-  } = useTranslation({ 
+    clearCache,
+    translateDOMElement
+  } = useTranslation({
     targetLanguage: 'pt-BR',
     enableMetrics: true,
     enablePersistentCache: true,
@@ -123,6 +127,84 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   });
 
 
+  // Função para mapear nome da voz para código de idioma
+  const getLangFromVoiceName = useCallback((voiceName: string): string => {
+    const map: Record<string, string> = {
+      "Microsoft Daniel - Portuguese (Brazil)": "pt-BR",
+      "Microsoft Maria - Portuguese (Brazil)": "pt-BR",
+      "Microsoft Mark - English (United States)": "en-US",
+      "Microsoft Zira - English (United States)": "en-US",
+      "Microsoft David - English (United States)": "en-US",
+      "Google US English": "en-US",
+      "Google UK English Female": "en-GB",
+      "Google UK English Male": "en-GB",
+      "Google español": "es-ES",
+      "Google español de Estados Unidos": "es-US",
+      "Google français": "fr-FR",
+      "Google português do Brasil": "pt-BR",
+      "Google italiano": "it-IT",
+      "Google Deutsch": "de-DE",
+      "Google 日本語": "ja-JP",
+      "Google 한국의": "ko-KR",
+      "Google 中文": "zh-CN",
+      "Google русский": "ru-RU",
+      "Google हिन्दी": "hi-IN",
+      "Google العربية": "ar-SA",
+      "Google Nederlands": "nl-NL",
+      "Google svenska": "sv-SE",
+      "Google norsk": "no-NO",
+      "Google dansk": "da-DK",
+      "Google polski": "pl-PL",
+      "Google türkçe": "tr-TR",
+      "Google ελληνικά": "el-GR",
+      "Google português": "pt-PT",
+      "Google čeština": "cs-CZ",
+      "Google magyar": "hu-HU",
+      "Google română": "ro-RO",
+      "Google slovenčina": "sk-SK",
+      "Google українська": "uk-UA",
+      "Google български": "bg-BG",
+      "Google eesti": "et-EE",
+      "Google latviešu": "lv-LV",
+      "Google lietuvių": "lt-LT",
+      "Google slovenščina": "sl-SI",
+      "Google hrvatski": "hr-HR",
+      "Google српски": "sr-RS",
+      "Google македонски": "mk-MK",
+      "Google shqip": "sq-AL",
+      "Google bosanski": "bs-BA",
+      "Google català": "ca-ES",
+      "Google euskera": "eu-ES",
+      "Google galego": "gl-ES",
+      "Google עברית": "he-IL",
+      "Google ไทย": "th-TH",
+      "Google tiếng Việt": "vi-VN",
+      "Google Bahasa Indonesia": "id-ID",
+      "Google Bahasa Melayu": "ms-MY",
+      "Google Filipino": "fil-PH",
+      "Google தமிழ்": "ta-IN",
+      "Google తెలుగు": "te-IN",
+      "Google বাংলা": "bn-IN",
+      "Google ગુજરાતી": "gu-IN",
+      "Google ಕನ್ನಡ": "kn-IN",
+      "Google മലയാളം": "ml-IN",
+      "Google ਪੰਜਾਬੀ": "pa-IN",
+      "Google اردو": "ur-PK",
+      "Google فارسی": "fa-IR",
+      "Google Kiswahili": "sw-KE",
+      "Google Afrikaans": "af-ZA",
+      "Google Amharic": "am-ET",
+      "Google isiZulu": "zu-ZA",
+      "Google Sesotho": "st-ZA",
+      "Google Setswana": "tn-ZA",
+      "Google isiXhosa": "xh-ZA",
+      "Google Yoruba": "yo-NG",
+      "Google Igbo": "ig-NG",
+      "Google Hausa": "ha-NG"
+    };
+    return map[voiceName] || 'pt-BR';
+  }, []);
+
   // Verificar se precisa traduzir baseado na voz selecionada
   const needsTranslationForVoice = useCallback((pageLanguage: string, voiceLanguage: string) => {
     const normalizeLanguage = (lang: string) => lang.toLowerCase().split('-')[0];
@@ -130,6 +212,56 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
     const voiceLang = normalizeLanguage(voiceLanguage);
     return pageLang !== voiceLang;
   }, []);
+
+  // Traduzir página dinamicamente
+  const translatePageContent = useCallback(async (targetLanguage: string) => {
+    if (!autoTranslationEnabled) return;
+
+    setTranslationStatus('translating');
+    
+    try {
+      const elementsToTranslate = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, a, button, label');
+      const translatedElements = new Map<Element, string>();
+      
+      for (const element of Array.from(elementsToTranslate)) {
+        const textContent = (element as HTMLElement).textContent?.trim();
+        if (textContent && textContent.length > 3 && textContent.length < 500) {
+          // Salvar conteúdo original
+          if (!originalPageContent.has(element)) {
+            originalPageContent.set(element, textContent);
+          }
+          
+          try {
+            const translatedText = await translateText(textContent, targetLanguage, { priority: 'speed' });
+            translatedElements.set(element, translatedText);
+          } catch (error) {
+            console.warn('Failed to translate element:', error);
+          }
+        }
+      }
+      
+      // Aplicar traduções
+      translatedElements.forEach((translatedText, element) => {
+        (element as HTMLElement).textContent = translatedText;
+      });
+      
+      setPageTranslated(true);
+      setShowTranslatedContent(true);
+      setTranslationStatus('ready');
+    } catch (error) {
+      console.error('Page translation error:', error);
+      setTranslationStatus('idle');
+    }
+  }, [autoTranslationEnabled, translateText, originalPageContent]);
+
+  // Restaurar conteúdo original da página
+  const restorePageContent = useCallback(() => {
+    originalPageContent.forEach((originalText, element) => {
+      (element as HTMLElement).textContent = originalText;
+    });
+    setPageTranslated(false);
+    setShowTranslatedContent(false);
+  }, [originalPageContent]);
 
   const handleStartReading = useCallback(async () => {
     // Prevent multiple simultaneous readings
@@ -153,7 +285,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
 
     try {
       let finalText = cleanText;
-      const selectedVoiceLanguage = getSelectedVoiceLanguage();
+      const selectedVoiceName = getSelectedVoiceName();
+      const selectedVoiceLanguage = getLangFromVoiceName(selectedVoiceName);
       const pageLanguage = getPageLanguage();
       
       // Verificar se precisa traduzir baseado na voz selecionada
@@ -163,6 +296,9 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
         setTranslationStatus('translating');
         
         try {
+          // Traduzir a página visualmente primeiro
+          await translatePageContent(selectedVoiceLanguage);
+          
           // Traduzir para o idioma da voz selecionada
           finalText = await translateText(cleanText, selectedVoiceLanguage);
           
@@ -198,8 +334,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       setTranslationStatus('idle');
     }
   }, [extractTextContent, speak, speaking, isTranslating, autoTranslationEnabled, 
-      getSelectedVoiceLanguage, needsTranslationForVoice, getPageLanguage, 
-      translateText, optimizeForSpeech, setLanguage, getSelectedVoiceName]);
+      getSelectedVoiceName, getLangFromVoiceName, needsTranslationForVoice, getPageLanguage, 
+      translateText, optimizeForSpeech, setLanguage, translatePageContent]);
 
   const handleAddBookmark = useCallback(() => {
     if (speaking && currentText) {
@@ -229,7 +365,23 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   useEffect(() => {
     const currentVoiceLanguage = getSelectedVoiceLanguage();
     setSelectedVoiceLanguage(currentVoiceLanguage);
-  }, [currentSettings.voiceIndex, availableVoices, getSelectedVoiceLanguage]);
+    
+    // Restaurar conteúdo original quando trocar de voz
+    if (pageTranslated) {
+      restorePageContent();
+    }
+  }, [currentSettings.voiceIndex, availableVoices, getSelectedVoiceLanguage, pageTranslated, restorePageContent]);
+  
+  // Limpar tradução quando parar de falar
+  useEffect(() => {
+    if (!speaking && pageTranslated) {
+      const timer = setTimeout(() => {
+        restorePageContent();
+      }, 2000); // Manter tradução por 2 segundos após parar
+      
+      return () => clearTimeout(timer);
+    }
+  }, [speaking, pageTranslated, restorePageContent]);
 
   // Efeito para adicionar CSS de highlight
   useEffect(() => {
@@ -315,7 +467,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                   <div className="flex items-center gap-1 text-sm text-muted-foreground">
                     <Loader size={12} className="animate-spin" />
                     {translationStatus === 'detecting' && 'Detectando idioma...'}
-                    {translationStatus === 'translating' && 'Traduzindo...'}
+                    {translationStatus === 'translating' && 'Traduzindo página...'}
                     {translationStatus === 'ready' && 'Pronto'}
                   </div>
                 )}
@@ -347,10 +499,10 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               <div className="flex items-center justify-between text-lg text-muted-foreground mb-2">
                 <span>Sentença {currentSentence + 1} de {totalSentences}</span>
                 <div className="flex items-center gap-2">
-                  {autoTranslationEnabled && (
-                    <Globe size={12} className="text-jazz-gold" />
-                  )}
-                  <span>{Math.round(progress)}%</span>
+              {autoTranslationEnabled && getLangFromVoiceName(getSelectedVoiceName()) !== 'pt-BR' && (
+                <Globe size={12} className="text-jazz-gold" />
+              )}
+              <span>{Math.round(progress)}%</span>
                 </div>
               </div>
               <div className="w-full bg-background rounded-full h-2">
@@ -359,9 +511,13 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                   style={{ width: `${progress}%` }}
                 />
               </div>
-              {getSelectedVoiceLanguage() !== 'pt-BR' && (
-                <div className="text-xs text-muted-foreground mt-1">
+              {getLangFromVoiceName(getSelectedVoiceName()) !== 'pt-BR' && (
+                <div className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
+                  <Globe size={10} />
                   Voz: {getSelectedVoiceName()}
+                  {showTranslatedContent && (
+                    <span className="text-jazz-gold">• Página traduzida</span>
+                  )}
                 </div>
               )}
             </div>
@@ -416,9 +572,9 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                   <>
                     <Loader size={20} className="animate-spin" />
                     <span className="text-sm">
-                      {translationStatus === 'detecting' && 'Detectando...'}
-                      {translationStatus === 'translating' && 'Traduzindo...'}
-                      {translationStatus === 'ready' && 'Pronto'}
+                  {translationStatus === 'detecting' && 'Detectando...'}
+                  {translationStatus === 'translating' && 'Traduzindo página...'}
+                  {translationStatus === 'ready' && 'Pronto'}
                     </span>
                   </>
                 ) : (
@@ -495,7 +651,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               <label className="text-xs text-muted-foreground mb-1 block flex items-center justify-between">
                 <span>Voz</span>
                 <span className="text-xs text-jazz-gold">
-                  {getSelectedVoiceLanguage() !== 'pt-BR' && autoTranslationEnabled && '🌐 Tradução ativa'}
+                  {getLangFromVoiceName(getSelectedVoiceName()) !== 'pt-BR' && autoTranslationEnabled && '🌐 Tradução ativa'}
                 </span>
               </label>
               <select
@@ -509,9 +665,13 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                   </option>
                 ))}
               </select>
-              {getSelectedVoiceLanguage() !== 'pt-BR' && autoTranslationEnabled && (
-                <div className="text-xs text-muted-foreground mt-1">
+              {getLangFromVoiceName(getSelectedVoiceName()) !== 'pt-BR' && autoTranslationEnabled && (
+                <div className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
+                  <Globe size={10} />
                   O texto será traduzido para {getSelectedVoiceName()}
+                  {showTranslatedContent && (
+                    <span className="text-jazz-gold">• Página já traduzida</span>
+                  )}
                 </div>
               )}
             </div>
@@ -547,6 +707,45 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
             </button>
           </div>
 
+          {/* Controle de Tradução da Página */}
+          {getLangFromVoiceName(getSelectedVoiceName()) !== 'pt-BR' && autoTranslationEnabled && (
+            <div className="mb-4 p-3 bg-muted rounded-lg">
+              <div className="flex items-center justify-between mb-2">
+                <h5 className="text-xs font-medium flex items-center gap-1">
+                  <Globe size={12} />
+                  Tradução da Página
+                </h5>
+                <span className={`text-xs px-2 py-1 rounded ${
+                  showTranslatedContent ? 'bg-jazz-gold text-black' : 'bg-background'
+                }`}>
+                  {showTranslatedContent ? 'Ativa' : 'Inativa'}
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => translatePageContent(getLangFromVoiceName(getSelectedVoiceName()))}
+                  disabled={isTranslating || translationStatus === 'translating'}
+                  className="flex-1 p-2 bg-jazz-gold text-black rounded text-xs hover:bg-jazz-gold/80 disabled:opacity-50 flex items-center justify-center gap-1"
+                >
+                  {isTranslating ? (
+                    <Loader size={10} className="animate-spin" />
+                  ) : (
+                    <Globe size={10} />
+                  )}
+                  Traduzir
+                </button>
+                <button
+                  onClick={restorePageContent}
+                  disabled={!showTranslatedContent}
+                  className="flex-1 p-2 bg-background border border-border rounded text-xs hover:bg-muted disabled:opacity-50 flex items-center justify-center gap-1"
+                >
+                  <RotateCcw size={10} />
+                  Original
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Histórico de Leitura */}
           {readingHistory.length > 0 && (
             <div className="mt-4 pt-4 border-t border-border">
@@ -579,8 +778,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
             <span className="text-muted-foreground">
               {currentSentence + 1}/{totalSentences}
             </span>
-            {autoTranslationEnabled && getSelectedVoiceLanguage() !== 'pt-BR' && (
-              <Globe size={12} className="text-jazz-gold"  />
+            {autoTranslationEnabled && getLangFromVoiceName(getSelectedVoiceName()) !== 'pt-BR' && (
+              <Globe size={12} className="text-jazz-gold" />
             )}
           </div>
         )}
