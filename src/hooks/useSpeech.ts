@@ -1,89 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-// Função para mapear nome da voz para código de idioma
-const getLangFromVoiceName = (voiceName: string): string => {
-  const map: Record<string, string> = {
-    "Microsoft Daniel - Portuguese (Brazil)": "pt-BR",
-    "Microsoft Maria - Portuguese (Brazil)": "pt-BR",
-    "Microsoft Mark - English (United States)": "en-US",
-    "Microsoft Zira - English (United States)": "en-US",
-    "Microsoft David - English (United States)": "en-US",
-    "Microsoft Hazel - English (Great Britain)": "en-GB",
-    "Microsoft Susan - English (Great Britain)": "en-GB",
-    "Microsoft Helena - Spanish (Spain)": "es-ES",
-    "Microsoft Sabina - Spanish (Mexico)": "es-MX",
-    "Microsoft Hortense - French (France)": "fr-FR",
-    "Microsoft Paulina - Spanish (Mexico)": "es-MX",
-    "Google US English": "en-US",
-    "Google UK English Female": "en-GB",
-    "Google UK English Male": "en-GB",
-    "Google español": "es-ES",
-    "Google español de Estados Unidos": "es-US",
-    "Google français": "fr-FR",
-    "Google português do Brasil": "pt-BR",
-    "Google italiano": "it-IT",
-    "Google Deutsch": "de-DE",
-    "Google 日本語": "ja-JP",
-    "Google 한국의": "ko-KR",
-    "Google 中文": "zh-CN",
-    "Google русский": "ru-RU",
-    "Google हिन्दी": "hi-IN",
-    "Google العربية": "ar-SA",
-    "Google Nederlands": "nl-NL",
-    "Google svenska": "sv-SE",
-    "Google norsk": "no-NO",
-    "Google dansk": "da-DK",
-    "Google polski": "pl-PL",
-    "Google türkçe": "tr-TR",
-    "Google ελληνικά": "el-GR",
-    "Google português": "pt-PT",
-    "Google čeština": "cs-CZ",
-    "Google magyar": "hu-HU",
-    "Google română": "ro-RO",
-    "Google slovenčina": "sk-SK",
-    "Google українська": "uk-UA",
-    "Google български": "bg-BG",
-    "Google eesti": "et-EE",
-    "Google latviešu": "lv-LV",
-    "Google lietuvių": "lt-LT",
-    "Google slovenščina": "sl-SI",
-    "Google hrvatski": "hr-HR",
-    "Google српски": "sr-RS",
-    "Google македонски": "mk-MK",
-    "Google shqip": "sq-AL",
-    "Google bosanski": "bs-BA",
-    "Google català": "ca-ES",
-    "Google euskera": "eu-ES",
-    "Google galego": "gl-ES",
-    "Google עברית": "he-IL",
-    "Google ไทย": "th-TH",
-    "Google tiếng Việt": "vi-VN",
-    "Google Bahasa Indonesia": "id-ID",
-    "Google Bahasa Melayu": "ms-MY",
-    "Google Filipino": "fil-PH",
-    "Google தமிழ்": "ta-IN",
-    "Google తెలుగు": "te-IN",
-    "Google বাংলা": "bn-IN",
-    "Google ગુજરાતી": "gu-IN",
-    "Google ಕನ್ನಡ": "kn-IN",
-    "Google മലയാളം": "ml-IN",
-    "Google ਪੰਜਾਬੀ": "pa-IN",
-    "Google اردو": "ur-PK",
-    "Google فارسی": "fa-IR",
-    "Google Kiswahili": "sw-KE",
-    "Google Afrikaans": "af-ZA",
-    "Google Amharic": "am-ET",
-    "Google isiZulu": "zu-ZA",
-    "Google Sesotho": "st-ZA",
-    "Google Setswana": "tn-ZA",
-    "Google isiXhosa": "xh-ZA",
-    "Google Yoruba": "yo-NG",
-    "Google Igbo": "ig-NG",
-    "Google Hausa": "ha-NG"
-  };
-  return map[voiceName] || 'pt-BR';
-};
-
 interface UseSpeechOptions {
   lang?: string;
   rate?: number;
@@ -129,8 +45,6 @@ interface UseSpeechReturn {
     voiceIndex: number;
     language: string;
   };
-  getSelectedVoiceName: () => string;
-  getSelectedVoiceLanguage: () => string;
 }
 
 export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
@@ -280,8 +194,6 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
     setProgress(0);
 
     if (sentences.length > 0) {
-      // Usar o idioma fornecido ou o atual
-      const speechLanguage = language || currentSettings.language;
       speakSentence(sentences[0], 0);
     }
   }, [supported, splitIntoSentences, speakSentence, currentSettings.language]);
@@ -355,18 +267,6 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
     setCurrentSettings(prev => ({ ...prev, language }));
   }, []);
 
-  // Obter nome da voz selecionada
-  const getSelectedVoiceName = useCallback(() => {
-    const currentVoice = availableVoices[currentSettings.voiceIndex];
-    return currentVoice ? currentVoice.name : 'Voz padrão';
-  }, [availableVoices, currentSettings.voiceIndex]);
-
-  // Obter idioma da voz selecionada usando mapeamento
-  const getSelectedVoiceLanguage = useCallback(() => {
-    const currentVoice = availableVoices[currentSettings.voiceIndex];
-    return currentVoice ? getLangFromVoiceName(currentVoice.name) : 'pt-BR';
-  }, [availableVoices, currentSettings.voiceIndex]);
-
   // Limpar recursos quando o componente é desmontado
   useEffect(() => {
     return () => {
@@ -399,8 +299,6 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
     currentSentence,
     totalSentences,
     progress,
-    currentSettings,
-    getSelectedVoiceName,
-    getSelectedVoiceLanguage
+    currentSettings
   };
 };
