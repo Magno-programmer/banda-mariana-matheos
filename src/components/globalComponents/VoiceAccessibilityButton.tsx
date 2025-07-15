@@ -103,15 +103,36 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   }, [contentSelector]);
 
   const {
-    translateText, 
+    translateText,
     isTranslating,
     getPageLanguage,
-    getUserLanguage,
-    needsTranslation,
+    optimizeForSpeech,
+    getLanguageNativeName,
+    getSupportedLanguages,
+    getTranslationMetrics,
+    detectLanguage,
     clearCache
-  } = useTranslation({
-    targetLanguage: 'pt-BR'
+  } = useTranslation({ 
+    targetLanguage: 'pt-BR',
+    enableMetrics: true,
+    enablePersistentCache: true,
+    qualityThreshold: 0.8,
+    chunkStrategy: 'smart'
   });
+
+  // Extrair idioma da voz selecionada
+  const getSelectedVoiceLanguage = useCallback(() => {
+    const currentVoice = availableVoices[currentSettings.voiceIndex];
+    return currentVoice ? currentVoice.lang : 'pt-BR';
+  }, [availableVoices, currentSettings.voiceIndex]);
+
+  // Verificar se precisa traduzir baseado na voz selecionada
+  const needsTranslationForVoice = useCallback((pageLanguage: string, voiceLanguage: string) => {
+    const normalizeLanguage = (lang: string) => lang.toLowerCase().split('-')[0];
+    const pageLang = normalizeLanguage(pageLanguage);
+    const voiceLang = normalizeLanguage(voiceLanguage);
+    return pageLang !== voiceLang;
+  }, []);
 
   const handleStartReading = useCallback(async () => {
     // Prevent multiple simultaneous readings
@@ -135,18 +156,18 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
 
     try {
       let finalText = cleanText;
-      let speechLanguage = 'pt-BR';
+      const selectedVoiceLanguage = getSelectedVoiceLanguage();
+      let speechLanguage = selectedVoiceLanguage;
 
       if (autoTranslationEnabled) {
         const pageLanguage = getPageLanguage();
-        const userLanguage = getUserLanguage();
         
-        if (needsTranslation(pageLanguage, userLanguage)) {
+        // Verificar se precisa traduzir baseado na voz selecionada
+        if (needsTranslationForVoice(pageLanguage, selectedVoiceLanguage)) {
           setTranslationStatus('translating');
           
-          // Traduzir para o idioma do usuário
-          finalText = await translateText(cleanText, userLanguage);
-          speechLanguage = userLanguage;
+          // Traduzir para o idioma da voz selecionada
+          finalText = await optimizeForSpeech(cleanText, selectedVoiceLanguage);
           
           setTranslationStatus('ready');
         } else {
@@ -159,17 +180,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       setCurrentText(finalText);
       setReadingHistory(prev => [finalText, ...prev.slice(0, 4)]); // Manter últimas 5
       
-      // Configurar idioma e voz apropriada
+      // Configurar idioma para a voz selecionada
       setLanguage(speechLanguage);
-      
-      // Encontrar voz compatível com o idioma
-      const compatibleVoice = availableVoices.findIndex(voice => 
-        voice.lang.startsWith(speechLanguage.split('-')[0])
-      );
-      
-      if (compatibleVoice !== -1) {
-        setVoice(compatibleVoice);
-      }
       
       speak(finalText, speechLanguage);
       
@@ -182,8 +194,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       setTranslationStatus('idle');
     }
   }, [extractTextContent, speak, speaking, isTranslating, autoTranslationEnabled, 
-      translateText, getPageLanguage, getUserLanguage, needsTranslation, 
-      setLanguage, availableVoices, setVoice]);
+      getSelectedVoiceLanguage, needsTranslationForVoice, getPageLanguage, 
+      optimizeForSpeech, setLanguage]);
 
   const handleAddBookmark = useCallback(() => {
     if (speaking && currentText) {
