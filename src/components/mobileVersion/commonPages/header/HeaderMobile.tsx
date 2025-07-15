@@ -20,28 +20,36 @@ const HeaderMobile = () => {
   ];
 
   return (
-    <header className="bg-black shadow-sm sticky top-0 z-50 font-gatsbybold text-2xl">
+    <header className="bg-black shadow-sm sticky top-0 z-50 font-gatsbybold text-2xl" role="banner">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           
           {/* Logo e nome da banda */}
           <div className="flex items-center space-x-3">
-            <img 
-              src={logoWhite}
-              alt="Logo Mariana Matheos - Banda de Jazz Blues Soul R&B Belo Horizonte"
-              className="w-12 h-12 object-contain"
-            />
-            <div>
-              <div className="text-xl font-bold text-jazz-gold font-glimmer">Mariana Matheos</div>
-              <p className="text-xs text-white tracking-widest">Jazz Blues Soul R&B Band</p>
-            </div>
+            <button
+              onClick={() => navigate('/inicio')}
+              className="flex items-center space-x-3 focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded-lg p-1"
+              aria-label="Ir para página inicial - Mariana Matheos Banda de Jazz"
+            >
+              <img 
+                src={logoWhite}
+                alt="Logo Mariana Matheos - Banda de Jazz Blues Soul R&B Belo Horizonte"
+                className="w-12 h-12 object-contain"
+              />
+              <div>
+                <div className="text-xl font-bold text-jazz-gold font-glimmer">Mariana Matheos</div>
+                <p className="text-xs text-white tracking-widest">Jazz Blues Soul R&B Band</p>
+              </div>
+            </button>
           </div>
 
           {/* Botão menu */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-jazz-gold"
-            aria-label="Abrir ou fechar menu de navegação"
+            className="text-jazz-gold hover:text-white focus:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded p-1"
+            aria-label={isMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -50,6 +58,7 @@ const HeaderMobile = () => {
         {/* Navegação mobile */}
         {isMenuOpen && (
           <nav
+            id="mobile-menu"
             role="navigation"
             aria-label="Menu principal mobile"
             className="fixed top-20 right-4 w-60 max-h-[80vh] overflow-y-auto z-50 bg-black bg-opacity-95 border border-jazz-gold rounded-lg shadow-lg p-4 space-y-4 scrollbar-thin scrollbar-thumb-jazz-gold scrollbar-track-transparent"
@@ -61,9 +70,17 @@ const HeaderMobile = () => {
                   navigate(item.path);
                   setIsMenuOpen(false);
                 }}
-                className="block text-right text-jazz-gold hover:text-white transition-colors border-b border-jazz-gold/20 pb-2 font-gatsbybold"
+                className="block w-full text-right text-jazz-gold hover:text-white focus:text-white transition-colors border-b border-jazz-gold/20 pb-2 font-gatsbybold focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
                 title={item.title}
                 aria-label={item.title}
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    navigate(item.path);
+                    setIsMenuOpen(false);
+                  }
+                }}
               >
                 {item.name}
               </button>

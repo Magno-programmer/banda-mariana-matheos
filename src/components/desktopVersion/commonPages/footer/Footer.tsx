@@ -4,7 +4,7 @@ import { Instagram, Youtube, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-12 border-t border-jazz-gold border-opacity-30">
+    <footer className="bg-black py-12 border-t border-jazz-gold border-opacity-30" role="contentinfo">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Main Footer Content */}
@@ -28,9 +28,10 @@ const Footer = () => {
               <div className="space-y-2">
                 <a 
                   href="tel:+5531997522127" 
-                  className="flex items-center justify-center font-gatsbybold text-gray-400 text-xl hover:text-jazz-gold transition-colors duration-300"
+                  className="flex items-center justify-center font-gatsbybold text-gray-400 text-xl hover:text-jazz-gold focus:text-jazz-gold transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
+                  aria-label="Ligar para (31) 99752-2127 - Contato da Banda Mariana Matheos"
                 >
-                  <Phone className="w-4 h-4 mr-2" />
+                  <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
                   (31) 99752-2127
                 </a>
               </div>
@@ -39,22 +40,26 @@ const Footer = () => {
             {/* Social Media */}
             <div className="text-center md:text-right">
               <h4 className="font-glimmer text-2xl jazz-gold mb-4">Redes Sociais</h4>
-              <div className="flex justify-center md:justify-end space-x-4">
+              <div className="flex justify-center md:justify-end space-x-4" role="list">
                 <a 
                   href="https://instagram.com/marianamatheosoficial" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 border border-jazz-gold rounded-full flex items-center justify-center text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300"
+                  className="w-10 h-10 border border-jazz-gold rounded-full flex items-center justify-center text-jazz-gold hover:bg-jazz-gold hover:text-black focus:bg-jazz-gold focus:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black"
+                  aria-label="Seguir Mariana Matheos no Instagram (abre em nova aba)"
+                  role="listitem"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="w-5 h-5" aria-hidden="true" />
                 </a>
                 <a 
                   href="https://youtube.com/@marianamatheosoficial" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 border border-jazz-gold rounded-full flex items-center justify-center text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300"
+                  className="w-10 h-10 border border-jazz-gold rounded-full flex items-center justify-center text-jazz-gold hover:bg-jazz-gold hover:text-black focus:bg-jazz-gold focus:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black"
+                  aria-label="Inscrever-se no canal do YouTube da Mariana Matheos (abre em nova aba)"
+                  role="listitem"
                 >
-                  <Youtube className="w-5 h-5" />
+                  <Youtube className="w-5 h-5" aria-hidden="true" />
                 </a>
               </div>
             </div>

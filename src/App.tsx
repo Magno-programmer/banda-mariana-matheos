@@ -15,6 +15,7 @@ import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
 import ScrollToTop from "./components/globalComponents/ScrollToTop";
+import SkipLink from "./components/globalComponents/SkipLink";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+        <SkipLink />
         <ScrollToTop />
         <Routes>
           <Route path="*" element={<Navigate to="/" replace/>} />
