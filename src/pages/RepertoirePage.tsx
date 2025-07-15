@@ -5,6 +5,7 @@ import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnipp
 // Importing unified responsive components
 import Header from "@/components/unified/layout/Header";
 import Footer from "@/components/unified/layout/Footer";
+import RepertoireSection from "@/components/unified/sections/RepertoireSection";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 
 const RepertoirePage = () => {
@@ -20,9 +21,7 @@ const RepertoirePage = () => {
       
       {/* Unified Responsive Layout */}
       <Header />
-      <div className="min-h-screen bg-black text-white">
-        <h1 className="text-4xl font-bold text-center py-20">Repertório - Em Breve</h1>
-      </div>
+      <RepertoireSection />
       <Footer />
       <WhatsAppButton />
     </>
