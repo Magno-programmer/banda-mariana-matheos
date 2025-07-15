@@ -1,9 +1,7 @@
+
 import React from 'react';
-import { useResponsiveComponent } from '@/hooks/useResponsiveComponent';
 
 const TestimonialSection = () => {
-  const { styles, isMobile, isTablet } = useResponsiveComponent();
-
   return (
     <section className="py-20 bg-black relative overflow-hidden">
       {/* Background decoration */}
@@ -12,7 +10,7 @@ const TestimonialSection = () => {
         <div className="absolute top-1/2 right-10 text-7xl font-glimmer text-jazz-gold transform rotate-12">♪</div>
       </div>
 
-      <div className={`${styles.container} relative`}>
+      <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           {/* Decorative quotes */}
           <div className="relative">
@@ -20,18 +18,18 @@ const TestimonialSection = () => {
             <div className="absolute -bottom-8 -right-8 text-8xl font-glimmer jazz-gold opacity-20">"</div>
             
             <div className="relative z-10 py-16">
-              <h2 className={`font-glimmer ${styles.text.large} font-bold text-white mb-8 jazz-text-shadow leading-tight`}>
+              <h2 className="font-glimmer text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 jazz-text-shadow leading-tight">
                 Mais do que música.
               </h2>
               
               <div className="space-y-4">
-                <p className={`font-glimmer ${styles.text.large} jazz-gold font-bold`}>
+                <p className="font-glimmer text-3xl md:text-4xl jazz-gold font-bold">
                   É memória.
                 </p>
-                <p className={`font-glimmer ${styles.text.large} jazz-gold font-bold`}>
+                <p className="font-glimmer text-3xl md:text-4xl jazz-gold font-bold">
                   É presença.
                 </p>
-                <p className={`font-glimmer ${styles.text.large} jazz-gold font-bold`}>
+                <p className="font-glimmer text-3xl md:text-4xl jazz-gold font-bold">
                   É sentimento.
                 </p>
               </div>
@@ -52,7 +50,7 @@ const TestimonialSection = () => {
           </div>
 
           {/* Subtitle */}
-          <p className={`font-gatsby ${styles.text.medium} text-gray-50 mt-8 italic`}>
+          <p className="font-gatsby text-2xl text-gray-50 mt-8 italic">
             Uma experiência que permanece na alma muito depois da última nota
           </p>
         </div>
