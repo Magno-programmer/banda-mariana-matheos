@@ -16,7 +16,7 @@ interface VoiceAccessibilityButtonProps {
 const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   contentSelector = '#main-content',
   className = '',
-  position = 'bottom-right',
+  position = 'bottom-left',
   compact = false
 }) => {
   const [showControls, setShowControls] = useState(false);
@@ -164,7 +164,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
 
   if (!supported) {
     return (
-      <div className="fixed bottom-4 right-4 bg-red-500 text-white p-3 rounded-lg shadow-lg">
+      <div className="fixed bottom-4 left-4 bg-red-500 text-white p-3 rounded-lg shadow-lg">
         <p className="text-sm">Seu navegador não suporta síntese de voz</p>
       </div>
     );
@@ -206,10 +206,10 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
     <div className={`fixed ${positionClasses[position]} z-50 ${className}`}>
       {/* Painel de Controles Avançados */}
       {showControls && (
-        <div className="absolute bottom-16 right-0 w-80 bg-background border border-border rounded-lg shadow-2xl p-4 mb-2">
+        <div className="absolute bottom-16 left-0 w-80 bg-background border border-border rounded-lg shadow-2xl p-4 mb-2">
           {/* Header do Painel */}
           <div className="flex items-center justify-between mb-4">
-            <h3 className="font-semibold text-sm flex items-center gap-2">
+            <h3 className="font-semibold text-lg flex items-center gap-2">
               <Headphones size={16} />
               Controles de Voz
             </h3>
@@ -224,7 +224,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
           {/* Progresso e Informações */}
           {speaking && (
             <div className="mb-4 p-3 bg-muted rounded-lg">
-              <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
+              <div className="flex items-center justify-between text-lg text-muted-foreground mb-2">
                 <span>Sentença {currentSentence + 1} de {totalSentences}</span>
                 <span>{Math.round(progress)}%</span>
               </div>
@@ -299,7 +299,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
           <div className="space-y-3 mb-4">
             {/* Velocidade */}
             <div>
-              <label className="text-xs text-muted-foreground mb-1 block">
+              <label className="text-sm text-muted-foreground mb-1 block">
                 Velocidade: {currentSettings.rate.toFixed(1)}x
               </label>
               <input
@@ -315,7 +315,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
 
             {/* Tom */}
             <div>
-              <label className="text-xs text-muted-foreground mb-1 block">
+              <label className="text-sm text-muted-foreground mb-1 block">
                 Tom: {currentSettings.pitch.toFixed(1)}
               </label>
               <input
@@ -331,7 +331,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
 
             {/* Volume */}
             <div>
-              <label className="text-xs text-muted-foreground mb-1 block flex items-center gap-1">
+              <label className="text-sm text-muted-foreground mb-1 block flex items-center gap-1">
                 {React.createElement(getVolumeIcon(), { size: 12 })}
                 Volume: {Math.round(currentSettings.volume * 100)}%
               </label>
