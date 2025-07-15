@@ -27,8 +27,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   const [currentText, setCurrentText] = useState('');
   const [readingHistory, setReadingHistory] = useState<string[]>([]);
   const [bookmarks, setBookmarks] = useState<{sentence: string, timestamp: Date}[]>([]);
-  const [autoTranslationEnabled, setAutoTranslationEnabled] = useState(autoTranslate);
-  const [translationStatus, setTranslationStatus] = useState<'idle' | 'detecting' | 'translating' | 'ready'>('idle');
+  const [autoTranslationEnabled, setAutoTranslationEnabled] = useState(false); // ⚠️ i18n integration: Not using external translation APIs
+  const [translationStatus, setTranslationStatus] = useState<'ready'>('ready'); // ⚠️ i18n integration: Always ready since no external APIs
   
   // ⚠️ i18n integration: Using i18next for interface translations
   const { t, i18n } = useI18nextTranslation();
@@ -129,7 +129,6 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   const {
     translateText, 
     optimizeForSpeech, // ⚠️ i18n integration: New function for speech optimization
-    isTranslating,
     getPageLanguage,
     getUserLanguage,
     needsTranslation,
@@ -141,15 +140,12 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
 
   const handleStartReading = useCallback(async () => {
     // Prevent multiple simultaneous readings
-    if (speaking || isTranslating) {
+    if (speaking) {
       return;
     }
     
-    setTranslationStatus('detecting');
-    
     const textContent = extractTextContent();
     if (!textContent.trim()) {
-      setTranslationStatus('idle');
       return;
     }
 
@@ -169,13 +165,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
         speechLanguage = getLangFromVoiceName(selectedVoice.name);
       }
 
-      // ⚠️ i18n integration: Always use i18n.language for translation and speech
-      setTranslationStatus('translating');
-      
-      // Optimize text for speech with translation to i18n language
+      // ⚠️ i18n integration: Optimize text for speech with i18n language
       finalText = await optimizeForSpeech(cleanText, currentLanguage);
-      
-      setTranslationStatus('ready');
 
       setCurrentText(finalText);
       setReadingHistory(prev => [finalText, ...prev.slice(0, 4)]); // Manter últimas 5
@@ -186,14 +177,12 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       speak(finalText, currentLanguage);
       
     } catch (error) {
-      console.error('Translation error:', error);
+      console.error('Speech error:', error);
       // ⚠️ i18n integration: Fallback to original text with current i18n language
       setCurrentText(cleanText);
       speak(cleanText, currentLanguage);
-    } finally {
-      setTranslationStatus('idle');
     }
-  }, [extractTextContent, speak, speaking, isTranslating, autoTranslationEnabled, 
+  }, [extractTextContent, speak, speaking,
       optimizeForSpeech, currentLanguage, getLangFromVoiceName, availableVoices, 
       currentSettings.voiceIndex, setLanguage]); // ⚠️ i18n integration: Updated dependencies
 
@@ -267,7 +256,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
         <button
           type="button"
           onClick={() => speaking ? stop() : handleStartReading()}
-          disabled={(speaking && !paused) || isTranslating || translationStatus !== 'idle'}
+          disabled={(speaking && !paused)}
           className={`
             fixed ${positionClasses[position]} z-50
             w-12 h-12 bg-jazz-gold text-black rounded-full
@@ -280,9 +269,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
           `}
           aria-label={speaking ? t('voice.stopReading') : t('voice.startReading')}
         >
-          {isTranslating || translationStatus !== 'idle' ? (
-            <Loader size={20} className="animate-spin" aria-hidden="true" />
-          ) : speaking ? (
+          {speaking ? (
             <Square size={20} aria-hidden="true" />
           ) : (
             <Play size={20} aria-hidden="true" />
@@ -301,14 +288,6 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               <h3 className="font-semibold text-lg flex items-center gap-2">
                 <Headphones size={16} />
                 {t('voice.voiceAndTranslation')}
-                {(translationStatus !== 'idle' || isTranslating) && (
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                    <Loader size={12} className="animate-spin" />
-                    {translationStatus === 'detecting' && t('voice.detecting')}
-                    {translationStatus === 'translating' && t('voice.translating')}
-                    {translationStatus === 'ready' && t('voice.ready')}
-                  </div>
-                )}
               </h3>
               <div className="flex items-center gap-2">
                 <button
@@ -398,22 +377,11 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
             ) : (
               <button
                 onClick={handleStartReading}
-                disabled={speaking || isTranslating || translationStatus !== 'idle'}
+                disabled={speaking}
                 className="p-3 rounded-lg bg-jazz-gold text-black hover:bg-jazz-gold/80 disabled:opacity-50 flex items-center gap-2"
                 aria-label={t('voice.startReading')}
               >
-                {isTranslating || translationStatus !== 'idle' ? (
-                  <>
-                    <Loader size={20} className="animate-spin" />
-                    <span className="text-sm">
-                     {translationStatus === 'detecting' && t('voice.detecting')}
-                     {translationStatus === 'translating' && t('voice.translating')}
-                     {translationStatus === 'ready' && t('voice.ready')}
-                    </span>
-                  </>
-                ) : (
-                  <Play size={20} />
-                )}
+                <Play size={20} />
               </button>
             )}
 

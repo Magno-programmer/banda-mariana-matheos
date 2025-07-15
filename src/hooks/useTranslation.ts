@@ -15,7 +15,6 @@ interface UseTranslationReturn {
   translateText: (text: string, targetLang?: string) => Promise<string>;
   optimizeForSpeech: (text: string, targetLang?: string) => Promise<string>;
   detectLanguage: (text: string) => string;
-  isTranslating: boolean;
   translationCache: TranslationCache;
   clearCache: () => void;
   getPageLanguage: () => string;
@@ -34,7 +33,6 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
     cacheSize = 50
   } = options;
 
-  const [isTranslating, setIsTranslating] = useState(false);
   const [translationCache, setTranslationCache] = useState<TranslationCache>({});
   const cacheKeysRef = useRef<string[]>([]);
 
@@ -145,65 +143,14 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
     return langMap[lang] || lang.split('-')[0];
   }, []);
 
-  // Tentar traduzir usando LibreTranslate (API livre com CORS)
-  const translateWithLibreTranslate = useCallback(async (text: string, sourceLang: string, targetLang: string): Promise<string> => {
-    try {
-      const response = await fetch('https://libretranslate.de/translate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          q: text,
-          source: sourceLang,
-          target: targetLang,
-          format: 'text'
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error(`LibreTranslate error: ${response.status}`);
-      }
-
-      const data = await response.json();
-      return data.translatedText || text;
-    } catch (error) {
-      console.warn('LibreTranslate failed:', error);
-      throw error;
-    }
+  // ⚠️ i18n integration: Use only i18next for translation (no external APIs)
+  const translateWithI18n = useCallback((text: string, targetLang: string): string => {
+    // Since we're using i18n only for interface translations, 
+    // we'll return the original text and let the speech synthesis handle the language
+    return text;
   }, []);
 
-  // Tentar traduzir usando MyMemory (fallback)
-  const translateWithMyMemory = useCallback(async (text: string, sourceLang: string, targetLang: string): Promise<string> => {
-    try {
-      const response = await fetch(
-        `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`,
-        {
-          headers: {
-            'Accept': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (compatible; TranslationApp/1.0)'
-          }
-        }
-      );
-      
-      if (!response.ok) {
-        throw new Error(`MyMemory error: ${response.status}`);
-      }
-      
-      const data = await response.json();
-      
-      if (data.responseStatus === 200 && data.responseData?.translatedText) {
-        return data.responseData.translatedText;
-      }
-      
-      throw new Error('Invalid response from MyMemory');
-    } catch (error) {
-      console.warn('MyMemory failed:', error);
-      throw error;
-    }
-  }, []);
-
-  // ⚠️ i18n integration: Main translation function uses i18n.language as default target
+  // ⚠️ i18n integration: Simplified translation using only i18next (no external APIs)
   const translateText = useCallback(async (text: string, targetLang?: string): Promise<string> => {
     const target = targetLang || currentLanguage; // ⚠️ i18n integration: Use current i18n language
     const cacheKey = `${text.substring(0, 100)}_${target}_${currentLanguage}`; // ⚠️ i18n integration: Include current language in cache key
@@ -218,86 +165,27 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
       return text;
     }
 
-    setIsTranslating(true);
+    // ⚠️ i18n integration: Since we're using only i18n, we return the original text
+    // The speech synthesis will handle the language pronunciation
+    const processedText = text;
 
-    try {
-      const sourceLanguage = detectLanguage(text);
-      const normalizedSource = normalizeLanguageCode(sourceLanguage);
-      const normalizedTarget = normalizeLanguageCode(target);
-      
-      // Mesmo idioma, não precisa traduzir
-      if (normalizedSource === normalizedTarget) {
-        setIsTranslating(false);
-        return text;
+    // Adicionar ao cache
+    const newCache = { ...translationCache };
+    newCache[cacheKey] = processedText;
+    
+    // Gerenciar tamanho do cache
+    cacheKeysRef.current.push(cacheKey);
+    if (cacheKeysRef.current.length > cacheSize) {
+      const oldestKey = cacheKeysRef.current.shift();
+      if (oldestKey) {
+        delete newCache[oldestKey];
       }
-
-      // Dividir texto em chunks menores se muito grande
-      const maxChunkSize = 800;
-      const chunks = [];
-      
-      if (text.length > maxChunkSize) {
-        const sentences = text.split(/(?<=[.!?])\s+/);
-        let currentChunk = '';
-        
-        for (const sentence of sentences) {
-          if (currentChunk.length + sentence.length > maxChunkSize) {
-            if (currentChunk) chunks.push(currentChunk.trim());
-            currentChunk = sentence;
-          } else {
-            currentChunk += (currentChunk ? ' ' : '') + sentence;
-          }
-        }
-        
-        if (currentChunk) chunks.push(currentChunk.trim());
-      } else {
-        chunks.push(text);
-      }
-
-      // Traduzir cada chunk com fallback entre APIs
-      const translatedChunks = await Promise.all(
-        chunks.map(async (chunk) => {
-          // Tentar LibreTranslate primeiro
-          try {
-            return await translateWithLibreTranslate(chunk, normalizedSource, normalizedTarget);
-          } catch (error) {
-            console.warn('LibreTranslate failed for chunk, trying MyMemory...');
-            
-            // Fallback para MyMemory
-            try {
-              return await translateWithMyMemory(chunk, normalizedSource, normalizedTarget);
-            } catch (error2) {
-              console.warn('MyMemory also failed, returning original text');
-              return chunk;
-            }
-          }
-        })
-      );
-
-      const translatedText = translatedChunks.join(' ');
-
-      // Adicionar ao cache
-      const newCache = { ...translationCache };
-      newCache[cacheKey] = translatedText;
-      
-      // Gerenciar tamanho do cache
-      cacheKeysRef.current.push(cacheKey);
-      if (cacheKeysRef.current.length > cacheSize) {
-        const oldestKey = cacheKeysRef.current.shift();
-        if (oldestKey) {
-          delete newCache[oldestKey];
-        }
-      }
-      
-      setTranslationCache(newCache);
-      setIsTranslating(false);
-      
-      return translatedText;
-    } catch (error) {
-      console.error('Translation error:', error);
-      setIsTranslating(false);
-      return text; // Retornar texto original em caso de erro
     }
-  }, [currentLanguage, translationCache, detectLanguage, cacheSize, normalizeLanguageCode, translateWithLibreTranslate, translateWithMyMemory]); // ⚠️ i18n integration: Updated dependencies
+    
+    setTranslationCache(newCache);
+    
+    return processedText;
+  }, [currentLanguage, translationCache, cacheSize]); // ⚠️ i18n integration: Simplified dependencies
   
   // ⚠️ i18n integration: Optimize text for speech synthesis with i18n language support
   const optimizeForSpeech = useCallback(async (text: string, targetLang?: string): Promise<string> => {
@@ -332,7 +220,6 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
     translateText,
     optimizeForSpeech, // ⚠️ i18n integration: New function for speech optimization
     detectLanguage,
-    isTranslating,
     translationCache,
     clearCache,
     getPageLanguage,
