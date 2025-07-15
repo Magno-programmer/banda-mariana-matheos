@@ -13,6 +13,7 @@ const ContactSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed opacity-10"
         style={{ backgroundImage: `url(${fundoBanda})` }}
+        aria-hidden="true"
       ></div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -27,10 +28,10 @@ const ContactSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* Informações de Contato */}
-            <div className="bg-gradient-to-br from-black to-jazz-dark border border-jazz-gold rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-glimmer text-jazz-gold mb-6">Informações</h3>
+            <div className="bg-gradient-to-br from-black to-jazz-dark border border-jazz-gold rounded-xl shadow-lg p-8" role="region" aria-labelledby="contact-info-heading">
+              <h3 id="contact-info-heading" className="text-2xl font-glimmer text-jazz-gold mb-6">Informações de Contato</h3>
 
-              <div className="space-y-6 font-gatsby text-gray-300">
+              <div className="space-y-6 font-gatsby text-gray-300" role="list">
                 <ContactItem icon={MessageCircle} label="WhatsApp" value="+55 (31) 9 9752-2127" />
                 <ContactItem icon={MapPin} label="Atuação" value="Minas Gerais e região" />
                 <ContactItem icon={Instagram} label="Instagram" value="@marianamatheosoficial" />
@@ -46,7 +47,8 @@ const ContactSection = () => {
 
                 <button
                   onClick={() => navigate('/')}
-                  className="w-full bg-transparent border border-jazz-gold text-2xl text-jazz-gold font-gatsbybold py-3 rounded hover:bg-jazz-gold hover:text-black transition"
+                  className="w-full bg-transparent border border-jazz-gold text-2xl text-jazz-gold font-gatsbybold py-3 rounded hover:bg-jazz-gold hover:text-black transition focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black"
+                  aria-label="Voltar para a página inicial"
                 >
                   Voltar ao Início
                 </button>
@@ -61,13 +63,13 @@ const ContactSection = () => {
 
 // Componente auxiliar para info
 const ContactItem = ({ icon: Icon, label, value }) => (
-  <div className="flex items-center space-x-4">
-    <div className="w-12 h-12 border border-jazz-gold rounded-full flex items-center justify-center">
+  <div className="flex items-center space-x-4" role="listitem">
+    <div className="w-12 h-12 border border-jazz-gold rounded-full flex items-center justify-center" aria-hidden="true">
       <Icon size={22} className="text-jazz-gold" />
     </div>
     <div>
       <p className="text-2xl font-gatsbybold font-bold text-jazz-gold">{label}</p>
-      <p className="text-2xl font-gatsbybold break-words text-gray-300">{value}</p>
+      <p className="text-2xl font-gatsbybold break-words text-gray-300" aria-label={`${label}: ${value}`}>{value}</p>
     </div>
   </div>
 );
@@ -78,10 +80,12 @@ const ActionButton = ({ href, icon: Icon, text }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="w-full flex items-center justify-center text-2xl space-x-3 border border-jazz-gold text-jazz-gold font-gatsbybold py-3 rounded hover:bg-jazz-gold hover:text-black transition"
+    className="w-full flex items-center justify-center text-2xl space-x-3 border border-jazz-gold text-jazz-gold font-gatsbybold py-3 rounded hover:bg-jazz-gold hover:text-black transition focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black"
+    aria-label={`${text} - abre em nova aba`}
   >
-    <Icon size={22} />
+    <Icon size={22} aria-hidden="true" />
     <span>{text}</span>
+    <span className="sr-only">(abre em nova aba)</span>
   </a>
 );
 

@@ -14,8 +14,8 @@ const WhatsAppButton = () => {
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 group animate-scale-in focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-white rounded-full"
       style={{animationDelay: '1s'}}
-      aria-label="Entre em contato conosco via WhatsApp - Mariana Matheos Banda de Jazz"
-      title="Clique para conversar no WhatsApp"
+      aria-label="Entre em contato conosco via WhatsApp - abre em nova aba"
+      title="Clique para conversar no WhatsApp - abre em nova aba"
     >
       <div className="bg-green-500 hover:bg-green-600 focus:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 group-hover:scale-110 group-focus:scale-110 flex items-center">
         <MessageCircle className="w-6 h-6" aria-hidden="true" />

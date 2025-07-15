@@ -31,7 +31,7 @@ const HeroSection = () => {
           {/* imagem de fundo */}
           <img
             src={bandaCompletaPalco}
-            alt="Mariana Matheos em apresentação ao vivo do festival Jazz & Blues de Tiradentes em Nova Lima - MG"
+            alt="Mariana Matheos e banda durante apresentação ao vivo"
             className="relative top-0 left-0 w-full object-cover z-0 opacity-50 fade-bottom"
           />
 
@@ -73,7 +73,7 @@ const HeroSection = () => {
             <button
               onClick={() => navigate('/sobre')}
               className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg mt-[119px] h-[75px] w-[253px] text-jazz-gold hover:bg-jazz-gold hover:text-black focus:bg-jazz-gold focus:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-20 focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded"
-              aria-label="Conheça nossa Banda de Jazz - Ir para página sobre"
+              aria-label="Saiba mais sobre a história e membros da Banda Mariana Matheos"
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
@@ -81,7 +81,7 @@ const HeroSection = () => {
                 }
               }}
             >
-              Conheça nossa Banda de jazz
+              Conheça nossa História
             </button>
 
           </div>
