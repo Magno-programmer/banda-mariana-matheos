@@ -29,6 +29,25 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   const [autoTranslationEnabled, setAutoTranslationEnabled] = useState(autoTranslate);
   const [translationStatus, setTranslationStatus] = useState<'idle' | 'detecting' | 'translating' | 'ready'>('idle');
 
+  // Função para mapear nome da voz para código de idioma
+  const getLangFromVoiceName = useCallback((voiceName: string): string => {
+    const map: Record<string, string> = {
+      "Google US English": "en-US",
+      "Google UK English Female": "en-GB",
+      "Google UK English Male": "en-GB",
+      "Google español": "es-ES",
+      "Google español de Estados Unidos": "es-US",
+      "Google français": "fr-FR",
+      "Google português do Brasil": "pt-BR",
+      "Microsoft Daniel - Portuguese (Brazil)": "pt-BR",
+      "Microsoft Zira - English (United States)": "en-US",
+      "Microsoft Mark - English (United States)": "en-US",
+      "Microsoft David - English (United States)": "en-US",
+      "Microsoft Maria - Portuguese (Brazil)": "pt-BR",
+    };
+    return map[voiceName] || "pt-BR";
+  }, []);
+
   const {
     speak, stop, pause, resume, skipToNext, skipToPrevious,
     setRate, setPitch, setVolume, setVoice, setLanguage,
@@ -137,16 +156,21 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       let finalText = cleanText;
       let speechLanguage = 'pt-BR';
 
-      if (autoTranslationEnabled) {
+      // Obter idioma da voz selecionada
+      const selectedVoice = availableVoices[currentSettings.voiceIndex];
+      if (selectedVoice) {
+        speechLanguage = getLangFromVoiceName(selectedVoice.name);
+      }
+
+      // Traduzir se necessário
+      if (autoTranslationEnabled && speechLanguage !== 'pt-BR') {
         const pageLanguage = getPageLanguage();
-        const userLanguage = getUserLanguage();
         
-        if (needsTranslation(pageLanguage, userLanguage)) {
+        if (pageLanguage !== speechLanguage) {
           setTranslationStatus('translating');
           
-          // Traduzir para o idioma do usuário
-          finalText = await translateText(cleanText, userLanguage);
-          speechLanguage = userLanguage;
+          // Traduzir para o idioma da voz selecionada
+          finalText = await translateText(cleanText, speechLanguage);
           
           setTranslationStatus('ready');
         } else {
@@ -159,17 +183,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       setCurrentText(finalText);
       setReadingHistory(prev => [finalText, ...prev.slice(0, 4)]); // Manter últimas 5
       
-      // Configurar idioma e voz apropriada
+      // Configurar idioma e voz
       setLanguage(speechLanguage);
-      
-      // Encontrar voz compatível com o idioma
-      const compatibleVoice = availableVoices.findIndex(voice => 
-        voice.lang.startsWith(speechLanguage.split('-')[0])
-      );
-      
-      if (compatibleVoice !== -1) {
-        setVoice(compatibleVoice);
-      }
       
       speak(finalText, speechLanguage);
       
@@ -182,8 +197,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       setTranslationStatus('idle');
     }
   }, [extractTextContent, speak, speaking, isTranslating, autoTranslationEnabled, 
-      translateText, getPageLanguage, getUserLanguage, needsTranslation, 
-      setLanguage, availableVoices, setVoice]);
+      translateText, getPageLanguage, getLangFromVoiceName, availableVoices, 
+      currentSettings.voiceIndex, setLanguage]);
 
   const handleAddBookmark = useCallback(() => {
     if (speaking && currentText) {
@@ -288,7 +303,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-semibold text-lg flex items-center gap-2">
                 <Headphones size={16} />
-                Controles de Voz
+                Voz e Tradução
                 {(translationStatus !== 'idle' || isTranslating) && (
                   <div className="flex items-center gap-1 text-sm text-muted-foreground">
                     <Loader size={12} className="animate-spin" />
@@ -339,7 +354,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               </div>
               {currentSettings.language !== 'pt-BR' && (
                 <div className="text-xs text-muted-foreground mt-1">
-                  Idioma: {currentSettings.language}
+                  Idioma: {availableVoices[currentSettings.voiceIndex]?.name || currentSettings.language}
                 </div>
               )}
             </div>
@@ -480,7 +495,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               >
                 {availableVoices.map((voice, index) => (
                   <option key={voice.voiceURI} value={index}>
-                    {voice.name} ({voice.lang})
+                    {voice.name}
                   </option>
                 ))}
               </select>
