@@ -161,34 +161,59 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
   }, []);
 
   // Tentar traduzir usando MyMemory (fallback)
-  const translateWithMyMemory = useCallback(async (text: string, sourceLang: string, targetLang: string): Promise<string> => {
-    try {
+  const translateWithMyMemory = async (text: string, sourceLang: string, targetLang: string): Promise<string> => {
+    const MAX_LENGTH = 500;
+
+    // Se o texto for pequeno, faz a requisição única
+    if (text.length <= MAX_LENGTH) {
       const response = await fetch(
-        `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`,
-        {
-          headers: {
-            'Accept': 'application/json',
-            'User-Agent': 'Mozilla/5.0 (compatible; TranslationApp/1.0)'
-          }
-        }
+        `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`
       );
-      
-      if (!response.ok) {
-        throw new Error(`MyMemory error: ${response.status}`);
-      }
-      
       const data = await response.json();
-      
       if (data.responseStatus === 200 && data.responseData?.translatedText) {
         return data.responseData.translatedText;
       }
-      
-      throw new Error('Invalid response from MyMemory');
-    } catch (error) {
-      console.warn('MyMemory failed:', error);
-      throw error;
+      return text; // fallback
     }
-  }, []);
+
+    // Se o texto for maior, divide em pedaços e traduz em sequência
+    const chunks: string[] = [];
+    let current = '';
+    const sentences = text.split(/(?<=[.!?])\s+/); // divide por frases
+
+    for (const sentence of sentences) {
+      if ((current + sentence).length > MAX_LENGTH) {
+        chunks.push(current.trim());
+        current = sentence;
+      } else {
+        current += (current ? ' ' : '') + sentence;
+      }
+    }
+    if (current) chunks.push(current.trim());
+
+    const results: string[] = [];
+
+    for (let i = 0; i < chunks.length; i++) {
+      const chunk = chunks[i];
+      try {
+        const response = await fetch(
+          `https://api.mymemory.translated.net/get?q=${encodeURIComponent(chunk)}&langpair=${sourceLang}|${targetLang}`
+        );
+        const data = await response.json();
+        if (data.responseStatus === 200 && data.responseData?.translatedText) {
+          results.push(data.responseData.translatedText);
+        } else {
+          results.push(chunk); // fallback se erro
+        }
+      } catch (err) {
+        console.warn(`[MyMemory] Erro ao traduzir chunk ${i + 1}:`, err);
+        results.push(chunk); // fallback
+      }
+    }
+
+    return results.join(' ');
+  };
+
 
   // Função principal de tradução com múltiplas APIs e fallbacks
   const translateText = useCallback(async (text: string, targetLang?: string): Promise<string> => {
