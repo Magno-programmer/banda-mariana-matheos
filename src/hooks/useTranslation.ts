@@ -119,7 +119,78 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
     return bestMatch;
   }, []);
 
-  // Função de tradução usando Google Translate API gratuita
+  // Normalizar códigos de idioma para compatibilidade
+  const normalizeLanguageCode = useCallback((lang: string): string => {
+    const langMap: Record<string, string> = {
+      'pt-BR': 'pt',
+      'en-US': 'en',
+      'en-GB': 'en',
+      'es-ES': 'es',
+      'es-US': 'es',
+      'fr-FR': 'fr'
+    };
+    return langMap[lang] || lang.split('-')[0];
+  }, []);
+
+  // Tentar traduzir usando LibreTranslate (API livre com CORS)
+  const translateWithLibreTranslate = useCallback(async (text: string, sourceLang: string, targetLang: string): Promise<string> => {
+    try {
+      const response = await fetch('https://libretranslate.de/translate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          q: text,
+          source: sourceLang,
+          target: targetLang,
+          format: 'text'
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`LibreTranslate error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.translatedText || text;
+    } catch (error) {
+      console.warn('LibreTranslate failed:', error);
+      throw error;
+    }
+  }, []);
+
+  // Tentar traduzir usando MyMemory (fallback)
+  const translateWithMyMemory = useCallback(async (text: string, sourceLang: string, targetLang: string): Promise<string> => {
+    try {
+      const response = await fetch(
+        `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`,
+        {
+          headers: {
+            'Accept': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (compatible; TranslationApp/1.0)'
+          }
+        }
+      );
+      
+      if (!response.ok) {
+        throw new Error(`MyMemory error: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.responseStatus === 200 && data.responseData?.translatedText) {
+        return data.responseData.translatedText;
+      }
+      
+      throw new Error('Invalid response from MyMemory');
+    } catch (error) {
+      console.warn('MyMemory failed:', error);
+      throw error;
+    }
+  }, []);
+
+  // Função principal de tradução com múltiplas APIs e fallbacks
   const translateText = useCallback(async (text: string, targetLang?: string): Promise<string> => {
     const target = targetLang || targetLanguage;
     const cacheKey = `${text.substring(0, 100)}_${target}`;
@@ -129,19 +200,26 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
       return translationCache[cacheKey];
     }
 
+    // Texto muito curto ou vazio
+    if (!text || text.trim().length < 3) {
+      return text;
+    }
+
     setIsTranslating(true);
 
     try {
-      // Usar Google Translate API gratuita via MyMemory
       const sourceLanguage = detectLanguage(text);
+      const normalizedSource = normalizeLanguageCode(sourceLanguage);
+      const normalizedTarget = normalizeLanguageCode(target);
       
-      if (sourceLanguage === target.split('-')[0]) {
+      // Mesmo idioma, não precisa traduzir
+      if (normalizedSource === normalizedTarget) {
         setIsTranslating(false);
-        return text; // Já está no idioma correto
+        return text;
       }
 
       // Dividir texto em chunks menores se muito grande
-      const maxChunkSize = 1000;
+      const maxChunkSize = 800;
       const chunks = [];
       
       if (text.length > maxChunkSize) {
@@ -162,30 +240,22 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
         chunks.push(text);
       }
 
-      // Traduzir cada chunk
+      // Traduzir cada chunk com fallback entre APIs
       const translatedChunks = await Promise.all(
         chunks.map(async (chunk) => {
+          // Tentar LibreTranslate primeiro
           try {
-            // Usar serviço gratuito MyMemory
-            const response = await fetch(
-              `https://api.mymemory.translated.net/get?q=${encodeURIComponent(chunk)}&langpair=${sourceLanguage}|${target.split('-')[0]}`
-            );
-            
-            if (!response.ok) {
-              throw new Error('Translation service unavailable');
-            }
-            
-            const data = await response.json();
-            
-            if (data.responseStatus === 200 && data.responseData?.translatedText) {
-              return data.responseData.translatedText;
-            }
-            
-            // Fallback: retornar texto original
-            return chunk;
+            return await translateWithLibreTranslate(chunk, normalizedSource, normalizedTarget);
           } catch (error) {
-            console.warn('Translation failed for chunk:', error);
-            return chunk;
+            console.warn('LibreTranslate failed for chunk, trying MyMemory...');
+            
+            // Fallback para MyMemory
+            try {
+              return await translateWithMyMemory(chunk, normalizedSource, normalizedTarget);
+            } catch (error2) {
+              console.warn('MyMemory also failed, returning original text');
+              return chunk;
+            }
           }
         })
       );
@@ -214,7 +284,7 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
       setIsTranslating(false);
       return text; // Retornar texto original em caso de erro
     }
-  }, [targetLanguage, translationCache, detectLanguage, cacheSize]);
+  }, [targetLanguage, translationCache, detectLanguage, cacheSize, normalizeLanguageCode, translateWithLibreTranslate, translateWithMyMemory]);
 
   const clearCache = useCallback(() => {
     setTranslationCache({});
