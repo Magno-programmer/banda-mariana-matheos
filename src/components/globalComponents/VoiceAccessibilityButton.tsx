@@ -26,7 +26,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   const [currentText, setCurrentText] = useState('');
   const [readingHistory, setReadingHistory] = useState<string[]>([]);
   const [bookmarks, setBookmarks] = useState<{sentence: string, timestamp: Date}[]>([]);
-  const [useTranslation, setUseTranslation] = useState(autoTranslate);
+  const [autoTranslationEnabled, setAutoTranslationEnabled] = useState(autoTranslate);
   const [translationStatus, setTranslationStatus] = useState<'idle' | 'detecting' | 'translating' | 'ready'>('idle');
 
   const {
@@ -137,7 +137,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       let finalText = cleanText;
       let speechLanguage = 'pt-BR';
 
-      if (useTranslation) {
+      if (autoTranslationEnabled) {
         const pageLanguage = getPageLanguage();
         const userLanguage = getUserLanguage();
         
@@ -181,7 +181,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
     } finally {
       setTranslationStatus('idle');
     }
-  }, [extractTextContent, speak, speaking, isTranslating, useTranslation, 
+  }, [extractTextContent, speak, speaking, isTranslating, autoTranslationEnabled, 
       translateText, getPageLanguage, getUserLanguage, needsTranslation, 
       setLanguage, availableVoices, setVoice]);
 
@@ -300,13 +300,13 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               </h3>
               <div className="flex items-center gap-2">
                 <button
-                  onClick={() => setUseTranslation(!useTranslation)}
+                  onClick={() => setAutoTranslationEnabled(!autoTranslationEnabled)}
                   className={`p-1 rounded transition-colors ${
-                    useTranslation 
+                    autoTranslationEnabled 
                       ? 'bg-jazz-gold text-black' 
                       : 'text-muted-foreground hover:text-foreground'
                   }`}
-                  title={useTranslation ? 'Tradução automática ativa' : 'Tradução automática desativada'}
+                  title={autoTranslationEnabled ? 'Tradução automática ativa' : 'Tradução automática desativada'}
                 >
                   <Globe size={14} />
                 </button>
@@ -325,8 +325,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               <div className="flex items-center justify-between text-lg text-muted-foreground mb-2">
                 <span>Sentença {currentSentence + 1} de {totalSentences}</span>
                 <div className="flex items-center gap-2">
-                  {useTranslation && (
-                    <Globe size={12} className="text-jazz-gold" title="Tradução ativa" />
+                  {autoTranslationEnabled && (
+                    <Globe size={12} className="text-jazz-gold" />
                   )}
                   <span>{Math.round(progress)}%</span>
                 </div>
@@ -549,8 +549,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
             <span className="text-muted-foreground">
               {currentSentence + 1}/{totalSentences}
             </span>
-            {useTranslation && currentSettings.language !== 'pt-BR' && (
-              <Globe size={12} className="text-jazz-gold" title={`Lendo em ${currentSettings.language}`} />
+            {autoTranslationEnabled && currentSettings.language !== 'pt-BR' && (
+              <Globe size={12} className="text-jazz-gold"  />
             )}
           </div>
         )}
