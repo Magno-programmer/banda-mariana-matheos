@@ -132,40 +132,13 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
     return langMap[lang] || lang.split('-')[0];
   }, []);
 
-  // Tentar traduzir usando LibreTranslate (API livre com CORS)
-  const translateWithLibreTranslate = useCallback(async (text: string, sourceLang: string, targetLang: string): Promise<string> => {
-    try {
-      const response = await fetch('https://libretranslate.de/translate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          q: text,
-          source: sourceLang,
-          target: targetLang,
-          format: 'text'
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error(`LibreTranslate error: ${response.status}`);
-      }
-
-      const data = await response.json();
-      return data.translatedText || text;
-    } catch (error) {
-      console.warn('LibreTranslate failed:', error);
-      throw error;
-    }
-  }, []);
-
-  // Tentar traduzir usando MyMemory (fallback)
+  // Traduzir usando MyMemory (API principal com CORS habilitado)
   const translateWithMyMemory = useCallback(async (text: string, sourceLang: string, targetLang: string): Promise<string> => {
     try {
       const response = await fetch(
         `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${sourceLang}|${targetLang}`,
         {
+          method: 'GET',
           headers: {
             'Accept': 'application/json',
             'User-Agent': 'Mozilla/5.0 (compatible; TranslationApp/1.0)'
@@ -185,7 +158,34 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
       
       throw new Error('Invalid response from MyMemory');
     } catch (error) {
-      console.warn('MyMemory failed:', error);
+      console.warn('MyMemory translation failed:', error);
+      throw error;
+    }
+  }, []);
+
+  // Traduzir usando FreeTranslate (fallback alternativo)
+  const translateWithFreeTranslate = useCallback(async (text: string, sourceLang: string, targetLang: string): Promise<string> => {
+    try {
+      const response = await fetch('https://ftapi.pythonanywhere.com/translate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sl: sourceLang,
+          dl: targetLang,
+          text: text
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`FreeTranslate error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.destination_text || text;
+    } catch (error) {
+      console.warn('FreeTranslate failed:', error);
       throw error;
     }
   }, []);
@@ -243,17 +243,17 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
       // Traduzir cada chunk com fallback entre APIs
       const translatedChunks = await Promise.all(
         chunks.map(async (chunk) => {
-          // Tentar LibreTranslate primeiro
+          // Tentar MyMemory primeiro
           try {
-            return await translateWithLibreTranslate(chunk, normalizedSource, normalizedTarget);
+            return await translateWithMyMemory(chunk, normalizedSource, normalizedTarget);
           } catch (error) {
-            console.warn('LibreTranslate failed for chunk, trying MyMemory...');
+            console.warn('MyMemory failed for chunk, trying FreeTranslate...');
             
-            // Fallback para MyMemory
+            // Fallback para FreeTranslate
             try {
-              return await translateWithMyMemory(chunk, normalizedSource, normalizedTarget);
+              return await translateWithFreeTranslate(chunk, normalizedSource, normalizedTarget);
             } catch (error2) {
-              console.warn('MyMemory also failed, returning original text');
+              console.warn('All translation services failed, returning original text');
               return chunk;
             }
           }
@@ -284,7 +284,7 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
       setIsTranslating(false);
       return text; // Retornar texto original em caso de erro
     }
-  }, [targetLanguage, translationCache, detectLanguage, cacheSize, normalizeLanguageCode, translateWithLibreTranslate, translateWithMyMemory]);
+  }, [targetLanguage, translationCache, detectLanguage, cacheSize, normalizeLanguageCode, translateWithMyMemory, translateWithFreeTranslate]);
 
   const clearCache = useCallback(() => {
     setTranslationCache({});
