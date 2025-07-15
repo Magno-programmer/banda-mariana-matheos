@@ -34,7 +34,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
     speak, stop, pause, resume, skipToNext, skipToPrevious,
     setRate, setPitch, setVolume, setVoice, setLanguage,
     speaking, paused, supported, availableVoices,
-    currentSentence, totalSentences, progress, currentSettings
+    currentSentence, totalSentences, progress, currentSettings,
+    getSelectedVoiceName, getSelectedVoiceLanguage
   } = useSpeech({
     lang: 'pt-BR',
     rate: 0.9,
@@ -121,11 +122,6 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
     chunkStrategy: 'smart'
   });
 
-  // Extrair idioma da voz selecionada
-  const getSelectedVoiceLanguage = useCallback(() => {
-    const currentVoice = availableVoices[currentSettings.voiceIndex];
-    return currentVoice ? currentVoice.lang : 'pt-BR';
-  }, [availableVoices, currentSettings.voiceIndex]);
 
   // Verificar se precisa traduzir baseado na voz selecionada
   const needsTranslationForVoice = useCallback((pageLanguage: string, voiceLanguage: string) => {
@@ -203,7 +199,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
     }
   }, [extractTextContent, speak, speaking, isTranslating, autoTranslationEnabled, 
       getSelectedVoiceLanguage, needsTranslationForVoice, getPageLanguage, 
-      translateText, optimizeForSpeech, setLanguage]);
+      translateText, optimizeForSpeech, setLanguage, getSelectedVoiceName]);
 
   const handleAddBookmark = useCallback(() => {
     if (speaking && currentText) {
@@ -363,9 +359,9 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                   style={{ width: `${progress}%` }}
                 />
               </div>
-              {currentSettings.language !== 'pt-BR' && (
+              {getSelectedVoiceLanguage() !== 'pt-BR' && (
                 <div className="text-xs text-muted-foreground mt-1">
-                  Idioma: {currentSettings.language}
+                  Voz: {getSelectedVoiceName()}
                 </div>
               )}
             </div>
@@ -499,7 +495,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               <label className="text-xs text-muted-foreground mb-1 block flex items-center justify-between">
                 <span>Voz</span>
                 <span className="text-xs text-jazz-gold">
-                  {selectedVoiceLanguage !== 'pt-BR' && autoTranslationEnabled && '🌐 Tradução ativa'}
+                  {getSelectedVoiceLanguage() !== 'pt-BR' && autoTranslationEnabled && '🌐 Tradução ativa'}
                 </span>
               </label>
               <select
@@ -509,13 +505,13 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               >
                 {availableVoices.map((voice, index) => (
                   <option key={voice.voiceURI} value={index}>
-                    {voice.name} ({voice.lang})
+                    {voice.name}
                   </option>
                 ))}
               </select>
-              {selectedVoiceLanguage !== 'pt-BR' && autoTranslationEnabled && (
+              {getSelectedVoiceLanguage() !== 'pt-BR' && autoTranslationEnabled && (
                 <div className="text-xs text-muted-foreground mt-1">
-                  O texto será traduzido para {selectedVoiceLanguage}
+                  O texto será traduzido para {getSelectedVoiceName()}
                 </div>
               )}
             </div>
@@ -583,7 +579,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
             <span className="text-muted-foreground">
               {currentSentence + 1}/{totalSentences}
             </span>
-            {autoTranslationEnabled && currentSettings.language !== 'pt-BR' && (
+            {autoTranslationEnabled && getSelectedVoiceLanguage() !== 'pt-BR' && (
               <Globe size={12} className="text-jazz-gold"  />
             )}
           </div>
