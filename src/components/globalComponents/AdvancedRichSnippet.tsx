@@ -39,9 +39,9 @@ const AdvancedRichSnippet = () => {
       "https://marianamatheos.com.br/images/cantora.png",
       "https://marianamatheos.com.br/images/banda.png"
     ],
-    "description": "Banda de jazz especializada em apresentações ao vivo com repertório da Era de Ouro do Jazz, incluindo clássicos de Billie Holiday, Amy Winehouse, Nina Simone e mais.",
-    "genre": ["Jazz", "Soul", "Blues", "R&B", "Bossa Nova"],
-    "foundingDate": "2020",
+    "description": "Banda de jazz ao vivo sediada em Belo Horizonte, com repertório inspirado na Era de Ouro do Jazz. Especializada em eventos sofisticados, casamentos, festivais e repertório com grandes artistas como Billie Holiday, Amy Winehouse e Nina Simone.",
+    "genre": ["Jazz", "Soul", "Blues", "R&B"],
+    "foundingDate": "2024-05-10",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Belo Horizonte",
@@ -51,8 +51,7 @@ const AdvancedRichSnippet = () => {
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+55-31-99752-2127",
-      "email": "contato@marianamatheos.com.br",
-      "contactType": "Customer Service",
+      "contactType": "Booking",
       "availableLanguage": ["Portuguese", "English"]
     },
     "sameAs": [
@@ -64,88 +63,206 @@ const AdvancedRichSnippet = () => {
       "Wedding Music",
       "Corporate Events",
       "Live Music Entertainment",
-      "Billie Holiday Tribute",
-      "Amy Winehouse Tribute",
-      "Nina Simone Tribute"
+      "Vintage Jazz",
+      "Jazz para Casamento",
+      "Billie Holiday",
+      "Amy Winehouse",
+      "Nina Simone"
     ]
   };
 
-  // Events data
-  const events: Event[] = [
-    {
-      name: "Show da Mariana Matheos no The Bulltique Vino Bar",
-      startDate: "2025-08-08T20:00:00-03:00",
-      endDate: "2025-08-08T22:00:00-03:00",
-      venue: "The Bulltique Vino Bar",
-      description: "Uma noite especial de jazz com a Mariana Matheos e sua banda",
-      price: "R$ 80"
-    },
-    {
-      name: "Apresentação em Casamento - Local Privado",
-      startDate: "2025-09-15T19:00:00-03:00",
-      endDate: "2025-09-15T23:00:00-03:00",
-      venue: "Evento Privado",
-      description: "Cerimônia e recepção de casamento com repertório personalizado"
-    }
-  ];
 
-  // Reviews data
-  const reviews: Review[] = [
-    {
-      author: "Geraldo Santana",
-      rating: 5,
-      reviewBody: "Excelente cantora!! Vale a pena assistir o seu show!!",
-      datePublished: "2024-03-15"
-    },
-    {
-      author: "Juciane Petenusso",
-      rating: 5,
-      reviewBody: "Excelente cantora, uma voz maravilhosa e canta todo tipo de música... super animada e simpática",
-      datePublished: "2024-04-22"
-    },
-    {
-      author: "Vanessa Guedes",
-      rating: 5,
-      reviewBody: "Cantora sensacional! Deus abençoe nesta jornada... Emoção e carisma!",
-      datePublished: "2024-05-10"
-    },
-    {
-      author: "Carlos Silva",
-      rating: 5,
-      reviewBody: "Contratei para meu casamento e foi perfeito! Repertório impecável e apresentação profissional.",
-      datePublished: "2024-06-18"
-    },
-    {
-      author: "Marina Costa",
-      rating: 5,
-      reviewBody: "Show incrível! A voz da Mariana é única e a banda é muito talentosa.",
-      datePublished: "2024-07-05"
-    }
-  ];
 
-  // FAQ data
-  const faqs: FAQ[] = [
-    {
-      question: "Qual é o repertório da banda?",
-      answer: "Nosso repertório inclui clássicos do jazz, soul, blues e R&B, com interpretações de artistas como Billie Holiday, Amy Winehouse, Nina Simone, Ella Fitzgerald e muito mais. Também tocamos bossa nova e música brasileira."
-    },
-    {
-      question: "Vocês tocam em casamentos?",
-      answer: "Sim! Somos especializados em casamentos e eventos corporativos. Oferecemos diferentes formações da banda e repertório personalizado para cada momento da cerimônia e recepção."
-    },
-    {
-      question: "Qual é o valor do show?",
-      answer: "O valor varia conforme a duração, local, formação da banda e tipo de evento. Entre em contato para um orçamento personalizado."
-    },
-    {
-      question: "Vocês fornecem equipamento de som?",
-      answer: "Sim, fornecemos todo o equipamento de som necessário, incluindo microfones, amplificadores e mesa de som profissional."
-    },
-    {
-      question: "Com quanto tempo de antecedência devo contratar?",
-      answer: "Recomendamos pelo menos 3 meses de antecedência, especialmente para eventos em alta temporada como dezembro e janeiro."
-    }
-  ];
+// Events data
+const events: Event[] = [
+  {
+    name: "Show da Mariana Matheos no The Bulltique Vino Bar",
+    startDate: "2025-08-08T20:00:00-03:00",
+    endDate: "2025-08-08T22:00:00-03:00",
+    venue: "The Bulltique Vino Bar",
+    description: "Uma noite especial de jazz com a Mariana Matheos e sua banda",
+    price: "R$ 25"
+  },
+  {
+    name: "Show da Mariana Matheos no Soul Jazz Burguer",
+    startDate: "2025-08-16T19:30:00-03:00",
+    endDate: "2025-08-16T21:30:00-03:00",
+    venue: "Soul Jazz Burguer",
+    description: "Show de jazz ao vivo em ambiente intimista no Soul Jazz Burguer",
+    price: "R$ 20"
+  },
+  {
+    name: "Show da Mariana Matheos no The Bulltique Vino Bar",
+    startDate: "2025-09-12T20:00:00-03:00",
+    endDate: "2025-09-12T22:00:00-03:00",
+    venue: "The Bulltique Vino Bar",
+    description: "Retorno da Mariana Matheos ao palco do The Bulltique Vino Bar com repertório especial de jazz e soul",
+    price: "R$ 25"
+  }
+];
+
+// Review data 
+const reviews: Review[] = [
+  {
+    author: "Geraldo Santana",
+    rating: 5,
+    reviewBody: "Excelente cantora!! Vale a pena assistir o seu show!!",
+    datePublished: "2024-03-01"
+  },
+  {
+    author: "Juciane Petenusso",
+    rating: 5,
+    reviewBody: "Excelente cantora, uma voz maravilhosa e canta todo tipo de música... super animada e simpática",
+    datePublished: "2024-03-05"
+  },
+  {
+    author: "Vanessa Guedes",
+    rating: 5,
+    reviewBody: "Cantora sensacional! Deus abençoe nesta jornada... Emoção e carisma!",
+    datePublished: "2024-03-10"
+  },
+  {
+    author: "Ana Carolina",
+    rating: 5,
+    reviewBody: "Canta muitooooo. Adorei!!!! Irei mais vezes.",
+    datePublished: "2024-03-15"
+  },
+  {
+    author: "Kel Souza",
+    rating: 5,
+    reviewBody: "Alegria e simpatia sempre em alta. Sucesso p vc!",
+    datePublished: "2024-03-20"
+  },
+  {
+    author: "Carlos Magno",
+    rating: 5,
+    reviewBody: "Banda top demais, sucesso!!",
+    datePublished: "2024-03-25"
+  },
+  {
+    author: "Luciana dos Santos",
+    rating: 5,
+    reviewBody: "Sensação que estamos na década de 20 ~ 60, é algo tão único que não dá pra explicar, tem que assistir.",
+    datePublished: "2024-04-01"
+  },
+  {
+    author: "Mariana Sabbag",
+    rating: 5,
+    reviewBody: "Excelente experiência estar em sua presença ouvindo o repertório.",
+    datePublished: "2024-04-06"
+  },
+  {
+    author: "Sergio Roberto",
+    rating: 5,
+    reviewBody: "Mariana é uma cantora excelente, super afinada, interage com o público.",
+    datePublished: "2024-04-10"
+  },
+  {
+    author: "Andre Guedes",
+    rating: 5,
+    reviewBody: "Excelente cantora!",
+    datePublished: "2024-04-15"
+  },
+  {
+    author: "Alende Guedes",
+    rating: 5,
+    reviewBody: "👏👏👏👏 Sucesso Mariana!",
+    datePublished: "2024-04-20"
+  },
+  {
+    author: "Reginaldo Santos",
+    rating: 5,
+    reviewBody: "Mariana você é 10",
+    datePublished: "2024-04-25"
+  }
+];
+
+// ClientReview data
+const clientReviews: Review[] = [
+  {
+    author: "Poliana (Soul Jazz Burguer)",
+    rating: 5,
+    reviewBody: "Eeeeiii Mari!! Foi muito bacana!!! Agradecemos mais uma vez a parceria!!",
+    datePublished: "2024-05-01"
+  },
+  {
+    author: "Ana Luiza (Restaurante Le Pontes)",
+    rating: 5,
+    reviewBody: "A gente adorou a apresentação de vocês, queremos trazer vocês mais vezes. Muitíssimo obrigada!!",
+    datePublished: "2024-05-05"
+  },
+  {
+    author: "Ravana (Arena Cachoeirinha)",
+    rating: 5,
+    reviewBody: "Nossa foi otimooooooo! Brigaduuuu, foi tão lindooooo! Obrigadaaaaaaa, lindezaaaa!",
+    datePublished: "2024-05-10"
+  },
+  {
+    author: "Maurinho (Chopperhead Garage)",
+    rating: 5,
+    reviewBody: "Vamos fazer mais! ✌️",
+    datePublished: "2024-05-15"
+  },
+  {
+    author: "Lucca (Barólio)",
+    rating: 5,
+    reviewBody: "O pessoal gostou bastante, muito obrigado!",
+    datePublished: "2024-05-20"
+  },
+  {
+    author: "André Serra (Evento de Carros Antigos de Matozinhos)",
+    rating: 5,
+    reviewBody: "Seu show foi fantástico! Marcou a história da nossa região. Sucesso total!",
+    datePublished: "2024-05-25"
+  },
+  {
+    author: "Débora (The Bulltique Vino Bar)",
+    rating: 5,
+    reviewBody: "Foi tudo lindo e mágico! 😍 Ansiosa para nosso próximo encontro!!!!",
+    datePublished: "2024-06-01"
+  }
+];
+
+
+// FAQ data
+const faqs: FAQ[] = [
+  {
+    question: "Quanto custa contratar a Mariana Matheos para casamento ou evento?",
+    answer: "O valor varia conforme o tipo de evento, local e estrutura técnica necessária. Solicite um orçamento sem compromisso!"
+  },
+  {
+    question: "A banda toca músicas escolhidas pelos noivos?",
+    answer: "Sim! Os noivos podem escolher até 2 músicas que combinem com o estilo da banda. A curadoria é feita por Mariana Matheos para manter a harmonia artística."
+  },
+  {
+    question: "A banda faz apresentações em eventos corporativos e particulares?",
+    answer: "Sim! A banda se apresenta em eventos empresariais, festivais, jantares elegantes, bares de vinho e casas de jazz."
+  },
+  {
+    question: "Quais estilos musicais fazem parte do repertório da banda?",
+    answer: "O repertório inclui Jazz Clássico, Soul, Blues, R&B e releituras vintage de pop contemporâneo, com influências da Era de Ouro do Jazz."
+  },
+  {
+    question: "A banda se apresenta fora de Belo Horizonte?",
+    answer: "Sim! A banda já se apresentou em cidades como Nova Lima, Matozinhos e Ribeirão das Neves. O deslocamento já está incluso no investimento para regiões próximas."
+  },
+  {
+    question: "A banda leva os equipamentos necessários?",
+    answer: "Sim. A banda leva instrumentos, microfones e pedalboards. O contratante fornece apenas o PA, energia elétrica e, em alguns casos, alimentação."
+  },
+  {
+    question: "Quantas pessoas compõem a banda?",
+    answer: "A formação padrão inclui 5 músicos: vocal, piano, baixo/guitarra, bateria e trompete. Formatos reduzidos são possíveis mediante acordo."
+  },
+  {
+    question: "Quanto tempo dura o show?",
+    answer: "A duração padrão é de 2 horas, com intervalo. Shows mais curtos também são possíveis sem pausa."
+  },
+  {
+    question: "A banda possui boas recomendações?",
+    answer: "Sim! A banda tem avaliação 5,0 estrelas no Google e é amplamente elogiada por clientes de casamentos, restaurantes e eventos corporativos."
+  }
+];
 
   // Generate structured data based on current route
   const generateStructuredData = () => {
@@ -160,9 +277,9 @@ const AdvancedRichSnippet = () => {
         schemas.push({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "name": "Mariana Matheos Jazz Band",
+          "name": "Mariana Matheos",
           "url": "https://marianamatheos.com.br",
-          "description": "Site oficial da Mariana Matheos Jazz Band - Música ao vivo para casamentos e eventos corporativos",
+          "description": "Site oficial da Mariana Matheos - Música ao vivo para casamentos e eventos corporativos",
           "publisher": {
             "@type": "Organization",
             "name": "Mariana Matheos"
@@ -180,7 +297,7 @@ const AdvancedRichSnippet = () => {
         schemas.push({
           "@context": "https://schema.org",
           "@type": "MusicGroup",
-          "name": "Mariana Matheos Jazz Band",
+          "name": "Mariana Matheos Banda de Jazz",
           "genre": ["Jazz", "Soul", "Blues", "R&B"],
           "description": "Grupo musical especializado em apresentações ao vivo com repertório inspirado na Era de Ouro do Jazz. Nossa missão é levar a elegância e sofisticação do jazz clássico para eventos especiais.",
           "url": "https://marianamatheos.com.br/sobre",
@@ -230,24 +347,7 @@ const AdvancedRichSnippet = () => {
           "creator": {
             "@type": "MusicGroup",
             "name": "Mariana Matheos Jazz Band"
-          },
-          "workExample": [
-            {
-              "@type": "MusicRecording",
-              "name": "Strange Fruit - Billie Holiday",
-              "byArtist": "Mariana Matheos"
-            },
-            {
-              "@type": "MusicRecording", 
-              "name": "Valerie - Amy Winehouse",
-              "byArtist": "Mariana Matheos"
-            },
-            {
-              "@type": "MusicRecording",
-              "name": "Feeling Good - Nina Simone", 
-              "byArtist": "Mariana Matheos"
-            }
-          ]
+          }
         });
         break;
 
@@ -293,44 +393,66 @@ const AdvancedRichSnippet = () => {
         break;
 
       case '/depoimentos':
-        // Testimonials page - Organization with reviews
+        const allReviews = [...reviews, ...clientReviews];
+
+        // Função para extrair nome da empresa, se vier entre parênteses
+        const extractPublisher = (authorName: string) => {
+          const match = authorName.match(/\((.*?)\)/);
+          return match ? match[1].trim() : null;
+        };
+
         schemas.push({
           "@context": "https://schema.org",
           "@type": "Organization",
-          "name": "Mariana Matheos",
+          "name": "Depoimentos sobre Mariana Matheos",
           "url": "https://marianamatheos.com.br/depoimentos",
-          "review": reviews.map(review => ({
-            "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": review.author
-            },
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": review.rating.toString(),
-              "bestRating": "5",
-              "worstRating": "1"
-            },
-            "reviewBody": review.reviewBody,
-            "datePublished": review.datePublished
-          })),
+          "review": allReviews.map(review => {
+            const publisherName = extractPublisher(review.author);
+            const cleanAuthorName = review.author.replace(/\s*\(.*?\)\s*/, "").trim();
+
+            const reviewSchema: any = {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": cleanAuthorName
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": review.rating.toString(),
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "reviewBody": review.reviewBody,
+              "datePublished": review.datePublished
+            };
+
+            if (publisherName) {
+              reviewSchema.publisher = {
+                "@type": "Organization",
+                "name": publisherName
+              };
+            }
+
+            return reviewSchema;
+          }),
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5",
             "bestRating": "5",
-            "worstRating": "5",
-            "ratingCount": reviews.length.toString(),
-            "reviewCount": reviews.length.toString()
+            "worstRating": "1",
+            "ratingCount": allReviews.length.toString(),
+            "reviewCount": allReviews.length.toString()
           }
         });
         break;
+
 
       case '/contato':
         // Contact page - LocalBusiness with enhanced contact info
         schemas.push({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "Mariana Matheos",
+          "name": "Contato com Mariana Matheos",
           "telephone": "+55-31-99752-2127",
           "email": "contato@marianamatheos.com.br",
           "url": "https://marianamatheos.com.br/contato",
