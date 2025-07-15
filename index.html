@@ -1,24 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <link rel="alternate" href="https://marianamatheos.com.br" hreflang="pt-br" />
+    <meta name="theme-color" content="#800000" />
+    <meta name="author" content="Mariana Matheos" />
+    <meta name="description" content="Banda de jazz, soul e R&B para eventos em BH. Música ao vivo com elegância e presença cênica." />
+    <title>Mariana Matheos - Jazz, Soul e R&B para Eventos</title>
+
+    <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
-    <meta name="theme-color" content="#800000" />
+
+    <!-- Locale & hreflang -->
+    <link rel="alternate" href="https://marianamatheos.com.br" hreflang="pt-br" />
     <meta property="og:locale" content="pt_BR" />
 
-    <!-- SEO -->
-    <title>Mariana Matheos | Banda de Jazz, Soul, Blues e R&B em BH para Eventos</title>
-    <meta name="description" content="Banda de jazz, blues, soul e R&B em Belo Horizonte com performances sofisticadas para casamentos, eventos e festas. Shows ao vivo com repertório exclusivo inspirado na Era de Ouro do Jazz." />
-    <meta name="keywords" content="banda de jazz, soul ao vivo, blues R&B, show em BH, jazz para casamento, Mariana Matheos, música ao vivo, melhor banda, banda elegante, soul jazz blues, eventos corporativos, banda para casamento, jazz em Minas Gerais, show de R&B, banda ao vivo BH, banda para evento, banda vintage, show da Mariana Matheos, Banda Mariana Matheos, jazz soul R&B, banda para restaurante, apresentação musical BH, show sofisticado, banda de soul, blues ao vivo, R&B para eventos, repertório jazz, jazz ao vivo, cantora Mariana Matheos, banda show BH">
-
-    <meta name="author" content="Mariana Matheos" />
-
-    <!-- Segurança -->
+    <!-- Security Policies -->
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
       img-src 'self' data: https:;
@@ -33,52 +32,34 @@
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta property="og:site_name" content="Mariana Matheos" />
-    <meta property="og:image:alt" content="Mariana Matheos ao vivo" />
-
-    <!-- Open Graph (Facebook, LinkedIn) -->
-    <meta property="og:title" content="Mariana Matheos - Banda de Jazz, Blues, Soul e R&B em BH" />
-    <meta property="og:description" content="Contrate uma banda de jazz, soul, blues e R&B para seu evento em Belo Horizonte. Música ao vivo com elegância e presença cênica." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://marianamatheos.com.br" />
-    <meta property="og:image" content="https://marianamatheos.com.br/images/banda-blue-jazz-concurso.png" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@marianamatheosoficial" />
-    <meta name="twitter:title" content="Mariana Matheos | Banda de Jazz Blues Soul para Eventos" />
-    <meta name="twitter:description" content="Banda ao vivo com repertório sofisticado para casamentos e eventos. Jazz, Blues, Soul e R&B." />
-    <meta name="twitter:image" content="https://marianamatheos.com.br/images/cantora.png" />
 
     <!-- Local SEO -->
     <meta name="geo.region" content="BR-MG" />
     <meta name="geo.placename" content="Belo Horizonte" />
     <meta name="geo.position" content="-19.9166813;-43.9344931" />
     <meta name="ICBM" content="-19.9166813, -43.9344931" />
-    
+
     <!-- Preload critical resources -->
     <link rel="preload" href="/src/main.tsx" as="script">
     <link rel="preload" href="/src/index.css" as="style">
     <link rel="preload" href="/glimmer-of-light.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/GatsbyFLF-Bold.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="/GatsbyFLF.ttf" as="font" type="font/ttf" crossorigin>
-    
+
     <!-- Google Fonts with font-display: swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+
     <!-- Prefetch important images -->
     <link rel="prefetch" as="image" href="/images/cantora.png">
     <link rel="prefetch" as="image" href="/images/banda-blue-jazz-concurso.png">
     <link rel="prefetch" as="image" href="/images/baixista.png">
-
   </head>
-
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    
+
     <!-- Service Worker Registration -->
     <script>
       if ('serviceWorker' in navigator) {
