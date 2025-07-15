@@ -194,6 +194,8 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
     setProgress(0);
 
     if (sentences.length > 0) {
+      // Usar o idioma fornecido ou o atual
+      const speechLanguage = language || currentSettings.language;
       speakSentence(sentences[0], 0);
     }
   }, [supported, splitIntoSentences, speakSentence, currentSettings.language]);

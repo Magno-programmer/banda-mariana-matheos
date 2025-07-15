@@ -28,6 +28,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   const [bookmarks, setBookmarks] = useState<{sentence: string, timestamp: Date}[]>([]);
   const [autoTranslationEnabled, setAutoTranslationEnabled] = useState(autoTranslate);
   const [translationStatus, setTranslationStatus] = useState<'idle' | 'detecting' | 'translating' | 'ready'>('idle');
+  const [selectedVoiceLanguage, setSelectedVoiceLanguage] = useState<string>('pt-BR');
 
   const {
     speak, stop, pause, resume, skipToNext, skipToPrevious,
@@ -157,20 +158,26 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
     try {
       let finalText = cleanText;
       const selectedVoiceLanguage = getSelectedVoiceLanguage();
-      let speechLanguage = selectedVoiceLanguage;
-
-      if (autoTranslationEnabled) {
-        const pageLanguage = getPageLanguage();
+      const pageLanguage = getPageLanguage();
+      
+      // Verificar se precisa traduzir baseado na voz selecionada
+      const needsTranslation = autoTranslationEnabled && needsTranslationForVoice(pageLanguage, selectedVoiceLanguage);
+      
+      if (needsTranslation) {
+        setTranslationStatus('translating');
         
-        // Verificar se precisa traduzir baseado na voz selecionada
-        if (needsTranslationForVoice(pageLanguage, selectedVoiceLanguage)) {
-          setTranslationStatus('translating');
-          
+        try {
           // Traduzir para o idioma da voz selecionada
-          finalText = await optimizeForSpeech(cleanText, selectedVoiceLanguage);
+          finalText = await translateText(cleanText, selectedVoiceLanguage);
+          
+          // Otimizar para fala
+          finalText = await optimizeForSpeech(finalText, selectedVoiceLanguage);
           
           setTranslationStatus('ready');
-        } else {
+        } catch (translationError) {
+          console.warn('Translation failed, using original text:', translationError);
+          // Fallback para texto original se tradução falhar
+          finalText = cleanText;
           setTranslationStatus('ready');
         }
       } else {
@@ -181,21 +188,22 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       setReadingHistory(prev => [finalText, ...prev.slice(0, 4)]); // Manter últimas 5
       
       // Configurar idioma para a voz selecionada
-      setLanguage(speechLanguage);
+      setLanguage(selectedVoiceLanguage);
       
-      speak(finalText, speechLanguage);
+      speak(finalText, selectedVoiceLanguage);
       
     } catch (error) {
-      console.error('Translation error:', error);
-      // Fallback para texto original
+      console.error('Reading error:', error);
+      // Fallback para texto original com pt-BR
       setCurrentText(cleanText);
+      setLanguage('pt-BR');
       speak(cleanText, 'pt-BR');
     } finally {
       setTranslationStatus('idle');
     }
   }, [extractTextContent, speak, speaking, isTranslating, autoTranslationEnabled, 
       getSelectedVoiceLanguage, needsTranslationForVoice, getPageLanguage, 
-      optimizeForSpeech, setLanguage]);
+      translateText, optimizeForSpeech, setLanguage]);
 
   const handleAddBookmark = useCallback(() => {
     if (speaking && currentText) {
@@ -220,6 +228,12 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
+
+  // Monitorar mudanças na voz selecionada
+  useEffect(() => {
+    const currentVoiceLanguage = getSelectedVoiceLanguage();
+    setSelectedVoiceLanguage(currentVoiceLanguage);
+  }, [currentSettings.voiceIndex, availableVoices, getSelectedVoiceLanguage]);
 
   // Efeito para adicionar CSS de highlight
   useEffect(() => {
@@ -482,8 +496,11 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
           {/* Seleção de Voz */}
           {availableVoices.length > 0 && (
             <div className="mb-4">
-              <label className="text-xs text-muted-foreground mb-1 block">
-                Voz
+              <label className="text-xs text-muted-foreground mb-1 block flex items-center justify-between">
+                <span>Voz</span>
+                <span className="text-xs text-jazz-gold">
+                  {selectedVoiceLanguage !== 'pt-BR' && autoTranslationEnabled && '🌐 Tradução ativa'}
+                </span>
               </label>
               <select
                 value={currentSettings.voiceIndex}
@@ -496,6 +513,11 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                   </option>
                 ))}
               </select>
+              {selectedVoiceLanguage !== 'pt-BR' && autoTranslationEnabled && (
+                <div className="text-xs text-muted-foreground mt-1">
+                  O texto será traduzido para {selectedVoiceLanguage}
+                </div>
+              )}
             </div>
           )}
 
