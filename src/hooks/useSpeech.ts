@@ -19,7 +19,7 @@ interface SpeechVoice {
 }
 
 interface UseSpeechReturn {
-  speak: (text: string) => void;
+  speak: (text: string, language?: string) => void;
   speakSentence: (sentence: string, index: number) => void;
   stop: () => void;
   pause: () => void;
@@ -30,6 +30,7 @@ interface UseSpeechReturn {
   setPitch: (pitch: number) => void;
   setVolume: (volume: number) => void;
   setVoice: (voiceIndex: number) => void;
+  setLanguage: (language: string) => void;
   speaking: boolean;
   paused: boolean;
   supported: boolean;
@@ -42,6 +43,7 @@ interface UseSpeechReturn {
     pitch: number;
     volume: number;
     voiceIndex: number;
+    language: string;
   };
 }
 
@@ -67,7 +69,8 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
     rate: initialRate,
     pitch: initialPitch,
     volume: initialVolume,
-    voiceIndex: 0
+    voiceIndex: 0,
+    language: lang
   });
 
   const sentencesRef = useRef<string[]>([]);
@@ -81,7 +84,7 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
         setSupported(true);
         const voices = window.speechSynthesis.getVoices();
         const formattedVoices = voices
-          .filter(voice => voice.lang.startsWith('pt') || voice.lang.startsWith('en'))
+          .filter(voice => voice.lang.startsWith('pt') || voice.lang.startsWith('en') || voice.lang.startsWith('es') || voice.lang.startsWith('fr'))
           .map(voice => ({
             name: voice.name,
             lang: voice.lang,
@@ -117,7 +120,7 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
     window.speechSynthesis.cancel();
 
     const utterance = new SpeechSynthesisUtterance(sentence);
-    utterance.lang = lang;
+    utterance.lang = currentSettings.language;
     utterance.rate = currentSettings.rate;
     utterance.pitch = currentSettings.pitch;
     utterance.volume = currentSettings.volume;
@@ -171,12 +174,17 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
 
     currentUtteranceRef.current = utterance;
     window.speechSynthesis.speak(utterance);
-  }, [supported, lang, currentSettings, availableVoices, onSentenceStart, onSentenceEnd, onProgress]);
+  }, [supported, currentSettings, availableVoices, onSentenceStart, onSentenceEnd, onProgress]);
 
-  const speak = useCallback((text: string) => {
+  const speak = useCallback((text: string, language?: string) => {
     if (!supported) {
       console.warn('Speech Synthesis não é suportado neste navegador');
       return;
+    }
+
+    // Atualizar idioma se fornecido
+    if (language && language !== currentSettings.language) {
+      setCurrentSettings(prev => ({ ...prev, language }));
     }
 
     const sentences = splitIntoSentences(text);
@@ -188,7 +196,7 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
     if (sentences.length > 0) {
       speakSentence(sentences[0], 0);
     }
-  }, [supported, splitIntoSentences, speakSentence]);
+  }, [supported, splitIntoSentences, speakSentence, currentSettings.language]);
 
   const stop = useCallback(() => {
     if (supported) {
@@ -255,6 +263,10 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
     setCurrentSettings(prev => ({ ...prev, voiceIndex }));
   }, []);
 
+  const setLanguage = useCallback((language: string) => {
+    setCurrentSettings(prev => ({ ...prev, language }));
+  }, []);
+
   // Limpar recursos quando o componente é desmontado
   useEffect(() => {
     return () => {
@@ -279,6 +291,7 @@ export const useSpeech = (options: UseSpeechOptions = {}): UseSpeechReturn => {
     setPitch,
     setVolume,
     setVoice,
+    setLanguage,
     speaking,
     paused,
     supported,
