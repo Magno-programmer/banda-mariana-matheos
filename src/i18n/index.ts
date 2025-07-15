@@ -177,11 +177,9 @@ i18n
     // Namespace padrão
     defaultNS: 'translation',
     
-    // Configuração de carregamento
-    load: 'languageOnly', // Carrega apenas pt, en, es, fr (sem região)
-    
-    // Whitelist de idiomas suportados
-    supportedLngs: ['pt-BR', 'en-US', 'es-ES', 'fr-FR'],
+    load: 'languageOnly', // Isso ajuda a aceitar apenas o idioma base (pt, en, es)
+    preload: ['pt-BR', 'en-US', 'es-ES', 'fr-FR'], // Pré-carrega traduções críticas
+
     
     // Configuração de pluralização
     pluralSeparator: '_',
