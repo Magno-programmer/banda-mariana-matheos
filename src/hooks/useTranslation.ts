@@ -1,4 +1,6 @@
 import { useState, useCallback, useRef } from 'react';
+import { useTranslation as useI18nextTranslation } from 'react-i18next';
+import i18n from '@/i18n';
 
 interface TranslationCache {
   [key: string]: string;
@@ -11,6 +13,7 @@ interface UseTranslationOptions {
 
 interface UseTranslationReturn {
   translateText: (text: string, targetLang?: string) => Promise<string>;
+  optimizeForSpeech: (text: string, targetLang?: string) => Promise<string>;
   detectLanguage: (text: string) => string;
   isTranslating: boolean;
   translationCache: TranslationCache;
@@ -18,11 +21,16 @@ interface UseTranslationReturn {
   getPageLanguage: () => string;
   getUserLanguage: () => string;
   needsTranslation: (pageLanguage: string, userLanguage: string) => boolean;
+  getCurrentLanguage: () => string;
 }
 
 export const useTranslation = (options: UseTranslationOptions = {}): UseTranslationReturn => {
+  // ⚠️ i18n integration: Using i18n.language as source of truth for current language
+  const { i18n: i18nextInstance } = useI18nextTranslation();
+  const currentLanguage = i18nextInstance.language || 'pt-BR';
+  
   const {
-    targetLanguage = 'pt-BR',
+    targetLanguage = currentLanguage, // ⚠️ i18n integration: Default to current i18n language
     cacheSize = 50
   } = options;
 
@@ -72,10 +80,15 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
     return bestMatch;
   }, []);
 
-  // Obter idioma do usuário
+  // ⚠️ i18n integration: Get user language from i18n instead of navigator
   const getUserLanguage = useCallback((): string => {
-    return navigator.language || navigator.languages?.[0] || 'pt-BR';
-  }, []);
+    return currentLanguage;
+  }, [currentLanguage]);
+  
+  // ⚠️ i18n integration: Get current language from i18n
+  const getCurrentLanguage = useCallback((): string => {
+    return currentLanguage;
+  }, [currentLanguage]);
 
   // Verificar se precisa traduzir
   const needsTranslation = useCallback((pageLanguage: string, userLanguage: string): boolean => {
@@ -190,10 +203,10 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
     }
   }, []);
 
-  // Função principal de tradução com múltiplas APIs e fallbacks
+  // ⚠️ i18n integration: Main translation function uses i18n.language as default target
   const translateText = useCallback(async (text: string, targetLang?: string): Promise<string> => {
-    const target = targetLang || targetLanguage;
-    const cacheKey = `${text.substring(0, 100)}_${target}`;
+    const target = targetLang || currentLanguage; // ⚠️ i18n integration: Use current i18n language
+    const cacheKey = `${text.substring(0, 100)}_${target}_${currentLanguage}`; // ⚠️ i18n integration: Include current language in cache key
 
     // Verificar cache primeiro
     if (translationCache[cacheKey]) {
@@ -284,7 +297,31 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
       setIsTranslating(false);
       return text; // Retornar texto original em caso de erro
     }
-  }, [targetLanguage, translationCache, detectLanguage, cacheSize, normalizeLanguageCode, translateWithLibreTranslate, translateWithMyMemory]);
+  }, [currentLanguage, translationCache, detectLanguage, cacheSize, normalizeLanguageCode, translateWithLibreTranslate, translateWithMyMemory]); // ⚠️ i18n integration: Updated dependencies
+  
+  // ⚠️ i18n integration: Optimize text for speech synthesis with i18n language support
+  const optimizeForSpeech = useCallback(async (text: string, targetLang?: string): Promise<string> => {
+    const target = targetLang || currentLanguage; // ⚠️ i18n integration: Use current i18n language
+    
+    // First translate if needed
+    const translatedText = await translateText(text, target);
+    
+    // Optimize for speech synthesis
+    const optimizedText = translatedText
+      .replace(/\s+/g, ' ') // Normalize whitespace
+      .replace(/\n+/g, '. ') // Convert newlines to periods
+      .replace(/\[.*?\]/g, '') // Remove content in brackets
+      .replace(/\(.*?\)/g, '') // Remove content in parentheses
+      .replace(/\{.*?\}/g, '') // Remove content in braces
+      .replace(/https?:\/\/[^\s]+/g, '') // Remove URLs
+      .replace(/www\.[^\s]+/g, '') // Remove www URLs
+      .replace(/\b[A-Z]{2,}\b/g, (match) => match.toLowerCase()) // Convert acronyms to lowercase
+      .replace(/(\w)\.(\w)/g, '$1 ponto $2') // Convert dots between words to "ponto"
+      .replace(/\s{2,}/g, ' ') // Remove extra spaces
+      .trim();
+    
+    return optimizedText;
+  }, [currentLanguage, translateText]); // ⚠️ i18n integration: Updated dependencies
 
   const clearCache = useCallback(() => {
     setTranslationCache({});
@@ -293,12 +330,14 @@ export const useTranslation = (options: UseTranslationOptions = {}): UseTranslat
 
   return {
     translateText,
+    optimizeForSpeech, // ⚠️ i18n integration: New function for speech optimization
     detectLanguage,
     isTranslating,
     translationCache,
     clearCache,
     getPageLanguage,
     getUserLanguage,
-    needsTranslation
+    needsTranslation,
+    getCurrentLanguage // ⚠️ i18n integration: New function to get current i18n language
   };
 };
