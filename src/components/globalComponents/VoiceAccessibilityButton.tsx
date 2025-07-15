@@ -4,7 +4,6 @@ import {
   Settings, Mic, Volume1, VolumeOff, ChevronUp, ChevronDown,
   RotateCcw, Activity, Clock, Headphones, Sliders, Globe, Loader
 } from 'lucide-react';
-import { useTranslation as useI18nextTranslation } from 'react-i18next';
 import { useSpeech } from '@/hooks/useSpeech';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -27,12 +26,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   const [currentText, setCurrentText] = useState('');
   const [readingHistory, setReadingHistory] = useState<string[]>([]);
   const [bookmarks, setBookmarks] = useState<{sentence: string, timestamp: Date}[]>([]);
-  const [autoTranslationEnabled, setAutoTranslationEnabled] = useState(false); // ⚠️ i18n integration: Not using external translation APIs
-  const [translationStatus, setTranslationStatus] = useState<'ready'>('ready'); // ⚠️ i18n integration: Always ready since no external APIs
-  
-  // ⚠️ i18n integration: Using i18next for interface translations
-  const { t, i18n } = useI18nextTranslation();
-  const currentLanguage = i18n.language || 'pt-BR';
+  const [autoTranslationEnabled, setAutoTranslationEnabled] = useState(autoTranslate);
+  const [translationStatus, setTranslationStatus] = useState<'idle' | 'detecting' | 'translating' | 'ready'>('idle');
 
   // Função para mapear nome da voz para código de idioma
   const getLangFromVoiceName = useCallback((voiceName: string): string => {
@@ -128,24 +123,26 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
 
   const {
     translateText, 
-    optimizeForSpeech, // ⚠️ i18n integration: New function for speech optimization
+    isTranslating,
     getPageLanguage,
     getUserLanguage,
     needsTranslation,
-    clearCache,
-    getCurrentLanguage
+    clearCache
   } = useTranslation({
-    targetLanguage: currentLanguage // ⚠️ i18n integration: Use current i18n language
+    targetLanguage: 'pt-BR'
   });
 
   const handleStartReading = useCallback(async () => {
     // Prevent multiple simultaneous readings
-    if (speaking) {
+    if (speaking || isTranslating) {
       return;
     }
     
+    setTranslationStatus('detecting');
+    
     const textContent = extractTextContent();
     if (!textContent.trim()) {
+      setTranslationStatus('idle');
       return;
     }
 
@@ -157,7 +154,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
 
     try {
       let finalText = cleanText;
-      let speechLanguage = currentLanguage; // ⚠️ i18n integration: Use current i18n language as default
+      let speechLanguage = 'pt-BR';
 
       // Obter idioma da voz selecionada
       const selectedVoice = availableVoices[currentSettings.voiceIndex];
@@ -165,26 +162,43 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
         speechLanguage = getLangFromVoiceName(selectedVoice.name);
       }
 
-      // ⚠️ i18n integration: Optimize text for speech with i18n language
-      finalText = await optimizeForSpeech(cleanText, currentLanguage);
+      // Traduzir se necessário
+      if (autoTranslationEnabled && speechLanguage !== 'pt-BR') {
+        const pageLanguage = getPageLanguage();
+        
+        if (pageLanguage !== speechLanguage) {
+          setTranslationStatus('translating');
+          
+          // Traduzir para o idioma da voz selecionada
+          finalText = await translateText(cleanText, speechLanguage);
+          
+          setTranslationStatus('ready');
+        } else {
+          setTranslationStatus('ready');
+        }
+      } else {
+        setTranslationStatus('ready');
+      }
 
       setCurrentText(finalText);
       setReadingHistory(prev => [finalText, ...prev.slice(0, 4)]); // Manter últimas 5
       
-      // ⚠️ i18n integration: Configure language and voice based on i18n
-      setLanguage(currentLanguage);
+      // Configurar idioma e voz
+      setLanguage(speechLanguage);
       
-      speak(finalText, currentLanguage);
+      speak(finalText, speechLanguage);
       
     } catch (error) {
-      console.error('Speech error:', error);
-      // ⚠️ i18n integration: Fallback to original text with current i18n language
+      console.error('Translation error:', error);
+      // Fallback para texto original
       setCurrentText(cleanText);
-      speak(cleanText, currentLanguage);
+      speak(cleanText, 'pt-BR');
+    } finally {
+      setTranslationStatus('idle');
     }
-  }, [extractTextContent, speak, speaking,
-      optimizeForSpeech, currentLanguage, getLangFromVoiceName, availableVoices, 
-      currentSettings.voiceIndex, setLanguage]); // ⚠️ i18n integration: Updated dependencies
+  }, [extractTextContent, speak, speaking, isTranslating, autoTranslationEnabled, 
+      translateText, getPageLanguage, getLangFromVoiceName, availableVoices, 
+      currentSettings.voiceIndex, setLanguage]);
 
   const handleAddBookmark = useCallback(() => {
     if (speaking && currentText) {
@@ -239,7 +253,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   if (!supported) {
     return (
       <div className="fixed bottom-4 left-4 bg-red-500 text-white p-3 rounded-lg shadow-lg">
-        <p className="text-sm">{t('voice.browserNotSupported')}</p>
+        <p className="text-sm">Seu navegador não suporta síntese de voz</p>
       </div>
     );
   }
@@ -256,7 +270,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
         <button
           type="button"
           onClick={() => speaking ? stop() : handleStartReading()}
-          disabled={(speaking && !paused)}
+          disabled={(speaking && !paused) || isTranslating || translationStatus !== 'idle'}
           className={`
             fixed ${positionClasses[position]} z-50
             w-12 h-12 bg-jazz-gold text-black rounded-full
@@ -267,9 +281,11 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
             disabled:opacity-50 disabled:cursor-not-allowed
             ${className}
           `}
-          aria-label={speaking ? t('voice.stopReading') : t('voice.startReading')}
+          aria-label={speaking ? 'Parar leitura' : 'Iniciar leitura da página'}
         >
-          {speaking ? (
+          {isTranslating || translationStatus !== 'idle' ? (
+            <Loader size={20} className="animate-spin" aria-hidden="true" />
+          ) : speaking ? (
             <Square size={20} aria-hidden="true" />
           ) : (
             <Play size={20} aria-hidden="true" />
@@ -287,7 +303,15 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-semibold text-lg flex items-center gap-2">
                 <Headphones size={16} />
-                {t('voice.voiceAndTranslation')}
+                Voz e Tradução
+                {(translationStatus !== 'idle' || isTranslating) && (
+                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <Loader size={12} className="animate-spin" />
+                    {translationStatus === 'detecting' && 'Detectando idioma...'}
+                    {translationStatus === 'translating' && 'Traduzindo...'}
+                    {translationStatus === 'ready' && 'Pronto'}
+                  </div>
+                )}
               </h3>
               <div className="flex items-center gap-2">
                 <button
@@ -297,7 +321,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                       ? 'bg-jazz-gold text-black' 
                       : 'text-muted-foreground hover:text-foreground'
                   }`}
-                  title={autoTranslationEnabled ? t('voice.autoTranslationActive') : t('voice.autoTranslationDisabled')}
+                  title={autoTranslationEnabled ? 'Tradução automática ativa' : 'Tradução automática desativada'}
                 >
                   <Globe size={14} />
                 </button>
@@ -314,7 +338,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
           {speaking && (
             <div className="mb-4 p-3 bg-muted rounded-lg">
               <div className="flex items-center justify-between text-lg text-muted-foreground mb-2">
-                <span>{t('voice.sentence')} {currentSentence + 1} {t('voice.of')} {totalSentences}</span>
+                <span>Sentença {currentSentence + 1} de {totalSentences}</span>
                 <div className="flex items-center gap-2">
                   {autoTranslationEnabled && (
                     <Globe size={12} className="text-jazz-gold" />
@@ -329,9 +353,9 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                 />
               </div>
               {currentSettings.language !== 'pt-BR' && (
-               <div className="text-xs text-muted-foreground mt-1">
-                 {t('voice.language')}: {availableVoices[currentSettings.voiceIndex]?.name || currentSettings.language}
-               </div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  Idioma: {availableVoices[currentSettings.voiceIndex]?.name || currentSettings.language}
+                </div>
               )}
             </div>
           )}
@@ -342,7 +366,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               onClick={skipToPrevious}
               disabled={currentSentence === 0}
               className="p-2 rounded-lg bg-muted hover:bg-muted/80 disabled:opacity-50"
-              aria-label={t('voice.previousSentence')}
+              aria-label="Sentença anterior"
             >
               <SkipBack size={16} />
             </button>
@@ -353,7 +377,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                   <button
                     onClick={resume}
                     className="p-3 rounded-lg bg-jazz-gold text-black hover:bg-jazz-gold/80"
-                    aria-label={t('voice.resumeReading')}
+                    aria-label="Continuar leitura"
                   >
                     <Play size={20} />
                   </button>
@@ -361,7 +385,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                   <button
                     onClick={pause}
                     className="p-3 rounded-lg bg-jazz-gold text-black hover:bg-jazz-gold/80"
-                    aria-label={t('voice.pauseReading')}
+                    aria-label="Pausar leitura"
                   >
                     <Pause size={20} />
                   </button>
@@ -369,7 +393,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                 <button
                   onClick={stop}
                   className="p-2 rounded-lg bg-destructive text-destructive-foreground hover:bg-destructive/80"
-                  aria-label={t('voice.stopReading')}
+                  aria-label="Parar leitura"
                 >
                   <Square size={16} />
                 </button>
@@ -377,11 +401,22 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
             ) : (
               <button
                 onClick={handleStartReading}
-                disabled={speaking}
+                disabled={speaking || isTranslating || translationStatus !== 'idle'}
                 className="p-3 rounded-lg bg-jazz-gold text-black hover:bg-jazz-gold/80 disabled:opacity-50 flex items-center gap-2"
-                aria-label={t('voice.startReading')}
+                aria-label="Iniciar leitura"
               >
-                <Play size={20} />
+                {isTranslating || translationStatus !== 'idle' ? (
+                  <>
+                    <Loader size={20} className="animate-spin" />
+                    <span className="text-sm">
+                      {translationStatus === 'detecting' && 'Detectando...'}
+                      {translationStatus === 'translating' && 'Traduzindo...'}
+                      {translationStatus === 'ready' && 'Pronto'}
+                    </span>
+                  </>
+                ) : (
+                  <Play size={20} />
+                )}
               </button>
             )}
 
@@ -389,7 +424,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
               onClick={skipToNext}
               disabled={currentSentence >= totalSentences - 1}
               className="p-2 rounded-lg bg-muted hover:bg-muted/80 disabled:opacity-50"
-              aria-label={t('voice.nextSentence')}
+              aria-label="Próxima sentença"
             >
               <SkipForward size={16} />
             </button>
@@ -399,9 +434,9 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
           <div className="space-y-3 mb-4">
             {/* Velocidade */}
             <div>
-               <label className="text-sm text-muted-foreground mb-1 block">
-                 {t('voice.speed')}: {currentSettings.rate.toFixed(1)}x
-               </label>
+              <label className="text-sm text-muted-foreground mb-1 block">
+                Velocidade: {currentSettings.rate.toFixed(1)}x
+              </label>
               <input
                 type="range"
                 min="0.1"
@@ -415,9 +450,9 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
 
             {/* Tom */}
             <div>
-               <label className="text-sm text-muted-foreground mb-1 block">
-                 {t('voice.pitch')}: {currentSettings.pitch.toFixed(1)}
-               </label>
+              <label className="text-sm text-muted-foreground mb-1 block">
+                Tom: {currentSettings.pitch.toFixed(1)}
+              </label>
               <input
                 type="range"
                 min="0"
@@ -431,10 +466,10 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
 
             {/* Volume */}
             <div>
-               <label className="text-sm text-muted-foreground mb-1 block flex items-center gap-1">
-                 {React.createElement(getVolumeIcon(), { size: 12 })}
-                 {t('voice.volume')}: {Math.round(currentSettings.volume * 100)}%
-               </label>
+              <label className="text-sm text-muted-foreground mb-1 block flex items-center gap-1">
+                {React.createElement(getVolumeIcon(), { size: 12 })}
+                Volume: {Math.round(currentSettings.volume * 100)}%
+              </label>
               <input
                 type="range"
                 min="0"
@@ -450,9 +485,9 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
           {/* Seleção de Voz */}
           {availableVoices.length > 0 && (
             <div className="mb-4">
-               <label className="text-xs text-muted-foreground mb-1 block">
-                 {t('voice.voiceSelection')}
-               </label>
+              <label className="text-xs text-muted-foreground mb-1 block">
+                Voz
+              </label>
               <select
                 value={currentSettings.voiceIndex}
                 onChange={(e) => setVoice(parseInt(e.target.value))}
