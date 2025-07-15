@@ -9,7 +9,6 @@ import HeroSection from '@/components/desktopVersion/Index/HeroSection';
 import TestimonialSection from '@/components/desktopVersion/Index/TestimonialSection';
 import Footer from '@/components/desktopVersion/commonPages/footer/Footer';
 import WhatsAppButton from '@/components/globalComponents/WhatsAppButton';
-import VoiceAccessibilityButton from '@/components/globalComponents/VoiceAccessibilityButton';
 
 // Importing mobile components
 import HeaderMobile from '@/components/mobileVersion/commonPages/header/HeaderMobile';
@@ -36,9 +35,6 @@ const Index = () => {
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeaderMobile />
-        <div className="p-4 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <HeroSectionMobile />
         <TestimonialSectionMobile />
         <FooterMobile />
@@ -48,9 +44,6 @@ const Index = () => {
       {/* Tablet Version */}
       <div className="hidden sm:block lg:hidden">
         <HeaderTablet />
-        <div className="p-6 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <HeroSectionTablet />
         <TestimonialSectionTablet />
         <FooterTablet />
@@ -60,9 +53,6 @@ const Index = () => {
       {/* Desktop Version */}
       <div className="hidden lg:block">
         <Header />
-        <div className="p-8 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <HeroSection />
         <TestimonialSection />
         <Footer />

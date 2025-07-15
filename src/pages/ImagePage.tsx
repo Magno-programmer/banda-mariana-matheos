@@ -6,7 +6,6 @@ import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnipp
 import ImageSection from "@/components/desktopVersion/galeria/ImagesSection";
 import Footer from "@/components/desktopVersion/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
-import VoiceAccessibilityButton from "@/components/globalComponents/VoiceAccessibilityButton";
 import Header from "@/components/desktopVersion/commonPages/header/Header"; 
 
 // Importing mobile components
@@ -32,9 +31,6 @@ const ImagePage = () => {
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeaderMobile />
-        <div className="p-4 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <ImageSectionMobile />
         <FooterMobile />
         <WhatsAppButton />
@@ -42,9 +38,6 @@ const ImagePage = () => {
       {/* Tablet Version */}
       <div className="hidden sm:block lg:hidden">
         <HeaderTablet />
-        <div className="p-6 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <ImageSectionTablet />
         <FooterTablet />
         <WhatsAppButton />
@@ -52,9 +45,6 @@ const ImagePage = () => {
       {/* Desktop Version */}
       <div className="hidden lg:block">
         <Header />
-        <div className="p-8 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <ImageSection />
         <Footer />
         <WhatsAppButton />

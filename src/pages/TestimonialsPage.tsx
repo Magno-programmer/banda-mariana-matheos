@@ -8,7 +8,6 @@ import Header from "@/components/desktopVersion/commonPages/header/Header";
 import AvaliationSection from "@/components/desktopVersion/depoimentos/AvaliationSection";
 import Footer from "@/components/desktopVersion/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
-import VoiceAccessibilityButton from "@/components/globalComponents/VoiceAccessibilityButton";
 
 // Importing tablet components
 import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTablet";
@@ -34,33 +33,24 @@ const TestimonialsPage = () => {
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeaderMobile />
-        <div className="p-4 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <AvaliationSectionMobile />
         <FooterMobile />
         <WhatsAppButton />
-      </div>
+      </div>  
       {/* Tablet Version */}
       <div className="hidden sm:block lg:hidden"> 
         <HeaderTablet />
-        <div className="p-6 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <AvaliationSectionTablet />
         <FooterTablet />
         <WhatsAppButton />
-      </div>
+      </div> 
       {/* Desktop Version */}
       <div className="hidden lg:block">
         <Header />
-        <div className="p-8 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <AvaliationSection />
         <Footer />
         <WhatsAppButton />
-      </div>
+      </div>   
     </>
   );
 };

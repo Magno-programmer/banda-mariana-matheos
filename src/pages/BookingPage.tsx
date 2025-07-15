@@ -6,7 +6,6 @@ import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnipp
 import BookingSection from "@/components/desktopVersion/agendamento/BookingSection";
 import Footer from "@/components/desktopVersion/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
-import VoiceAccessibilityButton from "@/components/globalComponents/VoiceAccessibilityButton";
 import Header from "@/components/desktopVersion/commonPages/header/Header";
 
 // Importing mobile components
@@ -33,9 +32,6 @@ const BookingPage = () => {
       {/* Mobile Version */}
       <div className="block sm:hidden">
         <HeaderMobile />
-        <div className="p-4 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <BookingSectionMobile />
         <FooterMobile />
         <WhatsAppButton />
@@ -43,9 +39,6 @@ const BookingPage = () => {
       {/* Tablet Version */}
       <div className="hidden sm:block lg:hidden">
         <HeaderTablet />
-        <div className="p-6 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <BookingSectionTablet />
         <FooterTablet />
         <WhatsAppButton />
@@ -53,9 +46,6 @@ const BookingPage = () => {
       {/* Desktop Version */}
       <div className="hidden lg:block">
         <Header />
-        <div className="p-8 bg-background border-b">
-          <VoiceAccessibilityButton />
-        </div>
         <BookingSection />
         <Footer />
         <WhatsAppButton />
