@@ -98,6 +98,11 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
   }, [contentSelector]);
 
   const handleStartReading = useCallback(() => {
+    // Prevent multiple simultaneous readings
+    if (speaking) {
+      return;
+    }
+    
     const textContent = extractTextContent();
     if (textContent.trim()) {
       const cleanText = textContent
@@ -110,7 +115,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       setReadingHistory(prev => [cleanText, ...prev.slice(0, 4)]); // Manter últimas 5
       speak(cleanText);
     }
-  }, [extractTextContent, speak]);
+  }, [extractTextContent, speak, speaking]);
 
   const handleAddBookmark = useCallback(() => {
     if (speaking && currentText) {
@@ -182,6 +187,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
       <button
         type="button"
         onClick={() => speaking ? stop() : handleStartReading()}
+        disabled={speaking && !paused}
         className={`
           fixed ${positionClasses[position]} z-50
           w-12 h-12 bg-jazz-gold text-black rounded-full
@@ -189,6 +195,7 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
           hover:bg-jazz-gold/80 transition-all duration-300
           hover:scale-110 focus:outline-none focus:ring-2 focus:ring-jazz-gold
           ${speaking ? 'animate-pulse' : ''}
+          disabled:opacity-50 disabled:cursor-not-allowed
           ${className}
         `}
         aria-label={speaking ? 'Parar leitura' : 'Iniciar leitura da página'}
@@ -278,7 +285,8 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
             ) : (
               <button
                 onClick={handleStartReading}
-                className="p-3 rounded-lg bg-jazz-gold text-black hover:bg-jazz-gold/80"
+                disabled={speaking}
+                className="p-3 rounded-lg bg-jazz-gold text-black hover:bg-jazz-gold/80 disabled:opacity-50"
                 aria-label="Iniciar leitura"
               >
                 <Play size={20} />
@@ -399,8 +407,9 @@ const VoiceAccessibilityButton: React.FC<VoiceAccessibilityButtonProps> = ({
                 {readingHistory.slice(0, 3).map((text, index) => (
                   <button
                     key={index}
-                    onClick={() => speak(text)}
-                    className="w-full text-left text-xs p-2 bg-muted hover:bg-muted/80 rounded truncate"
+                    onClick={() => !speaking && speak(text)}
+                    disabled={speaking}
+                    className="w-full text-left text-xs p-2 bg-muted hover:bg-muted/80 rounded truncate disabled:opacity-50"
                   >
                     {text.substring(0, 50)}...
                   </button>
