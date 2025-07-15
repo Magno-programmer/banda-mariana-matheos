@@ -5,7 +5,6 @@ import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnipp
 // Importing unified responsive components
 import Header from "@/components/unified/layout/Header";
 import Footer from "@/components/unified/layout/Footer";
-import AboutSection from "@/components/unified/sections/AboutSection";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 
 const AboutPage = () => {
@@ -21,7 +20,9 @@ const AboutPage = () => {
       
       {/* Unified Responsive Layout */}
       <Header />
-      <AboutSection />
+      <div className="min-h-screen bg-black text-white">
+        <h1 className="text-4xl font-bold text-center py-20">Sobre a Banda - Em Breve</h1>
+      </div>
       <Footer />
       <WhatsAppButton />
     </>

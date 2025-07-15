@@ -3,10 +3,21 @@ import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
 
-// Importing unified responsive components
-import Header from "@/components/unified/layout/Header";
-import Footer from "@/components/unified/layout/Footer";
+// Importing desktop components
+import Header from "@/components/desktopVersion/commonPages/header/Header";
+import AvaliationSection from "@/components/desktopVersion/depoimentos/AvaliationSection";
+import Footer from "@/components/desktopVersion/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
+
+// Importing tablet components
+import HeaderTablet from "@/components/tabletVersion/commonPages/header/HeaderTablet";
+import AvaliationSectionTablet from "@/components/tabletVersion/depoimentos/AvaliationSectionTablet";
+import FooterMobile from "@/components/mobileVersion/commonPages/footer/FooterMobile";
+
+// Importing mobile components
+import HeaderMobile from "@/components/mobileVersion/commonPages/header/HeaderMobile";
+import AvaliationSectionMobile from "@/components/mobileVersion/depoimentos/AvaliationSectionMobile";
+import FooterTablet from "@/components/tabletVersion/commonPages/footer/FooterTablet";
 
 const TestimonialsPage = () => {
   return (
@@ -19,13 +30,27 @@ const TestimonialsPage = () => {
       />
       <AdvancedRichSnippet />
       
-      {/* Unified Responsive Layout */}
-      <Header />
-      <div className="min-h-screen bg-black text-white">
-        <h1 className="text-4xl font-bold text-center py-20">Depoimentos - Em Breve</h1>
-      </div>
-      <Footer />
-      <WhatsAppButton />
+      {/* Mobile Version */}
+      <div className="block sm:hidden">
+        <HeaderMobile />
+        <AvaliationSectionMobile />
+        <FooterMobile />
+        <WhatsAppButton />
+      </div>  
+      {/* Tablet Version */}
+      <div className="hidden sm:block lg:hidden"> 
+        <HeaderTablet />
+        <AvaliationSectionTablet />
+        <FooterTablet />
+        <WhatsAppButton />
+      </div> 
+      {/* Desktop Version */}
+      <div className="hidden lg:block">
+        <Header />
+        <AvaliationSection />
+        <Footer />
+        <WhatsAppButton />
+      </div>   
     </>
   );
 };
