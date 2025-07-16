@@ -152,17 +152,11 @@ const BlogArticlePage = () => {
       </section>
 
       {/* Article Content */}
-      <section className="py-1 bg-gradient-to-b from-black to-jazz-dark">
+      <section className="py-10 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div 
-              className="prose prose-lg prose-invert text-white
-                max-w-none prose-headings:font-gatsbybold
-                prose-headings:text-jazz-gold prose-p:font-gatsby
-                prose-a:text-jazz-gold prose-a:no-underline hover:prose-a:text-white
-                prose-blockquote:border-l-jazz-gold prose-blockquote:text-jazz-gold/80
-                prose-strong:text-jazz-gold prose-strong:font-gatsbybold
-                prose-hr:border-jazz-gold/30"
+            <div
+              className="prose prose-xl prose-invert text-white max-w-none"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
 

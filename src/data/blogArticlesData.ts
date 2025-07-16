@@ -2,6 +2,8 @@ import casamentoImage from '@/assets/images/casamento-jazz-band.jpg';
 import historiaJazzImage from '@/assets/images/historia-jazz-brasil.jpg';
 import eventosCorporativosImage from '@/assets/images/eventos-corporativos.jpg';
 import marianaEssenciaImage from '/images/cantora.png';
+import jazzStandardsImage from '/images/jazz-standard.jpg';
+import bandaDeJazzImage from '/images/banda-de-jazz-1920.jpg';
 
 export interface BlogArticle {
   id: string;
@@ -24,100 +26,86 @@ export interface BlogArticle {
 export const blogArticlesData: BlogArticle[] = [
   {
     id: '1',
-    title: 'Mariana Matheos Jazz — A essência da música ao vivo nos eventos',
+    title: 'Mariana Matheos — A essência da música ao vivo nos eventos',
     slug: 'mariana-matheos-jazz-essencia-da-musica-ao-vivo',
     excerpt: 'Descubra como a banda Mariana Matheos transformou o cenário da música ao vivo em Belo Horizonte, trazendo elegância e sofisticação para eventos especiais.',
     content: `
-      <h2>A Música que Transforma Momentos em Memórias</h2>
-      
-      <p>Em um mundo onde a música digital domina, a <strong>banda Mariana Matheos Jazz</strong> resgata a magia genuína da música ao vivo, transformando eventos ordinários em experiências extraordinárias. Baseada em Belo Horizonte, nossa banda tem sido a escolha preferida de casais, empresas e organizadores de eventos que buscam algo além do comum.</p>
-      
-      <h3>Nossa Missão: Criar Atmosferas Inesquecíveis</h3>
-      
-      <p>Desde nossa fundação, temos uma missão clara: <strong>elevar a qualidade musical dos eventos</strong> através da autenticidade e elegância do jazz ao vivo. Cada performance é cuidadosamente adaptada ao ambiente e à ocasião, criando uma trilha sonora personalizada que ressoa com as emoções do momento.</p>
-      
-      <blockquote>"A música ao vivo tem o poder único de conectar pessoas e criar memórias que durarão para sempre. É isso que fazemos em cada evento." - Mariana Matheos</blockquote>
-      
-      <h3>O Diferencial da Experiência Ao Vivo</h3>
-      
-      <p>Nosso repertório abrange desde os clássicos do jazz tradicional até interpretações sofisticadas de sucessos contemporâneos. Cada música é cuidadosamente selecionada e arranjada para complementar perfeitamente o ambiente do seu evento.</p>
-      
-      <h4>Nossos Pontos Fortes:</h4>
+      <h2>Uma Viagem Musical à Era de Ouro do Jazz</h2>
+
+      <p>A <strong>banda Mariana Matheos</strong> é formada por cinco músicos experientes que compartilham o mesmo propósito: recriar com autenticidade e personalidade a atmosfera encantadora do Jazz americano das décadas de 1920 a 1960. Misturando influências do Blues, Soul e R&B, o grupo transforma cada apresentação em um espetáculo sofisticado e inesquecível.</p>
+
+      <h3>Estilo, Charme e Presença Cênica</h3>
+
+      <p>Com uma estética retrô luxuosa e levemente teatral, a banda entrega não apenas música de qualidade, mas uma <strong>experiência sensorial completa</strong>. O repertório é composto por clássicos imortais e releituras criativas, interpretadas com arranjos envolventes e uma performance marcante da vocalista Mariana Matheos, cuja potência vocal e expressividade dão vida a cada canção.</p>
+
+      <blockquote>"Cada evento é uma oportunidade de transportar o público para um tempo onde a música tocava a alma. E é isso que fazemos: criamos conexões verdadeiras por meio do jazz." – Mariana Matheos</blockquote>
+
+      <h3>Repertório e Influências</h3>
+
+      <p>O repertório da banda percorre desde os ícones do jazz até interpretações vintage de sucessos contemporâneos.</p>
+
+      <h4>Artistas e Estilos:</h4>
       <ul>
-        <li><strong>Versatilidade Musical</strong>: Jazz, Blues, Soul, R&B</li>
-        <li><strong>Formação Flexível</strong>: Duo, trio, quarteto ou banda completa</li>
-        <li><strong>Equipamentos Profissionais</strong>: Som cristalino garantido</li>
-        <li><strong>Experiência Comprovada</strong>: Mais de 500 eventos realizados</li>
-        <li><strong>Atendimento Personalizado</strong>: Cada evento é único</li>
+        <li><strong>Influências:</strong> Nina Simone, Billie Holiday, Ella Fitzgerald, Amy Winehouse, Frank Sinatra e outros</li>
+        <li><strong>Estilos:</strong> Jazz Clássico, Blues, Soul e R&B</li>
       </ul>
-      
-      <h3>Bastidores: Como Preparamos Cada Performance</h3>
-      
-      <p>Cada evento começa muito antes de pisarmos no palco. Nossa preparação inclui:</p>
-      
-      <ol>
-        <li><strong>Reunião de Briefing</strong>: Entendemos a visão do cliente</li>
-        <li><strong>Seleção de Repertório</strong>: Músicas adequadas a época de ouro do jazz</li>
-        <li><strong>Ensaios Específicos</strong>: Preparação focada na excelência</li>
-        <li><strong>Checagem Técnica</strong>: Garantia de qualidade sonora</li>
-        <li><strong>Performance Personalizada</strong>: Execução impecável</li>
-      </ol>
-      
-      <h3>Tipos de Eventos Que Transformamos</h3>
-      
-      <p>Nossa experiência abrange diversos tipos de ocasiões:</p>
-      
-      <h4>Casamentos</h4>
-      <p>Criamos trilhas sonoras românticas e elegantes para cerimônias e recepções, adaptando-nos aos momentos mais especiais do seu grande dia.</p>
-      
-      <h4>Eventos Corporativos</h4>
-      <p>Oferecemos música sofisticada para confraternizações, lançamentos de produtos, jantares executivos e convenções empresariais.</p>
-      
-      <h4>Festivais e Eventos Culturais</h4>
-      <p>Participamos de festivais de jazz, eventos culturais e apresentações em espaços dedicados à música de qualidade.</p>
-      
-      <h3>Por Que Escolher a Mariana Matheos Jazz?</h3>
-      
-      <p>Em um mercado saturado de opções, nos destacamos por:</p>
-      
+
+      <h3>Formação Instrumental</h3>
+
+      <p>A banda conta com cinco músicos:</p>
       <ul>
-        <li><strong>Autenticidade</strong>: Música genuína, sem playbacks</li>
-        <li><strong>Profissionalismo</strong>: Pontualidade e compromisso</li>
-        <li><strong>Flexibilidade</strong>: Adaptação às necessidades específicas</li>
-        <li><strong>Qualidade Técnica</strong>: Equipamentos de última geração</li>
-        <li><strong>Experiência Musical</strong>: Mais de uma década de estrada</li>
+        <li><strong>Voz:</strong> Mariana Matheos</li>
+        <li><strong>Piano:</strong> Carlos Magno</li>
+        <li><strong>Baixo e Guitarra:</strong> Tarciso Martins Júnior</li>
+        <li><strong>Bateria:</strong> Rubens Kalil</li>
+        <li><strong>Trompete:</strong> Charles Amaral</li>
       </ul>
-      
-      <h3>Depoimentos de Clientes</h3>
-      
-      <blockquote>"A banda Mariana Matheos transformou nosso casamento em algo mágico. Os convidados ainda comentam sobre a qualidade da música." - Ana e Carlos, noivos</blockquote>
-      
-      <blockquote>"Contratamos para nosso evento corporativo e superou todas as expectativas. Profissionalismo e talento em cada nota." - Empresa XYZ</blockquote>
-      
-      <h3>Como Contratar Nossos Serviços</h3>
-      
-      <p>O processo é simples e transparente:</p>
-      
-      <ol>
-        <li><strong>Contato Inicial</strong>: Entre em contato via WhatsApp ou e-mail</li>
-        <li><strong>Briefing Detalhado</strong>: Conversamos sobre suas expectativas</li>
-        <li><strong>Proposta Personalizada</strong>: Orçamento adequado ao seu evento</li>
-        <li><strong>Confirmação</strong>: Fechamento do contrato</li>
-        <li><strong>Preparação</strong>: Planejamento musical detalhado</li>
-        <li><strong>Evento</strong>: Performance impecável</li>
-      </ol>
-      
-      <p>Nosso compromisso é fazer da música ao vivo o ponto alto do seu evento, criando momentos que permanecerão na memória de todos os presentes.</p>
-      
+
+      <h3>Eventos Realizados</h3>
+
+      <p>Entre os palcos e clientes já atendidos estão:</p>
+      <ul>
+        <li>Soul Jazz Burguer (Santa Tereza)</li>
+        <li>Restaurante Barólio (Savassi)</li>
+        <li>Le Pontes (Nova Lima)</li>
+        <li>Festival de Carros Antigos de Matozinhos</li>
+        <li>Arena Cachoeirinha</li>
+        <li>Chopperhead Garage</li>
+        <li>Festival de Jazz e Blues de Tiradentes (Concurso de Novos Talentos)</li>
+        <li>The Bulltique Vino Bar (BH)</li>
+      </ul>
+
+      <h3>Diferenciais da Banda</h3>
+
+      <ul>
+        <li><strong>Autenticidade:</strong> Nada de playback — tudo é ao vivo</li>
+        <li><strong>Versatilidade:</strong> Diferentes formações para cada ocasião</li>
+        <li><strong>Profissionalismo:</strong> Compromisso com excelência musical e visual</li>
+        <li><strong>Interação:</strong> Carisma e conexão com o público</li>
+        <li><strong>Qualidade Técnica:</strong> Equipamentos próprios e sonoridade refinada</li>
+      </ul>
+
+      <h3>Depoimentos Reais</h3>
+
+      <blockquote>"Ficamos extremamente felizes! A apresentação foi maravilhosa e queremos trazê-los mais vezes." – Ana Luiza, Restaurante Le Pontes</blockquote>
+      <blockquote>"Foi tão lindo! Minhas primas e a filhinha dela amaram! Obrigada, lindeza!" – Ravana, Arena Cachoeirinha</blockquote>
+      <blockquote>"Show fantástico! Marcou a história da nossa região. Agradecemos de coração!" – André Serra, Evento de Carros Antigos</blockquote>
+      <blockquote>"Foi tudo mágico! Obrigada pelo maravilhoso show que vocês nos presentearam!" – Débora, The Bulltique Vino Bar</blockquote>
+
+      <h3>Quer Levar Essa Experiência ao Seu Evento?</h3>
+
+      <p>A banda Mariana Matheos oferece uma curadoria musical personalizada para casamentos, eventos corporativos, festas culturais e celebrações especiais. Cada detalhe é pensado para transformar o seu evento em um espetáculo memorável — com música de verdade, emoção genuína e elegância sonora.</p>
+
       <hr>
-      
-      <p><em>Pronto para transformar seu evento em uma experiência musical única? Entre em contato conosco e descubra como a magia do jazz ao vivo pode elevar sua ocasião especial.</em></p>
+
+      <p><em>Transforme sua ocasião em uma experiência luxuosa e inesquecível com a banda Mariana Matheos. Entre em contato e descubra como o jazz pode tornar seu evento ainda mais especial.</em></p>
+
     `,
     image: marianaEssenciaImage,
     imageAlt: 'Mariana Matheos Jazz performando ao vivo em evento elegante',
     category: 'Jazz',
     tags: ['banda', 'música ao vivo', 'eventos', 'jazz', 'mariana matheos'],
-    publishedDate: '2024-01-15',
+    publishedDate: '2025-07-17',
     readingTime: '8 min',
     author: 'Mariana Matheos',
     seoTitle: 'Mariana Matheos Jazz — A essência da música ao vivo nos eventos | Blog',
@@ -186,7 +174,6 @@ export const blogArticlesData: BlogArticle[] = [
       <ul>
         <li>Equipamentos de som profissionais</li>
         <li>Técnico de som dedicado</li>
-        <li>Backup de instrumentos</li>
         <li>Experiência com diferentes tipos de locais</li>
         <li>Testes de som adequados</li>
       </ul>
@@ -233,7 +220,7 @@ export const blogArticlesData: BlogArticle[] = [
       
       <h4>Fatores que Influenciam o Preço</h4>
       <ul>
-        <li><strong>Número de Músicos</strong>: Duo, trio, quarteto ou banda completa</li>
+        <li><strong>Número de Músicos</strong>: Duo, trio, quarteto ou quinteto</li>
         <li><strong>Tempo de Apresentação</strong>: Horas de performance</li>
         <li><strong>Localização</strong>: Distância e tipo de venue</li>
         <li><strong>Equipamentos</strong>: Som, iluminação, estrutura</li>
@@ -289,7 +276,7 @@ export const blogArticlesData: BlogArticle[] = [
     imageAlt: 'Banda de jazz tocando em casamento elegante',
     category: 'Eventos',
     tags: ['casamento', 'banda', 'música ao vivo', 'dicas', 'evento elegante'],
-    publishedDate: '2024-01-12',
+    publishedDate: '2025-07-17',
     readingTime: '10 min',
     author: 'Mariana Matheos',
     seoTitle: 'Como escolher a banda ideal para o seu casamento | Blog Mariana Matheos',
@@ -519,12 +506,12 @@ export const blogArticlesData: BlogArticle[] = [
     imageAlt: 'Músicos de jazz vintage no Brasil dos anos 1920',
     category: 'Curiosidades',
     tags: ['jazz', 'história', 'brasil', 'cultura', 'música brasileira'],
-    publishedDate: '2024-01-10',
+    publishedDate: '2025-07-17',
     readingTime: '12 min',
     author: 'Mariana Matheos',
     seoTitle: 'A história do jazz no Brasil — das rádios aos grandes festivais | Blog',
     seoDescription: 'Explore a rica história do jazz brasileiro, suas influências e evolução desde os anos 1920 até os festivais contemporâneos.',
-    keywords: ['jazz brasileiro', 'história do jazz', 'música brasileira', 'cultura musical', 'bossa nova']
+    keywords: ['jazz brasileiro', 'história do jazz brasileiro', 'música brasileira', 'cultura musical', 'bossa nova']
   },
   {
     id: '4',
@@ -789,11 +776,215 @@ export const blogArticlesData: BlogArticle[] = [
     imageAlt: 'Banda de jazz tocando em evento corporativo elegante',
     category: 'Eventos',
     tags: ['eventos corporativos', 'música ao vivo', 'networking', 'empresas', 'confraternização'],
-    publishedDate: '2024-01-08',
+    publishedDate: '2025-07-17',
     readingTime: '7 min',
     author: 'Mariana Matheos',
     seoTitle: 'Por que a música ao vivo transforma eventos corporativos? | Blog',
     seoDescription: 'Entenda como a música ao vivo pode transformar seus eventos corporativos, criando experiências únicas e fortalecendo conexões.',
     keywords: ['eventos corporativos', 'música ao vivo empresas', 'banda profissional', 'networking musical', 'confraternização corporativa']
+  },
+  {
+    id: '5',
+    title: 'O que são Jazz Standards e por que são tão importantes?',
+    slug: 'historia-dos-jazz-standards',
+    excerpt: 'Descubra a origem e a importância dos jazz standards — as músicas que moldaram o jazz e permanecem vivas em cada performance da banda Mariana Matheos.',
+    content: `
+      <h2>Jazz Standards: O Alicerce do Jazz Clássico</h2>
+
+      <p>Os <strong>jazz standards</strong> são composições consagradas que se tornaram parte fundamental do repertório jazzístico ao longo do século XX. Eles representam uma linguagem comum entre músicos de diferentes gerações e estilos, funcionando como uma base rica para a improvisação, interpretação e reinvenção constante da música.</p>
+
+      <h3>Origens: Broadway, Cinema e o Jazz</h3>
+
+      <p>Muitos dos standards mais conhecidos nasceram em musicais da Broadway e filmes de Hollywood nas décadas de 1920 a 1950. Compositores como George Gershwin, Cole Porter, Irving Berlin e Richard Rodgers criaram canções que, embora escritas originalmente para teatro e cinema, foram rapidamente adotadas pelos músicos de jazz e transformadas em verdadeiros clássicos.</p>
+
+      <ul>
+        <li><strong>Década de 1920:</strong> “Stardust”, “Ain’t Misbehavin’”</li>
+        <li><strong>Década de 1930:</strong> “All of Me”, “Summertime”</li>
+        <li><strong>Década de 1940:</strong> “Autumn Leaves”, “Body and Soul”</li>
+        <li><strong>Década de 1950:</strong> “Misty”, “My Funny Valentine”</li>
+      </ul>
+
+      <h3>Improvisação e Expressividade</h3>
+
+      <p>O que torna um jazz standard tão especial não é apenas sua melodia memorável, mas a liberdade que oferece aos músicos. Cada performance é uma nova leitura — com solos, variações harmônicas e dinâmicas que transformam a mesma música em uma experiência única a cada vez.</p>
+
+      <blockquote>"Tocar um standard é como contar uma história clássica com sua própria voz." — Músico de jazz</blockquote>
+
+      <h3>Standards no Repertório da Banda Mariana Matheos</h3>
+
+      <p>A banda Mariana Matheos interpreta uma seleção refinada de standards que atravessam décadas de história do jazz, mesclando elegância e personalidade em cada arranjo.</p>
+
+      <ul>
+        <li>“Fly Me to the Moon”</li>
+        <li>“Cheek to Cheek”</li>
+        <li>“Georgia on My Mind”</li>
+        <li>“The Way You Look Tonight”</li>
+        <li>“My Baby Just Cares for Me”</li>
+      </ul>
+
+      <p>Essas canções não são apenas reconhecíveis pelo público — elas carregam consigo emoções, histórias e uma atmosfera atemporal que transforma qualquer evento em algo inesquecível.</p>
+
+      <h3>Por que Incluir Standards no Seu Evento?</h3>
+
+      <ul>
+        <li><strong>Conexão Intergeracional:</strong> Agrada desde os mais jovens até os mais experientes</li>
+        <li><strong>Elegância Sonora:</strong> Ideal para cerimônias, jantares e momentos sofisticados</li>
+        <li><strong>Versatilidade:</strong> Podem ser interpretados em diferentes formações (duo, trio, quinteto)</li>
+        <li><strong>Interpretação Única:</strong> Cada músico imprime sua personalidade ao tocar</li>
+        <li><strong>Identidade Cultural:</strong> Reforçam o clima de charme e classe do evento</li>
+      </ul>
+
+      <h3>Conclusão</h3>
+
+      <p>Os jazz standards são a espinha dorsal do jazz tradicional — canções que atravessam gerações e continuam emocionando plateias ao redor do mundo. Com a banda Mariana Matheos, esses clássicos ganham nova vida, combinando respeito à tradição com arranjos sofisticados e presença cênica marcante.</p>
+
+      <hr>
+
+      <p><em>Quer trazer a elegância dos jazz standards para seu evento? Fale com a gente e descubra como transformar seu momento especial com a trilha sonora dos clássicos eternos.</em></p>
+    `,
+    image: jazzStandardsImage,
+    imageAlt: 'Pianista e vocalista interpretando um jazz standard em palco iluminado',
+    category: 'Curiosidades',
+    tags: ['jazz standards', 'repertório clássico', 'música ao vivo', 'jazz tradicional'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'O que são Jazz Standards e por que são tão importantes? | Blog',
+    seoDescription: 'Entenda o que são os jazz standards, por que são essenciais para o jazz e como a banda Mariana Matheos dá vida a esses clássicos em eventos ao vivo.',
+    keywords: ['jazz standards', 'história do jazz', 'clássicos do jazz', 'música ao vivo', 'repertório jazzístico']
+  },
+  {
+    id: '6',
+    title: 'O que é necessário para ser uma banda de jazz?',
+    slug: 'como-ser-uma-banda-de-jazz',
+    excerpt: 'Entenda os principais elementos artísticos, técnicos e humanos que compõem uma banda de jazz de sucesso — e como construir uma do zero com autenticidade.',
+    content: `
+      <h2>O que é necessário para ser uma banda de jazz?</h2>
+
+      <p>Montar e manter uma <strong>banda de jazz</strong> vai muito além de reunir músicos talentosos. O jazz exige sensibilidade, técnica, improvisação e um profundo entendimento do estilo. Se você quer formar um grupo autêntico e expressivo, é essencial considerar aspectos musicais, humanos e organizacionais. Aqui vão as principais dicas para começar com o pé direito.</p>
+
+      <h3>1. Reunir Músicos com Linguagem Comum</h3>
+
+      <p>O jazz é uma conversa entre músicos. Para que ela aconteça com fluidez, os integrantes devem dominar a linguagem do estilo — seja no swing, no fraseado, nas dinâmicas ou na improvisação. É essencial escolher pessoas que:</p>
+
+      <ul>
+        <li>Tenham conhecimento dos principais <strong>jazz standards</strong></li>
+        <li>Saibam improvisar com bom senso melódico e harmônico</li>
+        <li>Tenham escuta ativa e saibam dialogar musicalmente</li>
+        <li>Estejam abertos a ensaiar com frequência</li>
+      </ul>
+
+      <h3>2. Definir a Formação Ideal</h3>
+
+      <p>O jazz é versátil, e as formações podem variar bastante. Algumas opções comuns incluem:</p>
+
+      <ul>
+        <li><strong>Duo:</strong> Voz e piano, ou guitarra e baixo</li>
+        <li><strong>Trio:</strong> Piano, contrabaixo e bateria</li>
+        <li><strong>Quarteto:</strong> Adiciona um instrumento melódico (voz, trompete, sax)</li>
+        <li><strong>Quinteto ou mais:</strong> Ideal para apresentações mais completas e arranjadas</li>
+      </ul>
+
+      <p>Escolha a formação conforme o repertório e a proposta do grupo.</p>
+
+      <h3>3. Escolher um Repertório Consistente</h3>
+
+      <p>Uma banda de jazz precisa de um repertório que represente sua identidade. Comece com um núcleo de <strong>standards consagrados</strong> e vá incluindo arranjos autorais ou releituras. Algumas sugestões:</p>
+
+      <ul>
+        <li>“Autumn Leaves”</li>
+        <li>“All of Me”</li>
+        <li>“Blue Bossa”</li>
+        <li>“Summertime”</li>
+        <li>“My Baby Just Cares for Me”</li>
+      </ul>
+
+      <p>Considere também adaptações de músicas pop em estilo jazz, que ajudam a ampliar o alcance do grupo.</p>
+
+      <h3>4. Investir em Equipamentos de Qualidade</h3>
+
+      <p>A qualidade do som é essencial. Certifique-se de que a banda tenha acesso a:</p>
+
+      <ul>
+        <li>Instrumentos bem cuidados e ajustados</li>
+        <li>Amplificadores ou sistemas de som apropriados para o local</li>
+        <li>Microfones, cabos e pedais em bom estado</li>
+        <li>Recursos mínimos para ensaios e gravações</li>
+      </ul>
+
+      <h3>5. Ensaiar Regularmente e com Propósito</h3>
+
+      <p>Ensaios não são apenas para "tocar junto". São momentos para:</p>
+
+      <ul>
+        <li>Refinar arranjos e transições</li>
+        <li>Ajustar dinâmicas e tempos</li>
+        <li>Explorar improvisações e novas ideias</li>
+        <li>Testar repertórios para diferentes contextos</li>
+      </ul>
+
+      <p>Tenha uma agenda de ensaios e aproveite-os com foco.</p>
+
+      <h3>6. Desenvolver uma Identidade Visual e Artística</h3>
+
+      <p>No jazz, o <strong>estilo também se expressa na estética</strong>. Uniformes elegantes, presença de palco, iluminação e branding são elementos que comunicam a proposta artística. Pense em:</p>
+
+      <ul>
+        <li>Um nome de banda memorável</li>
+        <li>Logo, cores e fontes coerentes com o estilo</li>
+        <li>Redes sociais e materiais de divulgação profissionais</li>
+      </ul>
+
+      <h3>7. Ser Profissional em Todos os Aspectos</h3>
+
+      <p>Para se destacar no mercado, trate sua banda como uma empresa:</p>
+
+      <ul>
+        <li>Cumpra horários e contratos</li>
+        <li>Tenha um portfólio com fotos e vídeos</li>
+        <li>Apresente orçamentos e rider técnico com clareza</li>
+        <li>Responda clientes com empatia e agilidade</li>
+      </ul>
+
+      <h3>8. Adaptar-se aos Diferentes Tipos de Eventos</h3>
+
+      <p>Se a proposta for atuar em casamentos, eventos corporativos ou festivais, a banda deve ter:</p>
+
+      <ul>
+        <li>Formações e repertórios flexíveis</li>
+        <li>Repertório adaptado ao tipo de evento</li>
+        <li>Postura elegante e alinhada com o público</li>
+      </ul>
+
+      <h3>9. Cultivar Relações e Divulgar o Trabalho</h3>
+
+      <p>Uma banda de jazz cresce com visibilidade e boas conexões:</p>
+
+      <ul>
+        <li>Registre bons momentos em vídeo e áudio</li>
+        <li>Interaja com o público após os shows</li>
+        <li>Construa parcerias com organizadores, fotógrafos e cerimonialistas</li>
+        <li>Esteja presente nas redes e nos sites de contratação</li>
+      </ul>
+
+      <h3>Conclusão</h3>
+
+      <p>Ser uma banda de jazz vai muito além de tocar standards. É um compromisso com a arte, com a excelência musical e com a experiência que você entrega ao público. Com dedicação, repertório coerente e postura profissional, é possível transformar cada apresentação em um momento memorável.</p>
+
+      <hr>
+
+      <p><em>Quer dicas personalizadas ou precisa de orientação para montar sua banda? Fale com a gente e vamos compartilhar o que aprendemos ao longo do caminho com a banda Mariana Matheos.</em></p>
+    `,
+    image: bandaDeJazzImage,
+    imageAlt: 'Banda de jazz ensaiando em um estúdio com instrumentos clássicos',
+    category: 'Dicas',
+    tags: ['como montar banda', 'dicas para músicos', 'jazz', 'banda de jazz'],
+    publishedDate: '2024-01-27',
+    readingTime: '8 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'O que é necessário para ser uma banda de jazz? | Blog',
+    seoDescription: 'Confira dicas essenciais para montar e manter uma banda de jazz de sucesso — desde os músicos certos até repertório, ensaios e postura profissional.',
+    keywords: ['como formar banda de jazz', 'dicas para músicos de jazz', 'banda instrumental', 'montar banda', 'jazz moderno']
   }
+
 ];

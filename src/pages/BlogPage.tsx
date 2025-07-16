@@ -11,6 +11,8 @@ import casamentoImage from '@/assets/images/casamento-jazz-band.jpg';
 import historiaJazzImage from '@/assets/images/historia-jazz-brasil.jpg';
 import eventosCorporativosImage from '@/assets/images/eventos-corporativos.jpg';
 import marianaEssenciaImage from '/images/cantora.png';
+import jazzStandardsImage from '/images/jazz-standard.jpg';
+import bandaDeJazzImage from '/images/banda-de-jazz-1920.jpg';
 
 interface BlogArticle {
   id: string;
@@ -41,7 +43,7 @@ const blogArticles: BlogArticle[] = [
     imageAlt: 'Mariana Matheos Jazz performando ao vivo em evento elegante',
     category: 'Jazz',
     tags: ['banda', 'música ao vivo', 'eventos', 'jazz'],
-    publishedDate: '2024-01-15',
+    publishedDate: '2025-07-17',
     readingTime: '8 min',
     author: 'Mariana Matheos',
     seoTitle: 'Mariana Matheos Jazz — A essência da música ao vivo nos eventos | Blog',
@@ -58,7 +60,7 @@ const blogArticles: BlogArticle[] = [
     imageAlt: 'Banda de jazz tocando em casamento elegante',
     category: 'Eventos',
     tags: ['casamento', 'banda', 'música ao vivo', 'dicas'],
-    publishedDate: '2024-01-12',
+    publishedDate: '2025-07-17',
     readingTime: '10 min',
     author: 'Mariana Matheos',
     seoTitle: 'Como escolher a banda ideal para o seu casamento | Blog Mariana Matheos',
@@ -75,7 +77,7 @@ const blogArticles: BlogArticle[] = [
     imageAlt: 'Músicos de jazz vintage no Brasil dos anos 1920',
     category: 'Curiosidades',
     tags: ['jazz', 'história', 'brasil', 'cultura'],
-    publishedDate: '2024-01-10',
+    publishedDate: '2025-07-17',
     readingTime: '12 min',
     author: 'Mariana Matheos',
     seoTitle: 'A história do jazz no Brasil — das rádios aos grandes festivais | Blog',
@@ -92,12 +94,46 @@ const blogArticles: BlogArticle[] = [
     imageAlt: 'Banda de jazz tocando em evento corporativo elegante',
     category: 'Eventos',
     tags: ['eventos corporativos', 'música ao vivo', 'networking', 'empresas'],
-    publishedDate: '2024-01-08',
+    publishedDate: '2025-07-17',
     readingTime: '7 min',
     author: 'Mariana Matheos',
     seoTitle: 'Por que a música ao vivo transforma eventos corporativos? | Blog',
     seoDescription: 'Entenda como a música ao vivo pode transformar seus eventos corporativos, criando experiências únicas e fortalecendo conexões.',
     keywords: ['eventos corporativos', 'música ao vivo empresas', 'banda profissional', 'networking musical']
+  },
+  {
+    id: '5',
+    title: 'O que são Jazz Standards e por que são tão importantes?',
+    slug: 'historia-dos-jazz-standards',
+    excerpt: 'Descubra a origem e o papel essencial dos jazz standards — as músicas clássicas que moldaram a identidade do jazz e encantam gerações.',
+    content: '',
+    image: jazzStandardsImage,
+    imageAlt: 'Pianista e vocalista interpretando um jazz standard em palco iluminado',
+    category: 'Curiosidades',
+    tags: ['jazz standards', 'jazz clássico', 'história', 'repertório tradicional'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'O que são Jazz Standards e por que são tão importantes? | Blog',
+    seoDescription: 'Entenda o que são os jazz standards, sua origem e importância para o repertório clássico do jazz. Descubra como a banda Mariana Matheos reinventa esses clássicos em performances ao vivo.',
+    keywords: ['jazz standards', 'história do jazz', 'repertório jazzístico', 'banda de jazz', 'clássicos do jazz']
+  },
+  {
+    id: '6',
+    title: 'O que é necessário para ser uma banda de jazz?',
+    slug: 'como-ser-uma-banda-de-jazz',
+    excerpt: 'Entenda os principais elementos artísticos, técnicos e humanos que compõem uma banda de jazz de sucesso — e como construir uma do zero com autenticidade.',
+    content: '',
+    image: bandaDeJazzImage,
+    imageAlt: 'Banda de jazz ensaiando em um estúdio com instrumentos clássicos',
+    category: 'Dicas',
+    tags: ['como montar banda', 'dicas para músicos', 'jazz', 'banda de jazz'],
+    publishedDate: '2024-01-27',
+    readingTime: '8 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'O que é necessário para ser uma banda de jazz? | Blog',
+    seoDescription: 'Confira dicas essenciais para montar e manter uma banda de jazz de sucesso — desde os músicos certos até repertório, ensaios e postura profissional.',
+    keywords: ['como formar banda de jazz', 'dicas para músicos de jazz', 'banda instrumental', 'montar banda', 'jazz moderno']
   }
 ];
 
@@ -262,7 +298,7 @@ const BlogPage = () => {
               Entre em contato conosco e descubra como a música ao vivo pode elevar a experiência do seu evento.
             </p>
             <button
-              onClick={() => window.open('https://wa.me/5531999999999?text=Olá! Gostaria de saber mais sobre a banda para meu evento.', '_blank')}
+              onClick={() => window.open('https://wa.me/5531997522127?text=Olá! Gostaria de saber mais sobre a banda para meu evento.', '_blank')}
               className="bg-jazz-gold text-black px-8 py-4 rounded-lg font-gatsbybold hover:bg-white transition-colors duration-300 transform hover:scale-105 text-lg"
             >
               Solicitar Orçamento
