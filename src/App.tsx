@@ -14,6 +14,8 @@ import BookingPage from "./pages/BookingPage";
 import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
+import BlogPage from "./pages/BlogPage";
+import BlogArticlePage from "./pages/BlogArticlePage";
 import ScrollToTop from "./components/globalComponents/ScrollToTop";
 import SkipLink from "./components/globalComponents/SkipLink";
 
@@ -38,6 +40,8 @@ const App = () => (
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/depoimentos" element={<TestimonialsPage />} />
           <Route path="/contato" element={<ContactPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogArticlePage />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -20,6 +20,7 @@ const Header = () => {
     { name: 'Agenda', path: '/agenda', title: 'Agenda de Shows - Próximas Apresentações da Banda' },
     { name: 'Depoimentos', path: '/depoimentos', title: 'Depoimentos - Contratantes e ouvintes' },
     { name: 'FAQ', path: '/faq', title: 'Agenda de Shows - Próximas Apresentações da Banda' },
+    { name: 'Blog', path: '/blog', title: 'Blog Mariana Matheos - Dicas e Inspirações Musicais' },
     { name: 'Contato', path: '/contato', title: 'Contratar Banda de Jazz - Contato' }
   ];
 
