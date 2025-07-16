@@ -12,7 +12,7 @@ const Header = () => {
   const { isMobile, isTablet } = useAdvancedViewport();
 
   const navigationItems = [
-    { name: 'Início', path: '/inicio', title: 'Banda de Jazz Blues Soul R&B BH - Página Principal' },
+    { name: 'Início', path: '/', title: 'Banda de Jazz Blues Soul R&B BH - Página Principal' },
     { name: 'Sobre', path: '/sobre', title: 'Sobre a Banda de Jazz Mariana Matheos - História e Membros' },
     { name: 'Repertório', path: '/repertorio', title: 'Repertório Jazz Blues Soul R&B - Lista de Músicas' },
     { name: 'Vídeos', path: '/videos', title: 'Vídeos da Banda de Jazz - Apresentações ao Vivo' },
