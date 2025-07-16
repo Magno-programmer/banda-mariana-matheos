@@ -4,8 +4,11 @@ import { Star } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
+import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const AvaliationSection = () => {
+  const { isMiniMobile, isMobile, isMiniTablet, isTablet } = useAdvancedViewport();
+
   const googleReviews = [
     { name: "Geraldo Santana", review: "Excelente cantora!! Vale a pena assistir o seu show!!" },
     { name: "Juciane Petenusso", review: "Excelente cantora, uma voz maravilhosa e canta todo tipo de música... super animada e simpática" },
@@ -39,6 +42,13 @@ const AvaliationSection = () => {
     </div>
   );
 
+  const titleSize = isMobile ? 'text-3xl' : isTablet ? 'text-4xl' : 'text-5xl';
+  const sectionTitleSize = isMobile ? 'text-2xl' : isTablet ? 'text-3xl' : 'text-4xl';
+  const textSize = isMobile ? 'text-lg' : isTablet ? 'text-xl' : 'text-2xl';
+  const reviewTextSize = isMobile ? 'text-base' : isTablet ? 'text-lg' : 'text-xl';
+  const nameSize = isMobile ? 'text-lg' : isTablet ? 'text-xl' : 'text-2xl';
+  const carouselBasis = isMobile ? 'basis-full' : isTablet ? 'basis-1/2' : 'basis-1/3';
+
   return (
     <section className="py-20 jazz-gradient relative">
       {/* Background decorative elements */}
@@ -50,8 +60,8 @@ const AvaliationSection = () => {
       <div className="container mx-auto px-4 relative">
         {/* Page Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="font-glimmer text-5xl font-bold text-white mb-6 jazz-text-shadow">
-            Depoimentos Sobre Mariana Matheos
+          <h1 className={`font-glimmer ${titleSize} font-bold text-white mb-6 jazz-text-shadow`}>
+            Depoimentos Sobre Mariana Matheos 
           </h1>
           <div className="w-full flex justify-center mb-6">
             <img
@@ -60,8 +70,8 @@ const AvaliationSection = () => {
               className="w-64 object-contain"
             />
           </div>
-          <p className="font-gatsbybold text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed">
-            Veja o que nossos clientes e o público falam sobre as apresentações ao vivo da nossa banda de jazz, soul, blues e R&B
+          <p className={`font-gatsbybold ${textSize} text-gray-100 max-w-4xl mx-auto leading-relaxed`}>
+            Veja o que nossos clientes e o público falam sobre as apresentações ao vivo da nossa banda de jazz, soul, blues e R&B 
           </p>
         </div>
 
@@ -73,18 +83,18 @@ const AvaliationSection = () => {
                 <Star key={i} className="w-6 h-6 fill-jazz-gold text-jazz-gold" />
               ))}
             </div>
-            <h2 className="font-glimmer text-2xl jazz-gold font-bold mb-2">
-              Todas as avaliações da banda no Google são 5 estrelas
+            <h2 className={`font-glimmer ${textSize} jazz-gold font-bold mb-2`}>
+              Todas as avaliações da banda no Google são 5 estrelas 
             </h2>
-            <p className="font-gatsbybold text-gray-100 text-xl">
-              Nossa banda de jazz ao vivo tem 100% de aprovação no Google
+            <p className={`font-gatsbybold text-gray-100 ${reviewTextSize}`}>
+              Nossa banda de jazz ao vivo tem 100% de aprovação no Google 
             </p>
           </div>
         </div>
 
         {/* Google Reviews Section */}
         <div className="mb-20 animate-fade-in">
-          <h2 className="font-glimmer text-4xl font-bold text-white mb-4 text-center jazz-text-shadow">
+          <h2 className={`font-glimmer ${sectionTitleSize} font-bold text-white mb-4 text-center jazz-text-shadow`}>
             Avaliações no Google
           </h2>
           <div className="w-full flex justify-center mb-12">
@@ -95,18 +105,18 @@ const AvaliationSection = () => {
             />
           </div>
 
-          <Carousel className="w-full max-w-4xl mx-auto">
+          <Carousel className={`w-full ${isMiniMobile ? 'max-w-[70%]' : 'max-w-[80%]'}  mx-auto`}>
             <CarouselContent>
               {googleReviews.map((review, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className={carouselBasis}>
                   <div className="p-2">
                     <Card className="bg-black bg-opacity-40 border-2 border-jazz-gold border-opacity-30 hover:border-opacity-100 transition-all duration-300 h-full">
                       <CardContent className="p-6 text-center h-full flex flex-col justify-between">
                         {renderStars()}
-                        <blockquote className="font-gatsbybold text-gray-200 text-xl leading-relaxed mb-4 flex-grow">
+                        <blockquote className={`font-gatsbybold text-gray-200 ${reviewTextSize} leading-relaxed mb-4 flex-grow`}>
                           "{review.review}"
                         </blockquote>
-                        <cite className="font-glimmer text-jazz-gold font-bold text-2xl">
+                        <cite className={`font-glimmer text-jazz-gold font-bold ${nameSize}`}>
                           — {review.name}
                         </cite>
                       </CardContent>
@@ -122,7 +132,7 @@ const AvaliationSection = () => {
 
         {/* Client Reviews Section */}
         <div className="animate-fade-in">
-          <h2 className="font-glimmer text-4xl font-bold text-white mb-4 text-center jazz-text-shadow">
+          <h2 className={`font-glimmer ${sectionTitleSize} font-bold text-white mb-4 text-center jazz-text-shadow`}>
             Depoimentos dos Contratantes
           </h2>
           <div className="w-full flex justify-center mb-12">
@@ -133,22 +143,22 @@ const AvaliationSection = () => {
             />
           </div>
 
-          <Carousel className="w-full max-w-4xl mx-auto">
+          <Carousel className={`w-full ${isMiniMobile ? 'max-w-[70%]' : 'max-w-[80%]'}  mx-auto`}>
             <CarouselContent>
               {clientReviews.map((review, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className={carouselBasis}>
                   <div className="p-2">
                     <Card className="bg-black bg-opacity-40 border-2 border-jazz-gold border-opacity-30 hover:border-opacity-100 transition-all duration-300 h-full">
                       <CardContent className="p-6 text-center h-full flex flex-col justify-between">
                         {renderStars()}
-                        <blockquote className="font-gatsbybold text-gray-100 text-xl leading-relaxed mb-4 flex-grow">
+                        <blockquote className={`font-gatsbybold text-gray-100 ${reviewTextSize} leading-relaxed mb-4 flex-grow`}>
                           "{review.review}"
                         </blockquote>
                         <div className="text-center">
-                          <cite className="font-glimmer text-jazz-gold font-bold text-2xl block">
+                          <cite className={`font-glimmer text-jazz-gold font-bold ${nameSize} block`}>
                             — {review.name}
                           </cite>
-                          <span className="font-gatsbybold text-gray-400 text-xl">
+                          <span className={`font-gatsbybold text-gray-400 ${reviewTextSize}`}>
                             {review.business}
                           </span>
                         </div>
@@ -166,17 +176,17 @@ const AvaliationSection = () => {
         {/* CTA Section */}
         <div className="text-center mt-20 animate-scale-in">
           <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50 max-w-3xl mx-auto rounded-lg">
-            <h3 className="font-glimmer text-3xl jazz-gold font-bold mb-4">
+            <h3 className={`font-glimmer ${textSize} jazz-gold font-bold mb-4`}>
               Seja o próximo a contratar nossa banda de jazz ao vivo
             </h3>
-            <p className="font-gatsbybold text-2xl text-gray-50 mb-6">
+            <p className={`font-gatsbybold ${textSize} text-gray-50 mb-6`}>
               Junte-se aos nossos clientes satisfeitos e garante uma apresentação inesquecível de jazz, soul, blues e R&B para seu evento
             </p>
             <a 
               href="https://wa.me/5531997522127?text=Olá, Mariana! Vi os depoimentos no site e gostaria de contratar a banda para meu evento."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block font-gatsby text-lg px-8 py-4 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 tracking-wider uppercase font-semibold rounded"
+              className={`inline-block font-gatsby ${isMobile ? 'text-base' : 'text-lg'} px-8 py-4 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 tracking-wider uppercase font-semibold rounded`}
             >
               Solicitar Orçamento
             </a>

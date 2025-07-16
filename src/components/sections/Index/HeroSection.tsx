@@ -6,10 +6,19 @@ import bandaCompletaPalco from '@/assets/images/imagem-da-banda.jpg';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import bordabuttonArtDeco from '@/assets/images/divisor-de-botao.png';
-
+import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
+import TestimonialSection from './TestimonialSection';
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const { isMobile, isTablet } = useAdvancedViewport();
+
+  const titleSize = isMobile ? 'text-4xl' : isTablet ? 'text-5xl' : 'text-7xl';
+  const subtitleSize = isMobile ? 'text-2xl' : isTablet ? 'text-3xl' : 'text-5xl';
+  const logoWidth = isMobile ? 'w-[30%]' : isTablet ? 'w-[35%]' : 'w-[30%]';
+  const buttonSize = isMobile ? 'text-sm px-4 py-2 h-[60px] w-[200px]' : isTablet ? 'text-base px-5 py-2 h-[70px] w-[225px]' : 'text-lg px-6 py-2 h-[80px] w-[255px]';
+  const containerHeight = isMobile ? 'h-[150px]' : isTablet ? 'h-[175px]' : 'h-[200px]';
+  const buttonMargin = isMobile ? 'mt-[90px]' : isTablet ? 'mt-[105px]' : 'mt-[120px]';
 
   return (
     <section 
@@ -40,16 +49,16 @@ const HeroSection = () => {
             <img
               src={logoGold}
               alt="Logo oficial da Banda de Jazz Mariana Matheos com textura dourada"
-              className="hidden sm:block w-[30%] mt-[15%] pb-[15%] object-contain drop-shadow-lg"
+              className={`${logoWidth} mt-[15%] pb-[15%] object-contain drop-shadow-lg`}
             />
           </div>
         </div>
 
         {/* Main Slogan */}
-        <h1 className="font-glimmer mt-8 text-7xl font-bold text-white mb-6 jazz-text-shadow leading-tight">
+        <h1 className={`font-glimmer mt-8 ${titleSize} font-bold text-white mb-6 jazz-text-shadow leading-tight`}>
           Mariana Matheos
         </h1>
-        <h2 className="font-glimmer text-5xl font-bold jazz-gold mb-8 jazz-text-shadow">
+        <h2 className={`font-glimmer ${subtitleSize} font-bold jazz-gold mb-8 jazz-text-shadow ${isMobile ? 'px-4' : ''}`}>
           Uma experiência sofisticada, atemporal e arrebatadora
         </h2>
 
@@ -64,7 +73,7 @@ const HeroSection = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="relative w-[100%] h-[200px] mx-auto">
+        <div className={`relative w-[100%] ${containerHeight} mx-auto`}>
           <img 
             src={bordabuttonArtDeco} 
             alt="Moldura decorativa do botão em estilo Art Déco"
@@ -73,7 +82,7 @@ const HeroSection = () => {
           />
           <button
             onClick={() => navigate('/sobre')}
-            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby text-lg px-6 py-2 mt-[120px] h-[80px] w-[255px] pb-2 text-jazz-gold hover:bg-jazz-gold hover:text-black focus:bg-jazz-gold focus:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0 focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded"
+            className={`absolute left-1/2 -translate-x-1/2 -translate-y-1/2 font-gatsby ${buttonSize} ${buttonMargin} pb-2 text-jazz-gold hover:bg-jazz-gold hover:text-black focus:bg-jazz-gold focus:text-black transition-all duration-300 tracking-wider uppercase font-semibold z-0 focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded`}
             aria-label="Conheça nossa Banda de Jazz - Ir para página sobre"
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -86,6 +95,8 @@ const HeroSection = () => {
           </button>
         </div>
       </div>
+      
+      <TestimonialSection />
     </section>
   );
 };

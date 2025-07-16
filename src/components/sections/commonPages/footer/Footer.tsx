@@ -1,8 +1,14 @@
 
 import React from 'react';
 import { Instagram, Youtube, Mail, Phone } from 'lucide-react';
+import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const Footer = () => {
+  const { isMobile, isTablet } = useAdvancedViewport();
+
+  const textSize = isMobile ? 'text-lg' : isTablet ? 'text-xl' : 'text-2xl';
+  const smallText = isMobile ? 'text-sm' : isTablet ? 'text-base' : 'text-lg';
+
   return (
     <footer className="bg-black py-12 border-t border-jazz-gold border-opacity-30" role="contentinfo">
       <div className="container mx-auto px-6">
@@ -11,24 +17,24 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* Brand */}
             <div className="text-center md:text-left">
-              <h3 className="font-glimmer text-2xl font-bold jazz-gold mb-4">
+              <h3 className={`font-glimmer ${textSize} font-bold jazz-gold mb-4`}>
                 Mariana Matheos
               </h3>
-              <p className="font-gatsbybold text-gray-400 text-2xl">
+              <p className={`font-gatsbybold text-gray-400 ${textSize}`}>
                 Banda de jazz
               </p>
-              <p className="font-gatsbybold text-gray-400 text-2xl mt-2">
+              <p className={`font-gatsbybold text-gray-400 ${textSize} mt-2`}>
                 Era de Ouro do Jazz (1920–1960)
               </p>
             </div>
 
             {/* Contact Info */}
             <div className="text-center">
-              <h4 className="font-glimmer text-2xl jazz-gold mb-4">Contato</h4>
+              <h4 className={`font-glimmer ${textSize} jazz-gold mb-4`}>Contato</h4>
               <div className="space-y-2">
                 <a 
-                  href="tel:+5531997522127" 
-                  className="flex items-center justify-center font-gatsbybold text-gray-400 text-xl hover:text-jazz-gold focus:text-jazz-gold transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
+                  href="tel:+5531997522127"  
+                  className={`flex items-center justify-center font-gatsbybold text-gray-400 ${smallText} hover:text-jazz-gold focus:text-jazz-gold transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-jazz-gold focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1`}
                   aria-label="Ligar para (31) 99752-2127 - Contato da Banda Mariana Matheos"
                 >
                   <Phone className="w-4 h-4 mr-2" aria-hidden="true" />
@@ -39,7 +45,7 @@ const Footer = () => {
 
             {/* Social Media */}
             <div className="text-center md:text-right">
-              <h4 className="font-glimmer text-2xl jazz-gold mb-4">Redes Sociais</h4>
+              <h4 className={`font-glimmer ${textSize} jazz-gold mb-4`}>Redes Sociais</h4>
               <div className="flex justify-center md:justify-end space-x-4" role="list">
                 <a 
                   href="https://instagram.com/marianamatheosoficial" 
@@ -68,10 +74,10 @@ const Footer = () => {
           {/* Divider */}
           <div className="border-t border-jazz-gold border-opacity-20 pt-8">
             <div className="text-center">
-              <p className="font-gatsbybold text-gray-500 text-xl">
+              <p className={`font-gatsbybold text-gray-500 ${smallText}`}>
                 © 2024 Mariana Matheos Banda de jazz. Todos os direitos reservados.
               </p>
-              <p className="font-gatsbybold text-gray-500 text-lg mt-2">
+              <p className={`font-gatsbybold text-gray-500 ${isMobile ? 'text-xs' : 'text-sm'} mt-2`}>
                 "Mariana Matheos, o vintage que te trará uma experiência musical sofisticada, atemporal e arrebatadora"
               </p>
             </div>

@@ -1,10 +1,12 @@
 import React, {useState, useRef} from "react";
+import { useAdvancedViewport } from "@/hooks/useAdvancedViewport";
 
 const VideosSection = () => {
     
   const [videoOpen, setVideoOpen] = useState(false);
   
   const [videoUrl, setVideoUrl] = useState("https://www.youtube.com/embed/3vUOFhwE134");
+  const { isMiniMobile, isMobile, isMiniTablet, isTablet } = useAdvancedViewport();
   
   const [videos] = useState([
     { title: "All About That Bass - Postmodern Jukebox Cover (Matozinhos)", url: "https://www.youtube.com/embed/CO_yWe9z8S0" },
@@ -19,6 +21,13 @@ const VideosSection = () => {
     setVideoOpen(true);
   };
 
+  const titleSize = isMobile ? 'text-3xl' : isTablet ? 'text-4xl' : 'text-5xl';
+  const textSize = isMobile ? 'text-lg' : isTablet ? 'text-xl' : 'text-2xl';
+  const videoHeight = isMiniMobile ? 'h-[70%]' : isMobile ? 'h-[346px]' : isMiniTablet ? 'h-[380px]' : isTablet ? 'h-[390px]' : 'h-[450px]';
+  const videoWidth = isMobile ? 'w-full' : isMiniTablet ? 'w-[500px]' : isTablet ? 'w-[600px]' : 'w-[700px]';
+  const gridCols = isMobile ? 'grid-cols-1' : isTablet ? 'grid-cols-2' : 'grid-cols-3';
+  const buttonTextSize = isMobile ? 'text-sm' : isTablet ? 'text-base' : 'text-xl';
+
   return (
     <section className="py-20 jazz-gradient relative">
       {/* Background decoration */}
@@ -30,12 +39,12 @@ const VideosSection = () => {
         {/* Vídeo session */}
         <div className="max-w-3xl mx-auto animate-fade-in">
         <div className="text-center mb-8">
-            <h3 className="font-glimmer text-5xl font-bold jazz-gold mb-4">Performance ao Vivo</h3>
-            <p className="font-gatsbybold text-gray-400 text-2xl">Assista um trecho da apresentação</p>
+            <h3 className={`font-glimmer ${titleSize} font-bold jazz-gold mb-4`}>Performance ao Vivo </h3>
+            <p className={`font-gatsbybold text-gray-400 ${textSize}`}>Assista um trecho da apresentação </p>
         </div>
 
         {/* Vídeo embed */}
-        <div className="relative bg-jazz-dark h-[450px] border border-jazz-dark border-opacity-50 flex items-center justify-center">
+        <div className={`relative bg-jazz-dark ${videoHeight} border border-jazz-dark border-opacity-50 flex items-center justify-center mx-auto`}>
             {videoOpen ? (
             <iframe
                 className="w-full h-full"
@@ -55,7 +64,7 @@ const VideosSection = () => {
                 <img
                     src={thumbnailUrl}
                     alt="Capa do vídeo"
-                    className="h-[450px] w-[700px] object-cover"
+                    className={`${videoHeight} ${videoWidth} object-cover`}
                 />
                 {/* Ícone play centralizado */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/60 transition">
@@ -76,18 +85,18 @@ const VideosSection = () => {
             )}
         </div>
 
-            {/* Lista de vídeos para assistir */}
-            <div className="mt-6 grid grid-cols-3 flex flex-wrap justify-center gap-4">
+          {/* Lista de vídeos para assistir */}
+          <div className={`mt-6 grid ${gridCols} gap-4`}>
             {videos.map((video, index) => (
-                <button
+              <button
                 key={index}
                 onClick={() => handleVideoSelect(video.url)}
-                className="font-gatsbybold text-xl px-4 py-2 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition z-20"
-                >
+                className={`font-gatsbybold ${buttonTextSize} px-4 py-2 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition z-20`}
+              >
                 {video.title}
-                </button>
+              </button>
             ))}
-            </div>
+          </div>
         </div>
     </section>
   );

@@ -1,29 +1,37 @@
 import React, {useState, useRef} from 'react';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
+import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const ImageSection = () => {
+  const { isMiniMobile, isMobile, isMiniTablet, isTablet } = useAdvancedViewport();
   const [images, setImages] = useState([
-  { 
-    src: '/images/cantora.png',
-    alt: 'Mariana Matheos - Cantora e Criadora da Banda'
-  },
-  { 
-    src: '/images/baixista.png',
-    alt: 'Tarcíso Junior - Baixista e Guitarrista da Banda'
-  },
-  { 
-    src: '/images/baterista.png',
-    alt: 'Rubens Kalil - Baterista da Banda'
-  },
-  { 
-    src: '/images/pianista.png',
-    alt: 'Carlos Nobre - Pianista da Banda'
-  },
-  { 
-    src: '/images/banda-blue-jazz-concurso.png',
-    alt: 'Mariana Matheos no Festival de Jazz & Blues de Tiradentes 2025'
-  },
-]);
+    { 
+      src: '/images/cantora.png',
+      alt: 'Mariana Matheos - Cantora e Criadora da Banda'
+    },
+    { 
+      src: '/images/baixista.png',
+      alt: 'Tarcíso Junior - Baixista e Guitarrista da Banda'
+    },
+    { 
+      src: '/images/baterista.png',
+      alt: 'Rubens Kalil - Baterista da Banda'
+    },
+    { 
+      src: '/images/pianista.png',
+      alt: 'Carlos Nobre - Pianista da Banda'
+    },
+    { 
+      src: '/images/banda-blue-jazz-concurso.png',
+      alt: 'Mariana Matheos no Festival de Jazz & Blues de Tiradentes 2025'
+    },
+  ]);
+  
+  const titleSize = isMobile ? 'text-4xl' : isTablet ? 'text-5xl' : 'text-7xl';
+  const textSize = isMobile ? 'text-lg' : isTablet ? 'text-xl' : 'text-2xl';
+  const captionSize = isMobile ? 'text-sm' : isTablet ? 'text-base' : 'text-xl';
+  const gridCols = isMiniMobile ? 'grid-cols-1' : isMobile ? 'grid-cols-2' : 'grid-cols-3';
+  const imageHeight = isMiniMobile ? 'h-[55vh]' : isMobile ? 'h-56' : isMiniTablet ? 'h-72' : 'h-96';
 
   return (
     <section className="py-20 jazz-gradient relative">
@@ -36,8 +44,8 @@ const ImageSection = () => {
       <div className="container mx-auto px-6 relative">
         {/* Section Title */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-glimmer text-7xl font-bold jazz-gold mb-4 jazz-text-shadow">
-            Galeria
+          <h2 className={`font-glimmer ${titleSize} font-bold jazz-gold mb-4 jazz-text-shadow`}>
+            Galeria 
           </h2>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
@@ -47,13 +55,13 @@ const ImageSection = () => {
                 className="w-[50%] object-contain"
               />
             </div>
-          <p className="font-gatsbybold text-3xl text-gray-400 max-w-2xl mx-auto">
-            Momentos especiais capturados durante nossas apresentações exclusivas
+          <p className={`font-gatsbybold ${textSize} text-gray-400 max-w-2xl mx-auto`}>
+            Momentos especiais capturados durante nossas apresentações exclusivas 
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className={`grid ${gridCols} gap-6 max-w-6xl mx-auto`}>
           {images.map((image, index) => (
             <div 
               key={index}
@@ -67,7 +75,7 @@ const ImageSection = () => {
                 <img 
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-72 object-cover filter sepia-[0.2] contrast-110 group-hover:scale-110 transition-transform duration-500"
+                  className={`w-full ${imageHeight} object-cover filter sepia-[0.2] contrast-110 group-hover:scale-110 transition-transform duration-500`}
                 />
                 
                 {/* Overlay */}
@@ -78,7 +86,7 @@ const ImageSection = () => {
 
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="font-gatsbybold text-white text-xl">{image.alt}</p>
+                  <p className={`font-gatsbybold text-white ${captionSize}`}>{image.alt} </p>
                 </div>
               </div>
             </div>

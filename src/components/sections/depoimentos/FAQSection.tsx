@@ -1,9 +1,11 @@
 import React from 'react';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import { useNavigate } from 'react-router-dom';
+import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const FAQSection = () => {
   const navigate = useNavigate();
+  const { isMobile, isTablet } = useAdvancedViewport();
 
   const faqs = [
     {
@@ -44,13 +46,19 @@ const FAQSection = () => {
     }
   ];
 
+  const titleSize = isMobile ? 'text-3xl' : isTablet ? 'text-4xl' : 'text-6xl';
+  const textSize = isMobile ? 'text-lg' : isTablet ? 'text-xl' : 'text-2xl';
+  const questionSize = isMobile ? 'text-xl' : isTablet ? 'text-2xl' : 'text-3xl';
+  const answerSize = isMobile ? 'text-base' : isTablet ? 'text-lg' : 'text-2xl';
+  const buttonSize = isMobile ? 'text-sm px-6 py-3' : isTablet ? 'text-base px-7 py-3' : 'text-base px-8 py-4';
+
   return (
     <section className="py-20 jazz-gradient relative">
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h1 className="font-glimmer text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 jazz-text-shadow">
-              Faq - Banda Jazz Blues Soul para Eventos
+            <h1 className={`font-glimmer ${titleSize} font-bold text-white mb-4 jazz-text-shadow`}>
+              Faq - Banda Jazz Blues Soul para Eventos 
             </h1>
             <div className="w-full flex justify-center mb-6">
               <img
@@ -59,8 +67,8 @@ const FAQSection = () => {
                 className="w-[50%] object-contain"
               />
             </div>
-            <p className="font-gatsbybold text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Tire suas dúvidas sobre contratar a banda de jazz, soul, blues e R&B para seu casamento ou evento em Belo Horizonte e Minas Gerais.
+            <p className={`font-gatsbybold ${textSize} text-gray-300 leading-relaxed max-w-3xl mx-auto`}>
+              Tire suas dúvidas sobre contratar a banda de jazz, soul, blues e R&B para seu casamento ou evento em Belo Horizonte e Minas Gerais. 
             </p>
           </div>
 
@@ -72,10 +80,10 @@ const FAQSection = () => {
                 style={{animationDelay: `${index * 0.1}s`}}
                 >
                 <div className="p-6">
-                  <h2 className="font-glimmer text-3xl jazz-gold font-bold mb-4 leading-tight">
+                  <h2 className={`font-glimmer ${questionSize} jazz-gold font-bold mb-4 leading-tight`}>
                     {faq.pergunta}
                   </h2>
-                  <p className="font-gatsbybold text-2xl text-gray-300 leading-relaxed">
+                  <p className={`font-gatsbybold ${answerSize} text-gray-300 leading-relaxed`}>
                     {faq.resposta}
                   </p>
                 </div>
@@ -85,26 +93,26 @@ const FAQSection = () => {
 
           <div className="text-center animate-scale-in">
             <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50">
-              <h2 className="font-glimmer text-3xl jazz-gold font-bold mb-4">
-                Ainda tem dúvidas?
+              <h2 className={`font-glimmer ${textSize} jazz-gold font-bold mb-4`}>
+                Ainda tem dúvidas? 
               </h2>
-              <p className="font-gatsbybold text-xl text-gray-300 mb-6">
-                Entre em contato conosco pelo WhatsApp e tire todas as suas dúvidas sobre contratar nossa banda de jazz para seu evento especial.
+              <p className={`font-gatsbybold ${isMobile ? 'text-base' : 'text-xl'} text-gray-300 mb-6`}>
+                Entre em contato conosco pelo WhatsApp e tire todas as suas dúvidas sobre contratar nossa banda de jazz para seu evento especial. 
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="https://wa.me/5531997522127?text=Quero%20contratar%20a%20banda&utm_source=site&utm_medium=cta&utm_campaign=agendamento"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 font-gatsby tracking-wide font-semibold"
+                  className={`${buttonSize} bg-jazz-gold text-black hover:bg-yellow-400 transition-all duration-300 font-gatsby tracking-wide font-semibold`}
                 >
-                  Falar no WhatsApp
+                  Falar no WhatsApp 
                 </a>
                 <button
                   onClick={() => navigate('/contato')}
-                  className="px-8 py-4 border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 font-gatsbybold tracking-wide"
+                  className={`${buttonSize} border border-jazz-gold text-jazz-gold hover:bg-jazz-gold hover:text-black transition-all duration-300 font-gatsbybold tracking-wide`}
                 >
-                  Ver Mais Contatos
+                  Ver Mais Contatos 
                 </button>
               </div>
             </div>
