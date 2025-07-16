@@ -29,7 +29,6 @@ const App = () => (
         <SkipLink />
         <ScrollToTop />
         <Routes>
-          <Route path="*" element={<Navigate to="/" replace/>} />
           <Route path="/" element={<Index />} />
           <Route path="/sobre" element={<AboutPage />} />
           <Route path="/fotos" element={<ImagePage />} />
