@@ -6,11 +6,11 @@ import Footer from '@/components/sections/commonPages/footer/Footer';
 import SEOMetaTags from '@/components/globalComponents/SEOMetaTags';
 import WhatsAppButton from '@/components/globalComponents/WhatsAppButton';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
-import blogHeroImage from '@/assets/images/blog-hero.jpg';
+import blogHeroImage from '/images/banda-blue-jazz-concurso.png';
 import casamentoImage from '@/assets/images/casamento-jazz-band.jpg';
 import historiaJazzImage from '@/assets/images/historia-jazz-brasil.jpg';
 import eventosCorporativosImage from '@/assets/images/eventos-corporativos.jpg';
-import marianaEssenciaImage from '@/assets/images/mariana-matheos-essencia.jpg';
+import marianaEssenciaImage from '/images/cantora.png';
 
 interface BlogArticle {
   id: string;
@@ -149,12 +149,12 @@ const BlogPage = () => {
           <h1 className={`${heroTextSize} font-bold text-jazz-gold mb-6 font-glimmer jazz-text-shadow`}>
             Blog Mariana Matheos
           </h1>
-          <p className={`${subtitleSize} text-white mb-8 font-gatsby leading-relaxed`}>
+          <p className={`${subtitleSize} text-white mb-8 font-gatsbybold leading-relaxed`}>
             Dicas, histórias e inspirações musicais para eventos inesquecíveis
           </p>
           <button
             onClick={() => navigate('/contato')}
-            className="bg-jazz-gold text-black px-8 py-3 rounded-lg font-gatsbybold hover:bg-white transition-colors duration-300 transform hover:scale-105"
+            className="bg-jazz-gold text-black text-lg px-8 py-3 rounded-lg font-gatsbybold hover:bg-white transition-colors duration-300 transform hover:scale-105"
           >
             Fale Conosco
           </button>
@@ -169,7 +169,7 @@ const BlogPage = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-gatsby transition-all duration-300 ${
+                className={`px-6 py-2 rounded-full font-gatsbybold transition-all duration-300 ${
                   selectedCategory === category
                     ? 'bg-jazz-gold text-black'
                     : 'bg-transparent text-jazz-gold border border-jazz-gold hover:bg-jazz-gold hover:text-black'
@@ -217,11 +217,11 @@ const BlogPage = () => {
                     </div>
                   </div>
                   
-                  <h2 className="text-xl font-gatsbybold text-jazz-gold mb-3 line-clamp-2">
+                  <h2 className="text-3xl font-gatsbybold text-jazz-gold mb-3 line-clamp-2">
                     {article.title}
                   </h2>
                   
-                  <p className="text-white/80 mb-4 line-clamp-3 font-gatsby">
+                  <p className="text-white/80 mb-4 line-clamp-3 font-gatsbybold text-2xl">
                     {article.excerpt}
                   </p>
                   
@@ -239,7 +239,7 @@ const BlogPage = () => {
                   
                   <button
                     onClick={() => navigate(`/blog/${article.slug}`)}
-                    className="flex items-center gap-2 text-jazz-gold hover:text-white transition-colors duration-300 font-gatsby"
+                    className="flex items-center text-lg gap-2 text-jazz-gold hover:text-white transition-colors duration-300 font-gatsbybold"
                   >
                     Ler mais
                     <ArrowRight size={16} />

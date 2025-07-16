@@ -21,7 +21,7 @@ const BlogArticlePage = () => {
           <h1 className="text-4xl font-gatsbybold text-jazz-gold mb-4">Artigo não encontrado</h1>
           <button
             onClick={() => navigate('/blog')}
-            className="bg-jazz-gold text-black px-6 py-3 rounded-lg font-gatsby hover:bg-white transition-colors"
+            className="bg-jazz-gold text-black px-6 py-3 rounded-lg font-gatsbybold hover:bg-white transition-colors"
           >
             Voltar ao Blog
           </button>
@@ -93,14 +93,14 @@ const BlogArticlePage = () => {
           <div className="max-w-4xl mx-auto">
             <button
               onClick={() => navigate('/blog')}
-              className="flex items-center gap-2 text-jazz-gold hover:text-white transition-colors mb-8 font-gatsby"
+              className="flex items-center gap-2 text-2xl text-jazz-gold hover:text-white transition-colors mb-8 font-gatsbybold"
             >
               <ArrowLeft size={20} />
               Voltar ao Blog
             </button>
 
             <div className="mb-8">
-              <span className="bg-jazz-gold text-black px-4 py-2 rounded-full text-sm font-gatsby mb-4 inline-block">
+              <span className="bg-jazz-gold text-black px-4 py-2 rounded-full text-lg font-gatsbybold mb-4 inline-block">
                 {article.category}
               </span>
               
@@ -140,7 +140,7 @@ const BlogArticlePage = () => {
               </div>
             </div>
 
-            <div className="relative mb-12">
+            <div className="relative mb-3">
               <img
                 src={article.image}
                 alt={article.imageAlt}
@@ -152,29 +152,28 @@ const BlogArticlePage = () => {
       </section>
 
       {/* Article Content */}
-      <section className="py-16 bg-black">
+      <section className="py-1 bg-gradient-to-b from-black to-jazz-dark">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div 
-              className="prose prose-lg prose-invert max-w-none
-                prose-headings:text-jazz-gold prose-headings:font-gatsbybold
-                prose-p:text-white/90 prose-p:font-gatsby prose-p:leading-relaxed
+              className="prose prose-lg prose-invert text-white
+                max-w-none prose-headings:font-gatsbybold
+                prose-headings:text-jazz-gold prose-p:font-gatsby
                 prose-a:text-jazz-gold prose-a:no-underline hover:prose-a:text-white
-                prose-strong:text-jazz-gold prose-strong:font-gatsbybold
-                prose-ul:text-white/90 prose-ol:text-white/90
-                prose-li:text-white/90 prose-li:font-gatsby
                 prose-blockquote:border-l-jazz-gold prose-blockquote:text-jazz-gold/80
+                prose-strong:text-jazz-gold prose-strong:font-gatsbybold
                 prose-hr:border-jazz-gold/30"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
 
+
             {/* Tags */}
-            <div className="mt-12 pt-8 border-t border-jazz-gold/30">
+            <div className="mt-16 pt-8 border-t border-jazz-gold/30">
               <div className="flex flex-wrap gap-3">
                 {article.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="flex items-center gap-1 text-sm text-jazz-gold/70 border border-jazz-gold/30 px-3 py-1 rounded-full"
+                    className="flex items-center gap-2 text-sm font-medium text-jazz-gold border border-jazz-gold/50 px-4 py-1 rounded-full hover:bg-jazz-gold/10 transition"
                   >
                     <Tag size={14} />
                     {tag}

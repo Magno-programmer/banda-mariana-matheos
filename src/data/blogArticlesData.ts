@@ -1,7 +1,7 @@
 import casamentoImage from '@/assets/images/casamento-jazz-band.jpg';
 import historiaJazzImage from '@/assets/images/historia-jazz-brasil.jpg';
 import eventosCorporativosImage from '@/assets/images/eventos-corporativos.jpg';
-import marianaEssenciaImage from '@/assets/images/mariana-matheos-essencia.jpg';
+import marianaEssenciaImage from '/images/cantora.png';
 
 export interface BlogArticle {
   id: string;
@@ -44,7 +44,7 @@ export const blogArticlesData: BlogArticle[] = [
       
       <h4>Nossos Pontos Fortes:</h4>
       <ul>
-        <li><strong>Versatilidade Musical</strong>: Jazz, Blues, Soul, R&B e MPB</li>
+        <li><strong>Versatilidade Musical</strong>: Jazz, Blues, Soul, R&B</li>
         <li><strong>Formação Flexível</strong>: Duo, trio, quarteto ou banda completa</li>
         <li><strong>Equipamentos Profissionais</strong>: Som cristalino garantido</li>
         <li><strong>Experiência Comprovada</strong>: Mais de 500 eventos realizados</li>
@@ -57,8 +57,8 @@ export const blogArticlesData: BlogArticle[] = [
       
       <ol>
         <li><strong>Reunião de Briefing</strong>: Entendemos a visão do cliente</li>
-        <li><strong>Seleção de Repertório</strong>: Músicas adequadas ao perfil do evento</li>
-        <li><strong>Ensaios Específicos</strong>: Preparação focada na ocasião</li>
+        <li><strong>Seleção de Repertório</strong>: Músicas adequadas a época de ouro do jazz</li>
+        <li><strong>Ensaios Específicos</strong>: Preparação focada na excelência</li>
         <li><strong>Checagem Técnica</strong>: Garantia de qualidade sonora</li>
         <li><strong>Performance Personalizada</strong>: Execução impecável</li>
       </ol>
