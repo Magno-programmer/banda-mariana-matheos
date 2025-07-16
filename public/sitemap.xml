@@ -9,7 +9,7 @@
   <!-- Página Principal - Landing Page -->
   <url>
     <loc>https://marianamatheos.com.br/</loc>
-    <lastmod>2025-01-16T10:00:00+00:00</lastmod>
+    <lastmod>2025-07-16T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <mobile:mobile/>
@@ -19,7 +19,7 @@
       <image:loc>https://marianamatheos.com.br/src/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png</image:loc>
       <image:title>Logo Mariana Matheos Jazz Band</image:title>
       <image:caption>Logo oficial da Mariana Matheos Jazz Band com textura dourada</image:caption>
-      <image:geo_location>São Paulo, Brasil</image:geo_location>
+      <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/</image:license>
     </image:image>
     
@@ -27,7 +27,7 @@
       <image:loc>https://marianamatheos.com.br/src/assets/images/imagem-da-banda.jpg</image:loc>
       <image:title>Mariana Matheos Jazz Band - Foto da Banda</image:title>
       <image:caption>Apresentação da Mariana Matheos Jazz Band com músicos profissionais</image:caption>
-      <image:geo_location>São Paulo, Brasil</image:geo_location>
+      <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/</image:license>
     </image:image>
   </url>
@@ -35,7 +35,7 @@
   <!-- Página Sobre - História e Formação -->
   <url>
     <loc>https://marianamatheos.com.br/sobre</loc>
-    <lastmod>2025-01-16T09:30:00+00:00</lastmod>
+    <lastmod>2025-07-16T09:30:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
@@ -44,7 +44,7 @@
       <image:loc>https://marianamatheos.com.br/public/images/cantora.png</image:loc>
       <image:title>Mariana Matheos - Vocalista Principal</image:title>
       <image:caption>Mariana Matheos, vocalista e líder da banda de jazz</image:caption>
-      <image:geo_location>São Paulo, Brasil</image:geo_location>
+      <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/</image:license>
     </image:image>
     
@@ -52,7 +52,7 @@
       <image:loc>https://marianamatheos.com.br/public/images/banda.png</image:loc>
       <image:title>Formação Completa da Banda</image:title>
       <image:caption>Banda completa de jazz com instrumentistas profissionais</image:caption>
-      <image:geo_location>São Paulo, Brasil</image:geo_location>
+      <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/</image:license>
     </image:image>
   </url>
@@ -60,7 +60,7 @@
   <!-- Galeria de Fotos - Alta Prioridade Visual -->
   <url>
     <loc>https://marianamatheos.com.br/fotos</loc>
-    <lastmod>2025-01-16T11:00:00+00:00</lastmod>
+    <lastmod>2025-07-16T11:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
@@ -69,15 +69,15 @@
       <image:loc>https://marianamatheos.com.br/public/images/baixista.png</image:loc>
       <image:title>Baixista da Mariana Matheos Jazz Band</image:title>
       <image:caption>Baixista profissional em apresentação ao vivo</image:caption>
-      <image:geo_location>São Paulo, Brasil</image:geo_location>
+      <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/</image:license>
     </image:image>
     
     <image:image>
       <image:loc>https://marianamatheos.com.br/public/images/pianista.png</image:loc>
       <image:title>Pianista da Mariana Matheos Jazz Band</image:title>
-      <image:caption>Pianista executando repertório de jazz e bossa nova</image:caption>
-      <image:geo_location>São Paulo, Brasil</image:geo_location>
+      <image:caption>Pianista executando repertório de jazz e blues</image:caption>
+      <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/</image:license>
     </image:image>
     
@@ -85,7 +85,7 @@
       <image:loc>https://marianamatheos.com.br/public/images/baterista.png</image:loc>
       <image:title>Baterista da Mariana Matheos Jazz Band</image:title>
       <image:caption>Baterista profissional durante apresentação</image:caption>
-      <image:geo_location>São Paulo, Brasil</image:geo_location>
+      <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/</image:license>
     </image:image>
     
@@ -93,7 +93,7 @@
       <image:loc>https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.png</image:loc>
       <image:title>Banda em Concurso de Jazz</image:title>
       <image:caption>Mariana Matheos Jazz Band em competição musical</image:caption>
-      <image:geo_location>São Paulo, Brasil</image:geo_location>
+      <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/</image:license>
     </image:image>
   </url>
@@ -101,50 +101,57 @@
   <!-- Página de Vídeos - Conteúdo Multimídia -->
   <url>
     <loc>https://marianamatheos.com.br/videos</loc>
-    <lastmod>2025-01-16T12:00:00+00:00</lastmod>
+    <lastmod>2025-07-16T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
     
     <!-- Vídeos principais -->
     <video:video>
-      <video:thumbnail_loc>https://marianamatheos.com.br/public/images/banda.png</video:thumbnail_loc>
-      <video:title>Mariana Matheos Jazz Band - Apresentação Ao Vivo</video:title>
-      <video:description>Vídeo de apresentação da Mariana Matheos Jazz Band tocando jazz e bossa nova em evento corporativo</video:description>
-      <video:content_loc>https://marianamatheos.com.br/videos/apresentacao-ao-vivo</video:content_loc>
+      <video:thumbnail_loc>https://img.youtube.com/vi/CO_yWe9z8S0/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>All About That Bass - Postmodern Jukebox Cover (Matozinhos)</video:title>
+      <video:description>Versão cover em estilo vintage jazz de "All About That Bass" apresentada ao vivo em Matozinhos.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/CO_yWe9z8S0</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=CO_yWe9z8S0</video:content_loc>
       <video:duration>180</video:duration>
-      <video:rating>4.8</video:rating>
-      <video:view_count>1250</video:view_count>
-      <video:publication_date>2024-12-15T14:30:00+00:00</video:publication_date>
       <video:category>Música</video:category>
       <video:tag>jazz</video:tag>
-      <video:tag>bossa nova</video:tag>
-      <video:tag>música ao vivo</video:tag>
-      <video:tag>banda</video:tag>
-      <video:live>no</video:live>
+      <video:tag>cover</video:tag>
+      <video:tag>ao vivo</video:tag>
     </video:video>
-    
+
     <video:video>
-      <video:thumbnail_loc>https://marianamatheos.com.br/public/images/cantora.png</video:thumbnail_loc>
-      <video:title>Mariana Matheos - Solo Vocal</video:title>
-      <video:description>Performance solo da vocalista Mariana Matheos interpretando clássicos do jazz</video:description>
-      <video:content_loc>https://marianamatheos.com.br/videos/solo-vocal</video:content_loc>
-      <video:duration>240</video:duration>
-      <video:rating>4.9</video:rating>
-      <video:view_count>980</video:view_count>
-      <video:publication_date>2024-11-20T16:45:00+00:00</video:publication_date>
+      <video:thumbnail_loc>https://img.youtube.com/vi/h8z62Ae5a9Q/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Blue Moon - Billie Holiday (Festival Jazz & Blues)</video:title>
+      <video:description>Interpretação jazzística da clássica "Blue Moon", apresentada no Festival de Jazz & Blues.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/h8z62Ae5a9Q</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=h8z62Ae5a9Q</video:content_loc>
+      <video:duration>210</video:duration>
       <video:category>Música</video:category>
-      <video:tag>vocal</video:tag>
+      <video:tag>billie holiday</video:tag>
       <video:tag>jazz</video:tag>
-      <video:tag>solo</video:tag>
-      <video:live>no</video:live>
+      <video:tag>festival</video:tag>
     </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/3vUOFhwE134/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Summertime (Festival Jazz & Blues)</video:title>
+      <video:description>Performance intensa e envolvente da icônica "Summertime", durante o Festival Jazz & Blues.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/3vUOFhwE134</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=3vUOFhwE134</video:content_loc>
+      <video:duration>190</video:duration>
+      <video:category>Música</video:category>
+      <video:tag>summertime</video:tag>
+      <video:tag>jazz</video:tag>
+      <video:tag>festival</video:tag>
+    </video:video>
+
   </url>
 
   <!-- Repertório - Conteúdo Estratégico -->
   <url>
     <loc>https://marianamatheos.com.br/repertorio</loc>
-    <lastmod>2025-01-16T08:45:00+00:00</lastmod>
+    <lastmod>2025-07-16T08:45:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
@@ -153,7 +160,7 @@
   <!-- Agenda - Alta Prioridade Comercial -->
   <url>
     <loc>https://marianamatheos.com.br/agenda</loc>
-    <lastmod>2025-01-16T13:20:00+00:00</lastmod>
+    <lastmod>2025-07-16T13:20:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <mobile:mobile/>
@@ -162,7 +169,7 @@
   <!-- Contato - Conversão Principal -->
   <url>
     <loc>https://marianamatheos.com.br/contato</loc>
-    <lastmod>2025-01-16T07:30:00+00:00</lastmod>
+    <lastmod>2025-07-16T07:30:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
@@ -171,7 +178,7 @@
   <!-- FAQ - Suporte e SEO Long-tail -->
   <url>
     <loc>https://marianamatheos.com.br/faq</loc>
-    <lastmod>2025-01-16T09:00:00+00:00</lastmod>
+    <lastmod>2025-07-16T09:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
@@ -180,90 +187,40 @@
   <!-- Depoimentos - Social Proof -->
   <url>
     <loc>https://marianamatheos.com.br/depoimentos</loc>
-    <lastmod>2025-01-16T10:15:00+00:00</lastmod>
+    <lastmod>2025-07-16T10:15:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <mobile:mobile/>
-  </url>
-
-  <!-- Páginas de Categoria por Tipo de Evento (SEO Long-tail) -->
-  <url>
-    <loc>https://marianamatheos.com.br/eventos/casamentos</loc>
-    <lastmod>2025-01-16T11:30:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://marianamatheos.com.br/eventos/corporativos</loc>
-    <lastmod>2025-01-16T11:30:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://marianamatheos.com.br/eventos/aniversarios</loc>
-    <lastmod>2025-01-16T11:30:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
     <mobile:mobile/>
   </url>
 
   <!-- Páginas de Repertório por Gênero -->
   <url>
     <loc>https://marianamatheos.com.br/repertorio/jazz</loc>
-    <lastmod>2025-01-16T10:45:00+00:00</lastmod>
+    <lastmod>2025-07-16T10:45:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
 
   <url>
-    <loc>https://marianamatheos.com.br/repertorio/bossa-nova</loc>
-    <lastmod>2025-01-16T10:45:00+00:00</lastmod>
+    <loc>https://marianamatheos.com.br/repertorio/blues</loc>
+    <lastmod>2025-07-16T10:45:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
 
   <url>
-    <loc>https://marianamatheos.com.br/repertorio/mpb</loc>
-    <lastmod>2025-01-16T10:45:00+00:00</lastmod>
+    <loc>https://marianamatheos.com.br/repertorio/soul</loc>
+    <lastmod>2025-07-16T10:45:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
 
   <url>
-    <loc>https://marianamatheos.com.br/repertorio/internacional</loc>
-    <lastmod>2025-01-16T10:45:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
-  <!-- Páginas de Região (SEO Local) -->
-  <url>
-    <loc>https://marianamatheos.com.br/regiao/sao-paulo</loc>
-    <lastmod>2025-01-16T12:15:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://marianamatheos.com.br/regiao/abc</loc>
-    <lastmod>2025-01-16T12:15:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://marianamatheos.com.br/regiao/grande-sao-paulo</loc>
-    <lastmod>2025-01-16T12:15:00+00:00</lastmod>
+    <loc>https://marianamatheos.com.br/repertorio/rnb</loc>
+    <lastmod>2025-07-16T10:45:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
@@ -272,7 +229,7 @@
   <!-- Páginas de Blog/Artigos (Content Marketing) -->
   <url>
     <loc>https://marianamatheos.com.br/blog</loc>
-    <lastmod>2025-01-16T14:00:00+00:00</lastmod>
+    <lastmod>2025-07-16T14:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
@@ -299,40 +256,6 @@
     <lastmod>2025-01-13T13:10:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <mobile:mobile/>
-  </url>
-
-  <!-- Páginas de Orçamento (Conversão) -->
-  <url>
-    <loc>https://marianamatheos.com.br/orcamento</loc>
-    <lastmod>2025-01-16T15:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://marianamatheos.com.br/orcamento/casamento</loc>
-    <lastmod>2025-01-16T15:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://marianamatheos.com.br/orcamento/evento-corporativo</loc>
-    <lastmod>2025-01-16T15:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <mobile:mobile/>
-  </url>
-
-  <!-- Páginas de Tecnologia/Equipamentos -->
-  <url>
-    <loc>https://marianamatheos.com.br/equipamentos</loc>
-    <lastmod>2025-01-16T09:45:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
     <mobile:mobile/>
   </url>
 
