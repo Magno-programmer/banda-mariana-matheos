@@ -193,39 +193,6 @@
     <mobile:mobile/>
   </url>
 
-  <!-- Páginas de Repertório por Gênero -->
-  <url>
-    <loc>https://marianamatheos.com.br/repertorio/jazz</loc>
-    <lastmod>2025-07-16T10:45:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://marianamatheos.com.br/repertorio/blues</loc>
-    <lastmod>2025-07-16T10:45:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://marianamatheos.com.br/repertorio/soul</loc>
-    <lastmod>2025-07-16T10:45:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
-  <url>
-    <loc>https://marianamatheos.com.br/repertorio/rnb</loc>
-    <lastmod>2025-07-16T10:45:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <mobile:mobile/>
-  </url>
-
   <!-- Páginas de Blog/Artigos (Content Marketing) -->
   <url>
     <loc>https://marianamatheos.com.br/blog</loc>
@@ -267,20 +234,19 @@
     <mobile:mobile/>
   </url>
 
-  <!-- Página de Política de Privacidade e Termos -->
   <url>
-    <loc>https://marianamatheos.com.br/privacidade</loc>
-    <lastmod>2025-01-10T10:00:00+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://marianamatheos.com.br/blog/historia-dos-jazz-standards</loc>
+    <lastmod>2025-01-13T13:10:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     <mobile:mobile/>
   </url>
 
   <url>
-    <loc>https://marianamatheos.com.br/termos</loc>
-    <lastmod>2025-01-10T10:00:00+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://marianamatheos.com.br/blog/como-ser-uma-banda-de-jazz</loc>
+    <lastmod>2025-01-13T13:10:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     <mobile:mobile/>
   </url>
 
