@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 import { debounce } from '../lib/utils';
 
 // Tipos avançados de dispositivos
-export type DeviceType = 'mobile' | 'tablet' | 'desktop' | 'foldable' | 'tv' | 'watch';
+export type DeviceType = 'minimobile' | 'mobile' | 'minitablet' | 'tablet' | 'desktop' | 'foldable' | 'tv' | 'watch';
 export type Orientation = 'portrait' | 'landscape' | 'square';
 export type DisplayMode = 'browser' | 'standalone' | 'minimal-ui' | 'fullscreen';
 
@@ -26,7 +26,9 @@ export interface ViewportConfig {
 }
 
 export interface ViewportBreakpoints {
+  minimobile: number;
   mobile: number;
+  minitablet: number;
   tablet: number;
   desktop: number;
   largeDesktop: number;
@@ -35,7 +37,9 @@ export interface ViewportBreakpoints {
 export interface AdvancedViewportState {
   config: ViewportConfig;
   breakpoints: ViewportBreakpoints;
+  isMiniMobile: boolean;
   isMobile: boolean;
+  isMiniTablet: boolean;
   isTablet: boolean;
   isDesktop: boolean;
   isLargeDesktop: boolean;
@@ -50,8 +54,10 @@ export interface AdvancedViewportState {
 }
 
 const DEFAULT_BREAKPOINTS: ViewportBreakpoints = {
-  mobile: 768,
-  tablet: 1024,
+  minimobile: 472,
+  mobile: 560,
+  minitablet: 800,
+  tablet: 1074,
   desktop: 1440,
   largeDesktop: 1920,
 };
@@ -85,7 +91,17 @@ const detectDeviceType = (width: number, height: number, touchPoints: number): D
   if (minDimension < DEFAULT_BREAKPOINTS.mobile) {
     return 'mobile';
   }
+
+  // Detecta minimobile
+  if (minDimension < DEFAULT_BREAKPOINTS.minimobile) {
+    return 'minimobile';
+  }
   
+  // Detecta minitablet
+  if (minDimension < DEFAULT_BREAKPOINTS.tablet && touchPoints > 0) {
+    return 'minitablet';
+  }
+
   // Detecta tablet
   if (minDimension < DEFAULT_BREAKPOINTS.desktop && touchPoints > 0) {
     return 'tablet';
@@ -202,7 +218,9 @@ export const useAdvancedViewport = (customBreakpoints?: Partial<ViewportBreakpoi
     return {
       config,
       breakpoints,
+      isMiniMobile: width < breakpoints.minimobile,
       isMobile: width < breakpoints.mobile,
+      isMiniTablet: width >= breakpoints.mobile && width < breakpoints.tablet,
       isTablet: width >= breakpoints.mobile && width < breakpoints.desktop,
       isDesktop: width >= breakpoints.desktop && width < breakpoints.largeDesktop,
       isLargeDesktop: width >= breakpoints.largeDesktop,
@@ -249,7 +267,9 @@ export const useAdvancedViewport = (customBreakpoints?: Partial<ViewportBreakpoi
     setViewportState({
       config,
       breakpoints,
+      isMiniMobile: width < breakpoints.minimobile,
       isMobile: width < breakpoints.mobile,
+      isMiniTablet: width >= breakpoints.mobile && width < breakpoints.tablet,
       isTablet: width >= breakpoints.mobile && width < breakpoints.desktop,
       isDesktop: width >= breakpoints.desktop && width < breakpoints.largeDesktop,
       isLargeDesktop: width >= breakpoints.largeDesktop,
@@ -304,10 +324,41 @@ export const useAdvancedViewport = (customBreakpoints?: Partial<ViewportBreakpoi
   return viewportState;
 };
 
+
+// Hook simplificado para compatibilidade
+export const useIsMiniMobile = () => {
+  const { isMiniMobile } = useAdvancedViewport();
+  return isMiniMobile;
+}
+
 // Hook simplificado para compatibilidade
 export const useIsMobile = () => {
   const { isMobile } = useAdvancedViewport();
   return isMobile;
 };
+
+// Hook simplificado para compatibilidade
+export const useIsMiniTablet = () => {
+  const { isMiniTablet } = useAdvancedViewport();
+  return isMiniTablet;
+}
+
+// Hook simplificado para compatibilidade
+export const useIsTablet = () => {
+  const { isTablet } = useAdvancedViewport();
+  return isTablet;
+}
+
+// Hook simplificado para compatibilidade
+export const useIsDesktop = () => {
+  const { isDesktop } = useAdvancedViewport();
+  return isDesktop;
+}
+
+// Hook simplificado para compatibilidade
+export const useIsLargeDesktop = () => {
+  const { isLargeDesktop } = useAdvancedViewport();
+  return isLargeDesktop;
+}
 
 export default useAdvancedViewport;
