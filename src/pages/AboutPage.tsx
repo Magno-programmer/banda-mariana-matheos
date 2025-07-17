@@ -1,6 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+
 
 // Importing components
 import AboutSection from "@/components/sections/sobre/AboutSection";
@@ -20,7 +20,7 @@ const AboutPage = () => {
         keywords="sobre a banda, história, formação musical, jazz band, bossa nova, música brasileira"
         canonicalUrl="/sobre"
       />
-      <AdvancedRichSnippet />
+      
       <div className="min-h-screen bg-black">
         <Header />
         <AdvancedBreadcrumb />

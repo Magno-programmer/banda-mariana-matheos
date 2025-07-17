@@ -1,6 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+
 
 // Importing components
 import ImageSection from "@/components/sections/galeria/ImagesSection";
@@ -19,7 +19,7 @@ const ImagePage = () => {
         keywords="fotos, galeria, apresentações, shows, eventos, casamentos, banda de jazz"
         canonicalUrl="/fotos"
       />
-      <AdvancedRichSnippet />
+      
 
       <div className="min-h-screen bg-black">
         <Header />

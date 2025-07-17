@@ -1,6 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+
 
 // Importing components
 import ContactSection from "@/components/sections/contatos/ContactSection";
@@ -19,7 +19,7 @@ const ContactPage = () => {
         keywords="contato, telefone, whatsapp, email, agendamento, orçamento"
         canonicalUrl="/contato"
       />
-      <AdvancedRichSnippet />
+      
       
       <div className="min-h-screen bg-black">
         <Header />

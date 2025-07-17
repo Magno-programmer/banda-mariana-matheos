@@ -1,6 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+
 
 // Importing components
 import BookingSection from "@/components/sections/agendamento/BookingSection";
@@ -19,7 +19,7 @@ const BookingPage = () => {
         keywords="agendamento, contratar banda, shows, casamentos, eventos corporativos, música ao vivo"
         canonicalUrl="/agenda"
       />
-      <AdvancedRichSnippet />
+      
       
       <div className="min-h-screen bg-black">
         <Header />

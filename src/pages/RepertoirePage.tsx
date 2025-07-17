@@ -1,6 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+
 
 // Importing components
 import RepertoireSection from "@/components/sections/repertorio/RepertoireSection";
@@ -19,7 +19,7 @@ const RepertoirePage = () => {
         keywords="repertório, jazz clássico, bossa nova, blues, swing, música brasileira, playlist"
         canonicalUrl="/repertorio"
       />
-      <AdvancedRichSnippet />
+      
     
       <div className="min-h-screen bg-black">
         <Header />

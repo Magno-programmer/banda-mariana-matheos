@@ -1,7 +1,7 @@
 
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+
 
 // Importing components
 import Header from "@/components/sections/commonPages/header/Header";
@@ -20,7 +20,7 @@ const TestimonialsPage = () => {
         keywords="depoimentos, avaliações, reviews, google reviews, banda de jazz, música ao vivo"
         canonicalUrl="/depoimentos"
       />
-      <AdvancedRichSnippet />
+      
       
       <div className="min-h-screen bg-black">
         <Header />

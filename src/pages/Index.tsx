@@ -1,7 +1,7 @@
 
 import React from 'react';
 import SEOMetaTags from '@/components/globalComponents/SEOMetaTags';
-import AdvancedRichSnippet from '@/components/globalComponents/AdvancedRichSnippet';
+
 
 // Importing components
 import Header from '@/components/sections/commonPages/header/Header';
@@ -21,7 +21,7 @@ const Index = () => {
         keywords="banda de jazz, música ao vivo, casamentos, eventos corporativos, shows, repertório jazz, música brasileira"
         canonicalUrl="/"
       />
-      <AdvancedRichSnippet />
+      
       <div className="min-h-screen bg-black">
         <Header />
         <AdvancedBreadcrumb />

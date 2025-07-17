@@ -1,6 +1,6 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+
 
 // Importing components
 import VideosSection from "@/components/sections/galeria/VideosSection";
@@ -19,7 +19,7 @@ const VideosPage = () => {
         keywords="vídeos, apresentações, repertório, jazz, música ao vivo, shows"
         canonicalUrl="/videos"
       />
-      <AdvancedRichSnippet />
+      
 
       <div className="min-h-screen bg-black">
         <Header />
