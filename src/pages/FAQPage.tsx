@@ -2,6 +2,7 @@
 import React from "react";
 import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+import FAQStructuredData from "@/components/globalComponents/FAQStructuredData";
 
 // Importing components
 import FAQSection from "@/components/sections/depoimentos/FAQSection";
@@ -21,6 +22,7 @@ const FAQPage = () => {
           canonicalUrl="/faq"
         />
         <AdvancedRichSnippet />
+        <FAQStructuredData pageType="faq-index" />
 
       <div className="min-h-screen bg-black">
         <Header />
