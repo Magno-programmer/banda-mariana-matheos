@@ -5,6 +5,20 @@ import marianaEssenciaImage from '/images/cantora.png';
 import jazzStandardsImage from '/images/jazz-standard.jpg';
 import bandaDeJazzImage from '/images/banda-de-jazz-1920.jpg';
 
+// Singer portraits
+import billieHolidayImage from '@/assets/images/billie-holiday.jpg';
+import ellaFitzgeraldImage from '@/assets/images/ella-fitzgerald.jpg';
+import ettaJamesImage from '@/assets/images/etta-james.jpg';
+import amyWinehouseImage from '@/assets/images/amy-winehouse.jpg';
+import frankSinatraImage from '@/assets/images/frank-sinatra.jpg';
+import ninaSimoneImage from '@/assets/images/nina-simone.jpg';
+import bethHartImage from '@/assets/images/beth-hart.jpg';
+import bbKingImage from '@/assets/images/bb-king.jpg';
+import andraDayImage from '@/assets/images/andra-day.jpg';
+import natKingColeImage from '@/assets/images/nat-king-cole.jpg';
+import kittyKallenImage from '@/assets/images/kitty-kallen.jpg';
+import glennMillerImage from '@/assets/images/glenn-miller.jpg';
+
 export interface BlogArticle {
   id: string;
   title: string;
@@ -985,6 +999,357 @@ export const blogArticlesData: BlogArticle[] = [
     seoTitle: 'O que é necessário para ser uma banda de jazz? | Blog',
     seoDescription: 'Confira dicas essenciais para montar e manter uma banda de jazz de sucesso — desde os músicos certos até repertório, ensaios e postura profissional.',
     keywords: ['como formar banda de jazz', 'dicas para músicos de jazz', 'banda instrumental', 'montar banda', 'jazz moderno']
+  },
+  {
+    id: '7',
+    title: 'Billie Holiday — A Dama do Jazz que Revolucionou a Música',
+    slug: 'billie-holiday-dama-do-jazz',
+    excerpt: 'Conheça a história extraordinária de Billie Holiday, uma das vozes mais expressivas e influentes do jazz, que transformou a dor em arte inesquecível.',
+    content: `
+      <h2>Billie Holiday: A Voz que Definiu uma Era</h2>
+      
+      <p><strong>Billie Holiday</strong> (1915-1959), conhecida como "Lady Day", foi uma das cantoras de jazz mais expressivas e influentes de todos os tempos. Sua voz única, carregada de emoção e experiência de vida, transformou para sempre a forma como o jazz é cantado e percebido.</p>
+      
+      <h3>Primeiros Anos e Descoberta</h3>
+      
+      <p>Nascida Eleanora Fagan em 7 de abril de 1915, na Filadélfia, Billie Holiday teve uma infância marcada por dificuldades. Criada em Baltimore por sua mãe, Sadie Fagan, ela começou a cantar em clubes de jazz ainda adolescente.</p>
+      
+      <ul>
+        <li><strong>1930</strong>: Início da carreira em clubes do Harlem</li>
+        <li><strong>1933</strong>: Primeira gravação aos 18 anos com Benny Goodman</li>
+        <li><strong>1935</strong>: Contrato com a Brunswick Records</li>
+      </ul>
+      
+      <h3>O Estilo Inconfundível</h3>
+      
+      <p>Holiday desenvolveu um estilo vocal revolucionário que se tornou referência:</p>
+      
+      <ul>
+        <li><strong>Expressividade Emocional</strong>: Cada palavra carregava vivência pessoal</li>
+        <li><strong>Timing Único</strong>: Cantava atrás ou à frente do tempo, criando tensão dramática</li>
+        <li><strong>Interpretação Pessoal</strong>: Transformava standards em confissões íntimas</li>
+        <li><strong>Fraseado Instrumental</strong>: Cantava como se sua voz fosse um instrumento de sopro</li>
+      </ul>
+      
+      <h3>Colaborações Históricas</h3>
+      
+      <p>Holiday trabalhou com os maiores nomes do jazz:</p>
+      
+      <ul>
+        <li><strong>Lester Young</strong>: Parceria musical que definiu uma era</li>
+        <li><strong>Count Basie</strong>: Período com a orquestra (1937-1938)</li>
+        <li><strong>Artie Shaw</strong>: Uma das primeiras cantoras negras em big band branca</li>
+        <li><strong>Teddy Wilson</strong>: Gravações clássicas dos anos 1930</li>
+      </ul>
+      
+      <h3>Canções Imortais</h3>
+      
+      <p>Algumas de suas interpretações mais memoráveis:</p>
+      
+      <ul>
+        <li><strong>"Strange Fruit"</strong>: Protesto contra o racismo que se tornou hino</li>
+        <li><strong>"God Bless the Child"</strong>: Composição própria baseada em experiência pessoal</li>
+        <li><strong>"Summertime"</strong>: Interpretação definitiva de Gershwin</li>
+        <li><strong>"What a Little Moonlight Can Do"</strong>: Primeiro grande sucesso</li>
+        <li><strong>"Blue Moon"</strong>: Demonstração de sua versatilidade</li>
+      </ul>
+      
+      <h3>Legado e Influência</h3>
+      
+      <p>O impacto de Billie Holiday transcende gerações:</p>
+      
+      <ul>
+        <li><strong>Técnica Vocal</strong>: Influenciou inúmeras cantoras de jazz e soul</li>
+        <li><strong>Expressão Emocional</strong>: Estabeleceu padrão de interpretação pessoal</li>
+        <li><strong>Ativismo Social</strong>: "Strange Fruit" tornou-se símbolo de resistência</li>
+        <li><strong>Estilo Visual</strong>: Gardênia no cabelo virou marca registrada</li>
+      </ul>
+      
+      <blockquote>"Mama pode ter, papa pode ter, mas Deus abençoe a criança que tem o seu próprio." - Billie Holiday, "God Bless the Child"</blockquote>
+      
+      <h3>Reconhecimento Tardio</h3>
+      
+      <p>Embora tenha enfrentado discriminação e dificuldades pessoais durante a vida, Holiday recebeu reconhecimento póstimo:</p>
+      
+      <ul>
+        <li><strong>Grammy Hall of Fame</strong>: Múltiplas gravações incluídas</li>
+        <li><strong>Rock and Roll Hall of Fame</strong>: Induzida em 2000</li>
+        <li><strong>Influência Cultural</strong>: Biografia, filmes e documentários</li>
+        <li><strong>Standards Eternos</strong>: Suas interpretações são consideradas definitivas</li>
+      </ul>
+      
+      <h3>A Inspiração para Músicos Contemporâneos</h3>
+      
+      <p>Holiday continua inspirando artistas da banda Mariana Matheos e músicos do mundo todo:</p>
+      
+      <ul>
+        <li><strong>Técnica de Interpretação</strong>: Como transformar uma canção em história pessoal</li>
+        <li><strong>Presença de Palco</strong>: Elegância e vulnerabilidade como força</li>
+        <li><strong>Repertório Atemporal</strong>: Suas versões ainda são referência</li>
+        <li><strong>Autenticidade</strong>: A importância de cantar com verdade</li>
+      </ul>
+      
+      <h3>Conclusão</h3>
+      
+      <p>Billie Holiday não foi apenas uma cantora de jazz — foi uma artista que transformou dor em beleza, experiência em arte, e solidão em canções que tocam a alma. Sua voz continua ecoando em cada interpretação sincera, em cada note blue cantada com verdade.</p>
+      
+      <p>Para músicos e amantes do jazz, Holiday representa o poder transformador da música autêntica — aquela que não apenas entretém, mas revela a condição humana em toda sua complexidade.</p>
+      
+      <hr>
+      
+      <p><em>Na banda Mariana Matheos, carregamos a influência de grandes como Billie Holiday, trazendo essa mesma autenticidade e emoção para nossos eventos. Cada apresentação é uma homenagem aos mestres que definiram o jazz.</em></p>
+    `,
+    image: billieHolidayImage,
+    imageAlt: 'Retrato artístico de cantora de jazz dos anos 1940 com gardênia no cabelo',
+    category: 'Curiosidades',
+    tags: ['billie holiday', 'história do jazz', 'cantores clássicos', 'lady day'],
+    publishedDate: '2025-07-17',
+    readingTime: '8 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Billie Holiday — A Dama do Jazz que Revolucionou a Música | Blog',
+    seoDescription: 'Conheça a história extraordinária de Billie Holiday, uma das vozes mais expressivas do jazz que transformou a dor em arte inesquecível.',
+    keywords: ['billie holiday', 'historia do jazz', 'cantores de jazz', 'lady day', 'jazz classico']
+  },
+  {
+    id: '8',
+    title: 'Ella Fitzgerald — A Primeira Dama da Canção',
+    slug: 'ella-fitzgerald-primeira-dama-cancao',
+    excerpt: 'Descubra a trajetória de Ella Fitzgerald, a "First Lady of Song", cujo talento vocal incomparável e técnica de scat singing revolucionaram o jazz.',
+    content: `
+      <h2>Ella Fitzgerald: A Voz Perfeita do Jazz</h2>
+      
+      <p><strong>Ella Fitzgerald</strong> (1918-1996), carinhosamente conhecida como "First Lady of Song", foi uma das cantoras mais técnicas e versáteis da história do jazz. Sua pureza vocal, dição impecável e habilidade de scat singing a tornaram uma lenda viva.</p>
+      
+      <h3>Descoberta e Primeiros Passos</h3>
+      
+      <p>Nascida em Newport News, Virgínia, em 25 de abril de 1918, Ella Jane Fitzgerald foi descoberta de forma quase acidental:</p>
+      
+      <ul>
+        <li><strong>1934</strong>: Descoberta aos 16 anos no Apollo Theater</li>
+        <li><strong>1935</strong>: Junção à orquestra de Chick Webb</li>
+        <li><strong>1938</strong>: "A-Tisket, A-Tasket" - primeiro grande sucesso</li>
+        <li><strong>1942</strong>: Assumiu liderança da banda após morte de Webb</li>
+      </ul>
+      
+      <h3>Características Vocais Únicas</h3>
+      
+      <p>O que tornava Ella Fitzgerald especial:</p>
+      
+      <ul>
+        <li><strong>Alcance Vocal</strong>: Três oitavas de extensão</li>
+        <li><strong>Dição Perfeita</strong>: Cada palavra perfeitamente articulada</li>
+        <li><strong>Scat Singing</strong>: Técnica de improvisação vocal impecável</li>
+        <li><strong>Afinação Perfeita</strong>: Precisão técnica incomparável</li>
+        <li><strong>Swing Natural</strong>: Ritmo instintivo e envolvente</li>
+      </ul>
+      
+      <h3>Os Famosos "Songbooks"</h3>
+      
+      <p>Entre 1956 e 1964, Ella gravou os históricos "Songbooks" na Verve Records:</p>
+      
+      <ul>
+        <li><strong>Cole Porter Songbook</strong> (1956): Duas partes, 32 canções</li>
+        <li><strong>Rodgers & Hart Songbook</strong> (1956): Standards atemporais</li>
+        <li><strong>Duke Ellington Songbook</strong> (1957): Com o próprio Duke</li>
+        <li><strong>Irving Berlin Songbook</strong> (1958): Clássicos americanos</li>
+        <li><strong>George & Ira Gershwin Songbook</strong> (1959): Obra-prima dupla</li>
+        <li><strong>Harold Arlen Songbook</strong> (1961): Canções sofisticadas</li>
+        <li><strong>Jerome Kern Songbook</strong> (1963): Elegância melódica</li>
+        <li><strong>Johnny Mercer Songbook</strong> (1964): Versatilidade lírica</li>
+      </ul>
+      
+      <h3>Colaborações Memoráveis</h3>
+      
+      <p>Ella trabalhou com os maiores nomes do jazz:</p>
+      
+      <ul>
+        <li><strong>Louis Armstrong</strong>: Duetos clássicos e química perfeita</li>
+        <li><strong>Duke Ellington</strong>: Côte d'Azur e gravações históricas</li>
+        <li><strong>Count Basie</strong>: Big band swing em sua melhor forma</li>
+        <li><strong>Joe Pass</strong>: Intimidade do jazz de câmara</li>
+        <li><strong>Oscar Peterson</strong>: Virtuosismo piano e voz</li>
+      </ul>
+      
+      <h3>Canções Inesquecíveis</h3>
+      
+      <p>Algumas de suas interpretações mais celebradas:</p>
+      
+      <ul>
+        <li><strong>"Summertime"</strong>: Versão definitiva de Gershwin</li>
+        <li><strong>"Mack the Knife"</strong>: Improvisação lendária em Berlim</li>
+        <li><strong>"How High the Moon"</strong>: Demonstração de scat singing</li>
+        <li><strong>"Dream a Little Dream of Me"</strong>: Romantismo puro</li>
+        <li><strong>"Night and Day"</strong>: Elegância Cole Porter</li>
+      </ul>
+      
+      <h3>Técnica de Scat Singing</h3>
+      
+      <p>Ella foi mestre absoluta do scat singing:</p>
+      
+      <ul>
+        <li><strong>Improvisação Vocal</strong>: Voz como instrumento de sopro</li>
+        <li><strong>Vocabulário Único</strong>: Sílabas rítmicas características</li>
+        <li><strong>Interação Musical</strong>: Diálogo perfeito com instrumentos</li>
+        <li><strong>Criatividade Infinita</strong>: Cada performance única</li>
+      </ul>
+      
+      <h3>Reconhecimento e Prêmios</h3>
+      
+      <p>O talento de Ella foi amplamente reconhecido:</p>
+      
+      <ul>
+        <li><strong>13 Grammy Awards</strong>: Incluindo Lifetime Achievement</li>
+        <li><strong>National Medal of Arts</strong>: Honra presidencial</li>
+        <li><strong>Kennedy Center Honors</strong>: Reconhecimento cultural</li>
+        <li><strong>Mais de 40 milhões de discos vendidos</strong>: Sucesso comercial</li>
+      </ul>
+      
+      <h3>Legado Duradouro</h3>
+      
+      <p>A influência de Ella Fitzgerald é imensurável:</p>
+      
+      <ul>
+        <li><strong>Padrão Técnico</strong>: Referência para cantores de jazz</li>
+        <li><strong>Repertório Clássico</strong>: Preservou Great American Songbook</li>
+        <li><strong>Inspiração Universal</strong>: Influenciou gerações de artistas</li>
+        <li><strong>Pureza Artística</strong>: Exemplo de dedicação à música</li>
+      </ul>
+      
+      <blockquote>"Apenas cante a música, e ela falará por si mesma." - Ella Fitzgerald</blockquote>
+      
+      <h3>Lições para Músicos Contemporâneos</h3>
+      
+      <p>O que aprendemos com Ella Fitzgerald:</p>
+      
+      <ul>
+        <li><strong>Técnica Impecável</strong>: Base sólida permite liberdade criativa</li>
+        <li><strong>Respeito ao Repertório</strong>: Servir à música, não ao ego</li>
+        <li><strong>Constante Evolução</strong>: Sempre explorando novas possibilidades</li>
+        <li><strong>Profissionalismo</strong>: Disciplina e dedicação constantes</li>
+      </ul>
+      
+      <h3>Conclusão</h3>
+      
+      <p>Ella Fitzgerald não foi apenas uma grande cantora — foi a definição de excelência vocal no jazz. Sua voz cristalina, técnica impecável e musicalidade natural estabeleceram padrões que permanecem insuperáveis.</p>
+      
+      <p>Para qualquer músico ou amante do jazz, Ella representa a combinação perfeita entre talento natural e dedicação artística, provando que a busca pela perfeição pode resultar em arte verdadeiramente atemporal.</p>
+      
+      <hr>
+      
+      <p><em>A influência de Ella Fitzgerald ressoa em cada performance da banda Mariana Matheos. Sua dedicação à excelência e respeito pelos clássicos nos inspiram a buscar sempre a melhor interpretação para nosso público.</em></p>
+    `,
+    image: ellaFitzgeraldImage,
+    imageAlt: 'Retrato artístico de elegante cantora de jazz dos anos 1940 com sorriso radiante',
+    category: 'Curiosidades',
+    tags: ['ella fitzgerald', 'first lady of song', 'scat singing', 'jazz clássico'],
+    publishedDate: '2025-07-17',
+    readingTime: '9 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Ella Fitzgerald — A Primeira Dama da Canção | Blog',
+    seoDescription: 'Descubra a trajetória de Ella Fitzgerald, cujo talento vocal incomparável e técnica de scat singing revolucionaram o jazz.',
+    keywords: ['ella fitzgerald', 'first lady of song', 'scat singing', 'historia do jazz', 'cantores de jazz']
+  },
+  {
+    id: '9',
+    title: 'Frank Sinatra — O Rei do Swing e dos Crooners',
+    slug: 'frank-sinatra-rei-do-swing',
+    excerpt: 'A história de Frank Sinatra, "Ol\' Blue Eyes", que definiu o estilo crooner e se tornou uma das maiores vozes da música americana.',
+    content: `
+      <h2>Frank Sinatra: A Voz da América</h2>
+      <p><strong>Frank Sinatra</strong> (1915-1998) foi muito mais que um cantor — foi um ícone cultural que definiu o estilo crooner e estabeleceu padrões de interpretação que perduram até hoje.</p>
+      <h3>Carreira e Estilo</h3>
+      <ul>
+        <li><strong>Era das Big Bands</strong>: Começou com Tommy Dorsey nos anos 1940</li>
+        <li><strong>Carreira Solo</strong>: Definiu o conceito de álbum conceitual</li>
+        <li><strong>Rat Pack</strong>: Liderou o grupo mais famoso de Las Vegas</li>
+        <li><strong>Cinema</strong>: Oscar por "From Here to Eternity"</li>
+      </ul>
+      <h3>Clássicos Inesquecíveis</h3>
+      <ul>
+        <li>"My Way" - Hino de autodeterminação</li>
+        <li>"Fly Me to the Moon" - Elegância espacial</li>
+        <li>"New York, New York" - Anthem urbano</li>
+        <li>"The Way You Look Tonight" - Romance clássico</li>
+      </ul>
+    `,
+    image: frankSinatraImage,
+    imageAlt: 'Retrato de elegante cantor dos anos 1950 com terno e gravata borboleta',
+    category: 'Curiosidades',
+    tags: ['frank sinatra', 'crooner', 'swing', 'rat pack'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Frank Sinatra — O Rei do Swing e dos Crooners | Blog',
+    seoDescription: 'A história de Frank Sinatra, que definiu o estilo crooner e se tornou uma das maiores vozes da música americana.',
+    keywords: ['frank sinatra', 'crooner', 'swing', 'jazz', 'musica americana']
+  },
+  {
+    id: '10',
+    title: 'Nina Simone — A Sacerdotisa do Soul',
+    slug: 'nina-simone-sacerdotisa-soul',
+    excerpt: 'Conheça Nina Simone, pianista clássica que se tornou uma das vozes mais poderosas do jazz, soul e dos direitos civis.',
+    content: `
+      <h2>Nina Simone: Música e Revolução</h2>
+      <p><strong>Nina Simone</strong> (1933-2003), nascida Eunice Kathleen Waymon, foi uma artista completa que uniu virtuosismo musical e ativismo social de forma única.</p>
+      <h3>Formação e Estilo</h3>
+      <ul>
+        <li><strong>Educação Clássica</strong>: Formação em piano clássico</li>
+        <li><strong>Versatilidade</strong>: Jazz, blues, folk, R&B, gospel</li>
+        <li><strong>Ativismo</strong>: Voz dos direitos civis</li>
+        <li><strong>Composição</strong>: Autora de clássicos imortais</li>
+      </ul>
+      <h3>Canções Marcantes</h3>
+      <ul>
+        <li>"Feeling Good" - Hino de libertação</li>
+        <li>"Mississippi Goddam" - Protesto musical</li>
+        <li>"I Put a Spell on You" - Interpretação magnética</li>
+        <li>"Sinnerman" - Intensidade espiritual</li>
+      </ul>
+    `,
+    image: ninaSimoneImage,
+    imageAlt: 'Retrato de poderosa pianista e cantora dos anos 1960 ao piano',
+    category: 'Curiosidades',
+    tags: ['nina simone', 'soul', 'ativismo', 'piano jazz'],
+    publishedDate: '2025-07-17',
+    readingTime: '7 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Nina Simone — A Sacerdotisa do Soul | Blog',
+    seoDescription: 'Conheça Nina Simone, pianista que se tornou uma das vozes mais poderosas do jazz, soul e dos direitos civis.',
+    keywords: ['nina simone', 'soul', 'jazz', 'ativismo', 'piano']
+  },
+  {
+    id: '11',
+    title: 'Amy Winehouse — O Talento Interrompido do Neo-Soul',
+    slug: 'amy-winehouse-neo-soul',
+    excerpt: 'A trajetória breve mas impactante de Amy Winehouse, que revitalizou o soul e jazz contemporâneo com sua voz única.',
+    content: `
+      <h2>Amy Winehouse: Alma Vintage, Talento Atemporal</h2>
+      <p><strong>Amy Winehouse</strong> (1983-2011) trouxe o soul clássico de volta ao século XXI com uma voz poderosa e letras brutalmente honestas sobre amor, vício e dor.</p>
+      <h3>Estilo Musical</h3>
+      <ul>
+        <li><strong>Neo-Soul</strong>: Mistura de soul, jazz e R&B contemporâneo</li>
+        <li><strong>Influências Vintage</strong>: 60s girl groups e Motown</li>
+        <li><strong>Letras Pessoais</strong>: Autobiográficas e confessionais</li>
+        <li><strong>Voz Distintiva</strong>: Grave, rouca e expressiva</li>
+      </ul>
+      <h3>Legado Musical</h3>
+      <ul>
+        <li>"Rehab" - Hino de resistência pessoal</li>
+        <li>"Back to Black" - Melancolia soul perfeita</li>
+        <li>"Valerie" - Revitalização do soul clássico</li>
+        <li>5 Grammy Awards por "Back to Black"</li>
+      </ul>
+    `,
+    image: amyWinehouseImage,
+    imageAlt: 'Amy Winehouse com seu icônico penteado beehive e vestido preto',
+    category: 'Curiosidades',
+    tags: ['amy winehouse', 'neo-soul', 'contemporary jazz', 'british soul'],
+    publishedDate: '2025-07-17',
+    readingTime: '5 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Amy Winehouse — O Talento Interrompido do Neo-Soul | Blog',
+    seoDescription: 'A trajetória breve mas impactante de Amy Winehouse, que revitalizou o soul e jazz contemporâneo.',
+    keywords: ['amy winehouse', 'neo soul', 'jazz contemporaneo', 'soul music']
   }
 
 ];
