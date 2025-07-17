@@ -1350,6 +1350,314 @@ export const blogArticlesData: BlogArticle[] = [
     seoTitle: 'Amy Winehouse — O Talento Interrompido do Neo-Soul | Blog',
     seoDescription: 'A trajetória breve mas impactante de Amy Winehouse, que revitalizou o soul e jazz contemporâneo.',
     keywords: ['amy winehouse', 'neo soul', 'jazz contemporaneo', 'soul music']
+  },
+  {
+    id: '12',
+    title: 'Etta James — A Matriarca do Soul e R&B',
+    slug: 'etta-james-matriarca-soul-rb',
+    excerpt: 'A história de Etta James, uma das vozes mais poderosas do soul e R&B, que influenciou gerações de cantores.',
+    content: `
+      <h2>Etta James: A Voz Poderosa do Soul</h2>
+      <p><strong>Etta James</strong> (1938-2012), nascida Jamesetta Hawkins, foi uma das vozes mais poderosas e influentes do soul, R&B e blues, conhecida por sua versatilidade vocal e presença magnética.</p>
+      
+      <h3>Trajetória Musical</h3>
+      <ul>
+        <li><strong>Início Precoce</strong>: Começou a cantar aos 14 anos</li>
+        <li><strong>Chess Records</strong>: Gravadora que lançou seus maiores hits</li>
+        <li><strong>Versatilidade</strong>: Soul, R&B, blues, gospel e jazz</li>
+        <li><strong>Longevidade</strong>: Carreira de mais de 50 anos</li>
+      </ul>
+      
+      <h3>Clássicos Imortais</h3>
+      <ul>
+        <li>"At Last" - Hino romântico atemporal</li>
+        <li>"I'd Rather Go Blind" - Balada soul devastadora</li>
+        <li>"Something's Got a Hold on Me" - Energia soul explosiva</li>
+        <li>"Tell Mama" - Força vocal incomparável</li>
+      </ul>
+      
+      <h3>Reconhecimento</h3>
+      <ul>
+        <li><strong>Rock and Roll Hall of Fame</strong>: Induzida em 1993</li>
+        <li><strong>6 Grammy Awards</strong>: Incluindo Lifetime Achievement</li>
+        <li><strong>Blues Hall of Fame</strong>: Reconhecimento no blues</li>
+        <li><strong>Influência Duradoura</strong>: Inspirou Beyoncé, Adele e muitas outras</li>
+      </ul>
+    `,
+    image: ettaJamesImage,
+    imageAlt: 'Retrato de poderosa cantora de soul dos anos 1960 com expressão intensa',
+    category: 'Curiosidades',
+    tags: ['etta james', 'soul', 'r&b', 'blues'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Etta James — A Matriarca do Soul e R&B | Blog',
+    seoDescription: 'A história de Etta James, uma das vozes mais poderosas do soul e R&B que influenciou gerações.',
+    keywords: ['etta james', 'soul', 'r&b', 'blues', 'at last']
+  },
+  {
+    id: '13',
+    title: 'Beth Hart — A Força do Blues Contemporâneo',
+    slug: 'beth-hart-blues-contemporaneo',
+    excerpt: 'Conheça Beth Hart, uma das vozes mais poderosas do blues contemporâneo, conhecida por sua intensidade emocional.',
+    content: `
+      <h2>Beth Hart: Paixão e Intensidade no Blues</h2>
+      <p><strong>Beth Hart</strong> (1972-presente) é uma cantora e compositora americana que trouxe nova vida ao blues contemporâneo com sua voz poderosa e performances emocionalmente intensas.</p>
+      
+      <h3>Estilo Musical</h3>
+      <ul>
+        <li><strong>Blues Contemporâneo</strong>: Mistura tradicional com rock</li>
+        <li><strong>Voz Poderosa</strong>: Range vocal impressionante</li>
+        <li><strong>Performance Intensa</strong>: Presença cênica marcante</li>
+        <li><strong>Compositora</strong>: Letras pessoais e honestas</li>
+      </ul>
+      
+      <h3>Carreira e Reconhecimento</h3>
+      <ul>
+        <li><strong>Colaborações</strong>: Trabalhos com Joe Bonamassa</li>
+        <li><strong>Álbuns Aclamados</strong>: "Don't Explain" e "Seesaw"</li>
+        <li><strong>Turnês Mundiais</strong>: Sucesso internacional</li>
+        <li><strong>Crítica Especializada</strong>: Reconhecida como uma das melhores do blues atual</li>
+      </ul>
+      
+      <h3>Influência no Blues Moderno</h3>
+      <ul>
+        <li>"LA Song" - Intensidade emocional</li>
+        <li>"I'd Rather Go Blind" - Versão poderosa do clássico</li>
+        <li>"Sinner's Prayer" - Blues gospel contemporâneo</li>
+        <li>"Leave the Light On" - Balada soul comovente</li>
+      </ul>
+    `,
+    image: bethHartImage,
+    imageAlt: 'Cantora de blues contemporâneo com cabelos loiros e expressão intensa',
+    category: 'Curiosidades',
+    tags: ['beth hart', 'blues contemporaneo', 'rock blues', 'cantora americana'],
+    publishedDate: '2025-07-17',
+    readingTime: '5 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Beth Hart — A Força do Blues Contemporâneo | Blog',
+    seoDescription: 'Conheça Beth Hart, uma das vozes mais poderosas do blues contemporâneo e sua intensidade emocional.',
+    keywords: ['beth hart', 'blues contemporaneo', 'rock blues', 'cantora blues']
+  },
+  {
+    id: '14',
+    title: 'B.B. King — O Rei do Blues',
+    slug: 'bb-king-rei-do-blues',
+    excerpt: 'A história de B.B. King, o lendário guitarrista e cantor que definiu o blues moderno com sua guitarra Lucille.',
+    content: `
+      <h2>B.B. King: O Rei Indiscutível do Blues</h2>
+      <p><strong>B.B. King</strong> (1925-2015), nascido Riley B. King, foi um dos músicos mais influentes da história do blues, conhecido por sua guitarra distintiva e estilo vocal único.</p>
+      
+      <h3>Carreira Lendária</h3>
+      <ul>
+        <li><strong>Guitarra Lucille</strong>: Sua famosa Gibson ES-335</li>
+        <li><strong>Estilo Único</strong>: Vibrato característico e bends expressivos</li>
+        <li><strong>Rei do Blues</strong>: Título conquistado ao longo de décadas</li>
+        <li><strong>Influência Universal</strong>: Inspirou Eric Clapton, Stevie Ray Vaughan e outros</li>
+      </ul>
+      
+      <h3>Clássicos Atemporais</h3>
+      <ul>
+        <li>"The Thrill Is Gone" - Obra-prima do blues</li>
+        <li>"Every Day I Have the Blues" - Clássico do repertório</li>
+        <li>"Sweet Little Angel" - Blues tradicional perfeito</li>
+        <li>"Rock Me Baby" - Groove blues irresistível</li>
+      </ul>
+      
+      <h3>Legado e Reconhecimento</h3>
+      <ul>
+        <li><strong>Rock and Roll Hall of Fame</strong>: Induzido em 1987</li>
+        <li><strong>15 Grammy Awards</strong>: Reconhecimento múltiplo</li>
+        <li><strong>Presidential Medal of Freedom</strong>: Honra nacional</li>
+        <li><strong>Mais de 50 álbuns</strong>: Discografia impressionante</li>
+      </ul>
+    `,
+    image: bbKingImage,
+    imageAlt: 'Lendário guitarrista de blues dos anos 1960 com sua guitarra em performance',
+    category: 'Curiosidades',
+    tags: ['bb king', 'blues', 'guitarra', 'lucille'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'B.B. King — O Rei do Blues | Blog',
+    seoDescription: 'A história de B.B. King, o lendário guitarrista que definiu o blues moderno com sua guitarra Lucille.',
+    keywords: ['bb king', 'blues', 'guitarra blues', 'lucille', 'rei do blues']
+  },
+  {
+    id: '15',
+    title: 'Andra Day — A Nova Voz do Soul',
+    slug: 'andra-day-nova-voz-soul',
+    excerpt: 'Conheça Andra Day, a cantora que trouxe o soul clássico para o século XXI com sua voz poderosa e estilo vintage.',
+    content: `
+      <h2>Andra Day: O Renascimento do Soul</h2>
+      <p><strong>Andra Day</strong> (1984-presente), nascida Cassandra Monique Batie, é uma cantora americana que revitalizou o soul clássico com uma abordagem contemporânea e voz impressionante.</p>
+      
+      <h3>Estilo Musical</h3>
+      <ul>
+        <li><strong>Soul Clássico</strong>: Influências dos anos 1960-70</li>
+        <li><strong>Voz Distintiva</strong>: Grave, rouca e expressiva</li>
+        <li><strong>Estilo Vintage</strong>: Visual e som retrô</li>
+        <li><strong>Letras Conscientes</strong>: Mensagens sociais e pessoais</li>
+      </ul>
+      
+      <h3>Carreira e Sucessos</h3>
+      <ul>
+        <li><strong>"Rise Up"</strong>: Hino de resistência e esperança</li>
+        <li><strong>Álbum "Cheers to the Fall"</strong>: Debut aclamado</li>
+        <li><strong>Influências</strong>: Billie Holiday, Lauryn Hill, Nina Simone</li>
+        <li><strong>Advocacia Social</strong>: Ativismo através da música</li>
+      </ul>
+      
+      <h3>Reconhecimento</h3>
+      <ul>
+        <li><strong>Grammy Nominations</strong>: Múltiplas indicações</li>
+        <li><strong>Golden Globe</strong>: Melhor Atriz por "The United States vs. Billie Holiday"</li>
+        <li><strong>Crítica Especializada</strong>: Elogios pela autenticidade</li>
+        <li><strong>Impacto Cultural</strong>: Voz da nova geração soul</li>
+      </ul>
+    `,
+    image: andraDayImage,
+    imageAlt: 'Cantora de soul contemporânea com turbante e estilo vintage elegante',
+    category: 'Curiosidades',
+    tags: ['andra day', 'soul contemporaneo', 'rise up', 'neo soul'],
+    publishedDate: '2025-07-17',
+    readingTime: '5 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Andra Day — A Nova Voz do Soul | Blog',
+    seoDescription: 'Conheça Andra Day, a cantora que trouxe o soul clássico para o século XXI com sua voz poderosa.',
+    keywords: ['andra day', 'soul contemporaneo', 'rise up', 'neo soul', 'billie holiday']
+  },
+  {
+    id: '16',
+    title: 'Nat King Cole — O Cavaleiro do Piano e da Voz',
+    slug: 'nat-king-cole-cavaleiro-piano-voz',
+    excerpt: 'A história de Nat King Cole, pianista virtuoso que se tornou um dos maiores crooners da história do jazz.',
+    content: `
+      <h2>Nat King Cole: Elegância e Sofisticação</h2>
+      <p><strong>Nat King Cole</strong> (1919-1965), nascido Nathaniel Adams Coles, foi um pianista virtuoso e cantor suave que definiu o conceito de crooner elegante no jazz.</p>
+      
+      <h3>Carreira Dupla</h3>
+      <ul>
+        <li><strong>Pianista Virtuoso</strong>: Técnica impecável e swing natural</li>
+        <li><strong>Cantor Suave</strong>: Voz aveludada e interpretação refinada</li>
+        <li><strong>Nat King Cole Trio</strong>: Formação inovadora piano-guitarra-contrabaixo</li>
+        <li><strong>Crossover Success</strong>: Sucesso no jazz e música popular</li>
+      </ul>
+      
+      <h3>Clássicos Imortais</h3>
+      <ul>
+        <li>"Unforgettable" - Clássico atemporal</li>
+        <li>"Mona Lisa" - Balada sofisticada</li>
+        <li>"The Christmas Song" - Clássico natalino</li>
+        <li>"Route 66" - Swing contagiante</li>
+      </ul>
+      
+      <h3>Pioneirismo e Legado</h3>
+      <ul>
+        <li><strong>Primeiro Negro na TV</strong>: "The Nat King Cole Show"</li>
+        <li><strong>Influência Duradoura</strong>: Inspirou Frank Sinatra e Tony Bennett</li>
+        <li><strong>Estilo Único</strong>: Combinação perfeita de jazz e pop</li>
+        <li><strong>Família Musical</strong>: Pai da também famosa Natalie Cole</li>
+      </ul>
+    `,
+    image: natKingColeImage,
+    imageAlt: 'Elegante pianista e cantor dos anos 1950 ao piano com sorriso característico',
+    category: 'Curiosidades',
+    tags: ['nat king cole', 'piano jazz', 'crooner', 'unforgettable'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Nat King Cole — O Cavaleiro do Piano e da Voz | Blog',
+    seoDescription: 'A história de Nat King Cole, pianista virtuoso que se tornou um dos maiores crooners da história.',
+    keywords: ['nat king cole', 'piano jazz', 'crooner', 'unforgettable', 'trio']
+  },
+  {
+    id: '17',
+    title: 'Kitty Kallen — A Voz Doce da Era de Ouro',
+    slug: 'kitty-kallen-voz-doce-era-ouro',
+    excerpt: 'Conheça Kitty Kallen, a cantora que marcou a era de ouro do jazz com sua voz doce e interpretações memoráveis.',
+    content: `
+      <h2>Kitty Kallen: A Doçura da Era de Ouro</h2>
+      <p><strong>Kitty Kallen</strong> (1921-2016), nascida Katie Kallen, foi uma cantora americana que se destacou na era de ouro do jazz com sua voz doce e interpretações delicadas.</p>
+      
+      <h3>Carreira nas Big Bands</h3>
+      <ul>
+        <li><strong>Jimmy Dorsey Orchestra</strong>: Início da carreira</li>
+        <li><strong>Artie Shaw Band</strong>: Período de crescimento</li>
+        <li><strong>Harry James Orchestra</strong>: Consolidação do sucesso</li>
+        <li><strong>Carreira Solo</strong>: Sucesso independente nos anos 1950</li>
+      </ul>
+      
+      <h3>Sucessos Marcantes</h3>
+      <ul>
+        <li>"It's Been a Long, Long Time" - Clássico do pós-guerra</li>
+        <li>"Little Things Mean a Lot" - Número 1 por semanas</li>
+        <li>"My Coloring Book" - Balada sofisticada</li>
+        <li>"Are You Looking for a Sweetheart?" - Charme dos anos 1940</li>
+      </ul>
+      
+      <h3>Estilo e Influência</h3>
+      <ul>
+        <li><strong>Voz Doce</strong>: Timbre suave e melodioso</li>
+        <li><strong>Interpretação Delicada</strong>: Emotividade sutil</li>
+        <li><strong>Era de Ouro</strong>: Representante da época dourada</li>
+        <li><strong>Versatilidade</strong>: Do swing ao pop tradicional</li>
+      </ul>
+    `,
+    image: kittyKallenImage,
+    imageAlt: 'Cantora elegante dos anos 1940 com vestido de gala e microfone vintage',
+    category: 'Curiosidades',
+    tags: ['kitty kallen', 'era de ouro', 'big bands', 'swing'],
+    publishedDate: '2025-07-17',
+    readingTime: '5 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Kitty Kallen — A Voz Doce da Era de Ouro | Blog',
+    seoDescription: 'Conheça Kitty Kallen, a cantora que marcou a era de ouro do jazz com sua voz doce e interpretações memoráveis.',
+    keywords: ['kitty kallen', 'era de ouro', 'big bands', 'swing', 'anos 1940']
+  },
+  {
+    id: '18',
+    title: 'Glenn Miller — O Maestro do Swing',
+    slug: 'glenn-miller-maestro-swing',
+    excerpt: 'A história de Glenn Miller, o líder de orquestra que definiu o som do swing e se tornou uma lenda da música americana.',
+    content: `
+      <h2>Glenn Miller: O Som Inconfundível do Swing</h2>
+      <p><strong>Glenn Miller</strong> (1904-1944) foi um trombonista, arranjador e líder de orquestra americano que criou o som mais identificável da era do swing.</p>
+      
+      <h3>A Glenn Miller Orchestra</h3>
+      <ul>
+        <li><strong>Som Característico</strong>: Clarinete líder sobre saxofones</li>
+        <li><strong>Arranjos Inovadores</strong>: Harmonizações únicas</li>
+        <li><strong>Sucesso Comercial</strong>: Orquestra mais popular dos anos 1940</li>
+        <li><strong>Profissionalismo</strong>: Disciplina militar na música</li>
+      </ul>
+      
+      <h3>Clássicos Imortais</h3>
+      <ul>
+        <li>"In the Mood" - Hino do swing</li>
+        <li>"Moonlight Serenade" - Tema da orquestra</li>
+        <li>"Chattanooga Choo Choo" - Primeiro disco de ouro</li>
+        <li>"String of Pearls" - Elegância instrumental</li>
+      </ul>
+      
+      <h3>Legado e Mistério</h3>
+      <ul>
+        <li><strong>Desaparecimento</strong>: Misterioso voo sobre o Canal da Mancha</li>
+        <li><strong>Influência Duradoura</strong>: Definiu o som do swing</li>
+        <li><strong>Filmes e TV</strong>: Trilhas sonoras icônicas</li>
+        <li><strong>Glenn Miller Society</strong>: Preservação do legado</li>
+      </ul>
+    `,
+    image: glennMillerImage,
+    imageAlt: 'Maestro de orquestra dos anos 1940 com batuta e uniforme militar elegante',
+    category: 'Curiosidades',
+    tags: ['glenn miller', 'swing', 'big band', 'orquestra'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Glenn Miller — O Maestro do Swing | Blog',
+    seoDescription: 'A história de Glenn Miller, o líder de orquestra que definiu o som do swing e se tornou uma lenda.',
+    keywords: ['glenn miller', 'swing', 'big band', 'orquestra', 'in the mood']
   }
 
 ];
