@@ -2,14 +2,17 @@
 import React from 'react';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
+import { eventsData, serviceOfferings } from '@/data/eventData';
+import { isFutureEvent } from '@/utils/dateUtils';
 
 const BookingSection = () => {
   const { isMiniMobile, isMobile, isMiniTablet, isTablet } = useAdvancedViewport();
-  const events = [
-    { icon: '💍', title: 'Casamentos', description: 'Cerimônias e recepções inesquecíveis' },
-    { icon: '🏢', title: 'Eventos Corporativos', description: 'Networking e celebrações empresariais' },
-    { icon: '🥂', title: 'Celebrações Privadas', description: 'Aniversários e ocasiões especiais' },
-    { icon: '🎭', title: 'Locais Especializados', description: 'Restaurantes e casas de shows' }
+  // Map service offerings to UI event types
+  const eventTypes = [
+    { icon: '💍', title: 'Casamentos', description: 'Cerimônias e recepções inesquecíveis', serviceId: 'service-wedding' },
+    { icon: '🏢', title: 'Eventos Corporativos', description: 'Networking e celebrações empresariais', serviceId: 'service-corporate' },
+    { icon: '🥂', title: 'Celebrações Privadas', description: 'Aniversários e ocasiões especiais', serviceId: 'service-private' },
+    { icon: '🎭', title: 'Locais Especializados', description: 'Restaurantes e casas de shows', serviceId: 'service-specialized' }
   ];
 
   
@@ -51,15 +54,16 @@ const BookingSection = () => {
 
           {/* Events Grid */}
           <div className={`grid ${gridCols} gap-6 mb-16`}>
-            {events.map((event, index) => (
+            {eventTypes.map((eventType, index) => (
               <div 
-                key={event.title}
+                key={eventType.title}
                 className="animate-scale-in text-center p-6 border border-jazz-gold border-opacity-30 hover:border-opacity-100 hover:bg-black hover:bg-opacity-40 transition-all duration-300"
                 style={{animationDelay: `${index * 0.1}s`}}
+                id={eventType.serviceId}
               >
-                <div className="text-5xl mb-4">{event.icon}</div>
-                <h3 className={`font-glimmer ${cardTitleSize} jazz-gold font-bold mb-2`}>{event.title}</h3>
-                <p className={`font-gatsbybold text-gray-400 ${textSize}`}>{event.description}</p>
+                <div className="text-5xl mb-4">{eventType.icon}</div>
+                <h3 className={`font-glimmer ${cardTitleSize} jazz-gold font-bold mb-2`}>{eventType.title}</h3>
+                <p className={`font-gatsbybold text-gray-400 ${textSize}`}>{eventType.description}</p>
               </div>
             ))}
           </div>
@@ -125,18 +129,21 @@ const BookingSection = () => {
               </tr>
             </thead>
             <tbody>
-              {[
-                { date: "08/08", day: "Sex", time: "20:00", venue: "The Bulltique Vino Bar" },
-                { date: "16/08", day: "Sáb", time: "19:30", venue: "Soul Jazz Burguer" },
-                { date: "12/09", day: "Sex", time: "20:00", venue: "The Bulltique Vino Bar" },
-              ].map((event, index) => (
-                <tr key={index} className="bg-black bg-opacity-30 backdrop-blur-lg border border-jazz-gold/20">
-                  <td className="px-4 py-3">{event.date}</td>
-                  <td className="px-4 py-3">{event.day}</td>
-                  <td className="px-4 py-3">{event.time}</td>
-                  <td className="px-4 py-3">{event.venue}</td>
-                </tr>
-              ))}
+              {eventsData
+                .filter(event => isFutureEvent(event.shortDate))
+                .map((event, index) => (
+                  <tr 
+                    key={event.id} 
+                    className="bg-black bg-opacity-30 backdrop-blur-lg border border-jazz-gold/20"
+                    id={event.id}
+                  >
+                    <td className="px-4 py-3">{event.shortDate}</td>
+                    <td className="px-4 py-3">{event.day}</td>
+                    <td className="px-4 py-3">{event.time}</td>
+                    <td className="px-4 py-3">{event.venue}</td>
+                  </tr>
+                ))
+              }
             </tbody>
           </table>
         </div>
