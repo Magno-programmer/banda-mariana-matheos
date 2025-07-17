@@ -5,6 +5,7 @@ import Footer from '@/components/sections/commonPages/footer/Footer';
 import SEOMetaTags from '@/components/globalComponents/SEOMetaTags';
 import WhatsAppButton from '@/components/globalComponents/WhatsAppButton';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
+import AdvancedBreadcrumb from '@/components/globalComponents/AdvancedBreadcrumb';
 import { blogArticlesData } from '@/data/blogArticlesData';
 
 const BlogArticlePage = () => {
@@ -63,29 +64,7 @@ const BlogArticlePage = () => {
       />
 
       <Header />
-
-      {/* Breadcrumb */}
-      <div className="bg-jazz-dark py-4">
-        <div className="container mx-auto px-4">
-          <nav className="flex items-center space-x-2 text-sm text-jazz-gold/70">
-            <button
-              onClick={() => navigate('/')}
-              className="hover:text-jazz-gold transition-colors"
-            >
-              Início
-            </button>
-            <ChevronRight size={16} />
-            <button
-              onClick={() => navigate('/blog')}
-              className="hover:text-jazz-gold transition-colors"
-            >
-              Blog
-            </button>
-            <ChevronRight size={16} />
-            <span className="text-jazz-gold">{article.title}</span>
-          </nav>
-        </div>
-      </div>
+      <AdvancedBreadcrumb />
 
       {/* Article Header */}
       <section className="py-16 bg-gradient-to-b from-jazz-dark to-black">
@@ -202,7 +181,7 @@ const BlogArticlePage = () => {
       <Footer />
       <WhatsAppButton />
 
-      {/* Structured Data */}
+      {/* Advanced BlogPosting Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -210,31 +189,144 @@ const BlogArticlePage = () => {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             "headline": article.title,
+            "alternativeHeadline": article.excerpt,
             "description": article.seoDescription,
-            "image": [article.image],
+            "image": {
+              "@type": "ImageObject",
+              "url": `https://marianamatheos.com.br${article.image}`,
+              "width": 1200,
+              "height": 800,
+              "caption": article.imageAlt
+            },
             "datePublished": article.publishedDate,
             "dateModified": article.publishedDate,
             "author": {
               "@type": "Person",
               "name": article.author,
-              "url": "https://marianamatheos.com.br"
+              "url": "https://marianamatheos.com.br",
+              "jobTitle": "Vocalista e Líder da Banda",
+              "worksFor": {
+                "@type": "MusicGroup",
+                "name": "Mariana Matheos Jazz Band"
+              }
             },
             "publisher": {
               "@type": "MusicGroup",
               "name": "Mariana Matheos Jazz Band",
+              "description": "Banda profissional de jazz especializada em eventos elegantes",
+              "url": "https://marianamatheos.com.br",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://marianamatheos.com.br/images/logo.png"
-              }
+                "url": "https://marianamatheos.com.br/images/logo.png",
+                "width": 600,
+                "height": 200
+              },
+              "genre": ["Jazz", "Blues", "Soul", "R&B"],
+              "foundingDate": "2020",
+              "foundingLocation": {
+                "@type": "Place",
+                "name": "Belo Horizonte",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Belo Horizonte",
+                  "addressRegion": "MG",
+                  "addressCountry": "BR"
+                }
+              },
+              "sameAs": [
+                "https://www.instagram.com/marianamatheosjazz",
+                "https://www.facebook.com/marianamatheosjazz"
+              ]
             },
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://marianamatheos.com.br/blog/${article.slug}`
+              "@id": `https://marianamatheos.com.br/blog/${article.slug}`,
+              "url": `https://marianamatheos.com.br/blog/${article.slug}`,
+              "name": article.seoTitle,
+              "description": article.seoDescription,
+              "inLanguage": "pt-BR",
+              "isPartOf": {
+                "@type": "WebSite",
+                "name": "Mariana Matheos Jazz Band",
+                "url": "https://marianamatheos.com.br"
+              }
             },
             "keywords": article.keywords.join(", "),
-            "genre": article.category,
-            "wordCount": article.content.split(' ').length,
-            "timeRequired": article.readingTime
+            "articleSection": article.category,
+            "genre": [article.category, "Jazz", "Música"],
+            "wordCount": article.content.split(' ').filter(word => word.length > 0).length,
+            "timeRequired": `PT${parseInt(article.readingTime)}M`,
+            "inLanguage": "pt-BR",
+            "copyrightYear": new Date(article.publishedDate).getFullYear(),
+            "copyrightHolder": {
+              "@type": "MusicGroup",
+              "name": "Mariana Matheos Jazz Band"
+            },
+            "about": {
+              "@type": "Thing",
+              "name": "Jazz Music",
+              "description": "Artigos sobre música jazz, eventos musicais e cultura jazzística"
+            },
+            "mentions": article.tags.map(tag => ({
+              "@type": "Thing",
+              "name": tag
+            })),
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Início",
+                  "item": "https://marianamatheos.com.br"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://marianamatheos.com.br/blog"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": article.title,
+                  "item": `https://marianamatheos.com.br/blog/${article.slug}`
+                }
+              ]
+            },
+            "isAccessibleForFree": true,
+            "hasPart": {
+              "@type": "WebPageElement",
+              "isAccessibleForFree": true,
+              "cssSelector": ".prose"
+            }
+          })
+        }}
+      />
+
+      {/* Article Series Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWorkSeries",
+            "name": `Série: ${article.category}`,
+            "description": `Artigos da categoria ${article.category} do blog Mariana Matheos Jazz`,
+            "publisher": {
+              "@type": "MusicGroup",
+              "name": "Mariana Matheos Jazz Band"
+            },
+            "hasPart": {
+              "@type": "BlogPosting",
+              "@id": `https://marianamatheos.com.br/blog/${article.slug}`,
+              "headline": article.title
+            },
+            "about": {
+              "@type": "Thing",
+              "name": article.category,
+              "description": `Artigos sobre ${article.category.toLowerCase()} relacionados à música jazz`
+            }
           })
         }}
       />

@@ -23,3 +23,15 @@ export const breadcrumbMappings: BreadcrumbMapping = {
   '/depoimentos': { label: 'Depoimentos' },
   '/blog': { label: 'Blog' }
 };
+
+// Dynamic breadcrumb resolver for blog articles
+export const getBlogArticleTitle = (slug: string): string => {
+  // Import the blog data here to avoid circular dependencies
+  try {
+    const { blogArticlesData } = require('@/data/blogArticlesData');
+    const article = blogArticlesData.find((a: any) => a.slug === slug);
+    return article ? article.title : 'Artigo';
+  } catch {
+    return 'Artigo';
+  }
+};

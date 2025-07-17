@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import { breadcrumbMappings, type BreadcrumbItem } from '@/types/breadcrumb';
+import { breadcrumbMappings, getBlogArticleTitle, type BreadcrumbItem } from '@/types/breadcrumb';
 
 const AdvancedBreadcrumb = () => {
   const location = useLocation();
@@ -18,6 +18,27 @@ const AdvancedBreadcrumb = () => {
       return breadcrumbs;
     }
 
+    // Handle blog article pages
+    if (pathSegments.length === 2 && pathSegments[0] === 'blog') {
+      // Add blog page first
+      breadcrumbs.push({
+        label: 'Blog',
+        href: '/blog',
+        isActive: false
+      });
+      
+      // Add article page
+      const articleSlug = pathSegments[1];
+      breadcrumbs.push({
+        label: getBlogArticleTitle(articleSlug),
+        href: location.pathname,
+        isActive: true
+      });
+      
+      return breadcrumbs;
+    }
+
+    // Handle regular pages
     let currentPath = '';
     pathSegments.forEach((segment, index) => {
       currentPath += `/${segment}`;

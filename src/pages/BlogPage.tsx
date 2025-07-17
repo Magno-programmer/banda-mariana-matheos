@@ -6,6 +6,7 @@ import Footer from '@/components/sections/commonPages/footer/Footer';
 import SEOMetaTags from '@/components/globalComponents/SEOMetaTags';
 import WhatsAppButton from '@/components/globalComponents/WhatsAppButton';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
+import AdvancedBreadcrumb from '@/components/globalComponents/AdvancedBreadcrumb';
 import blogHeroImage from '/images/banda-blue-jazz-concurso.png';
 import casamentoImage from '@/assets/images/casamento-jazz-band.jpg';
 import historiaJazzImage from '@/assets/images/historia-jazz-brasil.jpg';
@@ -171,6 +172,7 @@ const BlogPage = () => {
       />
 
       <Header />
+      <AdvancedBreadcrumb />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -309,6 +311,156 @@ const BlogPage = () => {
 
       <Footer />
       <WhatsAppButton />
+
+      {/* Blog Collection Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Blog Mariana Matheos Jazz",
+            "description": "Artigos sobre música jazz, dicas para eventos e inspirações musicais da banda Mariana Matheos Jazz em Belo Horizonte",
+            "url": "https://marianamatheos.com.br/blog",
+            "mainEntity": {
+              "@type": "ItemList",
+              "numberOfItems": blogArticles.length,
+              "itemListElement": blogArticles.map((article, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "item": {
+                  "@type": "BlogPosting",
+                  "@id": `https://marianamatheos.com.br/blog/${article.slug}`,
+                  "headline": article.title,
+                  "description": article.excerpt,
+                  "image": {
+                    "@type": "ImageObject",
+                    "url": `https://marianamatheos.com.br${article.image}`,
+                    "width": 800,
+                    "height": 600
+                  },
+                  "datePublished": article.publishedDate,
+                  "dateModified": article.publishedDate,
+                  "author": {
+                    "@type": "Person",
+                    "name": article.author,
+                    "url": "https://marianamatheos.com.br"
+                  },
+                  "publisher": {
+                    "@type": "MusicGroup",
+                    "name": "Mariana Matheos Jazz Band",
+                    "logo": {
+                      "@type": "ImageObject",
+                      "url": "https://marianamatheos.com.br/images/logo.png",
+                      "width": 600,
+                      "height": 200
+                    },
+                    "url": "https://marianamatheos.com.br",
+                    "sameAs": [
+                      "https://www.instagram.com/marianamatheosjazz",
+                      "https://www.facebook.com/marianamatheosjazz"
+                    ]
+                  },
+                  "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": `https://marianamatheos.com.br/blog/${article.slug}`
+                  },
+                  "articleSection": article.category,
+                  "keywords": article.keywords.join(", "),
+                  "wordCount": article.content.split(' ').length,
+                  "timeRequired": `PT${parseInt(article.readingTime)}M`,
+                  "genre": [article.category, "Jazz", "Música"],
+                  "about": {
+                    "@type": "Thing",
+                    "name": "Jazz Music",
+                    "description": "Artigos sobre música jazz, eventos e cultura musical"
+                  }
+                }
+              }))
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Início",
+                  "item": "https://marianamatheos.com.br"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://marianamatheos.com.br/blog"
+                }
+              ]
+            },
+            "publisher": {
+              "@type": "MusicGroup",
+              "name": "Mariana Matheos Jazz Band",
+              "description": "Banda profissional de jazz especializada em eventos elegantes em Belo Horizonte",
+              "url": "https://marianamatheos.com.br",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://marianamatheos.com.br/images/logo.png",
+                "width": 600,
+                "height": 200
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Belo Horizonte",
+                "addressRegion": "MG",
+                "addressCountry": "BR"
+              },
+              "sameAs": [
+                "https://www.instagram.com/marianamatheosjazz",
+                "https://www.facebook.com/marianamatheosjazz"
+              ]
+            }
+          })
+        }}
+      />
+
+      {/* WebSite Schema for Blog */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Blog Mariana Matheos Jazz",
+            "url": "https://marianamatheos.com.br/blog",
+            "description": "Blog oficial da banda Mariana Matheos Jazz com artigos sobre música, eventos e cultura jazzística",
+            "publisher": {
+              "@type": "MusicGroup",
+              "name": "Mariana Matheos Jazz Band"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://marianamatheos.com.br/blog?search={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            },
+            "mainEntity": {
+              "@type": "Blog",
+              "name": "Blog Mariana Matheos Jazz",
+              "description": "Artigos e inspirações sobre música jazz para eventos elegantes",
+              "blogPost": blogArticles.map(article => ({
+                "@type": "BlogPosting",
+                "@id": `https://marianamatheos.com.br/blog/${article.slug}`,
+                "headline": article.title,
+                "datePublished": article.publishedDate,
+                "author": {
+                  "@type": "Person",
+                  "name": article.author
+                }
+              }))
+            }
+          })
+        }}
+      />
     </div>
   );
 };
