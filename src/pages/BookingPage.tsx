@@ -8,6 +8,7 @@ import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
 import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
+import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSection";
 
 const BookingPage = () => {
   return (
@@ -20,10 +21,15 @@ const BookingPage = () => {
       />
       <AdvancedRichSnippet />
       
-      <div>
+      <div className="min-h-screen bg-black">
         <Header />
         <AdvancedBreadcrumb />
         <BookingSection />
+        <RelatedPagesSection 
+          variant="grid"
+          maxLinks={6}
+          className="bg-gradient-to-b from-black via-jazz-dark to-black"
+        />
         <Footer />
         <WhatsAppButton />
       </div>

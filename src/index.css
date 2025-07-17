@@ -22,6 +22,18 @@
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   }
+  
+  /* Animações para link building */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;

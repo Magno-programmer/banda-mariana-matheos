@@ -9,6 +9,7 @@ import AvaliationSection from "@/components/sections/depoimentos/AvaliationSecti
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
+import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSection";
 
 const TestimonialsPage = () => {
   return (
@@ -21,10 +22,15 @@ const TestimonialsPage = () => {
       />
       <AdvancedRichSnippet />
       
-      <div>
+      <div className="min-h-screen bg-black">
         <Header />
         <AdvancedBreadcrumb />
         <AvaliationSection />
+        <RelatedPagesSection 
+          variant="grid"
+          maxLinks={6}
+          className="bg-gradient-to-b from-black via-jazz-dark to-black"
+        />
         <Footer />
         <WhatsAppButton />
       </div>

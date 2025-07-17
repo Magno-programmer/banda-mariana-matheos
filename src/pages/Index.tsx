@@ -9,6 +9,7 @@ import HeroSection from '@/components/sections/Index/HeroSection';
 import Footer from '@/components/sections/commonPages/footer/Footer';
 import WhatsAppButton from '@/components/globalComponents/WhatsAppButton';
 import AdvancedBreadcrumb from '@/components/globalComponents/AdvancedBreadcrumb';
+import RelatedPagesSection from '@/components/globalComponents/RelatedPagesSection';
 
 
 const Index = () => {
@@ -21,10 +22,17 @@ const Index = () => {
         canonicalUrl="/"
       />
       <AdvancedRichSnippet />
-      <div>
+      <div className="min-h-screen bg-black">
         <Header />
         <AdvancedBreadcrumb />
         <HeroSection />
+        <RelatedPagesSection 
+          title="Descubra Nossos Serviços"
+          subtitle="Explore tudo que oferecemos para tornar seu evento inesquecível"
+          variant="grid"
+          maxLinks={6}
+          className="bg-gradient-to-b from-black via-jazz-dark to-black"
+        />
         <Footer />
         <WhatsAppButton />
       </div>

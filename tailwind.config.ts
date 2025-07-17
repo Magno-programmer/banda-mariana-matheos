@@ -66,11 +66,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				// Cores customizadas para o tema jazz
-				jazz: {
-					gold: '#e3bd68',
-					dark: '#800000',
-					black: '#000000'
-				}
+				'jazz-gold': '#e3bd68',
+				'jazz-dark': '#1a0000',
+				'jazz-red': '#800000'
 			},
 			fontFamily: {
 				'glimmer': ['glimmer of light', 'serif'],
