@@ -8,6 +8,7 @@ import Header from "@/components/sections/commonPages/header/Header";
 import AvaliationSection from "@/components/sections/depoimentos/AvaliationSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
+import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 
 const TestimonialsPage = () => {
   return (
@@ -22,10 +23,11 @@ const TestimonialsPage = () => {
       
       <div>
         <Header />
+        <AdvancedBreadcrumb />
         <AvaliationSection />
         <Footer />
         <WhatsAppButton />
-      </div>   
+      </div>
     </>
   );
 };

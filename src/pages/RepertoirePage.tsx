@@ -7,6 +7,7 @@ import RepertoireSection from "@/components/sections/repertorio/RepertoireSectio
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
+import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 
 const RepertoirePage = () => {
   return (
@@ -21,10 +22,11 @@ const RepertoirePage = () => {
     
       <div>
         <Header />
+        <AdvancedBreadcrumb />
         <RepertoireSection />
         <Footer />
         <WhatsAppButton />
-      </div>   
+      </div>
     </>
   );
 };

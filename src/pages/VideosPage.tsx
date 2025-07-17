@@ -7,6 +7,7 @@ import VideosSection from "@/components/sections/galeria/VideosSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
+import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 
 const VideosPage = () => {
   return (
@@ -21,6 +22,7 @@ const VideosPage = () => {
 
       <div>
         <Header />
+        <AdvancedBreadcrumb />
         <VideosSection />
         <Footer />
         <WhatsAppButton />

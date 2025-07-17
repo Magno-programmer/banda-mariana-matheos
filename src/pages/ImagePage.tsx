@@ -6,7 +6,8 @@ import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnipp
 import ImageSection from "@/components/sections/galeria/ImagesSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
-import Header from "@/components/sections/commonPages/header/Header"; 
+import Header from "@/components/sections/commonPages/header/Header";
+import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 
 const ImagePage = () => {
   return (
@@ -21,6 +22,7 @@ const ImagePage = () => {
 
       <div>
         <Header />
+        <AdvancedBreadcrumb />
         <ImageSection />
         <Footer />
         <WhatsAppButton />

@@ -8,6 +8,7 @@ import Header from '@/components/sections/commonPages/header/Header';
 import HeroSection from '@/components/sections/Index/HeroSection';
 import Footer from '@/components/sections/commonPages/footer/Footer';
 import WhatsAppButton from '@/components/globalComponents/WhatsAppButton';
+import AdvancedBreadcrumb from '@/components/globalComponents/AdvancedBreadcrumb';
 
 
 const Index = () => {
@@ -22,6 +23,7 @@ const Index = () => {
       <AdvancedRichSnippet />
       <div>
         <Header />
+        <AdvancedBreadcrumb />
         <HeroSection />
         <Footer />
         <WhatsAppButton />

@@ -7,6 +7,7 @@ import BookingSection from "@/components/sections/agendamento/BookingSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
+import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 
 const BookingPage = () => {
   return (
@@ -21,6 +22,7 @@ const BookingPage = () => {
       
       <div>
         <Header />
+        <AdvancedBreadcrumb />
         <BookingSection />
         <Footer />
         <WhatsAppButton />

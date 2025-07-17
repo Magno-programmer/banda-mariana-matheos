@@ -7,6 +7,7 @@ import AboutSection from "@/components/sections/sobre/AboutSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
+import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 
 
 const AboutPage = () => {
@@ -21,10 +22,11 @@ const AboutPage = () => {
       <AdvancedRichSnippet />
       <div>
         <Header />
+        <AdvancedBreadcrumb />
         <AboutSection />
         <Footer />
         <WhatsAppButton />
-      </div>  
+      </div>
     </>
   );
 };

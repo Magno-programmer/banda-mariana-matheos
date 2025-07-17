@@ -8,6 +8,7 @@ import FAQSection from "@/components/sections/depoimentos/FAQSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
+import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 
 const FAQPage = () => {
   return (
@@ -22,6 +23,7 @@ const FAQPage = () => {
 
         <div>
         <Header />
+        <AdvancedBreadcrumb />
         <FAQSection />
         <Footer />
         <WhatsAppButton />
