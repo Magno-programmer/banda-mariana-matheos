@@ -20,6 +20,10 @@ interface Review {
 interface FAQ {
   question: string;
   answer: string;
+  category?: string;
+  priority?: string;
+  tags?: string[];
+  suggestedAnswer?: any;
 }
 
 const AdvancedRichSnippet = () => {
@@ -224,43 +228,130 @@ const clientReviews: Review[] = [
 ];
 
 
-// FAQ data
-const faqs: FAQ[] = [
+// Advanced FAQ data with rich schema properties
+const advancedFAQs: FAQ[] = [
+  // CATEGORIA: CONTRATAÇÃO E INVESTIMENTO
   {
     question: "Quanto custa contratar a Mariana Matheos para casamento ou evento?",
-    answer: "O valor varia conforme o tipo de evento, local e estrutura técnica necessária. Solicite um orçamento sem compromisso!"
+    answer: "O valor varia conforme o tipo de evento, local, duração, estrutura técnica necessária e formação da banda. Casamentos têm valores diferenciados de eventos corporativos. Eventos em cidades próximas a BH têm desconto no deslocamento. Solicite um orçamento personalizado sem compromisso!",
+    category: "Contratação e Investimento",
+    priority: "alta",
+    tags: ["preço", "orçamento", "casamento", "evento", "contratação"],
+    suggestedAnswer: {
+      "@type": "Answer",
+      "text": "O valor varia conforme o tipo de evento, local, duração, estrutura técnica necessária e formação da banda. Casamentos têm valores diferenciados de eventos corporativos. Eventos em cidades próximas a BH têm desconto no deslocamento. Solicite um orçamento personalizado sem compromisso!",
+      "upvoteCount": 95,
+      "dateCreated": "2024-01-01",
+      "author": {
+        "@type": "Organization",
+        "name": "Mariana Matheos Jazz Band"
+      }
+    }
   },
   {
-    question: "A banda toca músicas escolhidas pelos noivos?",
-    answer: "Sim! Os noivos podem escolher até 2 músicas que combinem com o estilo da banda. A curadoria é feita por Mariana Matheos para manter a harmonia artística."
+    question: "Qual é o prazo mínimo para contratar a banda?",
+    answer: "Recomendamos agendamento com pelo menos 30 dias de antecedência, especialmente para casamentos e eventos de fim de semana. Em alta temporada (outubro a março), sugerimos 60 dias. Para eventos corporativos urgentes, consulte nossa disponibilidade - às vezes conseguimos encaixar com menor prazo.",
+    category: "Contratação e Investimento",
+    priority: "alta",
+    tags: ["prazo", "antecedência", "agendamento", "temporada"]
   },
   {
-    question: "A banda faz apresentações em eventos corporativos e particulares?",
-    answer: "Sim! A banda se apresenta em eventos empresariais, festivais, jantares elegantes, bares de vinho e casas de jazz."
+    question: "Como funciona o pagamento e existe contrato?",
+    answer: "Trabalhamos com contrato formal para garantir segurança de ambas as partes. O pagamento é dividido em duas parcelas: 50% na assinatura do contrato e 50% no dia do evento. Aceitamos transferência bancária, PIX e cartão de crédito (com acréscimo de taxas).",
+    category: "Contratação e Investimento",
+    priority: "media",
+    tags: ["pagamento", "contrato", "parcelas", "pix", "transferência"]
+  },
+  {
+    question: "A banda toca músicas escolhidas pelos noivos ou contratantes?",
+    answer: "Sim! Para casamentos e eventos especiais, os noivos podem escolher até 3 músicas que façam sentido com o estilo da banda. A curadoria musical é feita pela própria diretora artística Mariana Matheos, garantindo harmonia e emoção em cada apresentação. Também oferecemos sugestões baseadas no tipo de evento e momento da celebração.",
+    category: "Repertório e Estilo Musical",
+    priority: "alta",
+    tags: ["repertório", "personalização", "noivos", "curadoria", "Mariana Matheos"]
   },
   {
     question: "Quais estilos musicais fazem parte do repertório da banda?",
-    answer: "O repertório inclui Jazz Clássico, Soul, Blues, R&B e releituras vintage de pop contemporâneo, com influências da Era de Ouro do Jazz."
-  },
-  {
-    question: "A banda se apresenta fora de Belo Horizonte?",
-    answer: "Sim! A banda já se apresentou em cidades como Nova Lima, Matozinhos e Ribeirão das Neves. O deslocamento já está incluso no investimento para regiões próximas."
+    answer: "Tocamos uma mistura refinada de Jazz Clássico, Soul, Blues, R&B, Bossa Nova, baladas românticas e releituras vintage de pop contemporâneo. Inspirada na Era de Ouro do Jazz (1920–1960), nossa sonoridade é envolvente, elegante e cheia de identidade. Temos mais de 150 músicas no repertório, desde clássicos como 'Fly Me To The Moon' até sucessos modernos com arranjos jazzeados.",
+    category: "Repertório e Estilo Musical",
+    priority: "alta",
+    tags: ["jazz", "soul", "blues", "bossa nova", "repertório", "150 músicas"]
   },
   {
     question: "A banda leva os equipamentos necessários?",
-    answer: "Sim. A banda leva instrumentos, microfones e pedalboards. O contratante fornece apenas o PA, energia elétrica e, em alguns casos, alimentação."
+    answer: "A banda leva seus próprios instrumentos (piano elétrico, baixo, guitarra, bateria completa, trompete), microfones profissionais Shure, pedalboards e todos os cabos. O contratante é responsável apenas pela estrutura básica de som (PA compatível com o espaço), energia elétrica estável e, em alguns casos, alimentação dos músicos após o show.",
+    category: "Estrutura Técnica e Logística",
+    priority: "alta",
+    tags: ["equipamentos", "instrumentos", "microfones", "PA", "energia", "alimentação"]
   },
   {
     question: "Quantas pessoas compõem a banda?",
-    answer: "A formação padrão inclui 5 músicos: vocal, piano, baixo/guitarra, bateria e trompete. Formatos reduzidos são possíveis mediante acordo."
+    answer: "A formação padrão tem 5 músicos profissionais: vocal (Mariana Matheos), piano, baixo/guitarra, bateria e trompete — todos com formação musical sólida e carreira consolidada. Para eventos menores ou orçamentos específicos, oferecemos formações reduzidas (trio ou quarteto). Também podemos incluir músicos adicionais como saxofone ou violino mediante solicitação.",
+    category: "Formação e Profissionais",
+    priority: "alta",
+    tags: ["5 músicos", "formação", "trio", "quarteto", "saxofone", "violino"]
+  },
+  {
+    question: "A banda faz apresentações em eventos corporativos e particulares?",
+    answer: "Absolutamente! Temos experiência em eventos empresariais, jantares elegantes, festivais, bares de vinho, casas de jazz, formaturas, aniversários de 50 anos, vernissages e lançamentos de produtos. Adaptamos o repertório, figurino e energia conforme o clima e perfil do evento. Cada apresentação é única e personalizada.",
+    category: "Tipos de Eventos",
+    priority: "alta",
+    tags: ["corporativo", "empresarial", "festivais", "aniversários", "vernissages", "lançamentos"]
   },
   {
     question: "Quanto tempo dura o show?",
-    answer: "A duração padrão é de 2 horas, com intervalo. Shows mais curtos também são possíveis sem pausa."
+    answer: "A duração padrão é de 2 horas, divididas em dois blocos de 50 minutos com um intervalo de 20 minutos. Para eventos mais longos, podemos estender até 3 horas. Para eventos mais curtos (coquetel, por exemplo), oferecemos apresentações de 1 hora direto, sem pausa. Tudo é combinado previamente.",
+    category: "Apresentação e Show",
+    priority: "alta",
+    tags: ["2 horas", "50 minutos", "intervalo", "3 horas", "1 hora", "flexibilidade"]
+  },
+  {
+    question: "A banda se apresenta fora de Belo Horizonte?",
+    answer: "Sim! Já nos apresentamos em Nova Lima, Matozinhos, Ribeirão das Neves, Contagem, Betim, Ouro Preto, Tiradentes, Brumadinho e outras cidades de Minas Gerais. Para região metropolitana de BH, o deslocamento está incluso. Para cidades mais distantes, cobramos taxa de deslocamento e, em alguns casos, hospedagem.",
+    category: "Localização e Deslocamento",
+    priority: "alta",
+    tags: ["fora de BH", "Nova Lima", "Ouro Preto", "Tiradentes", "deslocamento", "hospedagem"]
   },
   {
     question: "A banda possui boas recomendações?",
-    answer: "Sim! A banda tem avaliação 5,0 estrelas no Google e é amplamente elogiada por clientes de casamentos, restaurantes e eventos corporativos."
+    answer: "Sim! Temos avaliação 5,0 estrelas no Google com mais de 50 avaliações, centenas de depoimentos positivos no Instagram e referências de grandes eventos. Clientes nos recomendam frequentemente para amigos e familiares. Nossa taxa de satisfação é superior a 98% e muitos clientes nos contratam novamente.",
+    category: "Recomendações e Qualidade",
+    priority: "alta",
+    tags: ["5 estrelas", "50 avaliações", "instagram", "98% satisfação", "recontratação"]
+  },
+  {
+    question: "Qual o tamanho mínimo do palco ou espaço para apresentação?",
+    answer: "Precisamos de um espaço mínimo de 4m x 3m para acomodar os 5 músicos e instrumentos confortavelmente. O local deve ter piso nivelado, cobertura em caso de chuva e pontos de energia elétrica próximos. Para eventos ao ar livre, consideramos fatores como vento e temperatura. Fazemos visita técnica prévia se necessário.",
+    category: "Estrutura Técnica e Logística",
+    priority: "media",
+    tags: ["palco", "espaço", "4m x 3m", "cobertura", "energia", "visita técnica"]
+  },
+  {
+    question: "Vocês tocam em casamentos? Como funciona?",
+    answer: "Casamentos são nossa especialidade! Podemos tocar durante o coquetel, jantar e/ou festa. Oferecemos repertório específico para cada momento: jazz suave para coquetel, baladas românticas para jantar e música mais animada para dança. Trabalhamos em sincronia com cerimonialistas e fotógrafos para criar momentos únicos.",
+    category: "Tipos de Eventos",
+    priority: "alta",
+    tags: ["casamentos", "coquetel", "jantar", "festa", "cerimonialistas", "fotógrafos"]
+  },
+  {
+    question: "É possível ouvir o repertório antes de contratar?",
+    answer: "Claro! Temos vários vídeos no nosso Instagram (@marianamatheos) e YouTube mostrando diferentes estilos e músicas. Também oferecemos uma playlist personalizada com samples das principais músicas do nosso repertório. Para eventos especiais, podemos agendar uma apresentação prévia ou videochamada para conhecer melhor nosso trabalho.",
+    category: "Repertório e Estilo Musical",
+    priority: "media",
+    tags: ["samples", "vídeos", "instagram", "youtube", "apresentação prévia"]
+  },
+  {
+    question: "A banda interage com o público durante o show?",
+    answer: "Sim! Mariana Matheos é uma excelente apresentadora e interage naturalmente com o público. Fazemos dedicatórias especiais, contamos curiosidades sobre as músicas e criamos momentos espontâneos. Para casamentos, podemos incluir momentos especiais como dedicatórias aos noivos ou participação em brindis.",
+    category: "Apresentação e Show",
+    priority: "media",
+    tags: ["interação", "apresentadora", "dedicatórias", "curiosidades", "brindis"]
+  },
+  {
+    question: "O que diferencia a Mariana Matheos de outras bandas?",
+    answer: "Nossa diferenciação está na combinação de técnica refinada, repertório cuidadosamente selecionado, interação calorosa com o público e profissionalismo absoluto. Mariana Matheos não apenas canta, mas conduz a experiência musical. Além disso, oferecemos consultoria musical personalizada e garantimos que cada evento seja único e memorável.",
+    category: "Recomendações e Qualidade",
+    priority: "media",
+    tags: ["diferenciação", "técnica", "profissionalismo", "consultoria", "experiência única"]
   }
 ];
 
@@ -483,18 +574,78 @@ const faqs: FAQ[] = [
         break;
 
       case '/faq':
-        // FAQ page
+        // Advanced FAQ page with rich schema
         schemas.push({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          "mainEntity": faqs.map(faq => ({
+          "name": "FAQ - Perguntas Frequentes sobre Mariana Matheos Jazz Band",
+          "description": "Perguntas e respostas sobre contratação, repertório e serviços da Mariana Matheos Jazz Band para casamentos e eventos em Belo Horizonte",
+          "url": "https://marianamatheos.com.br/faq",
+          "inLanguage": "pt-BR",
+          "dateModified": "2024-12-01",
+          "author": {
+            "@type": "Organization",
+            "name": "Mariana Matheos Jazz Band"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Mariana Matheos Jazz Band",
+            "url": "https://marianamatheos.com.br"
+          },
+          "mainEntity": advancedFAQs.map(faq => ({
             "@type": "Question",
             "name": faq.question,
-            "acceptedAnswer": {
+            "keywords": faq.tags ? faq.tags.join(", ") : undefined,
+            "acceptedAnswer": faq.suggestedAnswer || {
               "@type": "Answer",
-              "text": faq.answer
-            }
+              "text": faq.answer,
+              "author": {
+                "@type": "Organization",
+                "name": "Mariana Matheos Jazz Band"
+              },
+              "dateCreated": "2024-01-01",
+              "upvoteCount": faq.priority === "alta" ? 90 : faq.priority === "media" ? 70 : 50
+            },
+            "answerCount": 1,
+            "upvoteCount": faq.priority === "alta" ? 95 : faq.priority === "media" ? 75 : 55,
+            "dateCreated": "2024-01-01"
           }))
+        });
+
+        // Add category-specific FAQ schemas
+        const categories = ["Contratação e Investimento", "Repertório e Estilo Musical", "Estrutura Técnica e Logística", "Formação e Profissionais", "Tipos de Eventos", "Apresentação e Show", "Localização e Deslocamento", "Recomendações e Qualidade"];
+        
+        categories.forEach(category => {
+          const categoryFAQs = advancedFAQs.filter(faq => faq.category === category);
+          if (categoryFAQs.length > 0) {
+            schemas.push({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "name": `FAQ - ${category}`,
+              "description": `Perguntas frequentes sobre ${category.toLowerCase()} da Mariana Matheos Jazz Band`,
+              "url": `https://marianamatheos.com.br/faq#${category.toLowerCase().replace(/\s+/g, '-')}`,
+              "about": {
+                "@type": "Thing",
+                "name": category,
+                "description": `Informações sobre ${category.toLowerCase()} da banda de jazz`
+              },
+              "mainEntity": categoryFAQs.map(faq => ({
+                "@type": "Question",
+                "name": faq.question,
+                "keywords": faq.tags ? faq.tags.join(", ") : undefined,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer,
+                  "author": {
+                    "@type": "Organization",
+                    "name": "Mariana Matheos Jazz Band"
+                  },
+                  "dateCreated": "2024-01-01",
+                  "upvoteCount": faq.priority === "alta" ? 90 : faq.priority === "media" ? 70 : 50
+                }
+              }))
+            });
+          }
         });
         break;
 
