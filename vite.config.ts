@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    minify: 'terser',
+    minify: mode === 'production' ? 'terser' : 'esbuild',
     cssMinify: true,
     rollupOptions: {
       output: {
@@ -31,15 +31,17 @@ export default defineConfig(({ mode }) => ({
         }
       }
     },
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: true,
-        pure_funcs: ['console.log']
-      },
-      mangle: {
-        safari10: true
+    ...(mode === 'production' && {
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+          pure_funcs: ['console.log']
+        },
+        mangle: {
+          safari10: true
+        }
       }
-    }
+    })
   }
 }));
