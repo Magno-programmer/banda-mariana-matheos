@@ -48,7 +48,7 @@ const FAQSection = () => {
     {
       categoria: "Estrutura Técnica e Logística",
       pergunta: "Quais equipamentos a banda leva para os eventos?",
-      resposta: "A banda leva seus próprios instrumentos (piano, guitarra, baixo, bateria, trompete), microfones, pedalboards e cabos. O contratante deve fornecer estrutura de som compatível com o porte do evento (PA), pontos de energia estabilizada e, em eventos mais longos, alimentação para os músicos.",
+      resposta: "A banda leva seus próprios instrumentos (piano, guitarra, baixo, bateria, trompete), microfones, pedalboards e cabos. O contratante deve fornecer estrutura de som compatível com o porte do evento (PA), pontos de energia estabilizada e alimentação para os músicos.",
       prioridade: "alta",
       tags: ["instrumentos", "estrutura", "PA", "energia", "alimentação"],
       categoria_schema: "technical"
