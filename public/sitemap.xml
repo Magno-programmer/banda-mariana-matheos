@@ -196,7 +196,7 @@
   <!-- Páginas de Blog/Artigos (Content Marketing) -->
   <url>
     <loc>https://marianamatheos.com.br/blog</loc>
-    <lastmod>2025-07-16T14:00:00+00:00</lastmod>
+    <lastmod>2025-07-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
@@ -204,50 +204,221 @@
 
   <url>
     <loc>https://marianamatheos.com.br/blog/como-escolher-banda-casamento</loc>
-    <lastmod>2025-01-15T16:20:00+00:00</lastmod>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/casamento-jazz-band.jpg</image:loc>
+      <image:caption>Banda de jazz tocando em casamento elegante</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/blog/mariana-matheos-jazz-essencia-da-musica-ao-vivo</loc>
-    <lastmod>2025-01-15T16:20:00+00:00</lastmod>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/cantora.png</image:loc>
+      <image:caption>Mariana Matheos Jazz performando ao vivo em evento elegante</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/blog/historia-do-jazz-brasil</loc>
-    <lastmod>2025-01-14T11:40:00+00:00</lastmod>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/historia-jazz-brasil.jpg</image:loc>
+      <image:caption>Músicos de jazz vintage no Brasil dos anos 1920</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/blog/musica-ao-vivo-eventos-corporativos</loc>
-    <lastmod>2025-01-13T13:10:00+00:00</lastmod>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/eventos-corporativos.jpg</image:loc>
+      <image:caption>Banda de jazz tocando em evento corporativo elegante</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/blog/historia-dos-jazz-standards</loc>
-    <lastmod>2025-01-13T13:10:00+00:00</lastmod>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/jazz-standard.jpg</image:loc>
+      <image:caption>Pianista e vocalista interpretando um jazz standard em palco iluminado</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/blog/como-ser-uma-banda-de-jazz</loc>
-    <lastmod>2025-01-13T13:10:00+00:00</lastmod>
+    <lastmod>2025-07-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/banda-de-jazz-1920.jpg</image:loc>
+      <image:caption>Banda de jazz ensaiando em um estúdio com instrumentos clássicos</image:caption>
+    </image:image>
   </url>
+
+  <!-- Biografias / Curiosidades -->
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/billie-holiday-dama-do-jazz</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/billie-holiday.jpg</image:loc>
+      <image:caption>Retrato artístico de cantora de jazz dos anos 1940 com gardênia no cabelo</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/ella-fitzgerald-primeira-dama-cancao</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/ella-fitzgerald.jpg</image:loc>
+      <image:caption>Retrato artístico de elegante cantora de jazz dos anos 1940 com sorriso radiante</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/frank-sinatra-rei-do-swing</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/frank-sinatra.jpg</image:loc>
+      <image:caption>Retrato de elegante cantor dos anos 1950 com terno e gravata borboleta</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/nina-simone-sacerdotisa-soul</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/nina-simone.jpg</image:loc>
+      <image:caption>Retrato de poderosa pianista e cantora dos anos 1960 ao piano</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/amy-winehouse-neo-soul</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/amy-winehouse.jpg</image:loc>
+      <image:caption>Amy Winehouse com seu icônico penteado beehive e vestido preto</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/etta-james-matriarca-soul-rb</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/etta-james.jpg</image:loc>
+      <image:caption>Retrato de poderosa cantora de soul dos anos 1960 com expressão intensa</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/beth-hart-blues-contemporaneo</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/beth-hart.jpg</image:loc>
+      <image:caption>Cantora de blues contemporâneo com cabelos loiros e expressão intensa</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/bb-king-rei-do-blues</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/bb-king.jpg</image:loc>
+      <image:caption>Lendário guitarrista de blues dos anos 1960 com sua guitarra em performance</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/andra-day-nova-voz-soul</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/andra-day.jpg</image:loc>
+      <image:caption>Cantora de soul contemporânea com turbante e estilo vintage elegante</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/nat-king-cole-cavaleiro-piano-voz</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/nat-king-cole.jpg</image:loc>
+      <image:caption>Elegante pianista e cantor dos anos 1950 ao piano com sorriso característico</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/kitty-kallen-voz-doce-era-ouro</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/kitty-kallen.jpg</image:loc>
+      <image:caption>Cantora elegante dos anos 1940 com vestido de gala e microfone vintage</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/blog/glenn-miller-maestro-swing</loc>
+    <lastmod>2025-07-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/assets/images/glenn-miller.jpg</image:loc>
+      <image:caption>Maestro de orquestra dos anos 1940 com batuta e uniforme militar elegante</image:caption>
+    </image:image>
+  </url>
+
 
 </urlset>
