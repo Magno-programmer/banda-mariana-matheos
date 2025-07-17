@@ -1,6 +1,7 @@
 import React from "react";
-import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+import AdvancedSEOMetaTags from "@/components/seo/AdvancedSEOMetaTags";
+import AdvancedSchemaMarkup from "@/components/seo/AdvancedSchemaMarkup";
+import CTRTracker from "@/components/seo/CTRTracker";
 
 // Importing components
 import AboutSection from "@/components/sections/sobre/AboutSection";
@@ -14,13 +15,18 @@ import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSecti
 const AboutPage = () => {
   return (
     <>
-      <SEOMetaTags 
-        title="Sobre a Banda - Mariana Matheos Jazz Band"
-        description="História da Mariana Matheos Jazz Band, formação especializada em jazz, bossa nova e música brasileira para eventos especiais."
-        keywords="sobre a banda, história, formação musical, jazz band, bossa nova, música brasileira"
+      <AdvancedSEOMetaTags 
+        title="🎶 História da Mariana Matheos Jazz Band | 15+ Anos | Conheça Nossa Trajetória"
+        description="🎶 Conheça a história da Mariana Matheos Jazz Band | 15+ anos de experiência | Formação especializada em jazz, bossa nova e música brasileira. Tradição e qualidade garantida!"
+        keywords="história, mariana matheos, jazz band, experiência, formação, tradição, qualidade"
         canonicalUrl="/sobre"
+        pageType="organization"
+        isOptimizedForCTR={true}
+        enableABTesting={true}
+        priority="high"
       />
-      <AdvancedRichSnippet />
+      <AdvancedSchemaMarkup pageType="about" />
+      <CTRTracker enableHeatmaps={true} enableScrollTracking={true} enableClickTracking={true} />
       <div className="min-h-screen bg-black">
         <Header />
         <AdvancedBreadcrumb />

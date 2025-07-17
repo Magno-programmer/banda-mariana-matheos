@@ -1,6 +1,7 @@
 import React from "react";
-import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
-import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+import AdvancedSEOMetaTags from "@/components/seo/AdvancedSEOMetaTags";
+import AdvancedSchemaMarkup from "@/components/seo/AdvancedSchemaMarkup";
+import CTRTracker from "@/components/seo/CTRTracker";
 
 // Importing components
 import RepertoireSection from "@/components/sections/repertorio/RepertoireSection";
@@ -13,13 +14,18 @@ import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSecti
 const RepertoirePage = () => {
   return (
     <>
-      <SEOMetaTags 
-        title="Repertório - Mariana Matheos Jazz Band"
-        description="Repertório completo da Mariana Matheos Jazz Band: jazz clássico, bossa nova, blues, swing e música brasileira para todos os eventos."
-        keywords="repertório, jazz clássico, bossa nova, blues, swing, música brasileira, playlist"
+      <AdvancedSEOMetaTags 
+        title="🎼 200+ Músicas Jazz | Repertório Completo | Mariana Matheos | Escute Agora!"
+        description="🎼 200+ músicas no repertório! Jazz clássico, bossa nova, blues e swing. Repertório completo da Mariana Matheos Jazz Band. Escute samples antes de contratar!"
+        keywords="repertório, 200 músicas, jazz clássico, bossa nova, blues, swing, samples"
         canonicalUrl="/repertorio"
+        pageType="website"
+        isOptimizedForCTR={true}
+        enableABTesting={true}
+        priority="high"
       />
-      <AdvancedRichSnippet />
+      <AdvancedSchemaMarkup pageType="services" />
+      <CTRTracker enableHeatmaps={true} enableScrollTracking={true} enableClickTracking={true} />
     
       <div className="min-h-screen bg-black">
         <Header />
