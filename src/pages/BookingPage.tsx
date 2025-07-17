@@ -1,8 +1,6 @@
 import React from "react";
-import AdvancedSEOMetaTags from "@/components/seo/AdvancedSEOMetaTags";
-import AdvancedSchemaMarkup from "@/components/seo/AdvancedSchemaMarkup";
-import CTRTracker from "@/components/seo/CTRTracker";
-import FeaturedSnippetsOptimizer, { sampleHowToData } from "@/components/seo/FeaturedSnippetsOptimizer";
+import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
+import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
 
 // Importing components
 import BookingSection from "@/components/sections/agendamento/BookingSection";
@@ -15,27 +13,17 @@ import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSecti
 const BookingPage = () => {
   return (
     <>
-      <AdvancedSEOMetaTags 
-        title="📅 Agenda Limitada 2024 | Mariana Matheos Jazz | Reserve Sua Data Hoje!"
-        description="📅 Agenda limitada 2024! Agende sua apresentação com a Mariana Matheos Jazz Band. Música ao vivo para casamentos e eventos corporativos. Consulte disponibilidade!"
-        keywords="agenda, agendamento, reserva, 2024, limitada, casamentos, eventos corporativos"
+      <SEOMetaTags 
+        title="Agendamento - Mariana Matheos Jazz Band"
+        description="Agende sua apresentação com a Mariana Matheos Jazz Band. Música ao vivo para casamentos, eventos corporativos e shows especiais."
+        keywords="agendamento, contratar banda, shows, casamentos, eventos corporativos, música ao vivo"
         canonicalUrl="/agenda"
-        pageType="event"
-        isOptimizedForCTR={true}
-        enableABTesting={true}
-        priority="high"
       />
-      <AdvancedSchemaMarkup pageType="events" />
-      <CTRTracker enableHeatmaps={true} enableScrollTracking={true} enableClickTracking={true} />
+      <AdvancedRichSnippet />
       
       <div className="min-h-screen bg-black">
         <Header />
         <AdvancedBreadcrumb />
-        <FeaturedSnippetsOptimizer 
-          content={sampleHowToData} 
-          pageType="howto" 
-          title="Como Contratar a Mariana Matheos Jazz Band" 
-        />
         <BookingSection />
         <RelatedPagesSection 
           variant="grid"

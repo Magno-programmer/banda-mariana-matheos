@@ -1,9 +1,8 @@
 
 import React from "react";
-import AdvancedSEOMetaTags from "@/components/seo/AdvancedSEOMetaTags";
-import AdvancedSchemaMarkup from "@/components/seo/AdvancedSchemaMarkup";
-import CTRTracker from "@/components/seo/CTRTracker";
-import FeaturedSnippetsOptimizer, { sampleFAQData } from "@/components/seo/FeaturedSnippetsOptimizer";
+import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
+import AdvancedRichSnippet from "@/components/globalComponents/AdvancedRichSnippet";
+import FAQStructuredData from "@/components/globalComponents/FAQStructuredData";
 
 // Importing components
 import FAQSection from "@/components/sections/depoimentos/FAQSection";
@@ -16,27 +15,18 @@ import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSecti
 const FAQPage = () => {
   return (
     <>
-      <AdvancedSEOMetaTags 
-        title="❓ FAQ Completo | Mariana Matheos Jazz | Todas as Respostas | Leia Agora!"
-        description="❓ FAQ completo da Mariana Matheos Jazz Band | Todas as respostas sobre contratação, repertório, equipamentos e valores. Esclareça suas dúvidas agora!"
-        keywords="FAQ, perguntas frequentes, dúvidas, contratação, repertório, equipamentos, valores, mariana matheos jazz"
-        canonicalUrl="/faq"
-        pageType="website"
-        isOptimizedForCTR={true}
-        enableABTesting={true}
-        priority="high"
-      />
-      <AdvancedSchemaMarkup pageType="faq" />
-      <CTRTracker enableHeatmaps={true} enableScrollTracking={true} enableClickTracking={true} />
+        <SEOMetaTags 
+          title="FAQ - Perguntas Frequentes | Mariana Matheos Jazz Band"
+          description="Dúvidas sobre contratação, repertório e serviços da Mariana Matheos Jazz Band. Respostas às perguntas mais comuns dos clientes."
+          keywords="FAQ, perguntas frequentes, dúvidas, contratação, repertório, equipamentos"
+          canonicalUrl="/faq"
+        />
+        <AdvancedRichSnippet />
+        <FAQStructuredData pageType="faq-index" />
 
       <div className="min-h-screen bg-black">
         <Header />
         <AdvancedBreadcrumb />
-        <FeaturedSnippetsOptimizer 
-          content={sampleFAQData} 
-          pageType="faq" 
-          title="Perguntas Frequentes - Mariana Matheos Jazz Band" 
-        />
         <FAQSection />
         <RelatedPagesSection 
           variant="grid"
