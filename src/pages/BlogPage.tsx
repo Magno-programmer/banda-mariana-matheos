@@ -15,6 +15,20 @@ import marianaEssenciaImage from '/images/cantora.png';
 import jazzStandardsImage from '/images/jazz-standard.jpg';
 import bandaDeJazzImage from '/images/banda-de-jazz-1920.jpg';
 
+// Singer portraits
+import billieHolidayImage from '@/assets/images/billie-holiday.jpg';
+import ellaFitzgeraldImage from '@/assets/images/ella-fitzgerald.jpg';
+import ettaJamesImage from '@/assets/images/etta-james.jpg';
+import amyWinehouseImage from '@/assets/images/amy-winehouse.jpg';
+import frankSinatraImage from '@/assets/images/frank-sinatra.jpg';
+import ninaSimoneImage from '@/assets/images/nina-simone.jpg';
+import bethHartImage from '@/assets/images/beth-hart.jpg';
+import bbKingImage from '@/assets/images/bb-king.jpg';
+import andraDayImage from '@/assets/images/andra-day.jpg';
+import natKingColeImage from '@/assets/images/nat-king-cole.jpg';
+import kittyKallenImage from '@/assets/images/kitty-kallen.jpg';
+import glennMillerImage from '@/assets/images/glenn-miller.jpg';
+
 interface BlogArticle {
   id: string;
   title: string;
@@ -135,6 +149,210 @@ const blogArticles: BlogArticle[] = [
     seoTitle: 'O que é necessário para ser uma banda de jazz? | Blog',
     seoDescription: 'Confira dicas essenciais para montar e manter uma banda de jazz de sucesso — desde os músicos certos até repertório, ensaios e postura profissional.',
     keywords: ['como formar banda de jazz', 'dicas para músicos de jazz', 'banda instrumental', 'montar banda', 'jazz moderno']
+  },
+    {
+    id: '7',
+    title: 'Billie Holiday — A Dama do Jazz que Revolucionou a Música',
+    slug: 'billie-holiday-dama-do-jazz',
+    excerpt: 'Conheça a história extraordinária de Billie Holiday, uma das vozes mais expressivas e influentes do jazz, que transformou a dor em arte inesquecível.',
+    content: '',
+    image: billieHolidayImage,
+    imageAlt: 'Retrato artístico de cantora de jazz dos anos 1940 com gardênia no cabelo',
+    category: 'Curiosidades',
+    tags: ['billie holiday', 'história do jazz', 'cantores clássicos', 'lady day'],
+    publishedDate: '2025-07-17',
+    readingTime: '8 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Billie Holiday — A Dama do Jazz que Revolucionou a Música | Blog',
+    seoDescription: 'Conheça a história extraordinária de Billie Holiday, uma das vozes mais expressivas do jazz que transformou a dor em arte inesquecível.',
+    keywords: ['billie holiday', 'historia do jazz', 'cantores de jazz', 'lady day', 'jazz classico']
+  },
+  {
+    id: '8',
+    title: 'Ella Fitzgerald — A Primeira Dama da Canção',
+    slug: 'ella-fitzgerald-primeira-dama-cancao',
+    excerpt: 'Descubra a trajetória de Ella Fitzgerald, a "First Lady of Song", cujo talento vocal incomparável e técnica de scat singing revolucionaram o jazz.',
+    content: '',
+    image: ellaFitzgeraldImage,
+    imageAlt: 'Retrato artístico de elegante cantora de jazz dos anos 1940 com sorriso radiante',
+    category: 'Curiosidades',
+    tags: ['ella fitzgerald', 'first lady of song', 'scat singing', 'jazz clássico'],
+    publishedDate: '2025-07-17',
+    readingTime: '9 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Ella Fitzgerald — A Primeira Dama da Canção | Blog',
+    seoDescription: 'Descubra a trajetória de Ella Fitzgerald, cujo talento vocal incomparável e técnica de scat singing revolucionaram o jazz.',
+    keywords: ['ella fitzgerald', 'first lady of song', 'scat singing', 'historia do jazz', 'cantores de jazz']
+  },
+  {
+    id: '9',
+    title: 'Frank Sinatra — O Rei do Swing e dos Crooners',
+    slug: 'frank-sinatra-rei-do-swing',
+    excerpt: 'A história de Frank Sinatra, "Ol\' Blue Eyes", que definiu o estilo crooner e se tornou uma das maiores vozes da música americana.',
+    content: '',
+    image: frankSinatraImage,
+    imageAlt: 'Retrato de elegante cantor dos anos 1950 com terno e gravata borboleta',
+    category: 'Curiosidades',
+    tags: ['frank sinatra', 'crooner', 'swing', 'rat pack'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Frank Sinatra — O Rei do Swing e dos Crooners | Blog',
+    seoDescription: 'A história de Frank Sinatra, que definiu o estilo crooner e se tornou uma das maiores vozes da música americana.',
+    keywords: ['frank sinatra', 'crooner', 'swing', 'jazz', 'musica americana']
+  },
+  {
+    id: '10',
+    title: 'Nina Simone — A Sacerdotisa do Soul',
+    slug: 'nina-simone-sacerdotisa-soul',
+    excerpt: 'Conheça Nina Simone, pianista clássica que se tornou uma das vozes mais poderosas do jazz, soul e dos direitos civis.',
+    content: '',
+    image: ninaSimoneImage,
+    imageAlt: 'Retrato de poderosa pianista e cantora dos anos 1960 ao piano',
+    category: 'Curiosidades',
+    tags: ['nina simone', 'soul', 'ativismo', 'piano jazz'],
+    publishedDate: '2025-07-17',
+    readingTime: '7 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Nina Simone — A Sacerdotisa do Soul | Blog',
+    seoDescription: 'Conheça Nina Simone, pianista que se tornou uma das vozes mais poderosas do jazz, soul e dos direitos civis.',
+    keywords: ['nina simone', 'soul', 'jazz', 'ativismo', 'piano']
+  },
+  {
+    id: '11',
+    title: 'Amy Winehouse — O Talento Interrompido do Neo-Soul',
+    slug: 'amy-winehouse-neo-soul',
+    excerpt: 'A trajetória breve mas impactante de Amy Winehouse, que revitalizou o soul e jazz contemporâneo com sua voz única.',
+    content: '',
+    image: amyWinehouseImage,
+    imageAlt: 'Amy Winehouse com seu icônico penteado beehive e vestido preto',
+    category: 'Curiosidades',
+    tags: ['amy winehouse', 'neo-soul', 'contemporary jazz', 'british soul'],
+    publishedDate: '2025-07-17',
+    readingTime: '5 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Amy Winehouse — O Talento Interrompido do Neo-Soul | Blog',
+    seoDescription: 'A trajetória breve mas impactante de Amy Winehouse, que revitalizou o soul e jazz contemporâneo.',
+    keywords: ['amy winehouse', 'neo soul', 'jazz contemporaneo', 'soul music']
+  },
+  {
+    id: '12',
+    title: 'Etta James — A Matriarca do Soul e R&B',
+    slug: 'etta-james-matriarca-soul-rb',
+    excerpt: 'A história de Etta James, uma das vozes mais poderosas do soul e R&B, que influenciou gerações de cantores.',
+    content: '',
+    image: ettaJamesImage,
+    imageAlt: 'Retrato de poderosa cantora de soul dos anos 1960 com expressão intensa',
+    category: 'Curiosidades',
+    tags: ['etta james', 'soul', 'r&b', 'blues'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Etta James — A Matriarca do Soul e R&B | Blog',
+    seoDescription: 'A história de Etta James, uma das vozes mais poderosas do soul e R&B que influenciou gerações.',
+    keywords: ['etta james', 'soul', 'r&b', 'blues', 'at last']
+  },
+  {
+    id: '13',
+    title: 'Beth Hart — A Força do Blues Contemporâneo',
+    slug: 'beth-hart-blues-contemporaneo',
+    excerpt: 'Conheça Beth Hart, uma das vozes mais poderosas do blues contemporâneo, conhecida por sua intensidade emocional.',
+    content: '',
+    image: bethHartImage,
+    imageAlt: 'Cantora de blues contemporâneo com cabelos loiros e expressão intensa',
+    category: 'Curiosidades',
+    tags: ['beth hart', 'blues contemporaneo', 'rock blues', 'cantora americana'],
+    publishedDate: '2025-07-17',
+    readingTime: '5 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Beth Hart — A Força do Blues Contemporâneo | Blog',
+    seoDescription: 'Conheça Beth Hart, uma das vozes mais poderosas do blues contemporâneo e sua intensidade emocional.',
+    keywords: ['beth hart', 'blues contemporaneo', 'rock blues', 'cantora blues']
+  },
+  {
+    id: '14',
+    title: 'B.B. King — O Rei do Blues',
+    slug: 'bb-king-rei-do-blues',
+    excerpt: 'A história de B.B. King, o lendário guitarrista e cantor que definiu o blues moderno com sua guitarra Lucille.',
+    content: '',
+    image: bbKingImage,
+    imageAlt: 'Lendário guitarrista de blues dos anos 1960 com sua guitarra em performance',
+    category: 'Curiosidades',
+    tags: ['bb king', 'blues', 'guitarra', 'lucille'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'B.B. King — O Rei do Blues | Blog',
+    seoDescription: 'A história de B.B. King, o lendário guitarrista que definiu o blues moderno com sua guitarra Lucille.',
+    keywords: ['bb king', 'blues', 'guitarra blues', 'lucille', 'rei do blues']
+  },
+  {
+    id: '15',
+    title: 'Andra Day — A Nova Voz do Soul',
+    slug: 'andra-day-nova-voz-soul',
+    excerpt: 'Conheça Andra Day, a cantora que trouxe o soul clássico para o século XXI com sua voz poderosa e estilo vintage.',
+    content: '',
+    image: andraDayImage,
+    imageAlt: 'Cantora de soul contemporânea com turbante e estilo vintage elegante',
+    category: 'Curiosidades',
+    tags: ['andra day', 'soul contemporaneo', 'rise up', 'neo soul'],
+    publishedDate: '2025-07-17',
+    readingTime: '5 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Andra Day — A Nova Voz do Soul | Blog',
+    seoDescription: 'Conheça Andra Day, a cantora que trouxe o soul clássico para o século XXI com sua voz poderosa.',
+    keywords: ['andra day', 'soul contemporaneo', 'rise up', 'neo soul', 'billie holiday']
+  },
+  {
+    id: '16',
+    title: 'Nat King Cole — O Cavaleiro do Piano e da Voz',
+    slug: 'nat-king-cole-cavaleiro-piano-voz',
+    excerpt: 'A história de Nat King Cole, pianista virtuoso que se tornou um dos maiores crooners da história do jazz.',
+    content: '',
+    image: natKingColeImage,
+    imageAlt: 'Elegante pianista e cantor dos anos 1950 ao piano com sorriso característico',
+    category: 'Curiosidades',
+    tags: ['nat king cole', 'piano jazz', 'crooner', 'unforgettable'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Nat King Cole — O Cavaleiro do Piano e da Voz | Blog',
+    seoDescription: 'A história de Nat King Cole, pianista virtuoso que se tornou um dos maiores crooners da história do jazz.',
+    keywords: ['nat king cole', 'piano jazz', 'crooner', 'unforgettable', 'trio']
+  },
+  {
+    id: '17',
+    title: 'Kitty Kallen — A Voz Doce da Era de Ouro',
+    slug: 'kitty-kallen-voz-doce-era-ouro',
+    excerpt: 'Conheça Kitty Kallen, a cantora que marcou a era de ouro do jazz com sua voz doce e interpretações memoráveis.',
+    content: '',
+    image: kittyKallenImage,
+    imageAlt: 'Cantora elegante dos anos 1940 com vestido de gala e microfone vintage',
+    category: 'Curiosidades',
+    tags: ['kitty kallen', 'era de ouro', 'big bands', 'swing'],
+    publishedDate: '2025-07-17',
+    readingTime: '5 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Kitty Kallen — A Voz Doce da Era de Ouro | Blog',
+    seoDescription: 'Conheça Kitty Kallen, a cantora que marcou a era de ouro do jazz com sua voz doce e interpretações memoráveis.',
+    keywords: ['kitty kallen', 'era de ouro', 'big bands', 'swing', 'anos 1940']
+  },
+  {
+    id: '18',
+    title: 'Glenn Miller — O Maestro do Swing',
+    slug: 'glenn-miller-maestro-swing',
+    excerpt: 'A história de Glenn Miller, o líder de orquestra que definiu o som do swing e se tornou uma lenda da música americana.',
+    content: '',
+    image: glennMillerImage,
+    imageAlt: 'Maestro de orquestra dos anos 1940 com batuta e uniforme militar elegante',
+    category: 'Curiosidades',
+    tags: ['glenn miller', 'swing', 'big band', 'orquestra'],
+    publishedDate: '2025-07-17',
+    readingTime: '6 min',
+    author: 'Mariana Matheos',
+    seoTitle: 'Glenn Miller — O Maestro do Swing | Blog',
+    seoDescription: 'A história de Glenn Miller, o líder de orquestra que definiu o som do swing e se tornou uma lenda.',
+    keywords: ['glenn miller', 'swing', 'big band', 'orquestra', 'in the mood']
   }
 ];
 
