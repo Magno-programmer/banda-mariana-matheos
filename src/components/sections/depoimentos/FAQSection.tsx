@@ -162,8 +162,9 @@ const FAQSection = () => {
             <div className="w-full flex justify-center mb-6">
               <img
                 src={lineArtDeco}
-                alt="Divisor decorativo - FAQ banda de jazz"
+                alt=""
                 className="w-[50%] object-contain"
+                aria-hidden="true"
               />
             </div>
             <p className={`font-gatsbybold ${textSize} text-gray-300 leading-relaxed max-w-3xl mx-auto`}>

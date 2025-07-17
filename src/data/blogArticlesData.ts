@@ -116,7 +116,7 @@ export const blogArticlesData: BlogArticle[] = [
 
     `,
     image: marianaEssenciaImage,
-    imageAlt: 'Mariana Matheos Jazz performando ao vivo em evento elegante',
+    imageAlt: 'Artista musical Mariana Matheos, vocalista principal da banda de jazz, em retrato artístico elegante demonstrando presença cênica sofisticada',
     category: 'Jazz',
     tags: ['banda', 'música ao vivo', 'eventos', 'jazz', 'mariana matheos'],
     publishedDate: '2025-07-17',
@@ -287,7 +287,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>Pronto para encontrar a banda perfeita para seu casamento? Entre em contato conosco e descubra como podemos tornar seu dia ainda mais especial com a magia da música ao vivo.</em></p>
     `,
     image: casamentoImage,
-    imageAlt: 'Banda de jazz tocando em casamento elegante',
+    imageAlt: 'Grupo musical de jazz em apresentação ao vivo durante cerimônia de casamento elegante, ambiente romântico com iluminação suave',
     category: 'Eventos',
     tags: ['casamento', 'banda', 'música ao vivo', 'dicas', 'evento elegante'],
     publishedDate: '2025-07-17',
@@ -517,7 +517,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>Interessado em conhecer mais sobre o jazz brasileiro? Venha experienciar essa rica tradição musical ao vivo com a banda Mariana Matheos Jazz.</em></p>
     `,
     image: historiaJazzImage,
-    imageAlt: 'Músicos de jazz vintage no Brasil dos anos 1920',
+    imageAlt: 'Artistas musicais brasileiros dos anos 1920 tocando jazz em ambiente vintage, demonstrando as primeiras manifestações do jazz no Brasil',
     category: 'Curiosidades',
     tags: ['jazz', 'história', 'brasil', 'cultura', 'música brasileira'],
     publishedDate: '2025-07-17',
@@ -787,7 +787,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>Pronto para transformar seus eventos corporativos com a magia da música ao vivo? Entre em contato conosco e descubra como podemos elevar a experiência dos seus eventos empresariais.</em></p>
     `,
     image: eventosCorporativosImage,
-    imageAlt: 'Banda de jazz tocando em evento corporativo elegante',
+    imageAlt: 'Grupo musical de jazz em apresentação profissional durante evento corporativo elegante, ambiente sofisticado com executivos',
     category: 'Eventos',
     tags: ['eventos corporativos', 'música ao vivo', 'networking', 'empresas', 'confraternização'],
     publishedDate: '2025-07-17',
@@ -857,7 +857,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>Quer trazer a elegância dos jazz standards para seu evento? Fale com a gente e descubra como transformar seu momento especial com a trilha sonora dos clássicos eternos.</em></p>
     `,
     image: jazzStandardsImage,
-    imageAlt: 'Pianista e vocalista interpretando um jazz standard em palco iluminado',
+    imageAlt: 'Artista musical ao piano e vocalista interpretando jazz standard clássico em palco profissional com iluminação cênica elegante',
     category: 'Curiosidades',
     tags: ['jazz standards', 'repertório clássico', 'música ao vivo', 'jazz tradicional'],
     publishedDate: '2025-07-17',
@@ -990,7 +990,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>Quer dicas personalizadas ou precisa de orientação para montar sua banda? Fale com a gente e vamos compartilhar o que aprendemos ao longo do caminho com a banda Mariana Matheos.</em></p>
     `,
     image: bandaDeJazzImage,
-    imageAlt: 'Banda de jazz ensaiando em um estúdio com instrumentos clássicos',
+    imageAlt: 'Grupo musical de jazz ensaiando em estúdio profissional com instrumentos clássicos: piano, contrabaixo, bateria e metais',
     category: 'Dicas',
     tags: ['como montar banda', 'dicas para músicos', 'jazz', 'banda de jazz'],
     publishedDate: '2025-07-18',
@@ -1100,7 +1100,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>Na banda Mariana Matheos, carregamos a influência de grandes como Billie Holiday, trazendo essa mesma autenticidade e emoção para nossos eventos. Cada apresentação é uma homenagem aos mestres que definiram o jazz.</em></p>
     `,
     image: billieHolidayImage,
-    imageAlt: 'Retrato artístico de cantora de jazz dos anos 1940 com gardênia no cabelo',
+    imageAlt: 'Billie Holiday, lendária cantora de jazz dos anos 1940 com gardênia característica no cabelo, expressão emotiva e presença cênica marcante',
     category: 'Curiosidades',
     tags: ['billie holiday', 'história do jazz', 'cantores clássicos', 'lady day'],
     publishedDate: '2025-07-17',
@@ -1239,7 +1239,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>A influência de Ella Fitzgerald ressoa em cada performance da banda Mariana Matheos. Sua dedicação à excelência e respeito pelos clássicos nos inspiram a buscar sempre a melhor interpretação para nosso público.</em></p>
     `,
     image: ellaFitzgeraldImage,
-    imageAlt: 'Retrato artístico de elegante cantora de jazz dos anos 1940 com sorriso radiante',
+    imageAlt: 'Ella Fitzgerald, primeira dama da canção, em retrato elegante dos anos 1940 com sorriso radiante e presença cênica sofisticada',
     category: 'Curiosidades',
     tags: ['ella fitzgerald', 'first lady of song', 'scat singing', 'jazz clássico'],
     publishedDate: '2025-07-17',
@@ -1337,7 +1337,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p>Frank Sinatra não foi apenas um artista lendário, mas um símbolo da cultura americana, representando estilo, sofisticação e autenticidade. Sua voz única e presença carismática continuam influenciando profundamente gerações de músicos e fãs ao redor do mundo, mantendo viva a memória do inesquecível "Ol' Blue Eyes".</p>
     `,
     image: frankSinatraImage,
-    imageAlt: 'Retrato de elegante cantor dos anos 1950 com terno e gravata borboleta',
+    imageAlt: 'Frank Sinatra, lendário crooner americano dos anos 1950 em traje elegante com terno e gravata borboleta, expressão confiante',
     category: 'Curiosidades',
     tags: ['frank sinatra', 'crooner', 'swing', 'rat pack'],
     publishedDate: '2025-07-17',
@@ -1420,7 +1420,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p>Nina Simone foi mais do que uma artista extraordinária; foi uma força revolucionária cuja música transcendeu gêneros e cuja voz ecoou na luta por justiça social e igualdade racial. Seu legado musical e ativista permanece uma inspiração eterna, celebrando o poder da arte como meio de transformação social e expressão pessoal profunda.</p>
     `,
     image: ninaSimoneImage,
-    imageAlt: 'Retrato de poderosa pianista e cantora dos anos 1960 ao piano',
+    imageAlt: 'Nina Simone, poderosa pianista e cantora dos anos 1960 ao piano, expressão intensa e presença cênica marcante do jazz soul',
     category: 'Curiosidades',
     tags: ['nina simone', 'soul', 'ativismo', 'piano jazz'],
     publishedDate: '2025-07-17',
@@ -1506,7 +1506,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p>Amy Winehouse foi muito mais do que uma cantora; foi uma artista excepcional cuja música expressou a profundidade das emoções humanas com autenticidade rara. Seu legado permanece vivo através de suas gravações inesquecíveis, influenciando continuamente o mundo da música e lembrando-nos sempre do poder eterno da sinceridade artística.</p>
     `,
     image: amyWinehouseImage,
-    imageAlt: 'Amy Winehouse com seu icônico penteado beehive e vestido preto',
+    imageAlt: 'Amy Winehouse, cantora de neo-soul contemporâneo com penteado beehive icônico e vestido preto, expressão artística marcante',
     category: 'Curiosidades',
     tags: ['amy winehouse', 'neo-soul', 'contemporary jazz', 'british soul'],
     publishedDate: '2025-07-17',
@@ -1598,7 +1598,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p>Etta James não foi apenas uma cantora; foi um ícone que personificou a força, a paixão e a vulnerabilidade na música americana. Sua carreira, marcada por altos e baixos, superação e redenção, deixou uma marca eterna na história do blues, soul e R&B. Sua voz poderosa e performances emotivas continuam inspirando gerações, garantindo que seu legado permaneça inesquecível.</p>
     `,
     image: ettaJamesImage,
-    imageAlt: 'Retrato de poderosa cantora de soul dos anos 1960 com expressão intensa',
+    imageAlt: 'Etta James, poderosa cantora de soul dos anos 1960 com expressão intensa e presença cênica marcante do rhythm & blues',
     category: 'Curiosidades',
     tags: ['etta james', 'soul', 'r&b', 'blues'],
     publishedDate: '2025-07-17',
@@ -1687,7 +1687,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p>Com sua carreira ainda em plena atividade, Beth Hart é uma referência essencial para o blues moderno, inspirando músicos e fãs com sua honestidade emocional e performances inesquecíveis. Seu trabalho mantém o gênero vivo e relevante para novas gerações, reafirmando o poder do blues como expressão profunda da condição humana.</p>
     `,
     image: bethHartImage,
-    imageAlt: 'Cantora de blues contemporâneo com cabelos loiros e expressão intensa',
+    imageAlt: 'Beth Hart, cantora de blues contemporâneo com cabelos loiros e expressão intensa, representando a força do blues moderno',
     category: 'Curiosidades',
     tags: ['beth hart', 'blues contemporaneo', 'rock blues', 'cantora americana'],
     publishedDate: '2025-07-17',
@@ -1786,7 +1786,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p>B.B. King não foi apenas um músico, mas uma instituição do blues, cuja carreira definiu o gênero para sempre. Sua música transcendeu barreiras, inspirando milhões e consolidando o blues como patrimônio cultural universal. Seu legado continua vivo em cada nota tocada por guitarristas e músicos que buscam expressar a essência humana através da música.</p>
     `,
     image: bbKingImage,
-    imageAlt: 'Lendário guitarrista de blues dos anos 1960 com sua guitarra em performance',
+    imageAlt: 'B.B. King, lendário guitarrista de blues dos anos 1960 com sua guitarra Lucille em performance ao vivo, rei do blues elétrico',
     category: 'Curiosidades',
     tags: ['bb king', 'blues', 'guitarra', 'lucille'],
     publishedDate: '2025-07-17',
@@ -1866,7 +1866,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p>Com uma carreira ainda em crescimento, Andra Day já se estabeleceu como uma voz essencial do século XXI, revigorando a tradição do soul e do jazz com paixão e relevância contemporânea. Sua arte continua a influenciar e a emocionar audiências globais, provando que a autenticidade e o comprometimento com questões sociais são forças poderosas na música.</p>
     `,
     image: andraDayImage,
-    imageAlt: 'Cantora de soul contemporânea com turbante e estilo vintage elegante',
+    imageAlt: 'Andra Day, cantora de soul contemporânea com turbante e estilo vintage elegante, nova voz do soul do século XXI',
     category: 'Curiosidades',
     tags: ['andra day', 'soul contemporaneo', 'rise up', 'neo soul'],
     publishedDate: '2025-07-17',
@@ -1965,7 +1965,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p>Nat King Cole não foi apenas um grande artista; foi um ícone que redefiniu o significado da elegância musical, derrubou barreiras raciais e estabeleceu um padrão duradouro na música popular. Sua voz única e seus arranjos sofisticados continuam encantando gerações, mantendo vivo o legado de um dos maiores nomes da história da música.</p>
     `,
     image: natKingColeImage,
-    imageAlt: 'Elegante pianista e cantor dos anos 1950 ao piano com sorriso característico',
+    imageAlt: 'Nat King Cole, elegante pianista e cantor dos anos 1950 ao piano com sorriso característico, cavaleiro do jazz e crooner',
     category: 'Curiosidades',
     tags: ['nat king cole', 'piano jazz', 'crooner', 'unforgettable'],
     publishedDate: '2025-07-17',
@@ -2048,7 +2048,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p>Kitty Kallen representou com elegância e doçura a era dourada da música americana. Sua voz suave e melodiosa conquistou públicos ao redor do mundo, tornando-a uma das artistas mais queridas e inesquecíveis do século XX. Seu legado continua vivo através de suas gravações clássicas, que capturam perfeitamente a essência de uma época musical cheia de romantismo e sofisticação.</p>
     `,
     image: kittyKallenImage,
-    imageAlt: 'Cantora elegante dos anos 1940 com vestido de gala e microfone vintage',
+    imageAlt: 'Kitty Kallen, cantora elegante dos anos 1940 com vestido de gala e microfone vintage, voz doce da era dourada do jazz',
     category: 'Curiosidades',
     tags: ['kitty kallen', 'era de ouro', 'big bands', 'swing'],
     publishedDate: '2025-07-17',
@@ -2126,7 +2126,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p>Glenn Miller converteu o swing em fenômeno global, unindo sofisticação harmônica e apelo popular. Seu desaparecimento transformou-o em lenda, mas seu legado musical permanece vivo, lembrando que a combinação certa de melodia, ritmo e arranjo pode atravessar gerações.</p>
     `,
     image: glennMillerImage,
-    imageAlt: 'Maestro de orquestra dos anos 1940 com batuta e uniforme militar elegante',
+    imageAlt: 'Glenn Miller, maestro de orquestra dos anos 1940 com batuta e uniforme militar elegante, líder do movimento swing',
     category: 'Curiosidades',
     tags: ['glenn miller', 'swing', 'big band', 'orquestra'],
     publishedDate: '2025-07-17',

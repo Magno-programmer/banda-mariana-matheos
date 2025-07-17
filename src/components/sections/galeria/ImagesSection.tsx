@@ -7,23 +7,23 @@ const ImageSection = () => {
   const [images, setImages] = useState([
     { 
       src: '/images/cantora.png',
-      alt: 'Mariana Matheos - Cantora e Criadora da Banda'
+      alt: 'Artista musical Mariana Matheos, vocalista principal da banda, em retrato elegante com expressão sofisticada e presença cênica marcante'
     },
     { 
       src: '/images/baixista.png',
-      alt: 'Tarcíso Junior - Baixista e Guitarrista da Banda'
+      alt: 'Artista musical Tarcíso Junior tocando baixo elétrico em performance ao vivo, demonstrando técnica apurada e groove característico do jazz'
     },
     { 
       src: '/images/baterista.png',
-      alt: 'Rubens Kalil - Baterista da Banda'
+      alt: 'Artista musical Rubens Kalil na bateria em apresentação energética, com técnica precisa e ritmo swing característico do jazz moderno'
     },
     { 
       src: '/images/pianista.png',
-      alt: 'Carlos Nobre - Pianista da Banda'
+      alt: 'Artista musical Carlos Nobre ao piano em performance íntima, demonstrando virtuosismo e sensibilidade musical em estilo jazz contemporâneo'
     },
     { 
       src: '/images/banda-blue-jazz-concurso.png',
-      alt: 'Mariana Matheos no Festival de Jazz & Blues de Tiradentes 2025'
+      alt: 'Grupo musical Mariana Matheos Jazz Band em apresentação oficial no Festival de Jazz & Blues de Tiradentes 2025, palco profissional com iluminação cênica'
     },
   ]);
   
@@ -51,8 +51,9 @@ const ImageSection = () => {
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt="Divisor Art Déco"
+                alt=""
                 className="w-[50%] object-contain"
+                aria-hidden="true"
               />
             </div>
           <p className={`font-gatsbybold ${textSize} text-gray-400 max-w-2xl mx-auto`}>

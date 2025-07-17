@@ -66,8 +66,9 @@ const AvaliationSection = () => {
           <div className="w-full flex justify-center mb-6">
             <img
               src={lineArtDeco}
-              alt="Divisor Art Déco"
+              alt=""
               className="w-64 object-contain"
+              aria-hidden="true"
             />
           </div>
           <p className={`font-gatsbybold ${textSize} text-gray-100 max-w-4xl mx-auto leading-relaxed`}>
@@ -100,8 +101,9 @@ const AvaliationSection = () => {
           <div className="w-full flex justify-center mb-12">
             <img
               src={lineArtDeco}
-              alt="Divisor Art Déco"
+              alt=""
               className="w-48 object-contain"
+              aria-hidden="true"
             />
           </div>
 
@@ -138,8 +140,9 @@ const AvaliationSection = () => {
           <div className="w-full flex justify-center mb-12">
             <img
               src={lineArtDeco}
-              alt="Divisor Art Déco"
+              alt=""
               className="w-48 object-contain"
+              aria-hidden="true"
             />
           </div>
 

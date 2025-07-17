@@ -41,11 +41,12 @@ const RepertoireSection = () => {
             </h2>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
-              <img
-                src={lineArtDeco}
-                alt="Divisor Art Déco"
-                className="w-[50%] object-contain"
-              />
+          <img
+            src={lineArtDeco}
+            alt=""
+            className="w-[50%] object-contain"
+            aria-hidden="true"
+          />
             </div>
           </div>
 

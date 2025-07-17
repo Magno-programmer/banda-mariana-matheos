@@ -41,7 +41,7 @@ const Header = () => {
             >
               <img 
                 src={logoWhite}
-                alt="Logo Mariana Matheos - Banda de Jazz Blues Soul R&B Belo Horizonte"
+                alt="Logotipo da Mariana Matheos Jazz Band com textura dourada elegante em fundo transparente, navegação principal do site"
                 className={`${logoSize} object-contain`}
               />
               <div>

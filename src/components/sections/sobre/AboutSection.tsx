@@ -6,7 +6,7 @@ import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const AboutSection = () => {
 
-  const [imagemUnica] = useState({src: '/images/cantora.png', alt: 'Cantora Mariana Matheos'});
+  const [imagemUnica] = useState({src: '/images/cantora.png', alt: 'Artista musical Mariana Matheos, vocalista e fundadora da banda de jazz, em retrato artístico elegante com expressão sofisticada e presença cênica marcante'});
   const { isMiniMobile, isMobile, isTablet } = useAdvancedViewport();
 
   const titleSize = isMobile ? 'text-4xl' : isTablet ? 'text-5xl' : 'text-6xl';
@@ -36,8 +36,9 @@ const AboutSection = () => {
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
-                alt="Divisor Art Déco"
+                alt=""
                 className="w-[50%] object-contain"
+                aria-hidden="true"
               />
             </div>
 
@@ -78,8 +79,9 @@ const AboutSection = () => {
                 {/* Moldura decorativa como imagem */}
                 <img
                   src={bordarArtDeco}
-                  alt="Moldura Art Déco"
+                  alt=""
                   className="absolute object-contain pointer-events-none z-30"
+                  aria-hidden="true"
                 />
 
                 {/* Área clicável */}

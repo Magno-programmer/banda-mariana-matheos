@@ -40,7 +40,7 @@ const HeroSection = () => {
           {/* imagem de fundo */}
           <img
             src={bandaCompletaPalco}
-            alt="Mariana Matheos em apresentação ao vivo do festival Jazz & Blues de Tiradentes em Nova Lima - MG"
+            alt="Grupo musical Mariana Matheos em apresentação ao vivo energética no Festival Jazz & Blues de Tiradentes, Nova Lima-MG, com iluminação profissional de palco e plateia ao fundo"
             className="absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
           />
 
@@ -48,7 +48,7 @@ const HeroSection = () => {
           <div className="relative z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4 ">
             <img
               src={logoGold}
-              alt="Logo oficial da Banda de Jazz Mariana Matheos com textura dourada"
+              alt="Logotipo oficial da Mariana Matheos Jazz Band com textura dourada elegante e tipografia sofisticada em estilo Art Déco"
               className={`${logoWidth} mt-[15%] pb-[15%] object-contain drop-shadow-lg`}
             />
           </div>
@@ -66,7 +66,7 @@ const HeroSection = () => {
         <div className="w-full flex justify-center mb-4">
           <img
             src={lineArtDeco}
-            alt="Divisor decorativo Art Déco"
+            alt=""
             className="w-[50%] object-contain"
             aria-hidden="true"
           />
@@ -76,7 +76,7 @@ const HeroSection = () => {
         <div className={`relative w-[100%] ${containerHeight} mx-auto`}>
           <img 
             src={bordabuttonArtDeco} 
-            alt="Moldura decorativa do botão em estilo Art Déco"
+            alt=""
             className="absolute inset-0 w-full h-full object-contain pointer-events-none z-10"
             aria-hidden="true"
           />
