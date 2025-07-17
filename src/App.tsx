@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
+import EnhancedStructuredData from "@/components/globalComponents/EnhancedStructuredData";
 import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import ImagePage from "./pages/ImagePage";
