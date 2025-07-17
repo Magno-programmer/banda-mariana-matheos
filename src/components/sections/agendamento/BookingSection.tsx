@@ -35,9 +35,9 @@ const BookingSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className={`font-glimmer ${titleSize} font-bold text-white mb-4 jazz-text-shadow`}>
-              Agendamentos & ContrataÇão 
-            </h2>
+            <h1 className={`font-glimmer ${titleSize} font-bold text-white mb-4 jazz-text-shadow`}>
+              Agendamento
+            </h1>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
           <img
@@ -62,7 +62,7 @@ const BookingSection = () => {
                 id={eventType.serviceId}
               >
                 <div className="text-5xl mb-4">{eventType.icon}</div>
-                <h3 className={`font-glimmer ${cardTitleSize} jazz-gold font-bold mb-2`}>{eventType.title}</h3>
+                <h2 className={`font-glimmer ${cardTitleSize} jazz-gold font-bold mb-2`}>{eventType.title}</h2>
                 <p className={`font-gatsbybold text-gray-400 ${textSize}`}>{eventType.description}</p>
               </div>
             ))}
@@ -82,7 +82,7 @@ const BookingSection = () => {
               <div className="w-16 h-16 border-2 border-jazz-gold rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-jazz-gold text-2xl">🎵</span>
               </div>
-              <h4 className={`font-glimmer ${isMobile ? 'text-base' : 'text-lg'} jazz-gold font-bold mb-2`}>Repertório Personalizado </h4>
+              <h3 className={`font-glimmer ${isMobile ? 'text-base' : 'text-lg'} jazz-gold font-bold mb-2`}>Repertório Personalizado </h3>
               <p className={`font-gatsbybold text-gray-400 ${isMobile ? 'text-lg' : 'text-xl'}`}>Repertório com tema da Era de Ouro </p>
             </div>
 
@@ -90,7 +90,7 @@ const BookingSection = () => {
               <div className="w-16 h-16 border-2 border-jazz-gold rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-jazz-gold text-2xl">👗</span>
               </div>
-              <h4 className={`font-glimmer ${isMobile ? 'text-base' : 'text-lg'} jazz-gold font-bold mb-2`}>Figurino Temático </h4>
+              <h3 className={`font-glimmer ${isMobile ? 'text-base' : 'text-lg'} jazz-gold font-bold mb-2`}>Figurino Temático </h3>
               <p className={`font-gatsbybold text-gray-400 ${isMobile ? 'text-lg' : 'text-xl'}`}>Visual elegante e apropriado </p>
             </div>
 
@@ -98,7 +98,7 @@ const BookingSection = () => {
               <div className="w-16 h-16 border-2 border-jazz-gold rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-jazz-gold text-2xl">🎭</span>
               </div>
-              <h4 className={`font-glimmer ${isMobile ? 'text-base' : 'text-lg'} jazz-gold font-bold mb-2`}>Presença Cênica </h4>
+              <h3 className={`font-glimmer ${isMobile ? 'text-base' : 'text-lg'} jazz-gold font-bold mb-2`}>Presença Cênica </h3>
               <p className={`font-gatsbybold text-gray-400 ${isMobile ? 'text-lg' : 'text-xl'}`}>Performance completa e envolvente </p>
             </div>
           </div>
@@ -108,9 +108,9 @@ const BookingSection = () => {
 
       {/* Agenda de Shows */}
       <div className="mt-24 animate-fade-in">
-        <h3 className={`font-glimmer ${titleSize} jazz-gold font-bold text-center mb-6`}>
+        <h2 className={`font-glimmer ${titleSize} jazz-gold font-bold text-center mb-6`}>
           Próximos Shows 
-        </h3>
+        </h2>
         <div className="w-full flex justify-center mb-8">
           <img
             src={lineArtDeco}

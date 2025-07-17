@@ -17,9 +17,9 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* Brand */}
             <div className="text-center md:text-left">
-              <h3 className={`font-glimmer ${textSize} font-bold jazz-gold mb-4`}>
+              <p className={`font-glimmer ${textSize} font-bold jazz-gold mb-4`}>
                 Mariana Matheos
-              </h3>
+              </p>
               <p className={`font-gatsbybold text-gray-400 ${textSize}`}>
                 Banda de jazz
               </p>
@@ -30,7 +30,7 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="text-center">
-              <h4 className={`font-glimmer ${textSize} jazz-gold mb-4`}>Contato</h4>
+              <p className={`font-glimmer ${textSize} jazz-gold mb-4`}>Contato</p>
               <div className="space-y-2">
                 <a 
                   href="tel:+5531997522127"  
@@ -45,7 +45,7 @@ const Footer = () => {
 
             {/* Social Media */}
             <div className="text-center md:text-right">
-              <h4 className={`font-glimmer ${textSize} jazz-gold mb-4`}>Redes Sociais</h4>
+              <p className={`font-glimmer ${textSize} jazz-gold mb-4`}>Redes Sociais</p>
               <div className="flex justify-center md:justify-end space-x-4" role="list">
                 <a 
                   href="https://instagram.com/marianamatheosoficial" 

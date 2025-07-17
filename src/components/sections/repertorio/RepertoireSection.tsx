@@ -36,9 +36,9 @@ const RepertoireSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className={`font-glimmer ${titleSize} md:text-6xl font-bold text-white mb-4 jazz-text-shadow`}>
+            <h1 className={`font-glimmer ${titleSize} md:text-6xl font-bold text-white mb-4 jazz-text-shadow`}>
               Repertório & Estilo 
-            </h2>
+            </h1>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
           <img

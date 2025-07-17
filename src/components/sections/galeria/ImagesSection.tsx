@@ -44,9 +44,9 @@ const ImageSection = () => {
       <div className="container mx-auto px-6 relative">
         {/* Section Title */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className={`font-glimmer ${titleSize} font-bold jazz-gold mb-4 jazz-text-shadow`}>
+          <h1 className={`font-glimmer ${titleSize} font-bold jazz-gold mb-4 jazz-text-shadow`}>
             Galeria 
-          </h2>
+          </h1>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
               <img
