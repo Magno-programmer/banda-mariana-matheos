@@ -51,12 +51,12 @@ export const pageRelations: PageRelations = {
     contextualLinks: [
       {
         title: 'Agende Seu Evento',
-        path: '/agendamento',
+        path: '/agenda',
         description: 'Reserve já sua data especial',
         icon: 'Calendar',
         priority: 5,
         category: 'primary',
-        keywords: ['agendamento', 'reserva', 'disponibilidade']
+        keywords: ['agenda', 'reserva', 'disponibilidade']
       }
     ],
     callToActionLinks: [
@@ -104,12 +104,12 @@ export const pageRelations: PageRelations = {
     contextualLinks: [
       {
         title: 'Agende uma Apresentação',
-        path: '/agendamento',
+        path: '/agenda',
         description: 'Garante a banda para seu evento especial',
         icon: 'Calendar',
         priority: 5,
         category: 'primary',
-        keywords: ['agendamento', 'evento', 'apresentação']
+        keywords: ['agenda', 'evento', 'apresentação']
       }
     ],
     callToActionLinks: [
@@ -157,7 +157,7 @@ export const pageRelations: PageRelations = {
     contextualLinks: [
       {
         title: 'Personalize Seu Evento',
-        path: '/agendamento',
+        path: '/agenda',
         description: 'Escolha as músicas ideais para sua ocasião',
         icon: 'Calendar',
         priority: 5,
@@ -210,7 +210,7 @@ export const pageRelations: PageRelations = {
     contextualLinks: [
       {
         title: 'Seu Evento Assim',
-        path: '/agendamento',
+        path: '/agenda',
         description: 'Garanta momentos especiais como estes',
         icon: 'Calendar',
         priority: 5,
@@ -263,7 +263,7 @@ export const pageRelations: PageRelations = {
     contextualLinks: [
       {
         title: 'Reserve Sua Data',
-        path: '/agendamento',
+        path: '/agenda',
         description: 'Tenha essa qualidade em seu evento',
         icon: 'Calendar',
         priority: 5,
@@ -283,7 +283,7 @@ export const pageRelations: PageRelations = {
       }
     ]
   },
-  '/agendamento': {
+  '/agenda': {
     relatedPages: [
       {
         title: 'Perguntas Frequentes',
@@ -349,12 +349,12 @@ export const pageRelations: PageRelations = {
       },
       {
         title: 'Verificar Disponibilidade',
-        path: '/agendamento',
+        path: '/agenda',
         description: 'Consulte datas disponíveis para seu evento',
         icon: 'Calendar',
         priority: 4,
         category: 'secondary',
-        keywords: ['disponibilidade', 'datas', 'agendamento']
+        keywords: ['disponibilidade', 'datas', 'agenda']
       },
       {
         title: 'Nossos Serviços',
@@ -392,13 +392,13 @@ export const pageRelations: PageRelations = {
   '/faq': {
     relatedPages: [
       {
-        title: 'Processo de Agendamento',
-        path: '/agendamento',
+        title: 'Processo de agenda',
+        path: '/agenda',
         description: 'Veja como é simples contratar nossos serviços',
         icon: 'Calendar',
         priority: 5,
         category: 'primary',
-        keywords: ['agendamento', 'processo', 'contratação']
+        keywords: ['agenda', 'processo', 'contratação']
       },
       {
         title: 'Informações da Banda',
@@ -475,7 +475,7 @@ export const pageRelations: PageRelations = {
     contextualLinks: [
       {
         title: 'Seja o Próximo',
-        path: '/agendamento',
+        path: '/agenda',
         description: 'Tenha a mesma experiência excepcional',
         icon: 'Calendar',
         priority: 5,

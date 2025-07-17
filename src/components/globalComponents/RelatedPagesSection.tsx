@@ -40,7 +40,7 @@ const RelatedPagesSection: React.FC<RelatedPagesSectionProps> = ({
       '/repertorio': 'Veja Nosso Trabalho',
       '/fotos': 'Mais Conteúdo Visual',
       '/videos': 'Explore Mais',
-      '/agendamento': 'Informações Importantes',
+      '/agenda': 'Informações Importantes',
       '/contato': 'Antes de Entrar em Contato',
       '/faq': 'Próximos Passos',
       '/depoimentos': 'Veja Nosso Trabalho'
@@ -55,7 +55,7 @@ const RelatedPagesSection: React.FC<RelatedPagesSectionProps> = ({
       '/repertorio': 'Veja como nossas músicas ganham vida em eventos reais',
       '/fotos': 'Descubra mais sobre nossos serviços e qualidade',
       '/videos': 'Conheça mais sobre nossa banda e serviços',
-      '/agendamento': 'Informações que podem ajudar em sua decisão',
+      '/agenda': 'Informações que podem ajudar em sua decisão',
       '/contato': 'Conheça melhor nossos serviços antes de solicitar orçamento',
       '/faq': 'Continue explorando nossos serviços e diferenciais',
       '/depoimentos': 'Veja o trabalho que gera tantos elogios'
