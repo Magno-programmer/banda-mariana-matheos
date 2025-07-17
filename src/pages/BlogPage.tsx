@@ -143,7 +143,7 @@ const blogArticles: BlogArticle[] = [
     imageAlt: 'Banda de jazz ensaiando em um estúdio com instrumentos clássicos',
     category: 'Dicas',
     tags: ['como montar banda', 'dicas para músicos', 'jazz', 'banda de jazz'],
-    publishedDate: '2024-01-27',
+    publishedDate: '2025-07-18',
     readingTime: '8 min',
     author: 'Mariana Matheos',
     seoTitle: 'O que é necessário para ser uma banda de jazz? | Blog',
