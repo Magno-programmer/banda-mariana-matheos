@@ -54,6 +54,7 @@ const ImageSection = () => {
                 alt=""
                 className="w-[50%] object-contain"
                 aria-hidden="true"
+                loading="lazy"
               />
             </div>
           <p className={`font-gatsbybold ${textSize} text-gray-400 max-w-2xl mx-auto`}>
@@ -77,6 +78,7 @@ const ImageSection = () => {
                   src={image.src}
                   alt={image.alt}
                   className={`w-full ${imageHeight} object-cover filter sepia-[0.2] contrast-110 group-hover:scale-110 transition-transform duration-500`}
+                  loading="lazy"
                 />
                 
                 {/* Overlay */}

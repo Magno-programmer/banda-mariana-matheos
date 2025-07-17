@@ -65,6 +65,7 @@ const VideosSection = () => {
                     src={thumbnailUrl}
                     alt="Capa do vídeo"
                     className={`${videoHeight} ${videoWidth} object-cover`}
+                    loading="lazy"
                 />
                 {/* Ícone play centralizado */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/60 transition">
