@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 const ImageSection = () => {
   const { isMiniMobile, isMobile, isMiniTablet, isTablet } = useAdvancedViewport();
@@ -74,11 +75,10 @@ const ImageSection = () => {
               <div className="absolute -inset-2 border-2 border-jazz-gold opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10"></div>
               
               <div className="relative overflow-hidden bg-jazz-dark">
-                <img 
+                <OptimizedImage 
                   src={image.src}
                   alt={image.alt}
                   className={`w-full ${imageHeight} object-cover filter sepia-[0.2] contrast-110 group-hover:scale-110 transition-transform duration-500`}
-                  loading="lazy"
                 />
                 
                 {/* Overlay */}

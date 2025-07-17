@@ -3,6 +3,7 @@ import React, {useRef, useState} from 'react';
 import bordarArtDeco from '@/assets/images/divisor-de-textos.png';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 const AboutSection = () => {
 
@@ -88,7 +89,7 @@ const AboutSection = () => {
                 <div
                   className={`relative ${imageSize} bg-gradient-to-br -inset-1 mt-3 from-jazz-dark to-black flex items-center justify-center overflow-hidden z-20`}
                   >
-                  <img
+                  <OptimizedImage
                     src={imagemUnica.src}
                     alt={imagemUnica.alt}
                     className="object-cover filter sepia-[0.3] contrast-110"

@@ -6,6 +6,7 @@ import bandaCompletaPalco from '@/assets/images/imagem-da-banda.jpg';
 import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import bordabuttonArtDeco from '@/assets/images/divisor-de-botao.png';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 import TestimonialSection from './TestimonialSection';
 
