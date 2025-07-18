@@ -104,13 +104,50 @@ const MUSICIANS_DATA = [
 ];
 
 /**
- * Get file modification date in ISO format
+ * Get file modification date in ISO format with enhanced detection
  */
 function getFileModDate(filePath) {
   try {
     const fullPath = path.join(rootDir, filePath);
     const stats = fs.statSync(fullPath);
-    return stats.mtime.toISOString();
+    let latestDate = stats.mtime;
+    
+    // Check related component files for pages
+    const relatedFiles = [];
+    if (filePath.includes('pages/')) {
+      const pageName = path.basename(filePath, '.tsx');
+      // Check for related sections/components
+      const sectionsDir = path.join(srcDir, 'components', 'sections');
+      if (fs.existsSync(sectionsDir)) {
+        const sectionDirs = fs.readdirSync(sectionsDir);
+        sectionDirs.forEach(dir => {
+          const sectionPath = path.join(sectionsDir, dir);
+          if (fs.statSync(sectionPath).isDirectory()) {
+            const files = fs.readdirSync(sectionPath);
+            files.forEach(file => {
+              if (file.endsWith('.tsx')) {
+                relatedFiles.push(path.join('src', 'components', 'sections', dir, file));
+              }
+            });
+          }
+        });
+      }
+    }
+    
+    // Check modification dates of related files
+    relatedFiles.forEach(relatedPath => {
+      try {
+        const relatedFullPath = path.join(rootDir, relatedPath);
+        const relatedStats = fs.statSync(relatedFullPath);
+        if (relatedStats.mtime > latestDate) {
+          latestDate = relatedStats.mtime;
+        }
+      } catch (e) {
+        // Ignore file not found errors for related files
+      }
+    });
+    
+    return latestDate.toISOString();
   } catch (error) {
     console.warn(`Warning: Could not get modification date for ${filePath}:`, error.message);
     return CURRENT_DATE;
@@ -118,32 +155,42 @@ function getFileModDate(filePath) {
 }
 
 /**
- * Load and parse blog articles data
+ * Load and parse blog articles data with enhanced validation
  */
 function loadBlogData() {
   try {
     const blogDataPath = path.join(srcDir, 'data', 'blogArticlesData.ts');
     const content = fs.readFileSync(blogDataPath, 'utf-8');
     
-    // Extract blog articles data using regex (simple parsing)
-    const articlesMatch = content.match(/export const blogArticlesData.*?=\s*\[(.*?)\];/s);
+    // Extract blog articles data using improved regex
+    const articlesMatch = content.match(/export\s+const\s+blogArticlesData\s*=\s*\[(.*?)\];/s);
     if (!articlesMatch) {
-      throw new Error('Could not parse blog articles data');
+      console.warn('Could not find blogArticlesData export');
+      return [];
     }
     
-    // Extract individual articles using regex
+    // Extract individual articles with more robust regex
     const articles = [];
-    const articlePattern = /{\s*id:\s*['"](\d+)['"],.*?slug:\s*['"]([^'"]+)['"],.*?publishedDate:\s*['"]([^'"]+)['"],/gs;
+    const articlePattern = /{\s*id:\s*['"](\d+)['"],[\s\S]*?slug:\s*['"]([^'"]+)['"],[\s\S]*?publishedDate:\s*['"]([^'"]+)['"],/g;
     
     let match;
     while ((match = articlePattern.exec(articlesMatch[1])) !== null) {
+      const publishedDate = match[3];
+      
+      // Validate date format
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(publishedDate)) {
+        console.warn(`Invalid date format for article ${match[2]}: ${publishedDate}`);
+        continue;
+      }
+      
       articles.push({
         id: match[1],
         slug: match[2],
-        publishedDate: match[3]
+        publishedDate: publishedDate
       });
     }
     
+    console.log(`📝 Successfully parsed ${articles.length} blog articles`);
     return articles;
   } catch (error) {
     console.warn('Warning: Could not load blog data:', error.message);
@@ -167,14 +214,34 @@ function generateSitemap() {
 
 `;
 
-  // Add static pages
+  // Add static pages with enhanced metadata
   STATIC_PAGES.forEach(page => {
     const lastmod = getFileModDate(page.file);
     xml += `  <url>
     <loc>${SITE_URL}${page.path}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
+    <priority>${page.priority}</priority>`;
+    
+    // Add image metadata for gallery pages
+    if (page.path === '/fotos') {
+      xml += `
+    <image:image>
+      <image:loc>${SITE_URL}/images/galeria-mariana-matheos-jazz.avif</image:loc>
+      <image:title>Galeria de Fotos - Mariana Matheos Jazz</image:title>
+    </image:image>`;
+    }
+    
+    // Add video metadata for videos page
+    if (page.path === '/videos') {
+      xml += `
+    <video:video>
+      <video:title>Vídeos - Mariana Matheos Jazz</video:title>
+      <video:description>Performances ao vivo e vídeos musicais</video:description>
+    </video:video>`;
+    }
+    
+    xml += `
   </url>
 
 `;
