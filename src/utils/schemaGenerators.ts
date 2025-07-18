@@ -48,34 +48,129 @@ export const generateVideoSchema = (video: {
 };
 
 // Enhanced ImageObject Schema Generator
-export const generateImageObjectSchema = (image: {
+export const generateImageObjectSchema = (config: {
   url: string;
   alt: string;
-  width?: number;
-  height?: number;
-  caption?: string;
+  caption: string;
+  width: number;
+  height: number;
+  contentLocation?: {
+    name: string;
+    address: {
+      addressLocality: string;
+      addressRegion: string;
+      addressCountry: string;
+    };
+  };
+  keywords?: string;
+  creator?: string;
+  copyrightHolder?: string;
+  datePublished?: string;
+  representativeOfPage?: boolean;
   license?: string;
-  acquireLicensePage?: string;
-  creditText?: string;
 }) => {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'ImageObject',
-    contentUrl: image.url,
-    url: image.url,
-    name: image.alt,
-    alternateName: image.alt,
-    caption: image.caption || image.alt,
-    width: image.width,
-    height: image.height,
-    license: image.license,
-    acquireLicensePage: image.acquireLicensePage,
-    creditText: image.creditText || 'Mariana Matheos Jazz Band',
-    creator: {
-      '@type': 'Organization',
-      name: 'Mariana Matheos Jazz Band'
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    "contentUrl": config.url,
+    "url": config.url,
+    "name": config.caption,
+    "description": config.alt,
+    "width": config.width,
+    "height": config.height,
+    "encodingFormat": "image/avif",
+    "caption": config.caption,
+    "representativeOfPage": config.representativeOfPage || false,
+    ...(config.contentLocation && {
+      "contentLocation": {
+        "@type": "Place",
+        "name": config.contentLocation.name,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": config.contentLocation.address.addressLocality,
+          "addressRegion": config.contentLocation.address.addressRegion,
+          "addressCountry": config.contentLocation.address.addressCountry
+        }
+      }
+    }),
+    ...(config.keywords && { "keywords": config.keywords }),
+    ...(config.creator && {
+      "creator": {
+        "@type": "Organization",
+        "name": config.creator
+      }
+    }),
+    ...(config.copyrightHolder && {
+      "copyrightHolder": {
+        "@type": "Organization", 
+        "name": config.copyrightHolder
+      }
+    }),
+    ...(config.datePublished && { "datePublished": config.datePublished }),
+    ...(config.license && { "license": config.license }),
+    "thumbnail": {
+      "@type": "ImageObject",
+      "contentUrl": config.url.replace('.avif', '-thumb.avif'),
+      "width": 300,
+      "height": 200
     }
   };
+
+  return schema;
+};
+
+// Image Gallery Schema Generator
+export const generateImageGallerySchema = (config: {
+  name: string;
+  description: string;
+  images: Array<{
+    url: string;
+    caption: string;
+    keywords?: string;
+  }>;
+  author: string;
+  datePublished: string;
+  location?: {
+    name: string;
+    address: {
+      addressLocality: string;
+      addressRegion: string;
+      addressCountry: string;
+    };
+  };
+}) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": config.name,
+    "description": config.description,
+    "numberOfItems": config.images.length,
+    "datePublished": config.datePublished,
+    "author": {
+      "@type": "Organization",
+      "name": config.author
+    },
+    ...(config.location && {
+      "contentLocation": {
+        "@type": "Place",
+        "name": config.location.name,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": config.location.address.addressLocality,
+          "addressRegion": config.location.address.addressRegion,
+          "addressCountry": config.location.address.addressCountry
+        }
+      }
+    }),
+    "associatedMedia": config.images.map(image => ({
+      "@type": "ImageObject",
+      "contentUrl": image.url,
+      "caption": image.caption,
+      ...(image.keywords && { "keywords": image.keywords })
+    }))
+  };
+
+  return schema;
 };
 
 import { formatISODate, formatEventDate, getCurrentISODate, getCopyrightYearRange } from './dateUtils';
@@ -792,9 +887,9 @@ export const generateBlogPostingSchema = (article: BlogArticle) => {
 };
 
 /**
- * Generate Advanced ImageGallery Schema
+ * Generate Advanced ImageGallery Schema (Legacy)
  */
-export const generateImageGallerySchema = (images?: Array<{url: string, caption: string}>) => {
+export const generateAdvancedImageGallerySchema = (images?: Array<{url: string, caption: string}>) => {
   // Enhanced professional image gallery with 15 high-quality images
   const professionalImages = [
     {

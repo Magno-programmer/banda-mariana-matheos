@@ -1,31 +1,40 @@
-/**
- * Sistema Avançado de Alt Text para Acessibilidade
- * Implementa descrições otimizadas para leitores de tela seguindo WCAG 2.1
- */
-
-export interface ImageContext {
-  purpose: 'informative' | 'functional' | 'decorative' | 'complex';
-  category: 'performer' | 'instrument' | 'venue' | 'logo' | 'decorative' | 'historical' | 'event';
-  emotion?: 'energetic' | 'elegant' | 'intimate' | 'sophisticated' | 'vintage' | 'modern';
-  technical?: {
-    setting?: string;
-    lighting?: string;
-    composition?: string;
-    era?: string;
-  };
+interface ImageContext {
+  page: string;
+  category: 'performance' | 'band' | 'event' | 'instrument' | 'venue' | 'historical';
+  location?: string;
+  emotion?: string;
+  technical?: string;
+  keywords?: string[];
 }
 
-export interface AdvancedAltTextConfig {
+interface AdvancedAltTextConfig {
   includeContext?: boolean;
   includeTechnical?: boolean;
   includeEmotion?: boolean;
+  includeLocation?: boolean;
   maxLength?: number;
   screenReaderOptimized?: boolean;
+  localKeywords?: boolean;
 }
 
 class AdvancedAltTextGenerator {
   private static instance: AdvancedAltTextGenerator;
   
+  private localKeywords = [
+    'Belo Horizonte', 'BH', 'Minas Gerais', 'MG', 'Nova Lima',
+    'região metropolitana', 'Grande BH'
+  ];
+  
+  private jazzKeywords = [
+    'jazz band', 'banda de jazz', 'música jazz', 'jazz ao vivo',
+    'performance jazz', 'repertório jazz', 'standards jazz'
+  ];
+  
+  private eventKeywords = [
+    'casamento', 'evento corporativo', 'festa de aniversário',
+    'inauguração', 'coquetel', 'recepção', 'cerimônia'
+  ];
+
   static getInstance(): AdvancedAltTextGenerator {
     if (!AdvancedAltTextGenerator.instance) {
       AdvancedAltTextGenerator.instance = new AdvancedAltTextGenerator();
@@ -33,9 +42,6 @@ class AdvancedAltTextGenerator {
     return AdvancedAltTextGenerator.instance;
   }
 
-  /**
-   * Gera alt text avançado baseado no contexto da imagem
-   */
   generateAltText(
     baseDescription: string,
     context: ImageContext,
@@ -43,57 +49,42 @@ class AdvancedAltTextGenerator {
   ): string {
     const {
       includeContext = true,
-      includeTechnical = false,
+      includeTechnical = true,
       includeEmotion = true,
+      includeLocation = true,
       maxLength = 125,
-      screenReaderOptimized = true
+      screenReaderOptimized = true,
+      localKeywords = true
     } = config;
-
-    // Se é puramente decorativa, retorna alt vazio
-    if (context.purpose === 'decorative') {
-      return '';
-    }
 
     let altText = baseDescription;
 
-    // Adiciona contexto emocional
-    if (includeEmotion && context.emotion) {
-      const emotionDescriptions = {
-        energetic: 'em performance energética',
-        elegant: 'em ambiente elegante',
-        intimate: 'em apresentação íntima',
-        sophisticated: 'em setting sofisticado',
-        vintage: 'em estilo vintage',
-        modern: 'em contexto moderno'
-      };
-      altText += ` ${emotionDescriptions[context.emotion]}`;
-    }
-
-    // Adiciona informações técnicas
-    if (includeTechnical && context.technical) {
-      const { setting, lighting, era } = context.technical;
-      const technicalParts = [];
-      
-      if (setting) technicalParts.push(`ambiente: ${setting}`);
-      if (lighting) technicalParts.push(`iluminação: ${lighting}`);
-      if (era) technicalParts.push(`época: ${era}`);
-      
-      if (technicalParts.length > 0) {
-        altText += ` - ${technicalParts.join(', ')}`;
-      }
-    }
-
-    // Adiciona informações específicas por categoria
+    // Add category context
     if (includeContext) {
       altText = this.addCategoryContext(altText, context);
     }
 
-    // Otimiza para leitores de tela
+    // Add location keywords
+    if (includeLocation && localKeywords) {
+      altText = this.addLocationContext(altText, context);
+    }
+
+    // Add emotional context
+    if (includeEmotion && context.emotion) {
+      altText = this.addEmotionalContext(altText, context.emotion);
+    }
+
+    // Add technical details
+    if (includeTechnical && context.technical) {
+      altText = this.addTechnicalContext(altText, context.technical);
+    }
+
+    // Optimize for screen readers
     if (screenReaderOptimized) {
       altText = this.optimizeForScreenReader(altText);
     }
 
-    // Limita o comprimento
+    // Truncate if necessary
     if (altText.length > maxLength) {
       altText = altText.substring(0, maxLength - 3) + '...';
     }
@@ -102,132 +93,168 @@ class AdvancedAltTextGenerator {
   }
 
   private addCategoryContext(altText: string, context: ImageContext): string {
-    const contextMappings = {
-      performer: 'artista musical',
+    const categoryMap = {
+      performance: 'apresentação ao vivo',
+      band: 'banda de jazz',
+      event: 'evento musical',
       instrument: 'instrumento musical',
       venue: 'local de apresentação',
-      logo: 'logotipo da banda',
-      historical: 'imagem histórica',
-      event: 'evento musical'
+      historical: 'registro histórico'
     };
 
-    const categoryContext = contextMappings[context.category];
-    if (categoryContext && !altText.toLowerCase().includes(categoryContext.toLowerCase())) {
-      altText = `${categoryContext} - ${altText}`;
+    const categoryContext = categoryMap[context.category];
+    if (categoryContext && !altText.toLowerCase().includes(categoryContext)) {
+      return `${altText} - ${categoryContext}`;
     }
-
     return altText;
   }
 
-  private optimizeForScreenReader(altText: string): string {
-    return altText
-      // Remove redundâncias comuns
-      .replace(/\b(imagem|foto|picture|image)\s*(de|da|do|of)?\s*/gi, '')
-      // Padroniza terminologias musicais
-      .replace(/\bbanda\b/gi, 'grupo musical')
-      .replace(/\bshow\b/gi, 'apresentação')
-      .replace(/\bpalco\b/gi, 'palco de apresentação')
-      // Melhora fluidez da leitura
-      .replace(/\s+/g, ' ')
-      .trim();
+  private addLocationContext(altText: string, context: ImageContext): string {
+    const location = context.location || 'Belo Horizonte';
+    
+    // Check if location is already mentioned
+    const hasLocation = this.localKeywords.some(keyword => 
+      altText.toLowerCase().includes(keyword.toLowerCase())
+    );
+    
+    if (!hasLocation) {
+      return `${altText} em ${location}`;
+    }
+    return altText;
   }
 
-  /**
-   * Gera alt text específico para músicos/performers
-   */
+  private addEmotionalContext(altText: string, emotion: string): string {
+    if (!altText.toLowerCase().includes(emotion.toLowerCase())) {
+      return `${altText} com atmosfera ${emotion}`;
+    }
+    return altText;
+  }
+
+  private addTechnicalContext(altText: string, technical: string): string {
+    return `${altText} - ${technical}`;
+  }
+
+  private optimizeForScreenReader(altText: string): string {
+    // Remove redundant phrases
+    altText = altText.replace(/imagem de |foto de |picture of /gi, '');
+    
+    // Standardize terminology
+    altText = altText.replace(/banda jazz/gi, 'banda de jazz');
+    altText = altText.replace(/BH/gi, 'Belo Horizonte');
+    
+    // Ensure proper spacing
+    altText = altText.replace(/\s+/g, ' ').trim();
+    
+    return altText;
+  }
+
   generatePerformerAltText(
     name: string,
     instrument: string,
     setting: string,
-    expression?: string
+    expression?: string,
+    location: string = 'Belo Horizonte'
   ): string {
-    const context: ImageContext = {
-      purpose: 'informative',
-      category: 'performer',
-      emotion: 'sophisticated',
-      technical: {
-        setting,
-        composition: 'retrato musical'
-      }
-    };
-
-    const baseDescription = `${name} tocando ${instrument}${expression ? ` com expressão ${expression}` : ''}`;
+    let altText = `${name} tocando ${instrument}`;
     
-    return this.generateAltText(baseDescription, context);
+    if (expression) {
+      altText += ` com expressão ${expression}`;
+    }
+    
+    altText += ` durante ${setting} em ${location}`;
+    
+    return this.optimizeForScreenReader(altText);
   }
 
-  /**
-   * Gera alt text para logos com contexto funcional
-   */
-  generateLogoAltText(
-    brandName: string,
-    style: string,
-    functional: boolean = true
-  ): string {
-    const context: ImageContext = {
-      purpose: functional ? 'functional' : 'informative',
-      category: 'logo',
-      emotion: 'elegant'
-    };
-
-    const baseDescription = `Logotipo ${style} da ${brandName}`;
-    
-    return this.generateAltText(baseDescription, context, {
-      includeContext: functional,
-      maxLength: 60
-    });
-  }
-
-  /**
-   * Gera alt text para imagens de eventos
-   */
   generateEventAltText(
     eventType: string,
     participants: string[],
     venue: string,
-    atmosphere: string
+    atmosphere: string,
+    location: string = 'Belo Horizonte'
   ): string {
-    const context: ImageContext = {
-      purpose: 'informative',
-      category: 'event',
-      emotion: 'energetic',
-      technical: {
-        setting: venue,
-        composition: 'grupo musical'
+    const participantsList = participants.length > 2 
+      ? `${participants.slice(0, 2).join(', ')} e outros`
+      : participants.join(' e ');
+    
+    let altText = `${eventType} com ${participantsList}`;
+    altText += ` no ${venue}, ${location}`;
+    
+    if (atmosphere) {
+      altText += ` - ambiente ${atmosphere}`;
+    }
+    
+    return this.optimizeForScreenReader(altText);
+  }
+
+  generateContextualAltText(imageName: string, pageContext: string): string {
+    const contextMap: Record<string, ImageContext> = {
+      '/': {
+        page: 'home',
+        category: 'band',
+        location: 'Belo Horizonte',
+        keywords: ['banda de jazz Belo Horizonte', 'jazz band BH']
+      },
+      '/fotos': {
+        page: 'gallery',
+        category: 'performance',
+        location: 'Belo Horizonte',
+        keywords: ['fotos apresentações jazz', 'galeria banda jazz']
+      },
+      '/sobre': {
+        page: 'about',
+        category: 'band',
+        location: 'Belo Horizonte',
+        keywords: ['Mariana Matheos', 'banda de jazz profissional']
+      },
+      '/repertorio': {
+        page: 'repertoire',
+        category: 'performance',
+        location: 'Belo Horizonte',
+        keywords: ['repertório jazz', 'standards jazz']
+      },
+      '/videos': {
+        page: 'videos',
+        category: 'performance',
+        location: 'Belo Horizonte',
+        keywords: ['vídeos apresentações', 'performance ao vivo']
       }
     };
 
-    const baseDescription = `${eventType} da ${participants.join(' e ')} em ${venue} com atmosfera ${atmosphere}`;
+    const context = contextMap[pageContext] || contextMap['/'];
     
-    return this.generateAltText(baseDescription, context);
+    // Extract base description from image name
+    const baseDescription = this.extractBaseDescription(imageName);
+    
+    return this.generateAltText(baseDescription, context, {
+      localKeywords: true,
+      includeContext: true,
+      includeLocation: true
+    });
   }
 
-  /**
-   * Gera alt text para imagens históricas
-   */
-  generateHistoricalAltText(
-    subject: string,
-    era: string,
-    significance: string
-  ): string {
-    const context: ImageContext = {
-      purpose: 'informative',
-      category: 'historical',
-      emotion: 'vintage',
-      technical: {
-        era,
-        composition: 'retrato histórico'
-      }
+  private extractBaseDescription(imageName: string): string {
+    const nameMap: Record<string, string> = {
+      'cantora': 'Mariana Matheos, vocalista da banda de jazz',
+      'pianista': 'Pianista da banda durante apresentação',
+      'baixista': 'Baixista executando solo de jazz',
+      'baterista': 'Baterista em performance rítmica',
+      'banda': 'Banda de jazz completa em apresentação',
+      'casamento': 'Banda tocando em cerimônia de casamento',
+      'evento-corporativo': 'Apresentação em evento corporativo',
+      'amy-winehouse': 'Tributo a Amy Winehouse',
+      'billie-holiday': 'Homenagem a Billie Holiday',
+      'ella-fitzgerald': 'Performance inspirada em Ella Fitzgerald',
+      'frank-sinatra': 'Interpretação de clássicos de Frank Sinatra',
+      'nina-simone': 'Tributo a Nina Simone'
     };
 
-    const baseDescription = `${subject} ${significance} da era ${era}`;
+    // Extract key from filename
+    const key = imageName.replace(/\.(avif|webp|jpg|jpeg|png)$/i, '');
     
-    return this.generateAltText(baseDescription, context);
+    return nameMap[key] || `Apresentação musical da banda de jazz`;
   }
 
-  /**
-   * Valida se o alt text atende aos critérios de acessibilidade
-   */
   validateAltText(altText: string): {
     isValid: boolean;
     issues: string[];
@@ -236,27 +263,40 @@ class AdvancedAltTextGenerator {
     const issues: string[] = [];
     const suggestions: string[] = [];
 
-    // Verifica comprimento
-    if (altText.length > 125) {
-      issues.push('Alt text muito longo (>125 caracteres)');
-      suggestions.push('Reduza para informações essenciais');
-    }
-
-    if (altText.length < 10 && altText.length > 0) {
+    // Length validation
+    if (altText.length < 10) {
       issues.push('Alt text muito curto');
       suggestions.push('Adicione mais contexto descritivo');
     }
 
-    // Verifica redundâncias
-    if (/\b(imagem|foto|picture|image)\s*(de|da|do|of)?\s*/gi.test(altText)) {
-      issues.push('Contém redundâncias desnecessárias');
-      suggestions.push('Remova palavras como "imagem de"');
+    if (altText.length > 125) {
+      issues.push('Alt text muito longo');
+      suggestions.push('Reduza para menos de 125 caracteres');
     }
 
-    // Verifica se termina com ponto
-    if (altText.length > 0 && !altText.endsWith('.') && !altText.endsWith('!') && !altText.endsWith('?')) {
-      issues.push('Não termina com pontuação');
-      suggestions.push('Adicione ponto final para melhor leitura');
+    // Keyword presence
+    const hasJazzKeyword = this.jazzKeywords.some(keyword => 
+      altText.toLowerCase().includes(keyword.toLowerCase())
+    );
+    
+    if (!hasJazzKeyword) {
+      suggestions.push('Considere adicionar "jazz" ou "banda de jazz"');
+    }
+
+    // Location presence
+    const hasLocation = this.localKeywords.some(keyword => 
+      altText.toLowerCase().includes(keyword.toLowerCase())
+    );
+    
+    if (!hasLocation) {
+      suggestions.push('Considere adicionar localização (Belo Horizonte)');
+    }
+
+    // Accessibility check
+    if (altText.toLowerCase().startsWith('imagem de') || 
+        altText.toLowerCase().startsWith('foto de')) {
+      issues.push('Evite redundâncias como "imagem de" ou "foto de"');
+      suggestions.push('Comece diretamente com a descrição');
     }
 
     return {
@@ -267,124 +307,65 @@ class AdvancedAltTextGenerator {
   }
 }
 
+// Export singleton instance
 export const altTextGenerator = AdvancedAltTextGenerator.getInstance();
 
-// Configurações predefinidas para diferentes contextos
+// Predefined configurations for different contexts
 export const ALT_TEXT_CONFIGS = {
-  PERFORMER_PORTRAIT: {
-    includeContext: true,
-    includeTechnical: false,
-    includeEmotion: true,
-    maxLength: 100,
-    screenReaderOptimized: true
+  homepage: {
+    includeLocation: true,
+    localKeywords: true,
+    maxLength: 120
   },
-  LOGO_FUNCTIONAL: {
-    includeContext: true,
-    includeTechnical: false,
-    includeEmotion: false,
-    maxLength: 60,
-    screenReaderOptimized: true
-  },
-  EVENT_PHOTO: {
+  gallery: {
     includeContext: true,
     includeTechnical: true,
     includeEmotion: true,
-    maxLength: 125,
-    screenReaderOptimized: true
+    maxLength: 125
   },
-  DECORATIVE_ELEMENT: {
+  blog: {
     includeContext: false,
+    includeLocation: false,
+    maxLength: 100
+  },
+  events: {
+    includeLocation: true,
+    includeEmotion: true,
     includeTechnical: false,
-    includeEmotion: false,
-    maxLength: 0,
-    screenReaderOptimized: true
+    maxLength: 115
   }
 } as const;
 
-// Dados estruturados para performers históricos
+// Historical performers data for context
 export const HISTORICAL_PERFORMERS = {
+  'amy-winehouse': {
+    name: 'Amy Winehouse',
+    era: 'contemporâneo',
+    style: 'soul jazz',
+    significance: 'Revival do jazz moderno'
+  },
   'billie-holiday': {
     name: 'Billie Holiday',
-    era: 'anos 1940-1950',
-    significance: 'pioneira do jazz vocal com estilo único e expressivo',
-    instruments: ['vocal'],
-    style: 'jazz vocal emotivo'
+    era: 'era dourada',
+    style: 'jazz vocal',
+    significance: 'Pioneira do jazz vocal feminino'
   },
   'ella-fitzgerald': {
     name: 'Ella Fitzgerald',
-    era: 'anos 1940-1980',
-    significance: 'primeira dama da canção com técnica vocal incomparável',
-    instruments: ['vocal', 'scat singing'],
-    style: 'swing e scat singing'
+    era: 'swing',
+    style: 'scat singing',
+    significance: 'Primeira dama do jazz'
   },
   'frank-sinatra': {
     name: 'Frank Sinatra',
-    era: 'anos 1940-1990',
-    significance: 'crooner icônico que definiu o estilo interpretativo',
-    instruments: ['vocal'],
-    style: 'crooner e swing'
+    era: 'era dourada',
+    style: 'crooner',
+    significance: 'Ícone do jazz vocal masculino'
   },
   'nina-simone': {
     name: 'Nina Simone',
-    era: 'anos 1960-1970',
-    significance: 'pianista e cantora que uniu jazz, soul e ativismo',
-    instruments: ['piano', 'vocal'],
-    style: 'jazz soul com consciência social'
-  },
-  'amy-winehouse': {
-    name: 'Amy Winehouse',
-    era: 'anos 2000-2010',
-    significance: 'revitalizou o soul contemporâneo com estilo retrô',
-    instruments: ['vocal'],
-    style: 'neo-soul e jazz contemporâneo'
-  },
-  'etta-james': {
-    name: 'Etta James',
-    era: 'anos 1960-1980',
-    significance: 'voz poderosa do soul e R&B',
-    instruments: ['vocal'],
-    style: 'soul e rhythm & blues'
-  },
-  'beth-hart': {
-    name: 'Beth Hart',
-    era: 'anos 1990-atual',
-    significance: 'cantora contemporânea de blues e rock',
-    instruments: ['vocal', 'piano'],
-    style: 'blues rock contemporâneo'
-  },
-  'bb-king': {
-    name: 'B.B. King',
-    era: 'anos 1950-2000',
-    significance: 'rei do blues com sua lendária guitarra Lucille',
-    instruments: ['guitarra', 'vocal'],
-    style: 'blues elétrico'
-  },
-  'andra-day': {
-    name: 'Andra Day',
-    era: 'anos 2010-atual',
-    significance: 'nova voz do soul com influências vintage',
-    instruments: ['vocal'],
-    style: 'neo-soul contemporâneo'
-  },
-  'nat-king-cole': {
-    name: 'Nat King Cole',
-    era: 'anos 1940-1960',
-    significance: 'pianista virtuoso que se tornou crooner icônico',
-    instruments: ['piano', 'vocal'],
-    style: 'jazz piano e crooner'
-  },
-  'kitty-kallen': {
-    name: 'Kitty Kallen',
-    era: 'anos 1940-1950',
-    significance: 'voz doce da era dourada do jazz',
-    instruments: ['vocal'],
-    style: 'big band e swing'
-  },
-  'glenn-miller': {
-    name: 'Glenn Miller',
-    era: 'anos 1930-1940',
-    significance: 'maestro que definiu o som do swing',
-    instruments: ['trombone', 'arranjo'],
-    style: 'big band e swing orquestral'
+    era: 'civil rights',
+    style: 'jazz fusion',
+    significance: 'Ativista e revolucionária musical'
   }
 } as const;

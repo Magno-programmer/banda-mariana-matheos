@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://marianamatheos.com.br/sitemap-images.xml</loc>
+    <lastmod>2024-07-18</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://marianamatheos.com.br/sitemap-images-band.xml</loc>
+    <lastmod>2024-07-18</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://marianamatheos.com.br/sitemap-images-performance.xml</loc>
+    <lastmod>2024-07-18</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://marianamatheos.com.br/sitemap-images-event.xml</loc>
+    <lastmod>2024-07-18</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://marianamatheos.com.br/sitemap-images-historical.xml</loc>
+    <lastmod>2024-07-18</lastmod>
+  </sitemap>
+</sitemapindex>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://marianamatheos.com.br/fotos</loc>
+    <lastmod>2024-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/cantora.avif</image:loc>
+      <image:caption>Mariana Matheos, vocalista da banda de jazz em Belo Horizonte</image:caption>
+      <image:title>Vocalista Jazz Belo Horizonte - Mariana Matheos</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/pianista.avif</image:loc>
+      <image:caption>Pianista da banda de jazz durante performance em Belo Horizonte</image:caption>
+      <image:title>Pianista Jazz BH - Performance ao Vivo</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/baixista.avif</image:loc>
+      <image:caption>Baixista executando solo durante apresentação de jazz em BH</image:caption>
+      <image:title>Baixista Jazz - Solo Performance Belo Horizonte</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/baterista.avif</image:loc>
+      <image:caption>Baterista da banda de jazz em performance rítmica em Belo Horizonte</image:caption>
+      <image:title>Baterista Jazz BH - Ritmo e Swing</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/banda.avif</image:loc>
+      <image:caption>Banda de jazz completa em apresentação ao vivo em Belo Horizonte</image:caption>
+      <image:title>Mariana Matheos Jazz Band - Formação Completa BH</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/casamento-jazz-band.avif</image:loc>
+      <image:caption>Banda de jazz tocando em cerimônia de casamento em Belo Horizonte</image:caption>
+      <image:title>Jazz para Casamento BH - Música Romântica</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/eventos-corporativos.avif</image:loc>
+      <image:caption>Apresentação da banda em evento corporativo em Belo Horizonte</image:caption>
+      <image:title>Jazz Corporativo BH - Eventos Empresariais</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/amy-winehouse.avif</image:loc>
+      <image:caption>Tributo a Amy Winehouse pela banda de jazz em Belo Horizonte</image:caption>
+      <image:title>Tributo Amy Winehouse - Jazz Soul BH</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/ella-fitzgerald.avif</image:loc>
+      <image:caption>Performance inspirada em Ella Fitzgerald pela banda de jazz BH</image:caption>
+      <image:title>Inspiração Ella Fitzgerald - Primeira Dama do Jazz</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/frank-sinatra.avif</image:loc>
+      <image:caption>Interpretação de clássicos de Frank Sinatra em Belo Horizonte</image:caption>
+      <image:title>Frank Sinatra Classics - Jazz Vocal BH</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+  </url>
+</urlset>

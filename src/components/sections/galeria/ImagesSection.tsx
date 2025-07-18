@@ -1,45 +1,166 @@
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { generateImageObjectSchema } from '@/utils/schemaGenerators';
+import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { generateImageObjectSchema, generateImageGallerySchema } from "@/utils/schemaGenerators";
+import { useAdvancedViewport } from "@/hooks/useAdvancedViewport";
+import { altTextGenerator } from "@/utils/advancedAltText";
+import { useLocation } from "react-router-dom";
 import lineArtDeco from '/images/divisor-de-sessao.avif';
-import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
+
+// Enhanced images data with advanced alt text generation
+const imagesData = [
+  { 
+    src: "/images/cantora.avif", 
+    baseAlt: "Mariana Matheos, vocalista da banda de jazz",
+    category: 'performance' as const,
+    keywords: ['Mariana Matheos', 'vocalista jazz', 'cantora', 'performance ao vivo']
+  },
+  { 
+    src: "/images/pianista.avif", 
+    baseAlt: "Pianista da banda executando repertório jazz clássico",
+    category: 'performance' as const,
+    keywords: ['pianista jazz', 'piano', 'música instrumental', 'performance']
+  },
+  { 
+    src: "/images/baixista.avif", 
+    baseAlt: "Baixista em solo expressivo durante apresentação",
+    category: 'performance' as const,
+    keywords: ['baixista', 'contrabaixo', 'solo jazz', 'música instrumental']
+  },
+  { 
+    src: "/images/baterista.avif", 
+    baseAlt: "Baterista mantendo ritmo swing do jazz",
+    category: 'performance' as const,
+    keywords: ['baterista', 'bateria', 'swing', 'ritmo jazz']
+  },
+  { 
+    src: "/images/banda.avif", 
+    baseAlt: "Formação completa da banda de jazz",
+    category: 'band' as const,
+    keywords: ['banda completa', 'formação jazz', 'grupo musical', 'ensemble']
+  },
+  { 
+    src: "/images/casamento-jazz-band.avif", 
+    baseAlt: "Banda proporcionando música romántica em casamento",
+    category: 'event' as const,
+    keywords: ['casamento', 'música romántica', 'cerimônia', 'evento especial']
+  },
+  { 
+    src: "/images/eventos-corporativos.avif", 
+    baseAlt: "Performance sofisticada em evento empresarial",
+    category: 'event' as const,
+    keywords: ['evento corporativo', 'empresarial', 'música corporativa', 'entretenimento']
+  },
+  { 
+    src: "/images/amy-winehouse.avif", 
+    baseAlt: "Tributo a Amy Winehouse com interpretação soul jazz",
+    category: 'historical' as const,
+    keywords: ['Amy Winehouse', 'tributo', 'soul jazz', 'homenagem']
+  },
+  { 
+    src: "/images/billie-holiday.avif", 
+    baseAlt: "Homenagem a Billie Holiday com performance vocal jazz",
+    category: 'historical' as const,
+    keywords: ['Billie Holiday', 'jazz vocal', 'homenagem', 'clássico']
+  },
+  { 
+    src: "/images/ella-fitzgerald.avif", 
+    baseAlt: "Inspiração em Ella Fitzgerald com técnica vocal impecável",
+    category: 'historical' as const,
+    keywords: ['Ella Fitzgerald', 'técnica vocal', 'jazz clássico', 'inspiração']
+  },
+  { 
+    src: "/images/frank-sinatra.avif", 
+    baseAlt: "Interpretação de standards de Frank Sinatra",
+    category: 'historical' as const,
+    keywords: ['Frank Sinatra', 'standards', 'crooner', 'jazz vocal']
+  },
+  { 
+    src: "/images/nina-simone.avif", 
+    baseAlt: "Tributo a Nina Simone com performance jazz fusion",
+    category: 'historical' as const,
+    keywords: ['Nina Simone', 'jazz fusion', 'tributo', 'performance']
+  },
+];
 
 const ImagesSection = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   
-  const images = [
-    { 
-      src: '/images/cantora.avif',
-      alt: 'Mariana Matheos, vocalista da banda de jazz, em performance elegante para casamento em Belo Horizonte - repertório da Era de Ouro do jazz e bossa nova'
-    },
-    { 
-      src: '/images/baixista.avif',
-      alt: 'Baixista Tarcíso Junior da Mariana Matheos Jazz Band em performance para evento exclusivo em Belo Horizonte - groove profissional para cerimônias e celebrações'
-    },
-    { 
-      src: '/images/baterista.avif',
-      alt: 'Baterista Rubens Kalil da banda de jazz Mariana Matheos em show ao vivo em Nova Lima, MG - ritmo refinado para casamentos e eventos empresariais'
-    },
-    { 
-      src: '/images/pianista.avif',
-      alt: 'Pianista Carlos Nobre da banda Mariana Matheos em performance sofisticada de jazz standards em evento corporativo, Belo Horizonte - música ao vivo para eventos especiais'
-    },
-    { 
-      src: '/images/banda-blue-jazz-concurso.avif',
-      alt: 'Banda completa Mariana Matheos Jazz no Festival de Jazz & Blues de Tiradentes 2025, Minas Gerais - formação profissional para eventos especiais e casamentos em BH'
-    },
-  ];
+  // Generate advanced alt text for each image
+  const images = imagesData.map(imageData => {
+    const context = {
+      page: currentPath,
+      category: imageData.category,
+      location: 'Belo Horizonte',
+      keywords: imageData.keywords
+    };
+    
+    const advancedAlt = altTextGenerator.generateAltText(
+      imageData.baseAlt,
+      context,
+      {
+        includeContext: true,
+        includeLocation: true,
+        localKeywords: true,
+        maxLength: 120,
+        screenReaderOptimized: true
+      }
+    );
+    
+    return {
+      src: imageData.src,
+      alt: advancedAlt,
+      category: imageData.category,
+      keywords: imageData.keywords
+    };
+  });
 
-  const imageSchemas = images.map(image => generateImageObjectSchema({
-    url: `https://marianamatheos.com${image.src}`,
-    alt: image.alt,
-    width: 800,
-    height: 600,
-    caption: image.alt,
-    license: "https://marianamatheos.com/license",
-    creditText: "Mariana Matheos Jazz Band - Fotografia Profissional"
-  }));
-  
+  // Generate enhanced image schemas for SEO
+  const imageSchemas = images.map((image, index) => 
+    generateImageObjectSchema({
+      url: `https://marianamatheos.com.br${image.src}`,
+      alt: image.alt,
+      caption: image.alt,
+      width: 800,
+      height: 600,
+      contentLocation: {
+        name: 'Belo Horizonte',
+        address: {
+          addressLocality: 'Belo Horizonte',
+          addressRegion: 'MG',
+          addressCountry: 'BR'
+        }
+      },
+      keywords: image.keywords.join(', '),
+      creator: 'Mariana Matheos Jazz Band',
+      copyrightHolder: 'Mariana Matheos Jazz Band',
+      datePublished: new Date(2024, 0, 15 + index).toISOString().split('T')[0],
+      representativeOfPage: index === 0
+    })
+  );
+
+  // Generate gallery schema
+  const gallerySchema = generateImageGallerySchema({
+    name: 'Galeria de Fotos - Mariana Matheos Jazz Band',
+    description: 'Fotos das apresentações da Mariana Matheos Jazz Band em eventos, casamentos e shows em Belo Horizonte',
+    images: images.map(image => ({
+      url: `https://marianamatheos.com.br${image.src}`,
+      caption: image.alt,
+      keywords: image.keywords.join(', ')
+    })),
+    author: 'Mariana Matheos Jazz Band',
+    datePublished: '2024-01-15',
+    location: {
+      name: 'Belo Horizonte',
+      address: {
+        addressLocality: 'Belo Horizonte',
+        addressRegion: 'MG', 
+        addressCountry: 'BR'
+      }
+    }
+  });
+
   const { isMiniMobile, isMobile, isMiniTablet, isTablet } = useAdvancedViewport();
   
   const titleSize = isMobile ? 'text-4xl' : isTablet ? 'text-5xl' : 'text-7xl';
@@ -51,11 +172,16 @@ const ImagesSection = () => {
   return (
     <>
       <Helmet>
+        {/* Individual image schemas */}
         {imageSchemas.map((schema, index) => (
-          <script key={`image-schema-${index}`} type="application/ld+json">
+          <script key={`image-${index}`} type="application/ld+json">
             {JSON.stringify(schema)}
           </script>
         ))}
+        {/* Gallery schema */}
+        <script key="gallery" type="application/ld+json">
+          {JSON.stringify(gallerySchema)}
+        </script>
       </Helmet>
       
       <section className="py-20 jazz-gradient relative">
@@ -87,8 +213,9 @@ const ImagesSection = () => {
             {images.map((image, index) => (
               <div 
                 key={index}
-                className="group animate-scale-in relative overflow-hidden"
+                className="group animate-scale-in relative overflow-hidden cursor-pointer"
                 style={{animationDelay: `${index * 0.1}s`}}
+                onClick={() => setSelectedImageIndex(index)}
               >
                 <div className="absolute -inset-2 border-2 border-jazz-gold opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10"></div>
                 
