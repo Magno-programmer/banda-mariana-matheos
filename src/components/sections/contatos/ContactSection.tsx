@@ -24,7 +24,7 @@ const ContactSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h1 className={`${titleSize} font-glimmer text-jazz-gold mb-4`}>Entre em Contato </h1>
+          <h2 className={`${titleSize} font-glimmer text-jazz-gold mb-4`}>Entre em Contato </h2>
           <div className="w-24 h-1 bg-jazz-gold mx-auto mb-4"></div>
           <p className={`${textSize} text-gray-300 font-gatsbybold`}>
             Ficaremos felizes em tocar no seu evento ou festa! Entre em contato conosco para agendamentos, orçamentos e informações sobre shows e apresentações musicais. 
@@ -35,7 +35,7 @@ const ContactSection = () => {
           <div className={`grid ${gridCols} gap-8 mb-12`}>
             {/* Informações de Contato */}
             <div className="bg-gradient-to-br from-black to-jazz-dark border border-jazz-gold rounded-xl shadow-lg p-8">
-              <h2 className={`${cardTitleSize} font-glimmer text-jazz-gold mb-6`}>Informações </h2>
+              <h3 className={`${cardTitleSize} font-glimmer text-jazz-gold mb-6`}>Informações </h3>
 
               <div className="space-y-6 font-gatsby text-gray-300">
                 <ContactItem icon={MessageCircle} label="WhatsApp" value="+55 (31) 9 9752-2127" textSize={textSize} />
@@ -46,7 +46,7 @@ const ContactSection = () => {
 
             {/* Ações Rápidas */}
             <div className="bg-gradient-to-br from-black to-jazz-dark border border-jazz-gold rounded-xl shadow-lg p-8">
-              <h2 className={`${cardTitleSize} font-glimmer text-jazz-gold mb-6`}>Ações Rápidas </h2>
+              <h3 className={`${cardTitleSize} font-glimmer text-jazz-gold mb-6`}>Ações Rápidas </h3>
 
               <div className="space-y-4">
                 <ActionButton href={whatsappLink} icon={MessageCircle} text="Falar no WhatsApp" textSize={textSize} />

@@ -156,9 +156,9 @@ const FAQSection = () => {
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h1 className={`font-glimmer ${titleSize} font-bold text-white mb-4 jazz-text-shadow`}>
+            <h2 className={`font-glimmer ${titleSize} font-bold text-white mb-4 jazz-text-shadow`}>
               Faq - Banda Jazz Blues Soul para Eventos 
-            </h1>
+            </h2>
             <div className="w-full flex justify-center mb-6">
               <img
                 src={lineArtDeco}
@@ -219,9 +219,9 @@ const FAQSection = () => {
                   </span>
                 </div>
                 <div className="p-6 pr-20">
-                  <h2 className={`font-glimmer ${questionSize} jazz-gold font-bold mb-4 leading-tight`}>
+                  <h3 className={`font-glimmer ${questionSize} jazz-gold font-bold mb-4 leading-tight`}>
                     {faq.pergunta}
-                  </h2>
+                  </h3>
                   <p className={`font-gatsbybold ${answerSize} text-gray-300 leading-relaxed mb-4`}>
                     {faq.resposta}
                   </p>
@@ -242,9 +242,9 @@ const FAQSection = () => {
 
           <div className="text-center animate-scale-in">
             <div className="bg-black bg-opacity-40 p-8 border-2 border-jazz-gold border-opacity-50">
-              <h2 className={`font-glimmer ${textSize} jazz-gold font-bold mb-4`}>
+              <h3 className={`font-glimmer ${textSize} jazz-gold font-bold mb-4`}>
                 Ainda tem dúvidas? 
-              </h2>
+              </h3>
               <p className={`font-gatsbybold ${isMobile ? 'text-base' : 'text-xl'} text-gray-300 mb-6`}>
                 Entre em contato conosco pelo WhatsApp e tire todas as suas dúvidas sobre contratar nossa banda de jazz para seu evento especial. 
               </p>

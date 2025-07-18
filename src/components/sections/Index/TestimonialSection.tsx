@@ -20,9 +20,9 @@ const TestimonialSection = () => {
       <div className="container mx-auto px-6 relative">
         {/* Section Title */}
         <div className="text-center mb-12 animate-fade-in">
-          <h3 className={`font-glimmer ${titleSize} font-bold jazz-gold mb-6 jazz-text-shadow`}>
+          <h2 className={`font-glimmer ${titleSize} font-bold jazz-gold mb-6 jazz-text-shadow`}>
             Experiência Musical Única
-          </h3>
+          </h2>
           <p className={`font-gatsbybold ${subtitleSize} text-gray-300 max-w-4xl mx-auto leading-relaxed`}>
             Uma jornada sonora que transcende o tempo, conectando o passado glorioso do jazz com a sensibilidade contemporânea
           </p>

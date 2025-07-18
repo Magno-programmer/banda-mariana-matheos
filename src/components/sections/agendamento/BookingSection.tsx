@@ -35,9 +35,9 @@ const BookingSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
-            <h1 className={`font-glimmer ${titleSize} font-bold text-white mb-4 jazz-text-shadow`}>
+            <h2 className={`font-glimmer ${titleSize} font-bold text-white mb-4 jazz-text-shadow`}>
               Agendamento
-            </h1>
+            </h2>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
           <img
@@ -62,7 +62,7 @@ const BookingSection = () => {
                 id={eventType.serviceId}
               >
                 <div className="text-5xl mb-4">{eventType.icon}</div>
-                <h2 className={`font-glimmer ${cardTitleSize} jazz-gold font-bold mb-2`}>{eventType.title}</h2>
+                <h3 className={`font-glimmer ${cardTitleSize} jazz-gold font-bold mb-2`}>{eventType.title}</h3>
                 <p className={`font-gatsbybold text-gray-400 ${textSize}`}>{eventType.description}</p>
               </div>
             ))}
@@ -108,9 +108,9 @@ const BookingSection = () => {
 
       {/* Agenda de Shows */}
       <div className="mt-24 animate-fade-in">
-        <h2 className={`font-glimmer ${titleSize} jazz-gold font-bold text-center mb-6`}>
+        <h3 className={`font-glimmer ${titleSize} jazz-gold font-bold text-center mb-6`}>
           Próximos Shows 
-        </h2>
+        </h3>
         <div className="w-full flex justify-center mb-8">
           <img
             src={lineArtDeco}
