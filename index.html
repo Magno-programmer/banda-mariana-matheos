@@ -64,26 +64,34 @@
       .animate-fade-in{animation:fade-in 0.6s ease-out}
     </style>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/src/main.tsx" as="script">
-    <link rel="preload" href="/glimmer-of-light.otf" as="font" type="font/otf" crossorigin="anonymous">
-    <link rel="preload" href="/GatsbyFLF-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-    <link rel="preload" href="/GatsbyFLF.ttf" as="font" type="font/ttf" crossorigin="anonymous">
-    
-    <!-- Non-blocking CSS loading -->
-    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
-
-    <!-- Google Fonts with font-display: swap -->
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Critical font preload only -->
+    <link rel="preload" href="/glimmer-of-light.otf" as="font" type="font/otf" crossorigin="anonymous" fetchpriority="high">
+    
+    <!-- High priority CSS preload -->
+    <link rel="preload" href="/src/index.css" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
+    
+    <!-- Progressive font loading -->
+    <link rel="preload" href="/GatsbyFLF-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" fetchpriority="low">
+    <link rel="preload" href="/GatsbyFLF.ttf" as="font" type="font/ttf" crossorigin="anonymous" fetchpriority="low">
+
+    <!-- Non-blocking Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Prefetch important images -->
-    <link rel="prefetch" as="image" href="/images/cantora.avif">
-    <link rel="prefetch" as="image" href="/images/banda-blue-jazz-concurso.avif">
-    <link rel="prefetch" as="image" href="/images/baixista.avif">
+    <!-- Preload critical script -->
+    <link rel="modulepreload" href="/src/main.tsx" fetchpriority="high">
+
+    <!-- Hero images prefetch -->
+    <link rel="prefetch" as="image" href="/images/cantora.avif" fetchpriority="low">
+    <link rel="prefetch" as="image" href="/images/banda-blue-jazz-concurso.avif" fetchpriority="low">
+    <link rel="prefetch" as="image" href="/images/baixista.avif" fetchpriority="low">
   </head>
   <body>
     <div id="root"></div>
