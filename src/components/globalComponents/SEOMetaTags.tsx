@@ -9,6 +9,7 @@ interface SEOMetaTagsProps {
   ogImage?: string;
   pageType?: 'website' | 'article' | 'profile';
   isOptimizedForCTR?: boolean;
+  robotsContent?: string;
 }
 
 // Optimized meta descriptions for better CTR
@@ -32,7 +33,8 @@ const SEOMetaTags = ({
   canonicalUrl,
   ogImage = "/images/banda.avif",
   pageType = "website",
-  isOptimizedForCTR = true
+  isOptimizedForCTR = true,
+  robotsContent = "index, follow"
 }: SEOMetaTagsProps) => {
   const baseUrl = "https://marianamatheos.com.br";
   const fullCanonicalUrl = canonicalUrl ? `${baseUrl}${canonicalUrl}` : baseUrl;
@@ -66,7 +68,7 @@ const SEOMetaTags = ({
         <meta name="twitter:image" content={fullOgImage} />
         
         {/* Additional SEO tags */}
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content={robotsContent} />
         <meta name="author" content="Mariana Matheos Jazz Band" />
         <meta name="theme-color" content="#800000" />
       </Helmet>
