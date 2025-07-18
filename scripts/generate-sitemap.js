@@ -382,7 +382,7 @@ function main() {
 }
 
 // Execute if run directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (import.meta.url === `file://${__filename}`) {
   main();
 }
 
