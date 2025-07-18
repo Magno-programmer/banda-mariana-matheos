@@ -9,7 +9,16 @@ const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/favicon.png',
+  '/favicon-16x16.png',
+  '/favicon-32x32.png',
+  '/favicon-48x48.png',
+  '/icon-192x192.png',
+  '/icon-256x256.png',
+  '/icon-384x384.png',
+  '/icon-512x512.png',
+  '/icon-maskable-192x192.png',
+  '/icon-maskable-512x512.png',
+  '/apple-touch-icon-180x180.png',
   '/robots.txt',
   '/sitemap.xml'
 ];
