@@ -137,6 +137,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  size-adjust: 100%;
 }
 
 @font-face {
@@ -145,6 +146,7 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap;
+  size-adjust: 100%;
 }
 
 @font-face {
@@ -153,6 +155,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  size-adjust: 100%;
 }
 
 /* Custom Jazz Theme Styles */

@@ -71,9 +71,9 @@ export default {
 				'jazz-red': '#800000'
 			},
 			fontFamily: {
-				'glimmer': ['glimmer of light', 'serif'],
-				'gatsbybold': ['GatsbyFLF-Bold', 'serif'],
-				'gatsby': ['GatsbyFLF', 'serif'],
+				'glimmer': ['glimmer of light', 'Playfair Display', 'Georgia', 'serif'],
+				'gatsbybold': ['GatsbyFLF-Bold', 'Playfair Display', 'Georgia', 'serif'],
+				'gatsby': ['GatsbyFLF', 'Crimson Text', 'Georgia', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
