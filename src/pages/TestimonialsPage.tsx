@@ -5,7 +5,7 @@ import SEOMetaTags from "@/components/globalComponents/SEOMetaTags";
 
 // Importing components
 import Header from "@/components/sections/commonPages/header/Header";
-import AvaliationSection from "@/components/sections/depoimentos/AvaliationSection";
+import TestimonialsSection from "@/components/sections/depoimentos/TestimonialsSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
@@ -27,7 +27,7 @@ const TestimonialsPage = () => {
       <div className="min-h-screen bg-black">
         <Header />
         <AdvancedBreadcrumb />
-        <AvaliationSection />
+        <TestimonialsSection />
         <RelatedPagesSection 
           variant="grid"
           maxLinks={6}
