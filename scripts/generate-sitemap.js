@@ -96,18 +96,18 @@ const STATIC_PAGES = [
 
 // Musician biographies (static content)
 const MUSICIANS_DATA = [
-  { slug: 'billie-holiday', publishedDate: '2024-12-15' },
-  { slug: 'ella-fitzgerald', publishedDate: '2024-12-16' },
-  { slug: 'etta-james', publishedDate: '2024-12-17' },
-  { slug: 'amy-winehouse', publishedDate: '2024-12-18' },
-  { slug: 'frank-sinatra', publishedDate: '2024-12-19' },
-  { slug: 'nina-simone', publishedDate: '2024-12-20' },
-  { slug: 'beth-hart', publishedDate: '2024-12-21' },
-  { slug: 'bb-king', publishedDate: '2024-12-22' },
-  { slug: 'andra-day', publishedDate: '2024-12-23' },
-  { slug: 'nat-king-cole', publishedDate: '2024-12-24' },
-  { slug: 'kitty-kallen', publishedDate: '2024-12-25' },
-  { slug: 'glenn-miller', publishedDate: '2024-12-26' }
+  { slug: 'billie-holiday', publishedDate: '2025-07-17' },
+  { slug: 'ella-fitzgerald', publishedDate: '2025-07-17' },
+  { slug: 'etta-james', publishedDate: '2025-07-17' },
+  { slug: 'amy-winehouse', publishedDate: '2025-07-17' },
+  { slug: 'frank-sinatra', publishedDate: '2025-07-17' },
+  { slug: 'nina-simone', publishedDate: '2025-07-17' },
+  { slug: 'beth-hart', publishedDate: '2025-07-17' },
+  { slug: 'bb-king', publishedDate: '2025-07-17' },
+  { slug: 'andra-day', publishedDate: '2025-07-17' },
+  { slug: 'nat-king-cole', publishedDate: '2025-07-17' },
+  { slug: 'kitty-kallen', publishedDate: '2025-07-17' },
+  { slug: 'glenn-miller', publishedDate: '2025-07-17' }
 ];
 
 /**
