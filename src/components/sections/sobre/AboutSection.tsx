@@ -1,12 +1,12 @@
 
 import React, {useRef, useState} from 'react';
-import bordarArtDeco from '@/assets/images/divisor-de-textos.png';
-import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
+import bordarArtDeco from '/images/divisor-de-textos.avif';
+import lineArtDeco from '/images/divisor-de-sessao.avif';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const AboutSection = () => {
 
-  const [imagemUnica] = useState({src: '/images/cantora.png', alt: 'Artista musical Mariana Matheos, vocalista e fundadora da banda de jazz, em retrato artístico elegante com expressão sofisticada e presença cênica marcante'});
+  const [imagemUnica] = useState({src: '/images/cantora.avif', alt: 'Artista musical Mariana Matheos, vocalista e fundadora da banda de jazz, em retrato artístico elegante com expressão sofisticada e presença cênica marcante'});
   const { isMiniMobile, isMobile, isTablet } = useAdvancedViewport();
 
   const titleSize = isMobile ? 'text-4xl' : isTablet ? 'text-5xl' : 'text-6xl';

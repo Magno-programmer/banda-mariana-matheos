@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
+import logoWhite from '/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.avif';
 import { useNavigate } from 'react-router-dom';
 import VoiceAccessibilityButton from '@/components/globalComponents/VoiceAccessibilityButton';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';

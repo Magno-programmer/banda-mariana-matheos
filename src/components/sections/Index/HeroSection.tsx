@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logoGold from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png';
-import bandaCompletaPalco from '@/assets/images/imagem-da-banda.jpg';
-import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
-import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
-import bordabuttonArtDeco from '@/assets/images/divisor-de-botao.png';
+import logoGold from '/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.avif';
+import bandaCompletaPalco from '/images/imagem-da-banda.avif';
+import logoWhite from '/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.avif';
+import lineArtDeco from '/images/divisor-de-sessao.avif';
+import bordabuttonArtDeco from '/images/divisor-de-botao.avif';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 import TestimonialSection from './TestimonialSection';
 

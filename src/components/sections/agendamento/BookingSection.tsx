@@ -1,6 +1,6 @@
 
 import React from 'react';
-import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
+import lineArtDeco from '/images/divisor-de-sessao.avif';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 import { eventsData, serviceOfferings } from '@/data/eventData';
 import { isFutureEvent } from '@/utils/dateUtils';

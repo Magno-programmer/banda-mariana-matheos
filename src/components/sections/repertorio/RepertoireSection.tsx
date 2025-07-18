@@ -1,7 +1,7 @@
 
 import React from 'react';
-import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
-import bordaComum from '@/assets/images/borda-comum-gold.png';
+import lineArtDeco from '/images/divisor-de-sessao.avif';
+import bordaComum from '/images/borda-comum-gold.avif';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const RepertoireSection = () => {

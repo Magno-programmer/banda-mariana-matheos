@@ -29,7 +29,7 @@ const SEOMetaTags = ({
   description, 
   keywords = "banda de jazz belo horizonte, música ao vivo, casamentos, eventos corporativos, shows, mariana matheos, jazz band bh",
   canonicalUrl,
-  ogImage = "/images/banda.png",
+  ogImage = "/images/banda.avif",
   pageType = "website",
   isOptimizedForCTR = true
 }: SEOMetaTagsProps) => {

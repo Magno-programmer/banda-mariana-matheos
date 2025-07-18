@@ -1,5 +1,5 @@
 import React from 'react';
-import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
+import lineArtDeco from '/images/divisor-de-sessao.avif';
 import { useNavigate } from 'react-router-dom';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 

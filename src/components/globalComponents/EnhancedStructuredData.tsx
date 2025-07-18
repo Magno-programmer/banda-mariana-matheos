@@ -76,7 +76,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 '/',
                 'Mariana Matheos Jazz Band - Música ao Vivo para Eventos',
                 'Banda de jazz para casamentos e eventos corporativos. Repertório profissional de jazz, bossa nova e música brasileira. Qualidade garantida.',
-                'https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.png'
+                'https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.avif'
               ))
             }} 
           />
@@ -136,7 +136,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 '/sobre',
                 'Sobre a Banda - Mariana Matheos Jazz Band',
                 'História da Mariana Matheos Jazz Band, formação especializada em jazz, bossa nova e música brasileira para eventos especiais.',
-                'https://marianamatheos.com.br/public/images/cantora.png'
+                'https://marianamatheos.com.br/public/images/cantora.avif'
               ))
             }} 
           />
@@ -181,7 +181,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 '/fotos',
                 'Galeria de Fotos - Mariana Matheos Jazz Band',
                 'Fotos das apresentações da Mariana Matheos Jazz Band em eventos, casamentos e shows. Veja a banda em ação!',
-                'https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.png'
+                'https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.avif'
               ))
             }} 
           />
@@ -191,11 +191,11 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
             type="application/ld+json" 
             dangerouslySetInnerHTML={{ 
               __html: JSON.stringify(generateImageGallerySchema([
-                { url: "https://marianamatheos.com.br/public/images/baixista.png", caption: "Baixista da Mariana Matheos Jazz Band" },
-                { url: "https://marianamatheos.com.br/public/images/pianista.png", caption: "Pianista da Mariana Matheos Jazz Band" },
-                { url: "https://marianamatheos.com.br/public/images/baterista.png", caption: "Baterista da Mariana Matheos Jazz Band" },
-                { url: "https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.png", caption: "Mariana Matheos Jazz Band em Concurso de Jazz" },
-                { url: "https://marianamatheos.com.br/public/images/banda.png", caption: "Formação Completa da Banda" }
+                { url: "https://marianamatheos.com.br/public/images/baixista.avif", caption: "Baixista da Mariana Matheos Jazz Band" },
+                { url: "https://marianamatheos.com.br/public/images/pianista.avif", caption: "Pianista da Mariana Matheos Jazz Band" },
+                { url: "https://marianamatheos.com.br/public/images/baterista.avif", caption: "Baterista da Mariana Matheos Jazz Band" },
+                { url: "https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.avif", caption: "Mariana Matheos Jazz Band em Concurso de Jazz" },
+                { url: "https://marianamatheos.com.br/public/images/banda.avif", caption: "Formação Completa da Banda" }
               ]))
             }} 
           />
@@ -240,7 +240,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 '/videos',
                 'Vídeos - Mariana Matheos Jazz Band',
                 'Vídeos das apresentações da Mariana Matheos Jazz Band. Conheça nosso repertório e qualidade musical em ação.',
-                'https://img.youtube.com/vi/CO_yWe9z8S0/hqdefault.jpg'
+                'https://img.youtube.com/vi/CO_yWe9z8S0/hqdefault.avif'
               ))
             }} 
           />
@@ -254,21 +254,21 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                   url: "https://www.youtube.com/watch?v=CO_yWe9z8S0",
                   name: "All About That Bass - Postmodern Jukebox Cover (Matozinhos)",
                   description: "Versão cover em estilo vintage jazz de \"All About That Bass\" apresentada ao vivo em Matozinhos.",
-                  thumbnailUrl: "https://img.youtube.com/vi/CO_yWe9z8S0/hqdefault.jpg",
+                  thumbnailUrl: "https://img.youtube.com/vi/CO_yWe9z8S0/hqdefault.avif",
                   uploadDate: "2024-01-15T08:00:00+00:00"
                 },
                 {
                   url: "https://www.youtube.com/watch?v=h8z62Ae5a9Q",
                   name: "Blue Moon - Billie Holiday (Festival Jazz & Blues)",
                   description: "Interpretação jazzística da clássica \"Blue Moon\", apresentada no Festival de Jazz & Blues.",
-                  thumbnailUrl: "https://img.youtube.com/vi/h8z62Ae5a9Q/hqdefault.jpg",
+                  thumbnailUrl: "https://img.youtube.com/vi/h8z62Ae5a9Q/hqdefault.avif",
                   uploadDate: "2024-02-20T08:00:00+00:00"
                 },
                 {
                   url: "https://www.youtube.com/watch?v=3vUOFhwE134",
                   name: "Summertime (Festival Jazz & Blues)",
                   description: "Performance intensa e envolvente da icônica \"Summertime\", durante o Festival Jazz & Blues.",
-                  thumbnailUrl: "https://img.youtube.com/vi/3vUOFhwE134/hqdefault.jpg",
+                  thumbnailUrl: "https://img.youtube.com/vi/3vUOFhwE134/hqdefault.avif",
                   uploadDate: "2024-03-15T08:00:00+00:00"
                 }
               ]))
@@ -315,7 +315,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 '/repertorio',
                 'Repertório - Mariana Matheos Jazz Band',
                 'Repertório completo da Mariana Matheos Jazz Band: jazz clássico, bossa nova, blues, swing e música brasileira para todos os eventos.',
-                'https://marianamatheos.com.br/public/images/banda.png'
+                'https://marianamatheos.com.br/public/images/banda.avif'
               ))
             }} 
           />
@@ -360,7 +360,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 '/agenda',
                 'Agendamento - Mariana Matheos Jazz Band',
                 'Agende sua apresentação com a Mariana Matheos Jazz Band. Música ao vivo para casamentos, eventos corporativos e shows especiais.',
-                'https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.png'
+                'https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.avif'
               ))
             }} 
           />
@@ -429,7 +429,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 '/faq',
                 'FAQ - Perguntas Frequentes | Mariana Matheos Jazz Band',
                 'Dúvidas sobre contratação, repertório e serviços da Mariana Matheos Jazz Band. Respostas às perguntas mais comuns dos clientes.',
-                'https://marianamatheos.com.br/public/images/banda.png'
+                'https://marianamatheos.com.br/public/images/banda.avif'
               ))
             }} 
           />
@@ -503,7 +503,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 '/depoimentos',
                 'Depoimentos - Mariana Matheos Jazz Band',
                 'Avaliações 5 estrelas no Google e depoimentos de clientes satisfeitos com os shows da Mariana Matheos Jazz Band.',
-                'https://marianamatheos.com.br/public/images/banda.png'
+                'https://marianamatheos.com.br/public/images/banda.avif'
               ))
             }} 
           />
@@ -556,7 +556,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 '/contato',
                 'Contato - Mariana Matheos Jazz Band',
                 'Contato da Mariana Matheos Jazz Band para agendamentos e informações sobre shows e apresentações musicais.',
-                'https://marianamatheos.com.br/public/images/banda.png'
+                'https://marianamatheos.com.br/public/images/banda.avif'
               ))
             }} 
           />
@@ -609,7 +609,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 '/blog',
                 'Blog Mariana Matheos Jazz',
                 'Artigos sobre música jazz, dicas para eventos e inspirações musicais da banda Mariana Matheos Jazz em Belo Horizonte',
-                'https://marianamatheos.com.br/images/blog-hero.jpg'
+                'https://marianamatheos.com.br/images/blog-hero.avif'
               ))
             }} 
           />
@@ -711,7 +711,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 path,
                 'Mariana Matheos Jazz Band',
                 'Banda de jazz para casamentos e eventos corporativos. Repertório profissional de jazz, bossa nova e música brasileira.',
-                'https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.png'
+                'https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.avif'
               ))
             }} 
           />

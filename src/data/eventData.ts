@@ -109,7 +109,7 @@ export const eventsData: PerformanceEvent[] = [
       validFrom: "2025-07-01T00:00:00-03:00",
       url: "https://marianamatheos.com.br/agenda"
     },
-    image: "https://marianamatheos.com.br/public/images/banda.png",
+    image: "https://marianamatheos.com.br/public/images/banda.avif",
     description: "Uma noite especial de jazz com a Mariana Matheos e sua banda, apresentando clássicos de Billie Holiday e Amy Winehouse.",
     performer: {
       name: "Mariana Matheos Jazz Band"
@@ -133,7 +133,7 @@ export const eventsData: PerformanceEvent[] = [
       validFrom: "2025-07-01T00:00:00-03:00",
       url: "https://marianamatheos.com.br/agenda"
     },
-    image: "https://marianamatheos.com.br/public/images/banda.png",
+    image: "https://marianamatheos.com.br/public/images/banda.avif",
     description: "Show de jazz ao vivo em ambiente intimista no Soul Jazz Burguer, com os grandes sucessos da era do jazz.",
     performer: {
       name: "Mariana Matheos Jazz Band"
@@ -157,7 +157,7 @@ export const eventsData: PerformanceEvent[] = [
       validFrom: "2025-07-01T00:00:00-03:00",
       url: "https://marianamatheos.com.br/agenda"
     },
-    image: "https://marianamatheos.com.br/public/images/banda.png",
+    image: "https://marianamatheos.com.br/public/images/banda.avif",
     description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
     performer: {
       name: "Mariana Matheos Jazz Band"
@@ -200,7 +200,7 @@ export const serviceOfferings: ServiceOffering[] = [
       validFrom: "2024-01-01",
       validThrough: "2025-12-31"
     },
-    image: "https://marianamatheos.com.br/src/assets/images/casamento-jazz-band.jpg"
+    image: "https://marianamatheos.com.br/src/assets/images/casamento-jazz-band.avif"
   },
   {
     id: "service-corporate",
@@ -216,7 +216,7 @@ export const serviceOfferings: ServiceOffering[] = [
       validFrom: "2024-01-01",
       validThrough: "2025-12-31"
     },
-    image: "https://marianamatheos.com.br/src/assets/images/eventos-corporativos.jpg"
+    image: "https://marianamatheos.com.br/src/assets/images/eventos-corporativos.avif"
   },
   {
     id: "service-private",
@@ -232,6 +232,6 @@ export const serviceOfferings: ServiceOffering[] = [
       validFrom: "2024-01-01",
       validThrough: "2025-12-31"
     },
-    image: "https://marianamatheos.com.br/public/images/jazz-standard.jpg"
+    image: "https://marianamatheos.com.br/public/images/jazz-standard.avif"
   }
 ];

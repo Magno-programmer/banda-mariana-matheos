@@ -3,7 +3,7 @@ import React from 'react';
 import { Star } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
-import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
+import lineArtDeco from '/images/divisor-de-sessao.avif';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const AvaliationSection = () => {

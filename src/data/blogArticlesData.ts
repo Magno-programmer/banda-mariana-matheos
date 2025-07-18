@@ -1,23 +1,23 @@
-import casamentoImage from '@/assets/images/casamento-jazz-band.jpg';
-import historiaJazzImage from '@/assets/images/historia-jazz-brasil.jpg';
-import eventosCorporativosImage from '@/assets/images/eventos-corporativos.jpg';
-import marianaEssenciaImage from '/images/cantora.png';
-import jazzStandardsImage from '/images/jazz-standard.jpg';
-import bandaDeJazzImage from '/images/banda-de-jazz-1920.jpg';
+import casamentoImage from '/images/casamento-jazz-band.avif';
+import historiaJazzImage from '/images/historia-jazz-brasil.avif';
+import eventosCorporativosImage from '/images/eventos-corporativos.avif';
+import marianaEssenciaImage from '/images/cantora.avif';
+import jazzStandardsImage from '/images/jazz-standard.avif';
+import bandaDeJazzImage from '/images/banda-de-jazz-1920.avif';
 
 // Singer portraits
-import billieHolidayImage from '@/assets/images/billie-holiday.jpg';
-import ellaFitzgeraldImage from '@/assets/images/ella-fitzgerald.jpg';
-import ettaJamesImage from '@/assets/images/etta-james.jpg';
-import amyWinehouseImage from '@/assets/images/amy-winehouse.jpg';
-import frankSinatraImage from '@/assets/images/frank-sinatra.jpg';
-import ninaSimoneImage from '@/assets/images/nina-simone.jpg';
-import bethHartImage from '@/assets/images/beth-hart.jpg';
-import bbKingImage from '@/assets/images/bb-king.jpg';
-import andraDayImage from '@/assets/images/andra-day.jpg';
-import natKingColeImage from '@/assets/images/nat-king-cole.jpg';
-import kittyKallenImage from '@/assets/images/kitty-kallen.jpg';
-import glennMillerImage from '@/assets/images/glenn-miller.jpg';
+import billieHolidayImage from '/images/billie-holiday.avif';
+import ellaFitzgeraldImage from '/images/ella-fitzgerald.avif';
+import ettaJamesImage from '/images/etta-james.avif';
+import amyWinehouseImage from '/images/amy-winehouse.avif';
+import frankSinatraImage from '/images/frank-sinatra.avif';
+import ninaSimoneImage from '/images/nina-simone.avif';
+import bethHartImage from '/images/beth-hart.avif';
+import bbKingImage from '/images/bb-king.avif';
+import andraDayImage from '/images/andra-day.avif';
+import natKingColeImage from '/images/nat-king-cole.avif';
+import kittyKallenImage from '/images/kitty-kallen.avif';
+import glennMillerImage from '/images/glenn-miller.avif';
 
 export interface BlogArticle {
   id: string;

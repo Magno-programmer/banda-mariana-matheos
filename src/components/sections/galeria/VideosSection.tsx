@@ -14,7 +14,7 @@ const VideosSection = () => {
     { title: "Summertime (Festival Jazz & Blues)", url: "https://www.youtube.com/embed/3vUOFhwE134" },
   ]);
 
-  const thumbnailUrl = "https://img.youtube.com/vi/3vUOFhwE134/hqdefault.jpg"; // Default thumbnail URL
+  const thumbnailUrl = "https://img.youtube.com/vi/3vUOFhwE134/hqdefault.avif"; // Default thumbnail URL
 
   const handleVideoSelect = (url) => {
     setVideoUrl(url);

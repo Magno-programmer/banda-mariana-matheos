@@ -217,7 +217,7 @@ const BlogArticlePage = () => {
               "url": "https://marianamatheos.com.br",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://marianamatheos.com.br/images/logo.png",
+                "url": "https://marianamatheos.com.br/images/logo.avif",
                 "width": 600,
                 "height": 200
               },
