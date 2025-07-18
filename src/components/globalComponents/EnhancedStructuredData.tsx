@@ -534,6 +534,14 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
               __html: JSON.stringify(generateLocalBusinessSchema())
             }} 
           />
+
+          {/* Review Schema para Rich Snippets */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateReviewSchema())
+            }} 
+          />
           
           {/* Breadcrumb Schema */}
           <script 

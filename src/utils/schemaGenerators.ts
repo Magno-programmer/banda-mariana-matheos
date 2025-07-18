@@ -1157,11 +1157,90 @@ export const generateProductSchema = (): object[] => {
   }));
 };
 
-export const generateEnhancedEventSchema = (eventId: string) => {
+// Enhanced Event Schema com GPS, pricing e venue completos
+export const generateEnhancedEventSchema = (eventId: string): object | null => {
   const event = eventsData.find(e => e.id === eventId);
-  return event ? {
-    "@context": "https://schema.org", 
+  if (!event) return null;
+  
+  // Parse da data no formato correto
+  const [day, month] = event.shortDate.split('/');
+  const startDate = `2025-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${event.time}:00-03:00`;
+  const endDateTime = new Date(startDate);
+  endDateTime.setHours(endDateTime.getHours() + event.durationHours);
+  
+  return {
+    "@context": "https://schema.org",
     "@type": "MusicEvent",
-    "name": event.name
-  } : null;
+    "name": event.name,
+    "description": event.description,
+    "startDate": startDate,
+    "endDate": endDateTime.toISOString().replace('Z', '-03:00'),
+    "eventStatus": `https://schema.org/${event.eventStatus}`,
+    "eventAttendanceMode": `https://schema.org/${event.eventAttendanceMode}`,
+    "location": {
+      "@type": "MusicVenue",
+      "name": event.location.name,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": event.location.address.streetAddress,
+        "addressLocality": event.location.address.addressLocality,
+        "addressRegion": event.location.address.addressRegion,
+        "postalCode": event.location.address.postalCode,
+        "addressCountry": event.location.address.addressCountry
+      },
+      "geo": event.location.geo ? {
+        "@type": "GeoCoordinates",
+        "latitude": event.location.geo.latitude,
+        "longitude": event.location.geo.longitude
+      } : undefined,
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Acessibilidade",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification", 
+          "name": "Estacionamento",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Sistema de Som",
+          "value": true
+        }
+      ]
+    },
+    "performer": {
+      "@type": "MusicGroup",
+      "name": event.performer.name,
+      "sameAs": "https://marianamatheos.com.br"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Mariana Matheos Jazz Band",
+      "url": "https://marianamatheos.com.br"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": event.offer.price,
+      "priceCurrency": event.offer.priceCurrency,
+      "availability": `https://schema.org/${event.offer.availability}`,
+      "validFrom": event.offer.validFrom,
+      "url": event.offer.url,
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": event.offer.price,
+        "priceCurrency": event.offer.priceCurrency,
+        "valueAddedTaxIncluded": true
+      }
+    },
+    "image": [event.image],
+    "url": "https://marianamatheos.com.br/agenda",
+    "genre": ["Jazz", "Blues", "Soul"],
+    "inLanguage": "pt-BR",
+    "isAccessibleForFree": false,
+    "maximumAttendeeCapacity": 50,
+    "typicalAgeRange": "18-"
+  };
 };
