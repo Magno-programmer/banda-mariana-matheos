@@ -116,7 +116,7 @@ export const blogArticlesData: BlogArticle[] = [
 
     `,
     image: marianaEssenciaImage,
-    imageAlt: 'Artista musical Mariana Matheos, vocalista principal da banda de jazz, em retrato artístico elegante demonstrando presença cênica sofisticada',
+    imageAlt: 'Mariana Matheos, vocalista da banda de jazz, em performance ao vivo para evento elegante em Belo Horizonte - música profissional para casamentos e eventos especiais em MG',
     category: 'Jazz',
     tags: ['banda', 'música ao vivo', 'eventos', 'jazz', 'mariana matheos'],
     publishedDate: '2025-07-17',
@@ -287,7 +287,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>Pronto para encontrar a banda perfeita para seu casamento? Entre em contato conosco e descubra como podemos tornar seu dia ainda mais especial com a magia da música ao vivo.</em></p>
     `,
     image: casamentoImage,
-    imageAlt: 'Grupo musical de jazz em apresentação ao vivo durante cerimônia de casamento elegante, ambiente romântico com iluminação suave',
+    imageAlt: 'Banda de jazz Mariana Matheos em apresentação ao vivo para casamento elegante em Belo Horizonte - música romântica para cerimônia e recepção em Minas Gerais',
     category: 'Eventos',
     tags: ['casamento', 'banda', 'música ao vivo', 'dicas', 'evento elegante'],
     publishedDate: '2025-07-17',
@@ -517,7 +517,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>Interessado em conhecer mais sobre o jazz brasileiro? Venha experienciar essa rica tradição musical ao vivo com a banda Mariana Matheos Jazz.</em></p>
     `,
     image: historiaJazzImage,
-    imageAlt: 'Artistas musicais brasileiros dos anos 1920 tocando jazz em ambiente vintage, demonstrando as primeiras manifestações do jazz no Brasil',
+    imageAlt: 'História do jazz brasileiro - músicos pioneiros dos anos 1920 em São Paulo e Rio de Janeiro, primeiras manifestações do jazz no Brasil com influência das rádios',
     category: 'Curiosidades',
     tags: ['jazz', 'história', 'brasil', 'cultura', 'música brasileira'],
     publishedDate: '2025-07-17',
@@ -787,7 +787,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>Pronto para transformar seus eventos corporativos com a magia da música ao vivo? Entre em contato conosco e descubra como podemos elevar a experiência dos seus eventos empresariais.</em></p>
     `,
     image: eventosCorporativosImage,
-    imageAlt: 'Grupo musical de jazz em apresentação profissional durante evento corporativo elegante, ambiente sofisticado com executivos',
+    imageAlt: 'Banda de jazz em evento corporativo empresarial em Belo Horizonte - música ao vivo profissional para networking e celebrações corporativas em Minas Gerais',
     category: 'Eventos',
     tags: ['eventos corporativos', 'música ao vivo', 'networking', 'empresas', 'confraternização'],
     publishedDate: '2025-07-17',
@@ -857,7 +857,7 @@ export const blogArticlesData: BlogArticle[] = [
       <p><em>Quer trazer a elegância dos jazz standards para seu evento? Fale com a gente e descubra como transformar seu momento especial com a trilha sonora dos clássicos eternos.</em></p>
     `,
     image: jazzStandardsImage,
-    imageAlt: 'Artista musical ao piano e vocalista interpretando jazz standard clássico em palco profissional com iluminação cênica elegante',
+    imageAlt: 'Performance de jazz standards clássicos - pianista e vocalista em interpretação de Summertime e outros clássicos do jazz americano em show ao vivo',
     category: 'Curiosidades',
     tags: ['jazz standards', 'repertório clássico', 'música ao vivo', 'jazz tradicional'],
     publishedDate: '2025-07-17',

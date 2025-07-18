@@ -63,7 +63,7 @@ const VideosSection = () => {
                 
                 <img
                     src={thumbnailUrl}
-                    alt="Capa do vídeo"
+                    alt="Vídeo performance da banda Mariana Matheos Jazz tocando Summertime no Festival Jazz & Blues de Tiradentes, Minas Gerais - música ao vivo para casamentos e eventos em BH"
                     className={`${videoHeight} ${videoWidth} object-cover`}
                     loading="lazy"
                 />

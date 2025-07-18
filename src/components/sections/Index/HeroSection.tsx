@@ -45,7 +45,7 @@ const HeroSection = () => {
           {/* imagem de fundo */}
           <img
             src={bandaCompletaPalco}
-            alt="Grupo musical Mariana Matheos em apresentação ao vivo energética no Festival Jazz & Blues de Tiradentes, Nova Lima-MG, com iluminação profissional de palco e plateia ao fundo"
+            alt="Banda de jazz Mariana Matheos em show ao vivo no Festival Jazz & Blues Tiradentes 2024, Minas Gerais - música para casamentos e eventos corporativos BH"
             className="absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
             loading="lazy"
           />
@@ -54,7 +54,7 @@ const HeroSection = () => {
           <div className="relative z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4 ">
             <img
               src={logoGold}
-              alt="Logotipo oficial da Mariana Matheos Jazz Band com textura dourada elegante e tipografia sofisticada em estilo Art Déco"
+              alt="Logotipo Mariana Matheos Jazz Band - banda de jazz profissional para casamentos e eventos em Belo Horizonte, Minas Gerais"
               className={`${logoWidth} mt-[15%] pb-[15%] object-contain drop-shadow-lg`}
               loading="eager"
             />

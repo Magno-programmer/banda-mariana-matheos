@@ -7,23 +7,23 @@ const ImageSection = () => {
   const [images, setImages] = useState([
     { 
       src: '/images/cantora.avif',
-      alt: 'Artista musical Mariana Matheos, vocalista principal da banda, em retrato elegante com expressão sofisticada e presença cênica marcante'
+      alt: 'Mariana Matheos, vocalista da banda de jazz, em performance elegante para casamento em Belo Horizonte - repertório da Era de Ouro do jazz e bossa nova'
     },
     { 
       src: '/images/baixista.avif',
-      alt: 'Artista musical Tarcíso Junior tocando baixo elétrico em performance ao vivo, demonstrando técnica apurada e groove característico do jazz'
+      alt: 'Baixista Tarcíso Junior da Mariana Matheos Jazz Band em performance para evento exclusivo em Belo Horizonte - groove profissional para cerimônias e celebrações'
     },
     { 
       src: '/images/baterista.avif',
-      alt: 'Artista musical Rubens Kalil na bateria em apresentação energética, com técnica precisa e ritmo swing característico do jazz moderno'
+      alt: 'Baterista Rubens Kalil da banda de jazz Mariana Matheos em show ao vivo em Nova Lima, MG - ritmo refinado para casamentos e eventos empresariais'
     },
     { 
       src: '/images/pianista.avif',
-      alt: 'Artista musical Carlos Nobre ao piano em performance íntima, demonstrando virtuosismo e sensibilidade musical em estilo jazz contemporâneo'
+      alt: 'Pianista Carlos Nobre da banda Mariana Matheos em performance sofisticada de jazz standards em evento corporativo, Belo Horizonte - música ao vivo para eventos especiais'
     },
     { 
       src: '/images/banda-blue-jazz-concurso.avif',
-      alt: 'Grupo musical Mariana Matheos Jazz Band em apresentação oficial no Festival de Jazz & Blues de Tiradentes 2025, palco profissional com iluminação cênica'
+      alt: 'Banda completa Mariana Matheos Jazz no Festival de Jazz & Blues de Tiradentes 2025, Minas Gerais - formação profissional para eventos especiais e casamentos em BH'
     },
   ]);
   
