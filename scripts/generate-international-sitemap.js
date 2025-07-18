@@ -5,6 +5,8 @@
 
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { pathToFileURL } from 'url';
 
 const baseUrl = 'https://marianamatheos.com.br';
 
@@ -343,7 +345,8 @@ async function generateInternationalSitemaps() {
 }
 
 // Run if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   generateInternationalSitemaps();
 }
 
