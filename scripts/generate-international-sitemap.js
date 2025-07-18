@@ -5,7 +5,6 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { pathToFileURL } from 'url';
 
 const baseUrl = 'https://marianamatheos.com.br';
@@ -249,8 +248,8 @@ function generateSitemapIndex() {
   const uniqueLanguages = [...new Set(markets.map(m => m.hreflang.split('-')[0]))];
   const sitemapUrls = [
     `${baseUrl}/sitemap.xml`,
-    `${baseUrl}/sitemap-international.xml`,
-    ...uniqueLanguages.map(lang => `${baseUrl}/sitemap-${lang}.xml`)
+    `${baseUrl}/international/sitemap-international.xml`,
+    ...uniqueLanguages.map(lang => `${baseUrl}/international/${lang}/sitemap-${lang}.xml`)
   ];
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -301,45 +300,41 @@ function validateGeneratedSitemaps() {
  */
 async function generateInternationalSitemaps() {
   const publicDir = path.join(process.cwd(), 'public');
-  
+  const intlDir   = path.join(publicDir, 'international');
+
+  // Cria public/ e public/international/ (se ainda não existirem)
+  fs.mkdirSync(publicDir, { recursive: true });
+  fs.mkdirSync(intlDir,   { recursive: true });
+
   try {
-    // Generate main sitemap with hreflang
-    const mainSitemap = generateMainSitemap();
-    fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), mainSitemap);
-    console.log('✅ Generated main sitemap with hreflang annotations');
-    
-    // Language-specific sitemaps
-    const uniqueLanguages = [...new Set(markets.map(m => m.hreflang.split('-')[0]))];
-    uniqueLanguages.forEach(lang => {
-      const marketForLang = markets.find(m => m.hreflang.startsWith(lang));
-      if (marketForLang) {
-        const languageSitemap = generateLanguageSitemap(marketForLang);
-        const filename = `sitemap-${lang}.xml`;
-        fs.writeFileSync(path.join(publicDir, filename), languageSitemap);
-        console.log(`✅ Generated ${filename}`);
-      }
+    // Sitemap principal
+    fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), generateMainSitemap());
+    console.log('✅ sitemap.xml gerado com hreflang');
+
+    // Sitemaps por idioma
+    const langs = [...new Set(markets.map(m => m.hreflang.split('-')[0]))];
+    langs.forEach(lang => {
+      const m = markets.find(mkt => mkt.hreflang.startsWith(lang));
+      if (!m) return;
+
+      const langDir = path.join(intlDir, lang);
+      fs.mkdirSync(langDir, { recursive: true });
+      const filePath = path.join(langDir, `sitemap-${lang}.xml`);
+      fs.writeFileSync(filePath, generateLanguageSitemap(m));
+      console.log(`✅ /international/${lang}/sitemap-${lang}.xml`);
     });
 
-    // International markets sitemap
-    const internationalSitemap = generateInternationalSitemap();
-    fs.writeFileSync(path.join(publicDir, 'sitemap-international.xml'), internationalSitemap);
-    console.log('✅ Generated international sitemap');
+    // Sitemap internacional (agrega todos sem split)
+    fs.writeFileSync(path.join(intlDir, 'sitemap-international.xml'), generateMainSitemap());
+    console.log('✅ sitemap-international.xml gerado');
 
-    // Sitemap index
-    const sitemapIndex = generateSitemapIndex();
-    fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), sitemapIndex);
-    console.log('✅ Generated sitemap index');
+    // Índice de sitemaps
+    fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), generateSitemapIndex());
+    console.log('✅ sitemap-index.xml gerado');
 
-    // Validate all generated sitemaps
-    validateGeneratedSitemaps();
-    console.log('✅ All sitemaps validated successfully');
-    
-    console.log('\n🎉 International sitemap generation completed!');
-    console.log(`📊 Generated sitemaps for ${markets.length} markets`);
-    console.log(`🌍 Covering 15+ languages and regional variants`);
-    
-  } catch (error) {
-    console.error('❌ Error generating international sitemaps:', error);
+    console.log('\n🎉 Todos os sitemaps gerados com sucesso!');
+  } catch (err) {
+    console.error('❌ Erro ao gerar sitemaps:', err);
     process.exit(1);
   }
 }
