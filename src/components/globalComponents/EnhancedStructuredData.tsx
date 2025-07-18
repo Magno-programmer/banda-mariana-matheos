@@ -14,6 +14,7 @@ import {
   generateFAQSchema,
   generateMusicEventSchema,
   generateImageGallerySchema,
+  generateAdvancedImageGallerySchema,
   generateVideoObjectSchema,
   generateReviewSchema,
   generateProductSchema,
@@ -193,7 +194,7 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
           <script 
             type="application/ld+json" 
             dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateImageGallerySchema())
+              __html: JSON.stringify(generateAdvancedImageGallerySchema())
             }} 
           />
           
