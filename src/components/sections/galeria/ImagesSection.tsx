@@ -1,10 +1,13 @@
-import React, {useState, useRef} from 'react';
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { generateImageObjectSchema } from '@/utils/schemaGenerators';
 import lineArtDeco from '/images/divisor-de-sessao.avif';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
-const ImageSection = () => {
-  const { isMiniMobile, isMobile, isMiniTablet, isTablet } = useAdvancedViewport();
-  const [images, setImages] = useState([
+const ImagesSection = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  
+  const images = [
     { 
       src: '/images/cantora.avif',
       alt: 'Mariana Matheos, vocalista da banda de jazz, em performance elegante para casamento em Belo Horizonte - repertório da Era de Ouro do jazz e bossa nova'
@@ -25,7 +28,19 @@ const ImageSection = () => {
       src: '/images/banda-blue-jazz-concurso.avif',
       alt: 'Banda completa Mariana Matheos Jazz no Festival de Jazz & Blues de Tiradentes 2025, Minas Gerais - formação profissional para eventos especiais e casamentos em BH'
     },
-  ]);
+  ];
+
+  const imageSchemas = images.map(image => generateImageObjectSchema({
+    url: `https://marianamatheos.com${image.src}`,
+    alt: image.alt,
+    width: 800,
+    height: 600,
+    caption: image.alt,
+    license: "https://marianamatheos.com/license",
+    creditText: "Mariana Matheos Jazz Band - Fotografia Profissional"
+  }));
+  
+  const { isMiniMobile, isMobile, isMiniTablet, isTablet } = useAdvancedViewport();
   
   const titleSize = isMobile ? 'text-4xl' : isTablet ? 'text-5xl' : 'text-7xl';
   const textSize = isMobile ? 'text-lg' : isTablet ? 'text-xl' : 'text-2xl';
@@ -34,20 +49,26 @@ const ImageSection = () => {
   const imageHeight = isMiniMobile ? 'h-[55vh]' : isMobile ? 'h-56' : isMiniTablet ? 'h-72' : 'h-96';
 
   return (
-    <section className="py-20 jazz-gradient relative">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-40 h-40 border border-jazz-gold rotate-45"></div>
-        <div className="absolute bottom-10 right-10 w-32 h-32 border border-jazz-gold rotate-12"></div>
-      </div>
+    <>
+      <Helmet>
+        {imageSchemas.map((schema, index) => (
+          <script key={`image-schema-${index}`} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
+      </Helmet>
+      
+      <section className="py-20 jazz-gradient relative">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-40 h-40 border border-jazz-gold rotate-45"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 border border-jazz-gold rotate-12"></div>
+        </div>
 
-      <div className="container mx-auto px-6 relative">
-        {/* Section Title */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className={`font-glimmer ${titleSize} font-bold jazz-gold mb-4 jazz-text-shadow`}>
-            Galeria de Fotos
-          </h1>
-            {/* Divisor decorativo acima */}
+        <div className="container mx-auto px-6 relative">
+          <div className="text-center mb-16 animate-fade-in">
+            <h1 className={`font-glimmer ${titleSize} font-bold jazz-gold mb-4 jazz-text-shadow`}>
+              Galeria de Fotos
+            </h1>
             <div className="w-full flex justify-center mb-4">
               <img
                 src={lineArtDeco}
@@ -57,48 +78,60 @@ const ImageSection = () => {
                 loading="lazy"
               />
             </div>
-          <p className={`font-gatsbybold ${textSize} text-gray-400 max-w-2xl mx-auto`}>
-            Momentos especiais capturados durante nossas apresentações exclusivas 
-          </p>
-        </div>
+            <p className={`font-gatsbybold ${textSize} text-gray-400 max-w-2xl mx-auto`}>
+              Momentos especiais capturados durante nossas apresentações exclusivas 
+            </p>
+          </div>
 
-        {/* Gallery Grid */}
-        <div className={`grid ${gridCols} gap-6 max-w-6xl mx-auto`}>
-          {images.map((image, index) => (
-            <div 
-              key={index}
-              className="group animate-scale-in relative overflow-hidden"
-              style={{animationDelay: `${index * 0.1}s`}}
-            >
-              {/* Art Deco frame */}
-              <div className="absolute -inset-2 border-2 border-jazz-gold opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10"></div>
-              
-              <div className="relative overflow-hidden bg-jazz-dark">
-                <img 
-                  src={image.src}
-                  alt={image.alt}
-                  className={`w-full ${imageHeight} object-cover filter sepia-[0.2] contrast-110 group-hover:scale-110 transition-transform duration-500`}
-                  loading="lazy"
-                />
+          <div className={`grid ${gridCols} gap-6 max-w-6xl mx-auto`}>
+            {images.map((image, index) => (
+              <div 
+                key={index}
+                className="group animate-scale-in relative overflow-hidden"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                <div className="absolute -inset-2 border-2 border-jazz-gold opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10"></div>
                 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-                
-                {/* Hover effect */}
-                <div className="absolute inset-0 bg-jazz-gold bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                <div className="relative overflow-hidden bg-jazz-dark">
+                  <img 
+                    src={image.src}
+                    alt={image.alt}
+                    className={`w-full ${imageHeight} object-cover filter sepia-[0.2] contrast-110 group-hover:scale-110 transition-transform duration-500`}
+                    loading="lazy"
+                  />
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                  <div className="absolute inset-0 bg-jazz-gold bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
 
-                {/* Caption */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className={`font-gatsbybold text-white ${captionSize}`}>{image.alt} </p>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <p className={`font-gatsbybold text-white ${captionSize}`}>{image.alt}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
 
+          {selectedImageIndex !== null && (
+            <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50" onClick={() => setSelectedImageIndex(null)}>
+              <div className="relative max-w-4xl max-h-4xl p-4">
+                <button 
+                  onClick={() => setSelectedImageIndex(null)}
+                  className="absolute top-4 right-4 text-white text-2xl hover:text-jazz-gold transition z-10"
+                >
+                  ✕
+                </button>
+                <img 
+                  src={images[selectedImageIndex].src}
+                  alt={images[selectedImageIndex].alt}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            </div>
+          )}
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
-export default ImageSection;
+export default ImagesSection;

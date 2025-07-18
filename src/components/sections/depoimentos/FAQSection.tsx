@@ -1,9 +1,39 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { generateFAQSchema } from '@/utils/schemaGenerators';
 import lineArtDeco from '/images/divisor-de-sessao.avif';
 import { useNavigate } from 'react-router-dom';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const FAQSection = () => {
+  const faqData = [
+    {
+      question: "Qual é o repertório da banda?",
+      answer: "Nosso repertório inclui clássicos do jazz, standards americanos, bossa nova e música brasileira instrumental. Temos mais de 200 músicas em nosso acervo."
+    },
+    {
+      question: "Quantos músicos compõem a banda?",
+      answer: "A formação padrão inclui voz, piano, baixo e bateria. Podemos adicionar instrumentos como saxofone, trompete ou violão conforme a necessidade do evento."
+    },
+    {
+      question: "Vocês fornecem equipamento de som?",
+      answer: "Sim, fornecemos todo o equipamento de som necessário, incluindo microfones, amplificadores e mesa de som adequados para o tamanho do evento."
+    },
+    {
+      question: "Qual é a duração das apresentações?",
+      answer: "Normalmente fazemos apresentações de 2 a 4 horas, com intervalos programados. A duração pode ser ajustada conforme suas necessidades."
+    },
+    {
+      question: "Vocês tocam em eventos ao ar livre?",
+      answer: "Sim, realizamos apresentações tanto em ambientes internos quanto externos. Para eventos ao ar livre, garantimos equipamentos adequados às condições climáticas."
+    },
+    {
+      question: "Como funciona a contratação?",
+      answer: "Entre em contato conosco através do WhatsApp ou formulário. Discutiremos detalhes do evento, repertório e forneceremos um orçamento personalizado."
+    }
+  ];
+
+  const faqSchema = generateFAQSchema(faqData);
   const navigate = useNavigate();
   const { isMobile, isTablet } = useAdvancedViewport();
 
@@ -152,7 +182,14 @@ const FAQSection = () => {
   const buttonSize = isMobile ? 'text-sm px-6 py-3' : isTablet ? 'text-base px-7 py-3' : 'text-base px-8 py-4';
 
   return (
-    <section className="py-20 jazz-gradient relative">
+    <>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+      
+      <section className="py-20 jazz-gradient relative">
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
@@ -271,6 +308,7 @@ const FAQSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

@@ -3,6 +3,81 @@
  * Functions to dynamically generate structured data for different schema types
  */
 
+// FAQ Schema Generator
+export const generateFAQSchema = (faqs: Array<{ question: string; answer: string }>) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  };
+};
+
+// Video Schema Generator
+export const generateVideoSchema = (video: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  duration?: string;
+  contentUrl?: string;
+  embedUrl?: string;
+}) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: video.name,
+    description: video.description,
+    thumbnailUrl: video.thumbnailUrl,
+    uploadDate: video.uploadDate,
+    duration: video.duration,
+    contentUrl: video.contentUrl,
+    embedUrl: video.embedUrl,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mariana Matheos Jazz Band',
+      url: 'https://marianamatheos.com'
+    }
+  };
+};
+
+// Enhanced ImageObject Schema Generator
+export const generateImageObjectSchema = (image: {
+  url: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+  license?: string;
+  acquireLicensePage?: string;
+  creditText?: string;
+}) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ImageObject',
+    contentUrl: image.url,
+    url: image.url,
+    name: image.alt,
+    alternateName: image.alt,
+    caption: image.caption || image.alt,
+    width: image.width,
+    height: image.height,
+    license: image.license,
+    acquireLicensePage: image.acquireLicensePage,
+    creditText: image.creditText || 'Mariana Matheos Jazz Band',
+    creator: {
+      '@type': 'Organization',
+      name: 'Mariana Matheos Jazz Band'
+    }
+  };
+};
+
 import { formatISODate, formatEventDate, getCurrentISODate, getCopyrightYearRange } from './dateUtils';
 import { eventsData, serviceOfferings, PerformanceEvent, ServiceOffering } from '@/data/eventData';
 import { blogArticlesData, BlogArticle } from '@/data/blogArticlesData';
@@ -613,22 +688,8 @@ export const generateWebPageSchema = (
 };
 
 /**
- * Generate FAQ Schema
+ * Generate FAQ Schema (legacy function kept for compatibility)
  */
-export const generateFAQSchema = (faqs: Array<{question: string, answer: string}>) => {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
-};
 
 /**
  * Generate Local Business Schema
