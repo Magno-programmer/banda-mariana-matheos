@@ -2,6 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import { exec } from "child_process";
+import { promisify } from "util";
+
+const execAsync = promisify(exec);
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -11,8 +15,22 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
+    // Dynamic sitemap generation plugin
+    {
+      name: 'sitemap-generator',
+      buildStart: async () => {
+        if (mode === 'production') {
+          console.log('🌐 Generating dynamic sitemap...');
+          try {
+            await execAsync('node scripts/generate-sitemap.js');
+            console.log('✅ Sitemap generated successfully');
+          } catch (error) {
+            console.warn('⚠️ Sitemap generation warning:', error instanceof Error ? error.message : String(error));
+          }
+        }
+      }
+    }
   ].filter(Boolean),
   resolve: {
     alias: {
