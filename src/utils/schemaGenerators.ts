@@ -21,15 +21,15 @@ export const generateOrganizationSchema = () => {
     "url": "https://marianamatheos.com.br",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://marianamatheos.com.br/src/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png",
+      "url": "https://marianamatheos.com.br//images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.avif",
       "width": 600,
       "height": 200,
       "caption": "Logo oficial da Mariana Matheos Jazz Band"
     },
     "image": [
-      "https://marianamatheos.com.br/src/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png",
-      "https://marianamatheos.com.br/public/images/cantora.png",
-      "https://marianamatheos.com.br/public/images/banda.png"
+      "https://marianamatheos.com.br//images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.avif",
+      "https://marianamatheos.com.br/images/cantora.avif",
+      "https://marianamatheos.com.br/images/banda.avif"
     ],
     "description": "Banda de jazz ao vivo sediada em Belo Horizonte, com repertório inspirado na Era de Ouro do Jazz. Especializada em eventos sofisticados, casamentos, festivais e repertório com grandes artistas como Billie Holiday, Amy Winehouse e Nina Simone.",
     "slogan": "A Elegância do Jazz em Seu Evento",
@@ -97,7 +97,7 @@ export const generateOrganizationSchema = () => {
         "@type": "Person",
         "name": "Mariana Matheos",
         "jobTitle": "Vocalista e Diretora Artística",
-        "image": "https://marianamatheos.com.br/public/images/cantora.png",
+        "image": "https://marianamatheos.com.br/images/cantora.avif",
         "description": "Vocalista principal e fundadora da banda, com formação em música e anos de experiência em jazz e música brasileira",
         "sameAs": [
           "https://instagram.com/marianamatheosoficial"
@@ -108,21 +108,21 @@ export const generateOrganizationSchema = () => {
         "name": "Carlos Magno",
         "jobTitle": "Pianista",
         "description": "Pianista com formação clássica e jazz, responsável pelos arranjos musicais",
-        "image": "https://marianamatheos.com.br/public/images/pianista.png"
+        "image": "https://marianamatheos.com.br/images/pianista.avif"
       },
       {
         "@type": "Person",
         "name": "Tarciso Júnior",
         "jobTitle": "Baixista e Guitarrista",
         "description": "Multi-instrumentista especializado em jazz e blues",
-        "image": "https://marianamatheos.com.br/public/images/baixista.png"
+        "image": "https://marianamatheos.com.br/images/baixista.avif"
       },
       {
         "@type": "Person",
         "name": "Rubens Kalil",
         "jobTitle": "Baterista",
         "description": "Baterista com experiência em diversos gêneros musicais",
-        "image": "https://marianamatheos.com.br/public/images/baterista.png"
+        "image": "https://marianamatheos.com.br/images/baterista.avif"
       },
       {
         "@type": "Person",
@@ -157,7 +157,7 @@ export const generateOrganizationSchema = () => {
           "validFrom": service.pricing.validFrom,
           "validThrough": service.pricing.validThrough
         },
-        "image": service.image || "https://marianamatheos.com.br/public/images/banda.png"
+        "image": service.image || "https://marianamatheos.com.br/images/banda.avif"
       }))
     },
     "potentialAction": {
@@ -551,9 +551,9 @@ export const generateLocalBusinessSchema = () => {
     "@id": "https://marianamatheos.com.br/#localbusiness",
     "name": "Mariana Matheos Jazz Band",
     "image": [
-      "https://marianamatheos.com.br/src/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png",
-      "https://marianamatheos.com.br/public/images/cantora.png",
-      "https://marianamatheos.com.br/public/images/banda.png"
+      "https://marianamatheos.com.br//images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.avif",
+      "https://marianamatheos.com.br/images/cantora.avif",
+      "https://marianamatheos.com.br/images/banda.avif"
     ],
     "priceRange": "R$ 2.500 - R$ 6.000",
     "telephone": "+55-31-99752-2127",

@@ -16,7 +16,7 @@
     
     <!-- Imagens principais da homepage -->
     <image:image>
-      <image:loc>https://marianamatheos.com.br/src/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png</image:loc>
+      <image:loc>https://marianamatheos.com.br//images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.avif</image:loc>
       <image:title>Logo Mariana Matheos Jazz Band</image:title>
       <image:caption>Logo oficial da Mariana Matheos Jazz Band com textura dourada</image:caption>
       <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
@@ -24,7 +24,7 @@
     </image:image>
     
     <image:image>
-      <image:loc>https://marianamatheos.com.br/src/assets/images/imagem-da-banda.jpg</image:loc>
+      <image:loc>https://marianamatheos.com.br//images/imagem-da-banda.jpg</image:loc>
       <image:title>Mariana Matheos Jazz Band - Foto da Banda</image:title>
       <image:caption>Apresentação da Mariana Matheos Jazz Band com músicos profissionais</image:caption>
       <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
@@ -41,7 +41,7 @@
     <mobile:mobile/>
     
     <image:image>
-      <image:loc>https://marianamatheos.com.br/public/images/cantora.png</image:loc>
+      <image:loc>https://marianamatheos.com.br/images/cantora.avif</image:loc>
       <image:title>Mariana Matheos - Vocalista Principal</image:title>
       <image:caption>Mariana Matheos, vocalista e líder da banda de jazz</image:caption>
       <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
@@ -49,7 +49,7 @@
     </image:image>
     
     <image:image>
-      <image:loc>https://marianamatheos.com.br/public/images/banda.png</image:loc>
+      <image:loc>https://marianamatheos.com.br/images/banda.avif</image:loc>
       <image:title>Formação Completa da Banda</image:title>
       <image:caption>Banda completa de jazz com instrumentistas profissionais</image:caption>
       <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
@@ -66,7 +66,7 @@
     <mobile:mobile/>
     
     <image:image>
-      <image:loc>https://marianamatheos.com.br/public/images/baixista.png</image:loc>
+      <image:loc>https://marianamatheos.com.br/images/baixista.avif</image:loc>
       <image:title>Baixista da Mariana Matheos Jazz Band</image:title>
       <image:caption>Baixista profissional em apresentação ao vivo</image:caption>
       <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
@@ -74,7 +74,7 @@
     </image:image>
     
     <image:image>
-      <image:loc>https://marianamatheos.com.br/public/images/pianista.png</image:loc>
+      <image:loc>https://marianamatheos.com.br/images/pianista.avif</image:loc>
       <image:title>Pianista da Mariana Matheos Jazz Band</image:title>
       <image:caption>Pianista executando repertório de jazz e blues</image:caption>
       <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
@@ -82,7 +82,7 @@
     </image:image>
     
     <image:image>
-      <image:loc>https://marianamatheos.com.br/public/images/baterista.png</image:loc>
+      <image:loc>https://marianamatheos.com.br/images/baterista.avif</image:loc>
       <image:title>Baterista da Mariana Matheos Jazz Band</image:title>
       <image:caption>Baterista profissional durante apresentação</image:caption>
       <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
@@ -90,7 +90,7 @@
     </image:image>
     
     <image:image>
-      <image:loc>https://marianamatheos.com.br/public/images/banda-blue-jazz-concurso.png</image:loc>
+      <image:loc>https://marianamatheos.com.br/images/banda-blue-jazz-concurso.avif</image:loc>
       <image:title>Banda em Concurso de Jazz</image:title>
       <image:caption>Mariana Matheos Jazz Band em competição musical</image:caption>
       <image:geo_location>Belo Horizonte, Brasil</image:geo_location>
@@ -221,7 +221,7 @@
     <priority>0.6</priority>
     <mobile:mobile/>
     <image:image>
-      <image:loc>https://marianamatheos.com.br/images/cantora.png</image:loc>
+      <image:loc>https://marianamatheos.com.br/images/cantora.avif</image:loc>
       <image:caption>Mariana Matheos Jazz performando ao vivo em evento elegante</image:caption>
     </image:image>
   </url>
