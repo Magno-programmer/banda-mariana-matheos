@@ -38,13 +38,13 @@ const STATIC_PAGES = [
     changefreq: 'monthly'
   },
   { 
-    path: '/galeria/fotos', 
+    path: '/fotos', 
     file: 'src/pages/ImagePage.tsx',
     priority: '0.8',
     changefreq: 'weekly'
   },
   { 
-    path: '/galeria/videos', 
+    path: '/videos', 
     file: 'src/pages/VideosPage.tsx',
     priority: '0.8',
     changefreq: 'weekly'
@@ -56,13 +56,13 @@ const STATIC_PAGES = [
     changefreq: 'monthly'
   },
   { 
-    path: '/agendamento', 
+    path: '/agenda', 
     file: 'src/pages/BookingPage.tsx',
     priority: '0.9',
     changefreq: 'weekly'
   },
   { 
-    path: '/contatos', 
+    path: '/contato', 
     file: 'src/pages/ContactPage.tsx',
     priority: '0.8',
     changefreq: 'monthly'
