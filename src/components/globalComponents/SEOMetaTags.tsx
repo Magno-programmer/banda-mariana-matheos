@@ -12,18 +12,32 @@ interface SEOMetaTagsProps {
   robotsContent?: string;
 }
 
-// Optimized meta descriptions for better CTR
+// Optimized meta descriptions for better CTR (120-130 chars for mobile)
 const optimizedDescriptions = {
-  '/': '🎵 Banda de Jazz Belo Horizonte | Mariana Matheos Jazz Band - Música ao vivo para casamentos e eventos corporativos. ⭐ 5 estrelas no Google! Contrate já via WhatsApp.',
-  '/sobre': 'Conheça a história da Mariana Matheos Jazz Band 🎤 Formação especializada em jazz, bossa nova e música brasileira. 15+ anos de experiência em eventos de alto padrão.',
-  '/repertorio': '🎶 200+ músicas no repertório! Jazz clássico, bossa nova, blues e swing. Repertório completo da Mariana Matheos Jazz Band para todos os tipos de eventos.',
-  '/fotos': '📸 Veja a Mariana Matheos Jazz Band em ação! Galeria com fotos de apresentações em casamentos, eventos corporativos e shows. Qualidade profissional garantida.',
-  '/videos': '🎬 Assista às apresentações da Mariana Matheos Jazz Band! Vídeos de shows ao vivo, repertório completo. Conheça nossa qualidade musical antes de contratar.',
-  '/agenda': '📅 Agende sua apresentação com a Mariana Matheos Jazz Band! Música ao vivo para casamentos, eventos corporativos. Consulte disponibilidade via WhatsApp.',
-  '/contato': '📞 Contato Mariana Matheos Jazz Band BH | WhatsApp, telefone e email para agendamentos. Atendimento rápido para orçamentos e informações sobre shows.',
-  '/faq': '❓ FAQ - Dúvidas sobre contratação da Mariana Matheos Jazz Band. Respostas sobre repertório, equipamentos, valores. Todas as informações que você precisa!',
-  '/depoimentos': '⭐ Depoimentos 5 estrelas! Avaliações reais de clientes da Mariana Matheos Jazz Band. Veja por que somos a banda de jazz mais recomendada de BH.',
-  '/blog': '📖 Blog Mariana Matheos Jazz Band | Dicas sobre música para eventos, história do jazz, tendências. Conteúdo exclusivo sobre música ao vivo e entretenimento.'
+  '/': '🎵 Banda Jazz BH | Mariana Matheos - Casamentos & Eventos ⭐ 5 estrelas! Música ao vivo profissional. Contrate já via WhatsApp.',
+  '/sobre': '🎤 Mariana Matheos Jazz Band - 15+ anos em BH | História, formação e experiência. Especialistas em eventos de alto padrão.',
+  '/repertorio': '🎶 200+ Músicas | Jazz, Bossa Nova & Blues | Repertório completo Mariana Matheos Jazz Band. Conheça nosso catálogo musical.',
+  '/fotos': '📸 Fotos da Banda | Mariana Matheos Jazz em ação | Galeria profissional de shows, casamentos e eventos corporativos BH.',
+  '/videos': '🎬 Vídeos Mariana Matheos Jazz Band | Shows ao vivo BH | Assista apresentações e conheça nossa qualidade musical.',
+  '/agenda': '📅 Agende Show | Mariana Matheos Jazz Band BH | Disponibilidade para casamentos e eventos. Consulte via WhatsApp.',
+  '/contato': '📞 Contato Mariana Matheos Jazz BH | WhatsApp (31) 99999-9999 | Orçamentos rápidos para shows e apresentações.',
+  '/faq': '❓ FAQ Mariana Matheos Jazz Band | Dúvidas sobre contratação, repertório e valores. Todas as respostas que você precisa.',
+  '/depoimentos': '⭐ Avaliações 5 Estrelas | Depoimentos reais clientes | Por que Mariana Matheos é a banda jazz mais recomendada de BH.',
+  '/blog': '📖 Blog Jazz BH | Mariana Matheos | Dicas eventos, história do jazz e tendências musicais. Conteúdo exclusivo e atual.'
+};
+
+// Optimized titles for better SEO and CTR (50-55 chars for mobile)
+const optimizedTitles = {
+  '/': '🎵 Banda Jazz BH | Mariana Matheos - Eventos Premium',
+  '/sobre': 'História da Banda 🎤 | Mariana Matheos Jazz BH',
+  '/repertorio': '200+ Músicas 🎶 | Repertório Jazz & Bossa Nova',
+  '/fotos': 'Fotos da Banda 📸 | Mariana Matheos Jazz BH',
+  '/videos': 'Vídeos Shows 🎬 | Mariana Matheos Jazz Band BH',
+  '/agenda': 'Agendar Show 📅 | Mariana Matheos Jazz BH',
+  '/contato': 'Contato 📞 | Mariana Matheos Jazz Band BH',
+  '/faq': 'FAQ 💬 | Mariana Matheos Jazz Band BH',
+  '/depoimentos': 'Avaliações ⭐ | Mariana Matheos Jazz BH',
+  '/blog': 'Blog Jazz 📖 | Mariana Matheos BH'
 };
 
 const SEOMetaTags = ({ 
@@ -40,6 +54,11 @@ const SEOMetaTags = ({
   const fullCanonicalUrl = canonicalUrl ? `${baseUrl}${canonicalUrl}` : baseUrl;
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
   
+  // Use optimized title if available and CTR optimization is enabled
+  const finalTitle = isOptimizedForCTR && canonicalUrl && optimizedTitles[canonicalUrl as keyof typeof optimizedTitles] 
+    ? optimizedTitles[canonicalUrl as keyof typeof optimizedTitles]
+    : title;
+  
   // Use optimized description if available and CTR optimization is enabled
   const finalDescription = isOptimizedForCTR && canonicalUrl && optimizedDescriptions[canonicalUrl as keyof typeof optimizedDescriptions] 
     ? optimizedDescriptions[canonicalUrl as keyof typeof optimizedDescriptions]
@@ -48,13 +67,13 @@ const SEOMetaTags = ({
   return (
     <>
       <Helmet>
-        <title>{title}</title>
+        <title>{finalTitle}</title>
         <meta name="description" content={finalDescription} />
         <meta name="keywords" content={keywords} />
         <link rel="canonical" href={fullCanonicalUrl} />
         
         {/* Open Graph */}
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={finalTitle} />
         <meta property="og:description" content={finalDescription} />
         <meta property="og:image" content={fullOgImage} />
         <meta property="og:url" content={fullCanonicalUrl} />
@@ -63,7 +82,7 @@ const SEOMetaTags = ({
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
+        <meta name="twitter:title" content={finalTitle} />
         <meta name="twitter:description" content={finalDescription} />
         <meta name="twitter:image" content={fullOgImage} />
         
