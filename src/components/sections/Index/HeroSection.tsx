@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import logoGold from '/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.avif';
 import bandaCompletaPalco from '/images/imagem-da-banda.avif';
 import logoWhite from '/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.avif';
@@ -11,7 +12,11 @@ import TestimonialSection from './TestimonialSection';
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { isMobile, isTablet } = useAdvancedViewport();
+  
+  // Check if we're on the index page to determine heading hierarchy
+  const isIndexPage = location.pathname === '/';
 
   const titleSize = isMobile ? 'text-4xl' : isTablet ? 'text-5xl' : 'text-7xl';
   const subtitleSize = isMobile ? 'text-2xl' : isTablet ? 'text-3xl' : 'text-5xl';
@@ -57,12 +62,25 @@ const HeroSection = () => {
         </div>
 
         {/* Main Slogan */}
-        <h1 className={`font-glimmer mt-8 ${titleSize} font-bold text-white mb-6 jazz-text-shadow leading-tight`}>
-          Mariana Matheos
-        </h1>
-        <h2 className={`font-glimmer ${subtitleSize} font-bold jazz-gold mb-8 jazz-text-shadow ${isMobile ? 'px-4' : ''}`}>
-          Uma experiência sofisticada, atemporal e arrebatadora
-        </h2>
+        {isIndexPage ? (
+          <>
+            <h1 className={`font-glimmer mt-8 ${titleSize} font-bold text-white mb-6 jazz-text-shadow leading-tight`}>
+              Mariana Matheos
+            </h1>
+            <h2 className={`font-glimmer ${subtitleSize} font-bold jazz-gold mb-8 jazz-text-shadow ${isMobile ? 'px-4' : ''}`}>
+              Uma experiência sofisticada, atemporal e arrebatadora
+            </h2>
+          </>
+        ) : (
+          <>
+            <div className={`font-glimmer mt-8 ${titleSize} font-bold text-white mb-6 jazz-text-shadow leading-tight`}>
+              Mariana Matheos
+            </div>
+            <div className={`font-glimmer ${subtitleSize} font-bold jazz-gold mb-8 jazz-text-shadow ${isMobile ? 'px-4' : ''}`}>
+              Uma experiência sofisticada, atemporal e arrebatadora
+            </div>
+          </>
+        )}
 
         {/* Divisor decorativo acima */}
         <div className="w-full flex justify-center mb-4">
@@ -100,7 +118,7 @@ const HeroSection = () => {
         </div>
       </div>
       
-      <TestimonialSection />
+      {isIndexPage && <TestimonialSection />}
     </section>
   );
 };
