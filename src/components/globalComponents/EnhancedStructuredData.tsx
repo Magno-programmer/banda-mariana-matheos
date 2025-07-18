@@ -14,7 +14,10 @@ import {
   generateFAQSchema,
   generateMusicEventSchema,
   generateImageGallerySchema,
-  generateVideoObjectSchema
+  generateVideoObjectSchema,
+  generateReviewSchema,
+  generateProductSchema,
+  generateEnhancedEventSchema
 } from '@/utils/schemaGenerators';
 
 interface EnhancedStructuredDataProps {
@@ -186,17 +189,11 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
             }} 
           />
           
-          {/* ImageGallery Schema */}
+          {/* Advanced ImageGallery Schema */}
           <script 
             type="application/ld+json" 
             dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateImageGallerySchema([
-                { url: "https://marianamatheos.com.br/images/baixista.avif", caption: "Baixista da Mariana Matheos Jazz Band" },
-                { url: "https://marianamatheos.com.br/images/pianista.avif", caption: "Pianista da Mariana Matheos Jazz Band" },
-                { url: "https://marianamatheos.com.br/images/baterista.avif", caption: "Baterista da Mariana Matheos Jazz Band" },
-                { url: "https://marianamatheos.com.br/images/banda-blue-jazz-concurso.avif", caption: "Mariana Matheos Jazz Band em Concurso de Jazz" },
-                { url: "https://marianamatheos.com.br/images/banda.avif", caption: "Formação Completa da Banda" }
-              ]))
+              __html: JSON.stringify(generateImageGallerySchema())
             }} 
           />
           
@@ -365,13 +362,24 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
             }} 
           />
           
-          {/* Event Series Schema */}
+          {/* Enhanced Event Series Schema */}
           <script 
             type="application/ld+json" 
             dangerouslySetInnerHTML={{ 
               __html: JSON.stringify(generateEventSeriesSchema())
             }} 
           />
+          
+          {/* Enhanced Individual Event Schemas */}
+          {eventsData.map(event => (
+            <script 
+              key={`event-${event.id}`}
+              type="application/ld+json" 
+              dangerouslySetInnerHTML={{ 
+                __html: JSON.stringify(generateEnhancedEventSchema(event.id))
+              }} 
+            />
+          ))}
           
           {/* Service Schema */}
           <script 
@@ -388,6 +396,17 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
               __html: JSON.stringify(generateLocalBusinessSchema())
             }} 
           />
+          
+          {/* Product Schema for Musical Services */}
+          {generateProductSchema().map((product, index) => (
+            <script 
+              key={`product-${index}`}
+              type="application/ld+json" 
+              dangerouslySetInnerHTML={{ 
+                __html: JSON.stringify(product)
+              }} 
+            />
+          ))}
           
           {/* Breadcrumb Schema */}
           <script 

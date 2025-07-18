@@ -9,6 +9,7 @@ import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
 import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSection";
+import EnhancedStructuredData from "@/components/globalComponents/EnhancedStructuredData";
 
 const ImagePage = () => {
   return (
@@ -20,6 +21,7 @@ const ImagePage = () => {
         canonicalUrl="/fotos"
       />
       
+      <EnhancedStructuredData pageType="gallery" />
 
       <div className="min-h-screen bg-black">
         <Header />

@@ -10,6 +10,7 @@ import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSection";
+import EnhancedStructuredData from "@/components/globalComponents/EnhancedStructuredData";
 
 const TestimonialsPage = () => {
   return (
@@ -21,6 +22,7 @@ const TestimonialsPage = () => {
         canonicalUrl="/depoimentos"
       />
       
+      <EnhancedStructuredData pageType="testimonials" />
       
       <div className="min-h-screen bg-black">
         <Header />
