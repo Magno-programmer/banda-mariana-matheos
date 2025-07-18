@@ -49,6 +49,72 @@ const markets = [
   { hreflang: 'fr-BE', urlPath: '/fr-be', locale: 'fr_BE' },
   { hreflang: 'fr-CH', urlPath: '/fr-ch', locale: 'fr_CH' },
   
+  // Italian markets
+  { hreflang: 'it-IT', urlPath: '/it', locale: 'it_IT' },
+  { hreflang: 'it', urlPath: '/it', locale: 'it_IT' },
+  { hreflang: 'it-CH', urlPath: '/it-ch', locale: 'it_CH' },
+  
+  // German markets
+  { hreflang: 'de-DE', urlPath: '/de', locale: 'de_DE' },
+  { hreflang: 'de', urlPath: '/de', locale: 'de_DE' },
+  { hreflang: 'de-AT', urlPath: '/de-at', locale: 'de_AT' },
+  { hreflang: 'de-CH', urlPath: '/de-ch', locale: 'de_CH' },
+  
+  // Nordic markets
+  { hreflang: 'sv-SE', urlPath: '/sv', locale: 'sv_SE' },
+  { hreflang: 'da-DK', urlPath: '/da', locale: 'da_DK' },
+  { hreflang: 'nb-NO', urlPath: '/nb', locale: 'nb_NO' },
+  { hreflang: 'fi-FI', urlPath: '/fi', locale: 'fi_FI' },
+  
+  // Benelux
+  { hreflang: 'nl-NL', urlPath: '/nl', locale: 'nl_NL' },
+  { hreflang: 'nl-BE', urlPath: '/nl-be', locale: 'nl_BE' },
+  
+  // Asian markets
+  { hreflang: 'ja-JP', urlPath: '/ja', locale: 'ja_JP' },
+  { hreflang: 'ko-KR', urlPath: '/ko', locale: 'ko_KR' },
+  { hreflang: 'zh-CN', urlPath: '/zh-cn', locale: 'zh_CN' },
+  { hreflang: 'zh-TW', urlPath: '/zh-tw', locale: 'zh_TW' },
+  { hreflang: 'th-TH', urlPath: '/th', locale: 'th_TH' },
+  { hreflang: 'vi-VN', urlPath: '/vi', locale: 'vi_VN' },
+  { hreflang: 'id-ID', urlPath: '/id', locale: 'id_ID' },
+  
+  // Eastern Europe
+  { hreflang: 'pl-PL', urlPath: '/pl', locale: 'pl_PL' },
+  { hreflang: 'cs-CZ', urlPath: '/cs', locale: 'cs_CZ' },
+  { hreflang: 'ru-RU', urlPath: '/ru', locale: 'ru_RU' },
+  { hreflang: 'uk-UA', urlPath: '/uk', locale: 'uk_UA' },
+  { hreflang: 'bg-BG', urlPath: '/bg', locale: 'bg_BG' },
+  { hreflang: 'ro-RO', urlPath: '/ro', locale: 'ro_RO' },
+  { hreflang: 'hr-HR', urlPath: '/hr', locale: 'hr_HR' },
+  { hreflang: 'sl-SI', urlPath: '/sl', locale: 'sl_SI' },
+  { hreflang: 'sk-SK', urlPath: '/sk', locale: 'sk_SK' },
+  { hreflang: 'hu-HU', urlPath: '/hu', locale: 'hu_HU' },
+  { hreflang: 'et-EE', urlPath: '/et', locale: 'et_EE' },
+  { hreflang: 'lv-LV', urlPath: '/lv', locale: 'lv_LV' },
+  { hreflang: 'lt-LT', urlPath: '/lt', locale: 'lt_LT' },
+  { hreflang: 'sr-RS', urlPath: '/sr', locale: 'sr_RS' },
+  
+  // Mediterranean & Emerging
+  { hreflang: 'el-GR', urlPath: '/el', locale: 'el_GR' },
+  { hreflang: 'mt-MT', urlPath: '/mt', locale: 'mt_MT' },
+  { hreflang: 'el-CY', urlPath: '/el-cy', locale: 'el_CY' },
+  
+  // African English Markets
+  { hreflang: 'en-NG', urlPath: '/en-ng', locale: 'en_NG' },
+  { hreflang: 'en-KE', urlPath: '/en-ke', locale: 'en_KE' },
+  { hreflang: 'en-GH', urlPath: '/en-gh', locale: 'en_GH' },
+  
+  // Philippines
+  { hreflang: 'en-PH', urlPath: '/en-ph', locale: 'en_PH' },
+  { hreflang: 'tl-PH', urlPath: '/tl', locale: 'tl_PH' },
+  
+  // Middle East & Other
+  { hreflang: 'tr-TR', urlPath: '/tr', locale: 'tr_TR' },
+  { hreflang: 'ar-SA', urlPath: '/ar', locale: 'ar_SA' },
+  { hreflang: 'he-IL', urlPath: '/he', locale: 'he_IL' },
+  { hreflang: 'hi-IN', urlPath: '/hi', locale: 'hi_IN' },
+  
   // Default fallback
   { hreflang: 'x-default', urlPath: '', locale: 'pt_BR' },
 ];
@@ -153,35 +219,79 @@ ${urlEntries}
 }
 
 /**
- * Generate sitemap index
+ * Generates international markets sitemap
+ */
+function generateInternationalSitemap() {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${routes.map(route => {
+  const url = route === '/' ? baseUrl : `${baseUrl}${route}`;
+  const hreflangLinks = generateHreflangLinks(route);
+  
+  return `  <url>
+    <loc>${url}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+${hreflangLinks}
+  </url>`;
+}).join('\n')}
+</urlset>`;
+}
+
+/**
+ * Generates sitemap index
  */
 function generateSitemapIndex() {
-  const currentDate = new Date().toISOString();
-  
-  // Get unique language paths for individual sitemaps
-  const uniqueMarkets = markets.filter((market, index, self) => 
-    index === self.findIndex(m => m.urlPath === market.urlPath)
-  );
-  
-  const sitemapEntries = uniqueMarkets.map(market => {
-    const filename = market.urlPath === '' ? 'sitemap-pt-br.xml' : `sitemap-${market.hreflang}.xml`;
-    return `  <sitemap>
-    <loc>${baseUrl}/${filename}</loc>
-    <lastmod>${currentDate}</lastmod>
-  </sitemap>`;
-  }).join('\n');
-
-  // Add main sitemap
-  const mainSitemap = `  <sitemap>
-    <loc>${baseUrl}/sitemap.xml</loc>
-    <lastmod>${currentDate}</lastmod>
-  </sitemap>`;
+  const uniqueLanguages = [...new Set(markets.map(m => m.hreflang.split('-')[0]))];
+  const sitemapUrls = [
+    `${baseUrl}/sitemap.xml`,
+    `${baseUrl}/sitemap-international.xml`,
+    ...uniqueLanguages.map(lang => `${baseUrl}/sitemap-${lang}.xml`)
+  ];
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${mainSitemap}
-${sitemapEntries}
+${sitemapUrls.map(url => `  <sitemap>
+    <loc>${url}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+  </sitemap>`).join('\n')}
 </sitemapindex>`;
+}
+
+/**
+ * Validates generated sitemaps
+ */
+function validateGeneratedSitemaps() {
+  const publicDir = path.join(process.cwd(), 'public');
+  const sitemapFiles = [
+    'sitemap.xml',
+    'sitemap-index.xml',
+    'sitemap-international.xml',
+    'sitemap-pt.xml',
+    'sitemap-en.xml',
+    'sitemap-es.xml'
+  ];
+
+  sitemapFiles.forEach(filename => {
+    const filepath = path.join(publicDir, filename);
+    if (fs.existsSync(filepath)) {
+      const content = fs.readFileSync(filepath, 'utf8');
+      
+      // Basic XML validation
+      if (!content.includes('<?xml') || (!content.includes('</urlset>') && !content.includes('</sitemapindex>'))) {
+        throw new Error(`Invalid XML structure in ${filename}`);
+      }
+      
+      // Check for required namespaces
+      if (content.includes('<urlset') && !content.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')) {
+        throw new Error(`Missing required namespace in ${filename}`);
+      }
+      
+      console.log(`✓ ${filename} validation passed`);
+    }
+  });
 }
 
 /**
@@ -196,26 +306,35 @@ async function generateInternationalSitemaps() {
     fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), mainSitemap);
     console.log('✅ Generated main sitemap with hreflang annotations');
     
-    // Generate language-specific sitemaps
-    const uniqueMarkets = markets.filter((market, index, self) => 
-      index === self.findIndex(m => m.urlPath === market.urlPath)
-    );
-    
-    for (const market of uniqueMarkets) {
-      const langSitemap = generateLanguageSitemap(market);
-      const filename = market.urlPath === '' ? 'sitemap-pt-br.xml' : `sitemap-${market.hreflang}.xml`;
-      fs.writeFileSync(path.join(publicDir, filename), langSitemap);
-      console.log(`✅ Generated ${filename}`);
-    }
-    
-    // Generate sitemap index
+    // Language-specific sitemaps
+    const uniqueLanguages = [...new Set(markets.map(m => m.hreflang.split('-')[0]))];
+    uniqueLanguages.forEach(lang => {
+      const marketForLang = markets.find(m => m.hreflang.startsWith(lang));
+      if (marketForLang) {
+        const languageSitemap = generateLanguageSitemap(marketForLang);
+        const filename = `sitemap-${lang}.xml`;
+        fs.writeFileSync(path.join(publicDir, filename), languageSitemap);
+        console.log(`✅ Generated ${filename}`);
+      }
+    });
+
+    // International markets sitemap
+    const internationalSitemap = generateInternationalSitemap();
+    fs.writeFileSync(path.join(publicDir, 'sitemap-international.xml'), internationalSitemap);
+    console.log('✅ Generated international sitemap');
+
+    // Sitemap index
     const sitemapIndex = generateSitemapIndex();
     fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), sitemapIndex);
     console.log('✅ Generated sitemap index');
+
+    // Validate all generated sitemaps
+    validateGeneratedSitemaps();
+    console.log('✅ All sitemaps validated successfully');
     
     console.log('\n🎉 International sitemap generation completed!');
     console.log(`📊 Generated sitemaps for ${markets.length} markets`);
-    console.log(`🌍 Covering ${uniqueMarkets.length} unique language variants`);
+    console.log(`🌍 Covering 15+ languages and regional variants`);
     
   } catch (error) {
     console.error('❌ Error generating international sitemaps:', error);

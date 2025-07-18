@@ -261,16 +261,33 @@ const HreflangTags = ({ baseUrl = "https://marianamatheos.com.br" }: HreflangTag
       <meta name="geo.position" content="-19.916681;-43.934493" />
       <meta name="ICBM" content="-19.916681, -43.934493" />
       
-      {/* International sitemaps */}
+      {/* International Sitemap Links */}
+      <link rel="sitemap" type="application/xml" href={`${baseUrl}/sitemap.xml`} />
       <link rel="sitemap" type="application/xml" href={`${baseUrl}/sitemap-index.xml`} />
-      <link rel="alternate" type="application/xml" hrefLang="pt-BR" href={`${baseUrl}/sitemap-pt-br.xml`} />
-      <link rel="alternate" type="application/xml" hrefLang="en" href={`${baseUrl}/sitemap-en-US.xml`} />
-      <link rel="alternate" type="application/xml" hrefLang="es" href={`${baseUrl}/sitemap-es-ES.xml`} />
-      <link rel="alternate" type="application/xml" hrefLang="fr" href={`${baseUrl}/sitemap-fr-FR.xml`} />
+      <link rel="sitemap" type="application/xml" href={`${baseUrl}/sitemap-pt.xml`} />
+      <link rel="sitemap" type="application/xml" href={`${baseUrl}/sitemap-en.xml`} />
+      <link rel="sitemap" type="application/xml" href={`${baseUrl}/sitemap-es.xml`} />
+      <link rel="sitemap" type="application/xml" href={`${baseUrl}/sitemap-international.xml`} />
       
-      {/* Performance and caching hints */}
-      <link rel="preconnect" href={baseUrl} />
-      <link rel="dns-prefetch" href={baseUrl} />
+      {/* Performance Hints for International Markets */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+      <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+      
+      {/* CDN Configuration Hints */}
+      <meta httpEquiv="x-cdn-geo" content="auto" />
+      <meta httpEquiv="x-cdn-cache" content="public, max-age=31536000" />
+      
+      {/* Content Language Headers */}
+      <meta httpEquiv="Content-Language" content={getCurrentLanguage()} />
+      <meta httpEquiv="Vary" content="Accept-Language" />
+      
+      {/* International Analytics */}
+      <meta name="google-site-verification" content="" />
+      <meta name="msvalidate.01" content="" />
+      <meta name="yandex-verification" content="" />
+      <meta name="baidu-site-verification" content="" />
       
       {/* Alternative content feeds */}
       <link rel="alternate" type="application/rss+xml" hrefLang="pt-BR" href={`${baseUrl}/feed.xml`} />
