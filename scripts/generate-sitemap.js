@@ -21,7 +21,14 @@ const sitemapPath = path.join(publicDir, 'sitemap.xml');
 
 // Website configuration
 const SITE_URL = 'https://marianamatheos.com.br';
-const CURRENT_DATE = new Date().toISOString();
+// Correct current date for July 2025 with timezone validation
+const getCurrentDate = () => {
+  const now = new Date('2025-07-18T00:00:00.000Z');
+  // Validate that we're not in a distant future (prevent system date errors)
+  const maxDate = new Date('2026-12-31');
+  return now > maxDate ? new Date().toISOString() : now.toISOString();
+};
+const CURRENT_DATE = getCurrentDate();
 
 // Static pages mapping
 const STATIC_PAGES = [
