@@ -60,9 +60,9 @@ const AvaliationSection = () => {
       <div className="container mx-auto px-4 relative">
         {/* Page Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className={`font-glimmer ${titleSize} font-bold text-white mb-6 jazz-text-shadow`}>
-            Depoimentos Sobre Mariana Matheos 
-          </h2>
+          <h1 className={`font-glimmer ${titleSize} font-bold text-white mb-6 jazz-text-shadow`}>
+            Depoimentos e Avaliações
+          </h1>
           <div className="w-full flex justify-center mb-6">
             <img
               src={lineArtDeco}
@@ -85,9 +85,9 @@ const AvaliationSection = () => {
                 <Star key={i} className="w-6 h-6 fill-jazz-gold text-jazz-gold" />
               ))}
             </div>
-            <h3 className={`font-glimmer ${textSize} jazz-gold font-bold mb-2`}>
+            <h2 className={`font-glimmer ${textSize} jazz-gold font-bold mb-2`}>
               Todas as avaliações da banda no Google são 5 estrelas 
-            </h3>
+            </h2>
             <p className={`font-gatsbybold text-gray-100 ${reviewTextSize}`}>
               Nossa banda de jazz ao vivo tem 100% de aprovação no Google 
             </p>
@@ -96,9 +96,9 @@ const AvaliationSection = () => {
 
         {/* Google Reviews Section */}
         <div className="mb-20 animate-fade-in">
-          <h3 className={`font-glimmer ${sectionTitleSize} font-bold text-white mb-4 text-center jazz-text-shadow`}>
+          <h2 className={`font-glimmer ${sectionTitleSize} font-bold text-white mb-4 text-center jazz-text-shadow`}>
             Avaliações no Google
-          </h3>
+          </h2>
           <div className="w-full flex justify-center mb-12">
             <img
               src={lineArtDeco}
@@ -136,9 +136,9 @@ const AvaliationSection = () => {
 
         {/* Client Reviews Section */}
         <div className="animate-fade-in">
-          <h3 className={`font-glimmer ${sectionTitleSize} font-bold text-white mb-4 text-center jazz-text-shadow`}>
+          <h2 className={`font-glimmer ${sectionTitleSize} font-bold text-white mb-4 text-center jazz-text-shadow`}>
             Depoimentos dos Contratantes
-          </h3>
+          </h2>
           <div className="w-full flex justify-center mb-12">
             <img
               src={lineArtDeco}

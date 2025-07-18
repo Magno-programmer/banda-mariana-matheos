@@ -39,7 +39,7 @@ const VideosSection = () => {
         {/* Vídeo session */}
         <div className="max-w-3xl mx-auto animate-fade-in">
         <div className="text-center mb-8">
-            <h2 className={`font-glimmer ${titleSize} font-bold jazz-gold mb-4`}>Performance ao Vivo </h2>
+            <h1 className={`font-glimmer ${titleSize} font-bold jazz-gold mb-4`}>Vídeos e Performances</h1>
             <p className={`font-gatsbybold text-gray-400 ${textSize}`}>Assista um trecho da apresentação </p>
         </div>
 

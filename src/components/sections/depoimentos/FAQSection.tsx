@@ -156,9 +156,9 @@ const FAQSection = () => {
       <div className="container mx-auto px-6 relative">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className={`font-glimmer ${titleSize} font-bold text-white mb-4 jazz-text-shadow`}>
-              Faq - Banda Jazz Blues Soul para Eventos 
-            </h2>
+            <h1 className={`font-glimmer ${titleSize} font-bold text-white mb-4 jazz-text-shadow`}>
+              Perguntas Frequentes - Banda Jazz Blues Soul
+            </h1>
             <div className="w-full flex justify-center mb-6">
               <img
                 src={lineArtDeco}
@@ -220,9 +220,9 @@ const FAQSection = () => {
                   </span>
                 </div>
                 <div className="p-6 pr-20">
-                  <h3 className={`font-glimmer ${questionSize} jazz-gold font-bold mb-4 leading-tight`}>
+                  <h2 className={`font-glimmer ${questionSize} jazz-gold font-bold mb-4 leading-tight`}>
                     {faq.pergunta}
-                  </h3>
+                  </h2>
                   <p className={`font-gatsbybold ${answerSize} text-gray-300 leading-relaxed mb-4`}>
                     {faq.resposta}
                   </p>
