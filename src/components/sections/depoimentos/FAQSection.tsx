@@ -6,32 +6,28 @@ import { useNavigate } from 'react-router-dom';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const FAQSection = () => {
-  const faqData = [
-    {
-      question: "Qual é o repertório da banda?",
-      answer: "Nosso repertório inclui clássicos do jazz, standards americanos, bossa nova e música brasileira instrumental. Temos mais de 200 músicas em nosso acervo."
-    },
-    {
-      question: "Quantos músicos compõem a banda?",
-      answer: "A formação padrão inclui voz, piano, baixo e bateria. Podemos adicionar instrumentos como saxofone, trompete ou violão conforme a necessidade do evento."
-    },
-    {
-      question: "Vocês fornecem equipamento de som?",
-      answer: "Sim, fornecemos todo o equipamento de som necessário, incluindo microfones, amplificadores e mesa de som adequados para o tamanho do evento."
-    },
-    {
-      question: "Qual é a duração das apresentações?",
-      answer: "Normalmente fazemos apresentações de 2 a 4 horas, com intervalos programados. A duração pode ser ajustada conforme suas necessidades."
-    },
-    {
-      question: "Vocês tocam em eventos ao ar livre?",
-      answer: "Sim, realizamos apresentações tanto em ambientes internos quanto externos. Para eventos ao ar livre, garantimos equipamentos adequados às condições climáticas."
-    },
-    {
-      question: "Como funciona a contratação?",
-      answer: "Entre em contato conosco através do WhatsApp ou formulário. Discutiremos detalhes do evento, repertório e forneceremos um orçamento personalizado."
-    }
-  ];
+const faqData = [
+  {
+    question: "Qual é o repertório da banda?",
+    answer: "A Banda Mariana Matheos possui um acervo de mais de 200 músicas, mesclando clássicos da Era de Ouro do Jazz americano (1920–1960), Blues, Soul e R&B, tudo em arranjos contemporâneos e sofisticados."
+  },
+  {
+    question: "Quantos músicos compõem a banda e quem são eles?",
+    answer: "Somos um quinteto: Mariana Matheos (voz e direção artística), Carlos Magno Nobre da Silva (piano e teclados), Charles Pinheiro Amaral (trompete), Rubens Kalil (bateria) e Tarciso Martins Júnior (baixo e guitarra)."
+  },
+  {
+    question: "Vocês fornecem equipamentos de som e backline?",
+    answer: "Sim. Levamos sistema de PA de até 2.000 W, mesa de som digital de 32 canais, microfones XLR com pedestais, monitores de palco, amplificadores de baixo e guitarra, régua de 110 V e gerador reserva quando necessário."
+  },
+  {
+    question: "Qual é a duração padrão das apresentações?",
+    answer: "O formato padrão é 2 horas de show (1 h + intervalo de 30 min + 1 h). Podemos ajustar o tempo e retirar o intervalo conforme a necessidade do seu evento."
+  },
+  {
+    question: "Como faço para contratar a banda?",
+    answer: "Entre em contato pelo WhatsApp (31) 99752-2127 ou e-mail marianamatheos@gmail.com. Após confirmação de data, solicitamos sinal de 50 % e o restante na semana do evento (ou pagamento à vista)."
+  }
+];
 
   const faqSchema = generateFAQSchema(faqData);
   const navigate = useNavigate();
