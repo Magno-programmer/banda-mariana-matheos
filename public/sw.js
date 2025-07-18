@@ -8,6 +8,7 @@ const CACHE_NAME = `mariana-jazz-v${VERSION}`;
 const STATIC_ASSETS = [
   '/',
   '/index.html',
+  '/manifest.json',
   '/favicon.png',
   '/robots.txt',
   '/sitemap.xml'

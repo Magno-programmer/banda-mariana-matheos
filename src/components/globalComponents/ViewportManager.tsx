@@ -14,12 +14,13 @@ interface ViewportManagerProps {
 
 export const ViewportManager: React.FC<ViewportManagerProps> = ({
   children,
-  enableDynamicViewport = true,
+  enableDynamicViewport = false, // Disabled by default to prevent CLS
   customBreakpoints,
 }) => {
   const viewportState = useAdvancedViewport(customBreakpoints);
   const metaViewportRef = useRef<HTMLMetaElement | null>(null);
   const previousConfigRef = useRef<string>('');
+  const lastUpdateRef = useRef<number>(0);
 
   // Função para gerar viewport meta tag dinâmica
   const generateViewportContent = () => {
@@ -101,9 +102,14 @@ export const ViewportManager: React.FC<ViewportManagerProps> = ({
     };
   }, [viewportState]);
 
-  // Gerencia viewport meta tag dinâmica
+  // Gerencia viewport meta tag dinâmica com throttling
   useEffect(() => {
     if (!enableDynamicViewport) return;
+
+    const now = Date.now();
+    // Throttle updates para evitar CLS excessivo
+    if (now - lastUpdateRef.current < 200) return;
+    lastUpdateRef.current = now;
 
     const newViewportContent = generateViewportContent();
     const configString = JSON.stringify(viewportState.config);
@@ -175,13 +181,17 @@ export const ViewportManager: React.FC<ViewportManagerProps> = ({
         --viewport-dynamic-height: 100dvh;
       }
 
+      /* CSS Containment para evitar CLS */
+      .layout-contained { contain: layout style paint; }
+      .content-contained { contain: layout style; }
+      
       /* Safe area paddings para dispositivos com notch */
-      .safe-area-inset-top { padding-top: var(--safe-area-inset-top, 0px); }
-      .safe-area-inset-right { padding-right: var(--safe-area-inset-right, 0px); }
-      .safe-area-inset-bottom { padding-bottom: var(--safe-area-inset-bottom, 0px); }
-      .safe-area-inset-left { padding-left: var(--safe-area-inset-left, 0px); }
+      .safe-area-inset-top { padding-top: env(safe-area-inset-top, 0px); }
+      .safe-area-inset-right { padding-right: env(safe-area-inset-right, 0px); }
+      .safe-area-inset-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .safe-area-inset-left { padding-left: env(safe-area-inset-left, 0px); }
       .safe-area-inset-all { 
-        padding: var(--safe-area-inset-top, 0px) var(--safe-area-inset-right, 0px) var(--safe-area-inset-bottom, 0px) var(--safe-area-inset-left, 0px); 
+        padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px); 
       }
 
       /* Otimizações específicas para dispositivos foldáveis */

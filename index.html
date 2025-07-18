@@ -2,7 +2,9 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <!-- Viewport será gerenciado dinamicamente pelo ViewportManager -->
+    <!-- Viewport otimizado para evitar CLS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#800000" />
     <meta name="author" content="Mariana Matheos" />
@@ -12,9 +14,15 @@
     <!-- ADICIONAR verificação GSC -->
     <meta name="google-site-verification" content="Ts9E2R7vQUejtgKDEyPB-gVyoFJUQYdlVmBqbfdIEzk" />
 
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
     <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
 
     <!-- International hreflang (managed by React component) -->
     <link rel="alternate" href="https://marianamatheos.com.br" hreflang="pt-BR" />
