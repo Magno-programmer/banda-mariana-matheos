@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import HreflangTags from './HreflangTags';
 
 interface SEOMetaTagsProps {
   title: string;
@@ -43,31 +44,36 @@ const SEOMetaTags = ({
     : description;
 
   return (
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={finalDescription} />
-      <meta name="keywords" content={keywords} />
-      <link rel="canonical" href={fullCanonicalUrl} />
+    <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={finalDescription} />
+        <meta name="keywords" content={keywords} />
+        <link rel="canonical" href={fullCanonicalUrl} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={finalDescription} />
+        <meta property="og:image" content={fullOgImage} />
+        <meta property="og:url" content={fullCanonicalUrl} />
+        <meta property="og:type" content={pageType} />
+        <meta property="og:site_name" content="Mariana Matheos Jazz Band" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={finalDescription} />
+        <meta name="twitter:image" content={fullOgImage} />
+        
+        {/* Additional SEO tags */}
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Mariana Matheos Jazz Band" />
+        <meta name="theme-color" content="#800000" />
+      </Helmet>
       
-      {/* Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={finalDescription} />
-      <meta property="og:image" content={fullOgImage} />
-      <meta property="og:url" content={fullCanonicalUrl} />
-      <meta property="og:type" content={pageType} />
-      <meta property="og:site_name" content="Mariana Matheos Jazz Band" />
-      
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={finalDescription} />
-      <meta name="twitter:image" content={fullOgImage} />
-      
-      {/* Additional SEO tags */}
-      <meta name="robots" content="index, follow" />
-      <meta name="author" content="Mariana Matheos Jazz Band" />
-      <meta name="theme-color" content="#800000" />
-    </Helmet>
+      {/* International hreflang tags */}
+      <HreflangTags />
+    </>
   );
 };
 
