@@ -8,6 +8,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { pathToFileURL } from 'url';
 
 // ES modules fix for __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -22,13 +23,7 @@ const sitemapPath = path.join(publicDir, 'sitemap.xml');
 // Website configuration
 const SITE_URL = 'https://marianamatheos.com.br';
 // Correct current date for July 2025 with timezone validation
-const getCurrentDate = () => {
-  const now = new Date('2025-07-18T00:00:00.000Z');
-  // Validate that we're not in a distant future (prevent system date errors)
-  const maxDate = new Date('2026-12-31');
-  return now > maxDate ? new Date().toISOString() : now.toISOString();
-};
-const CURRENT_DATE = getCurrentDate();
+const CURRENT_DATE = new Date().toISOString();
 
 // Static pages mapping
 const STATIC_PAGES = [
@@ -382,7 +377,8 @@ function main() {
 }
 
 // Execute if run directly
-if (import.meta.url === `file://${__filename}`) {
+
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   main();
 }
 
