@@ -27,14 +27,14 @@ const HreflangTags = ({ baseUrl = "https://marianamatheos.com.br" }: HreflangTag
     return routeExists(currentPath);
   };
 
-  // Complete international market configuration - 54 markets total
+  // Complete international market configuration - 79 markets total
   const markets = [
     // Portuguese markets
     { hreflang: 'pt-BR', locale: 'pt_BR', url: `${baseUrl}${currentPath}`, region: 'Brazil' },
     { hreflang: 'pt', locale: 'pt_BR', url: `${baseUrl}${currentPath}`, region: 'Portuguese' },
     { hreflang: 'pt-PT', locale: 'pt_PT', url: `${baseUrl}/pt${currentPath}`, region: 'Portugal' },
     
-    // English markets - Core anglophone
+    // English markets - Core anglophone + Extended
     { hreflang: 'en-US', locale: 'en_US', url: `${baseUrl}/en${currentPath}`, region: 'United States' },
     { hreflang: 'en', locale: 'en_US', url: `${baseUrl}/en${currentPath}`, region: 'English' },
     { hreflang: 'en-GB', locale: 'en_GB', url: `${baseUrl}/en-gb${currentPath}`, region: 'United Kingdom' },
@@ -43,8 +43,11 @@ const HreflangTags = ({ baseUrl = "https://marianamatheos.com.br" }: HreflangTag
     { hreflang: 'en-IE', locale: 'en_IE', url: `${baseUrl}/en-ie${currentPath}`, region: 'Ireland' },
     { hreflang: 'en-NZ', locale: 'en_NZ', url: `${baseUrl}/en-nz${currentPath}`, region: 'New Zealand' },
     { hreflang: 'en-ZA', locale: 'en_ZA', url: `${baseUrl}/en-za${currentPath}`, region: 'South Africa' },
+    { hreflang: 'en-IN', locale: 'en_IN', url: `${baseUrl}/en-in${currentPath}`, region: 'India' },
+    { hreflang: 'en-SG', locale: 'en_SG', url: `${baseUrl}/en-sg${currentPath}`, region: 'Singapore' },
+    { hreflang: 'en-MY', locale: 'en_MY', url: `${baseUrl}/en-my${currentPath}`, region: 'Malaysia' },
     
-    // Spanish markets - Latin America + Spain
+    // Spanish markets - Latin America + Spain + Regional variants
     { hreflang: 'es-ES', locale: 'es_ES', url: `${baseUrl}/es${currentPath}`, region: 'Spain' },
     { hreflang: 'es', locale: 'es_ES', url: `${baseUrl}/es${currentPath}`, region: 'Spanish' },
     { hreflang: 'es-AR', locale: 'es_AR', url: `${baseUrl}/es-ar${currentPath}`, region: 'Argentina' },
@@ -54,6 +57,9 @@ const HreflangTags = ({ baseUrl = "https://marianamatheos.com.br" }: HreflangTag
     { hreflang: 'es-PE', locale: 'es_PE', url: `${baseUrl}/es-pe${currentPath}`, region: 'Peru' },
     { hreflang: 'es-UY', locale: 'es_UY', url: `${baseUrl}/es-uy${currentPath}`, region: 'Uruguay' },
     { hreflang: 'es-VE', locale: 'es_VE', url: `${baseUrl}/es-ve${currentPath}`, region: 'Venezuela' },
+    { hreflang: 'ca-ES', locale: 'ca_ES', url: `${baseUrl}/ca${currentPath}`, region: 'Catalonia' },
+    { hreflang: 'eu-ES', locale: 'eu_ES', url: `${baseUrl}/eu${currentPath}`, region: 'Basque Country' },
+    { hreflang: 'gl-ES', locale: 'gl_ES', url: `${baseUrl}/gl${currentPath}`, region: 'Galicia' },
     
     // French markets
     { hreflang: 'fr-FR', locale: 'fr_FR', url: `${baseUrl}/fr${currentPath}`, region: 'France' },
@@ -91,12 +97,27 @@ const HreflangTags = ({ baseUrl = "https://marianamatheos.com.br" }: HreflangTag
     { hreflang: 'zh-TW', locale: 'zh_TW', url: `${baseUrl}/zh-tw${currentPath}`, region: 'Taiwan' },
     { hreflang: 'th-TH', locale: 'th_TH', url: `${baseUrl}/th${currentPath}`, region: 'Thailand' },
     
-    // Eastern Europe
+    // Eastern Europe Complete
     { hreflang: 'pl-PL', locale: 'pl_PL', url: `${baseUrl}/pl${currentPath}`, region: 'Poland' },
     { hreflang: 'cs-CZ', locale: 'cs_CZ', url: `${baseUrl}/cs${currentPath}`, region: 'Czech Republic' },
     { hreflang: 'ru-RU', locale: 'ru_RU', url: `${baseUrl}/ru${currentPath}`, region: 'Russia' },
+    { hreflang: 'uk-UA', locale: 'uk_UA', url: `${baseUrl}/uk${currentPath}`, region: 'Ukraine' },
+    { hreflang: 'bg-BG', locale: 'bg_BG', url: `${baseUrl}/bg${currentPath}`, region: 'Bulgaria' },
+    { hreflang: 'ro-RO', locale: 'ro_RO', url: `${baseUrl}/ro${currentPath}`, region: 'Romania' },
+    { hreflang: 'hr-HR', locale: 'hr_HR', url: `${baseUrl}/hr${currentPath}`, region: 'Croatia' },
+    { hreflang: 'sl-SI', locale: 'sl_SI', url: `${baseUrl}/sl${currentPath}`, region: 'Slovenia' },
+    { hreflang: 'sk-SK', locale: 'sk_SK', url: `${baseUrl}/sk${currentPath}`, region: 'Slovakia' },
+    { hreflang: 'hu-HU', locale: 'hu_HU', url: `${baseUrl}/hu${currentPath}`, region: 'Hungary' },
+    { hreflang: 'et-EE', locale: 'et_EE', url: `${baseUrl}/et${currentPath}`, region: 'Estonia' },
+    { hreflang: 'lv-LV', locale: 'lv_LV', url: `${baseUrl}/lv${currentPath}`, region: 'Latvia' },
+    { hreflang: 'lt-LT', locale: 'lt_LT', url: `${baseUrl}/lt${currentPath}`, region: 'Lithuania' },
     
-    // Additional important markets
+    // Mediterranean & Emerging Markets
+    { hreflang: 'el-GR', locale: 'el_GR', url: `${baseUrl}/el${currentPath}`, region: 'Greece' },
+    { hreflang: 'mt-MT', locale: 'mt_MT', url: `${baseUrl}/mt${currentPath}`, region: 'Malta' },
+    { hreflang: 'el-CY', locale: 'el_CY', url: `${baseUrl}/el-cy${currentPath}`, region: 'Cyprus' },
+    
+    // Middle East & Other Markets
     { hreflang: 'tr-TR', locale: 'tr_TR', url: `${baseUrl}/tr${currentPath}`, region: 'Turkey' },
     { hreflang: 'ar-SA', locale: 'ar_SA', url: `${baseUrl}/ar${currentPath}`, region: 'Saudi Arabia' },
     { hreflang: 'he-IL', locale: 'he_IL', url: `${baseUrl}/he${currentPath}`, region: 'Israel' },
@@ -106,50 +127,94 @@ const HreflangTags = ({ baseUrl = "https://marianamatheos.com.br" }: HreflangTag
     { hreflang: 'x-default', locale: 'pt_BR', url: `${baseUrl}${currentPath}`, region: 'Default' },
   ].filter(shouldIncludeMarket);
 
-  // Enhanced current content language detection
+  // Enhanced current content language detection with complete mapping
   const getCurrentLanguage = (): string => {
     const browserLang = getBrowserLanguage();
     
-    // Map browser language to our supported languages with regional variants
+    // Map browser language to our supported languages with ALL regional variants
     if (browserLang.startsWith('pt-pt')) return 'pt-PT';
     if (browserLang.startsWith('pt')) return 'pt-BR';
+    
+    // English variants
     if (browserLang.startsWith('en-gb')) return 'en-GB';
     if (browserLang.startsWith('en-au')) return 'en-AU';
     if (browserLang.startsWith('en-ca')) return 'en-CA';
+    if (browserLang.startsWith('en-ie')) return 'en-IE';
+    if (browserLang.startsWith('en-nz')) return 'en-NZ';
+    if (browserLang.startsWith('en-za')) return 'en-ZA';
+    if (browserLang.startsWith('en-in')) return 'en-IN';
+    if (browserLang.startsWith('en-sg')) return 'en-SG';
+    if (browserLang.startsWith('en-my')) return 'en-MY';
     if (browserLang.startsWith('en')) return 'en-US';
+    
+    // Spanish variants
     if (browserLang.startsWith('es-mx')) return 'es-MX';
     if (browserLang.startsWith('es-ar')) return 'es-AR';
     if (browserLang.startsWith('es-co')) return 'es-CO';
     if (browserLang.startsWith('es-cl')) return 'es-CL';
+    if (browserLang.startsWith('es-pe')) return 'es-PE';
+    if (browserLang.startsWith('es-uy')) return 'es-UY';
+    if (browserLang.startsWith('es-ve')) return 'es-VE';
+    if (browserLang.startsWith('ca')) return 'ca-ES';
+    if (browserLang.startsWith('eu')) return 'eu-ES';
+    if (browserLang.startsWith('gl')) return 'gl-ES';
     if (browserLang.startsWith('es')) return 'es-ES';
+    
+    // French variants
     if (browserLang.startsWith('fr-ca')) return 'fr-CA';
     if (browserLang.startsWith('fr-be')) return 'fr-BE';
     if (browserLang.startsWith('fr-ch')) return 'fr-CH';
     if (browserLang.startsWith('fr')) return 'fr-FR';
+    
+    // Italian variants
     if (browserLang.startsWith('it-ch')) return 'it-CH';
     if (browserLang.startsWith('it')) return 'it-IT';
+    
+    // German variants
     if (browserLang.startsWith('de-at')) return 'de-AT';
     if (browserLang.startsWith('de-ch')) return 'de-CH';
     if (browserLang.startsWith('de')) return 'de-DE';
+    
+    // Nordic languages
+    if (browserLang.startsWith('sv')) return 'sv-SE';
+    if (browserLang.startsWith('da')) return 'da-DK';
+    if (browserLang.startsWith('nb') || browserLang.startsWith('no')) return 'nb-NO';
+    if (browserLang.startsWith('fi')) return 'fi-FI';
+    
+    // Dutch variants
+    if (browserLang.startsWith('nl-be')) return 'nl-BE';
+    if (browserLang.startsWith('nl')) return 'nl-NL';
+    
+    // Asian languages
     if (browserLang.startsWith('ja')) return 'ja-JP';
     if (browserLang.startsWith('ko')) return 'ko-KR';
     if (browserLang.startsWith('zh-cn')) return 'zh-CN';
     if (browserLang.startsWith('zh-tw')) return 'zh-TW';
     if (browserLang.startsWith('zh')) return 'zh-CN';
-    if (browserLang.startsWith('sv')) return 'sv-SE';
-    if (browserLang.startsWith('da')) return 'da-DK';
-    if (browserLang.startsWith('nb') || browserLang.startsWith('no')) return 'nb-NO';
-    if (browserLang.startsWith('fi')) return 'fi-FI';
-    if (browserLang.startsWith('nl-be')) return 'nl-BE';
-    if (browserLang.startsWith('nl')) return 'nl-NL';
+    if (browserLang.startsWith('th')) return 'th-TH';
+    if (browserLang.startsWith('hi')) return 'hi-IN';
+    
+    // Eastern European languages
     if (browserLang.startsWith('pl')) return 'pl-PL';
     if (browserLang.startsWith('cs')) return 'cs-CZ';
     if (browserLang.startsWith('ru')) return 'ru-RU';
+    if (browserLang.startsWith('uk')) return 'uk-UA';
+    if (browserLang.startsWith('bg')) return 'bg-BG';
+    if (browserLang.startsWith('ro')) return 'ro-RO';
+    if (browserLang.startsWith('hr')) return 'hr-HR';
+    if (browserLang.startsWith('sl')) return 'sl-SI';
+    if (browserLang.startsWith('sk')) return 'sk-SK';
+    if (browserLang.startsWith('hu')) return 'hu-HU';
+    if (browserLang.startsWith('et')) return 'et-EE';
+    if (browserLang.startsWith('lv')) return 'lv-LV';
+    if (browserLang.startsWith('lt')) return 'lt-LT';
+    
+    // Mediterranean & Other languages
+    if (browserLang.startsWith('el')) return 'el-GR';
+    if (browserLang.startsWith('mt')) return 'mt-MT';
     if (browserLang.startsWith('tr')) return 'tr-TR';
     if (browserLang.startsWith('ar')) return 'ar-SA';
     if (browserLang.startsWith('he')) return 'he-IL';
-    if (browserLang.startsWith('hi')) return 'hi-IN';
-    if (browserLang.startsWith('th')) return 'th-TH';
     
     return 'pt-BR'; // Default fallback
   };
@@ -186,14 +251,41 @@ const HreflangTags = ({ baseUrl = "https://marianamatheos.com.br" }: HreflangTag
         />
       ))}
       
+      {/* HTTP Headers simulation via meta tags */}
+      <meta httpEquiv="Vary" content="Accept-Language" />
+      <meta httpEquiv="Content-Language" content={getCurrentLanguage()} />
+      
       {/* Language and region targeting */}
       <meta name="geo.region" content="BR" />
       <meta name="geo.placename" content="Brazil" />
       <meta name="geo.position" content="-19.916681;-43.934493" />
       <meta name="ICBM" content="-19.916681, -43.934493" />
       
-      {/* Alternative language suggestions */}
+      {/* International sitemaps */}
+      <link rel="sitemap" type="application/xml" href={`${baseUrl}/sitemap-index.xml`} />
+      <link rel="alternate" type="application/xml" hrefLang="pt-BR" href={`${baseUrl}/sitemap-pt-br.xml`} />
+      <link rel="alternate" type="application/xml" hrefLang="en" href={`${baseUrl}/sitemap-en-US.xml`} />
+      <link rel="alternate" type="application/xml" hrefLang="es" href={`${baseUrl}/sitemap-es-ES.xml`} />
+      <link rel="alternate" type="application/xml" hrefLang="fr" href={`${baseUrl}/sitemap-fr-FR.xml`} />
+      
+      {/* Performance and caching hints */}
+      <link rel="preconnect" href={baseUrl} />
+      <link rel="dns-prefetch" href={baseUrl} />
+      
+      {/* Alternative content feeds */}
       <link rel="alternate" type="application/rss+xml" hrefLang="pt-BR" href={`${baseUrl}/feed.xml`} />
+      <link rel="alternate" type="application/rss+xml" hrefLang="en" href={`${baseUrl}/en/feed.xml`} />
+      
+      {/* Link headers for hreflang (via meta) */}
+      {markets.slice(0, 5).map((market) => (
+        <link
+          key={`link-header-${market.hreflang}`}
+          rel="alternate"
+          href={market.url}
+          hrefLang={market.hreflang}
+          type="text/html"
+        />
+      ))}
     </Helmet>
   );
 };
