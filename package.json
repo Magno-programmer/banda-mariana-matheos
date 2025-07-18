@@ -8,6 +8,7 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
+    "sitemap:generate": "node scripts/generate-sitemap.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -63,7 +64,6 @@
     "vaul": "^0.9.3",
     "zod": "^3.23.8"
   },
-  "sitemap:generate": "node scripts/generate-sitemap.js",
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
