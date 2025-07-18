@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import HreflangTags from './HreflangTags';
+import { buildCanonicalUrl, normalizeUrl, validateUrl } from '@/utils/urlUtils';
 
 interface SEOMetaTagsProps {
   title: string;
@@ -51,17 +52,26 @@ const SEOMetaTags = ({
   robotsContent = "index, follow"
 }: SEOMetaTagsProps) => {
   const baseUrl = "https://marianamatheos.com.br";
-  const fullCanonicalUrl = canonicalUrl ? `${baseUrl}${canonicalUrl}` : baseUrl;
+  
+  // Normalize and validate canonical URL
+  const normalizedPath = canonicalUrl ? normalizeUrl(canonicalUrl) : '/';
+  const fullCanonicalUrl = buildCanonicalUrl(normalizedPath, baseUrl);
+  
+  // Validate canonical URL
+  if (!validateUrl(fullCanonicalUrl)) {
+    console.warn(`Invalid canonical URL generated: ${fullCanonicalUrl}`);
+  }
+  
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
   
   // Use optimized title if available and CTR optimization is enabled
-  const finalTitle = isOptimizedForCTR && canonicalUrl && optimizedTitles[canonicalUrl as keyof typeof optimizedTitles] 
-    ? optimizedTitles[canonicalUrl as keyof typeof optimizedTitles]
+  const finalTitle = isOptimizedForCTR && normalizedPath && optimizedTitles[normalizedPath as keyof typeof optimizedTitles] 
+    ? optimizedTitles[normalizedPath as keyof typeof optimizedTitles]
     : title;
   
   // Use optimized description if available and CTR optimization is enabled
-  const finalDescription = isOptimizedForCTR && canonicalUrl && optimizedDescriptions[canonicalUrl as keyof typeof optimizedDescriptions] 
-    ? optimizedDescriptions[canonicalUrl as keyof typeof optimizedDescriptions]
+  const finalDescription = isOptimizedForCTR && normalizedPath && optimizedDescriptions[normalizedPath as keyof typeof optimizedDescriptions] 
+    ? optimizedDescriptions[normalizedPath as keyof typeof optimizedDescriptions]
     : description;
 
   return (

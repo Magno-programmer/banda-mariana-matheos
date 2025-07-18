@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { breadcrumbMappings, getBlogArticleTitle, type BreadcrumbItem } from '@/types/breadcrumb';
+import { buildCanonicalUrl } from '@/utils/urlUtils';
 
 const AdvancedBreadcrumb = () => {
   const location = useLocation();
@@ -66,7 +67,7 @@ const AdvancedBreadcrumb = () => {
       "@type": "ListItem",
       "position": index + 1,
       "name": breadcrumb.label,
-      "item": `https://marianamatheos.com.br${breadcrumb.href}`
+      "item": buildCanonicalUrl(breadcrumb.href)
     }))
   };
 
@@ -85,33 +86,37 @@ const AdvancedBreadcrumb = () => {
         className="w-full bg-gradient-to-r from-black via-jazz-dark to-black border-b border-jazz-gold/20"
       >
         <div className="container mx-auto px-4">
-          <ol className="flex items-center space-x-2 py-3 text-sm">
+          <ol className="flex flex-wrap items-center gap-1 sm:gap-2 py-3 text-xs sm:text-sm overflow-x-auto">
             {breadcrumbs.map((breadcrumb, index) => (
-              <li key={breadcrumb.href} className="flex items-center">
+              <li key={breadcrumb.href} className="flex items-center shrink-0">
                 {index > 0 && (
                   <ChevronRight 
-                    size={14} 
-                    className="mx-2 text-jazz-gold/60" 
+                    size={12} 
+                    className="mx-1 sm:mx-2 text-jazz-gold/60 shrink-0" 
                     aria-hidden="true"
                   />
                 )}
                 
                 {breadcrumb.isActive ? (
                   <span 
-                    className="font-gatsby text-jazz-gold font-medium flex items-center gap-1"
+                    className="font-gatsby text-jazz-gold font-medium flex items-center gap-1 
+                             truncate max-w-[120px] sm:max-w-none"
                     aria-current="page"
+                    title={breadcrumb.label}
                   >
-                    {index === 0 && <Home size={14} aria-hidden="true" />}
-                    {breadcrumb.label}
+                    {index === 0 && <Home size={12} className="shrink-0" aria-hidden="true" />}
+                    <span className="truncate">{breadcrumb.label}</span>
                   </span>
                 ) : (
                   <Link
                     to={breadcrumb.href}
                     className="font-gatsby text-white hover:text-jazz-gold transition-colors duration-300 
-                             flex items-center gap-1 hover:scale-105 transform transition-transform"
+                             flex items-center gap-1 hover:scale-105 transform transition-transform
+                             truncate max-w-[120px] sm:max-w-none"
+                    title={breadcrumb.label}
                   >
-                    {index === 0 && <Home size={14} aria-hidden="true" />}
-                    {breadcrumb.label}
+                    {index === 0 && <Home size={12} className="shrink-0" aria-hidden="true" />}
+                    <span className="truncate">{breadcrumb.label}</span>
                   </Link>
                 )}
               </li>

@@ -19,6 +19,7 @@ import BlogPage from "./pages/BlogPage";
 import BlogArticlePage from "./pages/BlogArticlePage";
 import ScrollToTop from "./components/globalComponents/ScrollToTop";
 import SkipLink from "./components/globalComponents/SkipLink";
+import UrlRedirectHandler from "./components/globalComponents/UrlRedirectHandler";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
         <SkipLink />
+        <UrlRedirectHandler />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
