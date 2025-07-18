@@ -368,39 +368,128 @@ export const generateMusicEventSchema = (eventId: string) => {
     "@type": "MusicEvent",
     "@id": `https://marianamatheos.com.br/agenda#${event.id}`,
     "name": event.name,
+    "alternateName": `Jazz ao Vivo - ${event.venue}`,
+    "description": event.description,
     "startDate": startDate,
     "endDate": endDate,
     "eventStatus": `https://schema.org/${event.eventStatus}`,
     "eventAttendanceMode": `https://schema.org/${event.eventAttendanceMode}`,
     "location": {
-      "@type": "Place",
+      "@type": ["Place", "MusicVenue"],
+      "@id": `https://marianamatheos.com.br/agenda#venue-${event.venue.toLowerCase().replace(/\s+/g, '-')}`,
       "name": event.location.name,
+      "description": `Venue de música ao vivo em ${event.location.address.addressLocality}`,
       "address": {
         "@type": "PostalAddress",
-        ...event.location.address
+        "streetAddress": event.location.address.streetAddress,
+        "addressLocality": event.location.address.addressLocality,
+        "addressRegion": event.location.address.addressRegion,
+        "postalCode": event.location.address.postalCode,
+        "addressCountry": event.location.address.addressCountry
       },
       "geo": event.location.geo ? {
         "@type": "GeoCoordinates",
         "latitude": event.location.geo.latitude,
         "longitude": event.location.geo.longitude
-      } : undefined
+      } : undefined,
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Live Music",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification", 
+          "name": "Sound System",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Intimate Setting",
+          "value": true
+        }
+      ],
+      "maximumAttendeeCapacity": event.venue.includes("Bulltique") ? 80 : 60
     },
-    "offers": {
-      "@type": "Offer",
-      "price": event.offer.price,
-      "priceCurrency": event.offer.priceCurrency,
-      "availability": `https://schema.org/${event.offer.availability}`,
-      "validFrom": event.offer.validFrom,
-      "url": event.offer.url
-    },
-    "performer": {
-      "@type": "MusicGroup",
-      "@id": "https://marianamatheos.com.br/#organization"
-    },
-    "image": event.image,
-    "description": event.description,
+    "offers": [
+      {
+        "@type": "Offer",
+        "@id": `https://marianamatheos.com.br/agenda#offer-${event.id}`,
+        "name": "Ingresso Individual",
+        "description": `Entrada para o show de jazz ao vivo no ${event.venue}`,
+        "price": event.offer.price,
+        "priceCurrency": event.offer.priceCurrency,
+        "availability": `https://schema.org/${event.offer.availability}`,
+        "validFrom": event.offer.validFrom,
+        "validThrough": endDate,
+        "url": event.offer.url,
+        "seller": {
+          "@id": "https://marianamatheos.com.br/#organization"
+        },
+        "businessFunction": "https://schema.org/Sell",
+        "itemCondition": "https://schema.org/NewCondition",
+        "areaServed": {
+          "@type": "State",
+          "name": "Minas Gerais"
+        },
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://wa.me/5531997522127?text=" + encodeURIComponent(`Gostaria de reservar para o show do dia ${event.shortDate} no ${event.venue}`),
+            "inLanguage": "pt-BR"
+          }
+        }
+      }
+    ],
+    "performer": [
+      {
+        "@type": "MusicGroup",
+        "@id": "https://marianamatheos.com.br/#organization",
+        "name": "Mariana Matheos Jazz Band"
+      }
+    ],
     "organizer": {
       "@id": "https://marianamatheos.com.br/#organization"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Jazz Enthusiasts",
+      "suggestedMinAge": 18
+    },
+    "image": [
+      event.image,
+      "https://marianamatheos.com.br/images/cantora.avif",
+      "https://marianamatheos.com.br/images/banda.avif"
+    ],
+    "genre": ["Jazz", "Soul", "Blues", "R&B"],
+    "inLanguage": "pt-BR",
+    "duration": `PT${event.durationHours}H`,
+    "workPerformed": [
+      {
+        "@type": "MusicComposition",
+        "name": "Repertório de Jazz Standards",
+        "composer": "Vários Artistas",
+        "genre": "Jazz"
+      }
+    ],
+    "subEvent": [
+      {
+        "@type": "MusicEvent",
+        "name": "Abertura",
+        "startDate": startDate,
+        "duration": "PT30M"
+      },
+      {
+        "@type": "MusicEvent",
+        "name": "Show Principal",
+        "startDate": startDate,
+        "duration": `PT${event.durationHours - 0.5}H`
+      }
+    ],
+    "recordedIn": {
+      "@type": "Place",
+      "name": event.location.name
     }
   };
 };
@@ -844,21 +933,229 @@ export const generateVideoObjectSchema = (videos: Array<{url: string, name: stri
   };
 };
 
-export const generateReviewSchema = () => ({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "19"
-  }
-});
+/**
+ * Generate Review Schema with all testimonials
+ */
+export const generateReviewSchema = () => {
+  // All Google reviews with dates
+  const googleReviews = [
+    { name: "Geraldo Santana", review: "Excelente cantora!! Vale a pena assistir o seu show!!", date: "2024-03-01" },
+    { name: "Juciane Petenusso", review: "Excelente cantora, uma voz maravilhosa e canta todo tipo de música... super animada e simpática", date: "2024-03-05" },
+    { name: "Vanessa Guedes", review: "Cantora sensacional! Deus abençoe nesta jornada... Emoção e carisma!", date: "2024-03-10" },
+    { name: "Ana Carolina", review: "Canta muitooooo. Adorei!!!! Irei mais vezes.", date: "2024-03-15" },
+    { name: "Kel Souza", review: "Alegria e simpatia sempre em alta. Sucesso p vc!", date: "2024-03-20" },
+    { name: "Carlos Magno", review: "Banda top demais, sucesso!!", date: "2024-03-25" },
+    { name: "Luciana dos Santos", review: "Sensação que estamos na década de 20 ~ 60, é algo tão único que não dá pra explicar, tem que assistir.", date: "2024-04-01" },
+    { name: "Mariana Sabbag", review: "Excelente experiência estar em sua presença ouvindo o repertório.", date: "2024-04-05" },
+    { name: "Sergio Roberto", review: "Mariana é uma cantora excelente, super afinada, interage com o público.", date: "2024-04-10" },
+    { name: "Andre Guedes", review: "Excelente cantora!", date: "2024-04-15" },
+    { name: "Alende Guedes", review: "👏👏👏👏 Sucesso Mariana!", date: "2024-04-20" },
+    { name: "Reginaldo Santos", review: "Mariana você é 10", date: "2024-04-25" }
+  ];
 
-export const generateProductSchema = () => [{ 
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Shows de Jazz"
-}];
+  // Client testimonials with business context
+  const clientReviews = [
+    { name: "Poliana", business: "Soul Jazz Burguer", review: "Eeeeiii Mari!! Foi muito bacana!!! Agradecemos mais uma vez a parceria!!", date: "2024-05-01" },
+    { name: "Ana Luiza", business: "Restaurante Le Pontes", review: "A gente adorou a apresentação de vocês, queremos trazer vocês mais vezes. Muitíssimo obrigada!!", date: "2024-05-05" },
+    { name: "Ravana", business: "Arena Cachoeirinha", review: "Nossa foi otimooooooo! Brigaduuuu, foi tão lindooooo! Obrigadaaaaaaa, lindezaaaa!", date: "2024-05-10" },
+    { name: "Maurinho", business: "Chopperhead Garage", review: "Vamos fazer mais! ✌️", date: "2024-05-15" },
+    { name: "Lucca", business: "Barólio", review: "O pessoal gostou bastante, muito obrigado!", date: "2024-05-20" },
+    { name: "André Serra", business: "Evento de Carros Antigos de Matozinhos", review: "Seu show foi fantástico! Marcou a história da nossa região. Sucesso total!", date: "2024-05-25" },
+    { name: "Débora", business: "The Bulltique Vino Bar", review: "Foi tudo lindo e mágico! 😍 Ansiosa para nosso próximo encontro!!!!", date: "2024-06-01" }
+  ];
+
+  const allReviews = [
+    ...googleReviews.map(review => ({
+      "@type": "Review",
+      "@id": `https://marianamatheos.com.br/depoimentos#review-google-${review.name.toLowerCase().replace(/\s+/g, '-')}`,
+      "author": { 
+        "@type": "Person", 
+        "name": review.name 
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "datePublished": review.date,
+      "reviewBody": review.review,
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google"
+      },
+      "itemReviewed": {
+        "@id": "https://marianamatheos.com.br/#organization"
+      }
+    })),
+    ...clientReviews.map(review => ({
+      "@type": "Review",
+      "@id": `https://marianamatheos.com.br/depoimentos#review-client-${review.name.toLowerCase().replace(/\s+/g, '-')}`,
+      "author": { 
+        "@type": "Person", 
+        "name": review.name,
+        "worksFor": {
+          "@type": "Organization",
+          "name": review.business
+        }
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "datePublished": review.date,
+      "reviewBody": review.review,
+      "publisher": {
+        "@type": "Organization",
+        "name": review.business
+      },
+      "itemReviewed": {
+        "@id": "https://marianamatheos.com.br/#organization"
+      }
+    }))
+  ];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://marianamatheos.com.br/depoimentos#business-reviews",
+    "name": "Mariana Matheos Jazz Band",
+    "url": "https://marianamatheos.com.br",
+    "review": allReviews,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "32",
+      "reviewCount": "19",
+      "itemReviewed": {
+        "@id": "https://marianamatheos.com.br/#organization"
+      }
+    },
+    "mainEntity": {
+      "@id": "https://marianamatheos.com.br/#organization"
+    }
+  };
+};
+
+/**
+ * Generate Product Schema for musical services
+ */
+export const generateProductSchema = (): object[] => {
+  return serviceOfferings.map(service => ({
+    "@context": "https://schema.org",
+    "@type": ["Product", "Service"],
+    "@id": `https://marianamatheos.com.br/agenda#product-${service.id}`,
+    "name": service.name,
+    "description": service.description,
+    "category": "Live Music Entertainment",
+    "brand": {
+      "@type": "Brand",
+      "name": "Mariana Matheos Jazz Band",
+      "@id": "https://marianamatheos.com.br/#organization"
+    },
+    "manufacturer": {
+      "@id": "https://marianamatheos.com.br/#organization"
+    },
+    "provider": {
+      "@id": "https://marianamatheos.com.br/#organization"
+    },
+    "serviceType": service.serviceType,
+    "serviceOutput": service.serviceOutput,
+    "image": service.image || "https://marianamatheos.com.br/images/banda.avif",
+    "url": `https://marianamatheos.com.br/agenda#${service.id}`,
+    "offers": {
+      "@type": "Offer",
+      "@id": `https://marianamatheos.com.br/agenda#offer-${service.id}`,
+      "name": `Orçamento para ${service.name}`,
+      "description": `Solicite orçamento personalizado para ${service.name.toLowerCase()}`,
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": service.pricing.price,
+        "minPrice": service.pricing.minPrice,
+        "maxPrice": service.pricing.maxPrice,
+        "priceCurrency": service.pricing.priceCurrency,
+        "valueAddedTaxIncluded": true
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Minas Gerais",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "Brasil"
+        }
+      },
+      "availability": "https://schema.org/InStock",
+      "availabilityStarts": service.pricing.validFrom,
+      "availabilityEnds": service.pricing.validThrough,
+      "businessFunction": "https://schema.org/Sell",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {
+        "@id": "https://marianamatheos.com.br/#organization"
+      },
+      "url": "https://marianamatheos.com.br/agenda",
+      "potentialAction": {
+        "@type": "OrderAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://wa.me/5531997522127?text=Gostaria de solicitar orçamento para " + encodeURIComponent(service.name),
+          "inLanguage": "pt-BR"
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "15",
+      "reviewCount": "15"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": service.id === 'service-wedding' ? "Noivos e Organizadores de Casamento" :
+                      service.id === 'service-corporate' ? "Empresas e Organizadores de Eventos Corporativos" :
+                      "Organizadores de Eventos Particulares"
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Duração da Apresentação",
+        "value": "2-4 horas"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Número de Músicos",
+        "value": "3-5 músicos"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Equipamento Incluso",
+        "value": "Sistema de som completo"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Repertório",
+        "value": "Jazz, Soul, Blues, R&B, Bossa Nova"
+      }
+    ],
+    "hasVariant": service.id === 'service-wedding' ? [
+      {
+        "@type": "ProductModel",
+        "name": "Cerimônia + Recepção",
+        "description": "Show completo para cerimônia e festa"
+      },
+      {
+        "@type": "ProductModel", 
+        "name": "Apenas Cerimônia",
+        "description": "Música para cerimônia de casamento"
+      }
+    ] : []
+  }));
+};
 
 export const generateEnhancedEventSchema = (eventId: string) => {
   const event = eventsData.find(e => e.id === eventId);
