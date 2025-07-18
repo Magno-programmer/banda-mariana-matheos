@@ -1,41 +1,28 @@
 import React, {useState, useRef} from 'react';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
-import { OptimizedImage } from '@/components/ui/optimized-image';
-
-// Import srcsets for gallery images
-import cantoraSrcSet from '/images/cantora.png?format=avif;webp&as=srcset';
-import baixistaSrcSet from '/images/baixista.png?format=avif;webp&as=srcset';
-import bateristaSrcSet from '/images/baterista.png?format=avif;webp&as=srcset';
-import pianistaSrcSet from '/images/pianista.png?format=avif;webp&as=srcset';
-import bandaSrcSet from '/images/banda-blue-jazz-concurso.png?format=avif;webp&as=srcset';
 
 const ImageSection = () => {
   const { isMiniMobile, isMobile, isMiniTablet, isTablet } = useAdvancedViewport();
   const [images, setImages] = useState([
     { 
       src: '/images/cantora.png',
-      srcSet: cantoraSrcSet,
       alt: 'Artista musical Mariana Matheos, vocalista principal da banda, em retrato elegante com expressão sofisticada e presença cênica marcante'
     },
     { 
       src: '/images/baixista.png',
-      srcSet: baixistaSrcSet,
       alt: 'Artista musical Tarcíso Junior tocando baixo elétrico em performance ao vivo, demonstrando técnica apurada e groove característico do jazz'
     },
     { 
       src: '/images/baterista.png',
-      srcSet: bateristaSrcSet,
       alt: 'Artista musical Rubens Kalil na bateria em apresentação energética, com técnica precisa e ritmo swing característico do jazz moderno'
     },
     { 
       src: '/images/pianista.png',
-      srcSet: pianistaSrcSet,
       alt: 'Artista musical Carlos Nobre ao piano em performance íntima, demonstrando virtuosismo e sensibilidade musical em estilo jazz contemporâneo'
     },
     { 
       src: '/images/banda-blue-jazz-concurso.png',
-      srcSet: bandaSrcSet,
       alt: 'Grupo musical Mariana Matheos Jazz Band em apresentação oficial no Festival de Jazz & Blues de Tiradentes 2025, palco profissional com iluminação cênica'
     },
   ]);
@@ -87,11 +74,11 @@ const ImageSection = () => {
               <div className="absolute -inset-2 border-2 border-jazz-gold opacity-0 group-hover:opacity-50 transition-opacity duration-300 z-10"></div>
               
               <div className="relative overflow-hidden bg-jazz-dark">
-                <OptimizedImage 
+                <img 
                   src={image.src}
-                  srcSet={image.srcSet}
                   alt={image.alt}
                   className={`w-full ${imageHeight} object-cover filter sepia-[0.2] contrast-110 group-hover:scale-110 transition-transform duration-500`}
+                  loading="lazy"
                 />
                 
                 {/* Overlay */}

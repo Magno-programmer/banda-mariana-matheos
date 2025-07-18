@@ -2,12 +2,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import logoGold from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png';
-import logoGoldSrcSet from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente.png?format=avif;webp&as=srcset';
 import bandaCompletaPalco from '@/assets/images/imagem-da-banda.jpg';
-import bandaCompletaPalcoSrcSet from '@/assets/images/imagem-da-banda.jpg?format=avif;webp&as=srcset';
+import logoWhite from '@/assets/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.png';
 import lineArtDeco from '@/assets/images/divisor-de-sessao.png';
 import bordabuttonArtDeco from '@/assets/images/divisor-de-botao.png';
-import { OptimizedImage } from '@/components/ui/optimized-image';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 import TestimonialSection from './TestimonialSection';
 
@@ -40,22 +38,20 @@ const HeroSection = () => {
         {/* Logo Placeholder */}
         <div className="relative w-full max-h-screen overflow-hidden">
           {/* imagem de fundo */}
-          <OptimizedImage
+          <img
             src={bandaCompletaPalco}
-            srcSet={bandaCompletaPalcoSrcSet}
             alt="Grupo musical Mariana Matheos em apresentação ao vivo energética no Festival Jazz & Blues de Tiradentes, Nova Lima-MG, com iluminação profissional de palco e plateia ao fundo"
             className="absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
-            priority
+            loading="eager"
           />
 
           {/* Conteúdo central sobreposto */}
           <div className="relative z-20 flex flex-col items-center justify-start h-full text-center text-jazz-gold px-4 ">
-            <OptimizedImage
+            <img
               src={logoGold}
-              srcSet={logoGoldSrcSet}
               alt="Logotipo oficial da Mariana Matheos Jazz Band com textura dourada elegante e tipografia sofisticada em estilo Art Déco"
               className={`${logoWidth} mt-[15%] pb-[15%] object-contain drop-shadow-lg`}
-              priority
+              loading="eager"
             />
           </div>
         </div>
