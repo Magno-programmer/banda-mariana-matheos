@@ -8,7 +8,7 @@ import logoWhite from '/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-t
 import lineArtDeco from '/images/divisor-de-sessao.avif';
 import bordabuttonArtDeco from '/images/divisor-de-botao.avif';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
-import TestimonialSection from './TestimonialSection';
+import TestimonialSection from './HeroTwoSection';
 
 const HeroSection = () => {
   const navigate = useNavigate();
