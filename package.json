@@ -9,6 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "sitemap:generate": "node scripts/generate-sitemap.js",
+    "sitemapimage:generate": "node scripts/generate-image-sitemap.js",
     "internationalsitemap:generate": "node scripts/generate-international-sitemap.js",
     "preview": "vite preview"
   },

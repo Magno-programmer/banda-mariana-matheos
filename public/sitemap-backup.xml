@@ -8,21 +8,21 @@
 
   <url>
     <loc>https://marianamatheos.com.br/</loc>
-    <lastmod>2025-07-18T04:19:38.928Z</lastmod>
+    <lastmod>2025-07-18T11:15:09.969Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/sobre</loc>
-    <lastmod>2025-07-18T04:19:38.928Z</lastmod>
+    <lastmod>2025-07-18T11:15:09.969Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/fotos</loc>
-    <lastmod>2025-07-18T04:19:38.928Z</lastmod>
+    <lastmod>2025-07-18T11:15:09.969Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -33,7 +33,7 @@
 
   <url>
     <loc>https://marianamatheos.com.br/videos</loc>
-    <lastmod>2025-07-18T04:19:38.928Z</lastmod>
+    <lastmod>2025-07-18T11:15:09.969Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <video:video>
@@ -44,44 +44,86 @@
 
   <url>
     <loc>https://marianamatheos.com.br/repertorio</loc>
-    <lastmod>2025-07-18T04:19:38.928Z</lastmod>
+    <lastmod>2025-07-18T11:15:09.969Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/agenda</loc>
-    <lastmod>2025-07-18T04:19:38.928Z</lastmod>
+    <lastmod>2025-07-18T11:15:09.969Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/contato</loc>
-    <lastmod>2025-07-18T04:19:38.928Z</lastmod>
+    <lastmod>2025-07-18T11:15:09.969Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/faq</loc>
-    <lastmod>2025-07-18T04:19:38.928Z</lastmod>
+    <lastmod>2025-07-18T11:15:09.969Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/depoimentos</loc>
-    <lastmod>2025-07-18T04:19:38.928Z</lastmod>
+    <lastmod>2025-07-18T11:15:09.969Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://marianamatheos.com.br/blog</loc>
-    <lastmod>2025-07-18T04:19:38.928Z</lastmod>
+    <lastmod>2025-07-18T11:15:09.969Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/biografia/como-escolher-banda-casamento</loc>
+    <lastmod>2025-07-16T00:00:00.000Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/biografia/mariana-matheos-jazz-essencia-da-musica-ao-vivo</loc>
+    <lastmod>2025-07-16T00:00:00.000Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/biografia/historia-do-jazz-brasil</loc>
+    <lastmod>2025-07-16T00:00:00.000Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/biografia/musica-ao-vivo-eventos-corporativos</loc>
+    <lastmod>2025-07-16T00:00:00.000Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/biografia/historia-dos-jazz-standards</loc>
+    <lastmod>2025-07-16T00:00:00.000Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://marianamatheos.com.br/biografia/como-ser-uma-banda-de-jazz</loc>
+    <lastmod>2025-07-16T00:00:00.000Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <url>

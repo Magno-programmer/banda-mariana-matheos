@@ -131,7 +131,25 @@ const routes = [
   '/contato',
   '/faq',
   '/depoimentos',
-  '/blog'
+  '/blog',
+  "/blog/como-escolher-banda-casamento",
+  "/blog/mariana-matheos-jazz-essencia-da-musica-ao-vivo",
+  "/blog/historia-do-jazz-brasil",
+  "/blog/musica-ao-vivo-eventos-corporativos",
+  "/blog/historia-dos-jazz-standards",
+  "/blog/como-ser-uma-banda-de-jazz",
+  "/blog/billie-holiday",
+  "/blog/ella-fitzgerald",
+  "/blog/etta-james",
+  "/blog/amy-winehouse",
+  "/blog/frank-sinatra",
+  "/blog/nina-simone",
+  "/blog/beth-hart",
+  "/blog/bb-king",
+  "/blog/andra-day",
+  "/blog/nat-king-cole",
+  "/blog/kitty-kallen",
+  "/blog/glenn-miller"
 ];
 
 /**
@@ -170,7 +188,7 @@ function generateMainSitemap() {
     }
     
     return `  <url>
-    <loc>${primaryUrl}</loc>
+    <loc>${primaryUrl}",
     <lastmod>${currentDate}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
@@ -206,7 +224,7 @@ function generateLanguageSitemap(market) {
     }
     
     return `  <url>
-    <loc>${url}</loc>
+    <loc>${url}",
     <lastmod>${currentDate}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
@@ -216,28 +234,6 @@ function generateLanguageSitemap(market) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urlEntries}
-</urlset>`;
-}
-
-/**
- * Generates international markets sitemap
- */
-function generateInternationalSitemap() {
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${routes.map(route => {
-  const url = route === '/' ? baseUrl : `${baseUrl}${route}`;
-  const hreflangLinks = generateHreflangLinks(route);
-  
-  return `  <url>
-    <loc>${url}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-${hreflangLinks}
-  </url>`;
-}).join('\n')}
 </urlset>`;
 }
 
@@ -255,44 +251,10 @@ function generateSitemapIndex() {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapUrls.map(url => `  <sitemap>
-    <loc>${url}</loc>
+    <loc>${url}",
     <lastmod>${new Date().toISOString()}</lastmod>
   </sitemap>`).join('\n')}
 </sitemapindex>`;
-}
-
-/**
- * Validates generated sitemaps
- */
-function validateGeneratedSitemaps() {
-  const publicDir = path.join(process.cwd(), 'public');
-  const sitemapFiles = [
-    'sitemap.xml',
-    'sitemap-index.xml',
-    'sitemap-international.xml',
-    'sitemap-pt.xml',
-    'sitemap-en.xml',
-    'sitemap-es.xml'
-  ];
-
-  sitemapFiles.forEach(filename => {
-    const filepath = path.join(publicDir, filename);
-    if (fs.existsSync(filepath)) {
-      const content = fs.readFileSync(filepath, 'utf8');
-      
-      // Basic XML validation
-      if (!content.includes('<?xml') || (!content.includes('</urlset>') && !content.includes('</sitemapindex>'))) {
-        throw new Error(`Invalid XML structure in ${filename}`);
-      }
-      
-      // Check for required namespaces
-      if (content.includes('<urlset') && !content.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"')) {
-        throw new Error(`Missing required namespace in ${filename}`);
-      }
-      
-      console.log(`✓ ${filename} validation passed`);
-    }
-  });
 }
 
 /**
@@ -329,8 +291,8 @@ async function generateInternationalSitemaps() {
     console.log('✅ sitemap-international.xml gerado');
 
     // Índice de sitemaps
-    fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), generateSitemapIndex());
-    console.log('✅ sitemap-index.xml gerado');
+    fs.writeFileSync(path.join(publicDir, 'sitemap-language-index.xml'), generateSitemapIndex());
+    console.log('✅ sitemap-language-index.xml gerado');
 
     console.log('\n🎉 Todos os sitemaps gerados com sucesso!');
   } catch (err) {

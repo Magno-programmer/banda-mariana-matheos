@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://marianamatheos.com.br/fotos</loc>
-    <lastmod>2024-07-18</lastmod>
+    <lastmod>2025-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -37,44 +37,210 @@
     <image:image>
       <image:loc>https://marianamatheos.com.br/images/banda.avif</image:loc>
       <image:caption>Banda de jazz completa em apresentação ao vivo em Belo Horizonte</image:caption>
-      <image:title>Mariana Matheos Jazz Band - Formação Completa BH</image:title>
+      <image:title>Mariana Matheos Jazz banda - Formação Completa BH</image:title>
       <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/license</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://marianamatheos.com.br/images/casamento-jazz-band.avif</image:loc>
-      <image:caption>Banda de jazz tocando em cerimônia de casamento em Belo Horizonte</image:caption>
-      <image:title>Jazz para Casamento BH - Música Romântica</image:title>
+      <image:loc>https://marianamatheos.com.br/images/imagem-da-banda.avif</image:loc>
+      <image:caption>Banda de jazz completa em apresentação ao vivo em Nova Lima</image:caption>
+      <image:title>Mariana Matheos Jazz banda - Formação Completa NL</image:title>
+      <image:geo_location>Nova Lima, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/banda-blue-jazz-concurso.avif</image:loc>
+      <image:caption>Banda de jazz completa em apresentação ao vivo em Nova Lima</image:caption>
+      <image:title>Mariana Matheos Jazz banda - Formação Completa BH</image:title>
+      <image:geo_location>Nova Lima, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/mariana-matheos-jazz-essencia-da-musica-ao-vivo.avif</image:loc>
+      <image:caption>Mariana Matheos Jazz performando ao vivo em evento elegante</image:caption>
+      <image:title>Mariana Matheos Jazz — A essência da música ao vivo nos eventos</image:title>
       <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/license</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://marianamatheos.com.br/images/eventos-corporativos.avif</image:loc>
-      <image:caption>Apresentação da banda em evento corporativo em Belo Horizonte</image:caption>
-      <image:title>Jazz Corporativo BH - Eventos Empresariais</image:title>
+      <image:loc>https://marianamatheos.com.br/images/como-escolher-banda-casamento.avif</image:loc>
+      <image:caption>Banda de jazz tocando em casamento elegante</image:caption>
+      <image:title>Como escolher a banda ideal para o seu casamento</image:title>
       <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/license</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://marianamatheos.com.br/images/amy-winehouse.avif</image:loc>
-      <image:caption>Tributo a Amy Winehouse pela banda de jazz em Belo Horizonte</image:caption>
-      <image:title>Tributo Amy Winehouse - Jazz Soul BH</image:title>
+      <image:loc>https://marianamatheos.com.br/images/historia-do-jazz-brasil.avif</image:loc>
+      <image:caption>Músicos de jazz vintage no Brasil dos anos 1920</image:caption>
+      <image:title>A história do jazz no Brasil — das rádios aos grandes festivais</image:title>
       <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/license</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://marianamatheos.com.br/images/ella-fitzgerald.avif</image:loc>
-      <image:caption>Performance inspirada em Ella Fitzgerald pela banda de jazz BH</image:caption>
-      <image:title>Inspiração Ella Fitzgerald - Primeira Dama do Jazz</image:title>
+      <image:loc>https://marianamatheos.com.br/images/musica-ao-vivo-eventos-corporativos.avif</image:loc>
+      <image:caption>Banda de jazz tocando em evento corporativo elegante</image:caption>
+      <image:title>Por que a música ao vivo transforma eventos corporativos?</image:title>
       <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/license</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://marianamatheos.com.br/images/frank-sinatra.avif</image:loc>
-      <image:caption>Interpretação de clássicos de Frank Sinatra em Belo Horizonte</image:caption>
-      <image:title>Frank Sinatra Classics - Jazz Vocal BH</image:title>
+      <image:loc>https://marianamatheos.com.br/images/historia-dos-jazz-standards.avif</image:loc>
+      <image:caption>Pianista e vocalista interpretando um jazz standard em palco iluminado</image:caption>
+      <image:title>O que são Jazz Standards e por que são tão importantes?</image:title>
       <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
       <image:license>https://marianamatheos.com.br/license</image:license>
     </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/como-ser-uma-banda-de-jazz.avif</image:loc>
+      <image:caption>Banda de jazz ensaiando em um estúdio com instrumentos clássicos</image:caption>
+      <image:title>O que é necessário para ser uma banda de jazz?</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/billie-holiday-dama-do-jazz.avif</image:loc>
+      <image:caption>Retrato artístico de cantora de jazz dos anos 1940 com gardênia no cabelo</image:caption>
+      <image:title>Billie Holiday — A Dama do Jazz que Revolucionou a Música</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/ella-fitzgerald-primeira-dama-cancao.avif</image:loc>
+      <image:caption>Retrato artístico de elegante cantora de jazz dos anos 1940 com sorriso radiante</image:caption>
+      <image:title>Ella Fitzgerald — A Primeira Dama da Canção</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/frank-sinatra-rei-do-swing.avif</image:loc>
+      <image:caption>Retrato de elegante cantor dos anos 1950 com terno e gravata borboleta</image:caption>
+      <image:title>Frank Sinatra — O Rei do Swing e dos Crooners</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/nina-simone-sacerdotisa-soul.avif</image:loc>
+      <image:caption>Retrato de poderosa pianista e cantora dos anos 1960 ao piano</image:caption>
+      <image:title>Nina Simone — A Sacerdotisa do Soul</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/amy-winehouse-neo-soul.avif</image:loc>
+      <image:caption>Amy Winehouse com seu icônico penteado beehive e vestido preto</image:caption>
+      <image:title>Amy Winehouse — O Talento Interrompido do Neo-Soul</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/etta-james-matriarca-soul-rb.avif</image:loc>
+      <image:caption>Retrato de poderosa cantora de soul dos anos 1960 com expressão intensa</image:caption>
+      <image:title>Etta James — A Matriarca do Soul e R&amp;B</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/beth-hart-blues-contemporaneo.avif</image:loc>
+      <image:caption>Cantora de blues contemporâneo com cabelos loiros e expressão intensa</image:caption>
+      <image:title>Beth Hart — A Força do Blues Contemporâneo</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/bb-king-rei-do-blues.avif</image:loc>
+      <image:caption>Lendário guitarrista de blues dos anos 1960 com sua guitarra em performance</image:caption>
+      <image:title>B.B. King — O Rei do Blues</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/andra-day-nova-voz-soul.avif</image:loc>
+      <image:caption>Cantora de soul contemporânea com turbante e estilo vintage elegante</image:caption>
+      <image:title>Andra Day — A Nova Voz do Soul</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/nat-king-cole-cavaleiro-piano-voz.avif</image:loc>
+      <image:caption>Elegante pianista e cantor dos anos 1950 ao piano com sorriso característico</image:caption>
+      <image:title>Nat King Cole — O Cavaleiro do Piano e da Voz</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/kitty-kallen-voz-doce-era-de-ouro.avif</image:loc>
+      <image:caption>Cantora elegante dos anos 1940 com vestido de gala e microfone vintage</image:caption>
+      <image:title>Kitty Kallen — A Voz Doce da Era de Ouro</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/glenn-miller-maestro-swing.avif</image:loc>
+      <image:caption>Maestro de orquestra dos anos 1940 com batuta e uniforme militar elegante</image:caption>
+      <image:title>Glenn Miller — O Maestro do Swing</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/cantora.avif</image:loc>
+      <image:caption>Mariana Matheos, vocalista da banda de jazz em Belo Horizonte</image:caption>
+      <image:title>Vocalista Jazz Belo Horizonte - Mariana Matheos</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/banda.avif</image:loc>
+      <image:caption>Banda de jazz completa em apresentação ao vivo em Belo Horizonte</image:caption>
+      <image:title>Mariana Matheos Jazz banda - Formação Completa BH</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/imagem-da-banda.avif</image:loc>
+      <image:caption>Banda de jazz completa em apresentação ao vivo em Nova Lima</image:caption>
+      <image:title>Mariana Matheos Jazz banda - Formação Completa NL</image:title>
+      <image:geo_location>Nova Lima, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/sobre</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/cantora.avif</image:loc>
+      <image:caption>Mariana Matheos, vocalista da banda de jazz em Belo Horizonte</image:caption>
+      <image:title>Vocalista Jazz Belo Horizonte - Mariana Matheos</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/banda.avif</image:loc>
+      <image:caption>Banda de jazz completa em apresentação ao vivo em Belo Horizonte</image:caption>
+      <image:title>Mariana Matheos Jazz banda - Formação Completa BH</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/repertorio</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/repertorio</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+
   </url>
 </urlset>

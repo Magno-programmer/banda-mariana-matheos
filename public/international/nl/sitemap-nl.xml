@@ -1,63 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://marianamatheos.com.br/nl/</loc>
-    <lastmod>2025-07-18T11:13:35.118Z</lastmod>
+    <loc>https://marianamatheos.com.br/nl/",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://marianamatheos.com.br/nl/sobre</loc>
-    <lastmod>2025-07-18T11:13:35.118Z</lastmod>
+    <loc>https://marianamatheos.com.br/nl/sobre",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marianamatheos.com.br/nl/fotos</loc>
-    <lastmod>2025-07-18T11:13:35.118Z</lastmod>
+    <loc>https://marianamatheos.com.br/nl/fotos",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marianamatheos.com.br/nl/videos</loc>
-    <lastmod>2025-07-18T11:13:35.118Z</lastmod>
+    <loc>https://marianamatheos.com.br/nl/videos",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marianamatheos.com.br/nl/repertorio</loc>
-    <lastmod>2025-07-18T11:13:35.118Z</lastmod>
+    <loc>https://marianamatheos.com.br/nl/repertorio",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marianamatheos.com.br/nl/agenda</loc>
-    <lastmod>2025-07-18T11:13:35.118Z</lastmod>
+    <loc>https://marianamatheos.com.br/nl/agenda",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marianamatheos.com.br/nl/contato</loc>
-    <lastmod>2025-07-18T11:13:35.118Z</lastmod>
+    <loc>https://marianamatheos.com.br/nl/contato",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marianamatheos.com.br/nl/faq</loc>
-    <lastmod>2025-07-18T11:13:35.118Z</lastmod>
+    <loc>https://marianamatheos.com.br/nl/faq",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marianamatheos.com.br/nl/depoimentos</loc>
-    <lastmod>2025-07-18T11:13:35.118Z</lastmod>
+    <loc>https://marianamatheos.com.br/nl/depoimentos",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marianamatheos.com.br/nl/blog</loc>
-    <lastmod>2025-07-18T11:13:35.118Z</lastmod>
+    <loc>https://marianamatheos.com.br/nl/blog",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/como-escolher-banda-casamento",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/mariana-matheos-jazz-essencia-da-musica-ao-vivo",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/historia-do-jazz-brasil",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/musica-ao-vivo-eventos-corporativos",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/historia-dos-jazz-standards",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/como-ser-uma-banda-de-jazz",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/billie-holiday",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/ella-fitzgerald",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/etta-james",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/amy-winehouse",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/frank-sinatra",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/nina-simone",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/beth-hart",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/bb-king",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/andra-day",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/nat-king-cole",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/kitty-kallen",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marianamatheos.com.br/nl/blog/glenn-miller",
+    <lastmod>2025-07-18T12:09:09.112Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

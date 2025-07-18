@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://marianamatheos.com.br/fotos?category=eventos</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/como-escolher-banda-casamento.avif</image:loc>
+      <image:caption>Banda de jazz tocando em casamento elegante</image:caption>
+      <image:title>Como escolher a banda ideal para o seu casamento</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/musica-ao-vivo-eventos-corporativos.avif</image:loc>
+      <image:caption>Banda de jazz tocando em evento corporativo elegante</image:caption>
+      <image:title>Por que a música ao vivo transforma eventos corporativos?</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+  </url>
+</urlset>

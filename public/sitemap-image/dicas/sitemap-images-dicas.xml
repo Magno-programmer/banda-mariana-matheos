@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://marianamatheos.com.br/fotos?category=dicas</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://marianamatheos.com.br/images/como-ser-uma-banda-de-jazz.avif</image:loc>
+      <image:caption>Banda de jazz ensaiando em um estúdio com instrumentos clássicos</image:caption>
+      <image:title>O que é necessário para ser uma banda de jazz?</image:title>
+      <image:geo_location>Belo Horizonte, Minas Gerais, Brasil</image:geo_location>
+      <image:license>https://marianamatheos.com.br/license</image:license>
+    </image:image>
+  </url>
+</urlset>

@@ -2,22 +2,22 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://marianamatheos.com.br/sitemap-images.xml</loc>
-    <lastmod>2024-07-18</lastmod>
+    <lastmod>2025-07-18</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://marianamatheos.com.br/sitemap-images-band.xml</loc>
-    <lastmod>2024-07-18</lastmod>
+    <loc>https://marianamatheos.com.br/sitemap-images-banda.xml</loc>
+    <lastmod>2025-07-18</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://marianamatheos.com.br/sitemap-images-performance.xml</loc>
-    <lastmod>2024-07-18</lastmod>
+    <lastmod>2025-07-18</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://marianamatheos.com.br/sitemap-images-event.xml</loc>
-    <lastmod>2024-07-18</lastmod>
+    <loc>https://marianamatheos.com.br/sitemap-images-eventos.xml</loc>
+    <lastmod>2025-07-18</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://marianamatheos.com.br/sitemap-images-historical.xml</loc>
-    <lastmod>2024-07-18</lastmod>
+    <loc>https://marianamatheos.com.br/sitemap-images-historia.xml</loc>
+    <lastmod>2025-07-18</lastmod>
   </sitemap>
 </sitemapindex>

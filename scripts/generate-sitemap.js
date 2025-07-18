@@ -91,6 +91,12 @@ const STATIC_PAGES = [
 
 // Musician biographies (static content)
 const MUSICIANS_DATA = [
+  { slug: 'como-escolher-banda-casamento', publishedDate: '2025-07-16' },
+  { slug: 'mariana-matheos-jazz-essencia-da-musica-ao-vivo', publishedDate: '2025-07-16' },
+  { slug: 'historia-do-jazz-brasil', publishedDate: '2025-07-16' },
+  { slug: 'musica-ao-vivo-eventos-corporativos', publishedDate: '2025-07-16' },
+  { slug: 'historia-dos-jazz-standards', publishedDate: '2025-07-16' },
+  { slug: 'como-ser-uma-banda-de-jazz', publishedDate: '2025-07-16' },
   { slug: 'billie-holiday', publishedDate: '2025-07-17' },
   { slug: 'ella-fitzgerald', publishedDate: '2025-07-17' },
   { slug: 'etta-james', publishedDate: '2025-07-17' },
@@ -277,7 +283,7 @@ function generateSitemap() {
   MUSICIANS_DATA.forEach(musician => {
     const publishedDate = new Date(musician.publishedDate);
     xml += `  <url>
-    <loc>${SITE_URL}/biografia/${musician.slug}</loc>
+    <loc>${SITE_URL}/blog/${musician.slug}</loc>
     <lastmod>${publishedDate.toISOString()}</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
