@@ -39,6 +39,7 @@ const AboutSection = () => {
                 alt=""
                 className="w-[50%] object-contain"
                 aria-hidden="true"
+                loading="lazy"
               />
             </div>
 
@@ -82,6 +83,7 @@ const AboutSection = () => {
                   alt=""
                   className="absolute object-contain pointer-events-none z-30"
                   aria-hidden="true"
+                  loading="lazy"
                 />
 
                 {/* Área clicável */}
@@ -92,6 +94,7 @@ const AboutSection = () => {
                     src={imagemUnica.src}
                     alt={imagemUnica.alt}
                     className="object-cover filter sepia-[0.3] contrast-110"
+                    loading="lazy"
                   />
 
                   {/* Overlay escuro decorativo */}

@@ -165,6 +165,7 @@ const FAQSection = () => {
                 alt=""
                 className="w-[50%] object-contain"
                 aria-hidden="true"
+                loading="lazy"
               />
             </div>
             <p className={`font-gatsbybold ${textSize} text-gray-300 leading-relaxed max-w-3xl mx-auto`}>

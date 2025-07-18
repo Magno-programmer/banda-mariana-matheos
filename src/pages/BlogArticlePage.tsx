@@ -124,6 +124,7 @@ const BlogArticlePage = () => {
                 src={article.image}
                 alt={article.imageAlt}
                 className="w-full h-96 object-cover rounded-lg shadow-2xl"
+                loading="lazy"
               />
             </div>
           </div>

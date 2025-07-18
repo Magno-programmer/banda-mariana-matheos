@@ -42,7 +42,7 @@ const HeroSection = () => {
             src={bandaCompletaPalco}
             alt="Grupo musical Mariana Matheos em apresentação ao vivo energética no Festival Jazz & Blues de Tiradentes, Nova Lima-MG, com iluminação profissional de palco e plateia ao fundo"
             className="absolute top-0 left-0 w-full min-h-auto object-cover z-0 opacity-50 fade-bottom"
-            loading="eager"
+            loading="lazy"
           />
 
           {/* Conteúdo central sobreposto */}

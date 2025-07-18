@@ -69,6 +69,7 @@ const AvaliationSection = () => {
               alt=""
               className="w-64 object-contain"
               aria-hidden="true"
+              loading="lazy"
             />
           </div>
           <p className={`font-gatsbybold ${textSize} text-gray-100 max-w-4xl mx-auto leading-relaxed`}>
@@ -104,6 +105,7 @@ const AvaliationSection = () => {
               alt=""
               className="w-48 object-contain"
               aria-hidden="true"
+              loading="lazy"
             />
           </div>
 
@@ -143,6 +145,7 @@ const AvaliationSection = () => {
               alt=""
               className="w-48 object-contain"
               aria-hidden="true"
+              loading="lazy"
             />
           </div>
 
