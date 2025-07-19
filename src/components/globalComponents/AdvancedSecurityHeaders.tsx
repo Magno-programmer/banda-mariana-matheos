@@ -43,7 +43,6 @@ const AdvancedSecurityHeaders: React.FC = () => {
         content="max-age=31536000; includeSubDomains; preload"
       />
       <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-      <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
       <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
       <meta
         httpEquiv="Referrer-Policy"
