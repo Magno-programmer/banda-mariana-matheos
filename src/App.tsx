@@ -39,7 +39,6 @@ function App() {
       <SkipLink />
       
       {/* Global focus and viewport management */}
-      <FocusManager />
       <ViewportManager />
       
       {/* URL handling */}

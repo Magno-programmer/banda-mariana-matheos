@@ -2,21 +2,21 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface EnhancedStructuredDataProps {
-  pageType?: 'website' | 'article' | 'profile';
+  pageType?: 'website' | 'article' | 'profile' | 'gallery' | 'testimonials';
 }
 
 import { useLocation } from 'react-router-dom';
 import { 
   generateLocalBusinessSchema,
-  generateMusicGroupSchema,
   generateWebPageSchema,
-  generateOfferSchema,
   generateReviewSchema,
-  generateEventSchema,
-  generateFAQPageSchema,
-  generateArticleSchema,
+  generateFAQSchema,
   generateBlogPostingSchema,
-  generatePersonSchema,
+  generateServiceSchema,
+  generateOrganizationSchema,
+  generateWebsiteSchema,
+  generateBreadcrumbSchema,
+  generateEventSeriesSchema,
 } from '@/utils/schemaGenerators';
 
 // New perfect schemas
@@ -58,71 +58,61 @@ const EnhancedStructuredData = ({ pageType = 'website' }: EnhancedStructuredData
     switch (location.pathname) {
       case '/':
         schemas.push(generateLocalBusinessSchema());
-        schemas.push(generateMusicGroupSchema());
-        schemas.push(generateWebPageSchema('/'));
-        schemas.push(generateOfferSchema());
+        schemas.push(generateOrganizationSchema());
+        schemas.push(generateServiceSchema());
+        schemas.push(generateEventSeriesSchema());
         // Enhanced schemas
         schemas.push(...generateEnhancedProductSchema());
         schemas.push(generateConsolidatedRatingSchema());
         break;
 
       case '/sobre':
-        schemas.push(generatePersonSchema());
-        schemas.push(generateWebPageSchema('/sobre'));
+        schemas.push(generateOrganizationSchema());
         schemas.push(generateCreativeWorkSchema());
         break;
 
       case '/repertorio':
-        schemas.push(generateWebPageSchema('/repertorio'));
         schemas.push(generateCreativeWorkSchema());
         break;
 
       case '/fotos':
-        schemas.push(generateWebPageSchema('/fotos'));
         schemas.push(generateImageGallerySchema());
         break;
 
       case '/videos':
-        schemas.push(generateWebPageSchema('/videos'));
         schemas.push(generateVideoObjectSchema());
         break;
 
       case '/agenda':
-        schemas.push(generateWebPageSchema('/agenda'));
-        schemas.push(generateOfferSchema());
+        schemas.push(generateEventSeriesSchema());
+        schemas.push(generateServiceSchema());
         schemas.push(generateSuperEventSchema());
         schemas.push(generateHowToSchema());
         schemas.push(generateDigitalDocumentSchema());
         break;
 
       case '/contato':
-        schemas.push(generateWebPageSchema('/contato'));
         schemas.push(generateHowToSchema());
         break;
 
       case '/depoimentos':
-        schemas.push(generateWebPageSchema('/depoimentos'));
         schemas.push(generateReviewSchema());
         schemas.push(generateConsolidatedRatingSchema());
         break;
 
       case '/faq':
-        schemas.push(generateFAQPageSchema());
+        schemas.push(generateFAQSchema([]));
         schemas.push(generateEnhancedFAQSchema());
         schemas.push(generateSpeakableSchema());
         break;
 
       case '/blog':
-        schemas.push(generateWebPageSchema('/blog'));
-        schemas.push(generateBlogPostingSchema());
+        // Blog posting schema requires article data, skip for now
         break;
 
       default:
         if (location.pathname.startsWith('/blog/')) {
-          schemas.push(generateArticleSchema());
-          schemas.push(generateBlogPostingSchema());
-        } else {
-          schemas.push(generateWebPageSchema(location.pathname));
+          // Article schemas require specific data, skip for now  
         }
     }
 
