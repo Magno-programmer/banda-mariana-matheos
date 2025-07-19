@@ -1,4 +1,3 @@
-
 import { Helmet } from 'react-helmet-async';
 import HreflangTags from './HreflangTags';
 import { buildCanonicalUrl, normalizeUrl, validateUrl } from '@/utils/urlUtils';
@@ -7,15 +6,14 @@ interface SEOMetaTagsProps {
   title: string;
   description: string;
   keywords?: string;
-  newsKeywords?: string[]; // New prop for Google News
   canonicalUrl?: string;
   ogImage?: string;
-  pageType?: 'website' | 'article' | 'profile' | 'gallery' | 'testimonials';
+  pageType?: 'website' | 'article' | 'profile';
   isOptimizedForCTR?: boolean;
   robotsContent?: string;
 }
 
-// Optimized meta descriptions for better CTR (120–130 chars)
+// Optimized meta descriptions for better CTR (120-130 chars for mobile)
 const optimizedDescriptions = {
   '/': '🎵 Banda Jazz BH | Mariana Matheos - Casamentos & Eventos ⭐ 5 estrelas! Música ao vivo profissional. Contrate já via WhatsApp.',
   '/sobre': '🎤 Mariana Matheos Jazz Band - 15+ anos em BH | História, formação e experiência. Especialistas em eventos de alto padrão.',
@@ -29,7 +27,7 @@ const optimizedDescriptions = {
   '/blog': '📖 Blog Jazz BH | Mariana Matheos | Dicas eventos, história do jazz e tendências musicais. Conteúdo exclusivo e atual.'
 };
 
-// Optimized titles for better SEO and CTR (50–55 chars)
+// Optimized titles for better SEO and CTR (50-55 chars for mobile)
 const optimizedTitles = {
   '/': '🎵 Banda Jazz BH | Mariana Matheos - Eventos Premium',
   '/sobre': 'História da Banda 🎤 | Mariana Matheos Jazz BH',
@@ -43,11 +41,10 @@ const optimizedTitles = {
   '/blog': 'Blog Jazz 📖 | Mariana Matheos BH'
 };
 
-const SEOMetaTags = ({
-  title,
-  description,
+const SEOMetaTags = ({ 
+  title, 
+  description, 
   keywords = "banda de jazz belo horizonte, música ao vivo, casamentos, eventos corporativos, shows, mariana matheos, jazz band bh",
-  newsKeywords,
   canonicalUrl,
   ogImage = "/images/banda.avif",
   pageType = "website",
@@ -55,45 +52,36 @@ const SEOMetaTags = ({
   robotsContent = "index, follow"
 }: SEOMetaTagsProps) => {
   const baseUrl = "https://marianamatheos.com.br";
-
+  
   // Normalize and validate canonical URL
   const normalizedPath = canonicalUrl ? normalizeUrl(canonicalUrl) : '/';
   const fullCanonicalUrl = buildCanonicalUrl(normalizedPath, baseUrl);
+  
+  // Validate canonical URL
   if (!validateUrl(fullCanonicalUrl)) {
     console.warn(`Invalid canonical URL generated: ${fullCanonicalUrl}`);
   }
-
+  
   const fullOgImage = ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`;
-
-  // Apply optimized titles/descriptions if enabled
-  const finalTitle = isOptimizedForCTR && optimizedTitles[normalizedPath as keyof typeof optimizedTitles]
+  
+  // Use optimized title if available and CTR optimization is enabled
+  const finalTitle = isOptimizedForCTR && normalizedPath && optimizedTitles[normalizedPath as keyof typeof optimizedTitles] 
     ? optimizedTitles[normalizedPath as keyof typeof optimizedTitles]
     : title;
-
-  const finalDescription = isOptimizedForCTR && optimizedDescriptions[normalizedPath as keyof typeof optimizedDescriptions]
+  
+  // Use optimized description if available and CTR optimization is enabled
+  const finalDescription = isOptimizedForCTR && normalizedPath && optimizedDescriptions[normalizedPath as keyof typeof optimizedDescriptions] 
     ? optimizedDescriptions[normalizedPath as keyof typeof optimizedDescriptions]
     : description;
 
   return (
     <>
       <Helmet>
-        {/* Basic SEO tags */}
         <title>{finalTitle}</title>
         <meta name="description" content={finalDescription} />
         <meta name="keywords" content={keywords} />
-        
-        {/* Google News Keywords - Essential for news indexing */}
-        {newsKeywords && newsKeywords.length > 0 && (
-          <meta name="news_keywords" content={newsKeywords.join(', ')} />
-        )}
-        
-        <meta name="robots" content={robotsContent} />
-        <meta name="author" content="Mariana Matheos Jazz Band" />
-        <meta name="theme-color" content="#800000" />
-
-        {/* Canonical URL */}
         <link rel="canonical" href={fullCanonicalUrl} />
-
+        
         {/* Open Graph */}
         <meta property="og:title" content={finalTitle} />
         <meta property="og:description" content={finalDescription} />
@@ -101,25 +89,20 @@ const SEOMetaTags = ({
         <meta property="og:url" content={fullCanonicalUrl} />
         <meta property="og:type" content={pageType} />
         <meta property="og:site_name" content="Mariana Matheos Jazz Band" />
-
+        
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={finalTitle} />
         <meta name="twitter:description" content={finalDescription} />
         <meta name="twitter:image" content={fullOgImage} />
-
-        {/* Article-specific meta tags for Google News */}
-        {pageType === 'article' && (
-          <>
-            <meta property="article:author" content="Mariana Matheos Jazz Band" />
-            <meta property="article:publisher" content="Mariana Matheos Jazz Band" />
-            <meta property="article:section" content="Música" />
-            <meta name="news_sitemap" content="true" />
-          </>
-        )}
+        
+        {/* Additional SEO tags */}
+        <meta name="robots" content={robotsContent} />
+        <meta name="author" content="Mariana Matheos Jazz Band" />
+        <meta name="theme-color" content="#800000" />
       </Helmet>
-
-      {/* Hreflang tags managed separately */}
+      
+      {/* International hreflang tags */}
       <HreflangTags />
     </>
   );

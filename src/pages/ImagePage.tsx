@@ -7,6 +7,7 @@ import ImageSection from "@/components/sections/galeria/ImagesSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
+import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSection";
 import EnhancedStructuredData from "@/components/globalComponents/EnhancedStructuredData";
 
@@ -24,6 +25,7 @@ const ImagePage = () => {
 
       <div className="min-h-screen bg-black">
         <Header />
+        <AdvancedBreadcrumb />
         <ImageSection />
         <RelatedPagesSection 
           variant="grid"

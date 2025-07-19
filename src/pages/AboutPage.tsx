@@ -7,6 +7,7 @@ import AboutSection from "@/components/sections/sobre/AboutSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
+import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSection";
 
 
@@ -22,6 +23,7 @@ const AboutPage = () => {
       
       <div className="min-h-screen bg-black">
         <Header />
+        <AdvancedBreadcrumb />
         <AboutSection />
         <RelatedPagesSection 
           variant="grid"

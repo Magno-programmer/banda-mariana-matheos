@@ -8,6 +8,7 @@ import Header from '@/components/sections/commonPages/header/Header';
 import HeroSection from '@/components/sections/Index/HeroSection';
 import Footer from '@/components/sections/commonPages/footer/Footer';
 import WhatsAppButton from '@/components/globalComponents/WhatsAppButton';
+import AdvancedBreadcrumb from '@/components/globalComponents/AdvancedBreadcrumb';
 import RelatedPagesSection from '@/components/globalComponents/RelatedPagesSection';
 
 
@@ -23,6 +24,7 @@ const Index = () => {
       
       <div className="min-h-screen bg-black">
         <Header />
+        <AdvancedBreadcrumb />
         <HeroSection />
         <RelatedPagesSection 
           title="Descubra Nossos Serviços"

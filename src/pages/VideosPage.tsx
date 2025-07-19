@@ -23,6 +23,7 @@ const VideosPage = () => {
 
       <div className="min-h-screen bg-black">
         <Header />
+        <AdvancedBreadcrumb />
         <VideosSection />
         <RelatedPagesSection 
           variant="grid"

@@ -35,7 +35,6 @@ export interface BlogArticle {
   seoTitle: string;
   seoDescription: string;
   keywords: string[];
-  newsKeywords?: string[]; // New property for Google News optimization
 }
 
 export const blogArticlesData: BlogArticle[] = [
@@ -125,8 +124,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Mariana Matheos Jazz — A essência da música ao vivo nos eventos | Blog',
     seoDescription: 'Conheça a história e missão da banda Mariana Matheos Jazz, especializada em música ao vivo para eventos elegantes em Belo Horizonte.',
-    keywords: ['banda mariana matheos', 'música ao vivo', 'eventos belo horizonte', 'jazz band', 'banda profissional'],
-    newsKeywords: ['banda mariana matheos', 'música ao vivo', 'jazz', 'banda de jazz', 'eventos belo horizonte', 'jazz band', 'banda profissional']
+    keywords: ['banda mariana matheos', 'música ao vivo', 'eventos belo horizonte', 'jazz band', 'banda profissional']
   },
   {
     id: '2',
@@ -297,8 +295,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Como escolher a banda ideal para o seu casamento | Blog Mariana Matheos',
     seoDescription: 'Dicas essenciais para escolher a banda perfeita para seu casamento. Saiba como a música ao vivo pode transformar seu grande dia.',
-    keywords: ['banda para casamento', 'música casamento', 'banda de jazz casamento', 'evento elegante', 'casamento ao vivo'],
-    newsKeywords: ["casamento", "música casamento", "banda casamento", "música ao vivo", "eventos", "festa de casamento", "entretenimento", "música para eventos"]
+    keywords: ['banda para casamento', 'música casamento', 'banda de jazz casamento', 'evento elegante', 'casamento ao vivo']
   },
   {
     id: '3',
@@ -528,8 +525,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'A história do jazz no Brasil — das rádios aos grandes festivais | Blog',
     seoDescription: 'Explore a rica história do jazz brasileiro, suas influências e evolução desde os anos 1920 até os festivais contemporâneos.',
-    keywords: ['jazz brasileiro', 'história do jazz brasileiro', 'música brasileira', 'cultura musical', 'bossa nova'],
-    newsKeywords: ["jazz brasileiro", "música brasileira", "bossa nova", "tom jobim", "elis regina", "cultura musical", "história da música", "festivais de jazz"]
+    keywords: ['jazz brasileiro', 'história do jazz brasileiro', 'música brasileira', 'cultura musical', 'bossa nova']
   },
   {
     id: '4',
@@ -799,8 +795,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Por que a música ao vivo transforma eventos corporativos? | Blog',
     seoDescription: 'Entenda como a música ao vivo pode transformar seus eventos corporativos, criando experiências únicas e fortalecendo conexões.',
-    keywords: ['eventos corporativos', 'música ao vivo empresas', 'banda profissional', 'networking musical', 'confraternização corporativa'],
-    newsKeywords: ['eventos corporativos', 'música ao vivo empresas', 'banda profissional', 'networking musical', 'confraternização corporativa']
+    keywords: ['eventos corporativos', 'música ao vivo empresas', 'banda profissional', 'networking musical', 'confraternização corporativa']
   },
   {
     id: '5',
@@ -870,8 +865,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'O que são Jazz Standards e por que são tão importantes? | Blog',
     seoDescription: 'Entenda o que são os jazz standards, por que são essenciais para o jazz e como a banda Mariana Matheos dá vida a esses clássicos em eventos ao vivo.',
-    keywords: ['jazz standards', 'história do jazz', 'clássicos do jazz', 'música ao vivo', 'repertório jazzístico'],
-    newsKeywords: ['jazz standards', 'história do jazz', 'clássicos do jazz', 'música ao vivo', 'repertório jazzístico']
+    keywords: ['jazz standards', 'história do jazz', 'clássicos do jazz', 'música ao vivo', 'repertório jazzístico']
   },
   {
     id: '6',
@@ -1004,8 +998,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'O que é necessário para ser uma banda de jazz? | Blog',
     seoDescription: 'Confira dicas essenciais para montar e manter uma banda de jazz de sucesso — desde os músicos certos até repertório, ensaios e postura profissional.',
-    keywords: ['como formar banda de jazz', 'dicas para músicos de jazz', 'banda instrumental', 'montar banda', 'jazz moderno'],
-    newsKeywords: ['como formar banda de jazz', 'dicas para músicos de jazz', 'banda instrumental', 'montar banda', 'jazz moderno']
+    keywords: ['como formar banda de jazz', 'dicas para músicos de jazz', 'banda instrumental', 'montar banda', 'jazz moderno']
   },
   {
     id: '7',
@@ -1115,8 +1108,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Billie Holiday — A Dama do Jazz que Revolucionou a Música | Blog',
     seoDescription: 'Conheça a história extraordinária de Billie Holiday, uma das vozes mais expressivas do jazz que transformou a dor em arte inesquecível.',
-    keywords: ['billie holiday', 'historia do jazz', 'cantores de jazz', 'lady day', 'jazz classico'],
-    newsKeywords: ['billie holiday', 'historia do jazz', 'cantores de jazz', 'lady day', 'jazz classico']
+    keywords: ['billie holiday', 'historia do jazz', 'cantores de jazz', 'lady day', 'jazz classico']
   },
   {
     id: '8',
@@ -1255,8 +1247,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Ella Fitzgerald — A Primeira Dama da Canção | Blog',
     seoDescription: 'Descubra a trajetória de Ella Fitzgerald, cujo talento vocal incomparável e técnica de scat singing revolucionaram o jazz.',
-    keywords: ['ella fitzgerald', 'first lady of song', 'scat singing', 'historia do jazz', 'cantores de jazz'],
-    newsKeywords: ['ella fitzgerald', 'first lady of song', 'scat singing', 'historia do jazz', 'cantores de jazz']
+    keywords: ['ella fitzgerald', 'first lady of song', 'scat singing', 'historia do jazz', 'cantores de jazz']
   },
   {
     id: '9',
@@ -1354,8 +1345,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Frank Sinatra — O Rei do Swing e dos Crooners | Blog',
     seoDescription: 'A história de Frank Sinatra, que definiu o estilo crooner e se tornou uma das maiores vozes da música americana.',
-    keywords: ['frank sinatra', 'crooner', 'swing', 'jazz', 'musica americana'],
-    newsKeywords: ['frank sinatra', 'frank', 'historia', 'crooner', 'swing', 'jazz', 'musica americana']
+    keywords: ['frank sinatra', 'crooner', 'swing', 'jazz', 'musica americana']
   },
   {
     id: '10',
@@ -1438,8 +1428,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Nina Simone — A Sacerdotisa do Soul | Blog',
     seoDescription: 'Conheça Nina Simone, pianista que se tornou uma das vozes mais poderosas do jazz, soul e dos direitos civis.',
-    keywords: ['nina simone', 'soul', 'jazz', 'ativismo', 'piano'],
-    newsKeywords: ['nina simone', 'soul', 'jazz', 'ativismo', 'piano', 'classico', 'direitos civis']
+    keywords: ['nina simone', 'soul', 'jazz', 'ativismo', 'piano']
   },
   {
     id: '11',
@@ -1525,8 +1514,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Amy Winehouse — O Talento Interrompido do Neo-Soul | Blog',
     seoDescription: 'A trajetória breve mas impactante de Amy Winehouse, que revitalizou o soul e jazz contemporâneo.',
-    keywords: ['amy winehouse', 'neo soul', 'jazz contemporaneo', 'soul music'],
-    newsKeywords: ['amy winehouse', 'neo soul', 'jazz contemporaneo', 'soul music', 'british soul']
+    keywords: ['amy winehouse', 'neo soul', 'jazz contemporaneo', 'soul music']
   },
   {
     id: '12',
@@ -1618,8 +1606,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Etta James — A Matriarca do Soul e R&B | Blog',
     seoDescription: 'A história de Etta James, uma das vozes mais poderosas do soul e R&B que influenciou gerações.',
-    keywords: ['etta james', 'soul', 'r&b', 'blues', 'at last'],
-    newsKeywords: ['etta james', 'soul', 'r&b', 'blues', 'at last', 'musica americana']
+    keywords: ['etta james', 'soul', 'r&b', 'blues', 'at last']
   },
   {
     id: '13',
@@ -1708,8 +1695,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Beth Hart — A Força do Blues Contemporâneo | Blog',
     seoDescription: 'Conheça Beth Hart, uma das vozes mais poderosas do blues contemporâneo e sua intensidade emocional.',
-    keywords: ['beth hart', 'blues contemporaneo', 'rock blues', 'cantora blues'],
-    newsKeywords: ['beth hart', 'blues contemporaneo', 'rock blues', 'cantora americana', 'musica blues']
+    keywords: ['beth hart', 'blues contemporaneo', 'rock blues', 'cantora blues']
   },
   {
     id: '14',
@@ -1808,8 +1794,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'B.B. King — O Rei do Blues | Blog',
     seoDescription: 'A história de B.B. King, o lendário guitarrista que definiu o blues moderno com sua guitarra Lucille.',
-    keywords: ['bb king', 'blues', 'guitarra blues', 'lucille', 'rei do blues'],
-    newsKeywords: ['bb king', 'blues', 'guitarra blues', 'lucille', 'rei do blues', 'musica americana']
+    keywords: ['bb king', 'blues', 'guitarra blues', 'lucille', 'rei do blues']
   },
   {
     id: '15',
@@ -1889,8 +1874,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Andra Day — A Nova Voz do Soul | Blog',
     seoDescription: 'Conheça Andra Day, a cantora que trouxe o soul clássico para o século XXI com sua voz poderosa.',
-    keywords: ['andra day', 'soul contemporaneo', 'rise up', 'neo soul', 'billie holiday'],
-    newsKeywords: ['andra day', 'soul contemporaneo', 'rise up', 'neo soul', 'billie holiday', 'musica americana']
+    keywords: ['andra day', 'soul contemporaneo', 'rise up', 'neo soul', 'billie holiday']
   },
   {
     id: '16',
@@ -1989,8 +1973,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Nat King Cole — O Cavaleiro do Piano e da Voz | Blog',
     seoDescription: 'A história de Nat King Cole, pianista virtuoso que se tornou um dos maiores crooners da história.',
-    keywords: ['nat king cole', 'piano jazz', 'crooner', 'unforgettable', 'trio'],
-    newsKeywords: ['nat king cole', 'piano jazz', 'crooner', 'unforgettable', 'trio', 'musica americana']
+    keywords: ['nat king cole', 'piano jazz', 'crooner', 'unforgettable', 'trio']
   },
   {
     id: '17',
@@ -2073,8 +2056,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Kitty Kallen — A Voz Doce da Era de Ouro | Blog',
     seoDescription: 'Conheça Kitty Kallen, a cantora que marcou a era de ouro do jazz com sua voz doce e interpretações memoráveis.',
-    keywords: ['kitty kallen', 'era de ouro', 'big bands', 'swing', 'anos 1940'],
-    newsKeywords: ['kitty kallen', 'era de ouro', 'big bands', 'swing', 'anos 1940', 'musica americana']
+    keywords: ['kitty kallen', 'era de ouro', 'big bands', 'swing', 'anos 1940']
   },
   {
     id: '18',
@@ -2152,8 +2134,7 @@ export const blogArticlesData: BlogArticle[] = [
     author: 'Mariana Matheos',
     seoTitle: 'Glenn Miller — O Maestro do Swing | Blog',
     seoDescription: 'A história de Glenn Miller, o líder de orquestra que definiu o som do swing e se tornou uma lenda.',
-    keywords: ['glenn miller', 'swing', 'big band', 'orquestra', 'in the mood'],
-    newsKeywords: ['glenn miller', 'swing', 'big band', 'orquestra', 'in the mood', 'musica americana']
+    keywords: ['glenn miller', 'swing', 'big band', 'orquestra', 'in the mood']
   }
 
 ];
