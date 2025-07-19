@@ -21,18 +21,6 @@ import {
   generateEnhancedEventSchema
 } from '@/utils/schemaGenerators';
 
-// Import advanced schemas
-import {
-  generateEnhancedProductSchema,
-  generateConsolidatedRatingSchema,
-  generateSuperEventSchema,
-  generateDigitalDocumentSchema,
-  generateCreativeWorkSchema,
-  generateSpeakableSchema,
-  generateEnhancedFAQSchema,
-  generateHowToSchema
-} from '@/utils/advancedSchemaGenerators';
-
 interface EnhancedStructuredDataProps {
   currentArticle?: BlogArticle;
   pageType?: 'home' | 'about' | 'gallery' | 'videos' | 'repertoire' | 'booking' | 'faq' | 'testimonials' | 'contact' | 'blog-index' | 'blog-article';
@@ -76,69 +64,15 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
             }} 
           />
           
-          {/* WebSite Schema with SpeakableSpecification */}
+          {/* WebSite Schema */}
           <script 
             type="application/ld+json" 
             dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify({
-                ...generateWebsiteSchema(),
-                ...generateSpeakableSchema()
-              })
+              __html: JSON.stringify(generateWebsiteSchema()) 
             }} 
           />
           
-          {/* Enhanced Product Schemas */}
-          {generateEnhancedProductSchema().map((product, index) => (
-            <script 
-              key={`enhanced-product-${index}`}
-              type="application/ld+json" 
-              dangerouslySetInnerHTML={{ 
-                __html: JSON.stringify(product)
-              }} 
-            />
-          ))}
-          
-          {/* Consolidated Rating Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateConsolidatedRatingSchema())
-            }} 
-          />
-          
-          {/* Super Event Series Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateSuperEventSchema())
-            }} 
-          />
-          
-          {/* Digital Document Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateDigitalDocumentSchema())
-            }} 
-          />
-          
-          {/* Creative Work Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateCreativeWorkSchema())
-            }} 
-          />
-          
-          {/* HowTo Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateHowToSchema())
-            }} 
-          />
-          
-          {/* WebPage Schema */}
+          {/* HomePage WebPage Schema */}
           <script 
             type="application/ld+json" 
             dangerouslySetInnerHTML={{ 
@@ -148,6 +82,22 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
                 'Banda de jazz para casamentos e eventos corporativos. Repertório profissional de jazz, bossa nova e música brasileira. Qualidade garantida.',
                 'https://marianamatheos.com.br/images/banda-blue-jazz-concurso.avif'
               ))
+            }} 
+          />
+          
+          {/* Event Schedule Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateEventSeriesSchema())
+            }} 
+          />
+          
+          {/* Service Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateServiceSchema())
             }} 
           />
           
@@ -179,14 +129,6 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
             type="application/ld+json" 
             dangerouslySetInnerHTML={{ 
               __html: JSON.stringify(generateWebsiteSchema()) 
-            }} 
-          />
-          
-          {/* Creative Work Schema for band story */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateCreativeWorkSchema())
             }} 
           />
           
@@ -269,224 +211,6 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
         </>
       );
       
-    case 'booking':
-      return (
-        <>
-          {/* Base Organization Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateOrganizationSchema()) 
-            }} 
-          />
-          
-          {/* WebSite Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateWebsiteSchema()) 
-            }} 
-          />
-          
-          {/* Enhanced Product Schemas */}
-          {generateEnhancedProductSchema().map((product, index) => (
-            <script 
-              key={`booking-product-${index}`}
-              type="application/ld+json" 
-              dangerouslySetInnerHTML={{ 
-                __html: JSON.stringify(product)
-              }} 
-            />
-          ))}
-          
-          {/* Super Event Series Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateSuperEventSchema())
-            }} 
-          />
-          
-          {/* Digital Document Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateDigitalDocumentSchema())
-            }} 
-          />
-          
-          {/* HowTo Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateHowToSchema())
-            }} 
-          />
-          
-          {/* Consolidated Rating Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateConsolidatedRatingSchema())
-            }} 
-          />
-          
-          {/* Booking WebPage Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateWebPageSchema(
-                '/agenda',
-                'Agendamento - Mariana Matheos Jazz Band',
-                'Agende sua apresentação com a Mariana Matheos Jazz Band. Música ao vivo para casamentos, eventos corporativos e shows especiais.',
-                'https://marianamatheos.com.br/images/banda-blue-jazz-concurso.avif'
-              ))
-            }} 
-          />
-          
-          {/* Breadcrumb Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateBreadcrumbSchema(path, [
-                { name: "Início", url: "https://marianamatheos.com.br/" },
-                { name: "Agendamento", url: "https://marianamatheos.com.br/agenda" }
-              ]))
-            }} 
-          />
-        </>
-      );
-      
-    case 'faq':
-      return (
-        <>
-          {/* Base Organization Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateOrganizationSchema()) 
-            }} 
-          />
-          
-          {/* WebSite Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateWebsiteSchema()) 
-            }} 
-          />
-          
-          {/* Enhanced FAQ Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateEnhancedFAQSchema())
-            }} 
-          />
-          
-          {/* HowTo Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateHowToSchema())
-            }} 
-          />
-          
-          {/* FAQ WebPage Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateWebPageSchema(
-                '/faq',
-                'FAQ - Perguntas Frequentes | Mariana Matheos Jazz Band',
-                'Dúvidas sobre contratação, repertório e serviços da Mariana Matheos Jazz Band. Respostas às perguntas mais comuns dos clientes.',
-                'https://marianamatheos.com.br/images/banda.avif'
-              ))
-            }} 
-          />
-          
-          {/* Breadcrumb Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateBreadcrumbSchema(path, [
-                { name: "Início", url: "https://marianamatheos.com.br/" },
-                { name: "FAQ", url: "https://marianamatheos.com.br/faq" }
-              ]))
-            }} 
-          />
-        </>
-      );
-      
-    case 'testimonials':
-      return (
-        <>
-          {/* Base Organization Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateOrganizationSchema()) 
-            }} 
-          />
-          
-          {/* WebSite Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateWebsiteSchema()) 
-            }} 
-          />
-          
-          {/* Consolidated Rating Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateConsolidatedRatingSchema())
-            }} 
-          />
-          
-          {/* Local Business Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateLocalBusinessSchema())
-            }} 
-          />
-
-          {/* Review Schema para Rich Snippets */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateReviewSchema())
-            }} 
-          />
-          
-          {/* Testimonials WebPage Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateWebPageSchema(
-                '/depoimentos',
-                'Depoimentos - Mariana Matheos Jazz Band',
-                'Avaliações 5 estrelas no Google e depoimentos de clientes satisfeitos com os shows da Mariana Matheos Jazz Band.',
-                'https://marianamatheos.com.br/images/banda.avif'
-              ))
-            }} 
-          />
-          
-          {/* Breadcrumb Schema */}
-          <script 
-            type="application/ld+json" 
-            dangerouslySetInnerHTML={{ 
-              __html: JSON.stringify(generateBreadcrumbSchema(path, [
-                { name: "Início", url: "https://marianamatheos.com.br/" },
-                { name: "Depoimentos", url: "https://marianamatheos.com.br/depoimentos" }
-              ]))
-            }} 
-          />
-        </>
-      );
-
     case 'videos':
       return (
         <>
@@ -601,6 +325,232 @@ const EnhancedStructuredData: React.FC<EnhancedStructuredDataProps> = ({ current
               __html: JSON.stringify(generateBreadcrumbSchema(path, [
                 { name: "Início", url: "https://marianamatheos.com.br/" },
                 { name: "Repertório", url: "https://marianamatheos.com.br/repertorio" }
+              ]))
+            }} 
+          />
+        </>
+      );
+      
+    case 'booking':
+      return (
+        <>
+          {/* Base Organization Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateOrganizationSchema()) 
+            }} 
+          />
+          
+          {/* WebSite Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateWebsiteSchema()) 
+            }} 
+          />
+          
+          {/* Booking WebPage Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateWebPageSchema(
+                '/agenda',
+                'Agendamento - Mariana Matheos Jazz Band',
+                'Agende sua apresentação com a Mariana Matheos Jazz Band. Música ao vivo para casamentos, eventos corporativos e shows especiais.',
+                'https://marianamatheos.com.br/images/banda-blue-jazz-concurso.avif'
+              ))
+            }} 
+          />
+          
+          {/* Enhanced Event Series Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateEventSeriesSchema())
+            }} 
+          />
+          
+          {/* Enhanced Individual Event Schemas */}
+          {eventsData.map(event => (
+            <script 
+              key={`event-${event.id}`}
+              type="application/ld+json" 
+              dangerouslySetInnerHTML={{ 
+                __html: JSON.stringify(generateEnhancedEventSchema(event.id))
+              }} 
+            />
+          ))}
+          
+          {/* Service Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateServiceSchema())
+            }} 
+          />
+          
+          {/* Local Business Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateLocalBusinessSchema())
+            }} 
+          />
+          
+          {/* Product Schema for Musical Services */}
+          {generateProductSchema().map((product, index) => (
+            <script 
+              key={`product-${index}`}
+              type="application/ld+json" 
+              dangerouslySetInnerHTML={{ 
+                __html: JSON.stringify(product)
+              }} 
+            />
+          ))}
+          
+          {/* Breadcrumb Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateBreadcrumbSchema(path, [
+                { name: "Início", url: "https://marianamatheos.com.br/" },
+                { name: "Agendamento", url: "https://marianamatheos.com.br/agenda" }
+              ]))
+            }} 
+          />
+        </>
+      );
+      
+    case 'faq':
+      return (
+        <>
+          {/* Base Organization Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateOrganizationSchema()) 
+            }} 
+          />
+          
+          {/* WebSite Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateWebsiteSchema()) 
+            }} 
+          />
+          
+          {/* FAQ WebPage Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateWebPageSchema(
+                '/faq',
+                'FAQ - Perguntas Frequentes | Mariana Matheos Jazz Band',
+                'Dúvidas sobre contratação, repertório e serviços da Mariana Matheos Jazz Band. Respostas às perguntas mais comuns dos clientes.',
+                'https://marianamatheos.com.br/images/banda.avif'
+              ))
+            }} 
+          />
+          
+          {/* FAQ Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateFAQSchema([
+                {
+                  question: "Quanto custa contratar a Mariana Matheos para casamento ou evento?",
+                  answer: "O valor varia conforme o tipo de evento, local, duração, estrutura técnica necessária e formação da banda. Casamentos têm valores diferenciados de eventos corporativos. Eventos em cidades próximas a BH têm desconto no deslocamento. Solicite um orçamento personalizado sem compromisso!"
+                },
+                {
+                  question: "Quais estilos musicais fazem parte do repertório da banda?",
+                  answer: "Tocamos uma mistura refinada de Jazz Clássico, Soul, Blues, R&B, Bossa Nova, baladas românticas e releituras vintage de pop contemporâneo. Inspirada na Era de Ouro do Jazz (1920–1960), nossa sonoridade é envolvente, elegante e cheia de identidade. Temos mais de 150 músicas no repertório, desde clássicos como 'Fly Me To The Moon' até sucessos modernos com arranjos jazzeados."
+                },
+                {
+                  question: "A banda leva os equipamentos necessários?",
+                  answer: "A banda leva seus próprios instrumentos (piano elétrico, baixo, guitarra, bateria completa, trompete), microfones profissionais Shure, pedalboards e todos os cabos. O contratante é responsável apenas pela estrutura básica de som (PA compatível com o espaço), energia elétrica estável e, em alguns casos, alimentação dos músicos após o show."
+                },
+                {
+                  question: "Quantas pessoas compõem a banda?",
+                  answer: "A formação padrão tem 5 músicos profissionais: vocal (Mariana Matheos), piano, baixo/guitarra, bateria e trompete — todos com formação musical sólida e carreira consolidada. Para eventos menores ou orçamentos específicos, oferecemos formações reduzidas (trio ou quarteto). Também podemos incluir músicos adicionais como saxofone ou violino mediante solicitação."
+                },
+                {
+                  question: "A banda faz apresentações em eventos corporativos e particulares?",
+                  answer: "Absolutamente! Temos experiência em eventos empresariais, jantares elegantes, festivais, bares de vinho, casas de jazz, formaturas, aniversários de 50 anos, vernissages e lançamentos de produtos. Adaptamos o repertório, figurino e energia conforme o clima e perfil do evento. Cada apresentação é única e personalizada."
+                }
+              ]))
+            }} 
+          />
+          
+          {/* Breadcrumb Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateBreadcrumbSchema(path, [
+                { name: "Início", url: "https://marianamatheos.com.br/" },
+                { name: "FAQ", url: "https://marianamatheos.com.br/faq" }
+              ]))
+            }} 
+          />
+        </>
+      );
+      
+    case 'testimonials':
+      return (
+        <>
+          {/* Base Organization Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateOrganizationSchema()) 
+            }} 
+          />
+          
+          {/* WebSite Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateWebsiteSchema()) 
+            }} 
+          />
+          
+          {/* Testimonials WebPage Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateWebPageSchema(
+                '/depoimentos',
+                'Depoimentos - Mariana Matheos Jazz Band',
+                'Avaliações 5 estrelas no Google e depoimentos de clientes satisfeitos com os shows da Mariana Matheos Jazz Band.',
+                'https://marianamatheos.com.br/images/banda.avif'
+              ))
+            }} 
+          />
+          
+          {/* Local Business Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateLocalBusinessSchema())
+            }} 
+          />
+
+          {/* Review Schema para Rich Snippets */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateReviewSchema())
+            }} 
+          />
+          
+          {/* Breadcrumb Schema */}
+          <script 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify(generateBreadcrumbSchema(path, [
+                { name: "Início", url: "https://marianamatheos.com.br/" },
+                { name: "Depoimentos", url: "https://marianamatheos.com.br/depoimentos" }
               ]))
             }} 
           />
