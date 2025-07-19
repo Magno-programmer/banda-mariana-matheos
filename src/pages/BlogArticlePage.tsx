@@ -58,6 +58,7 @@ const BlogArticlePage = () => {
         title={article.seoTitle}
         description={article.seoDescription}
         keywords={article.keywords.join(', ')}
+        newsKeywords={article.newsKeywords}
         canonicalUrl={`/blog/${article.slug}`}
         ogImage={article.image}
         pageType="article"

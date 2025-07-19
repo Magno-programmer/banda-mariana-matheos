@@ -1,3 +1,4 @@
+
 import { Helmet } from 'react-helmet-async';
 import HreflangTags from './HreflangTags';
 import { buildCanonicalUrl, normalizeUrl, validateUrl } from '@/utils/urlUtils';
@@ -6,9 +7,10 @@ interface SEOMetaTagsProps {
   title: string;
   description: string;
   keywords?: string;
+  newsKeywords?: string[]; // New prop for Google News
   canonicalUrl?: string;
   ogImage?: string;
-  pageType?: 'website' | 'article' | 'profile';
+  pageType?: 'website' | 'article' | 'profile' | 'gallery' | 'testimonials';
   isOptimizedForCTR?: boolean;
   robotsContent?: string;
 }
@@ -45,6 +47,7 @@ const SEOMetaTags = ({
   title,
   description,
   keywords = "banda de jazz belo horizonte, música ao vivo, casamentos, eventos corporativos, shows, mariana matheos, jazz band bh",
+  newsKeywords,
   canonicalUrl,
   ogImage = "/images/banda.avif",
   pageType = "website",
@@ -78,6 +81,12 @@ const SEOMetaTags = ({
         <title>{finalTitle}</title>
         <meta name="description" content={finalDescription} />
         <meta name="keywords" content={keywords} />
+        
+        {/* Google News Keywords - Essential for news indexing */}
+        {newsKeywords && newsKeywords.length > 0 && (
+          <meta name="news_keywords" content={newsKeywords.join(', ')} />
+        )}
+        
         <meta name="robots" content={robotsContent} />
         <meta name="author" content="Mariana Matheos Jazz Band" />
         <meta name="theme-color" content="#800000" />
@@ -98,6 +107,16 @@ const SEOMetaTags = ({
         <meta name="twitter:title" content={finalTitle} />
         <meta name="twitter:description" content={finalDescription} />
         <meta name="twitter:image" content={fullOgImage} />
+
+        {/* Article-specific meta tags for Google News */}
+        {pageType === 'article' && (
+          <>
+            <meta property="article:author" content="Mariana Matheos Jazz Band" />
+            <meta property="article:publisher" content="Mariana Matheos Jazz Band" />
+            <meta property="article:section" content="Música" />
+            <meta name="news_sitemap" content="true" />
+          </>
+        )}
       </Helmet>
 
       {/* Hreflang tags managed separately */}
