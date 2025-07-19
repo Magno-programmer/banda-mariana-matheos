@@ -1,0 +1,113 @@
+
+{
+  "name": "Mariana Matheos Jazz Band - Música ao Vivo",
+  "short_name": "Mariana Jazz",
+  "description": "Banda de jazz profissional para casamentos e eventos corporativos em Belo Horizonte. Repertório exclusivo de jazz, bossa nova e blues.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#DAA520",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": ["entertainment", "music", "business"],
+  "screenshots": [
+    {
+      "src": "/images/banda-screenshot-mobile.avif",
+      "sizes": "320x640",
+      "type": "image/avif",
+      "platform": "narrow",
+      "label": "Mariana Matheos Jazz Band - Mobile"
+    },
+    {
+      "src": "/images/banda-screenshot-desktop.avif", 
+      "sizes": "1280x720",
+      "type": "image/avif",
+      "platform": "wide",
+      "label": "Mariana Matheos Jazz Band - Desktop"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon/favicon-192x192.png",
+      "sizes": "192x192", 
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/appleTouchIcon/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple-touch-icon"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Agendar Show",
+      "short_name": "Agendar",
+      "description": "Solicitar orçamento para evento",
+      "url": "/agenda",
+      "icons": [
+        {
+          "src": "/favicon/favicon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Ver Repertório",
+      "short_name": "Repertório", 
+      "description": "Conhecer músicas disponíveis",
+      "url": "/repertorio",
+      "icons": [
+        {
+          "src": "/favicon/favicon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contato WhatsApp",
+      "short_name": "WhatsApp",
+      "description": "Conversar direto via WhatsApp",
+      "url": "https://wa.me/5531999999999",
+      "icons": [
+        {
+          "src": "/favicon/favicon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://marianamatheos.com.br/"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "scope_extensions": [
+    {"origin": "https://marianamatheos.com.br"},
+    {"origin": "https://www.marianamatheos.com.br"}
+  ]
+}
