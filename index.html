@@ -1,142 +1,199 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <!-- Basic static metadata -->
     <meta charset="UTF-8" />
-    <!-- Viewport otimizado para evitar CLS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <meta name="format-detection" content="telephone=no" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#800000" />
     <meta name="author" content="Mariana Matheos" />
-    <!-- Title and description managed by React Helmet -->
-    
-    <!-- ADICIONAR verificação GSC -->
-    <meta name="google-site-verification" content="Ts9E2R7vQUejtgKDEyPB-gVyoFJUQYdlVmBqbfdIEzk" />
 
-    <!-- PWA Manifest -->
+    <!-- Google Search Console verification -->
+    <meta
+      name="google-site-verification"
+      content="Ts9E2R7vQUejtgKDEyPB-gVyoFJUQYdlVmBqbfdIEzk"
+    />
+
+    <!-- PWA manifest -->
     <link rel="manifest" href="/manifest.json" />
-    
-    <!-- Favicons - Multiple Formats -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png" />
-    
-    <!-- Apple Touch Icons - Complete Set -->
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
 
-    <!-- International hreflang (managed by React component) -->
-    <link rel="alternate" href="https://marianamatheos.com.br" hreflang="pt-BR" />
-    <link rel="alternate" href="https://marianamatheos.com.br" hreflang="pt" />
-    <link rel="alternate" href="https://marianamatheos.com.br/en" hreflang="en-US" />
-    <link rel="alternate" href="https://marianamatheos.com.br/en" hreflang="en" />
-    <link rel="alternate" href="https://marianamatheos.com.br/en-gb" hreflang="en-GB" />
-    <link rel="alternate" href="https://marianamatheos.com.br/es" hreflang="es-ES" />
-    <link rel="alternate" href="https://marianamatheos.com.br/es" hreflang="es" />
-    <link rel="alternate" href="https://marianamatheos.com.br/es-ar" hreflang="es-AR" />
-    <link rel="alternate" href="https://marianamatheos.com.br/fr" hreflang="fr-FR" />
-    <link rel="alternate" href="https://marianamatheos.com.br/fr" hreflang="fr" />
-    <link rel="alternate" href="https://marianamatheos.com.br" hreflang="x-default" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta property="og:locale:alternate" content="en_US" />
-    <meta property="og:locale:alternate" content="en_GB" />
-    <meta property="og:locale:alternate" content="es_ES" />
-    <meta property="og:locale:alternate" content="es_AR" />
-    <meta property="og:locale:alternate" content="fr_FR" />
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/favicon-48x48.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/icon-512x512.png"
+    />
 
-    <!-- Security Policies -->
-    <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self';
-      img-src 'self' data: https:;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-      font-src 'self' https://fonts.gstatic.com;
-      script-src 'self' https://www.youtube.com https://www.gstatic.com;
-      frame-src https://www.youtube.com;
-      connect-src 'self' https://api.mymemory.translated.net https://libretranslate.de;
-    ">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <!-- Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon-180x180.png"
+    />
 
-    <!-- Local SEO -->
-    <meta name="geo.region" content="BR-MG" />
-    <meta name="geo.placename" content="Belo Horizonte" />
-    <meta name="geo.position" content="-19.9166813;-43.9344931" />
-    <meta name="ICBM" content="-19.9166813, -43.9344931" />
-
-    <!-- Critical CSS Inline - Minimal Above-the-fold only -->
+    <!-- Critical “above-the-fold” CSS only -->
     <style>
-      /* Essential variables & layout only */
-      :root{--jazz-gold:#e3bd68;--jazz-red:#800000}
-      @media (prefers-color-scheme:dark){:root{--jazz-gold:#e3bd68;--jazz-red:#800000}}
-      @font-face{font-family:'glimmer of light';src:url('/glimmer-of-light.otf');font-display:swap}
-      *{box-sizing:border-box;margin:0;padding:0}
-      html{line-height:1.5;font-family:ui-sans-serif,system-ui,sans-serif}
-      body{margin:0}
-      .min-h-screen{min-height:100vh}
-      .flex{display:flex}
-      .flex-col{flex-direction:column}
-      .items-center{align-items:center}
-      .justify-center{justify-content:center}
-      .text-center{text-align:center}
-      .jazz-gradient{background:linear-gradient(180deg,#800000 0%,#000000 100%)}
-      .jazz-gold{color:#e3bd68}
-      .font-glimmer{font-family:'glimmer of light',serif}
-      @keyframes fade-in{0%{opacity:0}100%{opacity:1}}
-      .animate-fade-in{animation:fade-in 0.6s ease-out}
+      :root {
+        --jazz-gold: #e3bd68;
+        --jazz-red: #800000;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --jazz-gold: #e3bd68;
+          --jazz-red: #800000;
+        }
+      }
+      @font-face {
+        font-family: "glimmer of light";
+        src: url("/glimmer-of-light.otf");
+        font-display: swap;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        line-height: 1.5;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+      }
+      .min-h-screen {
+        min-height: 100vh;
+      }
+      .flex {
+        display: flex;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .jazz-gradient {
+        background: linear-gradient(180deg, #800000 0%, #000000 100%);
+      }
+      .jazz-gold {
+        color: #e3bd68;
+      }
+      .font-glimmer {
+        font-family: "glimmer of light", serif;
+      }
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.6s ease-out;
+      }
     </style>
 
-    <!-- DNS Prefetch & Preconnect -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- DNS-prefetch & preconnect for critical externals -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
 
-    <!-- Critical font preload only -->
-    <link rel="preload" href="/glimmer-of-light.otf" as="font" type="font/otf" crossorigin="anonymous" fetchpriority="high">
-    
-    <!-- High priority CSS preload -->
-    <link rel="preload" href="/src/index.css" as="style" fetchpriority="high" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
-    
-    <!-- Progressive font loading -->
-    <link rel="preload" href="/GatsbyFLF-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous" fetchpriority="low">
-    <link rel="preload" href="/GatsbyFLF.ttf" as="font" type="font/ttf" crossorigin="anonymous" fetchpriority="low">
-
-    <!-- Non-blocking Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"></noscript>
-
-    <!-- Preload critical script -->
-    <link rel="modulepreload" href="/src/main.tsx" fetchpriority="high">
-
-    <!-- Hero images prefetch -->
-    <link rel="prefetch" as="image" href="/images/cantora.avif" fetchpriority="low">
-    <link rel="prefetch" as="image" href="/images/banda-blue-jazz-concurso.avif" fetchpriority="low">
-    <link rel="prefetch" as="image" href="/images/baixista.avif" fetchpriority="low">
+    <!-- Preload critical fonts & CSS -->
+    <link
+      rel="preload"
+      href="/glimmer-of-light.otf"
+      as="font"
+      type="font/otf"
+      crossorigin="anonymous"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="/src/index.css"
+      as="style"
+      fetchpriority="high"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="/src/index.css"
+    /></noscript>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- Main application bundle -->
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Service Worker Registration -->
+    <!-- Service worker registration -->
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then((registration) => {
-              console.log('SW registrado com sucesso:', registration.scope);
-            })
-            .catch((registrationError) => {
-              console.log('Falha no registro do SW:', registrationError);
-            });
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then((reg) => console.log('SW registrado:', reg.scope))
+            .catch((err) => console.warn('SW falhou:', err));
         });
       }
     </script>
