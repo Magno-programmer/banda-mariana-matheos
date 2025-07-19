@@ -14,8 +14,8 @@ const AdvancedSecurityHeaders: React.FC = () => {
         httpEquiv="Content-Security-Policy"
         content={`
           default-src 'self';
-          script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://www.youtube.com https://www.gstatic.com;
-          script-src-elem 'self' 'nonce-${nonce}' https://www.googletagmanager.com https://www.google-analytics.com https://www.youtube.com;
+          script-src 'self' 'nonce-swTest' 'strict-dynamic' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://www.youtube.com https://www.gstatic.com;
+          script-src-elem 'self' 'nonce-swTest' https://www.googletagmanager.com https://www.google-analytics.com https://www.youtube.com;
           script-src-attr 'none';
           style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
           style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com;
@@ -25,7 +25,6 @@ const AdvancedSecurityHeaders: React.FC = () => {
           media-src 'self' https: data: blob:;
           connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://api.mymemory.translated.net https://libretranslate.de https://vitals.vercel-insights.com;
           frame-src 'self' https://www.youtube.com https://www.google.com;
-          frame-ancestors 'self';
           worker-src 'self' blob:;
           child-src 'self' blob:;
           object-src 'none';
@@ -51,7 +50,6 @@ const AdvancedSecurityHeaders: React.FC = () => {
 
       {/* Cross-Origin Policies */}
       <meta httpEquiv="Cross-Origin-Embedder-Policy" content="require-corp" />
-      <meta httpEquiv="Cross-Origin-Opener-Policy" content="same-origin" />
       <meta httpEquiv="Cross-Origin-Resource-Policy" content="cross-origin" />
 
       {/* Origin Agent Cluster for enhanced security */}
