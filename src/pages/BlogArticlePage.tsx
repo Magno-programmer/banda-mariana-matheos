@@ -65,7 +65,6 @@ const BlogArticlePage = () => {
       />
 
       <Header />
-      <AdvancedBreadcrumb />
 
       {/* Article Header */}
       <section className="py-16 bg-gradient-to-b from-jazz-dark to-black">
@@ -171,7 +170,7 @@ const BlogArticlePage = () => {
               Transforme seu evento em uma experiência inesquecível com a música ao vivo da banda Mariana Matheos.
             </p>
             <button
-              onClick={() => window.open('https://wa.me/5531999999999?text=Olá! Gostaria de saber mais sobre a banda para meu evento.', '_blank')}
+              onClick={() => window.open('https://wa.me/5531997522127?text=Olá! Gostaria de saber mais sobre a banda para meu evento.', '_blank')}
               className="bg-jazz-gold text-black px-8 py-4 rounded-lg font-gatsbybold hover:bg-white transition-colors duration-300 transform hover:scale-105 text-lg"
             >
               Solicitar Orçamento
@@ -180,6 +179,7 @@ const BlogArticlePage = () => {
         </div>
       </section>
 
+      <AdvancedBreadcrumb />
       <Footer />
       <WhatsAppButton />
 

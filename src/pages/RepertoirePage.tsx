@@ -7,7 +7,6 @@ import RepertoireSection from "@/components/sections/repertorio/RepertoireSectio
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
-import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSection";
 
 const RepertoirePage = () => {
@@ -23,7 +22,6 @@ const RepertoirePage = () => {
     
       <div className="min-h-screen bg-black">
         <Header />
-        <AdvancedBreadcrumb />
         <RepertoireSection />
         <RelatedPagesSection 
           variant="grid"

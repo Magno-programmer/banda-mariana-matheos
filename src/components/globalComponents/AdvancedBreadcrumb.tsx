@@ -86,9 +86,9 @@ const AdvancedBreadcrumb = () => {
         className="w-full bg-gradient-to-r from-black via-jazz-dark to-black border-b border-jazz-gold/20"
       >
         <div className="container mx-auto px-4">
-          <ol className="flex flex-wrap items-center gap-1 sm:gap-2 py-3 text-xs sm:text-sm overflow-x-auto">
+          <ol className="flex flex-wrap items-center gap-1 sm:gap-2 py-3 text-xl sm:text-sm overflow-x-auto">
             {breadcrumbs.map((breadcrumb, index) => (
-              <li key={breadcrumb.href} className="flex items-center shrink-0">
+              <li key={breadcrumb.href} className="flex text-xl font-gatsbybold items-center shrink-0">
                 {index > 0 && (
                   <ChevronRight 
                     size={12} 
@@ -99,8 +99,8 @@ const AdvancedBreadcrumb = () => {
                 
                 {breadcrumb.isActive ? (
                   <span 
-                    className="font-gatsby text-jazz-gold font-medium flex items-center gap-1 
-                             truncate max-w-[120px] sm:max-w-none"
+                    className="font-gatsbybold text-jazz-gold font-medium flex items-center gap-1 
+                             truncate max-w-[120px] text-xl sm:max-w-none"
                     aria-current="page"
                     title={breadcrumb.label}
                   >
@@ -110,7 +110,7 @@ const AdvancedBreadcrumb = () => {
                 ) : (
                   <Link
                     to={breadcrumb.href}
-                    className="font-gatsby text-white hover:text-jazz-gold transition-colors duration-300 
+                    className="font-gatsbybold text-white hover:text-jazz-gold transition-colors duration-300 
                              flex items-center gap-1 hover:scale-105 transform transition-transform
                              truncate max-w-[120px] sm:max-w-none"
                     title={breadcrumb.label}

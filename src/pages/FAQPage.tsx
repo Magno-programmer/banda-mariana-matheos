@@ -7,7 +7,6 @@ import FAQSection from "@/components/sections/depoimentos/FAQSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
 import Header from "@/components/sections/commonPages/header/Header";
-import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSection";
 
 const FAQPage = () => {
@@ -22,7 +21,6 @@ const FAQPage = () => {
 
       <div className="min-h-screen bg-black">
         <Header />
-        <AdvancedBreadcrumb />
         <FAQSection />
         <RelatedPagesSection 
           variant="grid"

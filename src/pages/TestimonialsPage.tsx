@@ -8,7 +8,6 @@ import Header from "@/components/sections/commonPages/header/Header";
 import TestimonialsSection from "@/components/sections/depoimentos/TestimonialsSection";
 import Footer from "@/components/sections/commonPages/footer/Footer";
 import WhatsAppButton from "@/components/globalComponents/WhatsAppButton";
-import AdvancedBreadcrumb from "@/components/globalComponents/AdvancedBreadcrumb";
 import RelatedPagesSection from "@/components/globalComponents/RelatedPagesSection";
 import EnhancedStructuredData from "@/components/globalComponents/EnhancedStructuredData";
 
@@ -26,7 +25,6 @@ const TestimonialsPage = () => {
       
       <div className="min-h-screen bg-black">
         <Header />
-        <AdvancedBreadcrumb />
         <TestimonialsSection />
         <RelatedPagesSection 
           variant="grid"

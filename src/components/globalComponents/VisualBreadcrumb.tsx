@@ -52,7 +52,7 @@ const VisualBreadcrumb: React.FC = () => {
   });
 
   return (
-    <div className="bg-background/80 backdrop-blur-sm border-b border-border/50 py-3 px-4 sticky top-0 z-40">
+    <div className="bg-black backdrop-blur-sm border-b border-border/20 py-3 px-4 sticky top-0 z-40">
       <div className="container mx-auto max-w-6xl">
         <Breadcrumb>
           <BreadcrumbList className="text-sm">
@@ -63,7 +63,7 @@ const VisualBreadcrumb: React.FC = () => {
                     <BreadcrumbLink asChild>
                       <Link 
                         to={item.path!} 
-                        className="flex items-center gap-1 hover:text-primary transition-colors"
+                        className="flex font-gatsbybold items-center gap-1 text-xl hover:text-gray-100 transition-colors"
                         aria-label="Voltar para página inicial"
                       >
                         <Home className="h-4 w-4" />
@@ -71,14 +71,14 @@ const VisualBreadcrumb: React.FC = () => {
                       </Link>
                     </BreadcrumbLink>
                   ) : index === breadcrumbItems.length - 1 ? (
-                    <BreadcrumbPage className="font-medium text-foreground">
+                    <BreadcrumbPage className="font-gatsbybold text-xl text-gray-300 dark:text-gray-100">
                       {item.label}
                     </BreadcrumbPage>
                   ) : (
                     <BreadcrumbLink asChild>
                       <Link 
                         to={item.path!}
-                        className="hover:text-primary transition-colors"
+                        className="hover:text-gray-100 transition-colors"
                       >
                         {item.label}
                       </Link>
