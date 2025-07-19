@@ -43,6 +43,7 @@ const AdvancedSecurityHeaders: React.FC = () => {
       />
       <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+      <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
       <meta
         httpEquiv="Referrer-Policy"
         content="strict-origin-when-cross-origin"
@@ -50,6 +51,7 @@ const AdvancedSecurityHeaders: React.FC = () => {
 
       {/* Cross-Origin Policies */}
       <meta httpEquiv="Cross-Origin-Embedder-Policy" content="require-corp" />
+      <meta httpEquiv="Cross-Origin-Opener-Policy" content="same-origin" />
       <meta httpEquiv="Cross-Origin-Resource-Policy" content="cross-origin" />
 
       {/* Origin Agent Cluster for enhanced security */}
