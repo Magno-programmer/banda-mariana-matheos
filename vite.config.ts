@@ -56,8 +56,8 @@ export default defineConfig(({ mode }) => ({
     // HTTP Headers optimization plugin
     {
       name: 'http-headers-optimization',
-      configureServer(server) {
-        server.middlewares.use((req, res, next) => {
+      configureServer(server: any) {
+        server.middlewares.use((req: any, res: any, next: any) => {
           // Set advanced headers based on request
           const acceptLanguage = req.headers['accept-language'] || '';
           

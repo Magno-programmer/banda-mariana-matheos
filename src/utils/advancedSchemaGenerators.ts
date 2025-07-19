@@ -401,13 +401,3 @@ export const generateHowToSchema = () => ({
   "dateModified": new Date().toISOString().split('T')[0]
 });
 
-export {
-  generateEnhancedProductSchema,
-  generateConsolidatedRatingSchema,
-  generateSuperEventSchema,
-  generateDigitalDocumentSchema,
-  generateCreativeWorkSchema,
-  generateSpeakableSchema,
-  generateEnhancedFAQSchema,
-  generateHowToSchema
-};

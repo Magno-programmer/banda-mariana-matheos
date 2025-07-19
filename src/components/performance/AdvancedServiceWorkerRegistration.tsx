@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 
 interface ServiceWorkerConfig {
-  swUrl: string;
+  swUrl?: string;
   enableUpdates: boolean;
   enableBackgroundSync: boolean;
   enablePushNotifications: boolean;
@@ -57,13 +57,15 @@ const AdvancedServiceWorkerRegistration = ({
       }
 
       // Background sync registration
-      if (enableBackgroundSync && 'sync' in window.ServiceWorkerRegistration.prototype) {
+      if (enableBackgroundSync && 'serviceWorker' in navigator && 'sync' in window.ServiceWorkerRegistration.prototype) {
         console.log('🔄 Background Sync enabled');
         
         // Register for background sync when online
-        registration.sync.register('background-analytics').catch(err => {
+        try {
+          await (registration as any).sync.register('background-analytics');
+        } catch (err) {
           console.warn('Background sync registration failed:', err);
-        });
+        }
       }
 
       // Push notifications setup
