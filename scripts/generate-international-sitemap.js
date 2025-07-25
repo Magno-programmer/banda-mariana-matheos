@@ -138,18 +138,18 @@ const routes = [
   "/blog/musica-ao-vivo-eventos-corporativos",
   "/blog/historia-dos-jazz-standards",
   "/blog/como-ser-uma-banda-de-jazz",
-  "/blog/billie-holiday",
-  "/blog/ella-fitzgerald",
-  "/blog/etta-james",
-  "/blog/amy-winehouse",
-  "/blog/frank-sinatra",
-  "/blog/nina-simone",
-  "/blog/beth-hart",
-  "/blog/bb-king",
-  "/blog/andra-day",
-  "/blog/nat-king-cole",
-  "/blog/kitty-kallen",
-  "/blog/glenn-miller"
+  "/blog/billie-holiday-dama-do-jazz",
+  "/blog/ella-fitzgerald-primeira-dama-cancao",
+  "/blog/etta-james-matriarca-soul-rb",
+  "/blog/amy-winehouse-neo-soul",
+  "/blog/frank-sinatra-rei-do-swing",
+  "/blog/nina-simone-sacerdotisa-soul",
+  "/blog/beth-hart-blues-contemporaneo",
+  "/blog/bb-king-rei-do-blues",
+  "/blog/andra-day-nova-voz-soul",
+  "/blog/nat-king-cole-cavaleiro-piano-voz",
+  "/blog/kitty-kallen-voz-doce-era-ouro",
+  "/blog/glenn-miller-maestro-swing"
 ];
 
 /**
@@ -243,7 +243,7 @@ ${urlEntries}
 function generateSitemapIndex() {
   const uniqueLanguages = [...new Set(markets.map(m => m.hreflang.split('-')[0]))];
   const sitemapUrls = [
-    `${baseUrl}/sitemap.xml`,
+    `${baseUrl}/sitemap-pages.xml`,
     `${baseUrl}/international/sitemap-international.xml`,
     ...uniqueLanguages.map(lang => `${baseUrl}/international/${lang}/sitemap-${lang}.xml`)
   ];
@@ -270,8 +270,8 @@ async function generateInternationalSitemaps() {
 
   try {
     // Sitemap principal
-    fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), generateMainSitemap());
-    console.log('✅ sitemap.xml gerado com hreflang');
+    fs.writeFileSync(path.join(publicDir, 'sitemap-pages.xml'), generateMainSitemap());
+    console.log('✅ sitemap-pages.xml gerado com hreflang');
 
     // Sitemaps por idioma
     const langs = [...new Set(markets.map(m => m.hreflang.split('-')[0]))];

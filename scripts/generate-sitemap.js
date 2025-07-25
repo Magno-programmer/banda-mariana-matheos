@@ -18,7 +18,7 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 const srcDir = path.join(rootDir, 'src');
 const publicDir = path.join(rootDir, 'public');
-const sitemapPath = path.join(publicDir, 'sitemap.xml');
+const sitemapPath = path.join(publicDir, 'sitemap-pages.xml');
 
 // Website configuration
 const SITE_URL = 'https://marianamatheos.com.br';
@@ -97,18 +97,18 @@ const MUSICIANS_DATA = [
   { slug: 'musica-ao-vivo-eventos-corporativos', publishedDate: '2025-07-16' },
   { slug: 'historia-dos-jazz-standards', publishedDate: '2025-07-16' },
   { slug: 'como-ser-uma-banda-de-jazz', publishedDate: '2025-07-16' },
-  { slug: 'billie-holiday', publishedDate: '2025-07-17' },
-  { slug: 'ella-fitzgerald', publishedDate: '2025-07-17' },
-  { slug: 'etta-james', publishedDate: '2025-07-17' },
-  { slug: 'amy-winehouse', publishedDate: '2025-07-17' },
-  { slug: 'frank-sinatra', publishedDate: '2025-07-17' },
-  { slug: 'nina-simone', publishedDate: '2025-07-17' },
-  { slug: 'beth-hart', publishedDate: '2025-07-17' },
-  { slug: 'bb-king', publishedDate: '2025-07-17' },
-  { slug: 'andra-day', publishedDate: '2025-07-17' },
-  { slug: 'nat-king-cole', publishedDate: '2025-07-17' },
-  { slug: 'kitty-kallen', publishedDate: '2025-07-17' },
-  { slug: 'glenn-miller', publishedDate: '2025-07-17' }
+  { slug: 'billie-holiday-dama-do-jazz', publishedDate: '2025-07-17' },
+  { slug: 'ella-fitzgerald-primeira-dama-cancao', publishedDate: '2025-07-17' },
+  { slug: 'etta-james-matriarca-soul-rb', publishedDate: '2025-07-17' },
+  { slug: 'amy-winehouse-neo-soul', publishedDate: '2025-07-17' },
+  { slug: 'frank-sinatra-rei-do-swing', publishedDate: '2025-07-17' },
+  { slug: 'nina-simone-sacerdotisa-soul', publishedDate: '2025-07-17' },
+  { slug: 'beth-hart-blues-contemporaneo', publishedDate: '2025-07-17' },
+  { slug: 'bb-king-rei-do-blues', publishedDate: '2025-07-17' },
+  { slug: 'andra-day-nova-voz-soul', publishedDate: '2025-07-17' },
+  { slug: 'nat-king-cole-cavaleiro-piano-voz', publishedDate: '2025-07-17' },
+  { slug: 'kitty-kallen-voz-doce-era-ouro', publishedDate: '2025-07-17' },
+  { slug: 'glenn-miller-maestro-swing', publishedDate: '2025-07-17' }
 ];
 
 /**
