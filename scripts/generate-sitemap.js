@@ -1,391 +1,90 @@
 #!/usr/bin/env node
 
-/**
- * Dynamic Sitemap Generator with Real Modification Dates
- * Generates sitemap.xml with accurate lastmod dates from file system and content data
- */
-
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { pathToFileURL } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 
-// ES modules fix for __dirname
+// ES modules __dirname fix
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Configure paths
-const rootDir = path.resolve(__dirname, '..');
-const srcDir = path.join(rootDir, 'src');
-const publicDir = path.join(rootDir, 'public');
-const sitemapPath = path.join(publicDir, 'sitemap-pages.xml');
-
-// Website configuration
+// Configurações
 const SITE_URL = 'https://marianamatheos.com.br';
-// Correct current date for July 2025 with timezone validation
+const PUBLIC_DIR = path.resolve(__dirname, '../public');
+const OUTPUT_FILE = path.join(PUBLIC_DIR, 'sitemap.xml');
 const CURRENT_DATE = new Date().toISOString();
 
-// Static pages mapping
-const STATIC_PAGES = [
-  { 
-    path: '/', 
-    file: 'src/pages/Index.tsx',
-    priority: '1.0',
-    changefreq: 'daily'
-  },
-  { 
-    path: '/sobre', 
-    file: 'src/pages/AboutPage.tsx',
-    priority: '0.9',
-    changefreq: 'monthly'
-  },
-  { 
-    path: '/fotos', 
-    file: 'src/pages/ImagePage.tsx',
-    priority: '0.8',
-    changefreq: 'weekly'
-  },
-  { 
-    path: '/videos', 
-    file: 'src/pages/VideosPage.tsx',
-    priority: '0.8',
-    changefreq: 'weekly'
-  },
-  { 
-    path: '/repertorio', 
-    file: 'src/pages/RepertoirePage.tsx',
-    priority: '0.9',
-    changefreq: 'monthly'
-  },
-  { 
-    path: '/agenda', 
-    file: 'src/pages/BookingPage.tsx',
-    priority: '0.9',
-    changefreq: 'weekly'
-  },
-  { 
-    path: '/contato', 
-    file: 'src/pages/ContactPage.tsx',
-    priority: '0.8',
-    changefreq: 'monthly'
-  },
-  { 
-    path: '/faq', 
-    file: 'src/pages/FAQPage.tsx',
-    priority: '0.7',
-    changefreq: 'monthly'
-  },
-  { 
-    path: '/depoimentos', 
-    file: 'src/pages/TestimonialsPage.tsx',
-    priority: '0.8',
-    changefreq: 'weekly'
-  },
-  { 
-    path: '/blog', 
-    file: 'src/pages/BlogPage.tsx',
-    priority: '0.9',
-    changefreq: 'daily'
-  }
-];
-
-// Musician biographies (static content)
-const MUSICIANS_DATA = [
-  { slug: 'como-escolher-banda-casamento', publishedDate: '2025-07-16' },
-  { slug: 'mariana-matheos-jazz-essencia-da-musica-ao-vivo', publishedDate: '2025-07-16' },
-  { slug: 'historia-do-jazz-brasil', publishedDate: '2025-07-16' },
-  { slug: 'musica-ao-vivo-eventos-corporativos', publishedDate: '2025-07-16' },
-  { slug: 'historia-dos-jazz-standards', publishedDate: '2025-07-16' },
-  { slug: 'como-ser-uma-banda-de-jazz', publishedDate: '2025-07-16' },
-  { slug: 'billie-holiday-dama-do-jazz', publishedDate: '2025-07-17' },
-  { slug: 'ella-fitzgerald-primeira-dama-cancao', publishedDate: '2025-07-17' },
-  { slug: 'etta-james-matriarca-soul-rb', publishedDate: '2025-07-17' },
-  { slug: 'amy-winehouse-neo-soul', publishedDate: '2025-07-17' },
-  { slug: 'frank-sinatra-rei-do-swing', publishedDate: '2025-07-17' },
-  { slug: 'nina-simone-sacerdotisa-soul', publishedDate: '2025-07-17' },
-  { slug: 'beth-hart-blues-contemporaneo', publishedDate: '2025-07-17' },
-  { slug: 'bb-king-rei-do-blues', publishedDate: '2025-07-17' },
-  { slug: 'andra-day-nova-voz-soul', publishedDate: '2025-07-17' },
-  { slug: 'nat-king-cole-cavaleiro-piano-voz', publishedDate: '2025-07-17' },
-  { slug: 'kitty-kallen-voz-doce-era-ouro', publishedDate: '2025-07-17' },
-  { slug: 'glenn-miller-maestro-swing', publishedDate: '2025-07-17' }
-];
-
 /**
- * Get file modification date in ISO format with enhanced detection
+ * Faz varredura recursiva em PUBLIC_DIR e retorna todos os arquivos .xml
  */
-function getFileModDate(filePath) {
-  try {
-    const fullPath = path.join(rootDir, filePath);
-    const stats = fs.statSync(fullPath);
-    let latestDate = stats.mtime;
-    
-    // Check related component files for pages
-    const relatedFiles = [];
-    if (filePath.includes('pages/')) {
-      const pageName = path.basename(filePath, '.tsx');
-      // Check for related sections/components
-      const sectionsDir = path.join(srcDir, 'components', 'sections');
-      if (fs.existsSync(sectionsDir)) {
-        const sectionDirs = fs.readdirSync(sectionsDir);
-        sectionDirs.forEach(dir => {
-          const sectionPath = path.join(sectionsDir, dir);
-          if (fs.statSync(sectionPath).isDirectory()) {
-            const files = fs.readdirSync(sectionPath);
-            files.forEach(file => {
-              if (file.endsWith('.tsx')) {
-                relatedFiles.push(path.join('src', 'components', 'sections', dir, file));
-              }
-            });
-          }
-        });
-      }
+function findXmlFiles(dir) {
+  const results = [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results.push(...findXmlFiles(fullPath));
+    } else if (
+      entry.isFile() &&
+      entry.name.endsWith('.xml') &&
+      fullPath !== OUTPUT_FILE
+    ) {
+      results.push(fullPath);
     }
-    
-    // Check modification dates of related files
-    relatedFiles.forEach(relatedPath => {
-      try {
-        const relatedFullPath = path.join(rootDir, relatedPath);
-        const relatedStats = fs.statSync(relatedFullPath);
-        if (relatedStats.mtime > latestDate) {
-          latestDate = relatedStats.mtime;
-        }
-      } catch (e) {
-        // Ignore file not found errors for related files
-      }
-    });
-    
-    return latestDate.toISOString();
-  } catch (error) {
-    console.warn(`Warning: Could not get modification date for ${filePath}:`, error.message);
-    return CURRENT_DATE;
   }
+  return results;
 }
 
 /**
- * Load and parse blog articles data with enhanced validation
+ * Gera o XML do sitemap-index baseado nos arquivos .xml encontrados
  */
-function loadBlogData() {
-  try {
-    const blogDataPath = path.join(srcDir, 'data', 'blogArticlesData.ts');
-    const content = fs.readFileSync(blogDataPath, 'utf-8');
-    
-    // Extract blog articles data using improved regex
-    const articlesMatch = content.match(/export\s+const\s+blogArticlesData\s*=\s*\[(.*?)\];/s);
-    if (!articlesMatch) {
-      console.warn('Could not find blogArticlesData export');
-      return [];
-    }
-    
-    // Extract individual articles with more robust regex
-    const articles = [];
-    const articlePattern = /{\s*id:\s*['"](\d+)['"],[\s\S]*?slug:\s*['"]([^'"]+)['"],[\s\S]*?publishedDate:\s*['"]([^'"]+)['"],/g;
-    
-    let match;
-    while ((match = articlePattern.exec(articlesMatch[1])) !== null) {
-      const publishedDate = match[3];
-      
-      // Validate date format
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(publishedDate)) {
-        console.warn(`Invalid date format for article ${match[2]}: ${publishedDate}`);
-        continue;
-      }
-      
-      articles.push({
-        id: match[1],
-        slug: match[2],
-        publishedDate: publishedDate
-      });
-    }
-    
-    console.log(`📝 Successfully parsed ${articles.length} blog articles`);
-    return articles;
-  } catch (error) {
-    console.warn('Warning: Could not load blog data:', error.message);
-    return [];
-  }
-}
+function generateSitemapIndex() {
+  console.log('📄 Gerando sitemap.xml...');
+  const xmlFiles = findXmlFiles(PUBLIC_DIR);
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+  xml += `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
-/**
- * Generate XML sitemap
- */
-function generateSitemap() {
-  console.log('🚀 Generating dynamic sitemap...');
-  
-  let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
-        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-`;
-
-  // Add static pages with enhanced metadata
-  STATIC_PAGES.forEach(page => {
-    const lastmod = getFileModDate(page.file);
-    xml += `  <url>
-    <loc>${SITE_URL}${page.path}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>`;
-    
-    // Add image metadata for gallery pages
-    if (page.path === '/fotos') {
-      xml += `
-    <image:image>
-      <image:loc>${SITE_URL}/images/galeria-mariana-matheos-jazz.avif</image:loc>
-      <image:title>Galeria de Fotos - Mariana Matheos Jazz</image:title>
-    </image:image>`;
+  xmlFiles.forEach((filePath) => {
+    const relPath = path.relative(PUBLIC_DIR, filePath).split(path.sep).join('/');
+    let lastmod = CURRENT_DATE;
+    try {
+      const stats = fs.statSync(filePath);
+      lastmod = stats.mtime.toISOString();
+    } catch (err) {
+      console.warn(`⚠️ Não foi possível obter lastmod para ${relPath}: ${err.message}`);
     }
-    
-    // Add video metadata for videos page
-    if (page.path === '/videos') {
-      xml += `
-    <video:video>
-      <video:title>Vídeos - Mariana Matheos Jazz</video:title>
-      <video:description>Performances ao vivo e vídeos musicais</video:description>
-    </video:video>`;
-    }
-    
-    xml += `
-  </url>
 
-`;
+    xml += `  <sitemap>\n`;
+    xml += `    <loc>${SITE_URL}/${relPath}</loc>\n`;
+    xml += `    <lastmod>${lastmod}</lastmod>\n`;
+    xml += `  </sitemap>\n`;
   });
 
-  // Add blog articles
-  const blogArticles = loadBlogData();
-  console.log(`📝 Found ${blogArticles.length} blog articles`);
-  
-  blogArticles.forEach(article => {
-    const publishedDate = new Date(article.publishedDate);
-    const blogDataModDate = getFileModDate('src/data/blogArticlesData.ts');
-    const blogDataDate = new Date(blogDataModDate);
-    
-    // Use the most recent date between publication and data modification
-    const lastmod = publishedDate > blogDataDate ? publishedDate.toISOString() : blogDataModDate;
-    
-    xml += `  <url>
-    <loc>${SITE_URL}/blog/${article.slug}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-`;
-  });
-
-  // Add musician biographies
-  console.log(`🎵 Adding ${MUSICIANS_DATA.length} musician biographies`);
-  
-  MUSICIANS_DATA.forEach(musician => {
-    const publishedDate = new Date(musician.publishedDate);
-    xml += `  <url>
-    <loc>${SITE_URL}/blog/${musician.slug}</loc>
-    <lastmod>${publishedDate.toISOString()}</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-`;
-  });
-
-  xml += `</urlset>`;
-
+  xml += `</sitemapindex>`;
   return xml;
 }
 
 /**
- * Validate XML format
+ * Escreve o arquivo sitemap.xml
  */
-function validateXML(xml) {
+function writeSitemapIndex(xml) {
   try {
-    // Basic XML validation
-    if (!xml.includes('<?xml version="1.0"')) {
-      throw new Error('Missing XML declaration');
-    }
-    if (!xml.includes('<urlset')) {
-      throw new Error('Missing urlset element');
-    }
-    if (!xml.includes('</urlset>')) {
-      throw new Error('Missing closing urlset element');
-    }
-    
-    // Count URLs
-    const urlCount = (xml.match(/<url>/g) || []).length;
-    console.log(`✅ XML validation passed - ${urlCount} URLs found`);
-    return true;
+    fs.writeFileSync(OUTPUT_FILE, xml, 'utf-8');
+    console.log(`✅ sitemap.xml salvo em: ${OUTPUT_FILE}`);
+    console.log(`🌐 Disponível em: ${SITE_URL}/sitemap.xml`);
   } catch (error) {
-    console.error('❌ XML validation failed:', error.message);
-    return false;
-  }
-}
-
-/**
- * Write sitemap to file
- */
-function writeSitemap(xml) {
-  try {
-    // Backup existing sitemap
-    if (fs.existsSync(sitemapPath)) {
-      const backupPath = sitemapPath.replace('.xml', '-backup.xml');
-      fs.copyFileSync(sitemapPath, backupPath);
-      console.log(`💾 Backup created: ${backupPath}`);
-    }
-    
-    // Write new sitemap
-    fs.writeFileSync(sitemapPath, xml, 'utf-8');
-    console.log(`✅ Sitemap generated successfully: ${sitemapPath}`);
-    
-    // Log stats
-    const stats = fs.statSync(sitemapPath);
-    console.log(`📊 File size: ${(stats.size / 1024).toFixed(2)} KB`);
-    
-  } catch (error) {
-    console.error('❌ Error writing sitemap:', error.message);
+    console.error('❌ Falha ao escrever sitemap.xml:', error.message);
     process.exit(1);
   }
 }
 
-/**
- * Main execution
- */
-function main() {
-  console.log('🌐 Dynamic Sitemap Generator');
-  console.log('============================');
-  console.log(`📅 Generation time: ${CURRENT_DATE}`);
-  console.log(`🔗 Site URL: ${SITE_URL}`);
-  console.log('');
-  
-  try {
-    // Generate sitemap XML
-    const xml = generateSitemap();
-    
-    // Validate XML
-    if (!validateXML(xml)) {
-      throw new Error('XML validation failed');
-    }
-    
-    // Write to file
-    writeSitemap(xml);
-    
-    console.log('');
-    console.log('🎉 Sitemap generation completed successfully!');
-    console.log(`📍 Location: ${sitemapPath}`);
-    console.log(`🔍 Preview: ${SITE_URL}/sitemap.xml`);
-    
-  } catch (error) {
-    console.error('💥 Sitemap generation failed:', error.message);
-    process.exit(1);
-  }
-}
+// Execução principal
+(function main() {
+  console.log('===============================');
+  console.log('🧭 Sitemap Index Generator');
+  console.log(`📅 Gerado em: ${CURRENT_DATE}`);
+  console.log('===============================\n');
 
-// Execute if run directly
-
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
-  main();
-}
-
-export { generateSitemap, main };
+  const xml = generateSitemapIndex();
+  writeSitemapIndex(xml);
+})();
