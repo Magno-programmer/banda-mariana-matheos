@@ -37,49 +37,7 @@ const imagesData = [
     baseAlt: "Formação completa da banda de jazz",
     category: 'band' as const,
     keywords: ['banda completa', 'formação jazz', 'grupo musical', 'ensemble']
-  },
-  { 
-    src: "/images/casamento-jazz-band.avif", 
-    baseAlt: "Banda proporcionando música romántica em casamento",
-    category: 'event' as const,
-    keywords: ['casamento', 'música romántica', 'cerimônia', 'evento especial']
-  },
-  { 
-    src: "/images/eventos-corporativos.avif", 
-    baseAlt: "Performance sofisticada em evento empresarial",
-    category: 'event' as const,
-    keywords: ['evento corporativo', 'empresarial', 'música corporativa', 'entretenimento']
-  },
-  { 
-    src: "/images/amy-winehouse.avif", 
-    baseAlt: "Tributo a Amy Winehouse com interpretação soul jazz",
-    category: 'historical' as const,
-    keywords: ['Amy Winehouse', 'tributo', 'soul jazz', 'homenagem']
-  },
-  { 
-    src: "/images/billie-holiday.avif", 
-    baseAlt: "Homenagem a Billie Holiday com performance vocal jazz",
-    category: 'historical' as const,
-    keywords: ['Billie Holiday', 'jazz vocal', 'homenagem', 'clássico']
-  },
-  { 
-    src: "/images/ella-fitzgerald.avif", 
-    baseAlt: "Inspiração em Ella Fitzgerald com técnica vocal impecável",
-    category: 'historical' as const,
-    keywords: ['Ella Fitzgerald', 'técnica vocal', 'jazz clássico', 'inspiração']
-  },
-  { 
-    src: "/images/frank-sinatra.avif", 
-    baseAlt: "Interpretação de standards de Frank Sinatra",
-    category: 'historical' as const,
-    keywords: ['Frank Sinatra', 'standards', 'crooner', 'jazz vocal']
-  },
-  { 
-    src: "/images/nina-simone.avif", 
-    baseAlt: "Tributo a Nina Simone com performance jazz fusion",
-    category: 'historical' as const,
-    keywords: ['Nina Simone', 'jazz fusion', 'tributo', 'performance']
-  },
+  }
 ];
 
 const ImagesSection = () => {
