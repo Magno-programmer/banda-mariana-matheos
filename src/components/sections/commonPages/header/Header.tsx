@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import logoWhite from '/images/Logo-Mariana-Matheos-Jazz-textura-dourada-fundo-transparente-invertida.avif';
 import { useNavigate } from 'react-router-dom';
 import VoiceAccessibilityButton from '@/components/globalComponents/VoiceAccessibilityButton';
+import { LanguageSelector } from '@/components/international/LanguageSelector';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 
 const Header = () => {
@@ -75,7 +76,10 @@ const Header = () => {
             ))}
           </nav>
 
-          <VoiceAccessibilityButton />
+          <div className="hidden lg:flex items-center gap-4">
+            <LanguageSelector variant="compact" />
+            <VoiceAccessibilityButton />
+          </div>
           
           {/* Mobile menu button for smaller screens */}
           <button
@@ -113,11 +117,15 @@ const Header = () => {
                   }
                 }}
               >
-                {item.name}
-              </button>
-            ))}
-          </nav>
-        )}
+                 {item.name}
+               </button>
+             ))}
+             
+             <div className="border-t border-jazz-gold/20 pt-4 mt-4">
+               <LanguageSelector variant="compact" className="w-full" />
+             </div>
+           </nav>
+         )}
       </div>
     </header>
   );
