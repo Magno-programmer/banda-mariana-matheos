@@ -6,7 +6,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import EnhancedStructuredData from "@/components/globalComponents/EnhancedStructuredData";
-import InternationalRouter from "./components/international/InternationalRouter";
 import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import ImagePage from "./pages/ImagePage";
@@ -31,40 +30,24 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <InternationalRouter>
-            <SkipLink />
-            <UrlRedirectHandler />
-            <ScrollToTop />
-            <Routes>
-              {/* Default Portuguese routes */}
-              <Route path="/" element={<Index />} />
-              <Route path="/sobre" element={<AboutPage />} />
-              <Route path="/fotos" element={<ImagePage />} />
-              <Route path="/videos" element={<VideosPage />} />
-              <Route path="/repertorio" element={<RepertoirePage />} />
-              <Route path="/agenda" element={<BookingPage />} />
-              <Route path="/faq" element={<FAQPage />} />
-              <Route path="/depoimentos" element={<TestimonialsPage />} />
-              <Route path="/contato" element={<ContactPage />} />
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/blog/:slug" element={<BlogArticlePage />} />
-              
-              {/* International routes with language prefix */}
-              <Route path="/:lang" element={<Index />} />
-              <Route path="/:lang/sobre" element={<AboutPage />} />
-              <Route path="/:lang/fotos" element={<ImagePage />} />
-              <Route path="/:lang/videos" element={<VideosPage />} />
-              <Route path="/:lang/repertorio" element={<RepertoirePage />} />
-              <Route path="/:lang/agenda" element={<BookingPage />} />
-              <Route path="/:lang/faq" element={<FAQPage />} />
-              <Route path="/:lang/depoimentos" element={<TestimonialsPage />} />
-              <Route path="/:lang/contato" element={<ContactPage />} />
-              <Route path="/:lang/blog" element={<BlogPage />} />
-              <Route path="/:lang/blog/:slug" element={<BlogArticlePage />} />
-            </Routes>
-          </InternationalRouter>
-        </BrowserRouter>
-      </TooltipProvider>
+        <SkipLink />
+        <UrlRedirectHandler />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/sobre" element={<AboutPage />} />
+          <Route path="/fotos" element={<ImagePage />} />
+          <Route path="/videos" element={<VideosPage />} />
+          <Route path="/repertorio" element={<RepertoirePage />} />
+          <Route path="/agenda" element={<BookingPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/depoimentos" element={<TestimonialsPage />} />
+          <Route path="/contato" element={<ContactPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogArticlePage />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
     </HelmetProvider>
   </QueryClientProvider>
 );
