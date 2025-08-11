@@ -154,7 +154,7 @@ export const eventsData: PerformanceEvent[] = [
     name: "Show da Mariana Matheos no Restaurante Le Pontes",
     shortDate: "13/09",
     day: "Sab",
-    time: "20:00",
+    time: "13:30",
     venue: "Restaurante Le Pontes",
     durationHours: 2,
     location: venues["Restaurante Le Pontes"],
@@ -231,7 +231,7 @@ export const eventsData: PerformanceEvent[] = [
     name: "Show da Mariana Matheos no Restaurante Le Pontes",
     shortDate: "11/10",
     day: "Sab",
-    time: "20:00",
+    time: "13:30",
     venue: "Restaurante Le Pontes",
     durationHours: 2,
     location: venues["Restaurante Le Pontes"],
@@ -284,7 +284,7 @@ export const eventsData: PerformanceEvent[] = [
     name: "Show da Mariana Matheos no Restaurante Le Pontes",
     shortDate: "15/11",
     day: "Sab",
-    time: "20:00",
+    time: "13:30",
     venue: "Restaurante Le Pontes",
     durationHours: 2,
     location: venues["Restaurante Le Pontes"],
@@ -310,30 +310,6 @@ export const eventsData: PerformanceEvent[] = [
 //=================================================================================================
 //SHOW DEZEMBRO
   {
-    id: "event-2025-12-13",
-    name: "Show da Mariana Matheos no Restaurante Le Pontes",
-    shortDate: "13/12",
-    day: "Sab",
-    time: "20:00",
-    venue: "Restaurante Le Pontes",
-    durationHours: 2,
-    location: venues["Restaurante Le Pontes"],
-    offer: {
-      price: "25.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
-  },
-  {
     id: "event-2025-12-12",
     name: "Show da Mariana Matheos no The Bulltique Vino Bar",
     shortDate: "12/12",
@@ -357,6 +333,30 @@ export const eventsData: PerformanceEvent[] = [
     eventStatus: "EventScheduled",
     eventAttendanceMode: "OfflineEventAttendanceMode"
   },
+  {
+    id: "event-2025-12-13",
+    name: "Show da Mariana Matheos no Restaurante Le Pontes",
+    shortDate: "13/12",
+    day: "Sab",
+    time: "13:30",
+    venue: "Restaurante Le Pontes",
+    durationHours: 2,
+    location: venues["Restaurante Le Pontes"],
+    offer: {
+      price: "25.00",
+      priceCurrency: "BRL",
+      availability: "InStock",
+      validFrom: "2025-07-01T00:00:00-03:00",
+      url: "https://marianamatheos.com.br/agenda"
+    },
+    image: "https://marianamatheos.com.br/images/banda.avif",
+    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
+    performer: {
+      name: "Mariana Matheos Jazz Band"
+    },
+    eventStatus: "EventScheduled",
+    eventAttendanceMode: "OfflineEventAttendanceMode"
+  }
 //=================================================================================================
 ];
 
