@@ -175,13 +175,13 @@ export const eventsData: PerformanceEvent[] = [
   },
   {
     id: "event-2025-09-20",
-    name: "Show da Mariana Matheos Casamento Civil Tânia e Paulo",
+    name: "Show da Mariana Matheos Casamento Civil Evento Particular",
     shortDate: "20/09",
     day: "Sab",
     time: "12:00",
-    venue: "Casamento Civil Tânia e Paulo",
+    venue: "Casamento Civil Evento Particular",
     durationHours: 2,
-    location: venues["Casamento Civil Tânia e Paulo"],
+    location: venues["Casamento Civil Evento Particular"],
     offer: {
       price: "00.00",
       priceCurrency: "BRL",
