@@ -96,30 +96,7 @@ export const eventsData: PerformanceEvent[] = [
   
 //=================================================================================================
 //SHOW AGOSTO
-  {
-    id: "event-2025-08-16",
-    name: "Show da Mariana Matheos no Soul Jazz Burguer",
-    shortDate: "16/08",
-    day: "Sáb",
-    time: "19:30",
-    venue: "Soul Jazz Burguer",
-    durationHours: 2,
-    location: venues["Soul Jazz Burguer"],
-    offer: {
-      price: "20.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Show de jazz ao vivo em ambiente intimista no Soul Jazz Burguer, com os grandes sucessos da era do jazz.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
-  },
+
 //=================================================================================================
 
 
