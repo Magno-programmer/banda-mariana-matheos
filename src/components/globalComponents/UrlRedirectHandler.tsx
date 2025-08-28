@@ -31,6 +31,7 @@ const UrlRedirectHandler = () => {
   }, [location.pathname, location.search, location.hash, navigate]);
 
   return null; // This component doesn't render anything
+  
 };
 
 export default UrlRedirectHandler;
