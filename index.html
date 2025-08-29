@@ -119,31 +119,22 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- Service Worker Registration -->
-    <script>
-      // Verificação de compatibilidade do Service Worker
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', async () => {
-          try {
-            const registration = await navigator.serviceWorker.register('/sw.js', {
-              scope: '/',
-              type: 'classic'
-            });
-            
-            if (registration.active) {
-              console.info('PWA disponível para instalação!', registration.scope);
-            }
-            
-            registration.addEventListener('activate', () => {
-              console.info('Service Worker ativado:', registration.scope);
-            });
-            
-          } catch (error) {
-            console.error('Erro ao registrar PWA:', error);
-          }
-        });
-      } else {
-        console.warn('Este navegador não suporta PWA');
-      }
+    <script type="module">
+        import { registerServiceWorker } from '/src/utils/registerSW.ts';      registerServiceWorker({
+        immediate: false,
+        onSuccess: (registration) => {
+          console.info('PWA disponível para instalação!', registration.scope);
+        },
+        onError: (error) => {
+          console.error('Erro ao registrar PWA:', error);
+        },
+        onOffline: () => {
+          console.warn('Sem conexão - PWA funcionará no modo offline quando instalado');
+        },
+        onUnsupported: () => {
+          console.warn('Este navegador não suporta PWA');
+        }
+      });
     </script>
   </body>
 </html>
