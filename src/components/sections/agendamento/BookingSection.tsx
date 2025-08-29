@@ -4,6 +4,7 @@ import lineArtDeco from '/images/divisor-de-sessao.avif';
 import { useAdvancedViewport } from '@/hooks/useAdvancedViewport';
 import { eventsData, serviceOfferings } from '@/data/eventData';
 import { isFutureEvent } from '@/utils/dateUtils';
+import NotificationSettingsPanel from '@/components/globalComponents/NotificationSettingsPanel';
 
 const BookingSection = () => {
   const { isMiniMobile, isMobile, isMiniTablet, isTablet } = useAdvancedViewport();
@@ -35,9 +36,12 @@ const BookingSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-16 animate-fade-in">
-            <h1 className={`font-glimmer ${titleSize} font-bold text-white mb-4 jazz-text-shadow`}>
-              Agendamento
-            </h1>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <h1 className={`font-glimmer ${titleSize} font-bold text-white jazz-text-shadow`}>
+                Agendamento
+              </h1>
+              <NotificationSettingsPanel />
+            </div>
             {/* Divisor decorativo acima */}
             <div className="w-full flex justify-center mb-4">
             <img

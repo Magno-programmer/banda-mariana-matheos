@@ -174,6 +174,30 @@ export const eventsData: PerformanceEvent[] = [
     eventStatus: "EventScheduled",
     eventAttendanceMode: "OfflineEventAttendanceMode"
   },
+  {
+    id: "event-2025-09-27",
+    name: "Show da Mariana Matheos Blues na Praça Alaska",
+    shortDate: "27/09",
+    day: "Sab",
+    time: "17:30",
+    venue: "Praça Alaska",
+    durationHours: 2,
+    location: venues["Praça Alaska"],
+    offer: {
+      price: "00.00",
+      priceCurrency: "BRL",
+      availability: "InStock",
+      validFrom: "2025-07-01T00:00:00-03:00",
+      url: "https://marianamatheos.com.br/agenda"
+    },
+    image: "https://marianamatheos.com.br/images/banda.avif",
+    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
+    performer: {
+      name: "Mariana Matheos Jazz Band"
+    },
+    eventStatus: "EventScheduled",
+    eventAttendanceMode: "OfflineEventAttendanceMode"
+  },
 
 //=================================================================================================
 
