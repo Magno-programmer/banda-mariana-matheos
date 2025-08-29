@@ -20,7 +20,7 @@ const HeroSection = () => {
 
   const titleSize = isMobile ? 'text-4xl' : isTablet ? 'text-5xl' : 'text-7xl';
   const subtitleSize = isMobile ? 'text-2xl' : isTablet ? 'text-3xl' : 'text-5xl';
-  const logoWidth = isMobile ? 'w-[30%]' : isTablet ? 'w-[35%]' : 'w-[30%]';
+  const logoWidth = isMobile ? 'w-[25%]' : isTablet ? 'w-[30%]' : 'w-[20%]';
   const buttonSize = isMobile ? 'text-sm px-4 py-2 h-[60px] w-[200px]' : isTablet ? 'text-base px-5 py-2 h-[70px] w-[225px]' : 'text-lg px-6 py-2 h-[80px] w-[255px]';
   const containerHeight = isMobile ? 'h-[150px]' : isTablet ? 'h-[175px]' : 'h-[200px]';
   const buttonMargin = isMobile ? 'mt-[90px]' : isTablet ? 'mt-[105px]' : 'mt-[120px]';
@@ -55,7 +55,7 @@ const HeroSection = () => {
             <img
               src={logoGold}
               alt="Logotipo Mariana Matheos Jazz Band - banda de jazz profissional para casamentos e eventos em Belo Horizonte, Minas Gerais"
-              className={`${logoWidth} mt-[15%] pb-[15%] object-contain drop-shadow-lg`}
+              className={`${logoWidth} mt-[25%] pb-[15%] object-contain drop-shadow-lg`}
               loading="eager"
             />
           </div>

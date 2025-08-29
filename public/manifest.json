@@ -4,12 +4,12 @@
   "description": "Banda de jazz, soul e R&B para eventos em BH. Música ao vivo com elegância e presença cênica.",
   "start_url": "/?source=pwa",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "background_color": "#000000",
   "theme_color": "#800000",
-  "orientation": "any",
+  "orientation": "portrait-primary",
   "scope": "/",
   "id": "/",
-  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "handle_links": "preferred",
   "launch_handler": {
     "client_mode": ["focus-existing", "auto"]
@@ -123,9 +123,5 @@
       "label": "Mariana Matheos - Cantora de Jazz"
     }
   ],
-  "prefer_related_applications": false,
-  "display_override": ["standalone", "minimal-ui"],
-  "edge_side_panel": {
-    "preferred_width": 480
-  }
+  "prefer_related_applications": false
 }
