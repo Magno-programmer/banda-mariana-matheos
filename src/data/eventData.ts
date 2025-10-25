@@ -102,208 +102,114 @@ export const eventsData: PerformanceEvent[] = [
 
 //=================================================================================================
 //SHOW SETEMBRO
-  {
-    id: "event-2025-09-12",
-    name: "Show da Mariana Matheos no The Bulltique Vino Bar",
-    shortDate: "12/09",
-    day: "Sex",
-    time: "20:00",
-    venue: "The Bulltique Vino Bar",
-    durationHours: 2,
-    location: venues["The Bulltique Vino Bar"],
-    offer: {
-      price: "20.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
-  },
-  {
-    id: "event-2025-09-13",
-    name: "Show da Mariana Matheos no Restaurante Le Pontes",
-    shortDate: "13/09",
-    day: "Sab",
-    time: "13:30",
-    venue: "Restaurante Le Pontes",
-    durationHours: 2,
-    location: venues["Restaurante Le Pontes"],
-    offer: {
-      price: "25.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
-  },
-  {
-    id: "event-2025-09-20",
-    name: "Show da Mariana Matheos Casamento Civil Evento Particular",
-    shortDate: "20/09",
-    day: "Sab",
-    time: "12:00",
-    venue: "Casamento Civil Evento Particular",
-    durationHours: 2,
-    location: venues["Casamento Civil Evento Particular"],
-    offer: {
-      price: "00.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
-  },
-  {
-    id: "event-2025-09-27",
-    name: "Show da Mariana Matheos Blues na Praça Alaska",
-    shortDate: "27/09",
-    day: "Sab",
-    time: "17:30",
-    venue: "Praça Alaska",
-    durationHours: 2,
-    location: venues["Praça Alaska"],
-    offer: {
-      price: "00.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
-  },
 
-//=================================================================================================
-
-//=================================================================================================
-//SHOW OUTUBRO
-  {
-    id: "event-2025-10-10",
-    name: "Show da Mariana Matheos no The Bulltique Vino Bar",
-    shortDate: "10/10",
-    day: "Sex",
-    time: "20:00",
-    venue: "The Bulltique Vino Bar",
-    durationHours: 2,
-    location: venues["The Bulltique Vino Bar"],
-    offer: {
-      price: "20.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
-  },
-  {
-    id: "event-2025-10-11",
-    name: "Show da Mariana Matheos no Restaurante Le Pontes",
-    shortDate: "11/10",
-    day: "Sab",
-    time: "13:30",
-    venue: "Restaurante Le Pontes",
-    durationHours: 2,
-    location: venues["Restaurante Le Pontes"],
-    offer: {
-      price: "25.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
-  },
 //=================================================================================================
 
 
 //=================================================================================================
-//SHOW NOVEMBRO
-  {
-    id: "event-2025-11-14",
-    name: "Show da Mariana Matheos no The Bulltique Vino Bar",
-    shortDate: "14/11",
-    day: "Sex",
-    time: "20:00",
-    venue: "The Bulltique Vino Bar",
-    durationHours: 2,
-    location: venues["The Bulltique Vino Bar"],
-    offer: {
-      price: "20.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
+//SHOW OUTUBRO
+
+//=================================================================================================
+
+
+//=================================================================================================
+// SHOWS NOVEMBRO
+{
+  id: "event-2025-11-01",
+  name: "Show da Mariana Matheos no SESC Venda Nova",
+  shortDate: "01/11",
+  day: "Sab",
+  time: "18:00",
+  venue: "SESC Venda Nova",
+  durationHours: 2,
+  location: venues["SESC Venda Nova"],
+  offer: {
+    price: "0.00",
+    priceCurrency: "BRL",
+    availability: "InStock",
+    validFrom: "2025-07-01T00:00:00-03:00",
+    url: "https://marianamatheos.com.br/agenda"
   },
-  {
-    id: "event-2025-15-11",
-    name: "Show da Mariana Matheos no Restaurante Le Pontes",
-    shortDate: "15/11",
-    day: "Sab",
-    time: "13:30",
-    venue: "Restaurante Le Pontes",
-    durationHours: 2,
-    location: venues["Restaurante Le Pontes"],
-    offer: {
-      price: "25.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
+  image: "https://marianamatheos.com.br/images/banda.avif",
+  description: "Apresentação da Mariana Matheos Jazz Band no SESC Venda Nova, com repertório de clássicos do jazz e bossa nova.",
+  performer: {
+    name: "Mariana Matheos Jazz Band"
   },
+  eventStatus: "EventScheduled",
+  eventAttendanceMode: "OfflineEventAttendanceMode"
+},
+{
+  id: "event-2025-11-08",
+  name: "Show da Mariana Matheos – Projeto BH Cult",
+  shortDate: "08/11",
+  day: "Sab",
+  time: "19:00",
+  venue: "Projeto BH Cult",
+  durationHours: 1.75,
+  location: venues["Projeto BH Cult"],
+  offer: {
+    price: "0.00",
+    priceCurrency: "BRL",
+    availability: "InStock",
+    validFrom: "2025-07-01T00:00:00-03:00",
+    url: "https://marianamatheos.com.br/agenda"
+  },
+  image: "https://marianamatheos.com.br/images/banda.avif",
+  description: "Show no Projeto BH Cult celebrando o jazz clássico com arranjos modernos e interpretações marcantes de Mariana Matheos.",
+  performer: {
+    name: "Mariana Matheos Jazz Band"
+  },
+  eventStatus: "EventScheduled",
+  eventAttendanceMode: "OfflineEventAttendanceMode"
+},
+{
+  id: "event-2025-11-14",
+  name: "Show da Mariana Matheos no The Bulltique Vino Bar",
+  shortDate: "14/11",
+  day: "Sex",
+  time: "20:00",
+  venue: "The Bulltique Vino Bar",
+  durationHours: 2,
+  location: venues["The Bulltique Vino Bar"],
+  offer: {
+    price: "20.00",
+    priceCurrency: "BRL",
+    availability: "InStock",
+    validFrom: "2025-07-01T00:00:00-03:00",
+    url: "https://marianamatheos.com.br/agenda"
+  },
+  image: "https://marianamatheos.com.br/images/banda.avif",
+  description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
+  performer: {
+    name: "Mariana Matheos Jazz Band"
+  },
+  eventStatus: "EventScheduled",
+  eventAttendanceMode: "OfflineEventAttendanceMode"
+},
+{
+  id: "event-2025-11-16",
+  name: "Show da Mariana Matheos na Casa do Leopoldino",
+  shortDate: "16/11",
+  day: "Dom",
+  time: "13:00",
+  venue: "A Casa do Leopoldino (Vespasiano - MG)",
+  durationHours: 2.5,
+  location: venues["A Casa do Leopoldino (Vespasiano - MG)"],
+  offer: {
+    price: "0.00",
+    priceCurrency: "BRL",
+    availability: "InStock",
+    validFrom: "2025-07-01T00:00:00-03:00",
+    url: "https://marianamatheos.com.br/agenda"
+  },
+  image: "https://marianamatheos.com.br/images/banda.avif",
+  description: "Show de domingo com a Mariana Matheos Jazz Band em Vespasiano, celebrando o melhor do jazz e MPB com elegância e energia.",
+  performer: {
+    name: "Mariana Matheos Jazz Band"
+  },
+  eventStatus: "EventScheduled",
+  eventAttendanceMode: "OfflineEventAttendanceMode"
+},
 
 //=================================================================================================
 
@@ -334,30 +240,6 @@ export const eventsData: PerformanceEvent[] = [
     eventStatus: "EventScheduled",
     eventAttendanceMode: "OfflineEventAttendanceMode"
   },
-  {
-    id: "event-2025-12-13",
-    name: "Show da Mariana Matheos no Restaurante Le Pontes",
-    shortDate: "13/12",
-    day: "Sab",
-    time: "13:30",
-    venue: "Restaurante Le Pontes",
-    durationHours: 2,
-    location: venues["Restaurante Le Pontes"],
-    offer: {
-      price: "25.00",
-      priceCurrency: "BRL",
-      availability: "InStock",
-      validFrom: "2025-07-01T00:00:00-03:00",
-      url: "https://marianamatheos.com.br/agenda"
-    },
-    image: "https://marianamatheos.com.br/images/banda.avif",
-    description: "Apresentação especial comemorando o legado de Ella Fitzgerald e Frank Sinatra, numa noite inesquecível de jazz clássico.",
-    performer: {
-      name: "Mariana Matheos Jazz Band"
-    },
-    eventStatus: "EventScheduled",
-    eventAttendanceMode: "OfflineEventAttendanceMode"
-  }
 //=================================================================================================
 ];
 
