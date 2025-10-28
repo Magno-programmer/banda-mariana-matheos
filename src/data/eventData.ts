@@ -203,7 +203,7 @@ export const eventsData: PerformanceEvent[] = [
     url: "https://marianamatheos.com.br/agenda"
   },
   image: "https://marianamatheos.com.br/images/banda.avif",
-  description: "Show de domingo com a Mariana Matheos Jazz Band em Vespasiano, celebrando o melhor do jazz com elegância e energia.",
+  description: "Show de domingo com a Mariana Matheos Jazz Band em Vespasiano, celebrando o melhor do jazz e MPB com elegância e energia.",
   performer: {
     name: "Mariana Matheos Jazz Band"
   },
